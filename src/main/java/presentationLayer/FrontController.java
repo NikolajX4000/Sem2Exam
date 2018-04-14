@@ -1,6 +1,6 @@
 package presentationLayer;
 
-import functionLayer.LoginSampleException;
+import functionLayer.CustomException;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,7 +30,7 @@ public class FrontController extends HttpServlet {
             Command action = Command.from(request);
             String view = action.execute(request, response);
             request.getRequestDispatcher("/WEB-INF/" + view + ".jsp").forward(request, response);
-        } catch (LoginSampleException ex) {
+        } catch (CustomException ex) {
             request.setAttribute("error", ex.getMessage());
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }

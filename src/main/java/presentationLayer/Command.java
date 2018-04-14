@@ -1,6 +1,6 @@
 package presentationLayer;
 
-import functionLayer.LoginSampleException;
+import functionLayer.CustomException;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,6 +26,6 @@ abstract class Command {
     }
 
     abstract String execute(HttpServletRequest request, HttpServletResponse response)
-            throws LoginSampleException;
+            throws CustomException;
 
 }
