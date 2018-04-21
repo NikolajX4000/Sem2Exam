@@ -8,31 +8,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author super
- */
-@WebServlet(name = "FrontController", urlPatterns = {"/FrontController"})
+
+@WebServlet(name = "FrontController", urlPatterns = {"/"})
 public class FrontController extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            Command action = Command.from(request);
-            String view = action.execute(request, response);
-            request.getRequestDispatcher("/WEB-INF/" + view + ".jsp").forward(request, response);
+            Command command = Command.from(request);
+            String view = command.execute(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/" + view + ".jsp").forward(request, response);
         } catch (CustomException ex) {
             request.setAttribute("error", ex.getMessage());
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
         }
     }
 

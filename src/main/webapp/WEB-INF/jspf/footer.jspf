@@ -1,0 +1,101 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+<%-- container div --%>
+</div>
+
+<div class="parallax-container">
+    <div class="parallax"><img src="https://www.johannesfog.dk/globalassets/splash/splashtb1.jpg"></div>
+</div>
+
+
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+
+<div class="col s12 m3">
+    <h6>Hvordan køber jeg?</h6>	
+    <ul>
+        <li><a href="https://www.johannesfog.dk/byggecenter/hvordan-kober-jeg/ofte-stillede-sporgsmal/" target="_top" title="Ofte stillede spørgsmål">Ofte stillede spørgsmål</a></li>
+        <li><a href="https://www.johannesfog.dk/byggecenter/hvordan-kober-jeg/fragt/" target="_top" title="Fragt">Fragt</a></li>
+        <li><a href="https://www.johannesfog.dk/byggecenter/hvordan-kober-jeg/returnering--reklamation/" target="_top" title="Fortrydelse &amp; returnering">Fortrydelse &amp; returnering</a></li>
+        <li><a href="https://www.johannesfog.dk/byggecenter/hvordan-kober-jeg/reklamation/" target="_top" title="Reklamation">Reklamation</a></li>
+        <li><a href="https://www.johannesfog.dk/byggecenter/hvordan-kober-jeg/kobsvilkar-og-leveringsbetingelser/" target="_top" title="Købs- og leveringsvilkår">Købs- og leveringsvilkår</a></li>
+        <li><a href="https://www.johannesfog.dk/byggecenter/fog-konto-information/salgs--og-leveringsbetingelser/" target="_top" title=" Alm. salgs- og leveringsbetingelser">Alm. salgs- og leveringsbetingelser</a></li>
+        <li><a href="https://www.johannesfog.dk/byggecenter/hvordan-kober-jeg/e-market/" target="_top" title="E-mærket">E-mærket</a></li>
+        <li><a href="https://www.johannesfog.dk/byggecenter/fog-konto-information/" target="_top" title="Fog Konto">Fog Konto</a></li>
+        <li><a href="https://www.johannesfog.dk/byggecenter/fog-konto-information/bliv-kunde/" target="_top" title="Bliv kunde">Bliv kunde</a></li>
+    </ul>
+</div>
+
+
+
+<div class="col s12 m3">
+    <h6>Aktuelt</h6>
+    <ul>
+        <li><a href="https://www.johannesfog.dk/byggecenter/aviser/" target="_top" title="Aktuel avis">Tilbudsavis</a></li>
+        <li><a href="https://www.johannesfog.dk/byggecenter/nej-tak/" target="_top" title="Nej Tak+">Nej Tak+</a></li>
+        <li><a href="https://www.johannesfog.dk/byggecenter/nyhedsbrev/" target="_top" title="Tilbudsmail">Tilbudsmail</a></li>
+        <li><a href="https://www.johannesfog.dk/byggecenter/landingpages/konkurrencer/" target="_top" title="Aktuelle konkurrencer">Konkurrencer</a></li>
+        <li><a href="https://www.facebook.com/fogtraelastbyggecenter/" target="_blank" title="Facebook">Facebook</a></li>
+        <li><a href="https://www.instagram.com/fogtraelastbyggecenter/" target="_blank" title="Instagram">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/company/johannes-fog-as" target="_blank" title="LinkedIn">LinkedIn</a></li>
+    </ul>
+</div>
+
+
+
+<div class="col s12 m3">
+    <h6>Om FOG</h6>
+    <ul>
+        <li><a href="https://www.johannesfog.dk/byggecenter/find-butik/" target="_top" title="Åbningstider">Åbningstider</a></li>
+        <li><a href="https://www.johannesfog.dk/byggecenter/om-fog/" target="_top" title="Om Fog">Om Fog</a></li>
+        <li><a href="https://www.johannesfog.dk/byggecenter/om-fog/fog-fonden/" target="_top" title="Fogs Fond">Fogs Fond</a></li>
+        <li><a href="https://www.johannesfog.dk/byggecenter/om-fog/job/" target="_top" title="Job">Job</a></li>
+        <li><a href="https://www.johannesfog.dk/byggecenter/om-fog/csr/" target="_top" title="CSR">CSR</a></li>
+        <li><a href="https://www.johannesfog.dk/byggecenter/om-fog/cookie/" target="_top" title="Cookie-politik">Cookie-politik</a></li>
+        <li><a href="https://www.johannesfog.dk/byggecenter/om-fog/persondata/" target="_top" title="Persondata">Persondata</a></li>
+        <li><a href="https://www.johannesfog.dk/byggecenter/om-fog/prismatch/" target="_top" title="Prismatch">Prismatch</a></li>
+        <li><a href="https://www.johannesfog.dk/byggecenter/find-butik/kontakt/" target="_top" title="Kontakt Fog">Kontakt Fog</a></li>
+    </ul>
+</div>
+
+
+<div class="col s12 m3">
+    <div class="row">
+        <div class="col s2"><i class="material-icons circle">chat</i></div>
+        <div class="col s10">Johannes Fog A/S</div>
+    </div>
+    <div class="row">
+        <div class="col s2"><i class="material-icons circle">phone_in_talk</i></div>
+        <div class="col s10">45 87 10 01</div>
+    </div>
+    <div class="row">
+        <div class="col s2"><i class="material-icons circle">mail_outline</i></div>
+        <div class="col s10"><a class="white-text" style="opacity: 1; font-size: " href="mailto:info@johannesfog.dk">Send e-mail</a></div>
+    </div>
+    <img src="https://www.johannesfog.dk/globalassets/ikoner/cards-logos.png">
+</div>
+
+        </div>
+    </div>
+    
+    <div class="footer-copyright">
+        <div class="container">
+            <p class="left">Johannes Fog A/S - Firskovvej 20 - 2800 Lyngby - CVR-nr. 16314439</p>
+            <p class="right">Alle priser er inkl. moms</p>
+        </div>
+    </div>
+</footer>
+
+
+<script type="text/javascript">
+	$(".button-collapse").sideNav();
+
+	$(document).ready(function(){
+      $('.parallax').parallax();
+    });
+</script>
+
+</body>
+</html>

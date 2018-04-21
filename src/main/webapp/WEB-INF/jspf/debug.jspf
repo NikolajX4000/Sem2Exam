@@ -1,0 +1,50 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+<style>
+    #x348765{
+        background: black;
+        position: fixed;
+        top:50px;
+        left:50px;
+        z-index: 666;
+        color: chartreuse;
+        border: 3px solid orange;
+        box-shadow: 0px 0px 2px 1px black;
+        padding: 5px 10px;
+        max-width: 50%;
+        word-break: break-all;
+    }
+    .z873945{
+        margin: 0 !important;
+    }
+</style>
+
+<div id="x348765" class="draggable">
+    <p class="z873945">Parameters:</p>
+    <p>${param}</p>
+    <p class="z873945">Session:</p>
+    <p>${sessionScope}</p>
+    <!--<p class="z873945">Cookies</p>
+    <p>${cookie}</p>-->
+    <p class="z873945">Test:</p>
+    <p>{${test}}</p>
+</div>
+
+<script>
+
+    var sPositions = localStorage.positions || "{}",
+            positions = JSON.parse(sPositions);
+    $.each(positions, function (id, pos) {
+        $("#" + id).css(pos);
+    });
+    $("#x348765").draggable({
+        containment: "body",
+        scroll: false,
+        stop: function (event, ui) {
+            positions[this.id] = ui.position;
+            localStorage.positions = JSON.stringify(positions);
+        }
+    });
+
+</script>

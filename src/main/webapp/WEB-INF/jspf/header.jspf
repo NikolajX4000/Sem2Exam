@@ -1,0 +1,90 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<html>
+    <head>
+    	<title>Fog</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <!-- jQuery + UI -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+
+        <!-- Icons -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!-- MaterializeCSS  Stylesheet-->
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+        <!-- MaterializeCSS  Javascript-->
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        
+
+    </head>
+
+    <style type="text/css">
+
+    	nav{
+            background: #004789;
+    	}
+    	.brand-logo {
+            height: 64px;
+            max-height: 100%;	    
+        }
+        .brand-logo img{
+            max-height: 100%;
+        }
+        .parallax-container {
+            height: 200px;
+        }
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+          }
+        main {
+            flex: 1 0 auto;
+        }
+        footer h5,h6{
+            text-transform: uppercase;
+            color: white;
+        }
+        footer li a{
+            color: whitesmoke;
+            font-size: .8rem;
+            opacity: 0.6;
+        }
+        footer a:hover{
+            opacity: 1;
+        }
+    </style>
+
+<body>
+<nav>
+    <div class="nav-wrapper">
+        <div class="container">
+            <a href="#" class="brand-logo"><img src="https://www.johannesfog.dk/globalassets/header/logo.png"></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#">Link1</a></li>
+                <li><a href="#">Link2</a></li>
+                <li><a href="#">Link3</a></li>
+                <li><a href="#">Link4</a></li>
+                <li><a href="#">Link5</a></li>
+            </ul>
+
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="#">Link1</a></li>
+                <li><a href="#">Link2</a></li>
+                <li><a href="#">Link3</a></li>
+                <li><a href="#">Link4</a></li>
+                <li><a href="#">Link5</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    
+<div class="container" style="margin: 50px auto">
