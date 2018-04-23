@@ -198,54 +198,69 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+tableofcontent
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 Indledning
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsection*
 Baggrund
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsection*
 Teknologivalg
 \end_layout
 
 \begin_layout Standard
-Projektet er et Maven 3.1 projekt skrevet i Netbeans IDE 8.2.
- 
+Projektet er et Maven projekt lavet i Netbeans IDE 8.2
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 Krav
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 Domæne model og ER diagram
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 Navigationsdiagram
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 Sekvensdiagrammer
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 Særlige forhold
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 Status på implementation
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 Test
 \end_layout
 
