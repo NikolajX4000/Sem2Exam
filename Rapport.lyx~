@@ -204,43 +204,51 @@ LatexCommand tableofcontents
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Indledning
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsection
 Baggrund
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsection
 Teknologivalg
 \end_layout
 
-\begin_layout Section*
+\begin_layout Standard
+Projektet er et Maven 3.1 projekt skrevet i Netbeans IDE 8.2.
+ Databasen, mysql 5.1.39, er lavet i MySQL Workbench 6.3ce, og ligger på en
+ Ubuntu 16.04.3 x64 server, hvor websitet er deployet vha.
+ apache-tomcat-8.0.32.
+ Sprogene der er brugt i koden er java jdk 1.8.0_141, HTML5 og javax 7.0.
+\end_layout
+
+\begin_layout Section
 Krav
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Domæne model og ER diagram
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Navigationsdiagram
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Sekvensdiagrammer
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Særlige forhold
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Status på implementation
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Test
 \end_layout
 
