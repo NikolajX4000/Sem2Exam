@@ -150,6 +150,11 @@ thispagestyle{empty}
 Indledning
 \end_layout
 
+\begin_layout Standard
+Vi er blevet kontaktet af Johannes Fog i Ølstykke, der har spurgt om vi
+ kan lave et program og tilhørende hjemmeside til deres salg af carporte.
+\end_layout
+
 \begin_layout Subsection
 Baggrund
 \end_layout
@@ -171,28 +176,6 @@ Dependencies
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Dependecies
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="3">
 <features tabularvalignment="middle">
@@ -380,42 +363,11 @@ jbcrypt
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection
 Plugins
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Plugins
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="5" columns="3">
 <features tabularvalignment="middle">
@@ -494,7 +446,7 @@ org.apache.maven.plugins
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+maven-war-plugin
 \end_layout
 
 \end_inset
@@ -503,7 +455,7 @@ org.apache.maven.plugins
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.3
 \end_layout
 
 \end_inset
@@ -514,7 +466,7 @@ org.apache.maven.plugins
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+org.apache.maven.plugins
 \end_layout
 
 \end_inset
@@ -523,7 +475,7 @@ org.apache.maven.plugins
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+maven-dependency-plugin
 \end_layout
 
 \end_inset
@@ -532,7 +484,7 @@ org.apache.maven.plugins
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.6
 \end_layout
 
 \end_inset
@@ -552,7 +504,7 @@ org.apache.maven.plugins
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+maven-javadoc-plugin
 \end_layout
 
 \end_inset
@@ -561,7 +513,7 @@ org.apache.maven.plugins
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.9
 \end_layout
 
 \end_inset
@@ -572,31 +524,6 @@ org.apache.maven.plugins
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-, , 
-\end_layout
-
-\begin_layout Itemize
-, maven-war-plugin, 2.3
-\end_layout
-
-\begin_layout Itemize
-org.apache.maven.plugins, maven-dependency-plugin, 2.6
-\end_layout
-
-\begin_layout Itemize
-maven-javadoc-plugin, 2.9
 \end_layout
 
 \begin_layout Section
