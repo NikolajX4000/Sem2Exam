@@ -10,11 +10,11 @@ import java.sql.SQLException;
  */
 public class Connector {
 
-    private static final String IP = "";
+    private static final String IP = "159.89.9.144";
     private static final String PORT = "3306";
-    private static final String DATABASE = "";
-    private static final String USERNAME = "";
-    private static final String PASSWORD = "";
+    private static final String DATABASE = "sem2exam";
+    private static final String USERNAME = "Fog";
+    private static final String PASSWORD = "password123";
     private static final String URL = "jdbc:mysql://" + IP + ":" + PORT + "/" + DATABASE + "?autoReconnect=true&useSSL=false";
     private static Connection connection;
 

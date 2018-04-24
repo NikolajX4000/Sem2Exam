@@ -75,6 +75,7 @@ Johannes Fog - Carport Case - Rapport
 \end_layout
 
 \begin_layout Author
+\noindent
 Jacob Borg 
 \begin_inset Newline newline
 \end_inset
@@ -90,7 +91,7 @@ Nikolaj Thorsen Nielsen
 Stephan Marcus Duelund Djurhuus
 \end_layout
 
-\begin_layout Date
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -98,7 +99,7 @@ status open
 
 
 \backslash
-today
+thispagestyle{empty}
 \end_layout
 
 \end_inset
@@ -116,6 +117,22 @@ today
 \begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
 
 \end_inset
 
