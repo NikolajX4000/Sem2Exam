@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author super
  */
-public class ShowOrders extends Command {
+public class ShowOrdersCommand extends Command {
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException {
