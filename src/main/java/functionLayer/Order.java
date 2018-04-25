@@ -58,6 +58,30 @@ public class Order {
         return (angle == 0);
     }
     
+    /**
+     * Find the color associated with the current status
+     * @return a color as a string
+     */
+    public String getStatusColor(){
+        
+        String color = "orange";
+        switch (status) {
+            case "Modtaget":
+                color = "green";
+                break;
+            case "Sendt":
+                color = "blue";
+                break;
+            case "Annulleret":
+                color = "red";
+                break;
+            case "Behandles":
+                color = "orange";
+                break;
+        }
+        return color;
+    }
+    
     public int getId() {
         return id;
     }

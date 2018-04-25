@@ -12,7 +12,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file="/WEB-INF/jspf/header.jspf"%>
-<%@include file="/WEB-INF/jspf/debug.jspf"%>
 
 
 <%

@@ -222,7 +222,7 @@ public class OrderMapper {
      */
     public static List<Order> getAllOrders() throws CustomException {
         PreparedStatement ps = null;
-        Order order = new Order();
+        Order order;
         List<Order> orders = new ArrayList<>();
         
         try {
@@ -233,6 +233,7 @@ public class OrderMapper {
             ResultSet rs = ps.executeQuery();
             
             while (rs.next()) {
+                order  = new Order();
                 order
                     /* order id */
                     .setId( rs.getInt( "order_id" ) ).

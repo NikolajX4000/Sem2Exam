@@ -23,4 +23,8 @@ public class LogicFacade {
         return StorageFacade.addOrder(o);
     }
     
+    public static List<Order> getAllOrders() throws CustomException {
+        return StorageFacade.getAllOrders();
+    }
+    
 }
