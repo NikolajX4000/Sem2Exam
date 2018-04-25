@@ -33,7 +33,7 @@ public class OrderMapper {
             String SQL  = "INSERT INTO orders ("
             /* customer */  + "name, address, zip_code, city, phone, email, note, "
             /* carport */   + "width, length, "
-            /* roof */      + "roof, angle, "
+            /* roof */      + "roof_id, angle, "
             /* shed */      + "shed_width, shed_length, "
             /* dates */     + "placed) "
                         + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -74,7 +74,6 @@ public class OrderMapper {
             
             if (rs.first()) {
                 order.setId( rs.getInt( 1 ) );
-                order.setStatus( rs.getString( "status" ));
             }
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new CustomException( ex.getMessage() );

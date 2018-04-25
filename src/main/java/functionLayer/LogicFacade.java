@@ -18,4 +18,9 @@ public class LogicFacade {
     public static List<Order> getOrders(String email) throws CustomException {
         return StorageFacade.getOrders(email);
     }
+    
+    public static Order addOrder(Order o) throws CustomException {
+        return StorageFacade.addOrder(o);
+    }
+    
 }

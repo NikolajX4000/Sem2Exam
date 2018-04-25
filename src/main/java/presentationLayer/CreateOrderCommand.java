@@ -7,6 +7,7 @@
 package presentationLayer;
 
 import functionLayer.CustomException;
+import functionLayer.LogicFacade;
 import functionLayer.Order;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -45,21 +46,23 @@ public class CreateOrderCommand extends Command{
             o.setEmail((String)request.getParameter("email"));
             o.setNote((String)request.getParameter("note"));
             
+            LogicFacade.addOrder(o);
             
             request.setAttribute("test", o.toString());
+            
+            request.setAttribute("desiredOrdersFromEmail", o.getEmail());
+            
+            return "order";
+            
+            
         } catch (Exception e)
         {
-            request.setAttribute("response", "Der gik noget galt, prøv igen senere!");
-            request.setAttribute("test", e.getMessage());
-            //return "order";
+            request.setAttribute("response", "Der gik noget galt prøv igen senere!");
+            //request.setAttribute("test", e.getMessage());
+            return "order";
         }
         
-        
-        
-        
-        return "order";
-        
-        
+
     }
 
 }
