@@ -101,34 +101,34 @@ public class OrderMapper {
             ResultSet rs = ps.executeQuery();
             
             if (rs.first()) {
-                order.setId( id );
+                order.setId( id ).
                 
                 /* customer */
-                order.setName( rs.getString( "name" ) );
-                order.setAddress( rs.getString( "address" ) );
-                order.setZipCode( rs.getInt( "zip_code" ) );
-                order.setCity( rs.getString( "city" ) );
-                order.setPhone( rs.getString( "phone" ) );
-                order.setEmail( rs.getString( "email" ) );
-                order.setNote( rs.getString( "note" ) );
+                setName( rs.getString( "name" ) ).
+                setAddress( rs.getString( "address" ) ).
+                setZipCode( rs.getInt( "zip_code" ) ).
+                setCity( rs.getString( "city" ) ).
+                setPhone( rs.getString( "phone" ) ).
+                setEmail( rs.getString( "email" ) ).
+                setNote( rs.getString( "note" ) ).
                 
                 /* carport */
-                order.setWidth( rs.getInt( "width" ) );
-                order.setLength( rs.getInt( "length" ) );
+                setWidth( rs.getInt( "width" ) ).
+                setLength( rs.getInt( "length" ) ).
                 
                 /* roof */
-                order.setRoof( rs.getInt( "roof" ) );
-                order.setAngle( rs.getInt( "angle" ) );
+                setRoof( rs.getInt( "roof" ) ).
+                setAngle( rs.getInt( "angle" ) ).
                 
                 /* shed */
-                order.setShedWidth( rs.getInt( "shed_width" ) );
-                order.setShedLength( rs.getInt( "shed_length" ) );
+                setShedWidth( rs.getInt( "shed_width" ) ).
+                setShedLength( rs.getInt( "shed_length" ) ).
                 
                 /* dates */
-                order.setPlaced( rs.getString( "placed" ) );
+                setPlaced( rs.getString( "placed" ) ).
                 
                 /* status */
-                order.setPlaced( rs.getString( "status" ) );
+                setPlaced( rs.getString( "status" ) );
             }
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new CustomException( ex.getMessage() );
