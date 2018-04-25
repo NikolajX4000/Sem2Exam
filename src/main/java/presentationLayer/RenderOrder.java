@@ -7,7 +7,6 @@
 package presentationLayer;
 
 import functionLayer.Order;
-import java.util.Random;
 
 public class RenderOrder {
     
@@ -61,8 +60,8 @@ public class RenderOrder {
         
         s+="<li class=\"tab\"><a href=\"#"+ o.getStringId() + "a" +"\" class=\"tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"Detaljer\"><i class=\"material-icons\">zoom_out_map</i></a></li>";
         s+="<li class=\"tab\"><a href=\"#"+ o.getStringId() + "b" +"\" class=\"tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"Tegninger\"><i class=\"material-icons\">photo</i></a></li>";
-        s+="<li class=\"tab\"><a href=\"#"+ o.getStringId() + "c" +"\" class=\"tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"Tegninger\"><i class=\"material-icons\">format_list_bulleted</i></a></li>";
-        s+="<li class=\"tab\"><a href=\"#"+ o.getStringId() + "d" +"\" class=\"tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"Tegninger\"><i class=\"material-icons\">event_note</i></a></li>";
+        s+="<li class=\"tab\"><a href=\"#"+ o.getStringId() + "c" +"\" class=\"tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"Stykliste\"><i class=\"material-icons\">format_list_bulleted</i></a></li>";
+        s+="<li class=\"tab\"><a href=\"#"+ o.getStringId() + "d" +"\" class=\"tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"Bemærkning\"><i class=\"material-icons\">event_note</i></a></li>";
         
         s+="</ul></div>";
         

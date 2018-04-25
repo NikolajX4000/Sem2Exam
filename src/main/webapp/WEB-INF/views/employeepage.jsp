@@ -41,13 +41,12 @@
         s += "</tr>";
 
         tableRows += s;
-        
+
         test = os.get(i);
     }
-    
-    
+
     request.setAttribute("test123", RenderOrder.print(test));
-    
+
     request.setAttribute("tr", tableRows);
 
 %>
@@ -88,46 +87,51 @@
 <!-- Modal Structure -->
 <div id="modal1" class="modal">
     <div class="modal-content">
-        <!--<table>
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Køber</th>
-                    <th>Område</th>
-                    <th>Dato</th>
-                    <th>Status</th>
-                    <th>Pris</th>
-                </tr>
-            </thead>
 
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Daniel Lindholm</td>
-                    <td>Solrød Strand</td>
-                    <td>4 juni, 2018</td>
-                    <td><span class="dot green"></span>Modtaget</td>
-                    <td>20.000 Kr.</td>
-                </tr>
-            </tbody>
-        </table>
-        <br><div class="divider"></div><br>-->
-        
-        
-        
-        ${test123}
-        
-        
+        <ul class="collapsible" data-collapsible="accordion" class="col s6">
+            <li>
+                <div class="collapsible-header active">
+                    <i class="material-icons">zoom_out_map</i>Detaljer
+                    <span class="new badge blue" data-badge-caption="Under Behandling"></span></div>
+                <div class="collapsible-body">
+
+                    <p>yayayayayay</p>
+                </div>
+            </li>
+            <li>
+                <div class="collapsible-header">
+                    <i class="material-icons">photo</i>Tegninger
+                </div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+            </li>
+            <li>
+                <div class="collapsible-header">
+                    <i class="material-icons">format_list_bulleted</i>Stykliste
+                </div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+            </li>
+            <li>
+                <div class="collapsible-header">
+                    <i class="material-icons">event_note</i>Bemærkning
+                </div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+            </li>
+            
+        </ul>
+
+
         <div class="row">
+            <div class="col s12">
             <p>Opdater ordestatus:</p>
             <a class="waves-effect waves-light btn green">Modtaget</a>
             <a class="waves-effect waves-light btn blue">Sendt</a>
             <a class="waves-effect waves-light btn orange">Behandles</a>
             <a class="waves-effect waves-light btn red">Annulleret</a>
+            </div>
         </div>
     </div>
     <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Luk</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-blue grey btn"><i class="material-icons">close</i></a>
     </div>
 </div>
 
