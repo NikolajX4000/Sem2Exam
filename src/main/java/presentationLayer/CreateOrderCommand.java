@@ -48,7 +48,7 @@ public class CreateOrderCommand extends Command{
             
             LogicFacade.addOrder(o);
             
-            request.setAttribute("test", o.toString());
+            //request.setAttribute("test", o.toString());
             
             request.setAttribute("desiredOrdersFromEmail", o.getEmail());
             
@@ -57,9 +57,9 @@ public class CreateOrderCommand extends Command{
             
         } catch (Exception e)
         {
-            request.setAttribute("response", "Der gik noget galt prøv igen senere!");
+            request.setAttribute("feedback", "<p class=\"red-text\">Der gik noget galt prøv igen senere!</p>");
             //request.setAttribute("test", e.getMessage());
-            return "order";
+            return "order"; 
         }
         
 
