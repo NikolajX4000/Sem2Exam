@@ -7,7 +7,10 @@
 <div class="row">
     
     <form class="col s12 m6" method="post" id="test1" accept-charset="ISO-8859-1">
-        <p>Carport Information</p><br> 
+        
+        <p>Carport Information</p>
+        ${feedback}
+        <br>
         <div class="row">
             <div class="input-field col s6">
                 <select name="width" required class="validate">

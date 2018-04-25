@@ -147,7 +147,7 @@ public class OrderMapper {
         List<Order> orders = new ArrayList<>();
         try {
             Connection con = Connector.connection();
-            String SQL  = "SLELECT * FROM orders "
+            String SQL  = "SELECT * FROM orders "
                         + "WHERE email = ?";
             
             PreparedStatement ps = con.prepareStatement( SQL );
@@ -171,7 +171,7 @@ public class OrderMapper {
                 order.setLength( rs.getInt( "length" ) );
                 
                 /* roof */
-                order.setRoof( rs.getInt( "roof" ) );
+                order.setRoof( rs.getInt( "roof_id" ) );
                 order.setAngle( rs.getInt( "angle" ) );
                 
                 /* shed */
