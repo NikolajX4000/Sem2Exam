@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -30,7 +31,7 @@ public class OrderMapper {
         try {
             Connection con = Connector.connection();
             String SQL  = "INSERT INTO orders ("
-            /* customer */  + "name, address, zipcode, city, phone, email, note, "
+            /* customer */  + "name, address, zip_code, city, phone, email, note, "
             /* carport */   + "width, length, "
             /* roof */      + "roof, angle, "
             /* shed */      + "shed_width, shed_length, "
@@ -43,7 +44,7 @@ public class OrderMapper {
                 /* customer */
                 ps.setString( 1, order.getName() );
                 ps.setString( 2, order.getAddress() );
-                ps.setInt( 3, order.getZipcode() );
+                ps.setInt( 3, order.getZipCode() );
                 ps.setString( 4, order.getCity() );
                 ps.setString( 5, order.getPhone() );
                 ps.setString( 6, order.getEmail() );
@@ -105,7 +106,7 @@ public class OrderMapper {
                 /* customer */
                 order.setName( rs.getString( "name" ) );
                 order.setAddress( rs.getString( "address" ) );
-                order.setZipcode( rs.getInt( "zipcode" ) );
+                order.setZipCode( rs.getInt( "zip_code" ) );
                 order.setCity( rs.getString( "city" ) );
                 order.setPhone( rs.getString( "phone" ) );
                 order.setEmail( rs.getString( "email" ) );
@@ -142,9 +143,9 @@ public class OrderMapper {
      * @return list of orders from customer with specific email from the param 'email'
      * @throws CustomException 
      */
-    public static ArrayList<Order> getOrders( String email ) throws CustomException {
+    public static List<Order> getOrders( String email ) throws CustomException {
         Order order = new Order();
-        ArrayList<Order> orders = new ArrayList();
+        List<Order> orders = new ArrayList<>();
         try {
             Connection con = Connector.connection();
             String SQL  = "SLELECT * FROM orders "
@@ -160,7 +161,7 @@ public class OrderMapper {
                 /* customer */
                 order.setName( rs.getString( "name" ) );
                 order.setAddress( rs.getString( "address" ) );
-                order.setZipcode( rs.getInt( "zipcode" ) );
+                order.setZipCode( rs.getInt( "zip_code" ) );
                 order.setCity( rs.getString( "city" ) );
                 order.setPhone( rs.getString( "phone" ) );
                 order.setEmail( rs.getString( "email" ) );
@@ -197,12 +198,12 @@ public class OrderMapper {
      * @return all orders as a ArrayList
      * @throws CustomException 
      */
-    public static ArrayList<Order> getAllOrders() throws CustomException {
+    public static List<Order> getAllOrders() throws CustomException {
         Order order = new Order();
-        ArrayList<Order> orders = new ArrayList();
+        List<Order> orders = new ArrayList<>();
         try {
             Connection con = Connector.connection();
-            String SQL  = "SLELECT * FROM orders";
+            String SQL  = "SELECT * FROM orders";
             
             PreparedStatement ps = con.prepareStatement( SQL );
             ResultSet rs = ps.executeQuery();
@@ -213,7 +214,7 @@ public class OrderMapper {
                 /* customer */
                 order.setName( rs.getString( "name" ) );
                 order.setAddress( rs.getString( "address" ) );
-                order.setZipcode( rs.getInt( "zipcode" ) );
+                order.setZipCode( rs.getInt( "zip_code" ) );
                 order.setCity( rs.getString( "city" ) );
                 order.setPhone( rs.getString( "phone" ) );
                 order.setEmail( rs.getString( "email" ) );
@@ -280,7 +281,7 @@ public class OrderMapper {
                 ps.setString( 7, order.getStatus() );
                 
                 /* order id */
-                ps.setInt( 7, order.getId() );
+                ps.setInt( 8, order.getId() );
                 
             } catch ( SQLException ex ) {
                 throw new CustomException( "Formateringsfejl" );

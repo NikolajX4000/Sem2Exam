@@ -17,7 +17,7 @@ public class Order {
     /* customer */
     private String name;
     private String address;
-    private int zipcode;
+    private int zipCode;
     private String city;
     private String phone;
     private String email;
@@ -65,12 +65,12 @@ public class Order {
         this.address = address;
     }
 
-    public int getZipcode() {
-        return zipcode;
+    public int getZipCode() {
+        return zipCode;
     }
 
-    public void setZipcode(int zipcode) {
-        this.zipcode = zipcode;
+    public void setZipCode(int zipCode) {
+        this.zipCode = zipCode;
     }
 
     public String getCity() {

@@ -1,6 +1,6 @@
 package functionLayer;
 
-import java.util.ArrayList;
+import java.util.List;
 import storageLayer.OrderMapper;
 
 /**
@@ -38,7 +38,7 @@ public class StorageFacade {
      * @return
      * @throws CustomException 
      */
-    public static ArrayList<Order> getOrders( String email ) throws CustomException {
+    public static List<Order> getOrders( String email ) throws CustomException {
         return OrderMapper.getOrders( email );
     }
     
@@ -48,7 +48,7 @@ public class StorageFacade {
      * @return
      * @throws CustomException 
      */
-    public static ArrayList<Order> getAllOrders() throws CustomException {
+    public static List<Order> getAllOrders() throws CustomException {
         return OrderMapper.getAllOrders();
     }
     
