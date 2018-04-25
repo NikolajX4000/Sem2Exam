@@ -58,14 +58,13 @@ public class Order {
         return (angle == 0);
     }
     
-
     public int getId() {
         return id;
     }
 
     public Order setId(int id) {
-        this.id = id;
-        return this;
+            this.id = id;
+            return this;
     }
 
     public String getName() {
