@@ -127,7 +127,7 @@ public class OrderMapper {
                     setLength( rs.getInt( "length" ) ).
 
                     /* roof */
-                    setRoof( rs.getInt( "roof" ) ).
+                    setRoof( rs.getInt( "roof_id" ) ).
                     setAngle( rs.getInt( "angle" ) ).
 
                     /* shed */
@@ -158,19 +158,21 @@ public class OrderMapper {
      */
     public static List<Order> getOrders( String email ) throws CustomException {
         PreparedStatement ps = null;
-        Order order = new Order();
+        Order order;
         List<Order> orders = new ArrayList<>();
         
         try {
             Connection con = Connector.connection();
             String SQL  = "SELECT * FROM orders "
-                        + "WHERE email = ?";
+                        + "WHERE email = ?"
+                        + "ORDER BY order_id DESC";
             
             ps = con.prepareStatement( SQL );
             ps.setString( 1, email );
             ResultSet rs = ps.executeQuery();
             
             while (rs.next()) {
+                order = new Order();
                 order
                     /* order id */
                     .setId( rs.getInt( "order_id" ) ).
@@ -189,7 +191,7 @@ public class OrderMapper {
                     setLength( rs.getInt( "length" ) ).
 
                     /* roof */
-                    setRoof( rs.getInt( "roof" ) ).
+                    setRoof( rs.getInt( "roof_id" ) ).
                     setAngle( rs.getInt( "angle" ) ).
 
                     /* shed */
@@ -249,7 +251,7 @@ public class OrderMapper {
                     setLength( rs.getInt( "length" ) ).
 
                     /* roof */
-                    setRoof( rs.getInt( "roof" ) ).
+                    setRoof( rs.getInt( "roof_id" ) ).
                     setAngle( rs.getInt( "angle" ) ).
 
                     /* shed */
@@ -286,7 +288,7 @@ public class OrderMapper {
             Connection con = Connector.connection();
             String SQL  = "UPDATE orders SET "
             /* carport */   + "width = ?, length = ?, "
-            /* roof */      + "roof = ?, angle = ?, "
+            /* roof */      + "roof_id = ?, angle = ?, "
             /* shed */      + "shed_width = ?, shed_length = ?, "
             /* status */    + "status = ? "
                         + "WHERE order_id = ?";
