@@ -19,6 +19,7 @@ abstract class Command {
 
         commands.put("ShowOrdersCommand", new ShowOrdersCommand());
         commands.put("PageBuildCarportCommand", new PageBuildCarportCommand());
+        commands.put("PageAllOrdersCommand", new PageAllOrdersCommand());
         
         commands.put("UpdateOrderCommand", new UpdateOrderCommand());
     }
