@@ -14,6 +14,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -28,6 +30,8 @@ public class OrderMapper {
      * @throws CustomException 
      */
     public static Order addOrder( Order order ) throws CustomException {
+        PreparedStatement ps = null;
+        
         try {
             Connection con = Connector.connection();
             String SQL  = "INSERT INTO orders ("
@@ -38,7 +42,7 @@ public class OrderMapper {
             /* dates */     + "placed) "
                         + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             
-            PreparedStatement ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
+            ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
             
             try {
                 /* customer */
@@ -75,8 +79,11 @@ public class OrderMapper {
             if (rs.first()) {
                 order.setId( rs.getInt( 1 ) );
             }
+            
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new CustomException( ex.getMessage() );
+        } finally {
+            closeConnection( ps );
         }
         return order;
     } 
@@ -89,13 +96,15 @@ public class OrderMapper {
      * @throws CustomException 
      */
     public static Order getOrder( int id ) throws CustomException {
+        PreparedStatement ps = null;
         Order order = new Order();
+        
         try {
             Connection con = Connector.connection();
             String SQL  = "SLELECT * FROM orders "
                         + "WHERE order_id = ?";
             
-            PreparedStatement ps = con.prepareStatement( SQL );
+            ps = con.prepareStatement( SQL );
             ps.setInt( 1, id );
             ResultSet rs = ps.executeQuery();
             
@@ -131,8 +140,11 @@ public class OrderMapper {
                     /* status */
                     setPlaced( rs.getString( "status" ) );
             }
+            
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new CustomException( ex.getMessage() );
+        } finally {
+            closeConnection( ps );
         }
         return order;
     } 
@@ -145,14 +157,16 @@ public class OrderMapper {
      * @throws CustomException 
      */
     public static List<Order> getOrders( String email ) throws CustomException {
+        PreparedStatement ps = null;
         Order order = new Order();
         List<Order> orders = new ArrayList<>();
+        
         try {
             Connection con = Connector.connection();
             String SQL  = "SELECT * FROM orders "
                         + "WHERE email = ?";
             
-            PreparedStatement ps = con.prepareStatement( SQL );
+            ps = con.prepareStatement( SQL );
             ps.setString( 1, email );
             ResultSet rs = ps.executeQuery();
             
@@ -190,8 +204,11 @@ public class OrderMapper {
                 
                 orders.add( order );
             }
+            
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new CustomException( ex.getMessage() );
+        } finally {
+            closeConnection( ps );
         }
         return orders;
     } 
@@ -202,49 +219,56 @@ public class OrderMapper {
      * @throws CustomException 
      */
     public static List<Order> getAllOrders() throws CustomException {
+        PreparedStatement ps = null;
         Order order = new Order();
         List<Order> orders = new ArrayList<>();
+        
         try {
             Connection con = Connector.connection();
             String SQL  = "SELECT * FROM orders";
             
-            PreparedStatement ps = con.prepareStatement( SQL );
+            ps = con.prepareStatement( SQL );
             ResultSet rs = ps.executeQuery();
             
             while (rs.next()) {
-                order.setId( rs.getInt( "order_id" ) );
+                order
+                    /* order id */
+                    .setId( rs.getInt( "order_id" ) ).
                 
-                /* customer */
-                order.setName( rs.getString( "name" ) );
-                order.setAddress( rs.getString( "address" ) );
-                order.setZipCode( rs.getInt( "zip_code" ) );
-                order.setCity( rs.getString( "city" ) );
-                order.setPhone( rs.getString( "phone" ) );
-                order.setEmail( rs.getString( "email" ) );
-                order.setNote( rs.getString( "note" ) );
-                
-                /* carport */
-                order.setWidth( rs.getInt( "width" ) );
-                order.setLength( rs.getInt( "length" ) );
-                
-                /* roof */
-                order.setRoof( rs.getInt( "roof" ) );
-                order.setAngle( rs.getInt( "angle" ) );
-                
-                /* shed */
-                order.setShedWidth( rs.getInt( "shed_width" ) );
-                order.setShedLength( rs.getInt( "shed_length" ) );
-                
-                /* dates */
-                order.setPlaced( rs.getString( "placed" ) );
-                
-                /* status */
-                order.setPlaced( rs.getString( "status" ) );
+                    /* customer */
+                    setName( rs.getString( "name" ) ).
+                    setAddress( rs.getString( "address" ) ).
+                    setZipCode( rs.getInt( "zip_code" ) ).
+                    setCity( rs.getString( "city" ) ).
+                    setPhone( rs.getString( "phone" ) ).
+                    setEmail( rs.getString( "email" ) ).
+                    setNote( rs.getString( "note" ) ).
+
+                    /* carport */
+                    setWidth( rs.getInt( "width" ) ).
+                    setLength( rs.getInt( "length" ) ).
+
+                    /* roof */
+                    setRoof( rs.getInt( "roof" ) ).
+                    setAngle( rs.getInt( "angle" ) ).
+
+                    /* shed */
+                    setShedWidth( rs.getInt( "shed_width" ) ).
+                    setShedLength( rs.getInt( "shed_length" ) ).
+
+                    /* dates */
+                    setPlaced( rs.getString( "placed" ) ).
+
+                    /* status */
+                    setPlaced( rs.getString( "status" ) );
                 
                 orders.add( order );
             }
+            
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new CustomException( ex.getMessage() );
+        } finally {
+            closeConnection( ps );
         }
         return orders;
     } 
@@ -256,6 +280,8 @@ public class OrderMapper {
      * @throws CustomException 
      */
     public static Order updateOrder( Order order ) throws CustomException {
+        PreparedStatement ps = null;
+        
         try {
             Connection con = Connector.connection();
             String SQL  = "UPDATE orders SET "
@@ -265,7 +291,7 @@ public class OrderMapper {
             /* status */    + "status = ? "
                         + "WHERE order_id = ?";
             
-            PreparedStatement ps = con.prepareStatement( SQL );
+            ps = con.prepareStatement( SQL );
             
             try {
                 /* carport */
@@ -293,6 +319,8 @@ public class OrderMapper {
             
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new CustomException( ex.getMessage() );
+        } finally {
+            closeConnection( ps );
         }
         return order;
     } 
@@ -304,13 +332,15 @@ public class OrderMapper {
      * @throws CustomException 
      */
     public static Order updateStatus( Order order ) throws CustomException {
+        PreparedStatement ps = null;
+        
         try {
             Connection con = Connector.connection();
             String SQL  = "UPDATE orders "
                         + "SET status = ? "
                         + "WHERE order_id = ?";
             
-            PreparedStatement ps = con.prepareStatement( SQL );
+            ps = con.prepareStatement( SQL );
             
             try {
                 ps.setString( 1, order.getStatus() );
@@ -323,7 +353,24 @@ public class OrderMapper {
             
         } catch ( SQLException | ClassNotFoundException ex ) {
             throw new CustomException( ex.getMessage() );
+        } finally {
+            closeConnection( ps );
         }
         return order;
     } 
+    
+    /**
+     * This method will close the prepared statement connection if it's connection,
+     * the reason is to reduce as musch in- and outgoing trafic from the server.
+     * @param ps PreparedStatement object, the SQL controller.
+     */
+    private static void closeConnection( PreparedStatement ps ){
+        if (ps != null) {
+            try { 
+                ps.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(OrderMapper.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
 }
