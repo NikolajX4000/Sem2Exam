@@ -11,17 +11,13 @@ import java.util.Random;
 
 public class RenderOrder {
     
-    Order o;
-    String id;
+    private static Order o;
+    private static String id;
 
-    public RenderOrder(Order o)
-    {
-        this.o = o;
-        this.id = unqString(10);
+    private RenderOrder() {
     }
     
-    
-    private String unqString(int amount){
+    private static String unqString(int amount){
         
         String chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         String randomString = "";
@@ -38,7 +34,7 @@ public class RenderOrder {
         
     }
 
-    private String getStatusColor(){
+    private static String getStatusColor(){
         String color = "orange";
         switch (o.getStatus()) {
             case "Modtaget":
@@ -57,7 +53,7 @@ public class RenderOrder {
         return color;
     }
     
-    private String cardTop(){
+    private static String cardTop(){
         String s = "";
         
         s+="<div class=\"card-content\">";
@@ -95,7 +91,7 @@ public class RenderOrder {
         return s;
     }
     
-    private String cardTabs(){
+    private static String cardTabs(){
         String s = "";
         
         s+="<div class=\"card-tabs\"><ul class=\"tabs\">";
@@ -111,7 +107,7 @@ public class RenderOrder {
     }
     
     
-    private String tabA(){
+    private static String tabA(){
         String s = "";
         
         s+="<div id=\""+ id + "a" +"\">";
@@ -161,7 +157,7 @@ public class RenderOrder {
         return s;
     }
     
-    private String tabB(){
+    private static String tabB(){
         String s = "";
         
         s+="<div id=\""+ id + "b" +"\">";
@@ -171,7 +167,7 @@ public class RenderOrder {
         return s;
     }
     
-    private String tabC(){
+    private static String tabC(){
         String s = "";
         
         s+="<div id=\""+ id + "c" +"\">";
@@ -182,20 +178,25 @@ public class RenderOrder {
         return s;
     }
     
-    private String tabD(){
+    private static String tabD(){
         String s = "";
+        
+        String note = (o.getNote().equals(""))? "Der er ikke nogen bemærkninger til denne ordre." : o.getNote();
         
         s+="<div id=\""+ id + "d" +"\">";
             s+="<span class=\"card-title\">Bemærkning</span>";
-            s+="<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>";
+            s+="<p>"+ note +"</p>";
         s+="</div>";
         
         return s;
     }
     
-    @Override
-    public String toString()
+    public static String print(Order o)
     {
+        
+        RenderOrder.o = o;
+        RenderOrder.id = unqString(10);
+        
         String s = "";
         
         s+= "<div class=\"col l6 m12\">";

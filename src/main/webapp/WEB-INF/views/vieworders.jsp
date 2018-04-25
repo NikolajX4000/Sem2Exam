@@ -19,11 +19,9 @@
     List<Order> orders = (List<Order>)request.getAttribute("desiredOrdersFromEmail");
     
     String orderString = "";
-    RenderOrder ro;
     for (int i = 0; i < orders.size(); i++) {
-        ro = new RenderOrder(orders.get(i));
-        orderString += ro;
         
+        orderString += RenderOrder.print(orders.get(i));
         if(i%2==1){
             orderString +="</div><div class=\"row\">";
         }

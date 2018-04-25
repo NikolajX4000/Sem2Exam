@@ -138,7 +138,7 @@ public class OrderMapper {
                     setPlaced( rs.getString( "placed" ) ).
 
                     /* status */
-                    setPlaced( rs.getString( "status" ) );
+                    setStatus( rs.getString( "status" ) );
             }
             
         } catch ( SQLException | ClassNotFoundException ex ) {
@@ -202,7 +202,7 @@ public class OrderMapper {
                     setPlaced( rs.getString( "placed" ) ).
 
                     /* status */
-                    setPlaced( rs.getString( "status" ) );
+                    setStatus(rs.getString( "status" ) );
                 
                 orders.add( order );
             }
@@ -262,7 +262,7 @@ public class OrderMapper {
                     setPlaced( rs.getString( "placed" ) ).
 
                     /* status */
-                    setPlaced( rs.getString( "status" ) );
+                    setStatus( rs.getString( "status" ) );
                 
                 orders.add( order );
             }
