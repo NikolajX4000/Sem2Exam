@@ -142,7 +142,7 @@
             <div class="input-field col s12 flat">
                 <select name="roof" id="flatroof" required class="validate">
                     <option value="" disabled selected>Vælg tagtype/farve</option>
-                    <option value="Plasttrapezplader">Plasttrapezplader</option>
+                    <option value="2">Plasttrapezplader</option>
                 </select>
                 <label>Tag</label>
             </div>
@@ -150,21 +150,21 @@
             <div class="input-field col s12 angeled">
                 <select name="roof" id="heighroof" required class="validate">
                     <option value="" disabled selected>Vælg tagtype/farve</option>
-                    <option value="Betontagsten - Rød">Betontagsten - Rød</option>
-                    <option value="Betontagsten - Teglrød">Betontagsten - Teglrød</option>
-                    <option value="Betontagsten - Brun">Betontagsten - Brun</option>
-                    <option value="Betontagsten - Sort">Betontagsten - Sort</option>
-                    <option value="Eternittag B6 - Grå">Eternittag B6 - Grå</option>
-                    <option value="Eternittag B6 - Sort">Eternittag B6 - Sort</option>
-                    <option value="Eternittag B6 - Mokka (brun)">Eternittag B6 - Mokka (brun)</option>
-                    <option value="Eternittag B6 - Rødbrun">Eternittag B6 - Rødbrun</option>
-                    <option value="Eternittag B6 - Teglrød">Eternittag B6 - Teglrød</option>
-                    <option value="Eternittag B7 - Grå">Eternittag B7 - Grå</option>
-                    <option value="Eternittag B7 - Sort">Eternittag B7 - Sort</option>
-                    <option value="Eternittag B7 - Mokka (brun)">Eternittag B7 - Mokka (brun)</option>
-                    <option value="Eternittag B7 - Rødbrun">Eternittag B7 - Rødbrun</option>
-                    <option value="Eternittag B7 - Teglrød">Eternittag B7 - Teglrød</option>
-                    <option value="Eternittag B7 - Rødflammet">Eternittag B7 - Rødflammet</option>
+                    <option value="1">Betontagsten - Rød</option>
+                    <option value="1">Betontagsten - Teglrød</option>
+                    <option value="1">Betontagsten - Brun</option>
+                    <option value="1">Betontagsten - Sort</option>
+                    <option value="1">Eternittag B6 - Grå</option>
+                    <option value="1">Eternittag B6 - Sort</option>
+                    <option value="1">Eternittag B6 - Mokka (brun)</option>
+                    <option value="1">Eternittag B6 - Rødbrun</option>
+                    <option value="1">Eternittag B6 - Teglrød</option>
+                    <option value="1">Eternittag B7 - Grå</option>
+                    <option value="1">Eternittag B7 - Sort</option>
+                    <option value="1">Eternittag B7 - Mokka (brun)</option>
+                    <option value="1">Eternittag B7 - Rødbrun</option>
+                    <option value="1">Eternittag B7 - Teglrød</option>
+                    <option value="1">Eternittag B7 - Rødflammet</option>
                 </select>
                 <label>Tag</label>
             </div>
@@ -217,7 +217,7 @@
                 <label for="note">Evt. bemærkninger</label>
             </div>
         </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Send Forespørgsel
+        <button class="btn waves-effect waves-light blue" type="submit" name="command" value="CreateOrderCommand">Send Forespørgsel
             <i class="material-icons right">send</i>
         </button>
     </form>
