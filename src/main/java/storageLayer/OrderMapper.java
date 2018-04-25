@@ -227,7 +227,7 @@ public class OrderMapper {
         
         try {
             Connection con = Connector.connection();
-            String SQL  = "SELECT * FROM orders";
+            String SQL  = "SELECT * FROM orders ORDER BY order_id DESC";
             
             ps = con.prepareStatement( SQL );
             ResultSet rs = ps.executeQuery();
