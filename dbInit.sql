@@ -1,5 +1,5 @@
 -- MySQL Workbench Synchronization
--- Generated: 2018-04-25 10:08
+-- Generated: 2018-04-25 14:20
 -- Model: New Model
 -- Version: 1.0
 -- Project: Name of the project
@@ -41,6 +41,7 @@ CREATE TABLE IF NOT EXISTS `sem2exam`.`roofs` (
   `roof_id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `price` INT(11) NOT NULL,
+  `type` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`roof_id`),
   UNIQUE INDEX `roof_id_UNIQUE` (`roof_id` ASC),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC))
@@ -56,6 +57,7 @@ CREATE TABLE IF NOT EXISTS `sem2exam`.`employees` (
   UNIQUE INDEX `employee_id_UNIQUE` (`employee_id` ASC))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
