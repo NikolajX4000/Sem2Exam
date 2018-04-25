@@ -11,8 +11,9 @@
 <%@page import="functionLayer.Order"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%@include file="/WEB-INF/jspf/header.jspf"%> 
-<%@include file="/WEB-INF/jspf/debug.jspf"%> 
+<%@include file="/WEB-INF/jspf/header.jspf"%>
+<%@include file="/WEB-INF/jspf/debug.jspf"%>
+
 
 <%
     HttpSession s = request.getSession();

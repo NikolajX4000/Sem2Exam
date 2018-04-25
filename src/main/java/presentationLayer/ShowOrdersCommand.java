@@ -16,10 +16,13 @@ public class ShowOrdersCommand extends Command {
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException {
+        
         String email = request.getParameter("email");
-        List<Order> orders = LogicFacade.getOrders(email);
-        HttpSession s = request.getSession();
-        s.setAttribute("orders", orders);
+        
+        if(email != null){
+            request.setAttribute("desiredOrdersFromEmail", LogicFacade.getOrders(email));
+        }
+        
         return "vieworders";
     }
 }

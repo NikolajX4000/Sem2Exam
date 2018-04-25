@@ -21,7 +21,7 @@ public class FrontController extends HttpServlet {
             request.getRequestDispatcher("/WEB-INF/views/" + view + ".jsp").forward(request, response);
         } catch (CustomException ex) {
             request.setAttribute("error", ex.getMessage());
-            request.getRequestDispatcher("/WEB-INF/views/order.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
         }
     }
 
