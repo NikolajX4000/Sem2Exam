@@ -5,6 +5,8 @@
  */
 package functionLayer;
 
+import java.util.Random;
+
 /**
  *
  * @author Stephan
@@ -13,6 +15,7 @@ public class Order {
     
     /* order */
     private int id;
+    private String stringId;
     
     /* customer */
     private String name;
@@ -80,6 +83,29 @@ public class Order {
                 break;
         }
         return color;
+    }
+    
+    private String generateStringId(int amount){
+        amount--;
+        String chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        String randomString = "x";
+        Random rand = new Random();
+        char[] text = new char[amount];
+        
+        for (int i = 0; i < amount; i++) {
+            text[i] = chars.charAt(rand.nextInt(chars.length()));
+        }
+        for (int i = 0; i < text.length-1; i++) {
+            randomString += text[i];
+        }
+        return randomString;
+    }
+    
+    public String getStringId(){
+        if(stringId == null){
+            stringId = generateStringId(20);
+        }
+        return stringId;
     }
     
     public int getId() {

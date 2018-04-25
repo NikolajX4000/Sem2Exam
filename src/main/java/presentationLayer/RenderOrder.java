@@ -12,45 +12,8 @@ import java.util.Random;
 public class RenderOrder {
     
     private static Order o;
-    private static String id;
 
     private RenderOrder() {
-    }
-    
-    private static String unqString(int amount){
-        
-        String chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        String randomString = "";
-        Random rand = new Random();
-        char[] text = new char[amount];
-        
-        for (int i = 0; i < amount; i++) {
-            text[i] = chars.charAt(rand.nextInt(chars.length()));
-        }
-        for (int i = 0; i < text.length; i++) {
-            randomString += text[i];
-        }
-        return randomString;
-        
-    }
-
-    private static String getStatusColor(){
-        String color = "orange";
-        switch (o.getStatus()) {
-            case "Modtaget":
-                color = "green";
-                break;
-            case "Sendt":
-                color = "blue";
-                break;
-            case "Annulleret":
-                color = "red";
-                break;
-            case "Behandles":
-                color = "orange";
-                break;
-        }
-        return color;
     }
     
     private static String cardTop(){
@@ -58,7 +21,7 @@ public class RenderOrder {
         
         s+="<div class=\"card-content\">";
         
-            s+="<span class=\"new badge "+ getStatusColor() +" right\" data-badge-caption=\""+ o.getStatus() +"\"></span>";
+            s+="<span class=\"new badge "+ o.getStatusColor() +" right\" data-badge-caption=\""+ o.getStatus() +"\"></span>";
             s+="<span class=\"card-title\">Carport #"+ o.getId() +"</span>";
 
             s+="<blockquote style=\"border-color: #2196f3;\">";
@@ -96,10 +59,10 @@ public class RenderOrder {
         
         s+="<div class=\"card-tabs\"><ul class=\"tabs\">";
         
-        s+="<li class=\"tab\"><a href=\"#"+ id + "a" +"\" class=\"tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"Detaljer\"><i class=\"material-icons\">zoom_out_map</i></a></li>";
-        s+="<li class=\"tab\"><a href=\"#"+ id + "b" +"\" class=\"tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"Tegninger\"><i class=\"material-icons\">photo</i></a></li>";
-        s+="<li class=\"tab\"><a href=\"#"+ id + "c" +"\" class=\"tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"Tegninger\"><i class=\"material-icons\">format_list_bulleted</i></a></li>";
-        s+="<li class=\"tab\"><a href=\"#"+ id + "d" +"\" class=\"tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"Tegninger\"><i class=\"material-icons\">event_note</i></a></li>";
+        s+="<li class=\"tab\"><a href=\"#"+ o.getStringId() + "a" +"\" class=\"tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"Detaljer\"><i class=\"material-icons\">zoom_out_map</i></a></li>";
+        s+="<li class=\"tab\"><a href=\"#"+ o.getStringId() + "b" +"\" class=\"tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"Tegninger\"><i class=\"material-icons\">photo</i></a></li>";
+        s+="<li class=\"tab\"><a href=\"#"+ o.getStringId() + "c" +"\" class=\"tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"Tegninger\"><i class=\"material-icons\">format_list_bulleted</i></a></li>";
+        s+="<li class=\"tab\"><a href=\"#"+ o.getStringId() + "d" +"\" class=\"tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"Tegninger\"><i class=\"material-icons\">event_note</i></a></li>";
         
         s+="</ul></div>";
         
@@ -110,7 +73,7 @@ public class RenderOrder {
     private static String tabA(){
         String s = "";
         
-        s+="<div id=\""+ id + "a" +"\">";
+        s+="<div id=\""+ o.getStringId() + "a" +"\">";
         s+="<div class=\"row black-text\">";
         
             s+="<div class=\"input-field col s6\">";
@@ -160,7 +123,7 @@ public class RenderOrder {
     private static String tabB(){
         String s = "";
         
-        s+="<div id=\""+ id + "b" +"\">";
+        s+="<div id=\""+ o.getStringId() + "b" +"\">";
             s+="<span class=\"card-title\">Tegninger</span>";
         s+="</div>";
         
@@ -170,7 +133,7 @@ public class RenderOrder {
     private static String tabC(){
         String s = "";
         
-        s+="<div id=\""+ id + "c" +"\">";
+        s+="<div id=\""+ o.getStringId() + "c" +"\">";
             s+="<span class=\"card-title\">Stykliste</span>";
             s+="<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>";
         s+="</div>";
@@ -183,7 +146,7 @@ public class RenderOrder {
         
         String note = (o.getNote().equals(""))? "Der er ikke nogen bemærkninger til denne ordre." : o.getNote();
         
-        s+="<div id=\""+ id + "d" +"\">";
+        s+="<div id=\""+ o.getStringId() + "d" +"\">";
             s+="<span class=\"card-title\">Bemærkning</span>";
             s+="<p>"+ note +"</p>";
         s+="</div>";
@@ -195,7 +158,6 @@ public class RenderOrder {
     {
         
         RenderOrder.o = o;
-        RenderOrder.id = unqString(10);
         
         String s = "";
         
