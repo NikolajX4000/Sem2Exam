@@ -109,9 +109,9 @@ public class OrderMapper {
             ResultSet rs = ps.executeQuery();
             
             if (rs.first()) {
-                order
+                order.
                     /* order id */
-                    .setId( id ).
+                    setId( id ).
                 
                     /* customer */
                     setName( rs.getString( "name" ) ).
@@ -172,10 +172,9 @@ public class OrderMapper {
             ResultSet rs = ps.executeQuery();
             
             while (rs.next()) {
-                order = new Order();
-                order
+                order = new Order().
                     /* order id */
-                    .setId( rs.getInt( "order_id" ) ).
+                    setId( rs.getInt( "order_id" ) ).
                 
                     /* customer */
                     setName( rs.getString( "name" ) ).
@@ -233,10 +232,9 @@ public class OrderMapper {
             ResultSet rs = ps.executeQuery();
             
             while (rs.next()) {
-                order  = new Order();
-                order
+                order  = new Order().
                     /* order id */
-                    .setId( rs.getInt( "order_id" ) ).
+                    setId( rs.getInt( "order_id" ) ).
                 
                     /* customer */
                     setName( rs.getString( "name" ) ).
