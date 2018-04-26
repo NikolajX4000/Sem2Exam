@@ -5,7 +5,7 @@
 
 <div class="row">
     
-    <form class="col s12 m6" method="post" id="test1" accept-charset="ISO-8859-1">
+    <form class="col s12 m6" method="post" action="?" id="test1" accept-charset="ISO-8859-1">
         
         <p>Carport Information</p>
         ${feedback}

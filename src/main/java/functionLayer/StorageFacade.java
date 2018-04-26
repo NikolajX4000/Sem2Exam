@@ -73,4 +73,14 @@ public class StorageFacade {
     public static Order updateStatus( Order order ) throws CustomException {
         return OrderMapper.updateStatus( order );
     }
+    
+    /**
+     * @see storageLayer.OrderMapper#updateStatus( int id, String status )
+     * @param id
+     * @param status
+     * @throws CustomException 
+     */
+    public static void updateStatus( int id, String status ) throws CustomException {
+        OrderMapper.updateStatus( id, status );
+    }
 }

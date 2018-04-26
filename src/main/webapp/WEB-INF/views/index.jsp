@@ -19,7 +19,7 @@
                 <input id="email" type="email" name="email" required placeholder="Skriv din email for at se dine ordre">
                 <label for="email"></label>
             </div>
-        <button class="btn waves-effect waves-light" type="submit" name="command" value="ShowOrdersCommand">Find ordre<i class="material-icons right">send</i></button>
+        <button class="btn waves-effect waves-light blue" type="submit" name="command" value="ShowOrdersCommand">Find ordre<i class="material-icons right">send</i></button>
 
     </form>
 

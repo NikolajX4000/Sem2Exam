@@ -27,4 +27,9 @@ public class LogicFacade {
         return StorageFacade.getAllOrders();
     }
     
+    public static void updateOrder(int id, String status) throws CustomException{
+        StorageFacade.updateStatus(id, status);
+    }
+            
+    
 }

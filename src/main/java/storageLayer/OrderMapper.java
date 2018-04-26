@@ -363,6 +363,39 @@ public class OrderMapper {
     } 
     
     /**
+     * This method updates an orders status.
+     * @param id
+     * @param status
+     * @throws CustomException 
+     */
+    public static void updateStatus( int id, String status ) throws CustomException {
+        PreparedStatement ps = null;
+        
+        try {
+            Connection con = Connector.connection();
+            String SQL  = "UPDATE orders "
+                        + "SET status = ? "
+                        + "WHERE order_id = ?";
+            
+            ps = con.prepareStatement( SQL );
+            
+            try {
+                ps.setString( 1, status );
+                ps.setInt( 2, id );
+                
+            } catch ( SQLException ex ) {
+                throw new CustomException( "Formateringsfejl" );
+            }
+            ps.executeUpdate();
+            
+        } catch ( SQLException | ClassNotFoundException ex ) {
+            throw new CustomException( ex.getMessage() );
+        } finally {
+            closeConnection( ps );
+        }
+    } 
+    
+    /**
      * This method will close the prepared statement connection if it's connection,
      * the reason is to reduce as musch in- and outgoing trafic from the server.
      * @param ps PreparedStatement object, the SQL controller.

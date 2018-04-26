@@ -18,9 +18,12 @@
     .z873945{
         margin: 0 !important;
     }
+    #x348765.hidden{
+        display: none;
+    }
 </style>
 
-<div id="x348765" class="draggable">
+<div id="x348765" class="draggable hidden">
     <p class="z873945">Parameters:</p>
     <p>${param}</p>
     <p class="z873945">Session:</p>
