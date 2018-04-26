@@ -42,13 +42,13 @@ public class OrderMapperTest {
     /**
      * Test of addOrder method, of class OrderMapper.
      */
-    @Test
+    /*@Test
     public void testAddOrder() throws Exception {
         System.out.println("addOrder");
         Order order = new Order();
         Order result = OrderMapper.addOrder(order);
         assertTrue( result.getId() != 0 );
-    }
+    }*/
 
     /**
      * Test of getOrder method, of class OrderMapper.
