@@ -2,7 +2,16 @@
 package functionLayer;
 import org.mindrot.jbcrypt.BCrypt;
 
+/**
+ *
+ * @author super
+ */
 public class DanielTestClass {
+
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
     
         

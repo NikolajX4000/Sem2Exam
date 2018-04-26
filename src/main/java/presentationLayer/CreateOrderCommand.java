@@ -12,6 +12,10 @@ import functionLayer.Order;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ *
+ * @author super
+ */
 public class CreateOrderCommand extends Command{
 
     @Override

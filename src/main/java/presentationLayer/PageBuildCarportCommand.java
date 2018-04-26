@@ -5,6 +5,10 @@ import functionLayer.CustomException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ *
+ * @author super
+ */
 public class PageBuildCarportCommand extends Command{
 
     @Override

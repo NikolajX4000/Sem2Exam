@@ -2,6 +2,10 @@ package presentationLayer;
 
 import functionLayer.Order;
 
+/**
+ *
+ * @author super
+ */
 public class RenderOrderInspect {
 
     private static Order o;
@@ -105,6 +109,11 @@ public class RenderOrderInspect {
         return s += "</div></div>";
     }
     
+    /**
+     *
+     * @param o
+     * @return
+     */
     public static String print(Order o) {
 
         RenderOrderInspect.o = o;

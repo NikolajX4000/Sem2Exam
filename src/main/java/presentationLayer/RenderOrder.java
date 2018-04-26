@@ -8,6 +8,10 @@ package presentationLayer;
 
 import functionLayer.Order;
 
+/**
+ *
+ * @author super
+ */
 public class RenderOrder {
     
     private static Order o;
@@ -153,6 +157,11 @@ public class RenderOrder {
         return s;
     }
     
+    /**
+     *
+     * @param o
+     * @return
+     */
     public static String print(Order o)
     {
         
