@@ -12,6 +12,8 @@ public class CarPortList
     int best = Integer.MAX_VALUE;
     int length;
     int width;
+    
+    List list = new ArrayList();
 
     public CarPortList(Order order, int[] sizes)
     {
@@ -19,6 +21,7 @@ public class CarPortList
         this.sizes = sizes;
         length = order.getLength();
         width = order.getWidth();
+        addParts();
     }
 
     private PartLine oversternEnder()
@@ -153,5 +156,29 @@ public class CarPortList
             }
         }
         return size;
+    }
+    
+    private void addParts() {
+        list.add( oversternEnder() );
+        list.add( understernEnder() );
+        list.add( oversternSider() );
+        list.add( understernSider() );
+        list.add( remCarport() );
+        list.add( spaer() );
+        list.add( stolper() );
+        list.add( vandbraetEnde() );
+        list.add( vandbraetSide() );
+        list.add( tagplade() );
+
+        if ( order.hasShed() ) {
+            list.add( løsholterGavl() );
+            list.add( løsholterSider() );
+            list.add( remSkur() );
+            list.add( beklaedning() );
+        }
+    }
+    
+    public List getParts() {
+        return list;
     }
 }
