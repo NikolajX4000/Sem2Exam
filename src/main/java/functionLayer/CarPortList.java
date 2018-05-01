@@ -28,26 +28,26 @@ public class CarPortList {
         if (!order.hasShed()) {
             amount *= 2;
         }
-        return new PartLine("25x125mm. trykimp. Brædt", amount, 1).setSize(size);
+        return new PartLine("25x125mm. trykimp. Bræt", amount, 1).setSize(size);
     }
 
     private PartLine understernEnder() {
         size = findSize(width);
         int amount = (int) Math.ceil(width / size) * 2;
-        return new PartLine("25x200mm. trykimp. Brædt", amount, 1).setSize(size);
+        return new PartLine("25x200mm. trykimp. Bræt", amount, 1).setSize(size);
     }
 
     private PartLine oversternSider() {
         size = findSize(length);
         int amount = (int) Math.ceil(length / size) * 2;
-        return new PartLine("25x125mm. trykimp. Brædt", amount, 1).setSize(size);
+        return new PartLine("25x125mm. trykimp. Bræt", amount, 1).setSize(size);
 
     }
 
     private PartLine understernSider() {
         size = findSize(length);
         int amount = (int) Math.ceil(length / size) * 2;
-        return new PartLine("25x200mm. trykimp. Brædt", amount, 1).setSize(size);
+        return new PartLine("25x200mm. trykimp. Bræt", amount, 1).setSize(size);
     }
 
     private PartLine remCarport() {
@@ -82,13 +82,13 @@ public class CarPortList {
         if (!order.hasShed()) {
             amount *= 2;
         }
-        return new PartLine("19x100 mm. trykimp. Brædt", amount, 1).setSize(size);
+        return new PartLine("19x100 mm. trykimp. Bræt", amount, 1).setSize(size);
     }
 
     private PartLine vandbraetSide() {
         size = findSize(width);
         int amount = (int) Math.ceil(width / size) * 2;
-        return new PartLine("19x100 mm. trykimp. Brædt", amount, 1).setSize(size);
+        return new PartLine("19x100 mm. trykimp. Bræt", amount, 1).setSize(size);
     }
 
     private PartLine tagplade() {
