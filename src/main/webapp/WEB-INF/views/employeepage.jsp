@@ -36,7 +36,7 @@
         s += "<td>" + os.get(i).getCity() + "</td>";
         s += "<td>" + "26 April, 2018" + "</td>";
         s += "<td><span class=\"dot " + os.get(i).getStatusColor() + "\"></span>" + os.get(i).getStatus() + "</td>";
-        s += "<td>20." + rand.nextInt(10) + rand.nextInt(10) + rand.nextInt(10) + " kr.</td>";
+        s += "<td>" + os.get(i).getPrice() + "</td>";
 
         s += "<td class=\"center\"><a href=\"#modal" + os.get(i).getStringId() + "\" class=\"btn-floating btn-small waves-effect waves-light blue tooltipped modal-trigger\" data-position=\"right\" data-delay=\"20\" data-tooltip=\"Inspicer ordre\"><i class=\"material-icons\">navigate_next</i></a></td>";
 

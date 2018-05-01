@@ -5,6 +5,9 @@
  */
 package functionLayer;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.Random;
 
 /**
@@ -43,6 +46,32 @@ public class Order {
     
     /* status */
     private String status ="Behandles";
+    
+    public String getPrice(){
+        
+        int p = 500;
+        
+        
+        if(hasShed()){
+            p += shedWidth*shedLength*400;
+        }
+        
+        if(isFlat()){
+            
+            p+= width*length*300;
+        }else{
+            
+            p+= width*length*666;
+        }
+        
+        p /= 10000;
+        
+        NumberFormat nf = NumberFormat.getNumberInstance(Locale.GERMAN);
+        
+        
+        return nf.format(p) + " kr.";
+        
+    }
     
     
     /** 
