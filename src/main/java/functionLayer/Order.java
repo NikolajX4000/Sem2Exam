@@ -47,6 +47,10 @@ public class Order {
     /* status */
     private String status ="Behandles";
     
+    /**
+     *
+     * @return
+     */
     public String getPrice(){
         
         int p = 500;
@@ -130,6 +134,10 @@ public class Order {
         return randomString;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getStringId(){
         if(stringId == null){
             stringId = generateStringId(20);
@@ -137,145 +145,289 @@ public class Order {
         return stringId;
     }
     
+    /**
+     *
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     public Order setId(int id) {
         this.id = id;
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @param name
+     * @return
+     */
     public Order setName(String name) {
         this.name = name;
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getAddress() {
         return address;
     }
 
+    /**
+     *
+     * @param address
+     * @return
+     */
     public Order setAddress(String address) {
         this.address = address;
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getZipCode() {
         return zipCode;
     }
 
+    /**
+     *
+     * @param zipCode
+     * @return
+     */
     public Order setZipCode(int zipCode) {
         this.zipCode = zipCode;
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCity() {
         return city;
     }
 
+    /**
+     *
+     * @param city
+     * @return
+     */
     public Order setCity(String city) {
         this.city = city;
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getPhone() {
         return phone;
     }
 
+    /**
+     *
+     * @param phone
+     * @return
+     */
     public Order setPhone(String phone) {
         this.phone = phone;
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     *
+     * @param email
+     * @return
+     */
     public Order setEmail(String email) {
         this.email = email;
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNote() {
         return note;
     }
 
+    /**
+     *
+     * @param note
+     * @return
+     */
     public Order setNote(String note) {
         this.note = note;
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getWidth() {
         return width;
     }
 
+    /**
+     *
+     * @param width
+     * @return
+     */
     public Order setWidth(int width) {
         this.width = width;
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getLength() {
         return length;
     }
 
+    /**
+     *
+     * @param length
+     * @return
+     */
     public Order setLength(int length) {
         this.length = length;
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getRoof() {
         return roof;
     }
 
+    /**
+     *
+     * @param roof
+     * @return
+     */
     public Order setRoof(int roof) {
         this.roof = roof;
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getAngle() {
         return angle;
     }
 
+    /**
+     *
+     * @param angle
+     * @return
+     */
     public Order setAngle(int angle) {
         this.angle = angle;
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getShedWidth() {
         return shedWidth;
     }
 
+    /**
+     *
+     * @param shedWidth
+     * @return
+     */
     public Order setShedWidth(int shedWidth) {
         this.shedWidth = shedWidth;
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getShedLength() {
         return shedLength;
     }
 
+    /**
+     *
+     * @param shedLength
+     * @return
+     */
     public Order setShedLength(int shedLength) {
         this.shedLength = shedLength;
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getPlaced() {
         return placed;
     }
 
+    /**
+     *
+     * @param placed
+     * @return
+     */
     public Order setPlaced(String placed) {
         this.placed = placed;
         return this;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getStatus() {
         return status;
     }
 
+    /**
+     *
+     * @param status
+     * @return
+     */
     public Order setStatus(String status) {
         this.status = status;
         return this;

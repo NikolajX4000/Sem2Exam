@@ -2,6 +2,10 @@ package functionLayer;
 
 import java.util.*;
 
+/**
+ *
+ * @author super
+ */
 public class CarPortList {
 
     Order order;
@@ -14,6 +18,11 @@ public class CarPortList {
 
     List<PartLine> list = new ArrayList<>();
 
+    /**
+     *
+     * @param order
+     * @param sizes
+     */
     public CarPortList(Order order, int[] sizes) {
         this.order = order;
         this.sizes = sizes;
@@ -93,7 +102,7 @@ public class CarPortList {
 
     private PartLine tagplade() {
         size = findSize(length);
-        int amount = (int) Math.ceil(width / 100);// 9cm overlap
+        int amount = (int) Math.ceil(width / 89);// 20cm overlap
         amount *= (int) Math.ceil(length / size);
         return new PartLine("Plastmo Ecolite blåtonet", amount, 1).setSize(size);
     }
@@ -117,7 +126,19 @@ public class CarPortList {
     }
 
     private PartLine beklaedning() {
-        throw new UnsupportedOperationException("not implemented yet");
+        //6cm mellemrum
+        //10cm bred
+        int amount = 0;
+        //inderst sider
+        amount += (int) Math.ceil(order.getShedLength() / 16) * 2;
+        //inderst ender
+        amount += (int) Math.ceil(order.getShedWidth() / 16) * 2;
+        //yderst sider
+        amount += (int) Math.ceil((order.getShedLength() - 8) / 16) * 2;
+        //yderst ender
+        amount += (int) Math.ceil((order.getShedWidth() - 8) / 16) * 2;
+
+        return new PartLine("19x100 mm. trykimp. Bræt", amount, 1).setSize(210);
     }
 
     private int findSize(int length) {
@@ -154,6 +175,10 @@ public class CarPortList {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public List<PartLine> getParts() {
         return list;
     }
