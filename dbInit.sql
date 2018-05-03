@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `sem2exam`.`orders` (
   `angle` INT(11) NULL DEFAULT NULL,
   `shed_width` INT(11) NULL DEFAULT NULL,
   `shed_length` INT(11) NULL DEFAULT NULL,
-  `placed` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `placed` DATETIME DEFAULT CURRENT_TIMESTAMP,
   `status` VARCHAR(100) NOT NULL DEFAULT 'Behandles',
   `price` INT(11) NOT NULL,
   PRIMARY KEY (`order_id`, `roof_id`),
@@ -77,6 +77,24 @@ CREATE TABLE IF NOT EXISTS `sem2exam`.`planks` (
   UNIQUE INDEX `name_UNIQUE` (`name` ASC))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+
+/*roofs*/
+/*INSERT INTO roofs (name, price, type) VALUES ('Plasttrapezplader', 40, 0);
+INSERT INTO roofs (name, price, type) VALUES ('Betontagsten - Rød', 40, 1);
+INSERT INTO roofs (name, price, type) VALUES ('Betontagsten - Teglrød', 40, 1);
+INSERT INTO roofs (name, price, type) VALUES ('Betontagsten - Brun', 40, 1);
+INSERT INTO roofs (name, price, type) VALUES ('Betontagsten - Sort', 40, 1);
+INSERT INTO roofs (name, price, type) VALUES ('Eternittag B6 - Grå', 40, 1);
+INSERT INTO roofs (name, price, type) VALUES ('Eternittag B6 - Sort', 40, 1);
+INSERT INTO roofs (name, price, type) VALUES ('Eternittag B6 - Mokka(brun)', 40, 1);
+INSERT INTO roofs (name, price, type) VALUES ('Eternittag B6 - Rødbrun', 40, 1);
+INSERT INTO roofs (name, price, type) VALUES ('Eternittag B6 - Teglrød', 40, 1);
+INSERT INTO roofs (name, price, type) VALUES ('Eternittag B7 - Grå', 40, 1);
+INSERT INTO roofs (name, price, type) VALUES ('Eternittag B7 - Sort', 40, 1);
+INSERT INTO roofs (name, price, type) VALUES ('Eternittag B7 - Mokka(brun)', 40, 1);
+INSERT INTO roofs (name, price, type) VALUES ('Eternittag B7 - Rødbrun', 40, 1);
+INSERT INTO roofs (name, price, type) VALUES ('Eternittag B7 - Teglrød', 40, 1);
+INSERT INTO roofs (name, price, type) VALUES ('Eternittag B7 - Rødflammet', 40, 1);*/
 
 /*planks*/
 /*INSERT INTO planks (name, price) VALUES ('25x200 mm. trykimp. Bræt', 55);

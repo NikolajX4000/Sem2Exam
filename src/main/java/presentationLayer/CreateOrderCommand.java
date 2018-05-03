@@ -42,13 +42,13 @@ public class CreateOrderCommand extends Command{
             }
 
             //information
-            o.setName((String)request.getParameter("name"));
-            o.setAddress((String)request.getParameter("address"));
+            o.setName(request.getParameter("name"));
+            o.setAddress(request.getParameter("address"));
             o.setZipCode(Integer.parseInt(request.getParameter("zipcode")));
-            o.setCity((String)request.getParameter("city"));
-            o.setPhone((String)request.getParameter("phone"));
-            o.setEmail((String)request.getParameter("email"));
-            o.setNote((String)request.getParameter("note"));
+            o.setCity(request.getParameter("city"));
+            o.setPhone(request.getParameter("phone"));
+            o.setEmail(request.getParameter("email"));
+            o.setNote(request.getParameter("note"));
             
             LogicFacade.addOrder(o);
             

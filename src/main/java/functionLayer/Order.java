@@ -15,11 +15,11 @@ import java.util.Random;
  * @author Stephan
  */
 public class Order {
-    
+
     /* order */
     private int id;
     private String stringId;
-    
+
     /* customer */
     private String name;
     private String address;
@@ -28,78 +28,93 @@ public class Order {
     private String phone;
     private String email;
     private String note = "";
-    
+
     /* carport */
     private int width;
     private int length;
-    
+
     /* roof */
     private int roof;
     private int angle = 0;
-    
+
     /* shed */
     private int shedWidth = 0;
     private int shedLength = 0;
-    
+
     /* dates */
     private String placed;
-    
+
     /* status */
-    private String status ="Behandles";
-    
+    private String status = "Behandles";
+
     /**
      *
      * @return
      */
-    public String getPrice(){
-        
+    public String getPrice() {
+
         int p = 500;
-        
-        
-        if(hasShed()){
-            p += shedWidth*shedLength*400;
+
+        if (hasShed()) {
+            p += shedWidth * shedLength * 400;
         }
-        
-        if(isFlat()){
-            
-            p+= width*length*300;
-        }else{
-            
-            p+= width*length*666;
+
+        if (isFlat()) {
+
+            p += width * length * 300;
+        } else {
+
+            p += width * length * 666;
         }
-        
+
         p /= 10000;
-        
+
         NumberFormat nf = NumberFormat.getNumberInstance(Locale.GERMAN);
-        
-        
+
         return nf.format(p) + " kr.";
-        
+
     }
-    
-    
-    /** 
+
+    public int getPriceDB() {
+        int p = 500;
+        if (hasShed()) {
+            p += shedWidth * shedLength * 400;
+        }
+        if (isFlat()) {
+            p += width * length * 300;
+        } else {
+
+            p += width * length * 666;
+        }
+        p /= 10000;
+        return p;
+    }
+
+    /**
      * Checks if carport has shed
+     *
      * @return true if it does and false if it doesnt
      */
-    public boolean hasShed(){
+    public boolean hasShed() {
         return (shedWidth > 0 || shedLength > 0);
     }
-    
+
     /**
      * Checks if roof is flat
+     *
      * @return returns true if it is and false if it isnt
      */
-    public boolean isFlat(){
+    public boolean isFlat() {
         return (angle == 0);
     }
-    
+
     /**
      * Find the color associated with the current status
+     *
      * @return a color as a string
      */
-    public String getStatusColor(){
-        
+    public String getStatusColor() {
+
         String color = "orange";
         switch (status) {
             case "Modtaget":
@@ -117,34 +132,34 @@ public class Order {
         }
         return color;
     }
-    
-    private String generateStringId(int amount){
+
+    private String generateStringId(int amount) {
         amount--;
         String chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         String randomString = "x";
         Random rand = new Random();
         char[] text = new char[amount];
-        
+
         for (int i = 0; i < amount; i++) {
             text[i] = chars.charAt(rand.nextInt(chars.length()));
         }
-        for (int i = 0; i < text.length-1; i++) {
+        for (int i = 0; i < text.length - 1; i++) {
             randomString += text[i];
         }
         return randomString;
     }
-    
+
     /**
      *
      * @return
      */
-    public String getStringId(){
-        if(stringId == null){
+    public String getStringId() {
+        if (stringId == null) {
             stringId = generateStringId(20);
         }
         return stringId;
     }
-    
+
     /**
      *
      * @return
@@ -414,7 +429,7 @@ public class Order {
         this.placed = placed;
         return this;
     }
-    
+
     /**
      *
      * @return
@@ -434,10 +449,8 @@ public class Order {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "Order{" + "id=" + id + ", name=" + name + ", address=" + address + ", zipCode=" + zipCode + ", city=" + city + ", phone=" + phone + ", email=" + email + ", note=" + note + ", width=" + width + ", length=" + length + ", roof=" + roof + ", angle=" + angle + ", shedWidth=" + shedWidth + ", shedLength=" + shedLength + ", placed=" + placed + ", status=" + status + '}';
     }
-    
-    
+
 }

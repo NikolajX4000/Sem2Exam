@@ -9,6 +9,7 @@
         
         <p>Carport Information</p>
         ${feedback}
+        ${test}
         <br>
         <div class="row">
             <div class="input-field col s6">
@@ -57,7 +58,7 @@
                     <option value="690">690 cm</option>
                     <option value="720">720 cm</option>
                     <option value="750">750 cm</option>
-                    <option value="780">750 cm</option>
+                    <option value="780">780 cm</option>
                 </select>
                 <label>Carport længde</label>
             </div>
