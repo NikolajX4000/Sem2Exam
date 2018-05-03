@@ -107,13 +107,13 @@ public class CarPortList {
         return new PartLine("Plastmo Ecolite blåtonet", amount, 1).setSize(size);
     }
 
-    private PartLine løsholterGavl() {
+    private PartLine loesholterGavl() {
         size = findSize(order.getShedWidth() / 2);
         int amount = (int) Math.ceil(order.getShedWidth() / size) * 6;//3 i højden i begge sider
         return new PartLine("45x95 mm. Reglar ub.", amount, 1).setSize(size);
     }
 
-    private PartLine løsholterSider() {
+    private PartLine loesholterSider() {
         size = findSize(order.getShedLength() / 2);
         int amount = (int) Math.ceil(order.getShedLength() / size) * 4;//2 i højden i begge sider
         return new PartLine("45x95 mm. Reglar ub.", amount, 1).setSize(size);
@@ -168,8 +168,8 @@ public class CarPortList {
         list.add(tagplade());
 
         if (order.hasShed()) {
-            list.add(løsholterGavl());
-            list.add(løsholterSider());
+            list.add(loesholterGavl());
+            list.add(loesholterSider());
             list.add(remSkur());
             list.add(beklaedning());
         }
