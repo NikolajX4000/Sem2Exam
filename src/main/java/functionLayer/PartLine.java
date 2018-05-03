@@ -6,8 +6,9 @@ import java.util.*;
  *
  * @author super
  */
-public class PartLine {
-    
+public class PartLine
+{
+
     String name;
     int size;
     int amount;
@@ -23,8 +24,8 @@ public class PartLine {
     public PartLine(String name, int amount, int unit)
     {
         this.name = name;
-        this.amount = amount;
         this.unit = unit;
+        this.amount = (int) Math.ceil(amount / unit);
     }
 
     /**
@@ -93,8 +94,5 @@ public class PartLine {
     {
         return description;
     }
-
-    
-    
 
 }
