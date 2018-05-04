@@ -39,7 +39,7 @@ public class OrderMapper {
             /* carport */   + "width, length, "
             /* roof */      + "roof_id, angle, "
             /* shed */      + "shed_width, shed_length, "
-            /* dates */     + "placed) "
+            /* price */     + "price) "
                         + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             
             ps = con.prepareStatement( SQL, Statement.RETURN_GENERATED_KEYS );
@@ -66,8 +66,8 @@ public class OrderMapper {
                 ps.setInt( 12, order.getShedWidth() );
                 ps.setInt( 13, order.getShedLength() );
 
-                /* dates */
-                ps.setString( 14, order.getPlaced() );
+                /* price */
+                ps.setInt( 14, order.getPriceDB() );
                 
             } catch ( SQLException ex ) {
                 throw new CustomException( "Formateringsfejl" );
