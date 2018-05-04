@@ -218,8 +218,8 @@ public class CarPortList
         parts.add(new PartLine("4,5 x 70mm. Skruer", amount * 3, 400));
         parts.add(new PartLine("4,5 x 50mm. Skruer", amount / 2 * 3, 300));
 
-        parts.add(new PartLine("4,5 x 60 mm. skruer", 1, 200));
-        parts.add(new PartLine("4,0 x 50 mm. skruer", 3, 250));
+        parts.add(new PartLine("4,5 x 60 mm. skruer", 200, 200));
+        parts.add(new PartLine("4,0 x 50 mm. skruer", 750 , 250));
 
         return parts;
     }
