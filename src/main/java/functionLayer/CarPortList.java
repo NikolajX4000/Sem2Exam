@@ -1,6 +1,7 @@
 package functionLayer;
 
 import java.util.*;
+import storageLayer.MaterialMapper;
 
 /**
  *
@@ -18,84 +19,86 @@ public class CarPortList
     int width;
 
     List<PartLine> list = new ArrayList<>();
-
+    private HashMap<String, Material> materials;
     /**
      *
      * @param order
      * @param sizes
      */
-    public CarPortList(Order order, int[] sizes)
+    public CarPortList(Order order, int[] sizes) throws CustomException
     {
         this.order = order;
         this.sizes = sizes;
         length = order.getLength();
         width = order.getWidth();
+        materials = MaterialMapper.getMaterials(); // <- StorageFacade.getMaterials();
         addParts();
     }
 
     private PartLine oversternEnder()
     {
+        Material material = materials.get( "overstern" );
         size = findSize(width);
         int amount = (int) Math.ceil(width / size);
-        if (!order.hasShed())
-        {
+        if (!order.hasShed()) {
             amount *= 2;
         }
-        return new PartLine("25x125mm. trykimp. Bræt", amount, 1).setSize(size);
+        return new PartLine(material, amount).setSize(size);
     }
 
     private PartLine understernEnder()
     {
+        Material material = materials.get( "understern" );
         size = findSize(width);
         int amount = (int) Math.ceil(width / size) * 2;
-        return new PartLine("25x200mm. trykimp. Bræt", amount, 1).setSize(size);
+        return new PartLine(material, amount).setSize(size);
     }
 
     private PartLine oversternSider()
     {
+        Material material = materials.get( "overstern" );
         size = findSize(length);
         int amount = (int) Math.ceil(length / size) * 2;
-        return new PartLine("25x125mm. trykimp. Bræt", amount, 1).setSize(size);
+        return new PartLine(material, amount).setSize(size);
 
     }
 
     private PartLine understernSider()
     {
+        Material material = materials.get( "understern" );
         size = findSize(length);
         int amount = (int) Math.ceil(length / size) * 2;
-        return new PartLine("25x200mm. trykimp. Bræt", amount, 1).setSize(size);
+        return new PartLine(material, amount).setSize(size);
     }
 
     private PartLine remCarport()
     {
+        Material material = materials.get( "rem" );
         int carportLength = length - order.getShedLength();
         size = findSize(carportLength);
         int amount = (int) Math.ceil(carportLength / size) * 2;
-        return new PartLine("45x195 mm. spærtræ ubh.", amount, 1).setSize(size);
+        return new PartLine(material, amount).setSize(size);
     }
 
-    private PartLine spaer()
-    {
+    private PartLine spaer() {
+        Material material = materials.get( "spear" );
         int amount = 0;
-        if (!order.isFlat())
-        {
+        if (!order.isFlat()) {
             throw new UnsupportedOperationException("not implemented yet");
-        } else
-        {
+        } else {
             size = findSize(width);
             amount = (int) Math.ceil(length / 55) + 1;
         }
-        return new PartLine("45x195 mm. spærtræ ubh.", amount, 1).setSize(size);
+        return new PartLine(material, amount).setSize(size);
     }
 
-    private PartLine stolper()
-    {
+    private PartLine stolper() {
+        Material material = materials.get( "stolpe" );
         int amount = 6;
-        if (order.hasShed())
-        {
+        if (order.hasShed()) {
             amount += 5;
         }
-        return new PartLine("97x97 mm. trykimp. Stolpe", amount, 1).setSize(210);
+        return new PartLine(material, amount).setSize(210);
     }
 
     private PartLine vandbraetEnde()
@@ -106,14 +109,14 @@ public class CarPortList
         {
             amount *= 2;
         }
-        return new PartLine("19x100 mm. trykimp. Bræt", amount, 1).setSize(size);
+        return new PartLine(material, amount).setSize(size);
     }
 
     private PartLine vandbraetSide()
     {
         size = findSize(width);
         int amount = (int) Math.ceil(width / size) * 2;
-        return new PartLine("19x100 mm. trykimp. Bræt", amount, 1).setSize(size);
+        return new PartLine(material, amount).setSize(size);
     }
 
     private PartLine tagplade()
@@ -121,28 +124,28 @@ public class CarPortList
         size = findSize(length);
         int amount = (int) Math.ceil(width / 89);// 20cm overlap
         amount *= (int) Math.ceil(length / size);
-        return new PartLine("Plastmo Ecolite blåtonet", amount, 1).setSize(size);
+        return new PartLine(material, amount).setSize(size);
     }
 
     private PartLine loesholterGavl()
     {
         size = findSize(order.getShedWidth() / 2);
         int amount = (int) Math.ceil(order.getShedWidth() / size) * 6;//3 i højden i begge sider
-        return new PartLine("45x95 mm. Reglar ub.", amount, 1).setSize(size);
+        return new PartLine(material, amount).setSize(size);
     }
 
     private PartLine loesholterSider()
     {
         size = findSize(order.getShedLength() / 2);
         int amount = (int) Math.ceil(order.getShedLength() / size) * 4;//2 i højden i begge sider
-        return new PartLine("45x95 mm. Reglar ub.", amount, 1).setSize(size);
+        return new PartLine(material, amount).setSize(size);
     }
 
     private PartLine remSkur()
     {
         size = findSize(order.getShedLength());
         int amount = (int) Math.ceil(order.getShedLength() / size) * 2;
-        return new PartLine("45x195 mm. spærtræ ubh.", amount, 1).setSize(size);
+        return new PartLine(material, amount).setSize(size);
     }
 
     private PartLine beklaedning()

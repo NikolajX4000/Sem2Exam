@@ -9,7 +9,7 @@ import java.util.*;
 public class PartLine
 {
 
-    String name;
+    Material material;
     int size;
     int amount;
     int unit;
@@ -17,15 +17,24 @@ public class PartLine
 
     /**
      *
-     * @param name
      * @param amount
      * @param unit
      */
-    public PartLine(String name, int amount, int unit)
-    {
-        this.name = name;
-        this.unit = unit;
+    public PartLine(Material material, int amount) {
+        this.material = material;
         this.amount = (int) Math.ceil(amount / unit);
+    }
+
+    public int calculatePrice() {
+        return (int) Math.ceil( material.getPrice() * (size / 100d) * amount );
+    }
+    
+    public Material getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(Material material) {
+        this.material = material;
     }
 
     /**
@@ -33,8 +42,7 @@ public class PartLine
      * @param size
      * @return
      */
-    public PartLine setSize(int size)
-    {
+    public PartLine setSize(int size) {
         this.size = size;
         return this;
     }
@@ -44,8 +52,7 @@ public class PartLine
      * @param description
      * @return
      */
-    public PartLine setDescription(String description)
-    {
+    public PartLine setDescription(String description) {
         this.description = description;
         return this;
     }
@@ -54,17 +61,7 @@ public class PartLine
      *
      * @return
      */
-    public String getName()
-    {
-        return name;
-    }
-
-    /**
-     *
-     * @return
-     */
-    public int getSize()
-    {
+    public int getSize() {
         return size;
     }
 
@@ -72,8 +69,7 @@ public class PartLine
      *
      * @return
      */
-    public int getAmount()
-    {
+    public int getAmount() {
         return amount;
     }
 
@@ -81,8 +77,7 @@ public class PartLine
      *
      * @return
      */
-    public int getUnit()
-    {
+    public int getUnit() {
         return unit;
     }
 
