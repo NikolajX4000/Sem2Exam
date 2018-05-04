@@ -11,7 +11,6 @@ public class CarPortList
 {
 
     Order order;
-    int[] sizes;
     int size = 1;
     int tmp;
     int best = Integer.MAX_VALUE;
@@ -25,131 +24,148 @@ public class CarPortList
      * @param order
      * @param sizes
      */
-    public CarPortList(Order order, int[] sizes) throws CustomException
+    public CarPortList(Order order) throws CustomException
     {
         this.order = order;
-        this.sizes = sizes;
         length = order.getLength();
         width = order.getWidth();
-        materials = MaterialMapper.getMaterials(); // <- StorageFacade.getMaterials();
         addParts();
     }
 
-    private PartLine oversternEnder()
+    private PartLine oversternEnder() throws CustomException
     {
-        Material material = materials.get( "overstern" );
-        size = findSize(width);
+        List<Material> material = MaterialMapper.getMaterials( "overstern" );
+        List<Integer> sizes = collectSizes( material );
+        size = findSize(width, sizes);
         int amount = (int) Math.ceil(width / size);
         if (!order.hasShed()) {
             amount *= 2;
         }
-        return new PartLine(material, amount).setSize(size);
+        return new PartLine(material.get(1), amount).setSize(size);
     }
 
-    private PartLine understernEnder()
+    private PartLine understernEnder() throws CustomException
     {
-        Material material = materials.get( "understern" );
-        size = findSize(width);
+        List<Material> material = MaterialMapper.getMaterials( "understern" );
+        List<Integer> sizes = collectSizes( material );
+        size = findSize(width, sizes);
         int amount = (int) Math.ceil(width / size) * 2;
-        return new PartLine(material, amount).setSize(size);
+        return new PartLine(material.get(1), amount).setSize(size);
     }
 
-    private PartLine oversternSider()
+    private PartLine oversternSider() throws CustomException
     {
-        Material material = materials.get( "overstern" );
-        size = findSize(length);
+        List<Material> material = MaterialMapper.getMaterials( "overstern" );
+        List<Integer> sizes = collectSizes( material );
+        size = findSize(width, sizes);
         int amount = (int) Math.ceil(length / size) * 2;
-        return new PartLine(material, amount).setSize(size);
+        return new PartLine(material.get(1), amount).setSize(size);
 
     }
 
-    private PartLine understernSider()
+    private PartLine understernSider() throws CustomException
     {
-        Material material = materials.get( "understern" );
-        size = findSize(length);
+        List<Material> material = MaterialMapper.getMaterials( "understern" );
+        List<Integer> sizes = collectSizes( material );
+        size = findSize(length, sizes);
         int amount = (int) Math.ceil(length / size) * 2;
-        return new PartLine(material, amount).setSize(size);
+        return new PartLine(material.get(1), amount).setSize(size);
     }
 
-    private PartLine remCarport()
+    private PartLine remCarport() throws CustomException
     {
-        Material material = materials.get( "rem" );
+        List<Material> material = MaterialMapper.getMaterials( "rem" );
+        List<Integer> sizes = collectSizes( material );
         int carportLength = length - order.getShedLength();
-        size = findSize(carportLength);
+        size = findSize(carportLength, sizes);
         int amount = (int) Math.ceil(carportLength / size) * 2;
-        return new PartLine(material, amount).setSize(size);
+        return new PartLine(material.get(1), amount).setSize(size);
     }
 
-    private PartLine spaer() {
-        Material material = materials.get( "spear" );
+    private PartLine spaer() throws CustomException {
+        List<Material> material = MaterialMapper.getMaterials( "spear" );
+        List<Integer> sizes = collectSizes( material );
         int amount = 0;
         if (!order.isFlat()) {
             throw new UnsupportedOperationException("not implemented yet");
         } else {
-            size = findSize(width);
+            size = findSize(width, sizes);
             amount = (int) Math.ceil(length / 55) + 1;
         }
-        return new PartLine(material, amount).setSize(size);
+        return new PartLine(material.get(1), amount).setSize(size);
     }
 
-    private PartLine stolper() {
-        Material material = materials.get( "stolpe" );
+    private PartLine stolper() throws CustomException {
+        List<Material> material = MaterialMapper.getMaterials( "stolpe" );
         int amount = 6;
         if (order.hasShed()) {
             amount += 5;
         }
-        return new PartLine(material, amount).setSize(210);
+        return new PartLine(material.get(1), amount).setSize(210);
     }
 
-    private PartLine vandbraetEnde()
+    private PartLine vandbraetEnde() throws CustomException
     {
-        size = findSize(width);
+        List<Material> material = MaterialMapper.getMaterials( "vandbreat" );
+        List<Integer> sizes = collectSizes( material );
+        size = findSize(width, sizes);
         int amount = (int) Math.ceil(width / size);
         if (!order.hasShed())
         {
             amount *= 2;
         }
-        return new PartLine(material, amount).setSize(size);
+        return new PartLine(material.get(1), amount).setSize(size);
     }
 
-    private PartLine vandbraetSide()
+    private PartLine vandbraetSide() throws CustomException
     {
-        size = findSize(width);
+        List<Material> material = MaterialMapper.getMaterials( "vandbreat" );
+        List<Integer> sizes = collectSizes( material );
+        size = findSize(width, sizes);
         int amount = (int) Math.ceil(width / size) * 2;
-        return new PartLine(material, amount).setSize(size);
+        return new PartLine(material.get(1), amount).setSize(size);
     }
 
-    private PartLine tagplade()
+    private PartLine tagplade() throws CustomException
     {
-        size = findSize(length);
+        List<Material> material = MaterialMapper.getMaterials( "tagplade" );
+        List<Integer> sizes = collectSizes( material );
+        size = findSize(length, sizes);
         int amount = (int) Math.ceil(width / 89);// 20cm overlap
         amount *= (int) Math.ceil(length / size);
-        return new PartLine(material, amount).setSize(size);
+        return new PartLine(material.get(1), amount).setSize(size);
     }
 
-    private PartLine loesholterGavl()
+    private PartLine loesholterGavl() throws CustomException
     {
-        size = findSize(order.getShedWidth() / 2);
+        List<Material> material = MaterialMapper.getMaterials( "løsholte" );
+        List<Integer> sizes = collectSizes( material );
+        size = findSize(order.getShedWidth() / 2, sizes);
         int amount = (int) Math.ceil(order.getShedWidth() / size) * 6;//3 i højden i begge sider
-        return new PartLine(material, amount).setSize(size);
+        return new PartLine(material.get(1), amount).setSize(size);
     }
 
-    private PartLine loesholterSider()
+    private PartLine loesholterSider() throws CustomException
     {
-        size = findSize(order.getShedLength() / 2);
+        List<Material> material = MaterialMapper.getMaterials( "løsholte" );
+        List<Integer> sizes = collectSizes( material );
+        size = findSize(order.getShedLength() / 2, sizes);
         int amount = (int) Math.ceil(order.getShedLength() / size) * 4;//2 i højden i begge sider
-        return new PartLine(material, amount).setSize(size);
+        return new PartLine(material.get(1), amount).setSize(size);
     }
 
-    private PartLine remSkur()
+    private PartLine remSkur() throws CustomException
     {
-        size = findSize(order.getShedLength());
+        List<Material> material = MaterialMapper.getMaterials( "rem" );
+        List<Integer> sizes = collectSizes( material );
+        size = findSize(order.getShedLength(), sizes);
         int amount = (int) Math.ceil(order.getShedLength() / size) * 2;
-        return new PartLine(material, amount).setSize(size);
+        return new PartLine(material.get(1), amount).setSize(size);
     }
 
-    private PartLine beklaedning()
+    private PartLine beklaedning() throws CustomException
     {
+        List<Material> material = MaterialMapper.getMaterials( "beklaedning" );
         //6cm mellemrum
         //10cm bred
         int amount = 0;
@@ -162,7 +178,7 @@ public class CarPortList
         //yderst ender
         amount += (int) Math.ceil((order.getShedWidth() - 8) / 16) * 2;
 
-        return new PartLine("19x100 mm. trykimp. Bræt", amount, 1).setSize(210);
+        return new PartLine(material.get(1), amount).setSize(210);
     }
 
     private PartLine plastmoBundskruer()
@@ -242,21 +258,26 @@ public class CarPortList
         return new PartLine("vinkelbeslag 35", amount, 1);
     }
 
-    private int findSize(int length)
-    {
+    private int findSize(int length, List<Integer> sizes) {
         best = Integer.MAX_VALUE;
         size = 0;
-
-        for (int i = sizes.length; i > 0; i--)
-        {
-            tmp = length % sizes[i];
-            if (tmp < best)
-            {
-                size = sizes[i];
+        
+        for (int i = sizes.size() ; i > 0; i--) {
+            tmp = length % sizes.get(i);
+            if (tmp < best) {
+                size = sizes.get(i);
                 best = tmp;
             }
         }
         return size;
+    }
+    
+    private List<Integer> collectSizes( List<Material> list ) {
+        List<Integer> sizes = new ArrayList();
+        for (Material material : list) {
+            sizes.add( material.getSize() );
+        }
+        return sizes;
     }
 
     private void addParts()
