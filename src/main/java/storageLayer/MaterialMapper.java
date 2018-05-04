@@ -25,7 +25,12 @@ import java.util.logging.Logger;
  */
 public class MaterialMapper {
     
-    
+    /**
+     *
+     * @param material
+     * @return
+     * @throws CustomException
+     */
     public static List<Material> getMaterials(String material) throws CustomException {
         PreparedStatement ps = null;
         List<Material> materials = new ArrayList();
@@ -55,6 +60,12 @@ public class MaterialMapper {
         return materials;
     } 
     
+    /**
+     *
+     * @param material
+     * @return
+     * @throws CustomException
+     */
     public static Material addMaterial( Material material ) throws CustomException {
         PreparedStatement ps = null;
         
@@ -91,6 +102,12 @@ public class MaterialMapper {
         return material;
     }
     
+    /**
+     *
+     * @param material
+     * @return
+     * @throws CustomException
+     */
     public static Material updateMaterial( Material material ) throws CustomException {
         PreparedStatement ps = null;
         
@@ -122,6 +139,12 @@ public class MaterialMapper {
         return material;
     }
     
+    /**
+     *
+     * @param id
+     * @return
+     * @throws CustomException
+     */
     public static boolean deleteMaterial( int id ) throws CustomException {
         throw new UnsupportedOperationException("comming soon");
     }

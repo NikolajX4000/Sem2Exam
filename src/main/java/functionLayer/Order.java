@@ -75,6 +75,10 @@ public class Order {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public int getPriceDB() {
         int p = 500;
         if (hasShed()) {

@@ -17,26 +17,44 @@ public class PartLine
 
     /**
      *
+     * @param material
      * @param amount
-     * @param unit
      */
     public PartLine(Material material, int amount) {
         this.material = material;
         this.amount = (int) Math.ceil(amount / unit);
     }
     
+    /**
+     *
+     * @param name
+     * @param amount
+     * @param unit
+     */
     public PartLine(String name, int amount, int unit) {
         // Comming soon
     }
 
+    /**
+     *
+     * @return
+     */
     public int calculatePrice() {
         return (int) Math.ceil( material.getPrice() * (size / 100d) * amount );
     }
     
+    /**
+     *
+     * @return
+     */
     public Material getMaterial() {
         return material;
     }
 
+    /**
+     *
+     * @param material
+     */
     public void setMaterial(Material material) {
         this.material = material;
     }

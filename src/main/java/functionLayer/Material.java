@@ -16,46 +16,91 @@ public class Material {
     private int size;
     private String description;
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @param name
+     * @return
+     */
     public Material setName(String name) {
         this.name = name;
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     public Material setId(int id) {
         this.id = id;
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getPrice() {
         return price;
     }
 
+    /**
+     *
+     * @param price
+     * @return
+     */
     public Material setPrice(int price) {
         this.price = price;
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getSize() {
         return size;
     }
 
+    /**
+     *
+     * @param size
+     * @return
+     */
     public Material setSize(int size) {
         this.size = size;
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     *
+     * @param description
+     * @return
+     */
     public Material setDescription(String description) {
         this.description = description;
         return this;
