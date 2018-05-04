@@ -1,5 +1,5 @@
 -- MySQL Workbench Synchronization
--- Generated: 2018-05-03 19:17
+-- Generated: 2018-05-04 10:38
 -- Model: New Model
 -- Version: 1.0
 -- Project: Name of the project
@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `sem2exam`.`orders` (
   `angle` INT(11) NULL DEFAULT NULL,
   `shed_width` INT(11) NULL DEFAULT NULL,
   `shed_length` INT(11) NULL DEFAULT NULL,
-  `placed` DATETIME DEFAULT CURRENT_TIMESTAMP,
+  `placed` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status` VARCHAR(100) NOT NULL DEFAULT 'Behandles',
   `price` INT(11) NOT NULL,
   PRIMARY KEY (`order_id`, `roof_id`),
@@ -41,8 +41,7 @@ DEFAULT CHARACTER SET = utf8;
 CREATE TABLE IF NOT EXISTS `sem2exam`.`roofs` (
   `roof_id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
-  `price` INT(11) NOT NULL,
-  `type` INT(11) NOT NULL COMMENT '0 = flatt\n1 = raised',
+  `type` INT(11) NOT NULL COMMENT '0 = flat\n1 = raised',
   PRIMARY KEY (`roof_id`),
   UNIQUE INDEX `roof_id_UNIQUE` (`roof_id` ASC),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC))
@@ -59,73 +58,107 @@ CREATE TABLE IF NOT EXISTS `sem2exam`.`employees` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-CREATE TABLE IF NOT EXISTS `sem2exam`.`sizes` (
-  `size_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `size` INT(11) NOT NULL,
-  PRIMARY KEY (`size_id`),
-  UNIQUE INDEX `size_id_UNIQUE` (`size_id` ASC),
-  UNIQUE INDEX `size_UNIQUE` (`size` ASC))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-CREATE TABLE IF NOT EXISTS `sem2exam`.`planks` (
+CREATE TABLE IF NOT EXISTS `sem2exam`.`materials` (
   `plank_id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `price` INT(11) NOT NULL,
+  `description` VARCHAR(45) NOT NULL,
+  `size` INT(11) NOT NULL,
   PRIMARY KEY (`plank_id`),
-  UNIQUE INDEX `plank_id_UNIQUE` (`plank_id` ASC),
-  UNIQUE INDEX `name_UNIQUE` (`name` ASC))
+  UNIQUE INDEX `plank_id_UNIQUE` (`plank_id` ASC))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 /*roofs*/
-/*INSERT INTO roofs (name, price, type) VALUES ('Plasttrapezplader', 40, 0);
-INSERT INTO roofs (name, price, type) VALUES ('Betontagsten - Rød', 40, 1);
-INSERT INTO roofs (name, price, type) VALUES ('Betontagsten - Teglrød', 40, 1);
-INSERT INTO roofs (name, price, type) VALUES ('Betontagsten - Brun', 40, 1);
-INSERT INTO roofs (name, price, type) VALUES ('Betontagsten - Sort', 40, 1);
-INSERT INTO roofs (name, price, type) VALUES ('Eternittag B6 - Grå', 40, 1);
-INSERT INTO roofs (name, price, type) VALUES ('Eternittag B6 - Sort', 40, 1);
-INSERT INTO roofs (name, price, type) VALUES ('Eternittag B6 - Mokka(brun)', 40, 1);
-INSERT INTO roofs (name, price, type) VALUES ('Eternittag B6 - Rødbrun', 40, 1);
-INSERT INTO roofs (name, price, type) VALUES ('Eternittag B6 - Teglrød', 40, 1);
-INSERT INTO roofs (name, price, type) VALUES ('Eternittag B7 - Grå', 40, 1);
-INSERT INTO roofs (name, price, type) VALUES ('Eternittag B7 - Sort', 40, 1);
-INSERT INTO roofs (name, price, type) VALUES ('Eternittag B7 - Mokka(brun)', 40, 1);
-INSERT INTO roofs (name, price, type) VALUES ('Eternittag B7 - Rødbrun', 40, 1);
-INSERT INTO roofs (name, price, type) VALUES ('Eternittag B7 - Teglrød', 40, 1);
-INSERT INTO roofs (name, price, type) VALUES ('Eternittag B7 - Rødflammet', 40, 1);*/
+/*
+INSERT INTO roofs (name, type) VALUES ('Plasttrapezplader', 0);
+INSERT INTO roofs (name, type) VALUES ('Betontagsten - Rød', 1);
+INSERT INTO roofs (name, type) VALUES ('Betontagsten - Teglrød', 1);
+INSERT INTO roofs (name, type) VALUES ('Betontagsten - Brun', 1);
+INSERT INTO roofs (name, type) VALUES ('Betontagsten - Sort', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B6 - Grå', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B6 - Sort', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B6 - Mokka(brun)', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B6 - Rødbrun', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B6 - Teglrød', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Grå', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Sort', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Mokka(brun)', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Rødbrun', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Teglrød', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Rødflammet', 1);
+*/
 
-/*planks*/
-/*INSERT INTO planks (name, price) VALUES ('25x200 mm. trykimp. Bræt', 55);
-INSERT INTO planks (name, price) VALUES ('25x125 mm. trykimp. Bræt', 32);
-INSERT INTO planks (name, price) VALUES ('38x73 mm. Lægte ubh.', 23);
-INSERT INTO planks (name, price) VALUES ('45x95 mm. Reglar ubh.', 16);
-INSERT INTO planks (name, price) VALUES ('45x195 mm. spærtræ ubh.', 39);
-INSERT INTO planks (name, price) VALUES ('97x97 mm. trykimp. Stolpe', 35);
-INSERT INTO planks (name, price) VALUES ('19x100 mm. trykimp. Bræt', 21);
-INSERT INTO planks (name, price) VALUES ('Plastmo Ecolite blåtonet', 40);*/
+/*dummy orders*/
+/*
+INSERT INTO orders (name,address,zip_code,city,phone,email,note,width,length,roof_id,angle,shed_width,shed_length,placed,price) VALUES ('Dummy','Dummy 1',1234,'Dummy',12345678,'dummy@dummy.dummy','Dummy',240,240,2,0,0,0,CURRENT_TIME(),2.40*2.40*300);
+INSERT INTO orders (name,address,zip_code,city,phone,email,note,width,length,roof_id,angle,shed_width,shed_length,placed,price) VALUES ('Dummy','Dummy 1',1234,'Dummy',12345678,'dummy@dummy.dummy','Dummy',240,240,1,25,0,0,CURRENT_TIME(),2.40*2.40*666);
+*/
 
-/*sizes*/
-/*INSERT INTO sizes (size) VALUES (180);
-INSERT INTO sizes (size) VALUES (210);
-INSERT INTO sizes (size) VALUES (240);
-INSERT INTO sizes (size) VALUES (270);
-INSERT INTO sizes (size) VALUES (300);
-INSERT INTO sizes (size) VALUES (330);
-INSERT INTO sizes (size) VALUES (360);
-INSERT INTO sizes (size) VALUES (390);
-INSERT INTO sizes (size) VALUES (420);
-INSERT INTO sizes (size) VALUES (450);
-INSERT INTO sizes (size) VALUES (480);
-INSERT INTO sizes (size) VALUES (510);
-INSERT INTO sizes (size) VALUES (540);
-INSERT INTO sizes (size) VALUES (570);
-INSERT INTO sizes (size) VALUES (600);
-INSERT INTO sizes (size) VALUES (630);
-INSERT INTO sizes (size) VALUES (660);
-INSERT INTO sizes (size) VALUES (690);
-INSERT INTO sizes (size) VALUES (720);*/
+/*materials*/
+/*
+INSERT INTO materials (name,price,description,size) VALUES('overstern',32,'25x125mm. trykimp. Bræt',300);
+INSERT INTO materials (name,price,description,size) VALUES('overstern',32,'25x125mm. trykimp. Bræt',360);
+INSERT INTO materials (name,price,description,size) VALUES('overstern',32,'25x125mm. trykimp. Bræt',420);
+INSERT INTO materials (name,price,description,size) VALUES('overstern',32,'25x125mm. trykimp. Bræt',480);
+INSERT INTO materials (name,price,description,size) VALUES('overstern',32,'25x125mm. trykimp. Bræt',540);
+INSERT INTO materials (name,price,description,size) VALUES('overstern',32,'25x125mm. trykimp. Bræt',600);
+INSERT INTO materials (name,price,description,size) VALUES('understern',55,'25x200mm. trykimp. Bræt',300);
+INSERT INTO materials (name,price,description,size) VALUES('understern',55,'25x200mm. trykimp. Bræt',360);
+INSERT INTO materials (name,price,description,size) VALUES('understern',55,'25x200mm. trykimp. Bræt',420);
+INSERT INTO materials (name,price,description,size) VALUES('understern',55,'25x200mm. trykimp. Bræt',480);
+INSERT INTO materials (name,price,description,size) VALUES('understern',55,'25x200mm. trykimp. Bræt',540);
+INSERT INTO materials (name,price,description,size) VALUES('understern',55,'25x200mm. trykimp. Bræt',600);
+INSERT INTO materials (name,price,description,size) VALUES('rem',39,'45x195 mm. spærtræ ubh.',300);
+INSERT INTO materials (name,price,description,size) VALUES('rem',39,'45x195 mm. spærtræ ubh.',360);
+INSERT INTO materials (name,price,description,size) VALUES('rem',39,'45x195 mm. spærtræ ubh.',420);
+INSERT INTO materials (name,price,description,size) VALUES('rem',39,'45x195 mm. spærtræ ubh.',480);
+INSERT INTO materials (name,price,description,size) VALUES('rem',39,'45x195 mm. spærtræ ubh.',540);
+INSERT INTO materials (name,price,description,size) VALUES('rem',39,'45x195 mm. spærtræ ubh.',600);
+INSERT INTO materials (name,price,description,size) VALUES('rem',39,'45x195 mm. spærtræ ubh.',660);
+INSERT INTO materials (name,price,description,size) VALUES('rem',39,'45x195 mm. spærtræ ubh.',720);
+INSERT INTO materials (name,price,description,size) VALUES('spær',39,'45x195 mm. spærtræ ubh.',300);
+INSERT INTO materials (name,price,description,size) VALUES('spær',39,'45x195 mm. spærtræ ubh.',360);
+INSERT INTO materials (name,price,description,size) VALUES('spær',39,'45x195 mm. spærtræ ubh.',420);
+INSERT INTO materials (name,price,description,size) VALUES('spær',39,'45x195 mm. spærtræ ubh.',480);
+INSERT INTO materials (name,price,description,size) VALUES('spær',39,'45x195 mm. spærtræ ubh.',540);
+INSERT INTO materials (name,price,description,size) VALUES('spær',39,'45x195 mm. spærtræ ubh.',600);
+INSERT INTO materials (name,price,description,size) VALUES('spær',39,'45x195 mm. spærtræ ubh.',660);
+INSERT INTO materials (name,price,description,size) VALUES('spær',39,'45x195 mm. spærtræ ubh.',720);
+INSERT INTO materials (name,price,description,size) VALUES('stolpe',35,'97x97 mm. trykimp. Stolpe',180);
+INSERT INTO materials (name,price,description,size) VALUES('stolpe',35,'97x97 mm. trykimp. Stolpe',210);
+INSERT INTO materials (name,price,description,size) VALUES('stolpe',35,'97x97 mm. trykimp. Stolpe',240);
+INSERT INTO materials (name,price,description,size) VALUES('stolpe',35,'97x97 mm. trykimp. Stolpe',270);
+INSERT INTO materials (name,price,description,size) VALUES('stolpe',35,'97x97 mm. trykimp. Stolpe',300);
+INSERT INTO materials (name,price,description,size) VALUES('stolpe',35,'97x97 mm. trykimp. Stolpe',360);
+INSERT INTO materials (name,price,description,size) VALUES('stolpe',35,'97x97 mm. trykimp. Stolpe',420);
+INSERT INTO materials (name,price,description,size) VALUES('stolpe',35,'97x97 mm. trykimp. Stolpe',480);
+INSERT INTO materials (name,price,description,size) VALUES('vandbræt',21,'19x100 mm. trykimp. Bræt',300);
+INSERT INTO materials (name,price,description,size) VALUES('vandbræt',21,'19x100 mm. trykimp. Bræt',360);
+INSERT INTO materials (name,price,description,size) VALUES('vandbræt',21,'19x100 mm. trykimp. Bræt',420);
+INSERT INTO materials (name,price,description,size) VALUES('vandbræt',21,'19x100 mm. trykimp. Bræt',480);
+INSERT INTO materials (name,price,description,size) VALUES('tagplade',40,'Plastmo Ecolite blåtonet',240);
+INSERT INTO materials (name,price,description,size) VALUES('tagplade',40,'Plastmo Ecolite blåtonet',300);
+INSERT INTO materials (name,price,description,size) VALUES('tagplade',40,'Plastmo Ecolite blåtonet',360);
+INSERT INTO materials (name,price,description,size) VALUES('tagplade',40,'Plastmo Ecolite blåtonet',420);
+INSERT INTO materials (name,price,description,size) VALUES('tagplade',40,'Plastmo Ecolite blåtonet',480);
+INSERT INTO materials (name,price,description,size) VALUES('tagplade',40,'Plastmo Ecolite blåtonet',600);
+INSERT INTO materials (name,price,description,size) VALUES('løsholte',16,'45x95 mm. Reglar ub.',240);
+INSERT INTO materials (name,price,description,size) VALUES('løsholte',16,'45x95 mm. Reglar ub.',270);
+INSERT INTO materials (name,price,description,size) VALUES('løsholte',16,'45x95 mm. Reglar ub.',300);
+INSERT INTO materials (name,price,description,size) VALUES('løsholte',16,'45x95 mm. Reglar ub.',330);
+INSERT INTO materials (name,price,description,size) VALUES('løsholte',16,'45x95 mm. Reglar ub.',360);
+INSERT INTO materials (name,price,description,size) VALUES('løsholte',16,'45x95 mm. Reglar ub.',390);
+INSERT INTO materials (name,price,description,size) VALUES('løsholte',16,'45x95 mm. Reglar ub.',420);
+INSERT INTO materials (name,price,description,size) VALUES('løsholte',16,'45x95 mm. Reglar ub.',450);
+INSERT INTO materials (name,price,description,size) VALUES('løsholte',16,'45x95 mm. Reglar ub.',480);
+INSERT INTO materials (name,price,description,size) VALUES('løsholte',16,'45x95 mm. Reglar ub.',510);
+INSERT INTO materials (name,price,description,size) VALUES('løsholte',16,'45x95 mm. Reglar ub.',540);
+INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x100 mm. trykimp. Bræt',300);
+INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x100 mm. trykimp. Bræt',360);
+INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x100 mm. trykimp. Bræt',420);
+INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x100 mm. trykimp. Bræt',480);
+*/
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
