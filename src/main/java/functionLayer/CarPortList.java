@@ -1,6 +1,5 @@
 package functionLayer;
 
-import java.sql.SQLException;
 import java.util.*;
 import storageLayer.MaterialMapper;
 
@@ -248,7 +247,7 @@ public class CarPortList {
     }
 
     private List<Integer> collectSizes(List<Material> list) {
-        List<Integer> sizes = new ArrayList();
+        List<Integer> sizes = new ArrayList<>();
         for (Material material : list) {
             sizes.add(material.getSize());
         }
