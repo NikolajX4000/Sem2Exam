@@ -128,6 +128,16 @@ public class RenderOrder {
         
         s+="<div id=\""+ o.getStringId() + "b" +"\">";
             s+="<span class=\"card-title\">Tegninger</span>";
+            s+="<div class='row'>";
+            if(o.isFlat()){
+                s+= "<div class=\"col m6 s12\">" + DrawCarport.flatSide(o.getLength(), o.getWidth(), o.getShedLength(), o.hasShed()) + "</div>";
+                s+= "<div class=\"col m6 s12\">" + DrawCarport.flatTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed()) + "</div>";
+            }else{
+                s+= "<div class=\"col m6 s12\">" + DrawCarport.angledSide(o.getLength(), o.getWidth(), o.getShedLength(), o.getAngle(), o.hasShed()) + "</div>";
+                s+= "<div class=\"col m6 s12\">" + DrawCarport.angledTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed()) + "</div>";
+            }
+            s+="</div>";
+            
         s+="</div>";
         
         return s;

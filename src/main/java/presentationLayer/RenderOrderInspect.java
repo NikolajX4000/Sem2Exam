@@ -33,7 +33,17 @@ public class RenderOrderInspect {
         s += "<i class=\"material-icons\">photo</i>Tegninger";
         s += "</div>";
 
-        s += "<div class=\"collapsible-body\"><p>Lorem ipsum dolor sit amet.</p></div>";
+        s += "<div class=\"collapsible-body row\">";
+            
+        if(o.isFlat()){
+            s+= "<div class=\"col m6\">" + DrawCarport.flatTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed()) + "</div>";
+            s+= "<div class=\"col m6\">" + DrawCarport.flatSide(o.getLength(), o.getWidth(), o.getShedLength(), o.hasShed()) + "</div>";
+        }else{
+            s+= "<div class=\"col m6\">" + DrawCarport.angledTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed()) + "</div>";
+            s+= "<div class=\"col m6\">" + DrawCarport.angledSide(o.getLength(), o.getWidth(), o.getShedLength(), o.getAngle(), o.hasShed()) + "</div>";
+        }
+        
+        s += "</div>";
 
         return s += "</li>";
     }
