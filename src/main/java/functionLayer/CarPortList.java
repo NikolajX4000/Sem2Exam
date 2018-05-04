@@ -121,7 +121,7 @@ public class CarPortList
         size = findSize(length);
         int amount = (int) Math.ceil(width / 89);// 20cm overlap
         amount *= (int) Math.ceil(length / size);
-        return new PartLine("Plastmo Ecolite blåtonet", amount, 1).setSize(size);
+            return new PartLine("Plastmo Ecolite blåtonet", amount, 1).setSize(size);
     }
 
     private PartLine loesholterGavl()
