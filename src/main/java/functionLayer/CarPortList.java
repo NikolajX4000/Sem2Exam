@@ -1,5 +1,6 @@
 package functionLayer;
 
+import java.sql.SQLException;
 import java.util.*;
 import storageLayer.MaterialMapper;
 
@@ -280,8 +281,7 @@ public class CarPortList
         return sizes;
     }
 
-    private void addParts()
-    {
+    private void addParts() throws CustomException {
         list.add(oversternEnder());
         list.add(understernEnder());
         list.add(oversternSider());

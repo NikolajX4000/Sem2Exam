@@ -24,6 +24,10 @@ public class PartLine
         this.material = material;
         this.amount = (int) Math.ceil(amount / unit);
     }
+    
+    public PartLine(String name, int amount, int unit) {
+        // Comming soon
+    }
 
     public int calculatePrice() {
         return (int) Math.ceil( material.getPrice() * (size / 100d) * amount );
