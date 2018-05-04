@@ -164,7 +164,9 @@ public class CarPortList
 
     private PartLine plastmoBundskruer()
     {
-        throw new UnsupportedOperationException("not yet supported");
+        size = length * width;
+        int amount = (size / 100) * 24;
+        return new PartLine("plastmo bundskruer", amount, 200);
     }
 
     private PartLine hulbånd()
@@ -212,16 +214,16 @@ public class CarPortList
         amount += (int) Math.ceil((order.getShedWidth() - 8) / 16) * 2;
         parts.add(new PartLine("4,5 x 70mm. Skruer", amount * 3, 400));
         parts.add(new PartLine("4,5 x 50mm. Skruer", amount / 2 * 3, 300));
-        
-//        4,5 x 60 mm. skruer 200 stk.          mangler
-//        4,0 x 50 mm. beslagskruer 250 stk.    mangler
-        
+
+        parts.add(new PartLine("4,5 x 60 mm. skruer", 1, 200));
+        parts.add(new PartLine("4,0 x 50 mm. skruer", 3, 250));
+
         return parts;
     }
 
     private PartLine stalddørsgreb()
     {
-        return new PartLine("stalddørsgreb 50 x 75", 1, 1);
+        return new PartLine("stalddørsgreb 50 x 75", 1, 2);
     }
 
     private PartLine tHængsel()
