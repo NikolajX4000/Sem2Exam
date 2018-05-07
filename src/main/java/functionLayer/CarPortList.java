@@ -99,7 +99,7 @@ public class CarPortList {
     }
 
     private PartLine vandbraetEnde() throws CustomException {
-        List<Material> material = MaterialMapper.getMaterials("vandbreat");
+        List<Material> material = MaterialMapper.getMaterials("vandbræt");
         List<Integer> sizes = collectSizes(material);
         size = findSize(width, sizes);
         int amount = (int) Math.ceil(width / size);
@@ -110,7 +110,7 @@ public class CarPortList {
     }
 
     private PartLine vandbraetSide() throws CustomException {
-        List<Material> material = MaterialMapper.getMaterials("vandbreat");
+        List<Material> material = MaterialMapper.getMaterials("vandbræt");
         List<Integer> sizes = collectSizes(material);
         size = findSize(width, sizes);
         int amount = (int) Math.ceil(width / size) * 2;
@@ -151,7 +151,7 @@ public class CarPortList {
     }
 
     private PartLine beklaedning() throws CustomException {
-        List<Material> material = MaterialMapper.getMaterials("beklaedning");
+        List<Material> material = MaterialMapper.getMaterials("beklædning");
         //6cm mellemrum
         //10cm bred
         int amount = 0;
