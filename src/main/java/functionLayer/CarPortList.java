@@ -77,7 +77,7 @@ public class CarPortList {
     }
 
     private PartLine spaer() throws CustomException {
-        List<Material> material = MaterialMapper.getMaterials("spear");
+        List<Material> material = MaterialMapper.getMaterials("spær");
         List<Integer> sizes = collectSizes(material);
         int amount = 0;
         if (!order.isFlat()) {
