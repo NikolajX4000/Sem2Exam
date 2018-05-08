@@ -1,0 +1,91 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08-05-2018, 10:16:39
+    Author     : Hupra Laptop
+*/
+
+
+svg{
+    background: white;
+}
+.dot{
+    position: relative;
+    margin-right: 20px;
+}
+.dot:after{
+    content: '\2022';
+    position: absolute;
+    font-size: 50px;
+    left: 0;
+    top:-28px;
+}
+.dot.green:after{
+    color: #4caf50;
+}
+.dot.red:after{
+    color: #f44336;
+}
+.dot.yellow:after{
+    color: #ffeb3b;
+}
+.dot.blue:after{
+    color: #2196f3;
+}
+.dot.orange:after{
+    color: #ff9800;
+}
+
+ul.tabs > li.tab > a, ul.tabs > li.tab > a.active{
+    color: black;
+}
+ul.tabs > li.tab > a:hover{
+    color: #2196f3;
+}
+.tabs .indicator {
+    background-color:#2196f3;
+} /*Color of underline*/
+
+html {
+    overflow-y: scroll;
+}
+
+nav{
+    background: #004789;
+}
+.brand-logo {
+    height: 64px;
+    max-height: 100%;	    
+}
+.brand-logo img{
+    max-height: 100%;
+}
+.parallax-container {
+    height: 200px;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto;
+}
+footer h5,h6{
+    text-transform: uppercase;
+    color: white;
+}
+footer li a{
+    color: whitesmoke;
+    font-size: .8rem;
+    opacity: 0.6;
+}
+footer a:hover{
+    opacity: 1;
+}
+.para-footer{
+    margin-top: auto;
+}

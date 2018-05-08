@@ -23,7 +23,7 @@
     }
 </style>
 
-<div id="x348765" class="draggable hidden">
+<div id="x348765" class="draggable">
     <p class="z873945">Parameters:</p>
     <p>${param}</p>
     <p class="z873945">Session:</p>

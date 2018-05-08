@@ -225,59 +225,5 @@
     </form>
     
 </div>
-    
-    
-    
-    
-    
-
-
-<script>
-    
-$("select[required]").css({display: "block", height: 0, padding: 0, width: 0, position: 'absolute'});
-    
-$(document).ready(function() {
-    $('select').material_select();
-});
-
-$(function () {
-  $('.shedbox').change(function () {                
-     $('.shedinfo').toggle(this.checked);
-  }).change(); //ensure visible state matches initially
-});
-
-$(document).ready(function(){
-    $('.materialboxed').materialbox();
-});
-
-$(function () {
-  $('.anglebox').change(function () {                
-     $('.angleinfo').toggle(this.checked);
-     
-     $('.angeled').toggle(this.checked);
-     $('.flat').toggle(!this.checked);
-     
-    if (this.checked) {
-        $("#flatroof").attr("disabled", true);
-        
-        
-        // toggle required to right select
-        $("#heighroof").attr("required", true);
-        $("#flatroof").removeAttr("required");
-        
-    } else {
-        $("#flatroof").removeAttr("disabled");
-        
-        
-        // toggle required to right select
-        $("#flatroof").attr("required", true);
-        $("#heighroof").removeAttr("required");
-    }
-     
-  }).change(); //ensure visible state matches initially
-});
-
-
-</script>
       
 <%@include file="/WEB-INF/jspf/footer.jspf"%>

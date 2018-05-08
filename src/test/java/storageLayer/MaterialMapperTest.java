@@ -13,6 +13,7 @@ public class MaterialMapperTest {
 
     /**
      * Test of getMaterials method, of class MaterialMapper.
+     * @throws java.lang.Exception
      */
     @Test
     public void testGetMaterials() throws Exception{
@@ -20,6 +21,7 @@ public class MaterialMapperTest {
 
     /**
      * Test of addMaterial method, of class MaterialMapper.
+     * @throws java.lang.Exception
      */
     @Test
     public void testAddMaterial() throws Exception {
@@ -27,6 +29,7 @@ public class MaterialMapperTest {
 
     /**
      * Test of updateMaterial method, of class MaterialMapper.
+     * @throws java.lang.Exception
      */
     @Test
     public void testUpdateMaterial() throws Exception {
@@ -34,9 +37,10 @@ public class MaterialMapperTest {
 
     /**
      * Test of deleteMaterial method, of class MaterialMapper.
+     * @throws java.lang.Exception
      */
     @Test
     public void testDeleteMaterial() throws Exception {
     }
-    
+
 }
