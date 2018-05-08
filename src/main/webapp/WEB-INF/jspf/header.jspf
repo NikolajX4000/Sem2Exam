@@ -24,8 +24,7 @@
         <!-- custom CSS -->
         <link rel="stylesheet" type="text/css" href="static/style.css"/>
         
-        <!-- custom JavaScript -->
-        <script src="static/script.js"></script>
+        
 
 
     </head>
