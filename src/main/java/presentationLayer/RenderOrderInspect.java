@@ -97,10 +97,13 @@ public class RenderOrderInspect {
             s+="<label for=\""+o.getId()+"label2\">Sendt</label>";
         s+="</p>";
         
-        s+="<p>";
-            s+="<input "+isChecked("Behandles")+" name=\"newStatus\" type=\"radio\" id=\""+o.getId()+"label3\" value=\"Behandles\"/>";
-            s+="<label for=\""+o.getId()+"label3\">Behandles</label>";
-        s+="</p>";
+        
+        if(o.getStatus().equals("Behandles")){
+            s+="<p>";
+                s+="<input "+isChecked("Behandles")+" name=\"newStatus\" type=\"radio\" id=\""+o.getId()+"label3\" value=\"Behandles\"/>";
+                s+="<label for=\""+o.getId()+"label3\">Behandles</label>";
+            s+="</p>";
+        }
         
         s+="<p>";
             s+="<input "+isChecked("Annulleret")+" name=\"newStatus\" type=\"radio\" id=\""+o.getId()+"label4\" value=\"Annulleret\"/>";
