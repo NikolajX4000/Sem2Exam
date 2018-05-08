@@ -61,6 +61,9 @@
 %>
 
 <style>
+    svg{
+        background: white;
+    }
     .dot{
         position: relative;
         margin-right: 20px;
