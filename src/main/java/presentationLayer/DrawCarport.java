@@ -24,7 +24,7 @@ public class DrawCarport {
         double beam = 10;
         double beamOffset = remHeight * 2;
 
-        SVG svg = new SVG(width + 10, height + beamOffset, "test");
+        SVG svg = new SVG(width + 10, height + beamOffset);
 
         ///////////////////////////////////////////// BEAMS //////////////////////////////////////
         //always there: // PLACEMENTWIDTH/width*difHeight  placement/width gives % of width taken. difHeight = difHeight from top->bot times that with % width taken to see how much beam must be moved down
@@ -115,7 +115,7 @@ public class DrawCarport {
         double spaerAmount = (int) (width / 55);
         double spaerGutter = ((width + spaerWidth) / spaerAmount);
 
-        SVG svg = new SVG((width + spaerWidth * 2), height, "test");
+        SVG svg = new SVG((width + spaerWidth * 2), height);
 
         // rem top
         svg.rct(spaerWidth, 35, remWidth, width, "stroke:black; stroke-width: 1.5; fill: none;");
@@ -263,7 +263,7 @@ public class DrawCarport {
         double remOffset = sternOffset + sternHeight;
         double beamOffset = remOffset + remHeight;
 
-        SVG svg = new SVG(width, height + beamOffset, "test");
+        SVG svg = new SVG(width, height + beamOffset);
 
         //REM 30?
         svg.rct(30, remOffset, remHeight, width - 30 * 2, "fill:white;stroke:black;");
@@ -385,7 +385,7 @@ public class DrawCarport {
         //dynamisk???
         //double spaerAmount = (int) (width / 55);
         //double spaerGutter = ((width + spaerWidth) / spaerAmount);
-        SVG svg = new SVG(width, height, "test");
+        SVG svg = new SVG(width, height);
 
         //shed
         if (hasShed) {

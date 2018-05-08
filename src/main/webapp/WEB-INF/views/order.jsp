@@ -246,6 +246,10 @@ $(function () {
   }).change(); //ensure visible state matches initially
 });
 
+$(document).ready(function(){
+    $('.materialboxed').materialbox();
+});
+
 $(function () {
   $('.anglebox').change(function () {                
      $('.angleinfo').toggle(this.checked);

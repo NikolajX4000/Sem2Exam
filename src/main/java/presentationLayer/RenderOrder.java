@@ -130,11 +130,11 @@ public class RenderOrder {
             s+="<span class=\"card-title\">Tegninger</span>";
             s+="<div class='row'>";
             if(o.isFlat()){
-                s+= "<div class=\"col m6 s12\">" + DrawCarport.flatSide(o.getLength(), o.getWidth(), o.getShedLength(), o.hasShed()) + "</div>";
-                s+= "<div class=\"col m6 s12\">" + DrawCarport.flatTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed()) + "</div>";
+                s+= "<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>" + DrawCarport.flatSide(o.getLength(), o.getWidth(), o.getShedLength(), o.hasShed()) + "</div></div>";
+                s+= "<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>" + DrawCarport.flatTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed()) + "</div></div>";
             }else{
-                s+= "<div class=\"col m6 s12\">" + DrawCarport.angledSide(o.getLength(), o.getWidth(), o.getShedLength(), o.getAngle(), o.hasShed()) + "</div>";
-                s+= "<div class=\"col m6 s12\">" + DrawCarport.angledTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed()) + "</div>";
+                s+= "<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>" + DrawCarport.angledSide(o.getLength(), o.getWidth(), o.getShedLength(), o.getAngle(), o.hasShed()) + "</div></div>";
+                s+= "<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>" + DrawCarport.angledTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed()) + "</div></div>";
             }
             s+="</div>";
             

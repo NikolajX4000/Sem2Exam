@@ -82,7 +82,7 @@ public class SVG {
         String s = "<SVG";
         s+= svgClass;
         s+= " xmlns='http://www.w3.org/2000/svg'";
-        s+= " version='1.1' style='max-height:400px;width:100%;padding:5px;'";
+        s+= " version='1.1' style='width:100%;padding:5px;'";
         s+= " viewBox='0 0 " + svgWidth + " " + svgHeight + "'";
         s+= ">";
         
