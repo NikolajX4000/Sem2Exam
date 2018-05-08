@@ -112,8 +112,9 @@ public class Material {
         return unitSize;
     }
 
-    public void setUnitSize(int unitSize)
+    public Material setUnitSize(int unitSize)
     {
         this.unitSize = unitSize;
+        return this;
     }
 }
