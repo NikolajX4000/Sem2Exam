@@ -88,14 +88,5 @@
     </div>
 </footer>
 
-
-<script type="text/javascript">
-	$(".button-collapse").sideNav();
-
-	$(document).ready(function(){
-      $('.parallax').parallax();
-    });
-</script>
-
 </body>
 </html>

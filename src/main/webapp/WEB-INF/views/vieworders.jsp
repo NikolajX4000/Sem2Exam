@@ -34,19 +34,6 @@
     request.setAttribute("orders", orderString);
 %>
 
-
-<style type="text/css">
-    ul.tabs > li.tab > a, ul.tabs > li.tab > a.active{
-        color: black;
-    }
-    ul.tabs > li.tab > a:hover{
-        color: #2196f3;
-    }
-    .tabs .indicator {
-        background-color:#2196f3;
-    } /*Color of underline*/
-</style>
-
 <div class="row">
     
     ${orders}

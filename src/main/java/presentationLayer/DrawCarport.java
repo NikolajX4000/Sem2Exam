@@ -165,8 +165,8 @@ public class DrawCarport {
         }
         
         // beams
-        //always there:
-        if(width-shedWidth-100>100){
+        //always there: // JAKOB SAGDE JEG SKULLE SRKIVE HER, DET ER MÅSKE FORKERT GAMMELT: if(width-shedWidth-100>100){
+        if(width-shedWidth-100>200){
             svg.rct(spaerWidth + 100, 35, beam, beam, "fill:white;stroke:black;stroke-width:2.5;");
             svg.rct(spaerWidth + 100, height - beam - 35, beam, beam, "fill:white;stroke:black;stroke-width:2.5;");
         }
@@ -449,7 +449,7 @@ public class DrawCarport {
 
             svg.rct(width - shedWidth - 30 - 1, height - (15 + remHeight / 2 + beam / 2), beam, beam, "fill:none;stroke:black;stroke-width:2.5;"); // EXTRA BOT
 
-            if (width - shedWidth > 200) {
+            if (width - shedWidth > 300) {
 
                 svg.rct(width - shedWidth - 30 - 80 - beam, height - (15 + remHeight / 2 + beam / 2), beam, beam, "fill:none;stroke:black;stroke-width:2.5;");
                 svg.rct(width - shedWidth - 30 - 80 - beam, 15 + remHeight / 2 - beam / 2, beam, beam, "fill:none;stroke:black;stroke-width:2.5;");
