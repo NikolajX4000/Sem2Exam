@@ -60,48 +60,6 @@
 
 %>
 
-<style>
-    svg{
-        background: white;
-    }
-    .dot{
-        position: relative;
-        margin-right: 20px;
-    }
-    .dot:after{
-        content: '\2022';
-        position: absolute;
-        font-size: 50px;
-        left: 0;
-        top:-28px;
-    }
-    .dot.green:after{
-        color: #4caf50;
-    }
-    .dot.red:after{
-        color: #f44336;
-    }
-    .dot.yellow:after{
-        color: #ffeb3b;
-    }
-    .dot.blue:after{
-        color: #2196f3;
-    }
-    .dot.orange:after{
-        color: #ff9800;
-    }
-</style>
-
-<script>
-    $(document).ready(function () {
-        // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
-        $('.modal').modal();
-    });
-</script>
-
-
-
-
 <div class="row">
     
     <table>

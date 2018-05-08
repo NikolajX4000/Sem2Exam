@@ -20,53 +20,15 @@
 
         <!-- MaterializeCSS  Javascript-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        
+        <!-- custom CSS -->
+        <link rel="stylesheet" type="text/css" href="static/style.css"/>
+        
+        <!-- custom JavaScript -->
+        <script src="static/script.js"></script>
 
 
     </head>
-
-    <style type="text/css">
-
-        html {
-            overflow-y: scroll;
-        }
-
-        nav{
-            background: #004789;
-        }
-        .brand-logo {
-            height: 64px;
-            max-height: 100%;	    
-        }
-        .brand-logo img{
-            max-height: 100%;
-        }
-        .parallax-container {
-            height: 200px;
-        }
-        body {
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
-        }
-        main {
-            flex: 1 0 auto;
-        }
-        footer h5,h6{
-            text-transform: uppercase;
-            color: white;
-        }
-        footer li a{
-            color: whitesmoke;
-            font-size: .8rem;
-            opacity: 0.6;
-        }
-        footer a:hover{
-            opacity: 1;
-        }
-        .para-footer{
-            margin-top: auto;
-        }
-    </style>
 
     <body>
 

@@ -101,7 +101,7 @@ public class OrderMapper {
         
         try {
             Connection con = Connector.connection();
-            String SQL  = "SLELECT * FROM orders "
+            String SQL  = "SELECT * FROM orders "
                         + "WHERE order_id = ?";
             
             ps = con.prepareStatement( SQL );
@@ -286,7 +286,7 @@ public class OrderMapper {
         try {
             Connection con = Connector.connection();
             String SQL  = "UPDATE orders SET "
-            /* carport */   + "width = ?, length = ?, "
+            /* carport */   + "width = ?, length = ?, note = ?, "
             /* roof */      + "roof_id = ?, angle = ?, "
             /* shed */      + "shed_width = ?, shed_length = ?, "
             /* status */    + "status = ? "
@@ -298,20 +298,21 @@ public class OrderMapper {
                 /* carport */
                 ps.setInt( 1, order.getWidth() );
                 ps.setInt( 2, order.getLength() );
+                ps.setString( 3, order.getNote() );
 
                 /* roof */
-                ps.setInt( 3, order.getRoof() );
-                ps.setInt( 4, order.getAngle() );
+                ps.setInt( 4, order.getRoof() );
+                ps.setInt( 5, order.getAngle() );
 
                 /* shed */
-                ps.setInt( 5, order.getShedWidth() );
-                ps.setInt( 6, order.getShedLength() );
+                ps.setInt( 6, order.getShedWidth() );
+                ps.setInt( 7, order.getShedLength() );
 
                 /* status */
-                ps.setString( 7, order.getStatus() );
+                ps.setString( 8, order.getStatus() );
                 
                 /* order id */
-                ps.setInt( 8, order.getId() );
+                ps.setInt( 9, order.getId() );
                 
             } catch ( SQLException ex ) {
                 throw new CustomException( "Formateringsfejl" );
