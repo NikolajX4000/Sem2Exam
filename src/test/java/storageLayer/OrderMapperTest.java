@@ -8,9 +8,7 @@ package storageLayer;
 import functionLayer.Order;
 import java.util.List;
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,14 +19,6 @@ import static org.junit.Assert.*;
 public class OrderMapperTest {
     
     public OrderMapperTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
     }
     
     @Before
@@ -49,7 +39,7 @@ public class OrderMapperTest {
         List before = OrderMapper.getAllOrders();
         int expResult = before.size() + 1;
         
-        OrderMapper.addOrder( new Order() );
+        OrderMapper.addOrder( testOrderObject() );
         
         List after = OrderMapper.getAllOrders();
         int result = after.size();
@@ -60,16 +50,14 @@ public class OrderMapperTest {
     /**
      * Test of getOrder method, of class OrderMapper.
      */
-    /*@Test
+    @Test
     public void testGetOrder() throws Exception {
         System.out.println("getOrder");
-        int id = 0;
-        String expResult = null;
+        int id = 4;
+        String expResult = "orderTest";
         String result = OrderMapper.getOrder(id).getName();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }*/
+    }
 
     /**
      * Test of getOrders method, of class OrderMapper.
@@ -77,31 +65,40 @@ public class OrderMapperTest {
     @Test
     public void testGetOrders() throws Exception {
         System.out.println("getOrders");
-        String email = "test@test";
-        String expResult = "test";
+        String email = "test@mail";
+        String expResult = "orderTest";
         List<Order> orders = OrderMapper.getOrders(email);
-        Boolean result = true;
+        Boolean result = false;
         
         for (Order o : orders) {
-            if (!o.getName().equals(expResult)); {
+            if (o.getName().equals(expResult)) {
+                result = true;
+            } else {
                 result = false;
+                break;
             }
-        }
+       }
         assertTrue(result);
     }
 
     /**
      * Test of getAllOrders method, of class OrderMapper.
      */
-    /*@Test
+    @Test
     public void testGetAllOrders() throws Exception {
         System.out.println("getAllOrders");
-        List<Order> expResult = null;
-        List<Order> result = OrderMapper.getAllOrders();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }*/
+        String expResult = "test@mail";
+        List<Order> orders = OrderMapper.getAllOrders();
+        boolean result = false;
+        
+        for (Order o : orders) {
+            if (o.getEmail().equals(expResult)) {
+                result = true;
+                break;
+            }
+       }
+       assertTrue(result); 
+    }
 
     /**
      * Test of updateOrder method, of class OrderMapper.
@@ -109,12 +106,12 @@ public class OrderMapperTest {
     @Test
     public void testUpdateOrder() throws Exception {
         System.out.println("updateOrder");
-        Order order = testOrderObject();
-        Order expResult = order;
-        Order result = OrderMapper.updateOrder(order);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Order expResult = OrderMapper.getOrder( 4 );
+        expResult.setNote( "Testing" );
+        OrderMapper.updateOrder( expResult );
+        boolean result = OrderMapper.getOrder( 4 ).getNote().equals( "Testing" );
+        
+        assertTrue( result );
     }
 
     /**
@@ -144,8 +141,8 @@ public class OrderMapperTest {
             setNote( "noteTest" ).
 
             /* carport */
-            setWidth( 9 ).
-            setLength( 9 ).
+            setWidth( 240 ).
+            setLength( 240 ).
 
             /* roof */
             setRoof( 1 ).
