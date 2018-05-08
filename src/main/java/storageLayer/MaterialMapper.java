@@ -35,8 +35,9 @@ public class MaterialMapper {
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT * FROM materials WHERE name=?";
-
+            
             ps = con.prepareStatement(SQL);
+            ps.setString(1, material);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {

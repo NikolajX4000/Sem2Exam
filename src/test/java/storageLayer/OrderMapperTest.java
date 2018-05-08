@@ -64,31 +64,36 @@ public class OrderMapperTest {
     public void testGetOrder() throws Exception {
         System.out.println("getOrder");
         int id = 0;
-        Order expResult = null;
-        Order result = OrderMapper.getOrder(id);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getOrders method, of class OrderMapper.
-     */
-    /*@Test
-    public void testGetOrders() throws Exception {
-        System.out.println("getOrders");
-        String email = "";
-        List<Order> expResult = null;
-        List<Order> result = OrderMapper.getOrders(email);
+        String expResult = null;
+        String result = OrderMapper.getOrder(id).getName();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }*/
 
     /**
+     * Test of getOrders method, of class OrderMapper.
+     */
+    @Test
+    public void testGetOrders() throws Exception {
+        System.out.println("getOrders");
+        String email = "test@test";
+        String expResult = "test";
+        List<Order> orders = OrderMapper.getOrders(email);
+        Boolean result = true;
+        
+        for (Order o : orders) {
+            if (!o.getName().equals(expResult)); {
+                result = false;
+            }
+        }
+        assertTrue(result);
+    }
+
+    /**
      * Test of getAllOrders method, of class OrderMapper.
      */
-   /* @Test
+    /*@Test
     public void testGetAllOrders() throws Exception {
         System.out.println("getAllOrders");
         List<Order> expResult = null;
@@ -101,16 +106,16 @@ public class OrderMapperTest {
     /**
      * Test of updateOrder method, of class OrderMapper.
      */
-    /*@Test
+    @Test
     public void testUpdateOrder() throws Exception {
         System.out.println("updateOrder");
-        Order order = null;
-        Order expResult = null;
+        Order order = testOrderObject();
+        Order expResult = order;
         Order result = OrderMapper.updateOrder(order);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
-    }*/
+    }
 
     /**
      * Test of updateStatus method, of class OrderMapper.
@@ -126,4 +131,30 @@ public class OrderMapperTest {
         fail("The test case is a prototype.");
     }*/
     
+    private Order testOrderObject(){
+        Order order = new Order().
+
+            /* customer */
+            setName( "test" ).
+            setAddress( "addressTest" ).
+            setZipCode( 1234 ).
+            setCity( "cityTest" ).
+            setPhone( "12345678" ).
+            setEmail( "emailTest" ).
+            setNote( "noteTest" ).
+
+            /* carport */
+            setWidth( 9 ).
+            setLength( 9 ).
+
+            /* roof */
+            setRoof( 1 ).
+            setAngle( 0 ).
+
+            /* shed */
+            setShedWidth( 0 ).
+            setShedLength( 0 );
+        
+        return order;    
+    }
 }
