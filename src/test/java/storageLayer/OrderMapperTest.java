@@ -7,8 +7,6 @@ package storageLayer;
 
 import functionLayer.Order;
 import java.util.List;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -20,17 +18,10 @@ public class OrderMapperTest {
     
     public OrderMapperTest() {
     }
-    
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
 
     /**
      * Test of addOrder method, of class OrderMapper.
+     * @throws java.lang.Exception
      */
     /*@Test
     public void testAddOrder() throws Exception {
@@ -49,6 +40,7 @@ public class OrderMapperTest {
 
     /**
      * Test of getOrder method, of class OrderMapper.
+     * @throws java.lang.Exception
      */
     @Test
     public void testGetOrder() throws Exception {
@@ -61,6 +53,7 @@ public class OrderMapperTest {
 
     /**
      * Test of getOrders method, of class OrderMapper.
+     * @throws java.lang.Exception
      */
     @Test
     public void testGetOrders() throws Exception {
@@ -81,6 +74,7 @@ public class OrderMapperTest {
 
     /**
      * Test of getAllOrders method, of class OrderMapper.
+     * @throws java.lang.Exception
      */
     @Test
     public void testGetAllOrders() throws Exception {
@@ -100,6 +94,7 @@ public class OrderMapperTest {
 
     /**
      * Test of updateOrder method, of class OrderMapper.
+     * @throws java.lang.Exception
      */
     @Test
     public void testUpdateOrder() throws Exception {
@@ -114,6 +109,7 @@ public class OrderMapperTest {
 
     /**
      * Test of updateStatus method, of class OrderMapper.
+     * @throws java.lang.Exception
      */
     @Test
     public void testUpdateStatus() throws Exception {
