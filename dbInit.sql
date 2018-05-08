@@ -1,5 +1,5 @@
 -- MySQL Workbench Synchronization
--- Generated: 2018-05-04 10:38
+-- Generated: 2018-05-08 10:00
 -- Model: New Model
 -- Version: 1.0
 -- Project: Name of the project
@@ -51,8 +51,8 @@ COLLATE = utf8_danish_ci;
 
 CREATE TABLE IF NOT EXISTS `sem2exam`.`employees` (
   `employee_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(100) NULL DEFAULT NULL,
-  `password` VARCHAR(100) NULL DEFAULT NULL,
+  `name` VARCHAR(100) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`employee_id`),
   UNIQUE INDEX `employee_id_UNIQUE` (`employee_id` ASC))
 ENGINE = InnoDB
@@ -66,6 +66,17 @@ CREATE TABLE IF NOT EXISTS `sem2exam`.`materials` (
   `size` INT(11) NOT NULL,
   PRIMARY KEY (`plank_id`),
   UNIQUE INDEX `plank_id_UNIQUE` (`plank_id` ASC))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE IF NOT EXISTS `sem2exam`.`tools` (
+  `tool_id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `unit_size` INT(11) NOT NULL DEFAULT 1,
+  `price` INT(11) NOT NULL,
+  PRIMARY KEY (`tool_id`),
+  UNIQUE INDEX `tool_id_UNIQUE` (`tool_id` ASC),
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
@@ -158,6 +169,23 @@ INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x
 INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x100 mm. trykimp. Bræt',360);
 INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x100 mm. trykimp. Bræt',420);
 INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x100 mm. trykimp. Bræt',480);
+*/
+
+/*tools*/
+/*
+INSERT INTO tools (name,unit_size,price) VALUES ('Plastmo Bundskruer',200,220);
+INSERT INTO tools (name,unit_size,price) VALUES ('Hulbånd 1x20 mm.',10,209);
+INSERT INTO tools (name,unit_size,price) VALUES ('Universal 190mm højre',1,18);
+INSERT INTO tools (name,unit_size,price) VALUES ('Universal 190mm venstre',1,18);
+INSERT INTO tools (name,unit_size,price) VALUES ('4,5x60 mm. skruer',200,159);
+INSERT INTO tools (name,unit_size,price) VALUES ('4x50 mm. beslagskruer',250,269);
+INSERT INTO tools (name,unit_size,price) VALUES ('Bræddebolte 10x120 mm.',1,19);
+INSERT INTO tools (name,unit_size,price) VALUES ('Firkantskiver 40x40x11 mm.',1,10);
+INSERT INTO tools (name,unit_size,price) VALUES ('4,5x70 mm. skruer',400,199);
+INSERT INTO tools (name,unit_size,price) VALUES ('4,5x50 mm. skruer',300,69);
+INSERT INTO tools (name,unit_size,price) VALUES ('Stalddørsgreb 50x75',1,189);
+INSERT INTO tools (name,unit_size,price) VALUES ('T hængsel 390 mm.',1,120);
+INSERT INTO tools (name,unit_size,price) VALUES ('Vinkelbeslag 35',1,6);
 */
 
 SET SQL_MODE=@OLD_SQL_MODE;
