@@ -38,5 +38,5 @@ public class MaterialMapperTest {
     @Test
     public void testDeleteMaterial() throws Exception {
     }
-    
+
 }
