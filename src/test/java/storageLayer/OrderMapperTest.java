@@ -35,16 +35,16 @@ public class OrderMapperTest {
     /*@Test
     public void testAddOrder() throws Exception {
         System.out.println("addOrder");
+        String expResult = "OrderTest.addOrder";
+        OrderMapper.addOrder( OrderMapper.getOrder( 4 ).setName( "OrderTest.addOrder" ));
+        List<Order> orders = OrderMapper.getAllOrders();
+        Boolean result = false;
         
-        List before = OrderMapper.getAllOrders();
-        int expResult = before.size() + 1;
-        
-        OrderMapper.addOrder( testOrderObject() );
-        
-        List after = OrderMapper.getAllOrders();
-        int result = after.size();
-        
-        assertEquals(expResult, result);
+        if (orders.get(0).getName().equals(expResult)) {
+            result = true;
+        }
+
+        assertTrue(result);
     }*/
 
     /**
@@ -73,8 +73,6 @@ public class OrderMapperTest {
         for (Order o : orders) {
             if (o.getName().equals(expResult)) {
                 result = true;
-            } else {
-                result = false;
                 break;
             }
        }
@@ -117,41 +115,15 @@ public class OrderMapperTest {
     /**
      * Test of updateStatus method, of class OrderMapper.
      */
-    /*@Test
+    @Test
     public void testUpdateStatus() throws Exception {
         System.out.println("updateStatus");
-        Order order = null;
-        Order expResult = null;
-        Order result = OrderMapper.updateStatus(order);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }*/
-    
-    private Order testOrderObject(){
-        Order order = new Order().
-
-            /* customer */
-            setName( "test" ).
-            setAddress( "addressTest" ).
-            setZipCode( 1234 ).
-            setCity( "cityTest" ).
-            setPhone( "12345678" ).
-            setEmail( "emailTest" ).
-            setNote( "noteTest" ).
-
-            /* carport */
-            setWidth( 240 ).
-            setLength( 240 ).
-
-            /* roof */
-            setRoof( 1 ).
-            setAngle( 0 ).
-
-            /* shed */
-            setShedWidth( 0 ).
-            setShedLength( 0 );
+        Order expResult = OrderMapper.getOrder( 4 );
+        expResult.setStatus( "Annulleret" );
+        OrderMapper.updateOrder( expResult );
+        boolean result = OrderMapper.getOrder( 4 ).getStatus().equals( "Annulleret" );
         
-        return order;    
+        assertTrue( result );
     }
+    
 }
