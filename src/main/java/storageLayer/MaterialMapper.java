@@ -199,7 +199,7 @@ public class MaterialMapper
         }
         return material;
     }
-
+    
     /**
      * This method will close the prepared statement connection if it's
      * connection, the reason is to reduce as musch in- and outgoing trafic from
