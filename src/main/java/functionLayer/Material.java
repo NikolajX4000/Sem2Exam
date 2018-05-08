@@ -15,6 +15,7 @@ public class Material {
     private int price;
     private int size;
     private String description;
+    private int unitSize;
 
     /**
      *
@@ -104,5 +105,15 @@ public class Material {
     public Material setDescription(String description) {
         this.description = description;
         return this;
+    }
+
+    public int getUnitSize()
+    {
+        return unitSize;
+    }
+
+    public void setUnitSize(int unitSize)
+    {
+        this.unitSize = unitSize;
     }
 }
