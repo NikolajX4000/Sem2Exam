@@ -23,33 +23,37 @@
     } catch (Exception e) {
         os = null;
     }
-    Order test = null;
+    //Order test = null;
     String tableRows = "";
     String inspectors = "";
-    Random rand = new Random();
+    
+    if(os != null && os.size()>0){
+        for (int i = 0; i < os.size(); i++)
+        {
+            String s = "<tr>";
 
-    for (int i = 0; i < os.size(); i++) {
-        String s = "<tr>";
+            s += "<td>" + os.get(i).getId() + "</td>";
+            s += "<td>" + os.get(i).getName() + "</td>";
+            s += "<td>" + os.get(i).getCity() + "</td>";
+            s += "<td>" + "26 April, 2018" + "</td>";
+            s += "<td><span class=\"dot " + os.get(i).getStatusColor() + "\"></span>" + os.get(i).getStatus() + "</td>";
+            s += "<td>" + os.get(i).getPrice() + "</td>";
 
-        s += "<td>" + os.get(i).getId() + "</td>";
-        s += "<td>" + os.get(i).getName() + "</td>";
-        s += "<td>" + os.get(i).getCity() + "</td>";
-        s += "<td>" + "26 April, 2018" + "</td>";
-        s += "<td><span class=\"dot " + os.get(i).getStatusColor() + "\"></span>" + os.get(i).getStatus() + "</td>";
-        s += "<td>" + os.get(i).getPrice() + "</td>";
+            s += "<td class=\"center\"><a href=\"#modal" + os.get(i).getStringId() + "\" class=\"btn-floating btn-small waves-effect waves-light blue tooltipped modal-trigger\" data-position=\"right\" data-delay=\"20\" data-tooltip=\"Inspicer ordre\"><i class=\"material-icons\">navigate_next</i></a></td>";
 
-        s += "<td class=\"center\"><a href=\"#modal" + os.get(i).getStringId() + "\" class=\"btn-floating btn-small waves-effect waves-light blue tooltipped modal-trigger\" data-position=\"right\" data-delay=\"20\" data-tooltip=\"Inspicer ordre\"><i class=\"material-icons\">navigate_next</i></a></td>";
+            s += "</tr>";
 
-        s += "</tr>";
+            tableRows += s;
+            inspectors += RenderOrderInspect.print(os.get(i));
 
-        tableRows += s;
-        inspectors += RenderOrderInspect.print(os.get(i));
-        
-
-        test = os.get(i);
+            //test = os.get(i);
+        }
+    }else{
+        tableRows = "<td colspan='5'>Der er ingen ordre på nuværende tidspunkt.</td>";
     }
+    
 
-    request.setAttribute("test123", RenderOrder.print(test));
+    //request.setAttribute("test123", RenderOrder.print(test));
     
     request.setAttribute("inspectors", inspectors);
     request.setAttribute("tr", tableRows);
