@@ -43,7 +43,6 @@
             <artifactId>jbcrypt</artifactId>
             <version>0.4</version>
         </dependency>
-        
     </dependencies>
 
     <build>
@@ -122,5 +121,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
