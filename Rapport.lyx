@@ -88,7 +88,7 @@ Nikolaj Thorsen Nielsen
 \begin_inset Newline newline
 \end_inset
 
-Stephan Marcus Duelund Djurhuuss
+Stephan Marcus Duelund Djurhuus
 \end_layout
 
 \begin_layout Standard
@@ -151,12 +151,31 @@ Indledning
 \end_layout
 
 \begin_layout Standard
-Vi er blevet kontaktet af Johannes Fog i Ølstykke, der har spurgt om vi
- kan lave et program og tilhørende hjemmeside til deres salg af carporte.
+Vi er blevet kontaktet af Johannes Fog Værebro, der har spurgt om vi kan
+ lave et program og tilhørende hjemmeside til deres salg af carporte.
 \end_layout
 
 \begin_layout Subsection
 Baggrund
+\end_layout
+
+\begin_layout Standard
+Johannes Fog er en koncern der både har design & bolighuse og trælast &
+ byggecenter.
+ Vi vil i dette project fokusere på Fog Værebro, der har bedt os om at opdatere
+ deres system.
+ Fog Værebro sælger som de andre trælast & byggecentre, træ, byggematerialer
+ og alt det du behøver til hus og have inden for f.eks.
+ maling, bad og VVS, beslag, elartikler og lamper samt haveredskaber, grill
+ og havemøbler, men derudover har de gjort det til deres varemærker at være
+ specialister i carporte.
+ Det er i den forbindelse at vi er blevet bedt om at udvikle et system,
+ med tilhørende hjemmeside, til at erstatte deres nuværende system, da de
+ har erkendt at det er outdated.
+ Med systemmet skal man kunne gå på hjemmesiden og bestille en carport,
+ systemmet skal kunne udregne et stykliste af materialer, en medarbejder
+ skal kunne gå ind og give en kunde særlige tilbud, og en kunde skal kunne
+ se sin ordre.
 \end_layout
 
 \begin_layout Subsection
@@ -583,7 +602,7 @@ Som medarbejder skal man kunne se alle ordre.
 
 \begin_layout Standard
 \noindent
-
+Systemet skal kunne udregne en stykliste udfra en ordre.
 \end_layout
 
 \begin_layout Section
