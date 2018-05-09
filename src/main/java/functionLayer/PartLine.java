@@ -22,7 +22,8 @@ public class PartLine
      */
     public PartLine(Material material, int amount) {
         this.material = material;
-        this.amount = (int) Math.ceil(amount / unit);
+        this.unit = material.getUnitSize();
+        this.amount = (int) Math.ceil((double)amount / unit);
     }
     
     /**
@@ -31,9 +32,9 @@ public class PartLine
      * @param amount
      * @param unit
      */
-    public PartLine(String name, int amount, int unit) {
-        // Comming soon
-    }
+//    public PartLine(String name, int amount, int unit) {
+//        // Comming soon
+//    }
 
     /**
      *
@@ -64,8 +65,8 @@ public class PartLine
      * @param size
      * @return
      */
-    public PartLine setSize(int size) {
-        this.size = size;
+    public PartLine setSize(double size) {
+        this.size = (int)size;
         return this;
     }
 
@@ -111,5 +112,13 @@ public class PartLine
     {
         return description;
     }
+
+    @Override
+    public String toString()
+    {
+        return material.getDescription()+ " : " + size + " : " + amount + " : " + unit + ": " + material.getName();
+    }
+    
+    
 
 }
