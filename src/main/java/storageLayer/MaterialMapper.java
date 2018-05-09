@@ -168,7 +168,7 @@ public class MaterialMapper
         throw new UnsupportedOperationException("comming soon");
     }
 
-    public static Material getTool(int tool) throws CustomException
+    public static Material getTool(int tool_id) throws CustomException
     {
         PreparedStatement ps = null;
         Material material = new Material();
@@ -178,7 +178,7 @@ public class MaterialMapper
             String SQL = "SELECT * FROM tools WHERE tool_id = ?";
 
             ps = con.prepareStatement(SQL);
-            ps.setInt(0, tool);
+            ps.setInt(1, tool_id);
             ResultSet rs = ps.executeQuery();
 
             if (rs.first())

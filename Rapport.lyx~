@@ -88,7 +88,7 @@ Nikolaj Thorsen Nielsen
 \begin_inset Newline newline
 \end_inset
 
-Stephan Marcus Duelund Djurhuus
+Stephan Marcus Duelund Djurhuuss
 \end_layout
 
 \begin_layout Standard
@@ -559,8 +559,34 @@ jacoco-maven-plugin
 Krav
 \end_layout
 
+\begin_layout Standard
+På websitet skal man som kunde kunne bestille en carport.
+ Man skal kunne vælge om taget skal være med eller uden rejsning, og hvis
+ man har valgt med skal man kunne vælge hvor meget hældning man vil have
+ på taget.
+ Man skal kunne vælge om man vil have et redskabskur, og hvor stort det
+ skal være.
+ Når man bestiller en carport skal man kunne indtaste sine oplysninger,
+ navn, telefonnummer, email og adresse.
+ Når man har bestilt en carport kan man se alle de ordre der er bestilt
+ med den samme email.
+ Man skal som bruger kunne se alle sine tidligere ordre ved at indtaste
+ sin email.
+ Som medarbejder skal man kunne se alle ordre.
+ 
+\end_layout
+
 \begin_layout Section
 Domæne model og ER diagram
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename ERdiagram.PNG
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
