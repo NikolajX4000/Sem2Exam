@@ -15,7 +15,7 @@ public class Material {
     private int price;
     private int size;
     private String description;
-    private int unitSize;
+    private int unitSize = 1;
 
     /**
      *

@@ -8,7 +8,10 @@ and open the template in the editor.
     Author     : Hupra Laptop
 */
 
-
+html{
+    max-width: 100vw;
+    overflow-x: hidden;
+}
 svg{
     background: white;
 }
