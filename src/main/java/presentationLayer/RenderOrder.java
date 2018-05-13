@@ -132,6 +132,7 @@ public class RenderOrder {
             }else{
                 s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(DrawCarport.angledSide(o.getLength(), o.getWidth(), o.getShedLength(), o.getAngle(), o.hasShed())).append("</div></div>");
                 s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(DrawCarport.angledTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed())).append("</div></div>");
+                //s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(new DrawCarportAngleTop(o)).append("</div></div>");
             }
             s.append("</div>");
             
@@ -144,7 +145,7 @@ public class RenderOrder {
         
         StringBuilder s = new StringBuilder();
         
-        s.append("<div id=\""+ o.getStringId() + "c" +"\">");
+        s.append("<div id=\"").append(o.getStringId()).append("c\">");
             s.append("<span class=\"card-title\">Stykliste</span>");
             s.append("<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>");
         s.append("</div>");
