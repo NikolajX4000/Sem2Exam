@@ -63,8 +63,6 @@ public class RenderOrderInspect {
             s.append(shortDetail(o.getAddress(), "Adresse"));
             s.append(shortDetail(o.getZipCode(), "Postnummer"));
             s.append(shortDetail(o.getCity(), "By"));
-            
-            s.append("<hr>");
             s.append(shortDetail(o.getWidth() + " cm", "Carport Bredde"));
             s.append(shortDetail(o.getLength() + " cm", "Carport Længde"));
             

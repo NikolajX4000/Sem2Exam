@@ -19,6 +19,17 @@ public class RenderOrder {
     private RenderOrder() {
     }
     
+    private static String shortDetail(Object value, String label){
+        StringBuilder s = new StringBuilder();
+        
+        s.append("<div class=\"input-field col s6\">");
+            s.append("<input disabled class=\"black-text\" type=\"text\" value=\"").append(value).append("\">");
+            s.append("<label>").append(label).append("</label>");
+        s.append("</div>");
+        
+        return s.toString();
+    }
+    
     private static String cardTop(){
         
         StringBuilder s = new StringBuilder();
@@ -42,8 +53,15 @@ public class RenderOrder {
                     
                 s.append("</div>");
                 
-                s.append("<p>Navn: ").append(o.getName()).append("</p>");
-                s.append("<p>Addresse: ").append(o.getAddress()).append(", ").append(o.getZipCode()).append(" ").append(o.getCity()).append("</p><br>");
+                
+                s.append("<div>");
+                    s.append("<p>Navn: ").append(o.getName()).append("</p>");
+                    s.append("<p>Addresse: ").append(o.getAddress()).append(", ").append(o.getZipCode()).append(" ").append(o.getCity()).append("</p><br>");
+                s.append("</div>");
+                
+                s.append("<div>");
+                    s.append("<p>Pris: ").append(o.getPrice()).append("</p><br>");
+                s.append("</div>");
                 
                 s.append("<div>");
                     s.append("<p >Telefon: ").append(o.getPhone()).append("</p>");
@@ -80,43 +98,21 @@ public class RenderOrder {
         s.append("<div id=\"").append(o.getStringId()).append("a\">");
         s.append("<div class=\"row black-text\">");
         
-            s.append("<div class=\"input-field col s6\">");
-                s.append("<input disabled class=\"black-text\" type=\"text\" value=\"").append(o.getWidth()).append(" cm\">");
-                s.append("<label>Carport Bredde</label>");
-            s.append("</div>");
-            
-            s.append("<div class=\"input-field col s6\">");
-                s.append("<input disabled class=\"black-text\" type=\"text\" value=\"").append(o.getLength()).append(" cm\">");
-                s.append("<label>Carport Længde</label>");
-            s.append("</div>");
-            
-            
+            s.append(shortDetail(o.getWidth() + " cm", "Carport Bredde"));
+            s.append(shortDetail(o.getLength() + " cm", "Carport Længde"));
             
             if(o.hasShed()){
-            s.append("<div class=\"input-field col s6\">");
-                s.append("<input disabled class=\"black-text\" type=\"text\" value=\"").append(o.getShedWidth()).append(" cm\">");
-                s.append("<label>Redskabsrum Bredde</label>");
-            s.append("</div>");
-
-            s.append("<div class=\"input-field col s6\">");
-                s.append("<input disabled class=\"black-text\" type=\"text\" value=\"").append(o.getShedLength()).append(" cm\">");
-                s.append("<label>Redskabsrum Længde</label>");
-            s.append("</div>");
+                
+                s.append(shortDetail(o.getShedWidth() + " cm", "Redskabsrum Bredde"));
+                s.append(shortDetail(o.getShedLength() + " cm", "Redskabsrum Længde"));
             }
             
-            
-            
-            s.append("<div class=\"input-field col s6\">");
-                s.append("<input disabled class=\"black-text\" type=\"text\" value=\"").append(o.getRoof()).append(" Flot R\u00f8dt Tag\">");
-                s.append("<label>Tag</label>");
-            s.append("</div>");
+            s.append(shortDetail(o.getRoof() + " Flot R\u00f8dt Tag", "Tag"));
             
             if(!o.isFlat()){
-            s.append("<div class=\"input-field col s6\">");
-                s.append("<input disabled class=\"black-text\" type=\"text\" value=\"").append(o.getAngle()).append(" grader\">");
-                s.append("<label>Taghældning</label>");
-            s.append("</div>");
+                s.append(shortDetail(o.getAngle() + " grader", "Taghældning"));
             }
+            
             
         s.append("</div>");
         s.append("</div>");
