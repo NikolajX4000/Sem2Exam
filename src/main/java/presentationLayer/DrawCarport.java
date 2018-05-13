@@ -166,7 +166,7 @@ public class DrawCarport {
         
         // beams
         //always there: // JAKOB SAGDE JEG SKULLE SRKIVE HER, DET ER MÅSKE FORKERT GAMMELT: if(width-shedWidth-100>100){
-        if(width-shedWidth-100>200){
+        if(width-shedWidth>200){
             svg.rct(spaerWidth + 100, 35, beam, beam, "fill:white;stroke:black;stroke-width:2.5;");
             svg.rct(spaerWidth + 100, height - beam - 35, beam, beam, "fill:white;stroke:black;stroke-width:2.5;");
         }
