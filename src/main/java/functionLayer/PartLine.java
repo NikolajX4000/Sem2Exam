@@ -9,11 +9,11 @@ import java.util.*;
 public class PartLine
 {
 
-    Material material;
-    int size;
-    int amount;
-    int unit;
-    String description;
+    private Material material;
+    private int size;
+    private int amount;
+    private int unit;
+    private String description;
 
     /**
      *
