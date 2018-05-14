@@ -7,7 +7,7 @@ import storageLayer.MaterialMapper;
  *
  * @author super
  */
-public class CarPortList
+public class FlatCarPortList
 {
 
     Order order;
@@ -23,7 +23,7 @@ public class CarPortList
      * @param order
      * @throws functionLayer.CustomException
      */
-    public CarPortList(Order order) throws CustomException
+    public FlatCarPortList(Order order) throws CustomException
     {
         this.order = order;
         length = order.getLength();
@@ -165,7 +165,7 @@ public class CarPortList
             }
             amount++;//for the door
         }
-        parts.add(new PartLine(material.get(1), amount).setSize(210));
+        parts.add(new PartLine(material.get(1), amount).setSize(300));
         return parts;
     }
 
