@@ -3,6 +3,10 @@ package presentationLayer;
 
 import functionLayer.Order;
 
+/**
+ *
+ * @author super
+ */
 public class DrawCarportAngleTop {
     
     String std = "fill:white;stroke:black;stroke-width:1;";
@@ -28,6 +32,10 @@ public class DrawCarportAngleTop {
     
     String tmp = "";
 
+    /**
+     *
+     * @param o
+     */
     public DrawCarportAngleTop(Order o) {
         
         width = o.getLength();

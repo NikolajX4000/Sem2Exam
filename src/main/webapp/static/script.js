@@ -13,6 +13,12 @@ $(document).ready(function () {
     $('.parallax').parallax();
 });
 
+// tabs til show order
+$(document).ready(function () {
+    $('ul.tabs').tabs();
+});
+
+
 // used for popup inspecters
 $(document).ready(function () {
     // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered

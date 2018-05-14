@@ -6,6 +6,12 @@ package presentationLayer;
  * and open the template in the editor.
  */
 
+/**
+ *
+ * @author super
+ */
+
+
 public class SVG {
 
     private final double svgWidth;
@@ -13,12 +19,23 @@ public class SVG {
     private StringBuilder svg = new StringBuilder();
     private String svgClass = "";
 
+    /**
+     *
+     * @param width
+     * @param height
+     */
     public SVG(double width, double height)
     {
         this.svgWidth = width;
         this.svgHeight = height;
     }
     
+    /**
+     *
+     * @param width
+     * @param height
+     * @param clas
+     */
     public SVG(double width, double height, String clas)
     {
         this.svgWidth = width;
@@ -26,6 +43,14 @@ public class SVG {
         this.svgClass = " class='" + clas + "'";
     }
     
+    /**
+     *
+     * @param x
+     * @param y
+     * @param height
+     * @param width
+     * @param style
+     */
     public void rct(double x, double y, double height, double width, String style){
         
         StringBuilder s = new StringBuilder();
@@ -39,6 +64,15 @@ public class SVG {
         svg.append(s);
     }
     
+    /**
+     *
+     * @param x
+     * @param y
+     * @param height
+     * @param width
+     * @param style
+     * @param custom
+     */
     public void rct(double x, double y, double height, double width, String style, String custom){
         
         StringBuilder s = new StringBuilder();
@@ -53,6 +87,14 @@ public class SVG {
         svg.append(s);
     }
     
+    /**
+     *
+     * @param x1
+     * @param y1
+     * @param x2
+     * @param y2
+     * @param style
+     */
     public void line(double x1, double y1, double x2, double y2, String style){
         
         StringBuilder s = new StringBuilder();
@@ -66,6 +108,15 @@ public class SVG {
         svg.append(s);
     }
     
+    /**
+     *
+     * @param x1
+     * @param y1
+     * @param x2
+     * @param y2
+     * @param style
+     * @param custom
+     */
     public void line(double x1, double y1, double x2, double y2, String style, String custom){
         
         StringBuilder s = new StringBuilder();

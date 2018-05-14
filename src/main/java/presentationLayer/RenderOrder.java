@@ -6,7 +6,7 @@
 
 package presentationLayer;
 
-import functionLayer.CarPortList;
+import functionLayer.FlatCarPortList;
 import functionLayer.Order;
 import functionLayer.PartLine;
 import java.util.List;
@@ -130,11 +130,13 @@ public class RenderOrder {
             s.append("<span class=\"card-title\">Tegninger</span>");
             s.append("<div class='row'>");
             if(o.isFlat()){
-                s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(DrawCarport.flatSide(o.getLength(), o.getWidth(), o.getShedLength(), o.hasShed())).append("</div></div>");
-                s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(DrawCarport.flatTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed())).append("</div></div>");
+                //s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(DrawCarport.flatSide(o.getLength(), o.getWidth(), o.getShedLength(), o.hasShed())).append("</div></div>");
+                //s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(DrawCarport.flatTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed())).append("</div></div>");
+                s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(new DrawCarportFlatTop(o)).append("</div></div>");
+                s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(new DrawCarportFlatSide(o)).append("</div></div>");
             }else{
                 s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(DrawCarport.angledSide(o.getLength(), o.getWidth(), o.getShedLength(), o.getAngle(), o.hasShed())).append("</div></div>");
-                s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(DrawCarport.angledTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed())).append("</div></div>");
+                //s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(DrawCarport.angledTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed())).append("</div></div>");
                 s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(new DrawCarportAngleTop(o)).append("</div></div>");
             }
             s.append("</div>");
@@ -158,7 +160,7 @@ public class RenderOrder {
                     
                     //ArrayList
                     
-                    CarPortList cpl = new CarPortList(o);
+                    FlatCarPortList cpl = new FlatCarPortList(o);
                     List<PartLine> list = cpl.getParts();
                     
                     for(PartLine pl : list){

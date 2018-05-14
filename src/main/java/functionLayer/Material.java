@@ -107,11 +107,20 @@ public class Material {
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getUnitSize()
     {
         return unitSize;
     }
 
+    /**
+     *
+     * @param unitSize
+     * @return
+     */
     public Material setUnitSize(int unitSize)
     {
         this.unitSize = unitSize;

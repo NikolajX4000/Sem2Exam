@@ -8,7 +8,7 @@ import storageLayer.ToolMapper;
  *
  * @author super
  */
-public class CarPortList
+public class FlatCarPortList
 {
 
     Order order;
@@ -24,7 +24,7 @@ public class CarPortList
      * @param order
      * @throws functionLayer.CustomException
      */
-    public CarPortList(Order order) throws CustomException
+    public FlatCarPortList(Order order) throws CustomException
     {
         this.order = order;
         length = order.getLength();
