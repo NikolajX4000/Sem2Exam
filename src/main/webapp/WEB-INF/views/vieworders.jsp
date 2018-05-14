@@ -15,7 +15,6 @@
 
 
 <%
-    HttpSession s = request.getSession();
     List<Order> orders = (List<Order>)request.getAttribute("desiredOrdersFromEmail");
     
     String orderString = "";
