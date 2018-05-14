@@ -29,7 +29,7 @@ public class MaterialMapper {
      * @return
      * @throws CustomException
      */
-    public static List<Material> getAllMaterials(String material) throws CustomException {
+    public static List<Material> getAllMaterials() throws CustomException {
         PreparedStatement ps = null;
         List<Material> materials = new ArrayList<>();
         try {
@@ -181,33 +181,6 @@ public class MaterialMapper {
      */
     public static boolean deleteMaterial(int id) throws CustomException {
         throw new UnsupportedOperationException("comming soon");
-    }
-
-    public static Material getTool(int tool_id) throws CustomException {
-        PreparedStatement ps = null;
-        Material material = new Material();
-        try {
-            Connection con = Connector.connection();
-            String SQL = "SELECT * FROM tools WHERE tool_id = ?";
-
-            ps = con.prepareStatement(SQL);
-            ps.setInt(1, tool_id);
-            ResultSet rs = ps.executeQuery();
-
-            if (rs.first()) {
-                material.
-                        setId(rs.getInt("tool_id")).
-                        setName(rs.getString("name")).
-                        setPrice(rs.getInt("price")).
-                        setUnitSize(rs.getInt("unit_size"));
-            }
-
-        } catch (SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
-        } finally {
-            closeConnection(ps);
-        }
-        return material;
     }
 
     /**
