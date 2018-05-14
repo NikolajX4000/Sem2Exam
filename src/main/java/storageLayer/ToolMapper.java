@@ -22,11 +22,6 @@ import java.util.logging.Logger;
  */
 public class ToolMapper {
 
-    /**
-     *
-     * @return
-     * @throws CustomException
-     */
     public static List<Material> getAllTool() throws CustomException {
         PreparedStatement ps = null;
         Material material = null;
