@@ -39,19 +39,6 @@
     ${orders}
     
 </div>
-
-
-
-<script type="text/javascript">
     
-    $(document).ready(function () {
-        $('ul.tabs').tabs();
-    });
     
-</script>
-
-
-
-
-
 <%@include file="/WEB-INF/jspf/footer.jspf"%>
