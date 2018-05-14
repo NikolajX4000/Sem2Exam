@@ -21,8 +21,7 @@ import java.util.logging.Logger;
  *
  * @author Stephan
  */
-public class MaterialMapper
-{
+public class MaterialMapper {
 
     /**
      *
@@ -30,21 +29,17 @@ public class MaterialMapper
      * @return
      * @throws CustomException
      */
-    public static List<Material> getMaterials(String material) throws CustomException
-    {
+    public static List<Material> getAllMaterials() throws CustomException {
         PreparedStatement ps = null;
         List<Material> materials = new ArrayList<>();
-        try
-        {
+        try {
             Connection con = Connector.connection();
-            String SQL = "SELECT * FROM materials WHERE name=?";
-            
+            String SQL = "SELECT * FROM materials";
+
             ps = con.prepareStatement(SQL);
-            ps.setString(1, material);
             ResultSet rs = ps.executeQuery();
 
-            while (rs.next())
-            {
+            while (rs.next()) {
 
                 Material materialTmp = new Material().
                         setId(rs.getInt("plank_id")).
@@ -55,11 +50,9 @@ public class MaterialMapper
                 materials.add(materialTmp);
             }
 
-        } catch (SQLException | ClassNotFoundException ex)
-        {
+        } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
-        } finally
-        {
+        } finally {
             closeConnection(ps);
         }
         return materials;
@@ -71,12 +64,46 @@ public class MaterialMapper
      * @return
      * @throws CustomException
      */
-    public static Material addMaterial(Material material) throws CustomException
-    {
+    public static List<Material> getMaterials(String material) throws CustomException {
+        PreparedStatement ps = null;
+        List<Material> materials = new ArrayList<>();
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM materials WHERE name=?";
+
+            ps = con.prepareStatement(SQL);
+            ps.setString(1, material);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+
+                Material materialTmp = new Material().
+                        setId(rs.getInt("plank_id")).
+                        setName(rs.getString("name")).
+                        setPrice(rs.getInt("price")).
+                        setDescription(rs.getString("description")).
+                        setSize(rs.getInt("size"));
+                materials.add(materialTmp);
+            }
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            throw new CustomException(ex.getMessage());
+        } finally {
+            closeConnection(ps);
+        }
+        return materials;
+    }
+
+    /**
+     *
+     * @param material
+     * @return
+     * @throws CustomException
+     */
+    public static Material addMaterial(Material material) throws CustomException {
         PreparedStatement ps = null;
 
-        try
-        {
+        try {
             Connection con = Connector.connection();
             String SQL = "INSERT INTO material ( "
                     + "name, price, size, description ) "
@@ -84,31 +111,26 @@ public class MaterialMapper
 
             ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
 
-            try
-            {
+            try {
                 ps.setString(1, material.getName());
                 ps.setInt(2, material.getPrice());
                 ps.setInt(3, material.getSize());
                 ps.setString(4, material.getDescription());
 
-            } catch (SQLException ex)
-            {
+            } catch (SQLException ex) {
                 throw new CustomException("Formateringsfejl");
             }
 
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
 
-            if (rs.first())
-            {
+            if (rs.first()) {
                 material.setId(rs.getInt(1));
             }
 
-        } catch (SQLException | ClassNotFoundException ex)
-        {
+        } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
-        } finally
-        {
+        } finally {
             closeConnection(ps);
         }
         return material;
@@ -120,12 +142,10 @@ public class MaterialMapper
      * @return
      * @throws CustomException
      */
-    public static Material updateMaterial(Material material) throws CustomException
-    {
+    public static Material updateMaterial(Material material) throws CustomException {
         PreparedStatement ps = null;
 
-        try
-        {
+        try {
             Connection con = Connector.connection();
             String SQL = "UPDATE orders SET "
                     + "name = ?, price = ?, size = ?, description = ? "
@@ -133,25 +153,21 @@ public class MaterialMapper
 
             ps = con.prepareStatement(SQL);
 
-            try
-            {
+            try {
                 ps.setString(1, material.getName());
                 ps.setInt(2, material.getPrice());
                 ps.setInt(3, material.getSize());
                 ps.setString(4, material.getDescription());
                 ps.setInt(5, material.getId());
 
-            } catch (SQLException ex)
-            {
+            } catch (SQLException ex) {
                 throw new CustomException("Formateringsfejl");
             }
             ps.executeUpdate();
 
-        } catch (SQLException | ClassNotFoundException ex)
-        {
+        } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
-        } finally
-        {
+        } finally {
             closeConnection(ps);
         }
         return material;
@@ -163,43 +179,10 @@ public class MaterialMapper
      * @return
      * @throws CustomException
      */
-    public static boolean deleteMaterial(int id) throws CustomException
-    {
+    public static boolean deleteMaterial(int id) throws CustomException {
         throw new UnsupportedOperationException("comming soon");
     }
 
-    public static Material getTool(int tool_id) throws CustomException
-    {
-        PreparedStatement ps = null;
-        Material material = new Material();
-        try
-        {
-            Connection con = Connector.connection();
-            String SQL = "SELECT * FROM tools WHERE tool_id = ?";
-
-            ps = con.prepareStatement(SQL);
-            ps.setInt(1, tool_id);
-            ResultSet rs = ps.executeQuery();
-
-            if (rs.first())
-            {
-                material.
-                        setId(rs.getInt("tool_id")).
-                        setName(rs.getString("name")).
-                        setPrice(rs.getInt("price")).
-                        setUnitSize(rs.getInt("unit_size"));
-            }
-
-        } catch (SQLException | ClassNotFoundException ex)
-        {
-            throw new CustomException(ex.getMessage());
-        } finally
-        {
-            closeConnection(ps);
-        }
-        return material;
-    }
-    
     /**
      * This method will close the prepared statement connection if it's
      * connection, the reason is to reduce as musch in- and outgoing trafic from
@@ -207,15 +190,11 @@ public class MaterialMapper
      *
      * @param ps PreparedStatement object, the SQL controller.
      */
-    private static void closeConnection(PreparedStatement ps)
-    {
-        if (ps != null)
-        {
-            try
-            {
+    private static void closeConnection(PreparedStatement ps) {
+        if (ps != null) {
+            try {
                 ps.close();
-            } catch (SQLException ex)
-            {
+            } catch (SQLException ex) {
                 Logger.getLogger(OrderMapper.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

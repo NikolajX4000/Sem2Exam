@@ -18,7 +18,7 @@ public class DrawCarportAngleTop {
     double lathWidth, lathHeight;
     double spaerWidth, spaerHeight;
     double beam = 10;
-    double newBeamAfter = 50;
+    double newBeamAfter = 400;
     
     double shedXStartAt, shedXEndAt, shedYStartAt, shedYEndAt;
     
@@ -67,8 +67,6 @@ public class DrawCarportAngleTop {
 
         remWidth = width - 30 - 25;
         remHeight = 4.5;
-
-        beam = 10;
         
         shedXStartAt = width - shedWidth - xOffset;
         shedXEndAt = width - xOffset;
