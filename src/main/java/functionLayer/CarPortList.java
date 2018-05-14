@@ -2,6 +2,7 @@ package functionLayer;
 
 import java.util.*;
 import storageLayer.MaterialMapper;
+import storageLayer.ToolMapper;
 
 /**
  *
@@ -51,7 +52,7 @@ public class CarPortList
 
     PartLine skruerSternOgVandbreat(int amount) throws CustomException
     {
-        Material material = MaterialMapper.getTool(5);
+        Material material = ToolMapper.getTool(5);
         return new PartLine(material, amount * 10);
     }
 
@@ -171,7 +172,7 @@ public class CarPortList
 
     ArrayList<PartLine> braeddeboltOgFirkantskive(int amount) throws CustomException
     {
-        Material material = MaterialMapper.getTool(7);
+        Material material = ToolMapper.getTool(7);
         ArrayList<PartLine> parts = new ArrayList<>();
         amount *= 2;
         if (order.hasShed())
@@ -179,7 +180,7 @@ public class CarPortList
             amount += 2;
         }
         parts.add(new PartLine(material, amount));
-        material = MaterialMapper.getTool(8);
+        material = ToolMapper.getTool(8);
         parts.add(new PartLine(material, amount));
         return parts;
     }
@@ -199,7 +200,7 @@ public class CarPortList
 
     PartLine beslagSkruer(int amountBeslag, int amountHulbaand) throws CustomException
     {
-        Material material = MaterialMapper.getTool(6);
+        Material material = ToolMapper.getTool(6);
         int amount = (amountBeslag * 15) + (amountHulbaand * 30);
         return new PartLine(material, amount);
     }
@@ -222,19 +223,19 @@ public class CarPortList
 
     PartLine universalBeslagH(int amount) throws CustomException
     {
-        Material material = MaterialMapper.getTool(3);
+        Material material = ToolMapper.getTool(3);
         return new PartLine(material, amount);
     }
 
     PartLine universalBeslagV(int amount) throws CustomException
     {
-        Material material = MaterialMapper.getTool(4);
+        Material material = ToolMapper.getTool(4);
         return new PartLine(material, amount);
     }
 
     PartLine hulbaand() throws CustomException
     {
-        Material material = MaterialMapper.getTool(2);
+        Material material = ToolMapper.getTool(2);
         return new PartLine(material, 2);
     }
 
@@ -253,7 +254,7 @@ public class CarPortList
 
     PartLine plastmoBundskruer() throws CustomException
     {
-        Material material = MaterialMapper.getTool(1);
+        Material material = ToolMapper.getTool(1);
         size = (length / 100) * (width / 100);
         int amount = (int) size * 12;
         return new PartLine(material, amount);
@@ -289,7 +290,7 @@ public class CarPortList
 
     PartLine vinkelbeslag(int amount) throws CustomException
     {
-        Material material = MaterialMapper.getTool(13);
+        Material material = ToolMapper.getTool(13);
         return new PartLine(material, amount * 2);
     }
 
@@ -327,22 +328,22 @@ public class CarPortList
     ArrayList<PartLine> beklaedningSkruer(int amount) throws CustomException
     {
         ArrayList<PartLine> parts = new ArrayList<>();
-        Material material = MaterialMapper.getTool(9);
+        Material material = ToolMapper.getTool(9);
         parts.add(new PartLine(material, amount * 3));
-        material = MaterialMapper.getTool(10);
+        material = ToolMapper.getTool(10);
         parts.add(new PartLine(material, amount / 2 * 3));
         return parts;
     }
 
     private PartLine stalddørsgreb() throws CustomException
     {
-        Material material = MaterialMapper.getTool(11);
+        Material material = ToolMapper.getTool(11);
         return new PartLine(material, 1);
     }
 
     private PartLine tHængsel() throws CustomException
     {
-        Material material = MaterialMapper.getTool(12);
+        Material material = ToolMapper.getTool(12);
         return new PartLine(material, 2);
     }
     
