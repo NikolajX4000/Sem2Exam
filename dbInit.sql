@@ -169,6 +169,7 @@ INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x
 INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x100 mm. trykimp. Bræt',360);
 INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x100 mm. trykimp. Bræt',420);
 INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x100 mm. trykimp. Bræt',480);
+INSERT INTO materials (name,price,description,size) VALUES('z til dør', 23, '38x73 mm. Lægte ubh.',420);
 */
 
 /*tools*/
