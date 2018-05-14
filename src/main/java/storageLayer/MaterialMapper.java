@@ -157,17 +157,6 @@ public class MaterialMapper
         return material;
     }
 
-    /**
-     *
-     * @param id
-     * @return
-     * @throws CustomException
-     */
-    public static boolean deleteMaterial(int id) throws CustomException
-    {
-        throw new UnsupportedOperationException("comming soon");
-    }
-
     public static Material getTool(int tool_id) throws CustomException
     {
         PreparedStatement ps = null;
