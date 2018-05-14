@@ -132,8 +132,9 @@ public class StorageFacade {
     /**
      * @return @throws CustomException
      */
-    public static Material getAllTool() throws CustomException {
+    public static List<Material> getAllTool() throws CustomException {
         return ToolMapper.getAllTool();
+        
     }
 
     /**

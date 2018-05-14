@@ -13,7 +13,7 @@ public class DrawCarportFlatTop {
     String std = "fill:none;stroke:black;stroke-width:1;";
     String thin = "fill:none;stroke:black;stroke-width:0.5;";
     
-    double xOffset = 30, yOffset = 35;
+    double xOffset = 30, yOffset = 15;
     
     double width, height, shedWidth, shedHeight;
     double spaerWidth = 4.5;
@@ -45,12 +45,12 @@ public class DrawCarportFlatTop {
         
         svg = new SVG(width, height);
 
-        if (shedHeight > height - 70) {
-            shedHeight = height - 70;
+        if (shedHeight > height - yOffset*2) {
+            shedHeight = height - yOffset*2;
         }
 
-        if (shedWidth > width - 60) {
-            shedWidth = width - 60;
+        if (shedWidth > width - xOffset*2) {
+            shedWidth = width - xOffset*2;
         }
         
     }
@@ -95,7 +95,7 @@ public class DrawCarportFlatTop {
     {
         // shed skeleton
         double shedSkeletonStartX = width - shedWidth - xOffset - 1;
-        double shedSkeletonStartY = height - shedHeight - yOffset - 1;
+        double shedSkeletonStartY = yOffset - 1;
         double shedSkeletonHeight = shedHeight + 2;
         double shedSkeletonWidth = shedWidth + 2;
         String shedSkeletonStyle = "fill:none;stroke:black;stroke-width:2;";
@@ -111,7 +111,7 @@ public class DrawCarportFlatTop {
         String crossCustom = "stroke-dasharray='3, 3'";
 
         double crossXstart = spaerWidth + xOffset + spaerWidth; //spaerGutter
-        double crossXend = (hasShed) ? spaerWidth + width - shedWidth - xOffset : width - spaerGutter + spaerWidth;
+        double crossXend = (hasShed) ? spaerWidth + width - shedWidth - xOffset : width - xOffset - spaerWidth;
 
         double crossTopYstart = remHeight + yOffset;
         double crossBotYstart = height - remHeight - yOffset;
