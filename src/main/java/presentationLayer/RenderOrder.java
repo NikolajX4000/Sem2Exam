@@ -135,7 +135,7 @@ public class RenderOrder {
             }else{
                 s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(DrawCarport.angledSide(o.getLength(), o.getWidth(), o.getShedLength(), o.getAngle(), o.hasShed())).append("</div></div>");
                 s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(DrawCarport.angledTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed())).append("</div></div>");
-                //s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(new DrawCarportAngleTop(o)).append("</div></div>");
+                s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(new DrawCarportAngleTop(o)).append("</div></div>");
             }
             s.append("</div>");
             
@@ -153,7 +153,7 @@ public class RenderOrder {
            
             if(o.isFlat()){
                 s.append("<table><tbody>");
-                s.append("<tr><th>Antal</th><th>Navn</th></tr>");
+                s.append("<tr><th>Antal</th><th>Størrelse</th><th>Navn</th></tr>");
                 try {
                     
                     //ArrayList
@@ -165,6 +165,7 @@ public class RenderOrder {
                         s.append("<tr>");
                         
                         s.append("<td>").append(pl.getAmount()).append("</td>");
+                        s.append("<td>").append(pl.getSize()).append("</td>");
                         s.append("<td>").append(pl.getMaterial().getName()).append("</td>");
                         
                         s.append("</tr>");
