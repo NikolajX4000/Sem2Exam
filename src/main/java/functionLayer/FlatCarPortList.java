@@ -166,7 +166,7 @@ public class FlatCarPortList
             }
             amount++;//for the door
         }
-        parts.add(new PartLine(material.get(1), amount).setSize(300));
+        parts.add(new PartLine(material.get(1), amount).setSize(210));
         return parts;
     }
 
