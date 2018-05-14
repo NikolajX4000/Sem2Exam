@@ -25,7 +25,7 @@ public class DanielTestClass
                 setLength(780).
                 setShedWidth(530).
                 setShedLength(210);
-        CarPortList carport = new CarPortList(order);
+        FlatCarPortList carport = new FlatCarPortList(order);
         List<PartLine> parts = carport.getParts();
         for (int i = 0; i < parts.size(); i++)
         {

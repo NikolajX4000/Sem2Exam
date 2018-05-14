@@ -13,12 +13,12 @@ import static org.junit.Assert.*;
  *
  * @author Jacob Borg
  */
-public class CarPortListTest
+public class FlatCarPortListTest
 {
 
-    CarPortList carport = null;
+    FlatCarPortList carport = null;
 
-    public CarPortListTest() throws CustomException
+    public FlatCarPortListTest() throws CustomException
     {
         Order order = new Order();
         order.
@@ -26,11 +26,11 @@ public class CarPortListTest
                 setLength(780).
                 setShedWidth(530).
                 setShedLength(210);
-        carport = new CarPortList(order);
+        carport = new FlatCarPortList(order);
     }
 
     /**
-     * Test of skruerSternOgVandbreat method, of class CarPortList.
+     * Test of skruerSternOgVandbreat method, of class FlatCarPortList.
      */
     @Test
     public void testSkruerSternOgVandbreat() throws Exception
@@ -41,7 +41,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of oversternEnder method, of class CarPortList.
+     * Test of oversternEnder method, of class FlatCarPortList.
      */
     @Test
     public void testOversternEnder() throws Exception
@@ -56,7 +56,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of understernEnder method, of class CarPortList.
+     * Test of understernEnder method, of class FlatCarPortList.
      */
     @Test
     public void testUndersternEnder() throws Exception
@@ -71,7 +71,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of oversternSider method, of class CarPortList.
+     * Test of oversternSider method, of class FlatCarPortList.
      */
     @Test
     public void testOversternSider() throws Exception
@@ -86,7 +86,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of understernSider method, of class CarPortList.
+     * Test of understernSider method, of class FlatCarPortList.
      */
     @Test
     public void testUndersternSider() throws Exception
@@ -101,7 +101,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of vandbraetEnde method, of class CarPortList.
+     * Test of vandbraetEnde method, of class FlatCarPortList.
      */
     @Test
     public void testVandbraetEnde() throws Exception
@@ -116,7 +116,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of vandbraetSide method, of class CarPortList.
+     * Test of vandbraetSide method, of class FlatCarPortList.
      */
     @Test
     public void testVandbraetSide() throws Exception
@@ -131,7 +131,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of remCarport method, of class CarPortList.
+     * Test of remCarport method, of class FlatCarPortList.
      */
     @Test
     public void testRemCarport() throws Exception
@@ -146,7 +146,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of stolperOgBolt method, of class CarPortList.
+     * Test of stolperOgBolt method, of class FlatCarPortList.
      */
     @Test
     public void testStolperOgBolt() throws Exception
@@ -162,7 +162,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of braeddeboltOgFirkantskive method, of class CarPortList.
+     * Test of braeddeboltOgFirkantskive method, of class FlatCarPortList.
      */
     @Test
     public void testBraeddeboltOgFirkantskive() throws Exception
@@ -179,7 +179,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of beslagSkruer method, of class CarPortList.
+     * Test of beslagSkruer method, of class FlatCarPortList.
      */
     @Test
     public void testBeslagSkruer() throws Exception
@@ -191,7 +191,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of spaer method, of class CarPortList.
+     * Test of spaer method, of class FlatCarPortList.
      */
     @Test
     public void testSpaer() throws Exception
@@ -206,7 +206,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of universalBeslagH method, of class CarPortList.
+     * Test of universalBeslagH method, of class FlatCarPortList.
      */
     @Test
     public void testUniversalBeslagH() throws Exception
@@ -218,7 +218,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of universalBeslagV method, of class CarPortList.
+     * Test of universalBeslagV method, of class FlatCarPortList.
      */
     @Test
     public void testUniversalBeslagV() throws Exception
@@ -230,7 +230,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of hulbaand method, of class CarPortList.
+     * Test of hulbaand method, of class FlatCarPortList.
      */
     @Test
     public void testHulbaand() throws Exception
@@ -242,7 +242,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of tagplade method, of class CarPortList.
+     * Test of tagplade method, of class FlatCarPortList.
      */
     @Test
     public void testTagplade() throws Exception
@@ -258,7 +258,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of plastmoBundskruer method, of class CarPortList.
+     * Test of plastmoBundskruer method, of class FlatCarPortList.
      */
     @Test
     public void testPlastmoBundskruer() throws Exception
@@ -270,7 +270,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of loesholter method, of class CarPortList.
+     * Test of loesholter method, of class FlatCarPortList.
      */
     @Test
     public void testLoesholter() throws Exception
@@ -292,7 +292,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of vinkelbeslag method, of class CarPortList.
+     * Test of vinkelbeslag method, of class FlatCarPortList.
      */
     @Test
     public void testVinkelbeslag() throws Exception
@@ -304,7 +304,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of remSkur method, of class CarPortList.
+     * Test of remSkur method, of class FlatCarPortList.
      */
     @Test
     public void testRemSkur() throws Exception
@@ -319,7 +319,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of beklaedning method, of class CarPortList.
+     * Test of beklaedning method, of class FlatCarPortList.
      */
     @Test
     public void testBeklaedning() throws Exception
@@ -335,7 +335,7 @@ public class CarPortListTest
     }
 
     /**
-     * Test of beklaedningSkruer method, of class CarPortList.
+     * Test of beklaedningSkruer method, of class FlatCarPortList.
      */
     @Test
     public void testBeklaedningSkruer() throws Exception

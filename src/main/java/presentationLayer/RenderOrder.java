@@ -6,7 +6,7 @@
 
 package presentationLayer;
 
-import functionLayer.CarPortList;
+import functionLayer.FlatCarPortList;
 import functionLayer.Order;
 import functionLayer.PartLine;
 import java.util.List;
@@ -159,7 +159,7 @@ public class RenderOrder {
                     
                     //ArrayList
                     
-                    CarPortList cpl = new CarPortList(o);
+                    FlatCarPortList cpl = new FlatCarPortList(o);
                     List<PartLine> list = cpl.getParts();
                     
                     for(PartLine pl : list){
