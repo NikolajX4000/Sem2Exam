@@ -20,6 +20,11 @@ import java.util.logging.Logger;
  */
 public class ToolMapper {
 
+    /**
+     *
+     * @return
+     * @throws CustomException
+     */
     public static Material getAllTool() throws CustomException {
         PreparedStatement ps = null;
         Material material = new Material();
@@ -46,6 +51,12 @@ public class ToolMapper {
         return material;
     }
 
+    /**
+     *
+     * @param tool_id
+     * @return
+     * @throws CustomException
+     */
     public static Material getTool(int tool_id) throws CustomException {
         PreparedStatement ps = null;
         Material material = new Material();
@@ -73,6 +84,12 @@ public class ToolMapper {
         return material;
     }
 
+    /**
+     *
+     * @param material
+     * @return
+     * @throws CustomException
+     */
     public static Material updateTool(Material material) throws CustomException {
         PreparedStatement ps = null;
         try {
