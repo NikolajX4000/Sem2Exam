@@ -8,10 +8,6 @@ package presentationLayer;
 
 import functionLayer.Order;
 
-/**
- *
- * @author super
- */
 public class DrawCarportFlatTop {
     
     String std = "fill:none;stroke:black;stroke-width:1;";
@@ -32,10 +28,6 @@ public class DrawCarportFlatTop {
     
     String tmp = "";
 
-    /**
-     *
-     * @param o
-     */
     public DrawCarportFlatTop(Order o)
     {
         isFlat = o.isFlat();

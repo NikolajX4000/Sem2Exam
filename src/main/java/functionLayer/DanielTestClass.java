@@ -14,7 +14,6 @@ public class DanielTestClass
     /**
      *
      * @param args
-     * @throws functionLayer.CustomException
      */
     public static void main(String[] args) throws CustomException
     {

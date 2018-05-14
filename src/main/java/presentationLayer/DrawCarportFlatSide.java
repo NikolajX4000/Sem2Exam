@@ -4,10 +4,6 @@ package presentationLayer;
 import functionLayer.Order;
 import java.util.Random;
 
-/**
- *
- * @author super
- */
 public class DrawCarportFlatSide {
 
     String std = "fill:none;stroke:black;stroke-width:1;";
@@ -27,10 +23,6 @@ public class DrawCarportFlatSide {
     
     String tmp = "";
 
-    /**
-     *
-     * @param o
-     */
     public DrawCarportFlatSide(Order o) {
 
         isFlat = o.isFlat();
