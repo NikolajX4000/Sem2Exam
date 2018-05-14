@@ -10,7 +10,7 @@ public class DrawCarport {
         double x, y, h, w;
 
         double width = pLength;
-        double height = pWidth;
+        double height = 210;
         double shedWidth = pShedLength;
         
         if (shedWidth > width - 60) {
