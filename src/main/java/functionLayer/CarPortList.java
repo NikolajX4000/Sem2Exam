@@ -349,7 +349,7 @@ public class CarPortList
     private PartLine zTilDoer() throws CustomException
     {
         List<Material> material = MaterialMapper.getMaterials("z til dør");
-        return new PartLine(material.get(0), 1);
+        return new PartLine(material.get(0), 1).setSize(material.get(0).getSize());
     }
 
     private int findSize(double length, List<Integer> sizes)
