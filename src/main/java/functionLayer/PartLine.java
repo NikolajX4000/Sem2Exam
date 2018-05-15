@@ -67,6 +67,7 @@ public class PartLine
      */
     public PartLine setSize(double size) {
         this.size = (int)size;
+        material.setSize((int)size);
         return this;
     }
 
