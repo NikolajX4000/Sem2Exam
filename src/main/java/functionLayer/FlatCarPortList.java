@@ -1,8 +1,6 @@
 package functionLayer;
 
 import java.util.*;
-import storageLayer.MaterialMapper;
-import storageLayer.ToolMapper;
 
 /**
  *
@@ -330,7 +328,7 @@ public class FlatCarPortList
         ArrayList<PartLine> parts = new ArrayList<>();
         Material material = StorageFacade.getTool(9);
         parts.add(new PartLine(material, amount * 3));
-        material = ToolMapper.getTool(10);
+        material = StorageFacade.getTool(10);
         parts.add(new PartLine(material, amount / 2 * 3));
         return parts;
     }
