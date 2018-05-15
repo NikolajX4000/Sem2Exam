@@ -165,6 +165,9 @@ INSERT INTO materials (name,price,description,size) VALUES('løsholte',16,'45x95
 INSERT INTO materials (name,price,description,size) VALUES('løsholte',16,'45x95 mm. Reglar ub.',480);
 INSERT INTO materials (name,price,description,size) VALUES('løsholte',16,'45x95 mm. Reglar ub.',510);
 INSERT INTO materials (name,price,description,size) VALUES('løsholte',16,'45x95 mm. Reglar ub.',540);
+INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x100 mm. trykimp. Bræt',210);
+INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x100 mm. trykimp. Bræt',240);
+INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x100 mm. trykimp. Bræt',270);
 INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x100 mm. trykimp. Bræt',300);
 INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x100 mm. trykimp. Bræt',360);
 INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x100 mm. trykimp. Bræt',420);
