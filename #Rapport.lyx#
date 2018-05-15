@@ -693,8 +693,7 @@ Som udvikler er test af programmet en vigtig del af processen.
 
 \begin_layout Standard
 \noindent
-Vores testmiljø består af JUnit test og et plugin som hedder TikiOne JaCoCoverag
-e.
+Vores testmiljø består af JUnit test og et plugin TikiOne JaCoCoverage.
  Vores JUnit Mapper test er koblet til vores aktuelle database, hvilket
  vi ved ikke er den optimale måde at teste på.
  Der er andre måder, som f.eks.
@@ -702,8 +701,6 @@ e.
  og som kun har forbindelse til vores test run.
  Dette vil kun sikre at vores test ikke skabte konflikt i vores program
  senere hen, men vil ikke reducere forbindelsen mellem program og server.
- De resterende JUnit test er blevet udarbejdet på den traditionelle måde,
- da der ikke er nogle specielle faktore der spiller ind.
  Vi har brugt et pugin der heder TikiOne JaCoCoverage, som skaber at overblik
  over hvilke metoder der er blevet testet.
  
