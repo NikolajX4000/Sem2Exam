@@ -682,8 +682,10 @@ Test
 Som udvikler er test af programmet en vigtig del af processen.
  Lever koden ikke op til de givne test må den revurderes og testes igen,
  indtil alle testene går igennem.
- En måde at sikre at alle metoder gennemføre deres test, Test Driven Developmemt
- (TDD) er en god måde at sikre signe test på.
+ En måde at sikre at alle metoder gennemføre deres test er at bruge Test
+ Driven Developmemt (TDD).
+ TDD er en god måde at sikre signe test på, da man starter med testen og
+ derefter udarbejder metoden til at løse den.
  Desværre lærte vi først denne udviklingsmetode midvejs gennem forløbet
  hvilket gjrorde den svær at implimentere, da det er en metode der skal
  implementeres i starten af projektet.
@@ -691,7 +693,8 @@ Som udvikler er test af programmet en vigtig del af processen.
 
 \begin_layout Standard
 \noindent
-Vores testmiljø består af JUnit test og pluginnet TikiOne JaCoCoverage.
+Vores testmiljø består af JUnit test og et plugin som hedder TikiOne JaCoCoverag
+e.
  Vores JUnit Mapper test er koblet til vores aktuelle database, hvilket
  vi ved ikke er den optimale måde at teste på.
  Der er andre måder, som f.eks.
@@ -699,6 +702,8 @@ Vores testmiljø består af JUnit test og pluginnet TikiOne JaCoCoverage.
  og som kun har forbindelse til vores test run.
  Dette vil kun sikre at vores test ikke skabte konflikt i vores program
  senere hen, men vil ikke reducere forbindelsen mellem program og server.
+ De resterende JUnit test er blevet udarbejdet på den traditionelle whitebox
+ måde, da der ikke er nogle specielle faktore der spiller ind.
  Vi har brugt et pugin der heder TikiOne JaCoCoverage, som skaber at overblik
  over hvilke metoder der er blevet testet.
  
