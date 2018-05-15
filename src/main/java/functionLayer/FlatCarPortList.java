@@ -166,7 +166,7 @@ public class FlatCarPortList
             }
             amount++;//for the door
         }
-        parts.add(new PartLine(material.get(1), amount).setSize(210));
+        parts.add(new PartLine(material.get(0), amount).setSize(300));
         return parts;
     }
 
@@ -177,7 +177,7 @@ public class FlatCarPortList
         amount *= 2;
         if (order.hasShed())
         {
-            amount += 2;
+            amount += 4;
         }
         parts.add(new PartLine(material, amount));
         material = ToolMapper.getTool(8);
