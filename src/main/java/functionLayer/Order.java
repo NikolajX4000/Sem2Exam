@@ -5,8 +5,8 @@
  */
 package functionLayer;
 
-import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
@@ -19,6 +19,7 @@ public class Order {
     /* order */
     private int id;
     private String stringId;
+    private List<PartLine> partsList;
 
     /* customer */
     private String name;
@@ -46,6 +47,17 @@ public class Order {
 
     /* status */
     private String status = "Behandles";
+
+    public int calculatePrice() throws CustomException {
+        if (isFlat()) {
+            partsList = new FlatCarPortList(this).getParts();
+        }
+        int price = 0;
+        for (PartLine p : partsList) {
+            price += p.calculatePrice();
+        }
+        return price;
+    }
 
     /**
      *

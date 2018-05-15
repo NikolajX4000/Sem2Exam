@@ -1,13 +1,12 @@
 package functionLayer;
 
-import java.util.*;
+import static java.util.Collections.list;
 
 /**
  *
  * @author super
  */
-public class PartLine
-{
+public class PartLine {
 
     private Material material;
     private int size;
@@ -23,9 +22,9 @@ public class PartLine
     public PartLine(Material material, int amount) {
         this.material = material;
         this.unit = material.getUnitSize();
-        this.amount = (int) Math.ceil((double)amount / unit);
+        this.amount = (int) Math.ceil((double) amount / unit);
     }
-    
+
     /**
      *
      * @param name
@@ -35,15 +34,20 @@ public class PartLine
 //    public PartLine(String name, int amount, int unit) {
 //        // Comming soon
 //    }
-
     /**
      *
      * @return
      */
     public int calculatePrice() {
-        return (int) Math.ceil( material.getPrice() * (size / 100d) * amount );
+        int price = 0;
+        if (material.getSize() != 0) {
+            price += material.getPrice() * (material.getSize() / 100) * amount;
+        } else {
+            price += material.getPrice() * amount;
+        }
+        return price;
     }
-    
+
     /**
      *
      * @return
@@ -66,8 +70,8 @@ public class PartLine
      * @return
      */
     public PartLine setSize(double size) {
-        this.size = (int)size;
-        material.setSize((int)size);
+        this.size = (int) size;
+        material.setSize((int) size);
         return this;
     }
 
@@ -109,17 +113,13 @@ public class PartLine
      *
      * @return
      */
-    public String getDescription()
-    {
+    public String getDescription() {
         return description;
     }
 
     @Override
-    public String toString()
-    {
-        return material.getDescription()+ " : " + size + " : " + amount + " : " + unit + ": " + material.getName();
+    public String toString() {
+        return material.getDescription() + " : " + size + " : " + amount + " : " + unit + ": " + material.getName();
     }
-    
-    
 
 }

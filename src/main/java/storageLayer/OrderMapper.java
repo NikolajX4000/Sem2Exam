@@ -67,7 +67,7 @@ public class OrderMapper {
                 ps.setInt( 13, order.getShedLength() );
 
                 /* price */
-                ps.setInt( 14, order.getPriceDB() );
+                ps.setInt( 14, order.calculatePrice() );
                 
             } catch ( SQLException ex ) {
                 throw new CustomException( "Formateringsfejl" );
