@@ -92,6 +92,30 @@ Stephan Marcus Duelund Djurhuus
 \end_layout
 
 \begin_layout Standard
+Link til 
+\begin_inset CommandInset href
+LatexCommand href
+name "GitHub"
+target "https://github.com/NikolajX4000/Sem2Exam"
+
+\end_inset
+
+ repository
+\end_layout
+
+\begin_layout Standard
+Link til 
+\begin_inset CommandInset href
+LatexCommand href
+name "Javadoc"
+target "https://nikolajx4000.github.io/Sem2Exam/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -151,8 +175,8 @@ Indledning
 \end_layout
 
 \begin_layout Standard
-Vi er blevet kontaktet af Johannes Fog i Ølstykke, der har spurgt om vi
- kan lave et program og tilhørende hjemmeside til deres salg af carporte.
+Vi er blevet kontaktet af Johannes Fog Værebro, der har spurgt om vi kan
+ lave et program og tilhørende hjemmeside til deres salg af carporte.
 \end_layout
 
 \begin_layout Subsection
@@ -631,11 +655,27 @@ Særlige forhold
 \end_layout
 
 \begin_layout Section
+Udvalgte kodeeksempler
+\end_layout
+
+\begin_layout Section
 Status på implementation
 \end_layout
 
 \begin_layout Section
 Test
+\end_layout
+
+\begin_layout Section
+Process
+\end_layout
+
+\begin_layout Subsection
+Arbejdsprocessen faktuelt
+\end_layout
+
+\begin_layout Subsection
+Arbejdsprocessen reflekteret
 \end_layout
 
 \end_body
