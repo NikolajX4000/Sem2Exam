@@ -11,6 +11,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,9 +22,10 @@ import java.util.logging.Logger;
  */
 public class ToolMapper {
 
-    public static Material getAllTool() throws CustomException {
+    public static List<Material> getAllTool() throws CustomException {
         PreparedStatement ps = null;
-        Material material = new Material();
+        Material material = null;
+        List<Material> materials = new ArrayList<>();
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT * FROM tools";
@@ -30,12 +33,13 @@ public class ToolMapper {
             ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
 
-            if (rs.first()) {
-                material.
-                        setId(rs.getInt("tool_id")).
-                        setName(rs.getString("name")).
-                        setPrice(rs.getInt("price")).
-                        setUnitSize(rs.getInt("unit_size"));
+            while (rs.next()) {
+                material = new Material().
+                    setId(rs.getInt("tool_id")).
+                    setName(rs.getString("name")).
+                    setPrice(rs.getInt("price")).
+                    setUnitSize(rs.getInt("unit_size"));
+                materials.add(material);
             }
 
         } catch (SQLException | ClassNotFoundException ex) {
@@ -43,9 +47,15 @@ public class ToolMapper {
         } finally {
             closeConnection(ps);
         }
-        return material;
+        return materials;
     }
 
+    /**
+     *
+     * @param tool_id
+     * @return
+     * @throws CustomException
+     */
     public static Material getTool(int tool_id) throws CustomException {
         PreparedStatement ps = null;
         Material material = new Material();
@@ -73,6 +83,12 @@ public class ToolMapper {
         return material;
     }
 
+    /**
+     *
+     * @param material
+     * @return
+     * @throws CustomException
+     */
     public static Material updateTool(Material material) throws CustomException {
         PreparedStatement ps = null;
         try {

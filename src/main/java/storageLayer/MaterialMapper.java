@@ -25,7 +25,6 @@ public class MaterialMapper {
 
     /**
      *
-     * @param material
      * @return
      * @throws CustomException
      */

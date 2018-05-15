@@ -1,10 +1,22 @@
 package presentationLayer;
 
+/**
+ *
+ * @author super
+ */
 public class DrawCarport {
 
     private DrawCarport() {
     }
 
+    /**
+     *
+     * @param pLength
+     * @param pWidth
+     * @param pShedLength
+     * @param hasShed
+     * @return
+     */
     public static String flatSide(int pLength, int pWidth, int pShedLength, boolean hasShed) {
 
         double x, y, h, w;
@@ -92,6 +104,15 @@ public class DrawCarport {
         return svg.toString();
     }
 
+    /**
+     *
+     * @param pLength
+     * @param pWidth
+     * @param pShedLength
+     * @param pShedWidth
+     * @param hasShed
+     * @return
+     */
     public static String flatTop(int pLength, int pWidth, int pShedLength, int pShedWidth, boolean hasShed) {
 
         double width = pLength;
@@ -224,6 +245,15 @@ public class DrawCarport {
         return svg.toString();
     }
 
+    /**
+     *
+     * @param pLength
+     * @param pWidth
+     * @param pShedLength
+     * @param pAngle
+     * @param hasShed
+     * @return
+     */
     public static String angledSide(int pLength, int pWidth, int pShedLength, int pAngle, boolean hasShed) {
 
         double x, y, h, w;
@@ -340,6 +370,15 @@ public class DrawCarport {
 
     }
 
+    /**
+     *
+     * @param pLength
+     * @param pWidth
+     * @param pShedLength
+     * @param pShedWidth
+     * @param hasShed
+     * @return
+     */
     public static String angledTop(int pLength, int pWidth, int pShedLength, int pShedWidth, boolean hasShed) {
         // variabler
         double width = pLength;

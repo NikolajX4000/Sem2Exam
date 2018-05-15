@@ -15,7 +15,6 @@
 
 
 <%
-    HttpSession s = request.getSession();
     List<Order> orders = (List<Order>)request.getAttribute("desiredOrdersFromEmail");
     
     String orderString = "";
@@ -39,19 +38,6 @@
     ${orders}
     
 </div>
-
-
-
-<script type="text/javascript">
     
-    $(document).ready(function () {
-        $('ul.tabs').tabs();
-    });
     
-</script>
-
-
-
-
-
 <%@include file="/WEB-INF/jspf/footer.jspf"%>
