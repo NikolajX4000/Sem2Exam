@@ -4,6 +4,7 @@
     Author     : Hupra Laptop
 --%>
 
+<%@page import="functionLayer.Material"%>
 <%@page import="presentationLayer.RenderOrder"%>
 <%@page import="functionLayer.LogicFacade"%>
 <%@page import="java.util.ArrayList"%>
@@ -13,9 +14,26 @@
 <!DOCTYPE html>
 <%@include file="/WEB-INF/jspf/header.jspf"%>
 
+<%
+
+    List<Material> allMaterial = LogicFacade.getAllMaterials();
+
+
+    String s = "";
+    
+for(Material m : allMaterial){
+    s += m.getName() + " ";
+}
+
+
+
+%>
+
+
+
 <div class="row">
     
-    
+    <%=s%>
     
 </div>
     

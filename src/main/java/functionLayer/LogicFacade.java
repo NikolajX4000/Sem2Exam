@@ -47,6 +47,14 @@ public class LogicFacade {
     public static void updateOrder(int id, String status) throws CustomException{
         StorageFacade.updateStatus(id, status);
     }
-            
+    
+    /**
+     * 
+     * @return List of all material
+     * @throws CustomException 
+     */
+    public static List<Material> getAllMaterials() throws CustomException{
+        return StorageFacade.getAllMaterials();
+    }
     
 }
