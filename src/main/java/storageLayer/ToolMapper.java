@@ -120,15 +120,6 @@ public class ToolMapper {
     }
 
     /**
-     *
-     * @param id
-     * @return
-     */
-    public static boolean deleteTool(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    /**
      * This method will close the prepared statement connection if it's
      * connection, the reason is to reduce as musch in- and outgoing trafic from
      * the server.

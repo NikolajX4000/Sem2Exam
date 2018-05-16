@@ -137,15 +137,6 @@ public class StorageFacade {
     public static Material updateTool(Material material) throws CustomException {
         return ToolMapper.updateTool(material);
     }
-    
-    /**
-     * @param id
-     * @return
-     * @throws functionLayer.CustomException
-     */
-    public static boolean deleteTool(int id) throws CustomException {
-        return ToolMapper.deleteTool(id);
-    }
 
     public static List<Roof> getAllRoofs() throws CustomException {
         return RoofMapper.getAllRoofs();
