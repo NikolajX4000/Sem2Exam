@@ -43,7 +43,7 @@
         
             dropDownLinks.append("<div class='collapsible-header'>").append(item.getKey()).append("</div>");
             
-            dropDownLinks.append("<div class='collapsible-body'><table class='striped z-depth-1'><thead><tr><th>Beskrivelse</th><th>Størrelse</th><th>Pris</th><th>Knap</th></tr></thead><tbody>");
+            dropDownLinks.append("<div class='collapsible-body'><table class='highlight'><thead><tr><th>Beskrivelse</th><th>Størrelse</th><th>Pris</th><th>Knap</th></tr></thead><tbody>");
             
                 for (Material m : item.getValue()){
                     dropDownLinks.append("<tr>");
