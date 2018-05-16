@@ -80,26 +80,6 @@ CREATE TABLE IF NOT EXISTS `sem2exam`.`tools` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-/*roofs*/
-/*
-INSERT INTO roofs (name, type) VALUES ('Plasttrapezplader', 0);
-INSERT INTO roofs (name, type) VALUES ('Betontagsten - Rød', 1);
-INSERT INTO roofs (name, type) VALUES ('Betontagsten - Teglrød', 1);
-INSERT INTO roofs (name, type) VALUES ('Betontagsten - Brun', 1);
-INSERT INTO roofs (name, type) VALUES ('Betontagsten - Sort', 1);
-INSERT INTO roofs (name, type) VALUES ('Eternittag B6 - Grå', 1);
-INSERT INTO roofs (name, type) VALUES ('Eternittag B6 - Sort', 1);
-INSERT INTO roofs (name, type) VALUES ('Eternittag B6 - Mokka(brun)', 1);
-INSERT INTO roofs (name, type) VALUES ('Eternittag B6 - Rødbrun', 1);
-INSERT INTO roofs (name, type) VALUES ('Eternittag B6 - Teglrød', 1);
-INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Grå', 1);
-INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Sort', 1);
-INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Mokka(brun)', 1);
-INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Rødbrun', 1);
-INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Teglrød', 1);
-INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Rødflammet', 1);
-*/
-
 /*dummy orders*/
 /*
 INSERT INTO orders (name,address,zip_code,city,phone,email,note,width,length,roof_id,angle,shed_width,shed_length,placed,price) VALUES ('Dummy','Dummy 1',1234,'Dummy',12345678,'dummy@dummy.dummy','Dummy',240,240,2,0,0,0,CURRENT_TIME(),2.40*2.40*300);
@@ -169,6 +149,56 @@ INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x
 INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x100 mm. trykimp. Bræt',360);
 INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x100 mm. trykimp. Bræt',420);
 INSERT INTO materials (name,price,description,size) VALUES('beklædning',21,'19x100 mm. trykimp. Bræt',480);
+INSERT INTO materials (name,price,description,size) VALUES('tagsten',15,'Betontagsten - Rød',0);
+INSERT INTO materials (name,price,description,size) VALUES('tagsten',15,'Betontagsten - Teglrød',0);
+INSERT INTO materials (name,price,description,size) VALUES('tagsten',15,'Betontagsten - Brun',0);
+INSERT INTO materials (name,price,description,size) VALUES('tagsten',15,'Betontagsten - Sort',0);
+INSERT INTO materials (name,price,description,size) VALUES('tagsten',15,'Eternittag B6 - Grå',0);
+INSERT INTO materials (name,price,description,size) VALUES('tagsten',15,'Eternittag B6 - Sort',0);
+INSERT INTO materials (name,price,description,size) VALUES('tagsten',15,'Eternittag B6 - Mokka(brun)',0);
+INSERT INTO materials (name,price,description,size) VALUES('tagsten',15,'Eternittag B6 - Rødbrun',0);
+INSERT INTO materials (name,price,description,size) VALUES('tagsten',15,'Eternittag B6 - Teglrød',0);
+INSERT INTO materials (name,price,description,size) VALUES('tagsten',15,'Eternittag B7 - Grå',0);
+INSERT INTO materials (name,price,description,size) VALUES('tagsten',15,'Eternittag B7 - Sort',0);
+INSERT INTO materials (name,price,description,size) VALUES('tagsten',15,'Eternittag B7 - Mokka(brun)',0);
+INSERT INTO materials (name,price,description,size) VALUES('tagsten',15,'Eternittag B7 - Rødbrun',0);
+INSERT INTO materials (name,price,description,size) VALUES('tagsten',15,'Eternittag B7 - Teglrød',0);
+INSERT INTO materials (name,price,description,size) VALUES('tagsten',15,'Eternittag B7 - Rødflammet',0);
+INSERT INTO materials (name,price,description,size) VALUES('rygsten',15,'Betontagsten - Rød',0);
+INSERT INTO materials (name,price,description,size) VALUES('rygsten',15,'Betontagsten - Teglrød',0);
+INSERT INTO materials (name,price,description,size) VALUES('rygsten',15,'Betontagsten - Brun',0);
+INSERT INTO materials (name,price,description,size) VALUES('rygsten',15,'Betontagsten - Sort',0);
+INSERT INTO materials (name,price,description,size) VALUES('rygsten',15,'Eternittag B6 - Grå',0);
+INSERT INTO materials (name,price,description,size) VALUES('rygsten',15,'Eternittag B6 - Sort',0);
+INSERT INTO materials (name,price,description,size) VALUES('rygsten',15,'Eternittag B6 - Mokka(brun)',0);
+INSERT INTO materials (name,price,description,size) VALUES('rygsten',15,'Eternittag B6 - Rødbrun',0);
+INSERT INTO materials (name,price,description,size) VALUES('rygsten',15,'Eternittag B6 - Teglrød',0);
+INSERT INTO materials (name,price,description,size) VALUES('rygsten',15,'Eternittag B7 - Grå',0);
+INSERT INTO materials (name,price,description,size) VALUES('rygsten',15,'Eternittag B7 - Sort',0);
+INSERT INTO materials (name,price,description,size) VALUES('rygsten',15,'Eternittag B7 - Mokka(brun)',0);
+INSERT INTO materials (name,price,description,size) VALUES('rygsten',15,'Eternittag B7 - Rødbrun',0);
+INSERT INTO materials (name,price,description,size) VALUES('rygsten',15,'Eternittag B7 - Teglrød',0);
+INSERT INTO materials (name,price,description,size) VALUES('rygsten',15,'Eternittag B7 - Rødflammet',0);
+*/
+
+/*roofs*/
+/*
+INSERT INTO roofs (name, type) VALUES ('Plasttrapezplader', 0);
+INSERT INTO roofs (name, type) VALUES ('Betontagsten - Rød', 1);
+INSERT INTO roofs (name, type) VALUES ('Betontagsten - Teglrød', 1);
+INSERT INTO roofs (name, type) VALUES ('Betontagsten - Brun', 1);
+INSERT INTO roofs (name, type) VALUES ('Betontagsten - Sort', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B6 - Grå', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B6 - Sort', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B6 - Mokka(brun)', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B6 - Rødbrun', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B6 - Teglrød', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Grå', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Sort', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Mokka(brun)', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Rødbrun', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Teglrød', 1);
+INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Rødflammet', 1);
 */
 
 /*tools*/
@@ -186,6 +216,9 @@ INSERT INTO tools (name,unit_size,price) VALUES ('4,5x50 mm. skruer',300,69);
 INSERT INTO tools (name,unit_size,price) VALUES ('Stalddørsgreb 50x75',1,189);
 INSERT INTO tools (name,unit_size,price) VALUES ('T hængsel 390 mm.',1,120);
 INSERT INTO tools (name,unit_size,price) VALUES ('Vinkelbeslag 35',1,6);
+INSERT INTO tools (name,unit_size,price) VALUES ('B & C Toplægteholder',1,50);
+INSERT INTO tools (name,unit_size,price) VALUES ('B & C rygstensbeslag',1,50);
+INSERT INTO tools (name,unit_size,price) VALUES ('B & C tagstens bindere og nakkekroge',5,50);
 */
 
 SET SQL_MODE=@OLD_SQL_MODE;
