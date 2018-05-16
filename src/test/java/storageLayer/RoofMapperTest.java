@@ -27,7 +27,14 @@ public class RoofMapperTest {
      * Test of getRoofsByType method, of class RoofMapper.
      */
     @Test
-    public void testGetRoofsByType() throws Exception {
+    public void testGetRoofsById() throws Exception {
+        Roof roof = RoofMapper.getRoofById(1);
+        int expId = 1;
+        String expName = "Plasttrapezplader";
+        int expType = 0;
+        assertEquals(expId, roof.getID());
+        assertEquals(expName, roof.getNAME());
+        assertEquals(expType, roof.getTYPE());
     }
     
 }
