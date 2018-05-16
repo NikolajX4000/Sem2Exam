@@ -90,7 +90,7 @@ public class PartLine {
      * @return
      */
     public int getSize() {
-        return size;
+        return material.getSize();
     }
 
     /**
