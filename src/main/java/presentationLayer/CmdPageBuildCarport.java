@@ -9,11 +9,11 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author super
  */
-public class PageAllOrdersCommand extends Command{
+public class CmdPageBuildCarport extends Command{
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException {
-        return "employeepage";
+        return "order";
     }
 
 }

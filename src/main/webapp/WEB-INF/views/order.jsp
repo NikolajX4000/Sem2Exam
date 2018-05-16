@@ -219,7 +219,7 @@
                 <label for="note">Evt. bemærkninger</label>
             </div>
         </div>
-        <button class="btn waves-effect waves-light blue" type="submit" name="command" value="CreateOrderCommand">Send Forespørgsel
+        <button class="btn waves-effect waves-light blue" type="submit" name="command" value="CmdCreateOrder">Send Forespørgsel
             <i class="material-icons right">send</i>
         </button>
     </form>

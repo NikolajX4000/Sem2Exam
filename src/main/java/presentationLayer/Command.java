@@ -15,13 +15,13 @@ abstract class Command {
 
     private static void initCommands() {
         commands = new HashMap<>();
-        commands.put("CreateOrderCommand", new CreateOrderCommand());
+        commands.put("CmdCreateOrder", new CmdCreateOrder());
 
-        commands.put("ShowOrdersCommand", new ShowOrdersCommand());
-        commands.put("PageBuildCarportCommand", new PageBuildCarportCommand());
-        commands.put("PageAllOrdersCommand", new PageAllOrdersCommand());
+        commands.put("CmdShowOrders", new CmdShowOrders());
+        commands.put("CmdPageBuildCarport", new CmdPageBuildCarport());
+        commands.put("CmdPageAllOrders", new CmdPageAllOrders());
         
-        commands.put("UpdateOrderCommand", new UpdateOrderCommand());
+        commands.put("CmdUpdateOrderCommand", new CmdUpdateOrder());
     }
 
     static Command from(HttpServletRequest request) {
