@@ -6,6 +6,7 @@
 
 package presentationLayer;
 
+import functionLayer.CustomException;
 import functionLayer.FlatCarPortList;
 import functionLayer.Order;
 import functionLayer.PartLine;
@@ -95,7 +96,7 @@ public class RenderOrder {
     }
     
     
-    private static String tabDetails(){
+    private static String tabDetails() throws CustomException{
         StringBuilder s = new StringBuilder();
         
         s.append("<div id=\"").append(o.getStringId()).append("a\">");
@@ -110,7 +111,7 @@ public class RenderOrder {
                 s.append(shortDetail(o.getShedLength() + " cm", "Redskabsrum Længde"));
             }
             
-            s.append(shortDetail(o.getRoof() + " Flot R\u00f8dt Tag", "Tag"));
+            s.append(shortDetail(o.getRoof().getNAME(), "Tag"));
             
             if(!o.isFlat()){
                 s.append(shortDetail(o.getAngle() + " grader", "Taghældning"));
@@ -209,7 +210,7 @@ public class RenderOrder {
      * @param o
      * @return
      */
-    public static String print(Order o)
+    public static String print(Order o) throws CustomException
     {
         
         RenderOrder.o = o;

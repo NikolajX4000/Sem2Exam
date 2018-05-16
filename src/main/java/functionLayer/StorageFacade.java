@@ -3,6 +3,7 @@ package functionLayer;
 import java.util.List;
 import storageLayer.MaterialMapper;
 import storageLayer.OrderMapper;
+import storageLayer.RoofMapper;
 import storageLayer.ToolMapper;
 
 /**
@@ -162,5 +163,13 @@ public class StorageFacade {
      */
     public static boolean deleteTool(int id) throws CustomException {
         return ToolMapper.deleteTool(id);
+    }
+
+    public static List<Roof> getAllRoofs() throws CustomException {
+        return RoofMapper.getAllRoofs();
+    }
+    
+    public static Roof getRoofById(int id) throws CustomException {
+        return RoofMapper.getRoofById(id);
     }
 }

@@ -5,7 +5,7 @@
 
 <div class="row">
     <div class="col s12">
-        <a href="?command=PageBuildCarportCommand" class="waves-light"><img alt="" style="width:100%;" src="https://www.johannesfog.dk/globalassets/banner/services/carport_quickbyg.jpg"class="responsive-img z-depth-1"></a>
+        <a href="?command=CmdPageBuildCarport" class="waves-light"><img alt="" style="width:100%;" src="https://www.johannesfog.dk/globalassets/banner/services/carport_quickbyg.jpg"class="responsive-img z-depth-1"></a>
     </div>
 </div>
 

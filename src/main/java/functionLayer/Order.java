@@ -20,6 +20,7 @@ public class Order {
     private int id;
     private String stringId;
     private List<PartLine> partsList;
+    private int price;
 
     /* customer */
     private String name;
@@ -52,7 +53,7 @@ public class Order {
         if (isFlat()) {
             partsList = new FlatCarPortList(this).getParts();
         }
-        int price = 0;
+        price = 0;
         for (PartLine p : partsList) {
             price += p.calculatePrice();
         }
@@ -84,6 +85,7 @@ public class Order {
         NumberFormat nf = NumberFormat.getNumberInstance(Locale.GERMAN);
 
         return nf.format(p) + " kr.";
+//        return nf.format(price) + " kr.";
 
     }
 
@@ -340,9 +342,10 @@ public class Order {
     /**
      *
      * @return
+     * @throws functionLayer.CustomException
      */
-    public int getRoof() {
-        return roof;
+    public Roof getRoof() throws CustomException {
+        return StorageFacade.getRoofById(roof);
     }
 
     /**

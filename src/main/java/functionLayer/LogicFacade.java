@@ -18,7 +18,7 @@ public class LogicFacade {
     public static List<Order> getOrders(String email) throws CustomException {
         return StorageFacade.getOrders(email);
     }
-    
+
     /**
      *
      * @param o
@@ -28,33 +28,35 @@ public class LogicFacade {
     public static Order addOrder(Order o) throws CustomException {
         return StorageFacade.addOrder(o);
     }
-    
+
     /**
      *
-     * @return
-     * @throws CustomException
+     * @return @throws CustomException
      */
     public static List<Order> getAllOrders() throws CustomException {
         return StorageFacade.getAllOrders();
     }
-    
+
     /**
      *
      * @param id
      * @param status
      * @throws CustomException
      */
-    public static void updateOrder(int id, String status) throws CustomException{
+    public static void updateOrder(int id, String status) throws CustomException {
         StorageFacade.updateStatus(id, status);
     }
-    
+
     /**
-     * 
+     *
      * @return List of all material
-     * @throws CustomException 
+     * @throws CustomException
      */
-    public static List<Material> getAllMaterials() throws CustomException{
+    public static List<Material> getAllMaterials() throws CustomException {
         return StorageFacade.getAllMaterials();
     }
-    
+
+    public static List<Roof> getAllRoofs() throws CustomException {
+        return StorageFacade.getAllRoofs();
+    }
 }
