@@ -99,48 +99,6 @@ public class MaterialMapper {
      * @return
      * @throws CustomException
      */
-    public static Material addMaterial(Material material) throws CustomException {
-        PreparedStatement ps = null;
-
-        try {
-            Connection con = Connector.connection();
-            String SQL = "INSERT INTO material ( "
-                    + "name, price, size, description ) "
-                    + "VALUES (?, ?, ?, ?)";
-
-            ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
-
-            try {
-                ps.setString(1, material.getName());
-                ps.setInt(2, material.getPrice());
-                ps.setInt(3, material.getSize());
-                ps.setString(4, material.getDescription());
-
-            } catch (SQLException ex) {
-                throw new CustomException("Formateringsfejl");
-            }
-
-            ps.executeUpdate();
-            ResultSet rs = ps.getGeneratedKeys();
-
-            if (rs.first()) {
-                material.setId(rs.getInt(1));
-            }
-
-        } catch (SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
-        } finally {
-            closeConnection(ps);
-        }
-        return material;
-    }
-
-    /**
-     *
-     * @param material
-     * @return
-     * @throws CustomException
-     */
     public static Material updateMaterial(Material material) throws CustomException {
         PreparedStatement ps = null;
 
@@ -170,16 +128,6 @@ public class MaterialMapper {
             closeConnection(ps);
         }
         return material;
-    }
-
-    /**
-     *
-     * @param id
-     * @return
-     * @throws CustomException
-     */
-    public static boolean deleteMaterial(int id) throws CustomException {
-        throw new UnsupportedOperationException("comming soon");
     }
 
     /**

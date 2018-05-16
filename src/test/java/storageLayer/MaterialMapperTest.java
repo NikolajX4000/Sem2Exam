@@ -1,5 +1,10 @@
 package storageLayer;
 
+import functionLayer.Material;
+import functionLayer.Order;
+import java.util.List;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 /**
@@ -17,14 +22,12 @@ public class MaterialMapperTest {
      */
     @Test
     public void testGetMaterials() throws Exception{
-    }
-
-    /**
-     * Test of addMaterial method, of class MaterialMapper.
-     * @throws java.lang.Exception
-     */
-    @Test
-    public void testAddMaterial() throws Exception {
+        System.out.println("getMaterials");
+        List<Material> matarials = MaterialMapper.getAllMaterials();
+        int result = matarials.size();
+        int expResult = 65;
+        
+        assertEquals(expResult, result);
     }
 
     /**
@@ -33,14 +36,6 @@ public class MaterialMapperTest {
      */
     @Test
     public void testUpdateMaterial() throws Exception {
-    }
-
-    /**
-     * Test of deleteMaterial method, of class MaterialMapper.
-     * @throws java.lang.Exception
-     */
-    @Test
-    public void testDeleteMaterial() throws Exception {
     }
 
 }

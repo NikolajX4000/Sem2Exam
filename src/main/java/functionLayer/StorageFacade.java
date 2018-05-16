@@ -108,26 +108,8 @@ public class StorageFacade {
      * @return
      * @throws functionLayer.CustomException
      */
-    public static Material addMaterial(Material material) throws CustomException {
-        return MaterialMapper.addMaterial(material);
-    }
-
-    /**
-     * @param material
-     * @return
-     * @throws functionLayer.CustomException
-     */
     public static Material updateMaterial(Material material) throws CustomException {
         return MaterialMapper.updateMaterial(material);
-    }
-
-    /**
-     * @param id
-     * @return
-     * @throws functionLayer.CustomException
-     */
-    public static boolean deleteMaterial(int id) throws CustomException {
-        return MaterialMapper.deleteMaterial(id);
     }
 
     /**
