@@ -23,11 +23,22 @@ public class MaterialMapperTest {
         System.out.println("getMaterials");
         List<Material> matarials = MaterialMapper.getAllMaterials();
         int result = matarials.size();
-        int expResult = 65;
+        int expResult = 100;
         
         assertEquals(expResult, result);
     }
 
+    @Test
+    public void testGetMaterial() throws Exception {
+        System.out.println( "getMaterial" );
+        String materialName = "overstern";
+        List<Material> materials = MaterialMapper.getMaterials( materialName );
+        String expResult = "25x125mm. trykimp. Bræt";
+        String result = materials.get(1).getDescription();
+        
+        assertEquals(expResult, result);
+    }
+    
     /**
      * Test of updateMaterial method, of class MaterialMapper.
      * @throws java.lang.Exception
