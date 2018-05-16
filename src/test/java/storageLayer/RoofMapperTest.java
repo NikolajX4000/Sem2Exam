@@ -34,6 +34,7 @@ public class RoofMapperTest {
         int expType = 0;
         assertEquals(expId, roof.getID());
         assertEquals(expName, roof.getNAME());
+        assertEquals(expName, roof.toString());
         assertEquals(expType, roof.getTYPE());
     }
     
