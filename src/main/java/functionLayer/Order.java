@@ -88,25 +88,6 @@ public class Order {
     }
 
     /**
-     *
-     * @return
-     */
-    public int getPriceDB() {
-        int p = 500;
-        if (hasShed()) {
-            p += shedWidth * shedLength * 400;
-        }
-        if (isFlat()) {
-            p += width * length * 300;
-        } else {
-
-            p += width * length * 666;
-        }
-        p /= 10000;
-        return p;
-    }
-
-    /**
      * Checks if carport has shed
      *
      * @return true if it does and false if it doesnt
