@@ -20,6 +20,7 @@ abstract class Command {
         commands.put("CmdShowOrders", new CmdShowOrders());
         commands.put("CmdPageBuildCarport", new CmdPageBuildCarport());
         commands.put("CmdPageAllOrders", new CmdPageAllOrders());
+        commands.put("CmdPageMaterial", new CmdPageMaterial());
         
         commands.put("CmdUpdateOrderCommand", new CmdUpdateOrder());
     }
