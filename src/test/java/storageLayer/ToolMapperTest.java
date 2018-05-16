@@ -24,7 +24,7 @@ public class ToolMapperTest {
         System.out.println("getAllTool");
         List<Material> tools = ToolMapper.getAllTool();
         int result = tools.size();
-        int expResult = 13;
+        int expResult = 16;
         assertEquals(expResult, result);
     }
 
