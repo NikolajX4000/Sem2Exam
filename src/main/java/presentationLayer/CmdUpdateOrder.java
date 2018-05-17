@@ -19,7 +19,9 @@ public class CmdUpdateOrder extends Command{
         
         try {
             LogicFacade.updateOrder(Integer.parseInt(request.getParameter("target")), request.getParameter("newStatus"));
+            request.setAttribute("feedback", "Status opdateret!");
         } catch (Exception e) {
+            request.setAttribute("feedback", "Der gik noget galt.");
         }
         
         
