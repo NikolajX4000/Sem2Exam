@@ -65,15 +65,10 @@ public class EmployeeMapper
 
             Connection con = Connector.connection();
             String SQL = "SELECT * FROM employees WHERE name = ?";
+            
             PreparedStatement ps = con.prepareStatement(SQL);
-
-            try
-            {
-                ps.setString(1, name);
-            } catch (SQLException ex)
-            {
-                throw new CustomException("NAVN Formateringsfejl");
-            }
+            ps.setString(1, name);
+            
 
             ResultSet rs = ps.executeQuery();
 
@@ -85,16 +80,16 @@ public class EmployeeMapper
 
                 } else
                 {
-                    throw new CustomException("Forkert password" + password);
+                    throw new CustomException("Forkert password");
                 }
 
             }
 
             closeConnection(ps);
 
-        } catch (SQLException | ClassNotFoundException ex)
+        } catch (Exception e)
         {
-            throw new CustomException("øv " +  ex.getMessage());
+            throw new CustomException("Formateringsfejl");
         }
 
         throw new CustomException("Forkert informatation");
