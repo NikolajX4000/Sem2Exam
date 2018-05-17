@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <%@include file="/WEB-INF/jspf/header.jspf"%>
 
-<form class="row" method="get" accept-charset="ISO-8859-1">
+<form class="row" method="post" action="?" accept-charset="ISO-8859-1">
 
         <div class="input-field col m6 s12">
             <input id="user" type="text" class="validate" name="user" minlength="3" required>

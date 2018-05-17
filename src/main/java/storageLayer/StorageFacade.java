@@ -1,6 +1,7 @@
 package storageLayer;
 
 import functionLayer.CustomException;
+import functionLayer.Employee;
 import functionLayer.Material;
 import functionLayer.Order;
 import functionLayer.Roof;
@@ -148,5 +149,9 @@ public class StorageFacade {
     
     public static Roof getRoofById(int id) throws CustomException {
         return RoofMapper.getRoofById(id);
+    }
+    
+    public static Employee login(String name, String password) throws CustomException {
+        return EmployeeMapper.login(name, password);
     }
 }

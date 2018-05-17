@@ -2,9 +2,10 @@
 package presentationLayer;
 
 import functionLayer.CustomException;
+import functionLayer.Employee;
+import functionLayer.LogicFacade;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.mindrot.jbcrypt.BCrypt;
 
 public class CmdLogin extends Command{
 
@@ -14,11 +15,18 @@ public class CmdLogin extends Command{
         
         try
         {
-            String hashed = BCrypt.hashpw(request.getParameter("pw"), BCrypt.gensalt(14));
-            request.setAttribute("test", hashed.length() + " " + hashed);
+            
+            Employee emp  = LogicFacade.login(request.getParameter("user"), request.getParameter("pw"));
+            
+            request.setAttribute("feedback", "Velkommen " + emp.getName());
+            request.setAttribute("test", emp);
+            
+            return "employeepage";
 
-        } catch (Exception e)
+        } catch (CustomException e)
         {
+            request.setAttribute("feedback", e.getMessage());
+            request.setAttribute("test", e.getMessage());
         }
         
         
