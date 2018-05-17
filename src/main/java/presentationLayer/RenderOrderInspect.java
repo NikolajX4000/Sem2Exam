@@ -1,5 +1,6 @@
 package presentationLayer;
 
+import functionLayer.CustomException;
 import functionLayer.Order;
 
 /**
@@ -48,7 +49,7 @@ public class RenderOrderInspect {
         return s.toString();
     }
     
-    private static String tabDetails() {
+    private static String tabDetails() throws CustomException {
         StringBuilder s = new StringBuilder();
         s.append(tabStart("zoom_out_map", "Detaljer"));
 
@@ -72,7 +73,7 @@ public class RenderOrderInspect {
                 s.append(shortDetail(o.getShedLength() + " cm", "Redskabsrum Længde"));
             }
             
-            s.append(shortDetail(o.getRoof() + " Flot R\u00f8dt Tag", "Tag"));
+            s.append(shortDetail(o.getRoof().getNAME(), "Tag"));
             
             if(!o.isFlat()){
                 s.append(shortDetail(o.getAngle() + " grader", "Taghældning"));
@@ -171,7 +172,7 @@ public class RenderOrderInspect {
         s.append("</p>");
         
         
-        s.append("<button class=\"btn waves-effect waves-light blue btn-large\" type=\"submit\" name=\"command\" value=\"UpdateOrderCommand\">Opdater");
+        s.append("<button class=\"btn waves-effect waves-light blue btn-large\" type=\"submit\" name=\"command\" value=\"CmdUpdateOrder\">Opdater");
             s.append("<i class=\"material-icons right\">send</i>");
         s.append("</button>");
         
@@ -187,7 +188,7 @@ public class RenderOrderInspect {
      * @param o
      * @return
      */
-    public static String print(Order o) {
+    public static String print(Order o) throws CustomException {
 
         RenderOrderInspect.o = o;
 

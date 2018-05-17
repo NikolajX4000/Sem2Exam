@@ -6,7 +6,8 @@
 
 package presentationLayer;
 
-import functionLayer.CarPortList;
+import functionLayer.CustomException;
+import functionLayer.FlatCarPortList;
 import functionLayer.Order;
 import functionLayer.PartLine;
 import java.util.List;
@@ -95,7 +96,7 @@ public class RenderOrder {
     }
     
     
-    private static String tabDetails(){
+    private static String tabDetails() throws CustomException{
         StringBuilder s = new StringBuilder();
         
         s.append("<div id=\"").append(o.getStringId()).append("a\">");
@@ -110,7 +111,7 @@ public class RenderOrder {
                 s.append(shortDetail(o.getShedLength() + " cm", "Redskabsrum Længde"));
             }
             
-            s.append(shortDetail(o.getRoof() + " Flot R\u00f8dt Tag", "Tag"));
+            s.append(shortDetail(o.getRoof().getNAME(), "Tag"));
             
             if(!o.isFlat()){
                 s.append(shortDetail(o.getAngle() + " grader", "Taghældning"));
@@ -130,12 +131,15 @@ public class RenderOrder {
             s.append("<span class=\"card-title\">Tegninger</span>");
             s.append("<div class='row'>");
             if(o.isFlat()){
-                s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(DrawCarport.flatSide(o.getLength(), o.getWidth(), o.getShedLength(), o.hasShed())).append("</div></div>");
-                s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(DrawCarport.flatTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed())).append("</div></div>");
+                //s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(DrawCarport.flatSide(o.getLength(), o.getWidth(), o.getShedLength(), o.hasShed())).append("</div></div>");
+                //s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(DrawCarport.flatTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed())).append("</div></div>");
+                s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(new DrawCarportFlatTop(o)).append("</div></div>");
+                s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(new DrawCarportFlatSide(o)).append("</div></div>");
             }else{
-                s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(DrawCarport.angledSide(o.getLength(), o.getWidth(), o.getShedLength(), o.getAngle(), o.hasShed())).append("</div></div>");
-                s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(DrawCarport.angledTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed())).append("</div></div>");
-                //s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(new DrawCarportAngleTop(o)).append("</div></div>");
+                //s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(DrawCarport.angledSide(o.getLength(), o.getWidth(), o.getShedLength(), o.getAngle(), o.hasShed())).append("</div></div>");
+                //s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(DrawCarport.angledTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed())).append("</div></div>");
+                s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(new DrawCarportAngleTop(o)).append("</div></div>");
+                s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(new DrawCarportAngleSide(o)).append("</div></div>");
             }
             s.append("</div>");
             
@@ -153,18 +157,19 @@ public class RenderOrder {
            
             if(o.isFlat()){
                 s.append("<table><tbody>");
-                s.append("<tr><th>Antal</th><th>Navn</th></tr>");
+                s.append("<tr><th>Antal</th><th>Størrelse</th><th>Navn</th></tr>");
                 try {
                     
                     //ArrayList
                     
-                    CarPortList cpl = new CarPortList(o);
+                    FlatCarPortList cpl = new FlatCarPortList(o);
                     List<PartLine> list = cpl.getParts();
                     
                     for(PartLine pl : list){
                         s.append("<tr>");
                         
                         s.append("<td>").append(pl.getAmount()).append("</td>");
+                        s.append("<td>").append(pl.getSize()).append("</td>");
                         s.append("<td>").append(pl.getMaterial().getName()).append("</td>");
                         
                         s.append("</tr>");
@@ -205,7 +210,7 @@ public class RenderOrder {
      * @param o
      * @return
      */
-    public static String print(Order o)
+    public static String print(Order o) throws CustomException
     {
         
         RenderOrder.o = o;

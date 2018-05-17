@@ -3,6 +3,10 @@ package presentationLayer;
 
 import functionLayer.Order;
 
+/**
+ *
+ * @author super
+ */
 public class DrawCarportAngleTop {
     
     String std = "fill:white;stroke:black;stroke-width:1;";
@@ -18,7 +22,7 @@ public class DrawCarportAngleTop {
     double lathWidth, lathHeight;
     double spaerWidth, spaerHeight;
     double beam = 10;
-    double newBeamAfter = 50;
+    double newBeamAfter = 400;
     
     double shedXStartAt, shedXEndAt, shedYStartAt, shedYEndAt;
     
@@ -28,6 +32,10 @@ public class DrawCarportAngleTop {
     
     String tmp = "";
 
+    /**
+     *
+     * @param o
+     */
     public DrawCarportAngleTop(Order o) {
         
         width = o.getLength();
@@ -67,8 +75,6 @@ public class DrawCarportAngleTop {
 
         remWidth = width - 30 - 25;
         remHeight = 4.5;
-
-        beam = 10;
         
         shedXStartAt = width - shedWidth - xOffset;
         shedXEndAt = width - xOffset;

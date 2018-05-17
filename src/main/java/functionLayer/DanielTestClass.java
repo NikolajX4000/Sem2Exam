@@ -19,13 +19,21 @@ public class DanielTestClass
     {
 
         Order order = new Order();
+//        order.
+//                setName("test").
+//                setWidth(600).
+//                setLength(780).
+//                setShedWidth(530).
+//                setShedLength(210);
         order.
-                setName("test").
-                setWidth(600).
-                setLength(780).
-                setShedWidth(530).
-                setShedLength(210);
-        CarPortList carport = new CarPortList(order);
+                setWidth(360).
+                setLength(730).
+                setAngle(20).
+                setShedWidth(320).
+                setShedLength(225).
+                setRoof(7);
+//        FlatCarPortList carport = new FlatCarPortList(order);
+        TallCarPortList carport = new TallCarPortList(order);
         List<PartLine> parts = carport.getParts();
         for (int i = 0; i < parts.size(); i++)
         {

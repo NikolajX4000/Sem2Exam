@@ -13,7 +13,7 @@ public class Material {
     private int id;
     private String name;
     private int price;
-    private int size;
+    private int size = 0;
     private String description;
     private int unitSize = 1;
 
@@ -107,11 +107,20 @@ public class Material {
         return this;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getUnitSize()
     {
         return unitSize;
     }
 
+    /**
+     *
+     * @param unitSize
+     * @return
+     */
     public Material setUnitSize(int unitSize)
     {
         this.unitSize = unitSize;

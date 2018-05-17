@@ -92,6 +92,30 @@ Stephan Marcus Duelund Djurhuus
 \end_layout
 
 \begin_layout Standard
+Link til 
+\begin_inset CommandInset href
+LatexCommand href
+name "GitHub"
+target "https://github.com/NikolajX4000/Sem2Exam"
+
+\end_inset
+
+ repository
+\end_layout
+
+\begin_layout Standard
+Link til 
+\begin_inset CommandInset href
+LatexCommand href
+name "Javadoc"
+target "https://nikolajx4000.github.io/Sem2Exam/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -151,8 +175,8 @@ Indledning
 \end_layout
 
 \begin_layout Standard
-Vi er blevet kontaktet af Johannes Fog i Ølstykke, der har spurgt om vi
- kan lave et program og tilhørende hjemmeside til deres salg af carporte.
+Vi er blevet kontaktet af Johannes Fog Værebro, der har spurgt om vi kan
+ lave et program og tilhørende hjemmeside til deres salg af carporte.
 \end_layout
 
 \begin_layout Subsection
@@ -605,6 +629,18 @@ Som medarbejder skal man kunne se alle ordre.
 Systemet skal kunne udregne en stykliste udfra en ordre.
 \end_layout
 
+\begin_layout Subsection
+Overordnet beskrivelse af virksomheden
+\end_layout
+
+\begin_layout Subsection
+Arbejdsgange der skal IT-støttes
+\end_layout
+
+\begin_layout Subsection
+Scrum userstories
+\end_layout
+
 \begin_layout Section
 Domæne model og ER diagram
 \end_layout
@@ -631,11 +667,58 @@ Særlige forhold
 \end_layout
 
 \begin_layout Section
+Udvalgte kodeeksempler
+\end_layout
+
+\begin_layout Section
 Status på implementation
 \end_layout
 
 \begin_layout Section
 Test
+\end_layout
+
+\begin_layout Standard
+Som udvikler er test af programmet en vigtig del af processen.
+ Lever koden ikke op til de givne test må den revurderes og testes igen,
+ indtil alle testene går igennem.
+ En måde at sikre at alle metoder gennemføre deres test er at bruge Test
+ Driven Developmemt (TDD).
+ TDD er en god måde at sikre signe test på, da man starter med testen og
+ derefter udarbejder metoden til at løse den.
+ Desværre lærte vi først denne udviklingsmetode midvejs gennem forløbet
+ hvilket gjrorde den svær at implimentere, da det er en metode der skal
+ implementeres i starten af projektet.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Vores testmiljø består af JUnit test og et plugin som hedder TikiOne JaCoCoverag
+e.
+ Vores JUnit Mapper test er koblet til vores aktuelle database, hvilket
+ vi ved ikke er den optimale måde at teste på.
+ Der er andre måder, som f.eks.
+ at oprette diverse test tables i databasen som er identiske til de aktuele
+ og som kun har forbindelse til vores test run.
+ Dette vil kun sikre at vores test ikke skabte konflikt i vores program
+ senere hen, men vil ikke reducere forbindelsen mellem program og server.
+ De resterende JUnit test er blevet udarbejdet på den traditionelle whitebox
+ måde, da der ikke er nogle specielle faktore der spiller ind.
+ Vi har brugt et pugin der heder TikiOne JaCoCoverage, som skaber at overblik
+ over hvilke metoder der er blevet testet.
+ 
+\end_layout
+
+\begin_layout Section
+Process
+\end_layout
+
+\begin_layout Subsection
+Arbejdsprocessen faktuelt
+\end_layout
+
+\begin_layout Subsection
+Arbejdsprocessen reflekteret
 \end_layout
 
 \end_body

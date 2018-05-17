@@ -88,6 +88,11 @@
     </div>
 </footer>
 
+<script>
+$(document).ready(function () {
+    Materialize.toast('${feedback}', 4000);
+});
+</script>
 <script src="static/script.js"></script>
 
 </body>
