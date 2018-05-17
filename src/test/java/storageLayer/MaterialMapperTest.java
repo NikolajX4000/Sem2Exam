@@ -77,6 +77,13 @@ public class MaterialMapperTest {
      */
     @Test
     public void testUpdateMaterial() throws Exception {
+        System.out.println( "updateMaterial" );
+        Material material = MaterialMapper.getMaterials( "overstern" ).get(1);
+        material.setDescription( "Testing" );
+        MaterialMapper.updateMaterial( material );
+        String expResult = "Testing";
+        String result = MaterialMapper.getMaterials( "overstern" ).get(1).getDescription();
+        assertEquals( result, expResult );
     }
 
 }
