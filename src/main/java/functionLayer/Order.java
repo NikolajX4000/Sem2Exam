@@ -95,7 +95,7 @@ public class Order {
      * @return true if it does and false if it doesnt
      */
     public boolean hasShed() {
-        return (shedWidth > 0 || shedLength > 0);
+        return (shedWidth > 0 && shedLength > 0);
     }
 
     /**
