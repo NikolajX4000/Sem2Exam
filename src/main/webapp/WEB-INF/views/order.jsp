@@ -1,11 +1,15 @@
 
+<%@page import="functionLayer.LogicFacade"%>
 <%@page import="functionLayer.Roof"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file="/WEB-INF/jspf/header.jspf"%>
 <%
-    List<Roof> roofs = (List<Roof>) request.getAttribute("roofs");
+    
+    
+            
+    List<Roof> roofs = LogicFacade.getAllRoofs();
     StringBuilder flatRoofs = new StringBuilder();
     StringBuilder raisedRoofs = new StringBuilder();
     for (Roof r : roofs) {

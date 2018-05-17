@@ -16,8 +16,6 @@ public class CmdPageBuildCarport extends Command{
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException {
-        List<Roof> roofs = LogicFacade.getAllRoofs();
-        request.setAttribute("roofs", roofs);
         return "order";
     }
 

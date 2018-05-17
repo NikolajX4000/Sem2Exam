@@ -9,6 +9,8 @@ package presentationLayer;
 import functionLayer.CustomException;
 import functionLayer.LogicFacade;
 import functionLayer.Order;
+import functionLayer.Roof;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -21,6 +23,7 @@ public class CmdCreateOrder extends Command{
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException
     {
+        
         Order o = new Order();
         try
         {
@@ -61,7 +64,7 @@ public class CmdCreateOrder extends Command{
             
         } catch (Exception e)
         {
-            request.setAttribute("feedback", "<p class=\"red-text\">Der gik noget galt prøv igen senere!</p>");
+            request.setAttribute("feedback", "<p>Der gik noget galt prøv igen senere!</p>" + e.getMessage());
             request.setAttribute("test", e.getMessage());
             return "order"; 
         }
