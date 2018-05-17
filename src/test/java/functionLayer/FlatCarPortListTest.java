@@ -439,12 +439,12 @@ public class FlatCarPortListTest {
     @Test
     public void testRemCarport() throws Exception {
         PartLine part = carport.remCarport();
-        //int expAmount = 2;
-        //int expSize = 600;
-        //int amount = part.getAmount();
-        //int size = part.getSize();
-        //assertEquals(expAmount, amount);
-        //assertEquals(expSize, size);
+        int expAmount = 4;
+        int expSize = 420;
+        int amount = part.getAmount();
+        int size = part.getSize();
+        assertEquals(expAmount, amount);
+        assertEquals(expSize, size);
     }
 
     /**
