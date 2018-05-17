@@ -27,17 +27,29 @@ public class CmdCreateOrder extends Command{
         Order o = new Order();
         try
         {
+            int width = Integer.parseInt(request.getParameter("width"));
+            int length = Integer.parseInt(request.getParameter("length"));
+            int shedwidth = Integer.parseInt(request.getParameter("shedwidth"));
+            int shedlength = Integer.parseInt(request.getParameter("shedlength"));
             
+            boolean hasShed = (request.getParameter("hasShed") != null);
+            
+            if(width-30<shedwidth){
+                throw new CustomException("Caporten skal være bredere end skuret");
+            }
+            if(length-30<shedlength){
+                throw new CustomException("Caporten skal være længere end skuret");
+            }
         
 
-            o.setWidth(Integer.parseInt(request.getParameter("width")));
-            o.setLength(Integer.parseInt(request.getParameter("length")));
+            o.setWidth(width);
+            o.setLength(length);
 
             o.setRoof(Integer.parseInt(request.getParameter("roof")));
 
-            if(request.getParameter("hasShed") != null){
-               o.setShedLength(Integer.parseInt(request.getParameter("shedlength")));
-               o.setShedWidth(Integer.parseInt(request.getParameter("shedwidth")));
+            if(hasShed){
+               o.setShedLength(shedlength);
+               o.setShedWidth(shedwidth);
             }
 
             if(request.getParameter("hasAngle") != null){
@@ -62,13 +74,16 @@ public class CmdCreateOrder extends Command{
             return "vieworders";
             
             
-        } catch (Exception e)
+        } catch (NumberFormatException e)
         {
-            request.setAttribute("feedback", "<p>Der gik noget galt prøv igen senere!</p>" + e.getMessage());
+            request.setAttribute("feedback", "<p>Der gik noget galt prøv igen senere!</p>");
             request.setAttribute("test", e.getMessage());
             return "order"; 
+        } catch (CustomException e){
+            request.setAttribute("feedback", e.getMessage());
         }
         
+        return "order";
 
     }
 
