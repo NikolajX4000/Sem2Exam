@@ -57,8 +57,8 @@ public class LogicFacade {
         return StorageFacade.getAllMaterials();
     }
     
-    public static Material updateMaterial(int id, int size, int price, String description) throws CustomException {
-        return StorageFacade.updateMaterial(id, size, price, description);
+    public static void updateMaterial(int id, int size, int price, String description) throws CustomException {
+        StorageFacade.updateMaterial(id, size, price, description);
     }
 
     public static List<Roof> getAllRoofs() throws CustomException {

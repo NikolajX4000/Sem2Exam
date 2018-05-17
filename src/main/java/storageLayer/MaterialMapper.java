@@ -137,23 +137,22 @@ public class MaterialMapper {
      * @return
      * @throws CustomException
      */
-    public static Material updateMaterial(int id, int size, int price, String desc) throws CustomException {
+    public static void updateMaterial(int id, int size, int price, String desc) throws CustomException {
         PreparedStatement ps = null;
-        Material material = new Material();
 
         try {
             Connection con = Connector.connection();
-            String SQL = "UPDATE orders SET "
+            String SQL = "UPDATE materials SET "
                     + "price = ?, size = ?, description = ? "
-                    + "WHERE order_id = ?";
+                    + "WHERE plank_id = ?";
 
             ps = con.prepareStatement(SQL);
 
             try {
-                ps.setInt(1, material.getPrice());
-                ps.setInt(2, material.getSize());
-                ps.setString(3, material.getDescription());
-                ps.setInt(4, material.getId());
+                ps.setInt(1, price);
+                ps.setInt(2, size);
+                ps.setString(3, desc);
+                ps.setInt(4, id);
 
             } catch (SQLException ex) {
                 throw new CustomException("Formateringsfejl");
@@ -165,7 +164,6 @@ public class MaterialMapper {
         } finally {
             closeConnection(ps);
         }
-        return material;
     }
 
     /**
