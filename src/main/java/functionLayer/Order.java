@@ -21,7 +21,6 @@ public class Order {
     private int id;
     private String stringId;
     private List<PartLine> partsList;
-    private int price;
 
     /* customer */
     private String name;
@@ -53,8 +52,10 @@ public class Order {
     public int calculatePrice() throws CustomException {
         if (isFlat()) {
             partsList = new FlatCarPortList(this).getParts();
+        } else {
+            partsList = new TallCarPortList(this).getParts();
         }
-        price = 0;
+        int price = 0;
         for (PartLine p : partsList) {
             price += p.calculatePrice();
         }
@@ -65,28 +66,29 @@ public class Order {
      *
      * @return
      */
-    public String getPrice() {
+    public String getPrice() throws CustomException {
 
-        int p = 500;
-
-        if (hasShed()) {
-            p += shedWidth * shedLength * 400;
-        }
-
-        if (isFlat()) {
-
-            p += width * length * 300;
-        } else {
-
-            p += width * length * 666;
-        }
-
-        p /= 10000;
+//        int p = 500;
+        int price = calculatePrice();
+//
+//        if (hasShed()) {
+//            p += shedWidth * shedLength * 400;
+//        }
+//
+//        if (isFlat()) {
+//
+//            p += width * length * 300;
+//        } else {
+//
+//            p += width * length * 666;
+//        }
+//
+//        p /= 10000;
 
         NumberFormat nf = NumberFormat.getNumberInstance(Locale.GERMAN);
 
-        return nf.format(p) + " kr.";
-//        return nf.format(price) + " kr.";
+//        return nf.format(p) + " kr.";
+        return nf.format(price) + " kr.";
 
     }
 
@@ -342,8 +344,7 @@ public class Order {
 
     /**
      *
-     * @return
-     * @throws functionLayer.CustomException
+     * @return @throws functionLayer.CustomException
      */
     public Roof getRoof() throws CustomException {
         return StorageFacade.getRoofById(roof);
