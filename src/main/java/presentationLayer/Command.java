@@ -22,7 +22,8 @@ abstract class Command {
         commands.put("CmdPageAllOrders", new CmdPageAllOrders());
         commands.put("CmdPageMaterial", new CmdPageMaterial());
         
-        commands.put("CmdUpdateOrderCommand", new CmdUpdateOrder());
+        commands.put("CmdUpdateOrder", new CmdUpdateOrder());
+        commands.put("CmdUpdateMaterial", new CmdUpdateMaterial());
     }
 
     static Command from(HttpServletRequest request) {
