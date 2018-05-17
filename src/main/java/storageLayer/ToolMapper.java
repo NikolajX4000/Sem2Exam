@@ -93,9 +93,9 @@ public class ToolMapper {
         PreparedStatement ps = null;
         try {
             Connection con = Connector.connection();
-            String SQL = "UPDATE orders SET "
-                    + "name = ?, price = ?, size = ?, description = ? "
-                    + "WHERE order_id = ?";
+            String SQL = "UPDATE tools SET "
+                    + "name = ?, price = ?, unit_size = ? "
+                    + "WHERE tool_id = ?";
 
             ps = con.prepareStatement(SQL);
 
@@ -103,15 +103,14 @@ public class ToolMapper {
                 ps.setString(1, material.getName());
                 ps.setInt(2, material.getPrice());
                 ps.setInt(3, material.getSize());
-                ps.setString(4, material.getDescription());
-                ps.setInt(5, material.getId());
+                ps.setInt(4, material.getId());
 
             } catch (SQLException ex) {
                 throw new CustomException("Formateringsfejl");
             }
             ps.executeUpdate();
 
-        } catch (SQLException | ClassNotFoundException ex) {
+        } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
             closeConnection(ps);
