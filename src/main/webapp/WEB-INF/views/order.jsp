@@ -200,7 +200,7 @@
             </div>
             <div class="input-field col s12">
                 <input id="address" type="text" class="validate" name="address" required maxlength="100" pattern="[\a-zA-ZøæåØÆÅ]([\wøæåØÆÅ.,][- ][\wøæåØÆÅ.,]|[\wøæåØÆÅ.,]){1,100}">
-                <label for="address" data-error="Adressen skal være mindre end 100 karaktere og ikke indeholde indeholde nogle specialtegn">Adresse</label>
+                <label for="address" data-error="Adressen skal være mindre end 100 karaktere og ikke indeholde nogle specialtegn">Adresse</label>
             </div>
             <div class="input-field col s3">
                 <input id="zipcode" type="text" class="validate" name="zipcode" required maxlength="4" pattern="\d{4}">
