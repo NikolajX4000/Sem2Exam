@@ -61,7 +61,7 @@
                         popUps.append("<p>").append(m.getName()).append(" #").append(m.getId()).append("</p>");
                         popUps.append("<form class=\"row\" method=\"post\" action=\"?\" id=\"test1\" accept-charset=\"ISO-8859-1\">");
                         
-                            popUps.append("<input type=\"hidden\" name=\"material\" value=\"").append(m).append("\">");
+                            popUps.append("<input type=\"hidden\" name=\"id\" value=\"").append(m.getId()).append("\">");
                         
                             popUps.append("<div class=\"input-field col s12  m4\">");
                                 popUps.append("<input id='description' type='text' class='validate' name='description' required maxlength='200' value='").append(m.getDescription()).append("'>");
