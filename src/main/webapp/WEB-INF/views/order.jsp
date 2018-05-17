@@ -6,6 +6,20 @@
 <%@include file="/WEB-INF/jspf/header.jspf"%>
 <%
     List<Roof> roofs = (List<Roof>) request.getAttribute("roofs");
+    StringBuilder flatRoofs = new StringBuilder();
+    StringBuilder raisedRoofs = new StringBuilder();
+    for (Roof r : roofs) {
+        switch (r.getTYPE()) {
+            case 0:
+                flatRoofs.append("<option value=\"" + r.getID() + "\">" + r.getNAME() + "</option>");
+                break;
+            case 1:
+                raisedRoofs.append("<option value=\"" + r.getID() + "\">" + r.getNAME() + "</option>");
+                break;
+        }
+    }
+    request.setAttribute("flatRoofs", flatRoofs.toString());
+    request.setAttribute("raisedRoofs", raisedRoofs.toString());
 %>
 <div class="row">
 
@@ -148,16 +162,7 @@
             <div class="input-field col s12 flat">
                 <select name="roof" id="flatroof" required class="validate">
                     <option value="" disabled selected>Vælg tagtype/farve</option>
-                    <%
-                        for (Roof r : roofs) {
-                            if (r.getTYPE() == 0) {
-                    %>
-                    <option value="<%=r.getID()%>"><%=r.getNAME()%></option>
-
-                    <%
-                            }
-                        }
-                    %>
+                    ${flatRoofs}
                 </select>
                 <label>Tag</label>
             </div>
@@ -165,33 +170,7 @@
             <div class="input-field col s12 angeled">
                 <select name="roof" id="heighroof" required class="validate">
                     <option value="" disabled selected>Vælg tagtype/farve</option>
-                    <%
-                        for (Roof r : roofs) {
-                            if (r.getTYPE() == 1) {
-                    %>
-                    <option value="<%=r.getID()%>"><%=r.getNAME()%></option>
-
-                    <%
-                            }
-                        }
-                    %>
-                    <!--
-                    <option value="1">Betontagsten - Rød</option>
-                    <option value="1">Betontagsten - Teglrød</option>
-                    <option value="1">Betontagsten - Brun</option>
-                    <option value="1">Betontagsten - Sort</option>
-                    <option value="1">Eternittag B6 - Grå</option>
-                    <option value="1">Eternittag B6 - Sort</option>
-                    <option value="1">Eternittag B6 - Mokka (brun)</option>
-                    <option value="1">Eternittag B6 - Rødbrun</option>
-                    <option value="1">Eternittag B6 - Teglrød</option>
-                    <option value="1">Eternittag B7 - Grå</option>
-                    <option value="1">Eternittag B7 - Sort</option>
-                    <option value="1">Eternittag B7 - Mokka (brun)</option>
-                    <option value="1">Eternittag B7 - Rødbrun</option>
-                    <option value="1">Eternittag B7 - Teglrød</option>
-                    <option value="1">Eternittag B7 - Rødflammet</option>
-                    -->
+                    ${raisedRoofs}
                 </select>
                 <label>Tag</label>
             </div>
