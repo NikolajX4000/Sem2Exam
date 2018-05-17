@@ -172,7 +172,7 @@ public class RenderOrderInspect {
         s.append("</p>");
         
         
-        s.append("<button class=\"btn waves-effect waves-light blue btn-large\" type=\"submit\" name=\"command\" value=\"UpdateOrderCommand\">Opdater");
+        s.append("<button class=\"btn waves-effect waves-light blue btn-large\" type=\"submit\" name=\"command\" value=\"CmdUpdateOrder\">Opdater");
             s.append("<i class=\"material-icons right\">send</i>");
         s.append("</button>");
         

@@ -78,7 +78,7 @@
                                 popUps.append("<label for='price' data-error='Skriv en pris'>Pris</label>");
                             popUps.append("</div>");
                             
-                            popUps.append("<div class=\"input-field col s12\"><button class='btn waves-effect waves-light blue ' type='submit' name='command' value='CmdPageMaterial'>");
+                            popUps.append("<div class=\"input-field col s12\"><button class='btn waves-effect waves-light blue ' type='submit' name='command' value='CmdUpdateMaterial'>");
                                 popUps.append("Gem <i class='material-icons right'>send</i>");
                             popUps.append("</button></div>");
                                 
