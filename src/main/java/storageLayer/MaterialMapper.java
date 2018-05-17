@@ -66,10 +66,10 @@ public class MaterialMapper {
     public static List<Material> getMaterials(String material) throws CustomException {
         PreparedStatement ps = null;
         List<Material> materials = new ArrayList<>();
+        
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT * FROM materials WHERE name=?";
-
             ps = con.prepareStatement(SQL);
             ps.setString(1, material);
             ResultSet rs = ps.executeQuery();
@@ -104,9 +104,9 @@ public class MaterialMapper {
 
         try {
             Connection con = Connector.connection();
-            String SQL = "UPDATE orders SET "
+            String SQL = "UPDATE materials SET "
                     + "name = ?, price = ?, size = ?, description = ? "
-                    + "WHERE order_id = ?";
+                    + "WHERE plank_id = ?";
 
             ps = con.prepareStatement(SQL);
 
@@ -122,7 +122,7 @@ public class MaterialMapper {
             }
             ps.executeUpdate();
 
-        } catch (SQLException | ClassNotFoundException ex) {
+        } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
             closeConnection(ps);

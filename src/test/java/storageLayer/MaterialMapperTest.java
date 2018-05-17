@@ -4,9 +4,13 @@ import com.mysql.jdbc.Connection;
 import functionLayer.Material;
 import java.sql.DriverManager;
 import com.mysql.jdbc.*;
+import functionLayer.CustomException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -55,11 +59,15 @@ public class MaterialMapperTest {
         System.out.println("getMaterials");
         List<Material> matarials = MaterialMapper.getAllMaterials();
         int result = matarials.size();
-        int expResult = 100;
+        int expResult = 124;
         
         assertEquals(expResult, result);
     }
 
+    /**
+     * 
+     * @throws Exception 
+     */
     @Test
     public void testGetMaterial() throws Exception {
         System.out.println( "getMaterial" );
@@ -70,6 +78,33 @@ public class MaterialMapperTest {
         
         assertEquals(expResult, result);
     }
+    
+    /**
+     * 
+     * @throws Exception 
+     */
+    @Test
+    public void testGetMaterial_invalidName() throws Exception {
+        System.out.println( "getMaterial: called by invalid name" );
+        String materialName = "invalidName";
+        List<Material> result = MaterialMapper.getMaterials( materialName );
+        
+        assertTrue( result.isEmpty() );
+    }
+    
+    /**
+     * 
+     * @throws Exception 
+     */
+    @Test
+    public void testGetMaterial_nullName() throws Exception {
+        System.out.println( "getMaterial: called by null name" );
+        String materialName = null;
+        List<Material> result = MaterialMapper.getMaterials( materialName );
+        
+        assertTrue( result.isEmpty() );
+    }
+    
     
     /**
      * Test of updateMaterial method, of class MaterialMapper.
@@ -84,6 +119,17 @@ public class MaterialMapperTest {
         String expResult = "Testing";
         String result = MaterialMapper.getMaterials( "overstern" ).get(1).getDescription();
         assertEquals( result, expResult );
+    }
+    
+    /**
+     * Test of updateMaterial method, of class MaterialMapper.
+     * @throws java.lang.Exception
+     */
+    @Test( expected = CustomException.class )
+    public void testUpdateMaterial_null() throws Exception {
+        System.out.println( "updateMaterial null" );
+        Material material = null;
+        MaterialMapper.updateMaterial( material );
     }
 
 }
