@@ -34,7 +34,7 @@ public class RenderOrder {
         return s.toString();
     }
     
-    private static String cardTop(){
+    private static String cardTop() throws CustomException{
         
         StringBuilder s = new StringBuilder();
         
