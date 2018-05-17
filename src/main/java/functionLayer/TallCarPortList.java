@@ -32,7 +32,7 @@ public class TallCarPortList
         this.spaerLength = Math.ceil(Math.sqrt(Math.pow(width / 2, 2) + Math.pow(height, 2)) * 2);
     }
 
-    ArrayList<PartLine> getParts() throws CustomException
+    public ArrayList<PartLine> getParts() throws CustomException
     {
         ArrayList<PartLine> parts = new ArrayList<>();
         parts.add(vindskede());                                                 //0
@@ -384,11 +384,15 @@ public class TallCarPortList
         return new PartLine(material, amount * 3);
     }
 
-    private Material findBestMat(double length, List<Material> list)
+    private Material findBestMat(double length, List<Material> list) throws CustomException
     {
         double best = 0;
         double wasted;
         Material mat = null;
+        if(length<=0)
+        {
+            throw new CustomException("mærklige mål");
+        }
 
         for (int i = list.size() - 1; i >= 0; i--)
         {
@@ -405,7 +409,7 @@ public class TallCarPortList
         return mat;
     }
 
-    private Material findMaterial(String name, List<Material> materials)
+    private Material findMaterial(String name, List<Material> materials) throws CustomException
     {
         for (Material material : materials)
         {
@@ -414,7 +418,7 @@ public class TallCarPortList
                 return material;
             }
         }
-        return null;
+        throw new CustomException("ingen matriel passer");
     }
 
 }
