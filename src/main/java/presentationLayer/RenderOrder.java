@@ -10,6 +10,8 @@ import functionLayer.CustomException;
 import functionLayer.FlatCarPortList;
 import functionLayer.Order;
 import functionLayer.PartLine;
+import functionLayer.TallCarPortList;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -155,16 +157,20 @@ public class RenderOrder {
         s.append("<div id=\"").append(o.getStringId()).append("c\">");
             s.append("<span class=\"card-title\">Stykliste</span>");
            
-            if(o.isFlat()){
                 s.append("<table><tbody>");
                 s.append("<tr><th>Antal</th><th>Størrelse</th><th>Navn</th></tr>");
                 try {
                     
-                    //ArrayList
-                    
+                //ArrayList
+                List<PartLine> list = new ArrayList<>();
+                if(o.isFlat()){
                     FlatCarPortList cpl = new FlatCarPortList(o);
-                    List<PartLine> list = cpl.getParts();
-                    
+                    list = cpl.getParts();
+                }else
+                {
+                    TallCarPortList tcpl = new TallCarPortList(o);
+                    list = tcpl.getParts();
+                }
                     for(PartLine pl : list){
                         s.append("<tr>");
                         
@@ -180,7 +186,9 @@ public class RenderOrder {
                 
                 s.append("</tbody></table>");
                 
-            }
+            
+
+
             
             
             
