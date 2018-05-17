@@ -188,6 +188,30 @@ INSERT INTO materials (name,price,description,size) VALUES('rygsten',15,'Eternit
 INSERT INTO materials (name,price,description,size) VALUES('rygsten',15,'Eternittag B7 - Rødbrun',0);
 INSERT INTO materials (name,price,description,size) VALUES('rygsten',15,'Eternittag B7 - Teglrød',0);
 INSERT INTO materials (name,price,description,size) VALUES('rygsten',15,'Eternittag B7 - Rødflammet',0);
+INSERT INTO materials (name,price,description,size) VALUES('oven på tagfodslægte',18,'25x50 mm. trykimp. Bræt',210);
+INSERT INTO materials (name,price,description,size) VALUES('oven på tagfodslægte',18,'25x50 mm. trykimp. Bræt',240);
+INSERT INTO materials (name,price,description,size) VALUES('oven på tagfodslægte',18,'25x50 mm. trykimp. Bræt',270);
+INSERT INTO materials (name,price,description,size) VALUES('oven på tagfodslægte',18,'25x50 mm. trykimp. Bræt',300);
+INSERT INTO materials (name,price,description,size) VALUES('oven på tagfodslægte',18,'25x50 mm. trykimp. Bræt',330);
+INSERT INTO materials (name,price,description,size) VALUES('oven på tagfodslægte',18,'25x50 mm. trykimp. Bræt',360);
+INSERT INTO materials (name,price,description,size) VALUES('oven på tagfodslægte',18,'25x50 mm. trykimp. Bræt',390);
+INSERT INTO materials (name,price,description,size) VALUES('oven på tagfodslægte',18,'25x50 mm. trykimp. Bræt',420);
+INSERT INTO materials (name,price,description,size) VALUES('oven på tagfodslægte',18,'25x50 mm. trykimp. Bræt',450);
+INSERT INTO materials (name,price,description,size) VALUES('oven på tagfodslægte',18,'25x50 mm. trykimp. Bræt',480);
+INSERT INTO materials (name,price,description,size) VALUES('oven på tagfodslægte',18,'25x50 mm. trykimp. Bræt',510);
+INSERT INTO materials (name,price,description,size) VALUES('oven på tagfodslægte',18,'25x50 mm. trykimp. Bræt',540);
+INSERT INTO materials (name,price,description,size) VALUES('stern',32,'25x150mm. trykimp. Bræt',300);
+INSERT INTO materials (name,price,description,size) VALUES('stern',32,'25x150mm. trykimp. Bræt',360);
+INSERT INTO materials (name,price,description,size) VALUES('stern',32,'25x150mm. trykimp. Bræt',420);
+INSERT INTO materials (name,price,description,size) VALUES('stern',32,'25x150mm. trykimp. Bræt',480);
+INSERT INTO materials (name,price,description,size) VALUES('stern',32,'25x150mm. trykimp. Bræt',540);
+INSERT INTO materials (name,price,description,size) VALUES('stern',32,'25x150mm. trykimp. Bræt',600);
+INSERT INTO materials (name,price,description,size) VALUES('vindskede',32,'25x150mm. trykimp. Bræt',300);
+INSERT INTO materials (name,price,description,size) VALUES('vindskede',32,'25x150mm. trykimp. Bræt',360);
+INSERT INTO materials (name,price,description,size) VALUES('vindskede',32,'25x150mm. trykimp. Bræt',420);
+INSERT INTO materials (name,price,description,size) VALUES('vindskede',32,'25x150mm. trykimp. Bræt',480);
+INSERT INTO materials (name,price,description,size) VALUES('vindskede',32,'25x150mm. trykimp. Bræt',540);
+INSERT INTO materials (name,price,description,size) VALUES('vindskede',32,'25x150mm. trykimp. Bræt',600);
 */
 
 /*roofs*/
@@ -228,6 +252,8 @@ INSERT INTO tools (name,unit_size,price) VALUES ('Vinkelbeslag 35',1,6);
 INSERT INTO tools (name,unit_size,price) VALUES ('B & C Toplægteholder',1,50);
 INSERT INTO tools (name,unit_size,price) VALUES ('B & C rygstensbeslag',1,50);
 INSERT INTO tools (name,unit_size,price) VALUES ('B & C tagstens bindere og nakkekroge',5,50);
+INSERT INTO tools (name,unit_size,price) VALUES ('5x40 mm. beslagskruer',250,269);
+INSERT INTO tools (name,unit_size,price) VALUES ('5x100 mm. skruer',100,100);
 */
 
 SET SQL_MODE=@OLD_SQL_MODE;
