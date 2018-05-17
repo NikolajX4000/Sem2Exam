@@ -64,4 +64,8 @@ public class LogicFacade {
     public static List<Roof> getAllRoofs() throws CustomException {
         return StorageFacade.getAllRoofs();
     }
+    
+    public static Employee login(String name, String password) throws CustomException {
+        return StorageFacade.login(name, password);
+    }
 }
