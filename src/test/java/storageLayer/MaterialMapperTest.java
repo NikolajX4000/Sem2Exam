@@ -1,7 +1,7 @@
 package storageLayer;
 
-import com.mysql.jdbc.Statement;
 import java.sql.Connection;
+import java.sql.Statement;
 import functionLayer.Material;
 import java.sql.DriverManager;
 import functionLayer.CustomException;
@@ -42,7 +42,7 @@ public class MaterialMapperTest {
             Connector.setConnection( testConnection );
         }
         // reset test database
-        try ( Statement stmt = ( Statement )testConnection.createStatement() ) {
+        try ( Statement stmt = testConnection.createStatement() ) {
             stmt.execute( "drop table if exists materials" );
             stmt.execute( "create table materials like materialsTest" );
             stmt.execute( "insert into materials select * from materialsTest" );
@@ -146,6 +146,10 @@ public class MaterialMapperTest {
         System.out.println( "updateMaterial null" );
         Material material = null;
         MaterialMapper.updateMaterial( material );
+    }
+    
+    @Test
+    public void testUpdateMaterial_wParameters() {
     }
 
 }
