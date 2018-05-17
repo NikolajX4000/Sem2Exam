@@ -5,6 +5,7 @@
  */
 package functionLayer;
 
+import storageLayer.StorageFacade;
 import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
