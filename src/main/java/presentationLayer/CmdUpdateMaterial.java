@@ -32,6 +32,7 @@ public class CmdUpdateMaterial extends Command{
         } catch (Exception e) {
             
             request.setAttribute("feedback", "Der gik noget galt.");
+            request.setAttribute("test", e);
             
         }
 

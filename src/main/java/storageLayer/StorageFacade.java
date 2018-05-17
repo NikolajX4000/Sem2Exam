@@ -112,8 +112,8 @@ public class StorageFacade {
         return MaterialMapper.updateMaterial(material);
     }
     
-    public static Material updateMaterial(int id, int size, int price, String description) throws CustomException {
-        return MaterialMapper.updateMaterial(id, size, price, description);
+    public static void updateMaterial(int id, int size, int price, String description) throws CustomException {
+        MaterialMapper.updateMaterial(id, size, price, description);
     }
 
     /**
