@@ -1,9 +1,9 @@
 package storageLayer;
 
-import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
+import java.sql.Connection;
 import functionLayer.Material;
 import java.sql.DriverManager;
-import com.mysql.jdbc.*;
 import functionLayer.CustomException;
 import java.sql.SQLException;
 import java.util.List;
@@ -37,7 +37,7 @@ public class MaterialMapperTest {
             String url = String.format( "jdbc:mysql://%s:3306/%s", HOST, DBNAME );
             Class.forName( "com.mysql.jdbc.Driver" );
             
-            testConnection = ( Connection )DriverManager.getConnection( url, USER, USERPW );
+            testConnection = DriverManager.getConnection( url, USER, USERPW );
             // Make mappers use test 
             Connector.setConnection( testConnection );
         }
@@ -138,7 +138,7 @@ public class MaterialMapperTest {
      * Test of updateMaterial method, of class MaterialMapper - with 'null' object.
      * Testing an update method on the 'materials' table. 
      * Getting a Material object from the database, modifying it with a null object, 
-     * updateting it, and recieve a CustomException.
+     * updateting it, and recieve a CustomException
      * @throws java.lang.Exception
      */
     @Test( expected = CustomException.class )
