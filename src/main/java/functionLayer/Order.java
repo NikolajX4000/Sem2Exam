@@ -5,8 +5,9 @@
  */
 package functionLayer;
 
-import java.text.DecimalFormat;
+import storageLayer.StorageFacade;
 import java.text.NumberFormat;
+import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
@@ -19,6 +20,8 @@ public class Order {
     /* order */
     private int id;
     private String stringId;
+    private List<PartLine> partsList;
+    private int price;
 
     /* customer */
     private String name;
@@ -47,6 +50,17 @@ public class Order {
     /* status */
     private String status = "Behandles";
 
+    public int calculatePrice() throws CustomException {
+        if (isFlat()) {
+            partsList = new FlatCarPortList(this).getParts();
+        }
+        price = 0;
+        for (PartLine p : partsList) {
+            price += p.calculatePrice();
+        }
+        return price;
+    }
+
     /**
      *
      * @return
@@ -72,26 +86,8 @@ public class Order {
         NumberFormat nf = NumberFormat.getNumberInstance(Locale.GERMAN);
 
         return nf.format(p) + " kr.";
+//        return nf.format(price) + " kr.";
 
-    }
-
-    /**
-     *
-     * @return
-     */
-    public int getPriceDB() {
-        int p = 500;
-        if (hasShed()) {
-            p += shedWidth * shedLength * 400;
-        }
-        if (isFlat()) {
-            p += width * length * 300;
-        } else {
-
-            p += width * length * 666;
-        }
-        p /= 10000;
-        return p;
     }
 
     /**
@@ -100,7 +96,7 @@ public class Order {
      * @return true if it does and false if it doesnt
      */
     public boolean hasShed() {
-        return (shedWidth > 0 || shedLength > 0);
+        return (shedWidth > 0 && shedLength > 0);
     }
 
     /**
@@ -347,9 +343,10 @@ public class Order {
     /**
      *
      * @return
+     * @throws functionLayer.CustomException
      */
-    public int getRoof() {
-        return roof;
+    public Roof getRoof() throws CustomException {
+        return StorageFacade.getRoofById(roof);
     }
 
     /**

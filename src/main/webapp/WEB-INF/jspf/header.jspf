@@ -42,14 +42,18 @@
 
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a href="?">Forside</a></li>
-                        <li><a href="?command=PageBuildCarportCommand">Carport</a></li>
-                        <li><a href="?command=PageAllOrdersCommand">Admin</a></li>
+                        <li><a href="?command=CmdPageBuildCarport">Carport</a></li>
+                        <li><a href="?command=CmdPageMaterial">Material</a></li>
+                        <li><a href="?command=CmdPageAllOrders">Admin</a></li>
+                        <li><a href="?command=CmdPageLogin">Login</a></li>
                     </ul>
 
                     <ul class="side-nav" id="mobile-demo">
                         <li><a href="?">Forside</a></li>
-                        <li><a href="?command=PageBuildCarportCommand">Carport</a></li>
-                        <li><a href="?command=PageAllOrdersCommand">Admin</a></li>
+                        <li><a href="?command=CmdPageBuildCarport">Carport</a></li>
+                        <li><a href="?command=CmdPageMaterial">Material</a></li>
+                        <li><a href="?command=CmdPageAllOrders">Admin</a></li>
+                        <li><a href="?command=CmdPageLogin">Login</a></li>
                     </ul>
                 </div>
             </div>

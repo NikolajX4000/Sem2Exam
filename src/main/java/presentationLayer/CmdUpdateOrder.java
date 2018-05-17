@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author super
  */
-public class UpdateOrderCommand extends Command{
+public class CmdUpdateOrder extends Command{
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException {
@@ -19,7 +19,9 @@ public class UpdateOrderCommand extends Command{
         
         try {
             LogicFacade.updateOrder(Integer.parseInt(request.getParameter("target")), request.getParameter("newStatus"));
+            request.setAttribute("feedback", "Status opdateret!");
         } catch (Exception e) {
+            request.setAttribute("feedback", "Der gik noget galt.");
         }
         
         

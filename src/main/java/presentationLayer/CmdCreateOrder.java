@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author super
  */
-public class CreateOrderCommand extends Command{
+public class CmdCreateOrder extends Command{
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException
