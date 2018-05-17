@@ -7,6 +7,7 @@
 package presentationLayer;
 
 import functionLayer.CustomException;
+import functionLayer.LogicFacade;
 import functionLayer.Material;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,13 +25,16 @@ public class CmdUpdateMaterial extends Command{
             int price = Integer.parseInt(request.getParameter("price"));
             String description = request.getParameter("description");
             
+            LogicFacade.updateMaterial(id, size, price, description);
+            
             request.setAttribute("feedback", description + " nu opdateret!");
             
         } catch (Exception e) {
+            
+            request.setAttribute("feedback", "Der gik noget galt.");
+            
         }
-        
-        
-        
+
         return "materialpage";
     }
 
