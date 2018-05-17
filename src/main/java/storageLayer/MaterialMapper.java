@@ -11,7 +11,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -25,8 +24,7 @@ public class MaterialMapper {
 
     /**
      *
-     * @return
-     * @throws CustomException
+     * @return @throws CustomException
      */
     public static List<Material> getAllMaterials() throws CustomException {
         PreparedStatement ps = null;
@@ -116,6 +114,46 @@ public class MaterialMapper {
                 ps.setInt(3, material.getSize());
                 ps.setString(4, material.getDescription());
                 ps.setInt(5, material.getId());
+
+            } catch (SQLException ex) {
+                throw new CustomException("Formateringsfejl");
+            }
+            ps.executeUpdate();
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            throw new CustomException(ex.getMessage());
+        } finally {
+            closeConnection(ps);
+        }
+        return material;
+    }
+
+    /**
+     *
+     * @param id
+     * @param size
+     * @param price
+     * @param desc
+     * @return
+     * @throws CustomException
+     */
+    public static Material updateMaterial(int id, int size, int price, String desc) throws CustomException {
+        PreparedStatement ps = null;
+        Material material = new Material();
+
+        try {
+            Connection con = Connector.connection();
+            String SQL = "UPDATE orders SET "
+                    + "price = ?, size = ?, description = ? "
+                    + "WHERE order_id = ?";
+
+            ps = con.prepareStatement(SQL);
+
+            try {
+                ps.setInt(1, material.getPrice());
+                ps.setInt(2, material.getSize());
+                ps.setString(3, material.getDescription());
+                ps.setInt(4, material.getId());
 
             } catch (SQLException ex) {
                 throw new CustomException("Formateringsfejl");

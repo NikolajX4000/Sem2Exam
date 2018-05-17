@@ -252,6 +252,8 @@ INSERT INTO tools (name,unit_size,price) VALUES ('Vinkelbeslag 35',1,6);
 INSERT INTO tools (name,unit_size,price) VALUES ('B & C Toplægteholder',1,50);
 INSERT INTO tools (name,unit_size,price) VALUES ('B & C rygstensbeslag',1,50);
 INSERT INTO tools (name,unit_size,price) VALUES ('B & C tagstens bindere og nakkekroge',5,50);
+INSERT INTO tools (name,unit_size,price) VALUES ('5x40 mm. beslagskruer',250,269);
+INSERT INTO tools (name,unit_size,price) VALUES ('5x100 mm. skruer',100,100);
 */
 
 SET SQL_MODE=@OLD_SQL_MODE;
