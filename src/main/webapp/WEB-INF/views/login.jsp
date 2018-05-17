@@ -6,8 +6,8 @@
 <form class="row" method="get" accept-charset="ISO-8859-1">
 
         <div class="input-field col m6 s12">
-            <input id="email" type="email" class="validate" name="email" required>
-            <label for="email">E-Mail</label>
+            <input id="user" type="text" class="validate" name="user" minlength="3" required>
+            <label for="user">Bruger</label>
         </div>
     
         <div class="input-field col m6 s12">
