@@ -57,6 +57,40 @@ public class MaterialMapper {
 
     /**
      *
+     * @param id
+     * @return
+     * @throws CustomException
+     */
+    public static Material getMaterial(int id) throws CustomException {
+        PreparedStatement ps = null;
+        Material meterial = null;
+        try {
+            Connection con = Connector.connection();
+            String SQL = "SELECT * FROM materials WHERE plank_id=?";
+            ps = con.prepareStatement(SQL);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.first()) {
+
+                meterial = new Material().
+                    setId(rs.getInt("plank_id")).
+                    setName(rs.getString("name")).
+                    setPrice(rs.getInt("price")).
+                    setDescription(rs.getString("description")).
+                    setSize(rs.getInt("size"));
+            }
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            throw new CustomException(ex.getMessage());
+        } finally {
+            closeConnection(ps);
+        }
+        return meterial;
+    }
+    
+    /**
+     *
      * @param material
      * @return
      * @throws CustomException
@@ -159,7 +193,7 @@ public class MaterialMapper {
             }
             ps.executeUpdate();
 
-        } catch (SQLException | ClassNotFoundException ex) {
+        } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
             closeConnection(ps);

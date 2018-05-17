@@ -8,6 +8,7 @@ import functionLayer.CustomException;
 import java.sql.SQLException;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
@@ -148,8 +149,99 @@ public class MaterialMapperTest {
         MaterialMapper.updateMaterial( material );
     }
     
+    /**
+     * Test of updateMaterial method, of class MaterialMapper - method w/ parameters.
+     * Testing an update method on the 'materials' table. 
+     * Calling updateMaterial with predifined arguments, 
+     * getting it and check is it was successful. 
+     * @throws java.lang.Exception
+     */
     @Test
-    public void testUpdateMaterial_wParameters() {
+    public void testUpdateMaterial_wParameters() throws Exception {
+        System.out.println( "updateMaterial w/ parameters" );
+        int id = 3;
+        int size = 5;
+        int price = 7;
+        String describtion = "eleven";
+        
+        MaterialMapper.updateMaterial( id, size, price, describtion );
+        Material material = MaterialMapper.getMaterial( id );
+        
+        assertEquals( material.getSize(), size );
+        assertEquals( material.getPrice(), price );
+        assertEquals( material.getDescription(), describtion );
+    }
+    
+    /**
+     * Test of updateMaterial method, of class MaterialMapper - method w/ parameters.
+     * Testing an update method on the 'materials' table. 
+     * Calling updateMaterial with predifined arguments, 
+     * and with the 'plank_id' as 'Integer.MIN_VALUE'.
+     * getting it and check is it was successful. 
+     * @throws java.lang.Exception
+     */
+    @Test
+    public void testUpdateMaterial_wParameters_negOutOfBoundsID() throws Exception {
+        System.out.println( "updateMaterial w/ parameters and OOB value" );
+        int id = Integer.MIN_VALUE;
+        int size = 5;
+        int price = 7;
+        String describtion = "eleven";
+        
+        MaterialMapper.updateMaterial( id, size, price, describtion );
+        Material result = MaterialMapper.getMaterial( id );
+        assertNull( result );
+    }
+    
+    /**
+     * Test of updateMaterial method, of class MaterialMapper - method w/ parameters.
+     * Testing an update method on the 'materials' table. 
+     * Calling updateMaterial with predifined arguments, 
+     * and with the 'plank_id' as 'Integer.MAX_VALUE'.
+     * getting it and check is it was successful. 
+     * @throws java.lang.Exception
+     */
+    @Test
+    public void testUpdateMaterial_wParameters_posOutOfBoundsID() throws Exception {
+        System.out.println( "updateMaterial w/ parameters and OOB value" );
+        int id = Integer.MAX_VALUE;
+        int size = 5;
+        int price = 7;
+        String describtion = "eleven";
+        
+        MaterialMapper.updateMaterial( id, size, price, describtion );
+        Material result = MaterialMapper.getMaterial( id );
+        assertNull( result );
+    }
+    
+    /**
+     * Test of updateMaterial method, of class MaterialMapper - method w/ parameters.
+     * 
+     * @throws java.lang.Exception
+     */
+    @Test
+    public void testUpdateMaterial_wParameters_negPrice() throws Exception {
+        System.out.println( "updateMaterial w/ parameters and negativ price" );
+    }
+    
+    /**
+     * Test of updateMaterial method, of class MaterialMapper - method w/ parameters.
+     * 
+     * @throws java.lang.Exception
+     */
+    @Test
+    public void testUpdateMaterial_wParameters_negSize() throws Exception {
+        System.out.println( "updateMaterial w/ parameters and negativ price" );
+    }
+    
+    /**
+     * Test of updateMaterial method, of class MaterialMapper - method w/ parameters.
+     * 
+     * @throws java.lang.Exception
+     */
+    @Test
+    public void testUpdateMaterial_wParameters_nullDescribtion() throws Exception {
+        System.out.println( "updateMaterial w/ parameters and negativ price" );
     }
 
 }
