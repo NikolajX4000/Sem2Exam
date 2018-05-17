@@ -89,15 +89,29 @@ public class ToolMapperTest {
         assertEquals(expResult, result);
     }
     
+    /**
+     * Test of getTool method, of class ToolMapper - with negative out of bounds.
+     * Testing for getting an Tool object from the 'tools' table, 
+     * with the 'tool_id' as 'Integer.MIN_VALUE'.
+     * This should return an null object because this 'tool_id' doesn't exits.
+     * @throws Exception 
+     */
     @Test
     public void testGetTool_negOutOfBoundsID() throws Exception {
         System.out.println( "getTool: called by neg. OOB value" );
-        int tool_id = -Integer.MAX_VALUE;
+        int tool_id = Integer.MIN_VALUE;
         Material meterial = ToolMapper.getTool( tool_id );
         String result = meterial.getName();
         assertNull( result );
     }
     
+    /**
+     * Test of getTool method, of class ToolMapper - with positive out of bounds.
+     * Testing for getting an Tool object from the 'tools' table, 
+     * with the 'tool_id' as 'Integer.MAX_VALUE'.
+     * This should return an null object because this 'tool_id' doesn't exits.
+     * @throws Exception 
+     */
     @Test
     public void testGetTool_posOutOfBoundsID() throws Exception {
         System.out.println( "getTool: called by pos. OOB value" );
@@ -109,7 +123,7 @@ public class ToolMapperTest {
 
     /**
      * Test of updateTool method, of class ToolMapper.
-     * Testing an update method on the 'tool' table. 
+     * Testing an update method on the 'tools' table. 
      * Getting a Material object from the database, modifying it, 
      * updateting it, get it back again and checks if the modification 
      * was successful. 
@@ -127,6 +141,13 @@ public class ToolMapperTest {
         assertEquals( result, expResult );
     }
     
+    /**
+     * Test of updateTool method, of class ToolMapper - with 'null' object.
+     * Testing an update method on the 'tools' table. 
+     * Getting a Material object from the database, modifying it with a null object, 
+     * updateting it, and recieve a CustomException
+     * @throws java.lang.Exception
+     */
     @Test( expected = CustomException.class )
     public void testUpdateTool_null() throws Exception {
         System.out.println("updateTool null");
