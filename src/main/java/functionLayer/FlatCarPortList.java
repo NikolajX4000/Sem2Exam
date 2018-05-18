@@ -10,13 +10,14 @@ import java.util.*;
 public class FlatCarPortList
 {
 
-    Order order;
-    double size = 1;
+
     double length;
     double width;
+    double shedLength;
+    double shedWidth;
+    boolean hasShed;
 
     List<PartLine> list = new ArrayList<>();
-//    private HashMap<String, Material> materials;
 
     /**
      *
@@ -25,9 +26,11 @@ public class FlatCarPortList
      */
     public FlatCarPortList(Order order)
     {
-        this.order = order;
-        length = order.getLength();
-        width = order.getWidth();
+        this.length = order.getLength();
+        this.width = order.getWidth();
+        this.shedLength = order.getShedLength();
+        this.shedWidth = order.getShedWidth();
+        this.hasShed = order.hasShed();
     }
 
     private ArrayList<PartLine> sternOgVandbreat() throws CustomException
@@ -56,83 +59,69 @@ public class FlatCarPortList
 
     PartLine oversternEnder() throws CustomException
     {
-        List<Material> material = StorageFacade.getMaterials("overstern");
-        List<Integer> sizes = collectSizes(material);
-        size = findSize(width, sizes);
-        int amount = (int) Math.ceil(width / size);
-        if (!order.hasShed())
+        Material material = findBestMat(width, StorageFacade.getMaterials("overstern"));
+        int amount = (int) Math.ceil(width / material.getSize());
+        if (!hasShed)
         {
             amount *= 2;
         }
-        return new PartLine(material.get(1), amount).setSize(size);
+        return new PartLine(material, amount);
     }
 
     PartLine understernEnder() throws CustomException
     {
-        List<Material> material = StorageFacade.getMaterials("understern");
-        List<Integer> sizes = collectSizes(material);
-        size = findSize(width, sizes);
-        int amount = (int) Math.ceil(width / size) * 2;
-        return new PartLine(material.get(1), amount).setSize(size);
+        Material material = findBestMat(width, StorageFacade.getMaterials("understern"));
+        int amount = (int) Math.ceil(width / material.getSize()) * 2;
+        return new PartLine(material, amount);
     }
 
     PartLine oversternSider() throws CustomException
     {
-        List<Material> material = StorageFacade.getMaterials("overstern");
-        List<Integer> sizes = collectSizes(material);
-        size = findSize(length, sizes);
-        int amount = (int) (Math.ceil(length / size)) * 2;
-        return new PartLine(material.get(1), amount).setSize(size);
+        Material material = findBestMat(length, StorageFacade.getMaterials("overstern"));
+        int amount = (int) (Math.ceil(length / material.getSize())) * 2;
+        return new PartLine(material, amount);
 
     }
 
     PartLine understernSider() throws CustomException
     {
-        List<Material> material = StorageFacade.getMaterials("understern");
-        List<Integer> sizes = collectSizes(material);
-        size = findSize(length, sizes);
-        int amount = (int) Math.ceil(length / size) * 2;
-        return new PartLine(material.get(1), amount).setSize(size);
+        Material material = findBestMat(length, StorageFacade.getMaterials("understern"));
+        int amount = (int) Math.ceil(length / material.getSize()) * 2;
+        return new PartLine(material, amount);
     }
 
     PartLine vandbraetEnde() throws CustomException
     {
-        List<Material> material = StorageFacade.getMaterials("vandbræt");
-        List<Integer> sizes = collectSizes(material);
-        size = findSize(width, sizes);
-        int amount = (int) Math.ceil(width / size);
-        if (!order.hasShed())
+        Material material = findBestMat(width, StorageFacade.getMaterials("vandbræt"));
+        int amount = (int) Math.ceil(width / material.getSize());
+        if (!hasShed)
         {
             amount *= 2;
         }
-        return new PartLine(material.get(1), amount).setSize(size);
+        return new PartLine(material, amount);
     }
 
     PartLine vandbraetSide() throws CustomException
     {
-        List<Material> material = StorageFacade.getMaterials("vandbræt");
-        List<Integer> sizes = collectSizes(material);
-        size = findSize(length, sizes);
-        int amount = (int) Math.ceil(length / size) * 2;
-        return new PartLine(material.get(1), amount).setSize(size);
+        Material material = findBestMat(length, StorageFacade.getMaterials("vandbræt"));
+        int amount = (int) Math.ceil(length / material.getSize()) * 2;
+        return new PartLine(material, amount);
     }
 
     PartLine remCarport() throws CustomException
     {
-        List<Material> material = StorageFacade.getMaterials("rem");
-        List<Integer> sizes = collectSizes(material);
-        int carportLength = (int) length - order.getShedLength();
-        size = findSize(carportLength, sizes);
-        int amount = (int) Math.ceil(carportLength / size) * 2;
-        return new PartLine(material.get(1), amount).setSize(size);
+        double carportLength = length - shedLength;
+        Material material = findBestMat(carportLength, StorageFacade.getMaterials("rem"));
+        int amount = (int) Math.ceil(carportLength / material.getSize()) * 2;
+        return new PartLine(material, amount);
     }
 
     ArrayList<PartLine> stolperOgBolt() throws CustomException
     {
-        List<Material> material = StorageFacade.getMaterials("stolpe");
+        Material material = findBestMat(300, StorageFacade.getMaterials("stolpe"));
         ArrayList<PartLine> parts = new ArrayList<>();
         int amount;
-        if (!order.hasShed())
+        if (!hasShed)
         {
             amount = 4;
             if (length - 200 >= 400)
@@ -143,19 +132,19 @@ public class FlatCarPortList
         } else
         {
             amount = 4;
-            if (length - order.getShedLength() >= 300)
+            if (length - shedLength >= 300)
             {
                 amount += 2;
-                if (length - order.getShedLength() >= 600)
+                if (length - shedLength>= 600)
                 {
                     amount += 2;
                 }
             }
             parts.addAll(braeddeboltOgFirkantskive(amount));
-            if (order.getShedWidth() == width - 70)
+            if (shedWidth == width - 70)
             {
                 amount += 4;
-            } else if (order.getShedWidth() >= 300)
+            } else if (shedWidth >= 300)
             {
                 amount += 6;
             } else
@@ -164,7 +153,7 @@ public class FlatCarPortList
             }
             amount++;//for the door
         }
-        parts.add(new PartLine(material.get(0), amount).setSize(300));
+        parts.add(new PartLine(material, amount));
         return parts;
     }
 
@@ -173,7 +162,7 @@ public class FlatCarPortList
         Material material = StorageFacade.getTool(7);
         ArrayList<PartLine> parts = new ArrayList<>();
         amount *= 2;
-        if (order.hasShed())
+        if (hasShed)
         {
             amount += 4;
         }
@@ -205,18 +194,10 @@ public class FlatCarPortList
 
     PartLine spaer() throws CustomException
     {
-        List<Material> material = StorageFacade.getMaterials("spær");
-        List<Integer> sizes = collectSizes(material);
+        Material material = findBestMat(width, StorageFacade.getMaterials("spær"));
         int amount = 0;
-        if (!order.isFlat())
-        {
-            throw new UnsupportedOperationException("not implemented yet");
-        } else
-        {
-            size = findSize(width, sizes);
-            amount = (int) length / 55 + 1;
-        }
-        return new PartLine(material.get(1), amount).setSize(size);
+        amount = (int) length / 55 + 1;
+        return new PartLine(material, amount);
     }
 
     PartLine universalBeslagH(int amount) throws CustomException
@@ -239,13 +220,11 @@ public class FlatCarPortList
 
     ArrayList<PartLine> tagplade() throws CustomException
     {
-        List<Material> material = StorageFacade.getMaterials("tagplade");
-        List<Integer> sizes = collectSizes(material);
+        Material material = findBestMat(length, StorageFacade.getMaterials("tagplade"));
         ArrayList<PartLine> parts = new ArrayList<>();
-        size = findSize(length, sizes);
         int amount = (int) Math.ceil(width / 89);// 20cm overlap
-        amount *= (int) Math.ceil(length / size);
-        parts.add(new PartLine(material.get(1), amount).setSize(size));
+        amount *= (int) Math.ceil(length / material.getSize());
+        parts.add(new PartLine(material, amount));
         parts.add(plastmoBundskruer());
         return parts;
     }
@@ -253,7 +232,7 @@ public class FlatCarPortList
     PartLine plastmoBundskruer() throws CustomException
     {
         Material material = StorageFacade.getTool(1);
-        size = (length / 100) * (width / 100);
+        double size = (length / 100) * (width / 100);
         int amount = (int) size * 12;
         return new PartLine(material, amount);
     }
@@ -270,20 +249,16 @@ public class FlatCarPortList
 
     PartLine loesholterGavl() throws CustomException
     {
-        List<Material> material = StorageFacade.getMaterials("løsholte");
-        List<Integer> sizes = collectSizes(material);
-        size = findSize(order.getShedWidth() / 2, sizes);
-        int amount = (int) Math.ceil(order.getShedWidth() / size) * 6;//3 i højden i begge sider
-        return new PartLine(material.get(1), amount).setSize(size);
+        Material material = findBestMat(shedWidth/2, StorageFacade.getMaterials("løsholte"));
+        int amount = (int) Math.ceil(shedWidth / material.getSize()) * 6;//3 i højden i begge sider
+        return new PartLine(material, amount);
     }
 
     PartLine loesholterSider() throws CustomException
     {
-        List<Material> material = StorageFacade.getMaterials("løsholte");
-        List<Integer> sizes = collectSizes(material);
-        size = findSize(order.getShedLength() / 2, sizes);
-        int amount = (int) Math.ceil(order.getShedLength() / size) * 4;//2 i højden i begge sider
-        return new PartLine(material.get(1), amount).setSize(size);
+        Material material = findBestMat(shedLength/2, StorageFacade.getMaterials("løsholte"));
+        int amount = (int) Math.ceil(shedLength / material.getSize()) * 4;//2 i højden i begge sider
+        return new PartLine(material, amount);
     }
 
     PartLine vinkelbeslag(int amount) throws CustomException
@@ -294,31 +269,29 @@ public class FlatCarPortList
 
     PartLine remSkur() throws CustomException
     {
-        List<Material> material = StorageFacade.getMaterials("rem");
-        List<Integer> sizes = collectSizes(material);
-        size = findSize(order.getShedLength(), sizes);
-        int amount = (int) Math.ceil(order.getShedLength() / size) * 2;
-        return new PartLine(material.get(1), amount).setSize(size);
+        Material material = findBestMat(shedLength, StorageFacade.getMaterials("rem"));
+        int amount = (int) Math.ceil(shedLength / material.getSize()) * 2;
+        return new PartLine(material, amount);
     }
 
     ArrayList<PartLine> beklaedning() throws CustomException
     {
-        List<Material> material = StorageFacade.getMaterials("beklædning");
+        Material material = findBestMat(210, StorageFacade.getMaterials("beklædning"));
         ArrayList<PartLine> parts = new ArrayList<>();
         //6cm mellemrum
         //10cm bred
-        int amount = 0;
+        double amount = 0;
         //inderst sider
-        amount += (int) Math.ceil(order.getShedLength() / 16) * 2;
+        amount += Math.ceil(shedLength / 16) * 2;
         //inderst ender
-        amount += (int) Math.ceil(order.getShedWidth() / 16) * 2;
+        amount += Math.ceil(shedWidth / 16) * 2;
         //yderst sider
-        amount += (int) Math.ceil((order.getShedLength() - 8) / 16) * 2;
+        amount += Math.ceil((shedLength - 8) / 16) * 2;
         //yderst ender
-        amount += (int) Math.ceil((order.getShedWidth() - 8) / 16) * 2;
+        amount += Math.ceil((shedWidth - 8) / 16) * 2;
 
-        parts.add(new PartLine(material.get(1), amount).setSize(210));
-        parts.addAll(beklaedningSkruer(amount));
+        parts.add(new PartLine(material, (int)amount));
+        parts.addAll(beklaedningSkruer((int)amount));
 
         return parts;
     }
@@ -347,39 +320,8 @@ public class FlatCarPortList
 
     private PartLine zTilDoer() throws CustomException
     {
-        List<Material> material = StorageFacade.getMaterials("z til dør");
-        return new PartLine(material.get(0), 1).setSize(material.get(0).getSize());
-    }
-
-    private int findSize(double length, List<Integer> sizes)
-    {
-        double best = 0;
-        double wasted;
-        int size = 0;
-
-        for (int i = sizes.size() - 1; i >= 0; i--)
-        {
-            wasted = (length / (double) sizes.get(i)) % 1;
-            if (wasted == 0)
-            {
-                return sizes.get(i);
-            } else if (wasted > best)
-            {
-                size = sizes.get(i);
-                best = wasted;
-            }
-        }
-        return size;
-    }
-
-    private List<Integer> collectSizes(List<Material> list)
-    {
-        List<Integer> sizes = new ArrayList<>();
-        for (Material material : list)
-        {
-            sizes.add(material.getSize());
-        }
-        return sizes;
+        Material material = findBestMat(420, StorageFacade.getMaterials("z til dør"));
+        return new PartLine(material, 1);
     }
 
     private void addParts() throws CustomException
@@ -390,7 +332,7 @@ public class FlatCarPortList
         list.addAll(stolperOgBolt());
         list.add(remCarport());
 
-        if (order.hasShed())
+        if (hasShed)
         {
             list.addAll(loesholter());
             list.add(remSkur());
@@ -399,6 +341,31 @@ public class FlatCarPortList
             list.add(tHængsel());
             list.add(zTilDoer());
         }
+    }
+
+    private Material findBestMat(double length, List<Material> list) throws CustomException
+    {
+        double best = 0;
+        double wasted;
+        Material mat = null;
+        if (length <= 0)
+        {
+            throw new CustomException("mærklige mål");
+        }
+
+        for (int i = list.size() - 1; i >= 0; i--)
+        {
+            wasted = (length / (double) list.get(i).getSize()) % 1;
+            if (wasted == 0)
+            {
+                return list.get(i);
+            } else if (wasted > best)
+            {
+                mat = list.get(i);
+                best = wasted;
+            }
+        }
+        return mat;
     }
 
     /**
