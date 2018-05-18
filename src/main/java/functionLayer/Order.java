@@ -22,6 +22,7 @@ public class Order {
     private String stringId;
     private List<PartLine> partsList;
     private int price = 0;
+    private int materialPrice = 0;
 
     /* customer */
     private String name;
@@ -452,6 +453,15 @@ public class Order {
      */
     public Order setStatus(String status) {
         this.status = status;
+        return this;
+    }
+
+    public int getMaterialPrice() {
+        return materialPrice;
+    }
+
+    public Order setMaterialPrice(int materialPrice) {
+        this.materialPrice = materialPrice;
         return this;
     }
 
