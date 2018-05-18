@@ -41,7 +41,7 @@ public class OrderMapper {
                     /* carport */ + "width, length, "
                     /* roof */ + "roof_id, angle, "
                     /* shed */ + "shed_width, shed_length, "
-                    /* price */ + "price) "
+                    /* price */ + "material_price) "
                     + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
@@ -69,7 +69,7 @@ public class OrderMapper {
                 ps.setInt(13, order.getShedLength());
 
                 /* price */
-                ps.setInt(14, order.calculatePrice());
+                ps.setInt(14, order.getPriceInt());
 
             } catch (SQLException ex) {
                 throw new CustomException("Formateringsfejl");
@@ -133,9 +133,11 @@ public class OrderMapper {
                         setShedWidth(rs.getInt("shed_width")).
                         setShedLength(rs.getInt("shed_length")).
                         /* dates */
-                        setPlaced(rs.getString("placed")).
+                        setPlaced(rs.getString("placed").substring(0, 10)).
                         /* status */
-                        setStatus(rs.getString("status"));
+                        setStatus(rs.getString("status")).
+                        /* price */
+                        setPrice(rs.getInt("price"));
             }
 
         } catch (SQLException | ClassNotFoundException ex) {
@@ -192,9 +194,11 @@ public class OrderMapper {
                         setShedWidth(rs.getInt("shed_width")).
                         setShedLength(rs.getInt("shed_length")).
                         /* dates */
-                        setPlaced(rs.getString("placed")).
+                        setPlaced(rs.getString("placed").substring(0, 10)).
                         /* status */
-                        setStatus(rs.getString("status"));
+                        setStatus(rs.getString("status")).
+                        /* price */
+                        setPrice(rs.getInt("price"));
 
                 orders.add(order);
             }
@@ -247,9 +251,11 @@ public class OrderMapper {
                         setShedWidth(rs.getInt("shed_width")).
                         setShedLength(rs.getInt("shed_length")).
                         /* dates */
-                        setPlaced(rs.getString("placed")).
+                        setPlaced(rs.getString("placed").substring(0, 10)).
                         /* status */
-                        setStatus(rs.getString("status"));
+                        setStatus(rs.getString("status")).
+                        /* price */
+                        setPrice(rs.getInt("price"));
 
                 orders.add(order);
             }
@@ -371,6 +377,33 @@ public class OrderMapper {
 
             try {
                 ps.setString(1, status);
+                ps.setInt(2, id);
+
+            } catch (SQLException ex) {
+                throw new CustomException("Formateringsfejl");
+            }
+            ps.executeUpdate();
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            throw new CustomException(ex.getMessage());
+        } finally {
+            closeConnection(ps);
+        }
+    }
+    
+    public static void updatePrice(int id, int price) throws CustomException {
+        PreparedStatement ps = null;
+
+        try {
+            Connection con = Connector.connection();
+            String SQL = "UPDATE orders "
+                    + "SET price = ? "
+                    + "WHERE order_id = ?";
+
+            ps = con.prepareStatement(SQL);
+
+            try {
+                ps.setInt(1, price);
                 ps.setInt(2, id);
 
             } catch (SQLException ex) {
