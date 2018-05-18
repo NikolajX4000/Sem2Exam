@@ -15,12 +15,14 @@ import java.util.Random;
  *
  * @author Stephan
  */
-public class Order {
+public class Order
+{
 
     /* order */
     private int id;
     private String stringId;
     private List<PartLine> partsList;
+    private int price = 0;
 
     /* customer */
     private String name;
@@ -49,14 +51,18 @@ public class Order {
     /* status */
     private String status = "Behandles";
 
-    public int calculatePrice() throws CustomException {
-        if (isFlat()) {
+    public int calculatePrice() throws CustomException
+    {
+        if (isFlat())
+        {
             partsList = new FlatCarPortList(this).getParts();
-        } else {
+        } else
+        {
             partsList = new TallCarPortList(this).getParts();
         }
         int price = 0;
-        for (PartLine p : partsList) {
+        for (PartLine p : partsList)
+        {
             price += p.calculatePrice();
         }
         return price;
@@ -66,30 +72,23 @@ public class Order {
      *
      * @return
      */
-    public String getPrice() throws CustomException {
+    public String getPrice() throws CustomException
+    {
 
-//        int p = 500;
-        int price = calculatePrice();
-//
-//        if (hasShed()) {
-//            p += shedWidth * shedLength * 400;
-//        }
-//
-//        if (isFlat()) {
-//
-//            p += width * length * 300;
-//        } else {
-//
-//            p += width * length * 666;
-//        }
-//
-//        p /= 10000;
+        if (price == 0)
+        {
+            price = calculatePrice();
+        }
 
         NumberFormat nf = NumberFormat.getNumberInstance(Locale.GERMAN);
-
-//        return nf.format(p) + " kr.";
         return nf.format(price) + " kr.";
 
+    }
+
+    public Order setPrice(int price)
+    {
+        this.price = price;
+        return this;
     }
 
     /**
@@ -97,7 +96,8 @@ public class Order {
      *
      * @return true if it does and false if it doesnt
      */
-    public boolean hasShed() {
+    public boolean hasShed()
+    {
         return (shedWidth > 0 && shedLength > 0);
     }
 
@@ -106,7 +106,8 @@ public class Order {
      *
      * @return returns true if it is and false if it isnt
      */
-    public boolean isFlat() {
+    public boolean isFlat()
+    {
         return (angle == 0);
     }
 
@@ -115,10 +116,12 @@ public class Order {
      *
      * @return a color as a string
      */
-    public String getStatusColor() {
+    public String getStatusColor()
+    {
 
         String color = "orange";
-        switch (status) {
+        switch (status)
+        {
             case "Modtaget":
                 color = "green";
                 break;
@@ -135,17 +138,20 @@ public class Order {
         return color;
     }
 
-    private String generateStringId(int amount) {
+    private String generateStringId(int amount)
+    {
         amount--;
         String chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         String randomString = "x";
         Random rand = new Random();
         char[] text = new char[amount];
 
-        for (int i = 0; i < amount; i++) {
+        for (int i = 0; i < amount; i++)
+        {
             text[i] = chars.charAt(rand.nextInt(chars.length()));
         }
-        for (int i = 0; i < text.length - 1; i++) {
+        for (int i = 0; i < text.length - 1; i++)
+        {
             randomString += text[i];
         }
         return randomString;
@@ -155,8 +161,10 @@ public class Order {
      *
      * @return
      */
-    public String getStringId() {
-        if (stringId == null) {
+    public String getStringId()
+    {
+        if (stringId == null)
+        {
             stringId = generateStringId(20);
         }
         return stringId;
@@ -166,7 +174,8 @@ public class Order {
      *
      * @return
      */
-    public int getId() {
+    public int getId()
+    {
         return id;
     }
 
@@ -175,7 +184,8 @@ public class Order {
      * @param id
      * @return
      */
-    public Order setId(int id) {
+    public Order setId(int id)
+    {
         this.id = id;
         return this;
     }
@@ -184,7 +194,8 @@ public class Order {
      *
      * @return
      */
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
@@ -193,7 +204,8 @@ public class Order {
      * @param name
      * @return
      */
-    public Order setName(String name) {
+    public Order setName(String name)
+    {
         this.name = name;
         return this;
     }
@@ -202,7 +214,8 @@ public class Order {
      *
      * @return
      */
-    public String getAddress() {
+    public String getAddress()
+    {
         return address;
     }
 
@@ -211,7 +224,8 @@ public class Order {
      * @param address
      * @return
      */
-    public Order setAddress(String address) {
+    public Order setAddress(String address)
+    {
         this.address = address;
         return this;
     }
@@ -220,7 +234,8 @@ public class Order {
      *
      * @return
      */
-    public int getZipCode() {
+    public int getZipCode()
+    {
         return zipCode;
     }
 
@@ -229,7 +244,8 @@ public class Order {
      * @param zipCode
      * @return
      */
-    public Order setZipCode(int zipCode) {
+    public Order setZipCode(int zipCode)
+    {
         this.zipCode = zipCode;
         return this;
     }
@@ -238,7 +254,8 @@ public class Order {
      *
      * @return
      */
-    public String getCity() {
+    public String getCity()
+    {
         return city;
     }
 
@@ -247,7 +264,8 @@ public class Order {
      * @param city
      * @return
      */
-    public Order setCity(String city) {
+    public Order setCity(String city)
+    {
         this.city = city;
         return this;
     }
@@ -256,7 +274,8 @@ public class Order {
      *
      * @return
      */
-    public String getPhone() {
+    public String getPhone()
+    {
         return phone;
     }
 
@@ -265,7 +284,8 @@ public class Order {
      * @param phone
      * @return
      */
-    public Order setPhone(String phone) {
+    public Order setPhone(String phone)
+    {
         this.phone = phone;
         return this;
     }
@@ -274,7 +294,8 @@ public class Order {
      *
      * @return
      */
-    public String getEmail() {
+    public String getEmail()
+    {
         return email;
     }
 
@@ -283,7 +304,8 @@ public class Order {
      * @param email
      * @return
      */
-    public Order setEmail(String email) {
+    public Order setEmail(String email)
+    {
         this.email = email;
         return this;
     }
@@ -292,7 +314,8 @@ public class Order {
      *
      * @return
      */
-    public String getNote() {
+    public String getNote()
+    {
         return note;
     }
 
@@ -301,7 +324,8 @@ public class Order {
      * @param note
      * @return
      */
-    public Order setNote(String note) {
+    public Order setNote(String note)
+    {
         this.note = note;
         return this;
     }
@@ -310,7 +334,8 @@ public class Order {
      *
      * @return
      */
-    public int getWidth() {
+    public int getWidth()
+    {
         return width;
     }
 
@@ -319,7 +344,8 @@ public class Order {
      * @param width
      * @return
      */
-    public Order setWidth(int width) {
+    public Order setWidth(int width)
+    {
         this.width = width;
         return this;
     }
@@ -328,7 +354,8 @@ public class Order {
      *
      * @return
      */
-    public int getLength() {
+    public int getLength()
+    {
         return length;
     }
 
@@ -337,7 +364,8 @@ public class Order {
      * @param length
      * @return
      */
-    public Order setLength(int length) {
+    public Order setLength(int length)
+    {
         this.length = length;
         return this;
     }
@@ -346,7 +374,8 @@ public class Order {
      *
      * @return @throws functionLayer.CustomException
      */
-    public Roof getRoof() throws CustomException {
+    public Roof getRoof() throws CustomException
+    {
         return StorageFacade.getRoofById(roof);
     }
 
@@ -355,7 +384,8 @@ public class Order {
      * @param roof
      * @return
      */
-    public Order setRoof(int roof) {
+    public Order setRoof(int roof)
+    {
         this.roof = roof;
         return this;
     }
@@ -364,7 +394,8 @@ public class Order {
      *
      * @return
      */
-    public int getAngle() {
+    public int getAngle()
+    {
         return angle;
     }
 
@@ -373,7 +404,8 @@ public class Order {
      * @param angle
      * @return
      */
-    public Order setAngle(int angle) {
+    public Order setAngle(int angle)
+    {
         this.angle = angle;
         return this;
     }
@@ -382,7 +414,8 @@ public class Order {
      *
      * @return
      */
-    public int getShedWidth() {
+    public int getShedWidth()
+    {
         return shedWidth;
     }
 
@@ -391,7 +424,8 @@ public class Order {
      * @param shedWidth
      * @return
      */
-    public Order setShedWidth(int shedWidth) {
+    public Order setShedWidth(int shedWidth)
+    {
         this.shedWidth = shedWidth;
         return this;
     }
@@ -400,7 +434,8 @@ public class Order {
      *
      * @return
      */
-    public int getShedLength() {
+    public int getShedLength()
+    {
         return shedLength;
     }
 
@@ -409,7 +444,8 @@ public class Order {
      * @param shedLength
      * @return
      */
-    public Order setShedLength(int shedLength) {
+    public Order setShedLength(int shedLength)
+    {
         this.shedLength = shedLength;
         return this;
     }
@@ -418,7 +454,8 @@ public class Order {
      *
      * @return
      */
-    public String getPlaced() {
+    public String getPlaced()
+    {
         return placed;
     }
 
@@ -427,7 +464,8 @@ public class Order {
      * @param placed
      * @return
      */
-    public Order setPlaced(String placed) {
+    public Order setPlaced(String placed)
+    {
         this.placed = placed;
         return this;
     }
@@ -436,7 +474,8 @@ public class Order {
      *
      * @return
      */
-    public String getStatus() {
+    public String getStatus()
+    {
         return status;
     }
 
@@ -445,13 +484,15 @@ public class Order {
      * @param status
      * @return
      */
-    public Order setStatus(String status) {
+    public Order setStatus(String status)
+    {
         this.status = status;
         return this;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Order{" + "id=" + id + ", name=" + name + ", address=" + address + ", zipCode=" + zipCode + ", city=" + city + ", phone=" + phone + ", email=" + email + ", note=" + note + ", width=" + width + ", length=" + length + ", roof=" + roof + ", angle=" + angle + ", shedWidth=" + shedWidth + ", shedLength=" + shedLength + ", placed=" + placed + ", status=" + status + '}';
     }
 
