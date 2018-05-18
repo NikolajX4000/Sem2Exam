@@ -133,9 +133,11 @@ public class OrderMapper {
                         setShedWidth(rs.getInt("shed_width")).
                         setShedLength(rs.getInt("shed_length")).
                         /* dates */
-                        setPlaced(rs.getString("placed")).
+                        setPlaced(rs.getString("placed").substring(0, 10)).
                         /* status */
-                        setStatus(rs.getString("status"));
+                        setStatus(rs.getString("status")).
+                        /* price */
+                        setPrice(rs.getInt("price"));
             }
 
         } catch (SQLException | ClassNotFoundException ex) {
@@ -192,9 +194,11 @@ public class OrderMapper {
                         setShedWidth(rs.getInt("shed_width")).
                         setShedLength(rs.getInt("shed_length")).
                         /* dates */
-                        setPlaced(rs.getString("placed")).
+                        setPlaced(rs.getString("placed").substring(0, 10)).
                         /* status */
-                        setStatus(rs.getString("status"));
+                        setStatus(rs.getString("status")).
+                        /* price */
+                        setPrice(rs.getInt("price"));
 
                 orders.add(order);
             }
