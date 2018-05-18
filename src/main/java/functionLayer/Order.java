@@ -94,7 +94,7 @@ public class Order
     /**
      * Checks if carport has shed
      *
-     * @return true if it does and false if it doesnt
+     * @return true if it does and false if it doesn't
      */
     public boolean hasShed()
     {
@@ -104,7 +104,7 @@ public class Order
     /**
      * Checks if roof is flat
      *
-     * @return returns true if it is and false if it isnt
+     * @return returns true if it is and false if it isn't
      */
     public boolean isFlat()
     {
