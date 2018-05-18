@@ -87,5 +87,7 @@ public class LogicFacade {
         return StorageFacade.login(name, password);
     }
 
-    
+    public static void updateRoof(int id, String name) throws CustomException{
+        StorageFacade.updateRoof(id, name);
+    }
 }
