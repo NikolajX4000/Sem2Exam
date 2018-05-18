@@ -135,4 +135,34 @@ public class ToolMapper {
         }
     }
 
+    static void updateTool(int id, int unitSize, int price, String name) throws CustomException
+    {
+        PreparedStatement ps = null;
+
+        try {
+            Connection con = Connector.connection();
+            String SQL = "UPDATE tools SET "
+                    + "price = ?, unit_size = ?, name = ? "
+                    + "WHERE tool_id = ?";
+
+            ps = con.prepareStatement(SQL);
+
+            try {
+                ps.setInt(1, price);
+                ps.setInt(2, unitSize);
+                ps.setString(3, name);
+                ps.setInt(4, id);
+
+            } catch (SQLException ex) {
+                throw new CustomException("Formateringsfejl");
+            }
+            ps.executeUpdate();
+
+        } catch (ClassNotFoundException | SQLException ex) {
+            throw new CustomException(ex.getMessage());
+        } finally {
+            closeConnection(ps);
+        }
+    }
+
 }
