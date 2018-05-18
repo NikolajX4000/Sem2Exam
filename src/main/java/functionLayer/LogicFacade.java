@@ -71,6 +71,10 @@ public class LogicFacade {
         StorageFacade.updateMaterial(id, size, price, description);
     }
     
+    public static void updateMaterial(int id, int size, int price) throws CustomException {
+        StorageFacade.updateMaterial(id, size, price);
+    }
+    
     public static void updateTool(int id, int unitSize, int price, String name) throws CustomException {
         StorageFacade.updateTool(id, unitSize, price, name);
     }
