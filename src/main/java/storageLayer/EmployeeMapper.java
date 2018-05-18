@@ -87,7 +87,7 @@ public class EmployeeMapper
 
             closeConnection(ps);
 
-        } catch (Exception e)
+        } catch (ClassNotFoundException | SQLException e)
         {
             throw new CustomException("Formateringsfejl");
         }

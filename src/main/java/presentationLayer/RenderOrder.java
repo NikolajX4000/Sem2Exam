@@ -65,9 +65,12 @@ public class RenderOrder {
                     s.append("<p>Addresse: ").append(o.getAddress()).append(", ").append(o.getZipCode()).append(" ").append(o.getCity()).append("</p><br>");
                 s.append("</div>");
                 
-                s.append("<div>");
-                    s.append("<p>Pris: ").append(o.getPrice()).append("</p><br>");
-                s.append("</div>");
+                /// kun vis pris hvis ordrer accepteret
+                if(!o.getStatus().equals("Behandles") && !o.getStatus().equals("Annulleret")){
+                    s.append("<div>");
+                        s.append("<p>Pris: ").append(o.getPrice()).append("</p><br>");
+                    s.append("</div>");
+                }
                 
                 s.append("<div>");
                     s.append("<p >Telefon: ").append(o.getPhone()).append("</p>");

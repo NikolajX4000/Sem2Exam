@@ -1,7 +1,12 @@
 package presentationLayer;
 
 import functionLayer.CustomException;
+import functionLayer.FlatCarPortList;
 import functionLayer.Order;
+import functionLayer.PartLine;
+import functionLayer.TallCarPortList;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -92,11 +97,11 @@ public class RenderOrderInspect {
         s.append("<div class='row'>");
             
         if(o.isFlat()){
-            s.append("<div class=\"col m6\"><div class='materialboxed z-depth-1'>").append(DrawCarport.flatTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed())).append("</div></div>");
-            s.append("<div class=\"col m6\"><div class='materialboxed z-depth-1'>").append(DrawCarport.flatSide(o.getLength(), o.getWidth(), o.getShedLength(), o.hasShed())).append("</div></div>");
+            s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(new DrawCarportFlatTop(o)).append("</div></div>");
+            s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(new DrawCarportFlatSide(o)).append("</div></div>");
         }else{
-            s.append("<div class=\"col m6\"><div class='materialboxed z-depth-1'>").append(DrawCarport.angledTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed())).append("</div></div>");
-            s.append("<div class=\"col m6\"><div class='materialboxed z-depth-1'>").append(DrawCarport.angledSide(o.getLength(), o.getWidth(), o.getShedLength(), o.getAngle(), o.hasShed())).append("</div></div>");
+            s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(new DrawCarportAngleTop(o)).append("</div></div>");
+            s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(new DrawCarportAngleSide(o)).append("</div></div>");
         }
         
         s.append("</div>");
@@ -110,8 +115,35 @@ public class RenderOrderInspect {
         StringBuilder s = new StringBuilder();
         s.append(tabStart("format_list_bulleted", "Stykliste"));
         
-        
-        s.append("<p>Lorem ipsum dolor sit amet.</p>");
+        /////////////////////////////////////////////////////////////////////////////////////
+        s.append("<table><tbody>");
+        s.append("<tr><th>Antal</th><th>Størrelse</th><th>Navn</th></tr>");
+        try {
+
+        //ArrayList
+        List<PartLine> list = new ArrayList<>();
+        if(o.isFlat()){
+            FlatCarPortList cpl = new FlatCarPortList(o);
+            list = cpl.getParts();
+        }else
+        {
+            TallCarPortList tcpl = new TallCarPortList(o);
+            list = tcpl.getParts();
+        }
+            for(PartLine pl : list){
+                s.append("<tr>");
+
+                s.append("<td>").append(pl.getAmount()).append("</td>");
+                s.append("<td>").append(pl.getSize()).append("</td>");
+                s.append("<td>").append(pl.getMaterial().getName()).append("</td>");
+
+                s.append("</tr>");
+            }
+        } catch (Exception e) {
+            s.append(e);
+        }
+        s.append("</tbody></table>");
+        /////////////////////////////////////////////////////////////////////////////////////
         
         
         s.append(tabEnd());
