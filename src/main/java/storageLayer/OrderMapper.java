@@ -137,6 +137,7 @@ public class OrderMapper {
                         /* status */
                         setStatus(rs.getString("status")).
                         /* price */
+                        setMaterialPrice(rs.getInt("material_price")).
                         setPrice(rs.getInt("price"));
             }
 
@@ -198,6 +199,7 @@ public class OrderMapper {
                         /* status */
                         setStatus(rs.getString("status")).
                         /* price */
+                        setMaterialPrice(rs.getInt("material_price")).
                         setPrice(rs.getInt("price"));
 
                 orders.add(order);
@@ -255,6 +257,7 @@ public class OrderMapper {
                         /* status */
                         setStatus(rs.getString("status")).
                         /* price */
+                        setMaterialPrice(rs.getInt("material_price")).
                         setPrice(rs.getInt("price"));
 
                 orders.add(order);

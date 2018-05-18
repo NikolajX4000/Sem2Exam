@@ -238,7 +238,7 @@ INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Rødflammet', 1);
 /*tools*/
 /*
 INSERT INTO tools (name,unit_size,price) VALUES ('Plastmo Bundskruer',200,220);
-INSERT INTO tools (name,unit_size,price) VALUES ('Hulbånd 1x20 mm.',10,209);
+INSERT INTO tools (name,unit_size,price) VALUES ('Hulbånd 1x20 mm.',1,209);
 INSERT INTO tools (name,unit_size,price) VALUES ('Universal 190mm højre',1,18);
 INSERT INTO tools (name,unit_size,price) VALUES ('Universal 190mm venstre',1,18);
 INSERT INTO tools (name,unit_size,price) VALUES ('4,5x60 mm. skruer',200,159);
@@ -252,7 +252,7 @@ INSERT INTO tools (name,unit_size,price) VALUES ('T hængsel 390 mm.',1,120);
 INSERT INTO tools (name,unit_size,price) VALUES ('Vinkelbeslag 35',1,6);
 INSERT INTO tools (name,unit_size,price) VALUES ('B & C Toplægteholder',1,50);
 INSERT INTO tools (name,unit_size,price) VALUES ('B & C rygstensbeslag',1,50);
-INSERT INTO tools (name,unit_size,price) VALUES ('B & C tagstens bindere og nakkekroge',5,50);
+INSERT INTO tools (name,unit_size,price) VALUES ('B & C tagstens bindere og nakkekroge',100,50);
 INSERT INTO tools (name,unit_size,price) VALUES ('5x40 mm. beslagskruer',250,269);
 INSERT INTO tools (name,unit_size,price) VALUES ('5x100 mm. skruer',100,100);
 */
