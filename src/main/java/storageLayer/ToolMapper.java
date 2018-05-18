@@ -135,4 +135,9 @@ public class ToolMapper {
         }
     }
 
+    static void updateTool(int id, int unitSize, int price, String name)
+    {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

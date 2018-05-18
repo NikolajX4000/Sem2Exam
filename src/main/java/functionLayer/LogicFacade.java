@@ -70,12 +70,22 @@ public class LogicFacade {
     public static void updateMaterial(int id, int size, int price, String description) throws CustomException {
         StorageFacade.updateMaterial(id, size, price, description);
     }
+    
+    public static void updateTool(int id, int unitSize, int price, String name) throws CustomException {
+        StorageFacade.updateTool(id, unitSize, price, name);
+    }
 
     public static List<Roof> getAllRoofs() throws CustomException {
         return StorageFacade.getAllRoofs();
+    }
+    
+    public static List<Material> getAllTool() throws CustomException {
+        return StorageFacade.getAllTool();
     }
 
     public static Employee login(String name, String password) throws CustomException {
         return StorageFacade.login(name, password);
     }
+
+    
 }
