@@ -60,7 +60,7 @@ public class Order
         {
             partsList = new TallCarPortList(this).getParts();
         }
-        int price = 0;
+        price = 0;
         for (PartLine p : partsList)
         {
             price += p.calculatePrice();
@@ -77,7 +77,7 @@ public class Order
 
         if (price == 0)
         {
-            price = calculatePrice();
+            calculatePrice();
         }
 
         NumberFormat nf = NumberFormat.getNumberInstance(Locale.GERMAN);
