@@ -11,6 +11,16 @@ public class LogicFacade {
 
     /**
      *
+     * @param id
+     * @param price
+     * @throws CustomException
+     */
+    public static void updatePrice(int id, int price) throws CustomException {
+        StorageFacade.updatePrice(id, price);
+    }
+
+    /**
+     *
      * @see storageLayer.OrderMapper#getOrders( String )
      * @param email
      * @return
@@ -56,7 +66,7 @@ public class LogicFacade {
     public static List<Material> getAllMaterials() throws CustomException {
         return StorageFacade.getAllMaterials();
     }
-    
+
     public static void updateMaterial(int id, int size, int price, String description) throws CustomException {
         StorageFacade.updateMaterial(id, size, price, description);
     }
@@ -64,7 +74,7 @@ public class LogicFacade {
     public static List<Roof> getAllRoofs() throws CustomException {
         return StorageFacade.getAllRoofs();
     }
-    
+
     public static Employee login(String name, String password) throws CustomException {
         return StorageFacade.login(name, password);
     }

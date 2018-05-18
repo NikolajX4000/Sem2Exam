@@ -704,6 +704,9 @@ e.
  senere hen, men vil ikke reducere forbindelsen mellem program og server.
  De resterende JUnit test er blevet udarbejdet på den traditionelle whitebox
  måde, da der ikke er nogle specielle faktore der spiller ind.
+ Whitebox tetsing er en test metode der giver person som tester mulighed
+ for at følge med i kode contra Blockbox testing hvor der ikke er adgang
+ til koden.
  Vi har brugt et pugin der heder TikiOne JaCoCoverage, som skaber at overblik
  over hvilke metoder der er blevet testet.
  

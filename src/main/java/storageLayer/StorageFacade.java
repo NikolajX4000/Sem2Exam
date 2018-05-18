@@ -15,6 +15,16 @@ public class StorageFacade {
 
     /**
      *
+     * @param id
+     * @param price
+     * @throws CustomException
+     */
+    public static void updatePrice(int id, int price) throws CustomException {
+        OrderMapper.updatePrice(id, price);
+    }
+
+    /**
+     *
      * @see storageLayer.OrderMapper#addOrder( Order )
      * @param order
      * @return
@@ -112,7 +122,7 @@ public class StorageFacade {
     public static Material updateMaterial(Material material) throws CustomException {
         return MaterialMapper.updateMaterial(material);
     }
-    
+
     public static void updateMaterial(int id, int size, int price, String description) throws CustomException {
         MaterialMapper.updateMaterial(id, size, price, description);
     }
@@ -122,7 +132,7 @@ public class StorageFacade {
      */
     public static List<Material> getAllTool() throws CustomException {
         return ToolMapper.getAllTool();
-        
+
     }
 
     /**
@@ -146,11 +156,11 @@ public class StorageFacade {
     public static List<Roof> getAllRoofs() throws CustomException {
         return RoofMapper.getAllRoofs();
     }
-    
+
     public static Roof getRoofById(int id) throws CustomException {
         return RoofMapper.getRoofById(id);
     }
-    
+
     public static Employee login(String name, String password) throws CustomException {
         return EmployeeMapper.login(name, password);
     }
