@@ -14,8 +14,9 @@ public class CmdUpdateRoof extends Command{
             
             int id = Integer.parseInt(request.getParameter("id"));
             String name = request.getParameter("name");
+            String oldname = request.getParameter("oldname");
 
-            LogicFacade.updateRoof(id, name);
+            LogicFacade.updateRoof(id, name, oldname);
 
             request.setAttribute("feedback", name + " nu opdateret!");
 

@@ -68,13 +68,13 @@ public class RoofMapper {
         return roof;
     }
 
-    public static void updateRoof(int id, String name) throws CustomException {
+    public static void updateRoof(int id, String name, String oldname) throws CustomException {
         Connection con = null;
         PreparedStatement updateRoof = null;
         PreparedStatement updateTagsten = null;
         
         String updateRoofString = "UPDATE roofs SET name = ? WHERE roof_id = ?";
-        String updateTagstenString = "UPDATE materials SET description = ? WHERE name = 'tagsten' OR name = 'rygsten'";
+        String updateTagstenString = "UPDATE materials SET description = ? WHERE description = ? AND (name = 'tagsten' OR name = 'rygsten')";
         
         try {
             con = Connector.connection();
@@ -87,7 +87,8 @@ public class RoofMapper {
             
             
             updateTagsten = con.prepareStatement(updateTagstenString);
-            updateTagsten.setString(1, name);
+            updateTagsten.setString(1, oldname);
+            updateTagsten.setString(2, name);
             updateTagsten.executeUpdate();
             
             con.commit();

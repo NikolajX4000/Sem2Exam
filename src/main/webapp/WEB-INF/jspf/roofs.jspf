@@ -40,6 +40,7 @@ List<Roof> roofs = LogicFacade.getAllRoofs();
             s4.append("<form class=\"row\" method=\"post\" action=\"?\" id=\"test1\" accept-charset=\"ISO-8859-1\">");
 
                 s4.append("<input type=\"hidden\" name=\"id\" value=\"").append(m.getID()).append("\">");
+                s4.append("<input type=\"hidden\" name=\"oldname\" value=\"").append(m.getNAME()).append("\">");
 
                 s4.append("<div class=\"input-field col s12  m4\">");
                     s4.append("<input id='name' type='text' class='validate' name='name' required value='").append(m.getNAME()).append("'>");

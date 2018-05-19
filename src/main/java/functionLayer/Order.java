@@ -10,6 +10,8 @@ import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
+import presentationLayer.DrawCarportAngleSide;
+import presentationLayer.DrawCarportFlatSide;
 
 /**
  *
@@ -464,6 +466,15 @@ public class Order {
         this.materialPrice = materialPrice;
         return this;
     }
+    
+//    public String getDrawingSide(){
+//        if(isFlat())
+//            return new DrawCarportFlatSide(this).getDrawing();
+//                    
+//        else
+//            return new DrawCarportAngleSide(this).getDrawing();
+//        
+//    }
 
     @Override
     public String toString() {
