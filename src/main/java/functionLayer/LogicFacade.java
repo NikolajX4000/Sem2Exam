@@ -94,8 +94,4 @@ public class LogicFacade {
     public static Employee login(String name, String password) throws CustomException {
         return StorageFacade.login(name, password);
     }
-
-    public static void updateRoof(int id, String name) throws CustomException{
-        StorageFacade.updateRoof(id, name);
-    }
 }
