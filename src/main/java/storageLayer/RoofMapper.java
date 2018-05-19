@@ -87,8 +87,8 @@ public class RoofMapper {
             
             
             updateTagsten = con.prepareStatement(updateTagstenString);
-            updateTagsten.setString(1, oldname);
-            updateTagsten.setString(2, name);
+            updateTagsten.setString(1, name);
+            updateTagsten.setString(2, oldname);
             updateTagsten.executeUpdate();
             
             con.commit();
