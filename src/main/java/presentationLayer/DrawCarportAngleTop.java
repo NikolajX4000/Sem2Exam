@@ -98,6 +98,8 @@ public class DrawCarportAngleTop {
         drawXBeams();
         drawYBeams();
         
+        drawHeightWidthArrow();
+        
         return svg.toString();
         //return tmp;
     }
@@ -117,15 +119,16 @@ public class DrawCarportAngleTop {
         double spaerDistance = width - xOffset * 2 - spaerWidth;
         double spaerAmount = (int) (spaerDistance / 89);
         double spaerGutter = spaerDistance / (spaerAmount-1);
-        
-//        for (double i = 0; i <= spaerGutter * spaerAmount; i += spaerGutter) {
-//            
-//            svg.rct(i + xOffset, 1, spaerHeight, spaerWidth, "stroke:grey; stroke-width: 0.75; fill: white;");
-//        }
 
         for (int i = 0; i < spaerAmount; i++) {
             svg.rct(i*spaerGutter + xOffset, 1, spaerHeight, spaerWidth, "stroke:grey; stroke-width: 0.75; fill: white;");
+            
+            if(i+1<spaerAmount){
+                svg.arrowX(i*spaerGutter + xOffset + spaerWidth, -20, i*spaerGutter + xOffset + spaerGutter, -20);
+                svg.text(i*spaerGutter + xOffset + (spaerGutter/2) + spaerWidth, -25, (int)(spaerGutter-spaerWidth) + "cm");
+            }
         }
+        
     }
 
     private void drawBarge() {
@@ -220,12 +223,19 @@ public class DrawCarportAngleTop {
             svg.rct(width - xOffset - beam  , height - yOffset - beam - (i*beamGutter), beam, beam, "fill:none;stroke:blue;stroke-width:2.5;"); // RIGHT
         }
     }
-    
-    
-    
-    
-    
-    
-    
 
+    private void drawHeightWidthArrow() {
+        svg.arrowX(0, height + 30, width, height + 30);
+        svg.text(width/2, height + 25, (int)(width) + " cm");
+        
+        svg.arrowY(-30, 0, -30, height);
+        svg.textRotated(-35, height/2, (int)(height) + " cm");
+    }
+    
+    
+    
+    
+    
+    
+    
 }

@@ -7,7 +7,6 @@
 package presentationLayer;
 
 import functionLayer.Order;
-import java.util.Random;
 
 public class DrawCarportAngleSide {
 
@@ -23,7 +22,7 @@ public class DrawCarportAngleSide {
     double roofBottom = 10;
     double beam = 10;
     double newBeamAfter = 400;
-    double brickWidth = 10;
+    double brickWidth = 5;
     double topBrick = 7.5;
     double barge = 10;
     
@@ -80,6 +79,8 @@ public class DrawCarportAngleSide {
         if(hasShed)drawShedBeams();
         if(hasShed)drawShed();
         drawBarge();
+        
+        drawHeightWidthArrow();
         
         return svg.toString();
     }
@@ -180,6 +181,25 @@ public class DrawCarportAngleSide {
     {
         svg.rct(0, 0, brickHeight + brickOffset, barge, "fill:white;stroke:black;stroke-width:0.75");
         svg.rct(width - barge, 0, brickHeight + brickOffset, barge, "fill:white;stroke:black;stroke-width:0.75");
+    }
+    
+    private void drawHeightWidthArrow() {
+        
+        //cp
+        svg.arrowX(0, -20, width, -20);
+        svg.text(width/2, -25, (int)(width) + " cm");
+        
+        //shed
+        svg.arrowX(width-shedWidth-xOffset, beamOffset + height + 25, width-xOffset, beamOffset + height + 25);
+        svg.text(width - (width-shedWidth-xOffset)/2, beamOffset + height + 20, (int)(shedWidth) + " cm");
+        
+        //beam height
+        svg.arrowY(5, beamOffset, 5, beamOffset + height);
+        svg.textRotated(0, beamOffset + height/2, (int)(height) + " cm");
+        
+        //cp full height
+        svg.arrowY(-20, 0, -20, beamOffset + height);
+        svg.textRotated(-25, (beamOffset + height)/2, (int)(beamOffset + height) + " cm");
     }
 
     
