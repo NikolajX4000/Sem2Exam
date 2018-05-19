@@ -94,6 +94,4 @@ public class LogicFacade {
     public static Employee login(String name, String password) throws CustomException {
         return StorageFacade.login(name, password);
     }
-
-    
 }
