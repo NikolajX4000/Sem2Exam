@@ -26,6 +26,7 @@ abstract class Command {
         
         commands.put("CmdUpdateMaterial", new CmdUpdateMaterial());
         commands.put("CmdUpdateTool", new CmdUpdateTool());
+        commands.put("CmdUpdateRoof", new CmdUpdateRoof());
         
         commands.put("CmdLogin", new CmdLogin());
     }

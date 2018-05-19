@@ -199,6 +199,34 @@ public class MaterialMapper {
             closeConnection(ps);
         }
     }
+    
+    public static void updateMaterial(int id, int size, int price) throws CustomException {
+        PreparedStatement ps = null;
+
+        try {
+            Connection con = Connector.connection();
+            String SQL = "UPDATE materials SET "
+                    + "price = ?, size = ? "
+                    + "WHERE plank_id = ?";
+
+            ps = con.prepareStatement(SQL);
+
+            try {
+                ps.setInt(1, price);
+                ps.setInt(2, size);
+                ps.setInt(3, id);
+
+            } catch (SQLException ex) {
+                throw new CustomException("Formateringsfejl");
+            }
+            ps.executeUpdate();
+
+        } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
+            throw new CustomException(ex.getMessage());
+        } finally {
+            closeConnection(ps);
+        }
+    }
 
     /**
      * This method will close the prepared statement connection if it's

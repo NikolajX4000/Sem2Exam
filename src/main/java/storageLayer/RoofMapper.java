@@ -68,29 +68,28 @@ public class RoofMapper {
         return roof;
     }
 
-    public static void updateRoof(int id, String name) throws CustomException {
+    public static void updateRoof(int id, String name, String oldname) throws CustomException {
         Connection con = null;
         PreparedStatement updateRoof = null;
         PreparedStatement updateTagsten = null;
-        PreparedStatement updateRygsten = null;
         
         String updateRoofString = "UPDATE roofs SET name = ? WHERE roof_id = ?";
-        String updateTagstenString = "UPDATE materials SET description = ? WHERE name = tagsten ";
-        String updateRygstenString = "UPDATE materials SET description = ? WHERE name = rygsten ";
+        String updateTagstenString = "UPDATE materials SET description = ? WHERE description = ? AND (name = 'tagsten' OR name = 'rygsten')";
         
         try {
             con = Connector.connection();
             con.setAutoCommit(false);
             
             updateRoof = con.prepareStatement(updateRoofString);
-            updateTagsten = con.prepareStatement(updateTagstenString);
-            updateRygsten = con.prepareStatement(updateRygstenString);
-            
             updateRoof.setString(1, name);
             updateRoof.setInt(2, id);
+            updateRoof.executeUpdate();
             
-            updateTagsten.setString(1, name);
-            updateRygsten.setString(1, name);
+            
+            updateTagsten = con.prepareStatement(updateTagstenString);
+            updateTagsten.setString(1, oldname);
+            updateTagsten.setString(2, name);
+            updateTagsten.executeUpdate();
             
             con.commit();
         } catch (ClassNotFoundException | SQLException e) {
@@ -105,12 +104,13 @@ public class RoofMapper {
         } finally {
             closeConnection(updateRoof);
             closeConnection(updateTagsten);
-            closeConnection(updateRygsten);
+            
             try {
                 con.setAutoCommit(true);
-            } catch (SQLException e) {
-                throw new CustomException(e.getMessage());
+            } catch (SQLException ex) {
+                throw new CustomException("Der gik noget galt ved opdateringen, prøv igen senere.");
             }
+            
         }
     }
 

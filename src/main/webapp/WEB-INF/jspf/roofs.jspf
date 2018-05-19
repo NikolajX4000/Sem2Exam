@@ -1,0 +1,82 @@
+<%@page import="functionLayer.Roof"%>
+<%@page import="java.util.Map"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="functionLayer.Material"%>
+<%@page import="presentationLayer.RenderOrder"%>
+<%@page import="functionLayer.LogicFacade"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="functionLayer.Order"%>
+
+<%@ page pageEncoding="UTF-8" %>
+<%
+    
+List<Roof> roofs = LogicFacade.getAllRoofs();
+
+
+
+    //generate dropdown links and s2
+    StringBuilder s3 = new StringBuilder();
+    StringBuilder s4 = new StringBuilder();
+    
+    s3.append("<table class='highlight'><thead><tr><th>Navn</th><th>Type</th><th>Knap</th></tr></thead><tbody>");
+    
+    for (Roof m : roofs){
+        
+
+        s3.append("<tr>");
+        s3.append("<td>").append(m.getNAME()).append("</td>");
+        
+        String type = (m.getTYPE() == 0) ? "Fladt" : "Rejsning";
+               
+        s3.append("<td>").append(type).append("</td>");
+        s3.append("<td>").append("<a href=\"#modalr").append(m.getID()).append("\" class=\"btn-floating btn-small waves-effect waves-light blue tooltipped modal-trigger\" data-position=\"right\" data-delay=\"20\" data-tooltip=\"Rediger\"><i class=\"material-icons\">edit</i></a>").append("</td>");
+        s3.append("</tr>");
+
+        //modals
+        s4.append("<div id=\"modalr").append(m.getID()).append("\" class=\"modal\"><div class=\"modal-content\">");
+
+            s4.append("<p>").append(m.getNAME()).append("</p>");
+            s4.append("<form class=\"row\" method=\"post\" action=\"?\" id=\"test1\" accept-charset=\"ISO-8859-1\">");
+
+                s4.append("<input type=\"hidden\" name=\"id\" value=\"").append(m.getID()).append("\">");
+                s4.append("<input type=\"hidden\" name=\"oldname\" value=\"").append(m.getNAME()).append("\">");
+
+                s4.append("<div class=\"input-field col s12  m4\">");
+                    s4.append("<input id='name' type='text' class='validate' name='name' required value='").append(m.getNAME()).append("'>");
+                    s4.append("<label for='name' data-error='Navn'>Navn</label>");
+                s4.append("</div>");
+
+                s4.append("<div class=\"input-field col s12\"><button class='btn waves-effect waves-light blue ' type='submit' name='command' value='CmdUpdateRoof'>");
+                    s4.append("Gem <i class='material-icons right'>send</i>");
+                s4.append("</button></div>");
+
+            s4.append("</form>");
+
+
+        s4.append("</div><div class=\"modal-footer\">");
+
+            s4.append("<a href=\"#!\" class=\"modal-action modal-close waves-effect waves-green btn-flat\">Close</a>");
+
+        s4.append("</div></div>");
+        
+        
+
+    }
+    s3.append("</tbody></table>");
+    
+        
+    request.setAttribute("roofs", s3.toString());
+    request.setAttribute("s2", s4.toString());
+    
+
+%>
+
+    <div class="col s12" id="roofs">
+    
+
+            ${roofs}
+        
+    </div>
+        
+    ${s2}

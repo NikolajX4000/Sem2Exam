@@ -39,7 +39,6 @@ public class DrawCarportFlatSide {
         svg = new SVG(width, height + beamOffset);
     }
 
-    @Override
     public String toString() {
         
         drawBeams();

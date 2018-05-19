@@ -23,11 +23,13 @@
       <ul class="tabs">
         <li class="tab col"><a href="#materials">Materials</a></li>
         <li class="tab col"><a href="#tools">Tools</a></li>
+        <li class="tab col"><a href="#roofs">Roofs</a></li>
       </ul>
     </div>
     
     <%@include file="/WEB-INF/jspf/materials.jspf"%>  
-    <%@include file="/WEB-INF/jspf/tools.jspf"%>  
+    <%@include file="/WEB-INF/jspf/tools.jspf"%> 
+    <%@include file="/WEB-INF/jspf/roofs.jspf"%> 
     
     
 </div>

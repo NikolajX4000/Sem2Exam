@@ -126,6 +126,10 @@ public class StorageFacade {
     public static void updateMaterial(int id, int size, int price, String description) throws CustomException {
         MaterialMapper.updateMaterial(id, size, price, description);
     }
+    
+    public static void updateMaterial(int id, int size, int price) throws CustomException {
+        MaterialMapper.updateMaterial(id, size, price);
+    }
 
     /**
      * @return @throws CustomException
@@ -152,8 +156,12 @@ public class StorageFacade {
     public static Material updateTool(Material material) throws CustomException {
         return ToolMapper.updateTool(material);
     }
-    public static void updateTool(int id, int unitSize, int price, String name) throws CustomException {
-        ToolMapper.updateTool(id, unitSize, price, name);
+    public static void updateTool(int id, int unitSize, int price) throws CustomException {
+        ToolMapper.updateTool(id, unitSize, price);
+    }
+    
+    public static void updateRoof(int id, String name, String oldname) throws CustomException {
+        RoofMapper.updateRoof(id, name, oldname);
     }
 
     public static List<Roof> getAllRoofs() throws CustomException {

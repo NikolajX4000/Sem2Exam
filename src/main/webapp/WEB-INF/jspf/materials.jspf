@@ -54,10 +54,14 @@ List<Material> allMaterial = LogicFacade.getAllMaterials();
                         
                             popUps.append("<input type=\"hidden\" name=\"id\" value=\"").append(m.getId()).append("\">");
                         
+                            
+                            String dis = (item.getKey().equals("tagsten") || item.getKey().equals("rygsten"))? " disabled " : "";
+                                
                             popUps.append("<div class=\"input-field col s12  m4\">");
-                                popUps.append("<input id='description' type='text' class='validate' name='description' required maxlength='200' value='").append(m.getDescription()).append("'>");
+                                popUps.append("<input").append(dis).append(" id='description' type='text' class='validate' name='description' required maxlength='200' value='").append(m.getDescription()).append("'>");
                                 popUps.append("<label for='description' data-error='Skriv en beskrivelse'>Beskrivelse</label>");
                             popUps.append("</div>");
+                            
                             
                             popUps.append("<div class=\"input-field col s12  m4\">");
                                 popUps.append("<input id='size' type='number' class='validate' name='size' required maxlength='40' pattern='' value='").append(m.getSize()).append("'>");

@@ -51,12 +51,6 @@ public class RenderOrder {
                 
                     s.append("<p class=\"right\">Bestilt: ").append(o.getPlaced()).append("</p><br><br>");
                     
-                    if(o.isFlat()){
-                        s.append("<img class=\"right\" src=\"https://www.johannesfog.dk/globalassets/service/quickbyg/quickurejs.gif\">");
-                    }else{
-                        s.append("<img class=\"right\" src=\"https://www.johannesfog.dk/globalassets/service/quickbyg/quickmrejs.gif\">");
-                    }
-                    
                 s.append("</div>");
                 
                 

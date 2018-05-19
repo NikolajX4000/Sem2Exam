@@ -33,15 +33,11 @@ List<Material> tools = LogicFacade.getAllTool();
         //modals
         pu.append("<div id=\"modalt").append(m.getId()).append("\" class=\"modal\"><div class=\"modal-content\">");
 
-            pu.append("<p>").append(m.getName()).append(" #").append(m.getId()).append("</p>");
+            pu.append("<p>").append(m.getName()).append("</p>");
             pu.append("<form class=\"row\" method=\"post\" action=\"?\" id=\"test1\" accept-charset=\"ISO-8859-1\">");
 
                 pu.append("<input type=\"hidden\" name=\"id\" value=\"").append(m.getId()).append("\">");
-
-                pu.append("<div class=\"input-field col s12  m4\">");
-                    pu.append("<input id='name' type='text' class='validate' name='name' required maxlength='200' value='").append(m.getName()).append("'>");
-                    pu.append("<label for='name' data-error='Skriv en beskrivelse'>Beskrivelse</label>");
-                pu.append("</div>");
+                pu.append("<input type=\"hidden\" name=\"name\" value=\"").append(m.getName()).append("\">");
 
                 pu.append("<div class=\"input-field col s12  m4\">");
                     pu.append("<input id='unitSize' type='number' class='validate' name='unitSize' required maxlength='40' min='1' pattern='' value='").append(m.getUnitSize()).append("'>");
