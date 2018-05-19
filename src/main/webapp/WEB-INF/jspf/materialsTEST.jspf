@@ -1,0 +1,103 @@
+<%@page import="functionLayer.LogicFacade"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="functionLayer.Material"%>
+<%@page import="java.util.List"%>
+<%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
+<%@page pageEncoding="UTF-8"%>
+
+<%
+    List<Material> allMaterial = LogicFacade.getAllMaterials();
+    HashMap<String, ArrayList<Material>> mats = new HashMap();
+
+    for (Material m : allMaterial) {
+
+        // check if first of that type annd add to map if true
+        if (mats.get(m.getName()) == null) {
+            mats.put(m.getName(), new ArrayList());
+        }
+
+        //add material to map
+        mats.get(m.getName()).add(m);
+    }
+
+    request.setAttribute("mats", mats);
+
+%>
+
+<div class="col s12" id="materials">
+    <ul class="collapsible" data-collapsible="accordion">
+        <c:forEach items="${mats}" var="mats">
+            <li>
+                <div class='collapsible-header'>${mats.key}</div>
+                <div class='collapsible-body'>
+                    <table class='highlight'>
+                        <thead>
+                            <tr>
+                                <th>Beskrivelse</th>
+                                <th>Størrelse</th>
+                                <th>Pris</th>
+                                <th>Knap</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach items="${mats.value}" var="m">
+                                <tr>
+                                    <td>${m.description}</td>
+                                    <td>${m.size}</td>
+                                    <td>${m.price}</td>
+                                    <td>
+                                        <a href="#modal${m.id}" class="btn-floating btn-small waves-effect waves-light blue tooltipped modal-trigger" data-position="right" data-delay="20" data-tooltip="Rediger">
+                                            <i class="material-icons">edit</i>
+                                        </a>
+                                    </td>
+
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+        </c:forEach>
+    </ul>
+</div>
+
+<c:forEach items="${mats}" var="mats">
+    <c:forEach items="${mats.value}" var="m">
+        <div id="modal${m.id}" class="modal">
+            <div class="modal-content">
+                <p>${m.name} #${m.id}</p>
+
+                <form class="row" method="post" action="?" accept-charset="ISO-8859-1">
+                    <input type="hidden" name="id" value="${m.id}">
+
+                    <c:if test="${(mats.key eq 'tagsten') or (mats.key eq 'rygsten')}">
+                        <c:set var="dis" value="disabled"/>
+                    </c:if>
+
+                    <div class="input-field col s12  m4">
+                        <input ${dis} id='description' type='text' class='validate' name='description' required maxlength='200' value='${m.description}'>
+                        <label for='description' data-error='Skriv en beskrivelse'>Beskrivelse</label>
+                    </div>
+
+                    <div class="input-field col s12  m4">
+                        <input id='size' type='number' class='validate' name='size' required maxlength='40' pattern='' value='${m.size}'>
+                        <label for='size' data-error='Skriv en beskrivelse'>Størrelse</label>
+                    </div>
+
+                    <div class="input-field col s12  m4">
+                        <input id='price' type='number' class='validate' name='price' required maxlength='40' pattern='' value='${m.price}'>
+                        <label for='price' data-error='Skriv en pris'>Pris</label>
+                    </div>
+
+                    <div class="input-field col s12">
+                        <button class='btn waves-effect waves-light blue ' type='submit' name='command' value='CmdUpdateMaterial'>
+                            <i class='material-icons right'>send</i>
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </c:forEach>
+</c:forEach>
