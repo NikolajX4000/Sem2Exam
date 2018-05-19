@@ -175,8 +175,4 @@ public class StorageFacade {
     public static Employee login(String name, String password) throws CustomException {
         return EmployeeMapper.login(name, password);
     }
-    
-    public static void updateRoof(int id, String name) throws CustomException{
-        RoofMapper.updateRoof(id, name);
-    }
 }
