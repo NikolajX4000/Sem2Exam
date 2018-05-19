@@ -135,14 +135,14 @@ public class ToolMapper {
         }
     }
 
-    static void updateTool(int id, int unitSize, int price, String name) throws CustomException
+    static void updateTool(int id, int unitSize, int price) throws CustomException
     {
         PreparedStatement ps = null;
 
         try {
             Connection con = Connector.connection();
             String SQL = "UPDATE tools SET "
-                    + "price = ?, unit_size = ?, name = ? "
+                    + "price = ?, unit_size = ? "
                     + "WHERE tool_id = ?";
 
             ps = con.prepareStatement(SQL);
@@ -150,8 +150,7 @@ public class ToolMapper {
             try {
                 ps.setInt(1, price);
                 ps.setInt(2, unitSize);
-                ps.setString(3, name);
-                ps.setInt(4, id);
+                ps.setInt(3, id);
 
             } catch (SQLException ex) {
                 throw new CustomException("Formateringsfejl");

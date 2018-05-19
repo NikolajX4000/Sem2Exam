@@ -156,8 +156,12 @@ public class StorageFacade {
     public static Material updateTool(Material material) throws CustomException {
         return ToolMapper.updateTool(material);
     }
-    public static void updateTool(int id, int unitSize, int price, String name) throws CustomException {
-        ToolMapper.updateTool(id, unitSize, price, name);
+    public static void updateTool(int id, int unitSize, int price) throws CustomException {
+        ToolMapper.updateTool(id, unitSize, price);
+    }
+    
+    public static void updateRoof(int id, String name) throws CustomException {
+        RoofMapper.updateRoof(id, name);
     }
 
     public static List<Roof> getAllRoofs() throws CustomException {
