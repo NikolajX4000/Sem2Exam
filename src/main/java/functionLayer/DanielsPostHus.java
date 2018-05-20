@@ -52,7 +52,7 @@ public class DanielsPostHus {
         s.append("<tr><td style='padding-right:15px;box-sizing:border-box;'>Carport længde:</td><td>").append(o.getLength()).append("</td></tr>");
         if(o.hasShed()){
             s.append("<tr><td style='padding-right:15px;box-sizing:border-box;'>Redskabsrum bredde:</td><td>").append(o.getShedWidth()).append("</td></tr>");
-            s.append("<tr><td style='padding-right:15px;box-sizing:border-box;'>Redskabsrum bredde:</td><td>").append(o.getLength()).append("</td></tr>");
+            s.append("<tr><td style='padding-right:15px;box-sizing:border-box;'>Redskabsrum længde:</td><td>").append(o.getLength()).append("</td></tr>");
         }
         s.append("</table>");
         
