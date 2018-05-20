@@ -56,8 +56,7 @@ public class DrawCarportFlatTop {
     }
     
     
-    @Override
-    public String toString() {
+    public String getDrawing() {
         
         
         drawRem();

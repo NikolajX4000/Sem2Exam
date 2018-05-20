@@ -68,8 +68,7 @@ public class DrawCarportAngleSide {
         
     }
 
-    @Override
-    public String toString()
+    public String getDrawing()
     {
         drawRem();
         drawStern();

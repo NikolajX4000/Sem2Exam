@@ -84,8 +84,7 @@ public class DrawCarportAngleTop {
         svg = new SVG(width, height);
     }
 
-    @Override
-    public String toString() {
+    public String getDrawing() {
         
         if(hasShed) drawShed();
         drawSpaer();

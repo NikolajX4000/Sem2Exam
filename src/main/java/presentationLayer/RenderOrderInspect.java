@@ -96,13 +96,8 @@ public class RenderOrderInspect {
         s.append(tabStart("photo", "Tegninger"));
         s.append("<div class='row'>");
             
-        if(o.isFlat()){
-            s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(new DrawCarportFlatTop(o)).append("</div></div>");
-            s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(new DrawCarportFlatSide(o)).append("</div></div>");
-        }else{
-            s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(new DrawCarportAngleTop(o)).append("</div></div>");
-            s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(new DrawCarportAngleSide(o)).append("</div></div>");
-        }
+        s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(o.getDrawingTop()).append("</div></div>");
+        s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(o.getDrawingSide()).append("</div></div>");
         
         s.append("</div>");
         s.append(tabEnd());

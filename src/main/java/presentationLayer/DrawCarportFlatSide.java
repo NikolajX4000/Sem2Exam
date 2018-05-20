@@ -39,7 +39,7 @@ public class DrawCarportFlatSide {
         svg = new SVG(width, height + beamOffset);
     }
 
-    public String toString() {
+    public String getDrawing() {
         
         drawBeams();
         if(hasShed)drawShedBeams();

@@ -11,7 +11,9 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 import presentationLayer.DrawCarportAngleSide;
+import presentationLayer.DrawCarportAngleTop;
 import presentationLayer.DrawCarportFlatSide;
+import presentationLayer.DrawCarportFlatTop;
 
 /**
  *
@@ -467,14 +469,19 @@ public class Order {
         return this;
     }
     
-//    public String getDrawingSide(){
-//        if(isFlat())
-//            return new DrawCarportFlatSide(this).getDrawing();
-//                    
-//        else
-//            return new DrawCarportAngleSide(this).getDrawing();
-//        
-//    }
+    public String getDrawingSide(){
+        if(isFlat())
+            return new DrawCarportFlatSide(this).getDrawing();       
+        else
+            return new DrawCarportAngleSide(this).getDrawing();
+    }
+    
+    public String getDrawingTop(){
+        if(isFlat())
+            return new DrawCarportFlatTop(this).getDrawing();       
+        else
+            return new DrawCarportAngleTop(this).getDrawing();
+    }
 
     @Override
     public String toString() {
