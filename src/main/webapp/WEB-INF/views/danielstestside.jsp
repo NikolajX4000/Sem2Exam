@@ -8,8 +8,11 @@
 
 
 
-<button id="min_knap">KNAP</button>
-
+<button id="order1" class="min_knap">KNAP1</button>
+<button id="order2" class="min_knap">KNAP2</button>
+<button id="order3" class="min_knap">KNAP3</button>
+<button id="order4" class="min_knap">KNAP4</button>
+<button id="order6" class="min_knap">KNAP5</button>
 
 
 
@@ -27,11 +30,11 @@
 
 <script>
     
-$('#min_knap').click(function (e) {
+$('.min_knap').click(function (e) {
     $.ajax({
         type: 'GET',
         url: '${requestScope['javax.servlet.forward.request_uri']}/ServletGetPartlist',
-        data: {id: 1},
+        data: {id: $(this).attr('id').substring(5)},
         success: function(data){
             //alert(data);
             $("#content").html(data);

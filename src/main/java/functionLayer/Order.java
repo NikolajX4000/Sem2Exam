@@ -483,15 +483,12 @@ public class Order {
             return new DrawCarportAngleTop(this).getDrawing();
     }
     
-    public List<PartLine> getPartlist(){
-        try {
-            if(isFlat())
-                return new FlatCarPortList(this).getParts();       
-            else
-                return new TallCarPortList(this).getParts();
-        } catch (CustomException e) {
-            return null;
-        }
+    public List<PartLine> getPartlist() throws CustomException{
+        
+        if(isFlat())
+            return new FlatCarPortList(this).getParts();       
+        else
+            return new TallCarPortList(this).getParts();
     }
 
     @Override
