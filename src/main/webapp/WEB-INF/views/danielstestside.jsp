@@ -14,29 +14,31 @@
 
 
 
-<div>Text123</div>
+<div>----------------</div>
 <div id="content"></div>
-<div>Text123</div>
+<div>----------------</div>
 
 
 
-
+<!-- jQuery + UI -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 <script>
+    
 $('#min_knap').click(function (e) {
     $.ajax({
         type: 'GET',
-        url: 'ServletGetPartlist',
-        data: $('#house-form').serialize(),
-        success: [function (data) {
-                renderWall(document.getElementById('front-canvas'), data['front'], data['width'], data['height']);
-                renderWall(document.getElementById('back-canvas'), data['back'], data['width'], data['height']);
-                renderWall(document.getElementById('left-canvas'), data['left'], data['depth'], data['height']);
-                renderWall(document.getElementById('right-canvas'), data['right'], data['depth'], data['height']);
-                populateTable($("#bricks-table"), data);
-                $("#preview-row").show(500);
-            }]
+        url: '${requestScope['javax.servlet.forward.request_uri']}/ServletGetPartlist',
+        data: {id: 1},
+        success: function(data){
+            //alert(data);
+            $("#content").html(data);
+        }
     });
+
     e.preventDefault();
 });
+
 </script>

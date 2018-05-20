@@ -44,6 +44,7 @@ public class ServletGetPartlist extends HttpServlet {
             
             try (PrintWriter out = response.getWriter()) {
                 out.println("<p>Something went wrong</p>");
+                out.println(request.getParameter("id"));
             }
         }
     }
