@@ -93,7 +93,7 @@ $(document).ready(function () {
     Materialize.toast('${feedback}', 4000);
 });
 </script>
-<script src="static/script.js"></script>
+<script src="${requestScope['javax.servlet.forward.request_uri']}/static/script.js"></script>
 
 </body>
 </html>

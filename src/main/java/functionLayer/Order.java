@@ -482,6 +482,17 @@ public class Order {
         else
             return new DrawCarportAngleTop(this).getDrawing();
     }
+    
+    public List<PartLine> getPartlist(){
+        try {
+            if(isFlat())
+                return new FlatCarPortList(this).getParts();       
+            else
+                return new TallCarPortList(this).getParts();
+        } catch (CustomException e) {
+            return null;
+        }
+    }
 
     @Override
     public String toString() {

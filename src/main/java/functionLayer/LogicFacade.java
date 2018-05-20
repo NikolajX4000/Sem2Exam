@@ -29,6 +29,10 @@ public class LogicFacade {
     public static List<Order> getOrders(String email) throws CustomException {
         return StorageFacade.getOrders(email);
     }
+    
+    public static Order getOrder(int id) throws CustomException {
+        return StorageFacade.getOrder(id);
+    }
 
     /**
      *
