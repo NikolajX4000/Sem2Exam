@@ -16,7 +16,7 @@
 
 
 <%
-
+    
     List<Order> os;
     try {
         os = LogicFacade.getAllOrders();

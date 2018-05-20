@@ -1,5 +1,7 @@
 package presentationLayer;
 
+import java.util.Random;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -18,6 +20,8 @@ public class SVG {
     private final double svgHeight;
     private StringBuilder svg = new StringBuilder();
     private String svgClass = "";
+    
+    int uniqID = new Random().nextInt(999999);
 
     /**
      *
@@ -171,7 +175,7 @@ public class SVG {
         s.append(" y1='").append(y1).append("'"); 
         s.append(" x2='").append(x2).append("'"); 
         s.append(" y2='").append(y2).append("'");
-        s.append(" style='stroke:black; stroke-width: 0.75; marker-start: url(#beginArrow); marker-end: url(#endArrow);'");
+        s.append(" style='stroke:black; stroke-width: 0.75; marker-start: url(#beginArrow").append(uniqID).append("); marker-end: url(#endArrow").append(uniqID).append(");'");
         s.append("/>");
         
         s.append("<line");
@@ -201,7 +205,7 @@ public class SVG {
         s.append(" y1='").append(y1).append("'"); 
         s.append(" x2='").append(x2).append("'"); 
         s.append(" y2='").append(y2).append("'");
-        s.append(" style='stroke:black; stroke-width: 0.75; marker-start: url(#beginArrow); marker-end: url(#endArrow);'");
+        s.append(" style='stroke:black; stroke-width: 0.75; marker-start: url(#beginArrow").append(uniqID).append("); marker-end: url(#endArrow").append(uniqID).append(");'");
         s.append("/>");
         
         s.append("<line");
@@ -263,11 +267,11 @@ public class SVG {
         s.append(">");
         
         s.append("<defs>");
-            s.append("<marker id=\"beginArrow\" markerWidth=\"9\" markerHeight=\"9\" refX=\"0\" refY=\"4\" orient=\"auto\">");
-            s.append("<path d=\"M0,4 L8,0 L8,8 L0,4\" style=\"fill: #000000s;\" />");
+            s.append("<marker id=\"beginArrow").append(uniqID).append("\" markerWidth=\"9\" markerHeight=\"9\" refX=\"0\" refY=\"4\" orient=\"auto\">");
+            s.append("<path d=\"M0,4 L8,0 L8,8 L0,4\" style=\"fill: #000000;\" />");
             s.append("</marker>");
 
-            s.append("<marker id=\"endArrow\" markerWidth=\"9\" markerHeight=\"9\" refX=\"8\" refY=\"4\" orient=\"auto\">");
+            s.append("<marker id=\"endArrow").append(uniqID).append("\" markerWidth=\"9\" markerHeight=\"9\" refX=\"8\" refY=\"4\" orient=\"auto\">");
             s.append("<path d=\"M0,0 L8,4 L0,8 L0,0\" style=\"fill: #000000;\" />");
             s.append("</marker>");
         s.append("</defs>");

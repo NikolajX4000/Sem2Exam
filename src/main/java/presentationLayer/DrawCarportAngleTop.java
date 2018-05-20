@@ -117,7 +117,7 @@ public class DrawCarportAngleTop {
     private void drawSpaer() {
         
         double spaerDistance = width - xOffset * 2 - spaerWidth;
-        double spaerAmount = (int) (spaerDistance / 89);
+        double spaerAmount = 2 + (int) (spaerDistance / 89);
         double spaerGutter = spaerDistance / (spaerAmount-1);
 
         for (int i = 0; i < spaerAmount; i++) {
@@ -184,7 +184,7 @@ public class DrawCarportAngleTop {
         for (int i = 0; i < beamAmount; i++) {
             svg.rct(shedXStartAt + (i*beamGutter), shedYStartAt             , beam, beam, "fill:none;stroke:black;stroke-width:2.5;"); // Top shed
             svg.rct(shedXStartAt + (i*beamGutter), shedYEndAt - beam        , beam, beam, "fill:none;stroke:black;stroke-width:2.5;"); // Bot shed
-            svg.rct(shedXStartAt + (i*beamGutter), height - yOffset - beam  , beam, beam, "fill:none;stroke:red;stroke-width:2.5;"); // Bot CP
+            svg.rct(shedXStartAt + (i*beamGutter), height - yOffset - beam  , beam, beam, "fill:none;stroke:black;stroke-width:2.5;"); // Bot CP
         }
         
         //y beams
@@ -193,7 +193,7 @@ public class DrawCarportAngleTop {
         for (int i = 0; i < beamAmount; i++) {
             svg.rct(shedXStartAt        , shedYStartAt  + (i*beamGutter), beam, beam, "fill:none;stroke:black;stroke-width:2.5;"); // Left shed
             svg.rct(shedXEndAt - beam   , shedYStartAt  + (i*beamGutter), beam, beam, "fill:none;stroke:black;stroke-width:2.5;"); // Right shed
-            svg.rct(xOffset             , shedYStartAt  + (i*beamGutter), beam, beam, "fill:none;stroke:red;stroke-width:2.5;"); // LEFT CP IDK IF USEFUL
+            svg.rct(xOffset             , shedYStartAt  + (i*beamGutter), beam, beam, "fill:none;stroke:black;stroke-width:2.5;"); // LEFT CP IDK IF USEFUL
         }
         
     }
@@ -206,8 +206,8 @@ public class DrawCarportAngleTop {
         double beamGutter = (xWidth) / (beamAmount-1);
         
         for (int i = 0; i < beamAmount; i++) {
-            svg.rct(xOffset + (i*beamGutter), yOffset                   , beam, beam, "fill:green;stroke:green;stroke-width:2.5;"); // Top
-            svg.rct(xOffset + (i*beamGutter), height - yOffset - beam   , beam, beam, "fill:green;stroke:green;stroke-width:2.5;"); // Bot
+            svg.rct(xOffset + (i*beamGutter), yOffset                   , beam, beam, "fill:none;stroke:black;stroke-width:2.5;"); // Top
+            svg.rct(xOffset + (i*beamGutter), height - yOffset - beam   , beam, beam, "fill:none;stroke:black;stroke-width:2.5;"); // Bot
         }
     }
 
@@ -219,8 +219,8 @@ public class DrawCarportAngleTop {
         double beamGutter = (yHeight) / (beamAmount-1);
         
         for (int i = 0; i < beamAmount; i++) {
-            svg.rct(xOffset                 , height - yOffset - beam - (i*beamGutter), beam, beam, "fill:none;stroke:blue;stroke-width:2.5;"); // LEFT
-            svg.rct(width - xOffset - beam  , height - yOffset - beam - (i*beamGutter), beam, beam, "fill:none;stroke:blue;stroke-width:2.5;"); // RIGHT
+            svg.rct(xOffset                 , height - yOffset - beam - (i*beamGutter), beam, beam, "fill:none;stroke:black;stroke-width:2.5;"); // LEFT
+            svg.rct(width - xOffset - beam  , height - yOffset - beam - (i*beamGutter), beam, beam, "fill:none;stroke:black;stroke-width:2.5;"); // RIGHT
         }
     }
 
