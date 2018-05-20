@@ -70,13 +70,11 @@
 
                 <form class="row" method="post" action="?" accept-charset="ISO-8859-1">
                     <input type="hidden" name="id" value="${m.id}">
-
-                    <c:if test="${(mats.key eq 'tagsten') or (mats.key eq 'rygsten')}">
-                        <c:set var="dis" value="disabled"/>
-                    </c:if>
-
+                    
                     <div class="input-field col s12  m4">
-                        <input ${dis} id='description' type='text' class='validate' name='description' required maxlength='200' value='${m.description}'>
+                        <input ${(mats.key eq 'tagsten') or (mats.key eq 'rygsten') ? 'disabled' : ''}
+                            id='description' type='text' class='validate' name='description' required maxlength='200' value='${m.description}'
+                        />
                         <label for='description' data-error='Skriv en beskrivelse'>Beskrivelse</label>
                     </div>
 
