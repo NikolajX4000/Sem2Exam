@@ -25,7 +25,8 @@ public class RenderOrderInspect {
         
         s.append("<li>");
 
-        s.append("<div class=\"collapsible-header\">");
+        //når der klikkes på en tab loader man styklisten
+        s.append("<div class=\"collapsible-header partlistloadbtn\" id='partlistbtn").append(o.getId()).append("'>");
         s.append("<i class=\"material-icons\">").append(icon).append("</i>").append(text);
         
         if(text.equals("Detaljer")){
@@ -111,33 +112,23 @@ public class RenderOrderInspect {
         s.append(tabStart("format_list_bulleted", "Stykliste"));
         
         /////////////////////////////////////////////////////////////////////////////////////
-        s.append("<table><tbody>");
-        s.append("<tr><th>Antal</th><th>Størrelse</th><th>Navn</th></tr>");
-        try {
-
-        //ArrayList
-        List<PartLine> list = new ArrayList<>();
-        if(o.isFlat()){
-            FlatCarPortList cpl = new FlatCarPortList(o);
-            list = cpl.getParts();
-        }else
-        {
-            TallCarPortList tcpl = new TallCarPortList(o);
-            list = tcpl.getParts();
-        }
-            for(PartLine pl : list){
-                s.append("<tr>");
-
-                s.append("<td>").append(pl.getAmount()).append("</td>");
-                s.append("<td>").append(pl.getSize()).append("</td>");
-                s.append("<td>").append(pl.getMaterial().getName()).append("</td>");
-
-                s.append("</tr>");
-            }
-        } catch (Exception e) {
-            s.append(e);
-        }
-        s.append("</tbody></table>");
+        //preloader til inden stykliste er laodet ind
+        s.append("<div id='partlistcontent").append(o.getId()).append("'>");
+            
+            s.append("<div class=\"preloader-wrapper big active\">\n" +
+                "        <div class=\"spinner-layer spinner-blue-only\">\n" +
+                "            <div class=\"circle-clipper left\">\n" +
+                "                <div class=\"circle\"></div>\n" +
+                "            </div><div class=\"gap-patch\">\n" +
+                "                <div class=\"circle\"></div>\n" +
+                "            </div><div class=\"circle-clipper right\">\n" +
+                "                <div class=\"circle\"></div>\n" +
+                "            </div>\n" +
+                "        </div>\n" +
+                "    </div>");
+            
+        s.append("</div>");
+        
         /////////////////////////////////////////////////////////////////////////////////////
         
         
