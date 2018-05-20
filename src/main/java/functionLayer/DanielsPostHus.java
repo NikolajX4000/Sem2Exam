@@ -48,22 +48,22 @@ public class DanielsPostHus {
         s.append("<h4>Mål:</h4>");
         s.append("<table>");
         
-        s.append("<tr><td style='padding-right:15px;box-sizing:border-box;'>Carport bredde:</td><td>").append(o.getWidth()).append("</td></tr>");
-        s.append("<tr><td style='padding-right:15px;box-sizing:border-box;'>Carport længde:</td><td>").append(o.getLength()).append("</td></tr>");
+        s.append("<tr><td style='padding-right:10px;box-sizing:border-box;'>Carport bredde:</td><td>").append(o.getWidth()).append("</td></tr>");
+        s.append("<tr><td style='padding-right:10px;box-sizing:border-box;'>Carport længde:</td><td>").append(o.getLength()).append("</td></tr>");
         if(o.hasShed()){
-            s.append("<tr><td style='padding-right:15px;box-sizing:border-box;'>Redskabsrum bredde:</td><td>").append(o.getShedWidth()).append("</td></tr>");
-            s.append("<tr><td style='padding-right:15px;box-sizing:border-box;'>Redskabsrum længde:</td><td>").append(o.getLength()).append("</td></tr>");
+            s.append("<tr><td style='padding-right:10px;box-sizing:border-box;'>Redskabsrum bredde:</td><td>").append(o.getShedWidth()).append("</td></tr>");
+            s.append("<tr><td style='padding-right:10px;box-sizing:border-box;'>Redskabsrum længde:</td><td>").append(o.getLength()).append("</td></tr>");
         }
         s.append("</table>");
         
         s.append("<h4>Kontakt information:</h4>");
         s.append("<table>");
-        s.append("<tr><td style='padding-right:15px;box-sizing:border-box;'>Navn:<td>").append(o.getName()).append("</td></tr>");
-        s.append("<tr><td style='padding-right:15px;box-sizing:border-box;'>Telefon:</td><td>").append(o.getPhone()).append("</td></tr>");
-        s.append("<tr><td style='padding-right:15px;box-sizing:border-box;'>Email:</td><td>").append(o.getEmail()).append("</td></tr>");
-        s.append("<tr><td style='padding-right:15px;box-sizing:border-box;'>Adresse:</td><td>").append(o.getAddress()).append("</td></tr>");
-        s.append("<tr><td style='padding-right:15px;box-sizing:border-box;'>Postnummer:</td><td>").append(o.getZipCode()).append("</td></tr>");
-        s.append("<tr><td style='padding-right:15px;box-sizing:border-box;'>By:</td><td>").append(o.getCity()).append("</td></tr>");
+        s.append("<tr><td style='padding-right:10px;box-sizing:border-box;'>Navn:<td>").append(o.getName()).append("</td></tr>");
+        s.append("<tr><td style='padding-right:10px;box-sizing:border-box;'>Telefon:</td><td>").append(o.getPhone()).append("</td></tr>");
+        s.append("<tr><td style='padding-right:10px;box-sizing:border-box;'>Email:</td><td>").append(o.getEmail()).append("</td></tr>");
+        s.append("<tr><td style='padding-right:10px;box-sizing:border-box;'>Adresse:</td><td>").append(o.getAddress()).append("</td></tr>");
+        s.append("<tr><td style='padding-right:10px;box-sizing:border-box;'>Postnummer:</td><td>").append(o.getZipCode()).append("</td></tr>");
+        s.append("<tr><td style='padding-right:10px;box-sizing:border-box;'>By:</td><td>").append(o.getCity()).append("</td></tr>");
         
         s.append("</table>");
         
