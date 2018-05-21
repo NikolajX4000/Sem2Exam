@@ -196,7 +196,7 @@ public class DrawCarportAngleSide {
         //shed
         if(hasShed){
             svg.arrowX(width-shedWidth-xOffset, beamOffset + height + 25, width-xOffset, beamOffset + height + 25);
-            svg.text(width - (width-shedWidth-xOffset)/2, beamOffset + height + 20, (int)(shedWidth) + " cm");
+            svg.text(width - xOffset - (shedWidth/2), beamOffset + height + 20, (int)(shedWidth) + " cm");
         }
         
         //beam height
