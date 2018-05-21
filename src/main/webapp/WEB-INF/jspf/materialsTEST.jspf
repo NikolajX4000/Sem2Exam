@@ -79,17 +79,17 @@
                     </div>
 
                     <div class="input-field col s12  m4">
-                        <input id='size' type='number' class='validate' name='size' required maxlength='40' pattern='' value='${m.size}'>
+                        <input id='size' type='number' class='validate' name='size' required maxlength='40' value='${m.size}'>
                         <label for='size' data-error='Skriv en beskrivelse'>Størrelse</label>
                     </div>
 
                     <div class="input-field col s12  m4">
-                        <input id='price' type='number' class='validate' name='price' required maxlength='40' pattern='' value='${m.price}'>
+                        <input id='price' type='number' class='validate' name='price' required maxlength='40' value='${m.price}'>
                         <label for='price' data-error='Skriv en pris'>Pris</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <button class='btn waves-effect waves-light blue ' type='submit' name='command' value='CmdUpdateMaterial'>
+                        <button class='btn waves-effect waves-light blue' type='submit' name='command' value='CmdUpdateMaterial'>
                             <i class='material-icons right'>send</i>
                         </button>
                     </div>
