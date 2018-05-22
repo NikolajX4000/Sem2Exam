@@ -47,6 +47,7 @@
                         <li><a href="?command=CmdPageMaterial">Material</a></li>
                         <li><a href="?command=CmdPageAllOrders">Admin</a></li>
                         <li><a href="?command=CmdPageLogin">Login</a></li>
+                        <li><a href="?TESTslider">Slider</a></li>
                     </ul>
 
                     <ul class="side-nav" id="mobile-demo">
@@ -55,6 +56,7 @@
                         <li><a href="?command=CmdPageMaterial">Material</a></li>
                         <li><a href="?command=CmdPageAllOrders">Admin</a></li>
                         <li><a href="?command=CmdPageLogin">Login</a></li>
+                        <li><a href="?TESTslider">Slider</a></li>
                     </ul>
                 </div>
             </div>
