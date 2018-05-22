@@ -18,10 +18,18 @@ public class CmdUpdateOrder extends Command{
         //params: "newStatus" -> String med nye status // "target" -> id på den ordre der skal skiftes
         
         try {
+            //update status
             LogicFacade.updateOrder(Integer.parseInt(request.getParameter("target")), request.getParameter("newStatus"));
-            request.setAttribute("feedback", "Status opdateret!");
+            
+            //update pris
+            LogicFacade.updatePrice(Integer.parseInt(request.getParameter("target")), Integer.parseInt(request.getParameter("newPrice")));
+            
+            
+            
+            request.setAttribute("feedback", "Ordre opdateret!");
         } catch (Exception e) {
-            request.setAttribute("feedback", "Der gik noget galt.");
+            request.setAttribute("test", e);
+            //request.setAttribute("feedback", "Der gik noget galt.");
         }
         
         

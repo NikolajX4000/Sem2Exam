@@ -220,13 +220,13 @@ public class RenderOrderInspect {
             
             
             s.append("<div class=\"input-field col s12\">");
-                s.append("<input disabled class=\"black-text\" type=\"text\" value=\"").append(o.getPrice()).append("\">");
-                s.append("<label>").append("Materiel pris:").append("</label>");
+                s.append("<input disabled class=\"black-text\" type=\"text\" value=\"").append(o.getMaterialPrice()).append("\">");
+                s.append("<label>").append("Vejledende pris:").append("</label>");
             s.append("</div>");
             
             
             s.append("<br><div class=\"input-field col s12\">");
-                s.append("<input id=\"newPrice\" type=\"number\" class=\"validate\" name=\"newPrice\" min=\"1\" max=\"999999\" placeholder='").append(o.getPrice()).append("'value=\"").append(o.getPrice()).append("\">");
+                s.append("<input id=\"newPrice\" type=\"number\" class=\"validate\" name=\"newPrice\" min=\"1\" max=\"999999\" value=\"").append(o.getPriceInt()).append("\">");
             s.append("<label for=\"newPrice\">Personlig pris:</label></div></div>");
             
         } catch (Exception e)
