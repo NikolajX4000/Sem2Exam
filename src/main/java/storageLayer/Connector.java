@@ -18,6 +18,9 @@ public class Connector {
     private static final String URL = "jdbc:mysql://" + IP + ":" + PORT + "/" + DATABASE + "?autoReconnect=true&useSSL=false";
     private static Connection connection;
 
+    private Connector() {
+    }
+
     /**
      *
      * @param con
@@ -28,8 +31,7 @@ public class Connector {
 
     /**
      *
-     * @return
-     * @throws ClassNotFoundException
+     * @return @throws ClassNotFoundException
      * @throws SQLException
      */
     public static Connection connection() throws ClassNotFoundException, SQLException {
