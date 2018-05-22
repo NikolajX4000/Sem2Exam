@@ -56,14 +56,9 @@ public class Order {
     private String status = "Behandles";
 
     public int calculatePrice() throws CustomException {
-        if (isFlat()) {
-            partsList = new FlatCarPortList(this).getParts();
-        } else {
-            partsList = new TallCarPortList(this).getParts();
-        }
         materialPrice = 0;
-        for (PartLine p : partsList) {
-            materialPrice += p.calculatePrice();
+        for (PartLine p : getPartlist()) {
+            materialPrice += p.getMaterial().getPrice();
         }
         return materialPrice;
     }
@@ -468,27 +463,33 @@ public class Order {
         calculatePrice();
         return this;
     }
-    
-    public String getDrawingSide(){
-        if(isFlat())
-            return new DrawCarportFlatSide(this).getDrawing();       
-        else
+
+    public String getDrawingSide() {
+        if (isFlat()) {
+            return new DrawCarportFlatSide(this).getDrawing();
+        } else {
             return new DrawCarportAngleSide(this).getDrawing();
+        }
     }
-    
-    public String getDrawingTop(){
-        if(isFlat())
-            return new DrawCarportFlatTop(this).getDrawing();       
-        else
+
+    public String getDrawingTop() {
+        if (isFlat()) {
+            return new DrawCarportFlatTop(this).getDrawing();
+        } else {
             return new DrawCarportAngleTop(this).getDrawing();
+        }
     }
-    
-    public List<PartLine> getPartlist() throws CustomException{
-        
-        if(isFlat())
-            return new FlatCarPortList(this).getParts();       
-        else
-            return new TallCarPortList(this).getParts();
+
+    public List<PartLine> getPartlist() throws CustomException {
+        if (partsList == null) {
+
+            if (isFlat()) {
+                partsList = new FlatCarPortList(this).getParts();
+            } else {
+                partsList = new TallCarPortList(this).getParts();
+            }
+        }
+        return partsList;
     }
 
     @Override
