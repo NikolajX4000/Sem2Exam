@@ -1,8 +1,6 @@
-<%@page import="functionLayer.LogicFacade"%>
+
 <%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
 <%@page pageEncoding="UTF-8"%>
-
-<% request.setAttribute("roofs", LogicFacade.getAllRoofs());%>
 
 
 <div class="col s12" id="roofs">
