@@ -5,13 +5,9 @@
  */
 package presentationLayer;
 
-import functionLayer.CustomException;
-import functionLayer.LogicFacade;
 import functionLayer.Order;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,34 +18,40 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Hupra
  */
-@WebServlet(name = "ServletGetPartlist", urlPatterns = {"/ServletGetPartlist"})
-public class ServletGetPartlist extends HttpServlet {
+@WebServlet(name = "ServletGetDrawings", urlPatterns = {"/ServletGetDrawings"})
+public class ServletGetDrawings extends HttpServlet {
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
         //request.setAttribute("test", request.getParameter("id"));
         try {
 
-            int id = Integer.parseInt(request.getParameter("id"));
-            Order o = LogicFacade.getOrder(id);
+            int width = Integer.parseInt(request.getParameter("width"));
+            int shedWidth = Integer.parseInt(request.getParameter("shed_width"));
+            int length = Integer.parseInt(request.getParameter("length"));
+            int shedLength = Integer.parseInt(request.getParameter("shed_length"));
+            
+            Order o = new Order().setWidth(width).setLength(length).setShedWidth(shedWidth).setShedLength(shedLength).setAngle(15);
 
-            request.setAttribute("items", o.getPartlist());
+            try (PrintWriter out = response.getWriter()) {
+                //out.println(o.getDrawingTop());
+                out.println(o.getDrawingSide());
+            }
 
-            request.getRequestDispatcher("/WEB-INF/parts/partlist.jsp").forward(request, response);
-
-        } catch (IOException | NumberFormatException | ServletException ex) {
-            Logger.getLogger(ServletGetPartlist.class.getName()).log(Level.SEVERE, null, ex);
-
+        } catch (Exception e) {
+            
             try (PrintWriter out = response.getWriter()) {
                 out.println("<p>Der gik noget galt, prøv igen senere.</p>");
-        }
-
-        } catch (CustomException ex) {
-            Logger.getLogger(ServletGetPartlist.class.getName()).log(Level.SEVERE, null, ex);
-
-            try (PrintWriter out = response.getWriter()) {
-                out.println("<p>" + ex.getMessage() + "</p>");
             }
         }
     }

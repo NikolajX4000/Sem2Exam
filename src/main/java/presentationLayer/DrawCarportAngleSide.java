@@ -72,8 +72,8 @@ public class DrawCarportAngleSide {
     {
         drawRem();
         drawStern();
-        drawRoofBottom();
         drawBricks();
+        drawRoofBottom();
         drawBeams();
         if(hasShed)drawShedBeams();
         if(hasShed)drawShed();
@@ -102,11 +102,16 @@ public class DrawCarportAngleSide {
     private void drawBricks()
     {
         for (double i = barge / 2; i < width - brickWidth; i += brickWidth) {
-            svg.rct(i, brickOffset, brickHeight, brickWidth, "fill:white;stroke:black;stroke-width:0.5");
+            svg.rct(i, brickOffset, brickHeight, brickWidth, "fill:white;stroke:grey;stroke-width:0.5");
         }
         
+        //test lines
+        for(double i = brickOffset; i < brickHeight+brickOffset; i+= brickWidth*1.5){
+            svg.line(0, i, width, i, "fill:white;stroke:grey;stroke-width:0.5", "stroke-dasharray='"+brickWidth+", "+brickWidth+"'");
+            svg.line(brickWidth, i+brickWidth, width-brickWidth, i+brickWidth, "fill:white;stroke:grey;stroke-width:0.5", "stroke-dasharray='"+brickWidth+", "+brickWidth+"'");
+        }
         //top brick
-        svg.rct(barge / 2, topBrickOffset, topBrick, width - barge, "fill:white;stroke:black;;stroke-width:0.5");
+        svg.rct(barge / 2, topBrickOffset, topBrick, width - barge, "fill:white;stroke:black;stroke-width:0.5");
     }
 
     private void drawShed()
@@ -191,7 +196,7 @@ public class DrawCarportAngleSide {
         //shed
         if(hasShed){
             svg.arrowX(width-shedWidth-xOffset, beamOffset + height + 25, width-xOffset, beamOffset + height + 25);
-            svg.text(width - (width-shedWidth-xOffset)/2, beamOffset + height + 20, (int)(shedWidth) + " cm");
+            svg.text(width - xOffset - (shedWidth/2), beamOffset + height + 20, (int)(shedWidth) + " cm");
         }
         
         //beam height

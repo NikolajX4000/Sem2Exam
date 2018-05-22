@@ -7,10 +7,14 @@
 package presentationLayer;
 
 import functionLayer.CustomException;
+import functionLayer.DanielsPostHus;
 import functionLayer.LogicFacade;
 import functionLayer.Order;
 import functionLayer.Roof;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -67,7 +71,13 @@ public class CmdCreateOrder extends Command{
             
             LogicFacade.addOrder(o);
             
-            //request.setAttribute("test", o.toString());
+            try {
+                // send mail til fog omkring ny ordre
+                DanielsPostHus.newOrder(o);
+            } catch (MessagingException ex) {
+                //Logger.getLogger(CmdCreateOrder.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
             
             request.setAttribute("desiredOrdersFromEmail", LogicFacade.getOrders(o.getEmail()));
             
@@ -78,7 +88,6 @@ public class CmdCreateOrder extends Command{
         {
             request.setAttribute("feedback", "<p>Der gik noget galt prøv igen senere!</p>");
             request.setAttribute("test", e.getMessage());
-            return "order"; 
         } catch (CustomException e){
             request.setAttribute("feedback", e.getMessage());
         }

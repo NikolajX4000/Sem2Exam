@@ -28,6 +28,9 @@ public class FrontController extends HttpServlet {
         if(request.getParameter("dtest") != null){
             request.getRequestDispatcher("/WEB-INF/views/danielstestside.jsp").forward(request, response);
         }
+        if(request.getParameter("TESTslider") != null){
+            request.getRequestDispatcher("/WEB-INF/views/TESTslider.jsp").forward(request, response);
+        }
         
         try {
             Command command = Command.from(request);

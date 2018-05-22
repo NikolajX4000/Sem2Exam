@@ -169,7 +169,7 @@ public class DrawCarportAngleTop {
         //middle lath
         svg.rct(bargeWidth, height / 2 - lathHeight / 2 / 1.5, lathHeight / 1.5, lathWidth, thin);
 
-        for (double i = lathHeight * 2; i < height / 2; i += lathGutter) {
+        for (double i = lathHeight * 2; i < (height / 2) - lathHeight; i += lathGutter) {
             svg.rct(bargeWidth, (height / 2) + i                , lathHeight, lathWidth, thin);
             svg.rct(bargeWidth, (height / 2) - i - lathHeight   , lathHeight, lathWidth, thin);
         }

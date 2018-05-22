@@ -27,9 +27,9 @@
       </ul>
     </div>
     
-    <%@include file="/WEB-INF/jspf/materials.jspf"%>  
-    <%@include file="/WEB-INF/jspf/tools.jspf"%> 
-    <%@include file="/WEB-INF/jspf/roofs.jspf"%> 
+    <%@include file="/WEB-INF/jspf/materialsTEST.jspf"%>  
+    <%@include file="/WEB-INF/jspf/toolsTEST.jspf"%> 
+    <%@include file="/WEB-INF/jspf/roofsTEST.jspf"%> 
     
     
 </div>
