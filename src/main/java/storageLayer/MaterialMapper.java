@@ -50,7 +50,7 @@ public class MaterialMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return materials;
     }
@@ -84,7 +84,7 @@ public class MaterialMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return meterial;
     }
@@ -120,7 +120,7 @@ public class MaterialMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return materials;
     }
@@ -153,7 +153,7 @@ public class MaterialMapper {
         } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return material;
     }
@@ -188,7 +188,7 @@ public class MaterialMapper {
         } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
     }
     
@@ -212,7 +212,7 @@ public class MaterialMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
     }
 
@@ -223,7 +223,7 @@ public class MaterialMapper {
      *
      * @param ps PreparedStatement object, the SQL controller.
      */
-    private static void closeConnection(PreparedStatement ps) throws CustomException {
+    private static void closeStatement(PreparedStatement ps) throws CustomException {
         if (ps != null) {
             try {
                 ps.close();

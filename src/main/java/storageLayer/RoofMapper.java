@@ -37,7 +37,7 @@ public class RoofMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return roofs;
     }
@@ -63,7 +63,7 @@ public class RoofMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return roof;
     }
@@ -102,8 +102,8 @@ public class RoofMapper {
             }
             throw new CustomException(e.getMessage());
         } finally {
-            closeConnection(updateRoof);
-            closeConnection(updateTagsten);
+            closeStatement(updateRoof);
+            closeStatement(updateTagsten);
             
             try {
                 con.setAutoCommit(true);
@@ -114,7 +114,7 @@ public class RoofMapper {
         }
     }
 
-    private static void closeConnection(PreparedStatement ps) throws CustomException {
+    private static void closeStatement(PreparedStatement ps) throws CustomException {
         if (ps != null) {
             try {
                 ps.close();

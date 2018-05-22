@@ -81,7 +81,7 @@ public class OrderMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return order;
     }
@@ -140,7 +140,7 @@ public class OrderMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return order;
     }
@@ -204,7 +204,7 @@ public class OrderMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return orders;
     }
@@ -262,7 +262,7 @@ public class OrderMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return orders;
     }
@@ -312,7 +312,7 @@ public class OrderMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return order;
     }
@@ -343,7 +343,7 @@ public class OrderMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return order;
     }
@@ -374,7 +374,7 @@ public class OrderMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
     }
     
@@ -401,7 +401,7 @@ public class OrderMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
     }
 
@@ -412,7 +412,7 @@ public class OrderMapper {
      *
      * @param ps PreparedStatement object, the SQL controller.
      */
-    private static void closeConnection(PreparedStatement ps) throws CustomException {
+    private static void closeStatement(PreparedStatement ps) throws CustomException {
         if (ps != null) {
             try {
                 ps.close();

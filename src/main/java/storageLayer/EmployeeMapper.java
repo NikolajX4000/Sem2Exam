@@ -52,7 +52,7 @@ public class EmployeeMapper
             throw new CustomException(ex.getMessage());
         } finally
         {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return e;
     }
@@ -85,7 +85,7 @@ public class EmployeeMapper
 
             }
 
-            closeConnection(ps);
+            closeStatement(ps);
 
         } catch (ClassNotFoundException | SQLException e)
         {
@@ -102,7 +102,7 @@ public class EmployeeMapper
      *
      * @param ps PreparedStatement object, the SQL controller.
      */
-    private static void closeConnection(PreparedStatement ps) throws CustomException
+    private static void closeStatement(PreparedStatement ps) throws CustomException
     {
         if (ps != null)
         {
