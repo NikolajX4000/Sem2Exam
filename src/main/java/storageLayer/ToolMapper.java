@@ -45,7 +45,7 @@ public class ToolMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return materials;
     }
@@ -78,7 +78,7 @@ public class ToolMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return material;
     }
@@ -113,26 +113,9 @@ public class ToolMapper {
         } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return material;
-    }
-
-    /**
-     * This method will close the prepared statement connection if it's
-     * connection, the reason is to reduce as musch in- and outgoing trafic from
-     * the server.
-     *
-     * @param ps PreparedStatement object, the SQL controller.
-     */
-    private static void closeConnection(PreparedStatement ps) throws CustomException {
-        if (ps != null) {
-            try {
-                ps.close();
-            } catch (SQLException ex) {
-                throw new CustomException( "Kunne ikke få kontakt til databasen" );
-            }
-        }
     }
 
     static void updateTool(int id, int unitSize, int price) throws CustomException
@@ -160,8 +143,25 @@ public class ToolMapper {
         } catch (ClassNotFoundException | SQLException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
     }
 
+
+    /**
+     * This method will close the prepared statement connection if it's
+     * connection, the reason is to reduce as musch in- and outgoing trafic from
+     * the server.
+     *
+     * @param ps PreparedStatement object, the SQL controller.
+     */
+    private static void closeStatement(PreparedStatement ps) throws CustomException {
+        if (ps != null) {
+            try {
+                ps.close();
+            } catch (SQLException ex) {
+                throw new CustomException( "Kunne ikke få kontakt til databasen" );
+            }
+        }
+    }
 }
