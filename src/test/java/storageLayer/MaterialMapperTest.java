@@ -155,7 +155,6 @@ public class MaterialMapperTest {
         int id = 3;
         int size = 5;
         int price = 7;
-        
         MaterialMapper.updateMaterial( id, size, price );
         Material material = MaterialMapper.getMaterial( id );
         
