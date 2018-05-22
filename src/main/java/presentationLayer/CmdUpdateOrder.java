@@ -22,7 +22,9 @@ public class CmdUpdateOrder extends Command{
             LogicFacade.updateOrder(Integer.parseInt(request.getParameter("target")), request.getParameter("newStatus"));
             
             //update pris
-            LogicFacade.updatePrice(Integer.parseInt(request.getParameter("target")), Integer.parseInt(request.getParameter("newPrice")));
+            if(request.getParameter("newPrice") != null){
+                LogicFacade.updatePrice(Integer.parseInt(request.getParameter("target")), Integer.parseInt(request.getParameter("newPrice")));
+            }
             
             
             

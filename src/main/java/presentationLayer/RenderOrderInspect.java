@@ -214,27 +214,27 @@ public class RenderOrderInspect {
     private static StringBuilder updatePrice(){
         StringBuilder s = new StringBuilder();
         
-        try
-        {
-            s.append("<p>Opdater pris:</p><div class='row'><br>");
-            
-            
-            s.append("<div class=\"input-field col s12\">");
-                s.append("<input disabled class=\"black-text\" type=\"text\" value=\"").append(o.getMaterialPrice()).append("\">");
-                s.append("<label>").append("Vejledende pris:").append("</label>");
-            s.append("</div>");
-            
-            
-            s.append("<br><div class=\"input-field col s12\">");
-                s.append("<input id=\"newPrice\" type=\"number\" class=\"validate\" name=\"newPrice\" min=\"1\" max=\"999999\" value=\"").append(o.getPriceInt()).append("\">");
-            s.append("<label for=\"newPrice\">Personlig pris:</label></div></div>");
-            
-        } catch (Exception e)
-        {
-            s.append("Der fik noget galt.");
+        if(o.getStatus().equals("Behandles")){
+           try
+            {
+                s.append("<p>Opdater pris:</p><div class='row'><br>");
+
+
+                s.append("<div class=\"input-field col s12\">");
+                    s.append("<input disabled class=\"black-text\" type=\"text\" value=\"").append(o.getMaterialPrice()).append("\">");
+                    s.append("<label>").append("Vejledende pris:").append("</label>");
+                s.append("</div>");
+
+
+                s.append("<br><div class=\"input-field col s12\">");
+                    s.append("<input id=\"newPrice\" type=\"number\" class=\"validate\" name=\"newPrice\" min=\"1\" max=\"999999\" value=\"").append(o.getPriceInt()).append("\">");
+                s.append("<label for=\"newPrice\">Personlig pris:</label></div></div>");
+
+            } catch (Exception e)
+            {
+                s.append("Der fik noget galt.");
+            }
         }
-        
-        
         return s;
     }
     
