@@ -79,7 +79,6 @@ public class OrderMapperTest {
      */
     @Test
     public void testGetOrder() throws Exception {
-        System.out.println("getOrder");
         int id = 1;
         String expResult = "Dummy";
         String result = OrderMapper.getOrder(id).getName();
@@ -93,7 +92,6 @@ public class OrderMapperTest {
      */
     @Test
     public void testGetOrders() throws Exception {
-        System.out.println("getOrders");
         String email = "dummy@dummy.dummy";
         String expResult = "Dummy";
         List<Order> orders = OrderMapper.getOrders(email);
@@ -115,7 +113,6 @@ public class OrderMapperTest {
      */
     @Test
     public void testGetAllOrders() throws Exception {
-        System.out.println("getAllOrders");
         String expResult = "dummy@dummy.dummy";
         List<Order> orders = OrderMapper.getAllOrders();
         boolean result = false;

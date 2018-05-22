@@ -33,16 +33,16 @@ public class ToolMapper {
             ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
 
-            while (rs.next()) {
+            while(rs.next()) {
                 material = new Material().
-                    setId(rs.getInt("tool_id")).
-                    setName(rs.getString("name")).
-                    setPrice(rs.getInt("price")).
-                    setUnitSize(rs.getInt("unit_size"));
+                        setId(rs.getInt("tool_id")).
+                        setName(rs.getString("name")).
+                        setPrice(rs.getInt("price")).
+                        setUnitSize(rs.getInt("unit_size"));
                 materials.add(material);
             }
 
-        } catch (SQLException | ClassNotFoundException ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
             closeStatement(ps);
@@ -67,7 +67,7 @@ public class ToolMapper {
             ps.setInt(1, tool_id);
             ResultSet rs = ps.executeQuery();
 
-            if (rs.first()) {
+            if(rs.first()) {
                 material.
                         setId(rs.getInt("tool_id")).
                         setName(rs.getString("name")).
@@ -75,7 +75,7 @@ public class ToolMapper {
                         setUnitSize(rs.getInt("unit_size"));
             }
 
-        } catch (SQLException | ClassNotFoundException ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
             closeStatement(ps);
@@ -99,18 +99,13 @@ public class ToolMapper {
 
             ps = con.prepareStatement(SQL);
 
-            try {
-                ps.setString(1, material.getName());
-                ps.setInt(2, material.getPrice());
-                ps.setInt(3, material.getSize());
-                ps.setInt(4, material.getId());
-
-            } catch (SQLException ex) {
-                throw new CustomException("Formateringsfejl");
-            }
+            ps.setString(1, material.getName());
+            ps.setInt(2, material.getPrice());
+            ps.setInt(3, material.getSize());
+            ps.setInt(4, material.getId());
             ps.executeUpdate();
 
-        } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
+        } catch(SQLException | ClassNotFoundException | NullPointerException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
             closeStatement(ps);
@@ -118,8 +113,7 @@ public class ToolMapper {
         return material;
     }
 
-    static void updateTool(int id, int unitSize, int price) throws CustomException
-    {
+    static void updateTool(int id, int unitSize, int price) throws CustomException {
         PreparedStatement ps = null;
 
         try {
@@ -130,23 +124,18 @@ public class ToolMapper {
 
             ps = con.prepareStatement(SQL);
 
-            try {
-                ps.setInt(1, price);
-                ps.setInt(2, unitSize);
-                ps.setInt(3, id);
+            ps.setInt(1, price);
+            ps.setInt(2, unitSize);
+            ps.setInt(3, id);
 
-            } catch (SQLException ex) {
-                throw new CustomException("Formateringsfejl");
-            }
             ps.executeUpdate();
 
-        } catch (ClassNotFoundException | SQLException ex) {
+        } catch(ClassNotFoundException | SQLException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
             closeStatement(ps);
         }
     }
-
 
     /**
      * This method will close the prepared statement connection if it's
@@ -156,11 +145,11 @@ public class ToolMapper {
      * @param ps PreparedStatement object, the SQL controller.
      */
     private static void closeStatement(PreparedStatement ps) throws CustomException {
-        if (ps != null) {
+        if(ps != null) {
             try {
                 ps.close();
-            } catch (SQLException ex) {
-                throw new CustomException( "Kunne ikke få kontakt til databasen" );
+            } catch(SQLException ex) {
+                throw new CustomException("Kunne ikke få kontakt til databasen");
             }
         }
     }
