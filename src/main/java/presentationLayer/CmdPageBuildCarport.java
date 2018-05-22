@@ -16,7 +16,7 @@ public class CmdPageBuildCarport extends Command{
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException {
-        return "order";
+        return "orderTEST";
     }
 
 }

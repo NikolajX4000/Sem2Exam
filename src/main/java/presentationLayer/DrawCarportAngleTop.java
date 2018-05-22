@@ -86,8 +86,8 @@ public class DrawCarportAngleTop {
 
     public String getDrawing() {
         
-        if(hasShed) drawShed();
         drawSpaer();
+        if(hasShed) drawShed();
         drawBarge();
         drawRem();
         drawSkirts();
@@ -224,11 +224,11 @@ public class DrawCarportAngleTop {
     }
 
     private void drawHeightWidthArrow() {
-        svg.arrowX(0, height + 30, width, height + 30);
-        svg.text(width/2, height + 25, (int)(width) + " cm");
+        svg.arrowX(0, height + 25, width, height + 25);
+        svg.text(width/2, height + 20, (int)(width) + " cm");
         
-        svg.arrowY(-30, 0, -30, height);
-        svg.textRotated(-35, height/2, (int)(height) + " cm");
+        svg.arrowY(-20, 0, -20, height);
+        svg.textRotated(-25, height/2, (int)(height) + " cm");
     }
     
     

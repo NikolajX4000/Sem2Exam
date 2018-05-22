@@ -29,7 +29,9 @@
                 <label>Shed Length <span id="shed_length_span">150</span></label>
                 <input type="range" value="150" min="150" max="450" step="30" id="shed_length" class="range" name="shed_length"/><!-- max-60 -->
             </p>
-
+            
+            <input type="text" name="hejsa">
+            <input type="text" name="hejsa">
             <button type="submit">Bøøøøh</button>
         </form>
 
