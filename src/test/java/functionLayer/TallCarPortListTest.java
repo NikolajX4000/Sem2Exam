@@ -219,7 +219,7 @@ public class TallCarPortListTest
     {
         PartLine part = carport.zTilDoer();
         int expAmount = 1;
-        int expSize = 420;
+        int expSize = 540;
         int amount = part.getAmount();
         int size = part.getSize();
         assertEquals(expAmount, amount);
