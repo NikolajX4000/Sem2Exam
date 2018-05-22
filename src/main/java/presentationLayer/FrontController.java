@@ -25,6 +25,9 @@ public class FrontController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        
+        response.setBufferSize(0);
+        
         if(request.getParameter("dtest") != null){
             request.getRequestDispatcher("/WEB-INF/views/danielstestside.jsp").forward(request, response);
         }
