@@ -28,24 +28,25 @@ public class CmdCreateOrder extends Command{
     String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException
     {
         
-        Order o = new Order();
+        
         try
         {
             int width = Integer.parseInt(request.getParameter("width"));
             int length = Integer.parseInt(request.getParameter("length"));
-            int shedwidth = Integer.parseInt(request.getParameter("shedwidth"));
-            int shedlength = Integer.parseInt(request.getParameter("shedlength"));
+            int shedwidth = Integer.parseInt(request.getParameter("shed_width"));
+            int shedlength = Integer.parseInt(request.getParameter("shed_length"));
             
             boolean hasShed = (request.getParameter("hasShed") != null);
             
             if(width-30<shedwidth){
                 throw new CustomException("Caporten skal være bredere end skuret");
             }
-            if(length-30<shedlength){
+            if(length-60<shedlength){
                 throw new CustomException("Caporten skal være længere end skuret");
             }
         
-
+            Order o = new Order();
+            
             o.setWidth(width);
             o.setLength(length);
 
@@ -78,7 +79,6 @@ public class CmdCreateOrder extends Command{
                 //Logger.getLogger(CmdCreateOrder.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-            
             request.setAttribute("desiredOrdersFromEmail", LogicFacade.getOrders(o.getEmail()));
             
             return "vieworders";
@@ -92,7 +92,7 @@ public class CmdCreateOrder extends Command{
             request.setAttribute("feedback", e.getMessage());
         }
         
-        return "order";
+        return "orderTEST";
 
     }
 

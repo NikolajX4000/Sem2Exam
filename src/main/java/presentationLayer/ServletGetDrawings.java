@@ -41,11 +41,20 @@ public class ServletGetDrawings extends HttpServlet {
             int length = Integer.parseInt(request.getParameter("length"));
             int shedLength = Integer.parseInt(request.getParameter("shed_length"));
             
-            Order o = new Order().setWidth(width).setLength(length).setShedWidth(shedWidth).setShedLength(shedLength).setAngle(15);
+            Order o = new Order().setWidth(width).setLength(length);
+            
+            if(request.getParameter("has_shed").equals("true")){
+                o.setShedWidth(shedWidth).setShedLength(shedLength);
+            }
+            
+            if(request.getParameter("has_angle").equals("true")){
+                o.setAngle(Integer.parseInt(request.getParameter("angle")));
+            }
 
             try (PrintWriter out = response.getWriter()) {
-                //out.println(o.getDrawingTop());
+                out.println(o.getDrawingTop());
                 out.println(o.getDrawingSide());
+                //out.println("ANGLE: " + request.getParameter("has_angle") + " | SHED: " + request.getParameter("has_shed"));
             }
 
         } catch (Exception e) {
