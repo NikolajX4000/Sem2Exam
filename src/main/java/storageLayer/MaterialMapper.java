@@ -223,12 +223,12 @@ public class MaterialMapper {
      *
      * @param ps PreparedStatement object, the SQL controller.
      */
-    private static void closeConnection(PreparedStatement ps) {
+    private static void closeConnection(PreparedStatement ps) throws CustomException {
         if (ps != null) {
             try {
                 ps.close();
             } catch (SQLException ex) {
-                Logger.getLogger(OrderMapper.class.getName()).log(Level.SEVERE, null, ex);
+                throw new CustomException( "Kunne ikke få kontakt til databasen" );
             }
         }
     }
