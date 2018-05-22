@@ -62,7 +62,6 @@ public class MaterialMapperTest {
      */
     @Test
     public void testGetMaterials() throws Exception{
-        System.out.println("getMaterials");
         List<Material> matarials = MaterialMapper.getAllMaterials();
         int result = matarials.size();
         int expResult = 124;
@@ -78,7 +77,6 @@ public class MaterialMapperTest {
      */
     @Test
     public void testGetMaterial() throws Exception {
-        System.out.println( "getMaterial" );
         String materialName = "overstern";
         List<Material> materials = MaterialMapper.getMaterials( materialName );
         String expResult = "25x125mm. trykimp. Bræt";
@@ -94,7 +92,6 @@ public class MaterialMapperTest {
      */
     @Test
     public void testGetMaterial_invalidName() throws Exception {
-        System.out.println( "getMaterial: called by invalid name" );
         String materialName = "invalidName";
         List<Material> result = MaterialMapper.getMaterials( materialName );
         assertTrue( result.isEmpty() );
@@ -108,7 +105,6 @@ public class MaterialMapperTest {
      */
     @Test
     public void testGetMaterial_nullName() throws Exception {
-        System.out.println( "getMaterial: called by null name" );
         String materialName = null;
         List<Material> result = MaterialMapper.getMaterials( materialName );
         assertTrue( result.isEmpty() );
@@ -125,7 +121,6 @@ public class MaterialMapperTest {
      */
     @Test
     public void testUpdateMaterial() throws Exception {
-        System.out.println( "updateMaterial" );
         Material material = MaterialMapper.getMaterials( "overstern" ).get(1);
         material.setDescription( "Testing" );
         
@@ -144,7 +139,6 @@ public class MaterialMapperTest {
      */
     @Test( expected = CustomException.class )
     public void testUpdateMaterial_null() throws Exception {
-        System.out.println( "updateMaterial null" );
         Material material = null;
         MaterialMapper.updateMaterial( material );
     }
@@ -158,7 +152,6 @@ public class MaterialMapperTest {
      */
     @Test
     public void testUpdateMaterial_wParameters() throws Exception {
-        System.out.println( "updateMaterial w/ parameters" );
         int id = 3;
         int size = 5;
         int price = 7;
@@ -180,7 +173,6 @@ public class MaterialMapperTest {
      */
     @Test
     public void testUpdateMaterial_wParameters_overloaded_wDesc() throws Exception {
-        System.out.println( "updateMaterial w/ parameters" );
         int id = 3;
         int size = 5;
         int price = 7;
@@ -204,7 +196,6 @@ public class MaterialMapperTest {
      */
     @Test
     public void testUpdateMaterial_wParameters_negOutOfBoundsID() throws Exception {
-        System.out.println( "updateMaterial w/ parameters and OOB value" );
         int id = Integer.MIN_VALUE;
         int size = 5;
         int price = 7;
@@ -225,7 +216,6 @@ public class MaterialMapperTest {
      */
     @Test
     public void testUpdateMaterial_wParameters_negOutOfBoundsID_overloaded_wDesc() throws Exception {
-        System.out.println( "updateMaterial w/ parameters and OOB value" );
         int id = Integer.MIN_VALUE;
         int size = 5;
         int price = 7;
@@ -246,7 +236,6 @@ public class MaterialMapperTest {
      */
     @Test
     public void testUpdateMaterial_wParameters_posOutOfBoundsID() throws Exception {
-        System.out.println( "updateMaterial w/ parameters and OOB value" );
         int id = Integer.MAX_VALUE;
         int size = 5;
         int price = 7;
@@ -267,7 +256,6 @@ public class MaterialMapperTest {
      */
     @Test
     public void testUpdateMaterial_wParameters_posOutOfBoundsID_overloaded_wDesc() throws Exception {
-        System.out.println( "updateMaterial w/ parameters and OOB value" );
         int id = Integer.MAX_VALUE;
         int size = 5;
         int price = 7;
@@ -288,7 +276,6 @@ public class MaterialMapperTest {
      */
     @Test( expected = CustomException.class )
     public void testUpdateMaterial_wParameters_negPrice() throws Exception {
-        System.out.println( "updateMaterial w/ parameters and negativ price" );
         int id = 1;
         int size = 5;
         int price = -1;
@@ -309,7 +296,6 @@ public class MaterialMapperTest {
      */
     @Test( expected = CustomException.class )
     public void testUpdateMaterial_wParameters_negPrice_overloaded_wDesc() throws Exception {
-        System.out.println( "updateMaterial w/ parameters and negativ price" );
         int id = 1;
         int size = 5;
         int price = -1;
@@ -330,7 +316,6 @@ public class MaterialMapperTest {
      */
     @Test( expected = CustomException.class )
     public void testUpdateMaterial_wParameters_negSize() throws Exception {
-        System.out.println( "updateMaterial w/ parameters and negativ size" );
         int id = 1;
         int size = -1;
         int price = 7;
@@ -351,7 +336,6 @@ public class MaterialMapperTest {
      */
     @Test( expected = CustomException.class )
     public void testUpdateMaterial_wParameters_negSize_overloaded_wDesc() throws Exception {
-        System.out.println( "updateMaterial w/ parameters and negativ size" );
         int id = 1;
         int size = -1;
         int price = 7;
@@ -373,7 +357,6 @@ public class MaterialMapperTest {
      */
     @Test( expected = CustomException.class )
     public void testUpdateMaterial_wParameters_nullDescribtion() throws Exception {
-        System.out.println( "updateMaterial w/ parameters and null describtion" );
         int id = 3;
         int size = 5;
         int price = 7;
