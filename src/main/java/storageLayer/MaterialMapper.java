@@ -142,16 +142,12 @@ public class MaterialMapper {
 
             ps = con.prepareStatement(SQL);
 
-            try {
-                ps.setString(1, material.getName());
-                ps.setInt(2, material.getPrice());
-                ps.setInt(3, material.getSize());
-                ps.setString(4, material.getDescription());
-                ps.setInt(5, material.getId());
+            ps.setString(1, material.getName());
+            ps.setInt(2, material.getPrice());
+            ps.setInt(3, material.getSize());
+            ps.setString(4, material.getDescription());
+            ps.setInt(5, material.getId());
 
-            } catch (SQLException ex) {
-                throw new CustomException("Formateringsfejl");
-            }
             ps.executeUpdate();
 
         } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
@@ -182,15 +178,11 @@ public class MaterialMapper {
 
             ps = con.prepareStatement(SQL);
 
-            try {
-                ps.setInt(1, price);
-                ps.setInt(2, size);
-                ps.setString(3, desc);
-                ps.setInt(4, id);
+            ps.setInt(1, price);
+            ps.setInt(2, size);
+            ps.setString(3, desc);
+            ps.setInt(4, id);
 
-            } catch (SQLException ex) {
-                throw new CustomException("Formateringsfejl");
-            }
             ps.executeUpdate();
 
         } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
@@ -211,17 +203,13 @@ public class MaterialMapper {
 
             ps = con.prepareStatement(SQL);
 
-            try {
-                ps.setInt(1, price);
-                ps.setInt(2, size);
-                ps.setInt(3, id);
+            ps.setInt(1, price);
+            ps.setInt(2, size);
+            ps.setInt(3, id);
 
-            } catch (SQLException ex) {
-                throw new CustomException("Formateringsfejl");
-            }
             ps.executeUpdate();
 
-        } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
+        } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
             closeConnection(ps);

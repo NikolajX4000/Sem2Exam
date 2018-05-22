@@ -162,6 +162,28 @@ public class MaterialMapperTest {
         int id = 3;
         int size = 5;
         int price = 7;
+        
+        MaterialMapper.updateMaterial( id, size, price );
+        Material material = MaterialMapper.getMaterial( id );
+        
+        assertEquals( material.getSize(), size );
+        assertEquals( material.getPrice(), price );
+    }
+    
+    /**
+     * Test of updateMaterial method, of class MaterialMapper - method w/ parameters.
+     * In this case the overloaded method with 'describtion' is used.
+     * Testing an update method on the 'materials' table. 
+     * Calling updateMaterial with predifined arguments, 
+     * getting it and check is it was successful. 
+     * @throws java.lang.Exception
+     */
+    @Test
+    public void testUpdateMaterial_wParameters_overloaded_wDesc() throws Exception {
+        System.out.println( "updateMaterial w/ parameters" );
+        int id = 3;
+        int size = 5;
+        int price = 7;
         String describtion = "eleven";
         
         MaterialMapper.updateMaterial( id, size, price, describtion );
@@ -182,6 +204,27 @@ public class MaterialMapperTest {
      */
     @Test
     public void testUpdateMaterial_wParameters_negOutOfBoundsID() throws Exception {
+        System.out.println( "updateMaterial w/ parameters and OOB value" );
+        int id = Integer.MIN_VALUE;
+        int size = 5;
+        int price = 7;
+        
+        MaterialMapper.updateMaterial( id, size, price );
+        Material result = MaterialMapper.getMaterial( id );
+        assertNull( result );
+    }
+    
+    /**
+     * Test of updateMaterial method, of class MaterialMapper - method w/ parameters.
+     * In this case the overloaded method with 'describtion' is used.
+     * Testing an update method on the 'materials' table. 
+     * Calling updateMaterial with predifined arguments, 
+     * and with the 'plank_id' as 'Integer.MIN_VALUE'.
+     * getting it and check is it was successful. 
+     * @throws java.lang.Exception
+     */
+    @Test
+    public void testUpdateMaterial_wParameters_negOutOfBoundsID_overloaded_wDesc() throws Exception {
         System.out.println( "updateMaterial w/ parameters and OOB value" );
         int id = Integer.MIN_VALUE;
         int size = 5;
@@ -207,6 +250,27 @@ public class MaterialMapperTest {
         int id = Integer.MAX_VALUE;
         int size = 5;
         int price = 7;
+        
+        MaterialMapper.updateMaterial( id, size, price );
+        Material result = MaterialMapper.getMaterial( id );
+        assertNull( result );
+    }
+    
+    /**
+     * Test of updateMaterial method, of class MaterialMapper - method w/ parameters.
+     * In this case the overloaded method with 'describtion' is used.
+     * Testing an update method on the 'materials' table. 
+     * Calling updateMaterial with predifined arguments, 
+     * and with the 'plank_id' as 'Integer.MAX_VALUE'.
+     * getting it and check is it was successful. 
+     * @throws java.lang.Exception
+     */
+    @Test
+    public void testUpdateMaterial_wParameters_posOutOfBoundsID_overloaded_wDesc() throws Exception {
+        System.out.println( "updateMaterial w/ parameters and OOB value" );
+        int id = Integer.MAX_VALUE;
+        int size = 5;
+        int price = 7;
         String describtion = "eleven";
         
         MaterialMapper.updateMaterial( id, size, price, describtion );
@@ -216,32 +280,106 @@ public class MaterialMapperTest {
     
     /**
      * Test of updateMaterial method, of class MaterialMapper - method w/ parameters.
-     * 
+     * Testing an update method on the 'materials' table.
+     * Calling updateMaterial with predifined arguments, 
+     * and with the 'price' as 'Integer.MIN_VALUE'.
+     * This would throw an exception, do to the 'setPrice()' method in the Material class.
      * @throws java.lang.Exception
      */
-    @Test
+    @Test( expected = CustomException.class )
     public void testUpdateMaterial_wParameters_negPrice() throws Exception {
         System.out.println( "updateMaterial w/ parameters and negativ price" );
+        int id = 1;
+        int size = 5;
+        int price = -1;
+        
+        MaterialMapper.updateMaterial( id, size, price );
+        Material result = MaterialMapper.getMaterial( id );
+        assertNull( result );
     }
     
     /**
      * Test of updateMaterial method, of class MaterialMapper - method w/ parameters.
-     * 
+     * In this case the overloaded method with 'describtion' is used.
+     * Testing an update method on the 'materials' table.
+     * Calling updateMaterial with predifined arguments, 
+     * and with the 'price' as 'Integer.MIN_VALUE'.
+     * This would throw an exception, do to the 'setPrice()' method in the Material class.
      * @throws java.lang.Exception
      */
-    @Test
+    @Test( expected = CustomException.class )
+    public void testUpdateMaterial_wParameters_negPrice_overloaded_wDesc() throws Exception {
+        System.out.println( "updateMaterial w/ parameters and negativ price" );
+        int id = 1;
+        int size = 5;
+        int price = -1;
+        String describtion = "eleven";
+        
+        MaterialMapper.updateMaterial( id, size, price, describtion );
+        Material result = MaterialMapper.getMaterial( id );
+        assertNull( result );
+    }
+    
+    /**
+     * Test of updateMaterial method, of class MaterialMapper - method w/ parameters.
+     * Testing an update method on the 'materials' table.
+     * Calling updateMaterial with predifined arguments, 
+     * and with the 'size' as 'Integer.MIN_VALUE'.
+     * This would throw an exception, do to the 'setSize()' method in the Material class.
+     * @throws java.lang.Exception
+     */
+    @Test( expected = CustomException.class )
     public void testUpdateMaterial_wParameters_negSize() throws Exception {
-        System.out.println( "updateMaterial w/ parameters and negativ price" );
+        System.out.println( "updateMaterial w/ parameters and negativ size" );
+        int id = 1;
+        int size = -1;
+        int price = 7;
+        
+        MaterialMapper.updateMaterial( id, size, price );
+        Material result = MaterialMapper.getMaterial( id );
+        assertNull( result );
     }
     
     /**
      * Test of updateMaterial method, of class MaterialMapper - method w/ parameters.
-     * 
+     * In this case the overloaded method with 'describtion' is used.
+     * Testing an update method on the 'materials' table.
+     * Calling updateMaterial with predifined arguments, 
+     * and with the 'size' as 'Integer.MIN_VALUE'.
+     * This would throw an exception, do to the 'setSize()' method in the Material class.
      * @throws java.lang.Exception
      */
-    @Test
+    @Test( expected = CustomException.class )
+    public void testUpdateMaterial_wParameters_negSize_overloaded_wDesc() throws Exception {
+        System.out.println( "updateMaterial w/ parameters and negativ size" );
+        int id = 1;
+        int size = -1;
+        int price = 7;
+        String describtion = "eleven";
+        
+        MaterialMapper.updateMaterial( id, size, price, describtion );
+        Material result = MaterialMapper.getMaterial( id );
+        assertNull( result );
+    }
+    
+    /**
+     * Test of updateMaterial method, of class MaterialMapper - method w/ parameters.
+     * Testing an update method on the 'materials' table.
+     * Calling updateMaterial with predifined arguments, 
+     * and with the 'describtion' as 'null'.
+     * This would throw an exception, do to the SQL exception catched 
+     * in the 'updateMaterial()'s try-catch.
+     * @throws java.lang.Exception
+     */
+    @Test( expected = CustomException.class )
     public void testUpdateMaterial_wParameters_nullDescribtion() throws Exception {
-        System.out.println( "updateMaterial w/ parameters and negativ price" );
+        System.out.println( "updateMaterial w/ parameters and null describtion" );
+        int id = 3;
+        int size = 5;
+        int price = 7;
+        String describtion = null;
+        
+        MaterialMapper.updateMaterial( id, size, price, describtion );
     }
 
 }

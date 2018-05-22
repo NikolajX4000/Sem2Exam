@@ -68,7 +68,7 @@ public class PartLine {
      * @param size
      * @return
      */
-    public PartLine setSize(double size) {
+    public PartLine setSize(double size) throws CustomException {
         this.size = (int) size;
         material.setSize((int) size);
         return this;

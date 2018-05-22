@@ -92,7 +92,7 @@ public class LogicFacade {
     }
     
     public static List<Material> getAllTool() throws CustomException {
-        return StorageFacade.getAllTool();
+        return StorageFacade.getAllTools();
     }
 
     public static Employee login(String name, String password) throws CustomException {
