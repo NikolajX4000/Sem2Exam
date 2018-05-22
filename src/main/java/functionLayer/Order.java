@@ -61,11 +61,11 @@ public class Order {
         } else {
             partsList = new TallCarPortList(this).getParts();
         }
-        price = 0;
+        materialPrice = 0;
         for (PartLine p : partsList) {
-            price += p.calculatePrice();
+            materialPrice += p.calculatePrice();
         }
-        return price;
+        return materialPrice;
     }
 
     /**
@@ -75,7 +75,7 @@ public class Order {
     public int getPriceInt() throws CustomException {
 
         if (price == 0) {
-            calculatePrice();
+            price = calculatePrice();
         }
 
         return price;
@@ -464,8 +464,8 @@ public class Order {
         return materialPrice;
     }
 
-    public Order setMaterialPrice(int materialPrice) {
-        this.materialPrice = materialPrice;
+    public Order setMaterialPrice(int materialPrice) throws CustomException {
+        calculatePrice();
         return this;
     }
     
