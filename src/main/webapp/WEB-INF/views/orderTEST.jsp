@@ -175,12 +175,20 @@
     $(".range").change(function () {
 
         //changes span value to reflect what the bar is at
-        var spanToChange = "#" + $(this).attr("id") + "_span";
-        $(spanToChange).html($(this).val());
+        //var spanToChange = "#" + $(this).attr("id") + "_span";
+        //$(spanToChange).html($(this).val());
 
         updateDrawing();
 
     });
+    
+    $(".range").on("change mousemove", function() {
+        var spanToChange = "#" + $(this).attr("id") + "_span";
+        $(spanToChange).html($(this).val());
+        //updateDrawing();
+    });
+    
+    
 
     $("#width").change(function () {
         var newMax = ($(this).val()) - 30;
