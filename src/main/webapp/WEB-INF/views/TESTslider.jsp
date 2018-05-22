@@ -30,7 +30,7 @@
                 <input type="range" value="150" min="150" max="450" step="30" id="shed_length" class="range" name="shed_length"/><!-- max-60 -->
             </p>
 
-            <button type="submit">Update</button>
+            <button type="submit">Bøh</button>
         </form>
 
     </div>
