@@ -21,7 +21,7 @@ public class SVG {
     private StringBuilder svg = new StringBuilder();
     private String svgClass = "";
     
-    int uniqID = new Random().nextInt(999999);
+    int uniqID = new Random().nextInt(Integer.MAX_VALUE);
 
     /**
      *

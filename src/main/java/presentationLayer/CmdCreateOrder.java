@@ -81,7 +81,7 @@ public class CmdCreateOrder extends Command{
             
             request.setAttribute("desiredOrdersFromEmail", LogicFacade.getOrders(o.getEmail()));
             
-            return "vieworders";
+            return "viewordersTEST";
             
             
         } catch (NumberFormatException e)
