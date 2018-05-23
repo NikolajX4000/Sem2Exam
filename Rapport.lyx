@@ -275,6 +275,18 @@ Domæne model og ER diagram
 \begin_layout Standard
 \begin_inset Graphics
 	filename ERdiagram.PNG
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Graphics
+	filename DomainModel.png
+	width 100text%
 
 \end_inset
 
@@ -287,6 +299,16 @@ Navigationsdiagram
 
 \begin_layout Section
 Sekvensdiagrammer
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Graphics
+	filename SwimlaneDiagramCreateCarport.PNG
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -305,111 +327,6 @@ status open
 
 \begin_layout Plain Layout
 
-public class Connector {
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-    private static final String IP = "159.89.9.144";
-\end_layout
-
-\begin_layout Plain Layout
-
-    private static final String PORT = "3306";
-\end_layout
-
-\begin_layout Plain Layout
-
-    private static final String DATABASE = "sem2exam";
-\end_layout
-
-\begin_layout Plain Layout
-
-    private static final String USERNAME = "Fog";
-\end_layout
-
-\begin_layout Plain Layout
-
-    private static final String PASSWORD = "password123";
-\end_layout
-
-\begin_layout Plain Layout
-
-    private static final String URL = "jdbc:mysql://" + IP + ":" + PORT
- + "/" + DATABASE + "?autoReconnect=true&useSSL=false";
-\end_layout
-
-\begin_layout Plain Layout
-
-    private static Connection connection;
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-    public static void setConnection(Connection con) {
-\end_layout
-
-\begin_layout Plain Layout
-
-        connection = con;
-\end_layout
-
-\begin_layout Plain Layout
-
-    }
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-    public static Connection connection() throws ClassNotFoundException,
- SQLException {
-\end_layout
-
-\begin_layout Plain Layout
-
-        if (connection == null) {
-\end_layout
-
-\begin_layout Plain Layout
-
-            Class.forName("com.mysql.jdbc.Driver");
-\end_layout
-
-\begin_layout Plain Layout
-
-            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-\end_layout
-
-\begin_layout Plain Layout
-
-        }
-\end_layout
-
-\begin_layout Plain Layout
-
-        return connection;
-\end_layout
-
-\begin_layout Plain Layout
-
-    }
-\end_layout
-
-\begin_layout Plain Layout
-
-}
 \end_layout
 
 \end_inset

@@ -275,6 +275,18 @@ Domæne model og ER diagram
 \begin_layout Standard
 \begin_inset Graphics
 	filename ERdiagram.PNG
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Graphics
+	filename DomainModel.png
+	width 100text%
 
 \end_inset
 
@@ -295,6 +307,213 @@ Særlige forhold
 
 \begin_layout Section
 Udvalgte kodeeksempler
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,basicstyle={\small},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public static Order addOrder(Order order) throws CustomException {
+\end_layout
+
+\begin_layout Plain Layout
+
+	PreparedStatement ps = null;
+\end_layout
+
+\begin_layout Plain Layout
+
+	try {
+\end_layout
+
+\begin_layout Plain Layout
+
+		Connection con = Connector.connection();
+\end_layout
+
+\begin_layout Plain Layout
+
+		String SQL = "INSERT INTO orders ("
+\end_layout
+
+\begin_layout Plain Layout
+
+			/* customer */ + "name, address, zip_code, city, phone, email, note,
+ "
+\end_layout
+
+\begin_layout Plain Layout
+
+			/* carport */ + "width, length, "
+\end_layout
+
+\begin_layout Plain Layout
+
+			/* roof */ + "roof_id, angle, "
+\end_layout
+
+\begin_layout Plain Layout
+
+			/* shed */ + "shed_width, shed_length, "
+\end_layout
+
+\begin_layout Plain Layout
+
+			/* price */ + "material_price, price) "
+\end_layout
+
+\begin_layout Plain Layout
+
+			+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+\end_layout
+
+\begin_layout Plain Layout
+
+		ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
+\end_layout
+
+\begin_layout Plain Layout
+
+		ps.setString(1, order.getName());
+\end_layout
+
+\begin_layout Plain Layout
+
+		ps.setString(2, order.getAddress());
+\end_layout
+
+\begin_layout Plain Layout
+
+		ps.setInt(3, order.getZipCode());
+\end_layout
+
+\begin_layout Plain Layout
+
+		ps.setString(4, order.getCity());
+\end_layout
+
+\begin_layout Plain Layout
+
+		ps.setString(5, order.getPhone());
+\end_layout
+
+\begin_layout Plain Layout
+
+		ps.setString(6, order.getEmail());
+\end_layout
+
+\begin_layout Plain Layout
+
+		ps.setString(7, order.getNote());
+\end_layout
+
+\begin_layout Plain Layout
+
+		ps.setInt(8, order.getWidth());
+\end_layout
+
+\begin_layout Plain Layout
+
+		ps.setInt(9, order.getLength());
+\end_layout
+
+\begin_layout Plain Layout
+
+		ps.setInt(10, order.getRoof().getID());
+\end_layout
+
+\begin_layout Plain Layout
+
+		ps.setInt(11, order.getAngle());
+\end_layout
+
+\begin_layout Plain Layout
+
+		ps.setInt(12, order.getShedWidth());
+\end_layout
+
+\begin_layout Plain Layout
+
+		ps.setInt(13, order.getShedLength());
+\end_layout
+
+\begin_layout Plain Layout
+
+		ps.setInt(14, order.getMaterialPrice());
+\end_layout
+
+\begin_layout Plain Layout
+
+		ps.setInt(15, order.getPriceInt());
+\end_layout
+
+\begin_layout Plain Layout
+
+		ps.executeUpdate();
+\end_layout
+
+\begin_layout Plain Layout
+
+		ResultSet rs = ps.getGeneratedKeys();
+\end_layout
+
+\begin_layout Plain Layout
+
+		if(rs.first()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+			order.setId(rs.getInt(1));
+\end_layout
+
+\begin_layout Plain Layout
+
+		}
+\end_layout
+
+\begin_layout Plain Layout
+
+	} catch(SQLException | ClassNotFoundException ex) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		throw new CustomException(ex.getMessage());
+\end_layout
+
+\begin_layout Plain Layout
+
+	} finally {
+\end_layout
+
+\begin_layout Plain Layout
+
+		closeStatement(ps);
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	return order;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
