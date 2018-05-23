@@ -73,5 +73,18 @@ public class RoofMapperTest {
         assertEquals(expName, roof.toString());
         assertEquals(expType, roof.getTYPE());
     }
+    
+    @Test
+    public void testUpdateRoof() throws Exception {
+        int id = 1;
+        String actName = "Plasttrapezplader";
+        String expName = "ROOF TEST";
+        
+        RoofMapper.updateRoof( id, expName, actName );
+        Roof roof = RoofMapper.getRoofById( id );
+        String result = roof.getNAME();
+        
+        assertEquals( expName, result );
+    }
 
 }

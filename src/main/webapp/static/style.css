@@ -13,8 +13,11 @@ html{
     overflow-x: hidden;
 }
 #drawingbox svg{
-    background: white;
     max-height: 600px;
+}
+
+svg{
+    background: white;
 }
 .dot{
     position: relative;
