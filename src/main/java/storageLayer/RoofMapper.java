@@ -65,6 +65,13 @@ public class RoofMapper {
         } finally {
             closeStatement(ps);
         }
+        
+        try {
+            roof.getNAME();
+        } catch ( NullPointerException e) {
+            throw new CustomException( "Dette ID er ikke tilgængeligt" );
+        }
+        
         return roof;
     }
 

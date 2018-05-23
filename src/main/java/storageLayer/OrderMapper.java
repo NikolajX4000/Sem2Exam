@@ -142,6 +142,11 @@ public class OrderMapper {
         } finally {
             closeStatement(ps);
         }
+        
+        if ( order.getId() == 0 ) {
+            throw new CustomException( "Dette ID er ikke tilgængeligt" );
+        }
+        
         return order;
     }
 

@@ -58,7 +58,7 @@ public class Order {
     public int calculatePrice() throws CustomException {
         materialPrice = 0;
         for (PartLine p : getPartlist()) {
-            materialPrice += p.getMaterial().getPrice();
+            materialPrice += p.calculatePrice();
         }
         return materialPrice;
     }
