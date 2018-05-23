@@ -1,6 +1,7 @@
 package storageLayer;
 
 import com.mysql.jdbc.Statement;
+import functionLayer.CustomException;
 import functionLayer.Roof;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -84,6 +85,30 @@ public class RoofMapperTest {
         Roof roof = RoofMapper.getRoofById( id );
         String result = roof.getNAME();
         
+        assertEquals( expName, result );
+    }
+    
+    @Test(expected = CustomException.class)
+    public void testUpdateRoof_negOutOfBounds() throws Exception {
+        int id = Integer.MIN_VALUE;
+        String actName = "Plasttrapezplader";
+        String expName = "ROOF TEST";
+        
+        RoofMapper.updateRoof( id, expName, actName );
+        Roof roof = RoofMapper.getRoofById( id );
+        String result = roof.getNAME();
+        assertEquals( expName, result );
+    }
+    
+    @Test(expected = CustomException.class)
+    public void testUpdateRoof_posOutOfBounds() throws Exception {
+        int id = Integer.MAX_VALUE;
+        String actName = "Plasttrapezplader";
+        String expName = "ROOF TEST";
+        
+        RoofMapper.updateRoof( id, expName, actName );
+        Roof roof = RoofMapper.getRoofById( id );
+        String result = roof.getNAME();
         assertEquals( expName, result );
     }
 
