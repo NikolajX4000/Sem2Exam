@@ -143,7 +143,9 @@ public class OrderMapper {
             closeStatement(ps);
         }
         
-        if ( order.getId() == 0 ) throw new CustomException( "Dette ID er ikke tilgængeligt" );
+        if ( order.getId() == 0 ) {
+            throw new CustomException( "Dette ID er ikke tilgængeligt" );
+        }
         
         return order;
     }
