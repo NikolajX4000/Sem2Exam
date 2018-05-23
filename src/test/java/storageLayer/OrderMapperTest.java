@@ -6,6 +6,7 @@
 package storageLayer;
 
 import com.mysql.jdbc.Statement;
+import functionLayer.CustomException;
 import functionLayer.Order;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -173,6 +174,46 @@ public class OrderMapperTest {
         String result = OrderMapper.getOrder( 1 ).getStatus();
 
         assertEquals( expResult, result );
+    }
+    
+    /**
+     * Test of updateStatus method, of class OrderMapper.
+     * In this case the overloaded method with 'id' and 'status' is
+     * used. Testing an update method on the 'orders' table. Calling
+     * updateStatus with predifined arguments, with the 'id' as
+     * 'Integer.MIN_VALUE'. This would create a new Order Object 
+     * with its predefined atributes.
+     * 
+     * @throws java.lang.Exception
+     */
+    
+    @Test(expected = CustomException.class)
+    public void testUpdateStatus_wParameters_negOutOfBounds() throws Exception {
+        int id = Integer.MIN_VALUE;
+        String status = "Anulleret";
+        
+        OrderMapper.updateStatus( id, status );
+        OrderMapper.getOrder( id ).getName();
+    }
+    
+    /**
+     * Test of updateStatus method, of class OrderMapper.
+     * In this case the overloaded method with 'id' and 'status' is
+     * used. Testing an update method on the 'orders' table. Calling
+     * updateStatus with predifined arguments, with the 'id' as
+     * 'Integer.MAX_VALUE'. This would create a new Order Object 
+     * with its predefined atributes.
+     * 
+     * @throws java.lang.Exception
+     */
+    
+    @Test(expected = CustomException.class)
+    public void testUpdateStatus_wParameters_posOutOfBounds() throws Exception {
+        int id = Integer.MAX_VALUE;
+        String status = "Anulleret";
+        
+        OrderMapper.updateStatus( id, status );
+        OrderMapper.getOrder( id ).getName();
     }
     
     /**
