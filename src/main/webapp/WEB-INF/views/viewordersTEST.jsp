@@ -33,7 +33,7 @@
                             <p>Addresse: ${o.address}, ${o.zipCode} ${o.city}</p><br>
                         </div>
 
-                        <c:if test="{(o.status ne 'Behandles') and (o.status ne 'Annulleret')">
+                        <c:if test="${(o.status ne 'Behandles') and (o.status ne 'Annulleret')}">
                             <div>
                                 <p>Pris: ${o.price}</p><br>
                             </div>  
@@ -63,7 +63,7 @@
                         </li>
                         <li class="tab">
                             <!-- når der klikkes på denne knap/tab loaded styklisten med ajax -->
-                            <a href="#${o.stringId}c" id="partlistbtn{o.id}" class="tooltipped partlistloadbtn" data-position="top" data-delay="50" data-tooltip="Stykliste">
+                            <a href="#${o.stringId}c" id="partlistbtn${o.id}" class="tooltipped partlistloadbtn" data-position="top" data-delay="50" data-tooltip="Stykliste">
                                 <i class="material-icons">format_list_bulleted</i>
                             </a>
                         </li>
@@ -124,10 +124,13 @@
                         <div class="row">
                             <div class="col m6 s12">
                                 <div class="materialboxed z-depth-1">
-                                    {o.drawingTop}
+                                    ${o.drawingTop}
                                 </div>
+                            </div>
+                                
+                            <div class="col m6 s12">
                                 <div class="materialboxed z-depth-1">
-                                    {o.drawingSide}
+                                    ${o.drawingSide}
                                 </div>
                             </div>
                         </div>
@@ -143,7 +146,7 @@
                             <div class="preloader-wrapper big active">
                                 <div class="spinner-layer spinner-blue-only">
 
-                                    <div class=\"circle-clipper left">
+                                    <div class="circle-clipper left">
                                          <div class="circle"></div>
                                     </div>
                                     <div class="gap-patch">
@@ -164,7 +167,7 @@
                     <!-- note -->
                     <div id="${o.stringId}d">
 
-                        <div id="{o.stringId}d">"
+                        <div id="${o.stringId}d">
                             <span class="card-title">Bemærkning</span>
                             <p>${o.note eq '' ? 'Der er ikke nogen bemærkninger til denne ordre.' : o.note}</p>
                         </div>
