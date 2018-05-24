@@ -6,10 +6,10 @@
 
 package presentationLayer;
 
-import functionLayer.CustomException;
-import functionLayer.DanielsPostHus;
-import functionLayer.LogicFacade;
-import functionLayer.Order;
+import logicLayer.CustomException;
+import logicLayer.DanielsPostHus;
+import logicLayer.LogicFacade;
+import logicLayer.Order;
 import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

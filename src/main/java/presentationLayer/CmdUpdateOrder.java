@@ -1,7 +1,7 @@
 package presentationLayer;
 
-import functionLayer.CustomException;
-import functionLayer.LogicFacade;
+import logicLayer.CustomException;
+import logicLayer.LogicFacade;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 

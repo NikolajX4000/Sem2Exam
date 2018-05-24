@@ -5,6 +5,10 @@
  */
 package functionLayer;
 
+import logicLayer.Order;
+import logicLayer.PartLine;
+import logicLayer.CustomException;
+import logicLayer.TallCarPortList;
 import java.util.ArrayList;
 import org.junit.Test;
 import static org.junit.Assert.*;

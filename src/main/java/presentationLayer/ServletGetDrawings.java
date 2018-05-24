@@ -5,7 +5,7 @@
  */
 package presentationLayer;
 
-import functionLayer.Order;
+import logicLayer.Order;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;

@@ -1,10 +1,10 @@
 package storageLayer;
 
-import functionLayer.CustomException;
-import functionLayer.Employee;
-import functionLayer.Material;
-import functionLayer.Order;
-import functionLayer.Roof;
+import logicLayer.CustomException;
+import logicLayer.Employee;
+import logicLayer.Material;
+import logicLayer.Order;
+import logicLayer.Roof;
 import java.util.List;
 
 /**
@@ -99,7 +99,7 @@ public class StorageFacade {
     }
 
     /**
-     * @return @throws functionLayer.CustomException
+     * @return @throws logicLayer.CustomException
      */
     public static List<Material> getAllMaterials() throws CustomException {
         return MaterialMapper.getAllMaterials();
@@ -108,7 +108,7 @@ public class StorageFacade {
     /**
      * @param material
      * @return
-     * @throws functionLayer.CustomException
+     * @throws logicLayer.CustomException
      */
     public static List<Material> getMaterials(String material) throws CustomException {
         return MaterialMapper.getMaterials(material);
@@ -117,7 +117,7 @@ public class StorageFacade {
     /**
      * @param material
      * @return
-     * @throws functionLayer.CustomException
+     * @throws logicLayer.CustomException
      */
     public static Material updateMaterial(Material material) throws CustomException {
         return MaterialMapper.updateMaterial(material);
