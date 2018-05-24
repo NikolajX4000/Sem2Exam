@@ -95,7 +95,7 @@ public class CmdCreateOrder extends Command{
             request.setAttribute("roofs", LogicFacade.getAllRoofs());
         } catch (CustomException ex)
         {
-            request.setAttribute("feedback", ex);
+            request.setAttribute("feedback", ex.getMessage());
         }
         return "makeCarport";
 

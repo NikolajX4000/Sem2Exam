@@ -3,6 +3,7 @@ package presentationLayer;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import logicLayer.NoAccessException;
 
 /**
  *
@@ -42,6 +43,6 @@ abstract class Command
         return commands.getOrDefault(commandName, new CmdUnknown());
     }
 
-    abstract String execute(HttpServletRequest request, HttpServletResponse response);
+    abstract String execute(HttpServletRequest request, HttpServletResponse response)throws NoAccessException;
 
 }

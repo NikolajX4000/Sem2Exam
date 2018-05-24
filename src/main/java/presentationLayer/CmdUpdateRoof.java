@@ -4,13 +4,19 @@ import logicLayer.CustomException;
 import logicLayer.LogicFacade;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import logicLayer.NoAccessException;
 
 public class CmdUpdateRoof extends Command
 {
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response)
+    String execute(HttpServletRequest request, HttpServletResponse response) throws NoAccessException
     {
+        
+        if(request.getSession().getAttribute("user") == null){
+            throw new NoAccessException();
+        }
+        
         try
         {
             int id = Integer.parseInt(request.getParameter("id"));
@@ -26,10 +32,10 @@ public class CmdUpdateRoof extends Command
 
             request.setAttribute("feedback", "Der gik noget galt.");
 
-        } catch (CustomException e)
+        } catch (CustomException ex)
         {
 
-            request.setAttribute("feedback", e);
+            request.setAttribute("feedback", ex.getMessage());
         }
 
         
@@ -44,7 +50,7 @@ public class CmdUpdateRoof extends Command
             
         } catch (CustomException ex)
         {
-            request.setAttribute("feedback", ex);
+            request.setAttribute("feedback", ex.getMessage());
         }
         return "editMaterials";
     }
