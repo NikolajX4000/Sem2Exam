@@ -1,4 +1,4 @@
-package functionLayer;
+package logicLayer;
 
 import storageLayer.StorageFacade;
 import java.util.*;
@@ -23,7 +23,7 @@ public class FlatCarPortList
     /**
      *
      * @param order
-     * @throws functionLayer.CustomException
+     * @throws logicLayer.CustomException
      */
     public FlatCarPortList(Order order) throws CustomException
     {

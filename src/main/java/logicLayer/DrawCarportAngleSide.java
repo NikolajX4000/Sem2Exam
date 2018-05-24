@@ -1,12 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-package presentationLayer;
-
-import functionLayer.Order;
+package logicLayer;
 
 public class DrawCarportAngleSide {
 
@@ -14,7 +7,6 @@ public class DrawCarportAngleSide {
     String thin = "fill:none;stroke:black;stroke-width:0.5;";
     
     double xOffset = 30;
-    //double x, y, h, w;
     double width, shedWidth, shedHeight, height = 210;
     
     double remHeight = 20;
@@ -81,7 +73,7 @@ public class DrawCarportAngleSide {
         
         drawHeightWidthArrow();
         
-        return svg.toString();
+        return svg.getSvg();
     }
 
     private void drawRem()

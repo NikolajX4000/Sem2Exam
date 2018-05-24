@@ -1,6 +1,5 @@
 package presentationLayer;
 
-import functionLayer.CustomException;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,22 +26,10 @@ public class FrontController extends HttpServlet {
         
         
         response.setBufferSize(0);
+        Command command = Command.from(request);
+        String view = command.execute(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/" + view + ".jsp").forward(request, response);
         
-        if(request.getParameter("dtest") != null){
-            request.getRequestDispatcher("/WEB-INF/views/danielstestside.jsp").forward(request, response);
-        }
-        if(request.getParameter("TESTslider") != null){
-            request.getRequestDispatcher("/WEB-INF/views/TESTslider.jsp").forward(request, response);
-        }
-        
-        try {
-            Command command = Command.from(request);
-            String view = command.execute(request, response);
-            request.getRequestDispatcher("/WEB-INF/views/" + view + ".jsp").forward(request, response);
-        } catch (CustomException ex) {
-            request.setAttribute("error", ex.getMessage());
-            request.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
-        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -103,7 +103,7 @@
                             </c:if>
 
                             <div class="input-field col s6">
-                                <input disabled class="black-text" type="text" value="${o.roof.NAME} cm">
+                                <input disabled class="black-text" type="text" value="${o.roof.NAME}">
                                 <label>Tag</label>
                             </div>
 

@@ -1,7 +1,7 @@
 package storageLayer;
 
-import functionLayer.CustomException;
-import functionLayer.Roof;
+import logicLayer.CustomException;
+import logicLayer.Roof;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
