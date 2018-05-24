@@ -40,6 +40,18 @@ public class CmdUpdateMaterial extends Command
             request.setAttribute("feedback", e);
         }
 
+        //content to page
+        try
+        {
+            request.setAttribute("tools", LogicFacade.getAllTool());
+            request.setAttribute("mats", LogicFacade.getAllMaterialsAsMap());
+            request.setAttribute("roofs", LogicFacade.getAllRoofs());
+            
+        } catch (CustomException ex)
+        {
+            request.setAttribute("feedback", ex);
+        }
+        
         return "editMaterials";
     }
 

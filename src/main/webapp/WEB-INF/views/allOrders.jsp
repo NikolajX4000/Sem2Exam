@@ -8,8 +8,8 @@
 <%@page import="presentationLayer.RenderOrder"%>
 <%@page import="java.util.Random"%>
 <%@page import="java.util.List"%>
-<%@page import="functionLayer.Order"%>
-<%@page import="functionLayer.LogicFacade"%>
+<%@page import="logicLayer.Order"%>
+<%@page import="logicLayer.LogicFacade"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file="/WEB-INF/jspf/header.jspf"%>

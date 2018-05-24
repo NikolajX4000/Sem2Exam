@@ -1,12 +1,8 @@
 <%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
-<%@page import="functionLayer.LogicFacade"%>
-<%@page import="functionLayer.Roof"%>
-<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+
 <%@include file="/WEB-INF/jspf/header.jspf"%>
 
-<% request.setAttribute("roofs", LogicFacade.getAllRoofs());%>
 <div class="row">
 
     <form class="col s12 m6" method="post" action="?" accept-charset="ISO-8859-1">
@@ -181,14 +177,14 @@
         updateDrawing();
 
     });
-    
-    $(".range").on("change mousemove", function() {
+
+    $(".range").on("change mousemove", function () {
         var spanToChange = "#" + $(this).attr("id") + "_span";
         $(spanToChange).html($(this).val());
         //updateDrawing();
     });
-    
-    
+
+
 
     $("#width").change(function () {
         var newMax = ($(this).val()) - 30;
