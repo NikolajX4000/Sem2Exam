@@ -76,11 +76,11 @@ Johannes Fog - Carport Case - Rapport
 
 \begin_layout Author
 \noindent
-Jacob Borg 
+Jacob Borg
 \begin_inset Newline newline
 \end_inset
 
-Daniel Lindholm 
+Daniel Lindholm
 \begin_inset Newline newline
 \end_inset
 
@@ -264,66 +264,12 @@ Overordnet beskrivelse af virksomheden
 Arbejdsgange der skal IT-støttes
 \end_layout
 
-\begin_layout Standard
-\noindent
-\begin_inset Graphics
-	filename SwimlaneDiagramCreateCarport.PNG
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\begin_inset Graphics
-	filename SwimlaneDiagramShowOrder.PNG
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\begin_inset Graphics
-	filename SwimlaneDiagramUpdateMaterial.PNG
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Scrum userstories
 \end_layout
 
 \begin_layout Section
 Domæne model og ER diagram
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename ERdiagram.PNG
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\begin_inset Graphics
-	filename DomainModel.png
-	width 100text%
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -409,6 +355,210 @@ Arbejdsprocessen faktuelt
 
 \begin_layout Subsection
 Arbejdsprocessen reflekteret
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Bilag
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ERdiagram.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+ER diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename DomainModel.png
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Klassediagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename SwimlaneDiagramCreateCarport.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Aktivitetsdiagram: Kunde bestiller en carport
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename SwimlaneDiagramShowOrder.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Aktivitetsdiagram: Kunde ser sine ordre
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename SwimlaneDiagramUpdateMaterial.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Aktivitetsdiagram: Medarbjeder ændre på tilgængeligt materiale
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

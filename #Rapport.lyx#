@@ -1,0 +1,565 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Johannes Fog - Carport Case - Rapport
+\end_layout
+
+\begin_layout Author
+\noindent
+Borg, Jacob
+\begin_inset Newline newline
+\end_inset
+
+Djurhuus, Stephan Marcus Duelund
+\begin_inset Newline newline
+\end_inset
+
+Lindholm, Daniel
+\begin_inset Newline newline
+\end_inset
+
+Nielsen, Nikolaj Thorsen
+\end_layout
+
+\begin_layout Standard
+Link til 
+\begin_inset CommandInset href
+LatexCommand href
+name "GitHub"
+target "https://github.com/NikolajX4000/Sem2Exam"
+
+\end_inset
+
+ repository
+\end_layout
+
+\begin_layout Standard
+Link til 
+\begin_inset CommandInset href
+LatexCommand href
+name "websitet"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Link til 
+\begin_inset CommandInset href
+LatexCommand href
+name "Javadoc"
+target "https://nikolajx4000.github.io/Sem2Exam/"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Indledning
+\end_layout
+
+\begin_layout Standard
+Vi er blevet kontaktet af Johannes Fog Værebro, der har spurgt om vi kan
+ lave et program og tilhørende hjemmeside til deres salg af carporte.
+\end_layout
+
+\begin_layout Subsection
+Baggrund
+\end_layout
+
+\begin_layout Standard
+Johannes Fog er en koncern der både har design & bolighuse og trælast &
+ byggecenter.
+ Vi vil i dette project fokusere på Fog Værebro, der har bedt os om at opdatere
+ deres system.
+ Fog Værebro sælger som de andre trælast & byggecentre, træ, byggematerialer
+ og alt det du behøver til hus og have inden for f.eks.
+ maling, bad og VVS, beslag, elartikler og lamper samt haveredskaber, grill
+ og havemøbler, men derudover har de gjort det til deres varemærker at være
+ specialister i carporte.
+ Det er i den forbindelse at vi er blevet bedt om at udvikle et system,
+ med tilhørende hjemmeside, til at erstatte deres nuværende system, da de
+ har erkendt at det er outdated.
+ Med systemmet skal man kunne gå på hjemmesiden og bestille en carport,
+ systemmet skal kunne udregne et stykliste af materialer, en medarbejder
+ skal kunne gå ind og give en kunde særlige tilbud, og en kunde skal kunne
+ se sin ordre.
+\end_layout
+
+\begin_layout Subsection
+Teknologivalg
+\end_layout
+
+\begin_layout Standard
+Projektet er et Maven 3.1 projekt skrevet i Netbeans IDE 8.2.
+ Databasen, mysql 5.1.39, er lavet i MySQL Workbench 6.3ce, og ligger på en
+ Ubuntu 16.04.3 x64 server, hvor websitet er deployet vha.
+ apache-tomcat-8.0.32.
+ Sprogene der er brugt i koden er java jdk 1.8.0_141, HTML5 og javax 7.0.
+\end_layout
+
+\begin_layout Section
+Krav
+\end_layout
+
+\begin_layout Standard
+På websitet skal man som kunde kunne bestille en carport.
+ Man skal kunne vælge om taget skal være med eller uden rejsning, og hvis
+ man har valgt med skal man kunne vælge hvor meget hældning man vil have
+ på taget.
+ Man skal kunne vælge om man vil have et redskabskur, og hvor stort det
+ skal være.
+ Når man bestiller en carport skal man kunne indtaste sine oplysninger,
+ navn, telefonnummer, email og adresse.
+ Når man har bestilt en carport kan man se alle de ordre der er bestilt
+ med den samme email.
+ Man skal som bruger kunne se alle sine tidligere ordre ved at indtaste
+ sin email.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Som medarbejder skal man kunne se alle ordre.
+ Man skal kunne ændre status og pris på en ordre.
+ Man skal kunne navne og priser på de forskellige typer træ, skruer og beslag.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Systemet skal kunne udregne en stykliste udfra en ordre.
+\end_layout
+
+\begin_layout Subsection
+Overordnet beskrivelse af virksomheden
+\end_layout
+
+\begin_layout Subsection
+Arbejdsgange der skal IT-støttes
+\end_layout
+
+\begin_layout Subsection
+Scrum userstories
+\end_layout
+
+\begin_layout Section
+Domæne model og ER diagram
+\end_layout
+
+\begin_layout Section
+Navigationsdiagram
+\end_layout
+
+\begin_layout Section
+Sekvensdiagrammer
+\end_layout
+
+\begin_layout Section
+Særlige forhold
+\end_layout
+
+\begin_layout Section
+Udvalgte kodeeksempler
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Java,basicstyle={\small},breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Status på implementation
+\end_layout
+
+\begin_layout Section
+Test
+\end_layout
+
+\begin_layout Standard
+Som udvikler er test af programmet en vigtig del af processen.
+ Lever koden ikke op til de givne test må den revurderes og testes igen,
+ indtil alle testene går igennem.
+ En måde at sikre at alle metoder gennemføre deres test er at bruge Test
+ Driven Developmemt (TDD).
+ TDD er en god måde at sikre signe test på, da man starter med testen og
+ derefter udarbejder metoden til at løse den.
+ Desværre lærte vi først denne udviklingsmetode midvejs gennem forløbet
+ hvilket gjrorde den svær at implimentere, da det er en metode der skal
+ implementeres i starten af projektet.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Vores testmiljø består af JUnit test og et plugin som hedder TikiOne JaCoCoverag
+e.
+ Vores JUnit Mapper test er koblet til vores aktuelle database, hvilket
+ vi ved ikke er den optimale måde at teste på.
+ Der er andre måder, som f.eks.
+ at oprette diverse test tables i databasen som er identiske til de aktuele
+ og som kun har forbindelse til vores test run.
+ Dette vil kun sikre at vores test ikke skabte konflikt i vores program
+ senere hen, men vil ikke reducere forbindelsen mellem program og server.
+ De resterende JUnit test er blevet udarbejdet på den traditionelle whitebox
+ måde, da der ikke er nogle specielle faktore der spiller ind.
+ Whitebox tetsing er en test metode der giver person som tester mulighed
+ for at følge med i kode contra Blockbox testing hvor der ikke er adgang
+ til koden.
+ Vi har brugt et pugin der heder TikiOne JaCoCoverage, som skaber at overblik
+ over hvilke metoder der er blevet testet.
+ 
+\end_layout
+
+\begin_layout Section
+Process
+\end_layout
+
+\begin_layout Subsection
+Arbejdsprocessen faktuelt
+\end_layout
+
+\begin_layout Subsection
+Arbejdsprocessen reflekteret
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Bilag
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ERdiagram.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+ER diagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename DomainModel.png
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Klassediagram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename SwimlaneDiagramCreateCarport.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Aktivitetsdiagram: Kunde bestiller en carport
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename SwimlaneDiagramShowOrder.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Aktivitetsdiagram: Kunde ser sine ordre
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename SwimlaneDiagramUpdateMaterial.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Aktivitetsdiagram: Medarbjeder ændre på tilgængeligt materiale
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
