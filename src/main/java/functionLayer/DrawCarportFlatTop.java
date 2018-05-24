@@ -1,12 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-package presentationLayer;
-
-import functionLayer.Order;
+package functionLayer;
 
 public class DrawCarportFlatTop {
     
@@ -68,7 +61,7 @@ public class DrawCarportFlatTop {
         drawXBeams();
         drawHeightWidthArrow();
         
-        return svg.toString();
+        return svg.getSvg();
         //return tmp;
     }
 

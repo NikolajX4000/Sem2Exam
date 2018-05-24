@@ -1,19 +1,12 @@
 
-package presentationLayer;
+package functionLayer;
 
-import functionLayer.Order;
-
-/**
- *
- * @author super
- */
 public class DrawCarportAngleTop {
     
     String std = "fill:white;stroke:black;stroke-width:1;";
     String thin = "fill:white;stroke:black;stroke-width:0.5;";
     
     double xOffset = 30, yOffset = 15;
-    
     
     double width, height, shedWidth, shedHeight;
     double bargeHeight, bargeWidth;
@@ -32,10 +25,7 @@ public class DrawCarportAngleTop {
     
     String tmp = "";
 
-    /**
-     *
-     * @param o
-     */
+ 
     public DrawCarportAngleTop(Order o) {
         
         width = o.getLength();
@@ -99,7 +89,7 @@ public class DrawCarportAngleTop {
         
         drawHeightWidthArrow();
         
-        return svg.toString();
+        return svg.getSvg();
         //return tmp;
     }
 

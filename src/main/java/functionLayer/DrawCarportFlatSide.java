@@ -1,8 +1,5 @@
 
-package presentationLayer;
-
-import functionLayer.Order;
-import java.util.Random;
+package functionLayer;
 
 public class DrawCarportFlatSide {
 
@@ -46,7 +43,7 @@ public class DrawCarportFlatSide {
         drawLines();
         if(hasShed)drawShed();
         drawHeightWidthArrow();
-        return svg.toString();
+        return svg.getSvg();
         //return tmp;
     }
 

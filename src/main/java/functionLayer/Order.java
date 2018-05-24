@@ -10,10 +10,6 @@ import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
-import presentationLayer.DrawCarportAngleSide;
-import presentationLayer.DrawCarportAngleTop;
-import presentationLayer.DrawCarportFlatSide;
-import presentationLayer.DrawCarportFlatTop;
 
 /**
  *
