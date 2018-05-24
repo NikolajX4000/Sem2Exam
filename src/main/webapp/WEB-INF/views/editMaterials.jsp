@@ -30,9 +30,9 @@
         </ul>
     </div>
 
-    <%@include file="/WEB-INF/jspf/materialsTEST.jspf"%>  
-    <%@include file="/WEB-INF/jspf/toolsTEST.jspf"%> 
-    <%@include file="/WEB-INF/jspf/roofsTEST.jspf"%> 
+    <%@include file="/WEB-INF/jspf/materialsEdit.jspf"%>  
+    <%@include file="/WEB-INF/jspf/toolsEdit.jspf"%> 
+    <%@include file="/WEB-INF/jspf/roofsEdit.jspf"%> 
 
 
 </div>

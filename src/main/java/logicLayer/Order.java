@@ -3,17 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package functionLayer;
+package logicLayer;
 
 import storageLayer.StorageFacade;
 import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
-import presentationLayer.DrawCarportAngleSide;
-import presentationLayer.DrawCarportAngleTop;
-import presentationLayer.DrawCarportFlatSide;
-import presentationLayer.DrawCarportFlatTop;
 
 /**
  *
@@ -349,7 +345,7 @@ public class Order {
 
     /**
      *
-     * @return @throws functionLayer.CustomException
+     * @return @throws logicLayer.CustomException
      */
     public Roof getRoof() throws CustomException {
         return StorageFacade.getRoofById(roof);

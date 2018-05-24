@@ -3,8 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package functionLayer;
+package logicLayer;
 
+import logicLayer.Order;
+import logicLayer.PartLine;
+import logicLayer.CustomException;
+import logicLayer.FlatCarPortList;
 import java.util.ArrayList;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -183,9 +187,9 @@ public class FlatCarPortListTest
         ArrayList<PartLine> parts = carportShed.braeddeboltOgFirkantskive(8);
         PartLine braeddebolt = findPart("Bræddebolte 10x120 mm.", parts);
         PartLine firkantSkive = findPart("Firkantskiver 40x40x11 mm.", parts);
-        int expAmountB = 16;
+        int expAmountB = 20;
         int amountB = braeddebolt.getAmount();
-        int expAmountF = 16;
+        int expAmountF = 20;
         int amountF = firkantSkive.getAmount();
         assertEquals(expAmountB, amountB);
         assertEquals(expAmountF, amountF);

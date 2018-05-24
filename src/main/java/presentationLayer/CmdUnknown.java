@@ -7,13 +7,14 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author super
  */
-public class CmdPageAllOrders extends Command
+public class CmdUnknown extends Command
 {
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response)
     {
-        return "allOrders";
+
+        return "index";
     }
 
 }

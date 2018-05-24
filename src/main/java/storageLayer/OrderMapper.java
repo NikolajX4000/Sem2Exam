@@ -5,8 +5,8 @@
  */
 package storageLayer;
 
-import functionLayer.Order;
-import functionLayer.CustomException;
+import logicLayer.Order;
+import logicLayer.CustomException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

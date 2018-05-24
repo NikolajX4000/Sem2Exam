@@ -1,0 +1,16 @@
+@startuml
+
+actor Kunde
+boundary "makeCarport.jsp" as Order
+boundary "ViewOrders.jsp" as Orders
+participant "OrderMapper.java" as OM
+database "Database" as DB
+
+Kunde -> Order : Bestil
+Order -> OM : DB Adgang
+OM -> DB : Tilføj Ordre
+DB -> OM : Hent Ordre
+OM -> Orders : Alle Ordre
+Orders -> Kunde : Orderhistorik
+
+@enduml

@@ -1,12 +1,8 @@
-package presentationLayer;
+package logicLayer;
 
-/**
- *
- * @author super
- */
-public class DrawCarport {
+public class xxx_DrawCarport {
 
-    private DrawCarport() {
+    private xxx_DrawCarport() {
     }
 
     /**
