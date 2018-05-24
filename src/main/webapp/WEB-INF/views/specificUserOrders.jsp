@@ -1,15 +1,8 @@
-<%-- 
-    Document   : vieworders
-    Created on : 25-04-2018, 11:03:14
-    Author     : super
---%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+
 <%@include file="/WEB-INF/jspf/header.jspf"%>
-
-
 
 <div class="row">
 
@@ -127,7 +120,7 @@
                                     ${o.drawingTop}
                                 </div>
                             </div>
-                                
+
                             <div class="col m6 s12">
                                 <div class="materialboxed z-depth-1">
                                     ${o.drawingSide}
@@ -147,7 +140,7 @@
                                 <div class="spinner-layer spinner-blue-only">
 
                                     <div class="circle-clipper left">
-                                         <div class="circle"></div>
+                                        <div class="circle"></div>
                                     </div>
                                     <div class="gap-patch">
                                         <div class="circle"></div>

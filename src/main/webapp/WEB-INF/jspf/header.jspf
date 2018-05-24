@@ -1,4 +1,5 @@
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page pageEncoding="UTF-8" %>
 <html>
     <head>
@@ -31,8 +32,9 @@
     <body>
 
 
-
-        <%@include file="debug.jspf"%>
+        <c:if test="${true}">
+            <%@include file="debug.jspf"%>
+        </c:if>
 
         <nav>
             <div class="nav-wrapper">
@@ -43,18 +45,21 @@
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a href="?">Forside</a></li>
                         <li><a href="?command=CmdPageBuildCarport">Carport</a></li>
-                        <li><a href="?command=CmdPageMaterial">Material</a></li>
-                        <li><a href="?command=CmdPageAllOrders">Admin</a></li>
-                        <li><a href="?command=CmdPageLogin">Login</a></li>
+                        <c:if test="${sessionScope.user ne null}">
+                            <li><a href="?command=CmdPageMaterial">Materialer</a></li>
+                            <li><a href="?command=CmdPageAllOrders">Ordrer</a></li>
+                        </c:if>
                     </ul>
 
                     <ul class="side-nav" id="mobile-demo">
                         <li><a href="?">Forside</a></li>
                         <li><a href="?command=CmdPageBuildCarport">Carport</a></li>
-                        <li><a href="?command=CmdPageMaterial">Material</a></li>
-                        <li><a href="?command=CmdPageAllOrders">Admin</a></li>
-                        <li><a href="?command=CmdPageLogin">Login</a></li>
+                        <c:if test="${sessionScope.user ne null}">
+                            <li><a href="?command=CmdPageMaterial">Materialer</a></li>
+                            <li><a href="?command=CmdPageAllOrders">Ordrer</a></li>
+                        </c:if>
                     </ul>
+                    
                 </div>
             </div>
         </nav>

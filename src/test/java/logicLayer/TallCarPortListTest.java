@@ -5,11 +5,7 @@
  */
 package logicLayer;
 
-import logicLayer.Order;
-import logicLayer.PartLine;
-import logicLayer.CustomException;
-import logicLayer.TallCarPortList;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -386,7 +382,7 @@ public class TallCarPortListTest
     @Test
     public void testSkruerSternVindskedeVandbraet() throws CustomException
     {
-        PartLine part = carport.skruerSternVindskedeVandbraet(1800);
+        PartLine part = carport.skruerSternVindskedeVandbraet(7);
         int expAmount = 1;
         int amount = part.getAmount();
         assertEquals(expAmount, amount);
@@ -470,9 +466,9 @@ public class TallCarPortListTest
     @Test
     public void testStolper() throws Exception
     {
-        ArrayList<PartLine> parts = carport.stolperOgBolt();
+        List<PartLine> parts = carport.stolperOgBolt();
         PartLine part = findPart("stolpe", parts);
-        int expAmount = 9;
+        int expAmount = 12;
         int expSize = 300;
         int amount = part.getAmount();
         int size = part.getSize();
@@ -480,7 +476,7 @@ public class TallCarPortListTest
         assertEquals(expSize, size);
     }
     
-    private static PartLine findPart(String name, ArrayList<PartLine> parts) {
+    private static PartLine findPart(String name, List<PartLine> parts) {
         for(PartLine part : parts) {
             if(part.getMaterial().getName().equals(name)) {
                 return part;

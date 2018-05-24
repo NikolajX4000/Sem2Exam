@@ -4,13 +4,18 @@ import logicLayer.CustomException;
 import logicLayer.LogicFacade;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import logicLayer.NoAccessException;
 
 public class CmdUpdateMaterial extends Command
 {
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response)
+    String execute(HttpServletRequest request, HttpServletResponse response) throws NoAccessException
     {
+        
+        if(request.getSession().getAttribute("user") == null){
+            throw new NoAccessException();
+        }
 
         try
         {
@@ -29,17 +34,29 @@ public class CmdUpdateMaterial extends Command
                 request.setAttribute("feedback", description + " nu opdateret!");
             }
 
-        } catch (NumberFormatException e)
+        } catch (NumberFormatException ex)
         {
 
             request.setAttribute("feedback", "Der gik noget galt.");
 
-        } catch (CustomException e)
+        } catch (CustomException ex)
         {
 
-            request.setAttribute("feedback", e);
+            request.setAttribute("feedback", ex.getMessage());
         }
 
+        //content to page
+        try
+        {
+            request.setAttribute("tools", LogicFacade.getAllTool());
+            request.setAttribute("mats", LogicFacade.getAllMaterialsAsMap());
+            request.setAttribute("roofs", LogicFacade.getAllRoofs());
+            
+        } catch (CustomException ex)
+        {
+            request.setAttribute("feedback", ex.getMessage());
+        }
+        
         return "editMaterials";
     }
 

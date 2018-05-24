@@ -1,11 +1,14 @@
 package presentationLayer;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import logicLayer.NoAccessException;
 
 /**
  *
@@ -27,8 +30,16 @@ public class FrontController extends HttpServlet {
         
         response.setBufferSize(0);
         Command command = Command.from(request);
-        String view = command.execute(request, response);
-        request.getRequestDispatcher("/WEB-INF/views/" + view + ".jsp").forward(request, response);
+        try
+        {
+            String view = command.execute(request, response);
+            request.getRequestDispatcher("/WEB-INF/views/" + view + ".jsp").forward(request, response);
+            
+        } catch (NoAccessException ex)
+        {   
+            request.setAttribute("feedback", ex.getMessage());
+            request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
+        }
         
     }
 

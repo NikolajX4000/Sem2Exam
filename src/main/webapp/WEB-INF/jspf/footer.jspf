@@ -74,7 +74,14 @@
         <div class="col s2"><i class="material-icons circle">mail_outline</i></div>
         <div class="col s10"><a class="white-text" style="opacity: 1; font-size: " href="mailto:info@johannesfog.dk">Send e-mail</a></div>
     </div>
-    <img src="https://www.johannesfog.dk/globalassets/ikoner/cards-logos.png">
+    <div class="row">
+        <img class="col s12" src="https://www.johannesfog.dk/globalassets/ikoner/cards-logos.png">
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <a href="?command=CmdPageLogin">Administration login</a>
+        </div>
+    </div>
 </div>
 
         </div>

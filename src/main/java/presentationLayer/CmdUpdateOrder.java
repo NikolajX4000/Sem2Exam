@@ -4,6 +4,7 @@ import logicLayer.CustomException;
 import logicLayer.LogicFacade;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import logicLayer.NoAccessException;
 
 /**
  *
@@ -13,8 +14,12 @@ public class CmdUpdateOrder extends Command
 {
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response)
+    String execute(HttpServletRequest request, HttpServletResponse response) throws NoAccessException
     {
+        
+        if(request.getSession().getAttribute("user") == null){
+            throw new NoAccessException();
+        }
 
         //params: "newStatus" -> String med nye status // "target" -> id på den ordre der skal skiftes
         try
@@ -35,10 +40,10 @@ public class CmdUpdateOrder extends Command
 
             request.setAttribute("feedback", "Der gik noget galt.");
 
-        } catch (CustomException e)
+        } catch (CustomException ex)
         {
 
-            request.setAttribute("feedback", e);
+            request.setAttribute("feedback", ex.getMessage());
         }
 
         return "allOrders";

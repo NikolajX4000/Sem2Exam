@@ -5,11 +5,7 @@
  */
 package logicLayer;
 
-import logicLayer.Order;
-import logicLayer.PartLine;
-import logicLayer.CustomException;
-import logicLayer.FlatCarPortList;
-import java.util.ArrayList;
+import java.util.List;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -168,9 +164,9 @@ public class FlatCarPortListTest
     @Test
     public void testStolperOgBoltShed() throws Exception
     {
-        ArrayList<PartLine> parts = carportShed.stolperOgBolt();
+        List<PartLine> parts = carportShed.stolperOgBolt();
         PartLine part = findPart("stolpe", parts);
-        int expAmount = 11;
+        int expAmount = 12;
         int expSize = 300;
         int amount = part.getAmount();
         int size = part.getSize();
@@ -184,12 +180,12 @@ public class FlatCarPortListTest
     @Test
     public void testBraeddeboltOgFirkantskiveShed() throws Exception
     {
-        ArrayList<PartLine> parts = carportShed.braeddeboltOgFirkantskive(8);
+        List<PartLine> parts = carportShed.braeddeboltOgFirkantskive(8);
         PartLine braeddebolt = findPart("Bræddebolte 10x120 mm.", parts);
         PartLine firkantSkive = findPart("Firkantskiver 40x40x11 mm.", parts);
-        int expAmountB = 20;
+        int expAmountB = 16;
         int amountB = braeddebolt.getAmount();
-        int expAmountF = 20;
+        int expAmountF = 16;
         int amountF = firkantSkive.getAmount();
         assertEquals(expAmountB, amountB);
         assertEquals(expAmountF, amountF);
@@ -264,7 +260,7 @@ public class FlatCarPortListTest
     @Test
     public void testTagpladeShed() throws Exception
     {
-        ArrayList<PartLine> parts = carportShed.tagplade();
+        List<PartLine> parts = carportShed.tagplade();
         PartLine tagplade = findPart("tagplade", parts);
         int expAmount = 14;
         int expSize = 420;
@@ -341,7 +337,7 @@ public class FlatCarPortListTest
     @Test
     public void testBeklaedningShed() throws Exception
     {
-        ArrayList<PartLine> parts = carportShed.beklaedning();
+        List<PartLine> parts = carportShed.beklaedning();
         PartLine part = findPart("beklædning", parts);
         int expAmount = 188;
         int expSize = 210;
@@ -357,7 +353,7 @@ public class FlatCarPortListTest
     @Test
     public void testBeklaedningSkruerShed() throws Exception
     {
-        ArrayList<PartLine> parts = carportShed.beklaedningSkruer(210);
+        List<PartLine> parts = carportShed.beklaedningSkruer(210);
         PartLine small = findPart("4,5x50 mm. skruer", parts);
         PartLine big = findPart("4,5x70 mm. skruer", parts);
         int expAmountS = 2;
@@ -490,7 +486,7 @@ public class FlatCarPortListTest
     @Test
     public void testStolperOgBolt() throws Exception
     {
-        ArrayList<PartLine> parts = carport.stolperOgBolt();
+        List<PartLine> parts = carport.stolperOgBolt();
         PartLine part = findPart("stolpe", parts);
         int expAmount = 6;
         int expSize = 300;
@@ -506,7 +502,7 @@ public class FlatCarPortListTest
     @Test
     public void testBraeddeboltOgFirkantskive() throws Exception
     {
-        ArrayList<PartLine> parts = carport.braeddeboltOgFirkantskive(6);
+        List<PartLine> parts = carport.braeddeboltOgFirkantskive(6);
         PartLine braeddebolt = findPart("Bræddebolte 10x120 mm.", parts);
         PartLine firkantSkive = findPart("Firkantskiver 40x40x11 mm.", parts);
         int expAmountB = 12;
@@ -586,7 +582,7 @@ public class FlatCarPortListTest
     @Test
     public void testTagplade() throws Exception
     {
-        ArrayList<PartLine> parts = carport.tagplade();
+        List<PartLine> parts = carport.tagplade();
         PartLine tagplade = findPart("tagplade", parts);
         int expAmount = 14;
         int expSize = 420;
@@ -626,7 +622,7 @@ public class FlatCarPortListTest
     @Test
     public void testBeklaedning() throws Exception
     {
-        ArrayList<PartLine> parts = carport.beklaedning();
+        List<PartLine> parts = carport.beklaedning();
         PartLine part = findPart("beklædning", parts);
         int expAmount = 0;
         int expSize = 210;
@@ -642,7 +638,7 @@ public class FlatCarPortListTest
     @Test
     public void testBeklaedningSkruer() throws Exception
     {
-        ArrayList<PartLine> parts = carport.beklaedningSkruer(210);
+        List<PartLine> parts = carport.beklaedningSkruer(210);
         PartLine small = findPart("4,5x50 mm. skruer", parts);
         PartLine big = findPart("4,5x70 mm. skruer", parts);
         int expAmountS = 2;
@@ -653,7 +649,7 @@ public class FlatCarPortListTest
         assertEquals(expAmountB, amountB);
     }
 
-    private static PartLine findPart(String name, ArrayList<PartLine> parts)
+    private static PartLine findPart(String name, List<PartLine> parts)
     {
         for (PartLine part : parts)
         {

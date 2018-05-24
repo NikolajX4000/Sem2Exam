@@ -88,6 +88,15 @@ public class CmdCreateOrder extends Command{
             request.setAttribute("feedback", e.getMessage());
         }
         
+        
+        // content to page
+        try
+        {
+            request.setAttribute("roofs", LogicFacade.getAllRoofs());
+        } catch (CustomException ex)
+        {
+            request.setAttribute("feedback", ex.getMessage());
+        }
         return "makeCarport";
 
     }
