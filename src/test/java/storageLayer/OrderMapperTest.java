@@ -6,12 +6,12 @@
 package storageLayer;
 
 import com.mysql.jdbc.Statement;
-import functionLayer.CustomException;
-import functionLayer.Order;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
+import logicLayer.CustomException;
+import logicLayer.Order;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
