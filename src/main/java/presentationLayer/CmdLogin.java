@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 public class CmdLogin extends Command{
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException
+    String execute(HttpServletRequest request, HttpServletResponse response)
     {
         
         try
@@ -27,7 +27,6 @@ public class CmdLogin extends Command{
             request.setAttribute("feedback", e.getMessage());
             request.setAttribute("test", e.getMessage());
         }
-        
         
         return "login";
     }

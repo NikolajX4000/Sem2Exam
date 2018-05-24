@@ -3,13 +3,18 @@ package presentationLayer;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class CmdPageMaterial extends Command
+/**
+ *
+ * @author super
+ */
+public class CmdUnknown extends Command
 {
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response)
     {
-        return "materialpage";
+
+        return "index";
     }
 
 }

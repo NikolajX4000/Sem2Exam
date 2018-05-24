@@ -2,27 +2,33 @@ package presentationLayer;
 
 import functionLayer.CustomException;
 import functionLayer.LogicFacade;
-import functionLayer.Order;
-import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author super
  */
-public class CmdShowOrders extends Command {
+public class CmdShowOrders extends Command
+{
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException {
-        
+    String execute(HttpServletRequest request, HttpServletResponse response)
+    {
+
         String email = request.getParameter("email");
-        
-        if(email != null){
-            request.setAttribute("desiredOrdersFromEmail", LogicFacade.getOrders(email));
+
+        if (email != null)
+        {
+            try
+            {
+                request.setAttribute("desiredOrdersFromEmail", LogicFacade.getOrders(email));
+            } catch (CustomException e)
+            {
+                request.setAttribute("feedback", e.getMessage());
+            }
         }
-        
+
         return "viewordersTEST";
     }
 }

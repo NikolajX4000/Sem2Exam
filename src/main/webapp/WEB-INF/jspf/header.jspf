@@ -1,4 +1,4 @@
-<%-- any content can be specified here e.g.: --%>
+
 <%@ page pageEncoding="UTF-8" %>
 <html>
     <head>
@@ -11,7 +11,6 @@
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-
         <!-- Icons -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -20,18 +19,18 @@
 
         <!-- MaterializeCSS  Javascript-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-        
+
         <!-- custom CSS -->
         <link rel="stylesheet" type="text/css" href="${requestScope['javax.servlet.forward.request_uri']}/static/style.css"/>
-        
-        
+
+
 
 
     </head>
 
     <body>
-        
-        
+
+
 
         <%@include file="debug.jspf"%>
 
@@ -47,7 +46,6 @@
                         <li><a href="?command=CmdPageMaterial">Material</a></li>
                         <li><a href="?command=CmdPageAllOrders">Admin</a></li>
                         <li><a href="?command=CmdPageLogin">Login</a></li>
-                        <li><a href="?TESTslider">Slider</a></li>
                     </ul>
 
                     <ul class="side-nav" id="mobile-demo">
@@ -56,7 +54,6 @@
                         <li><a href="?command=CmdPageMaterial">Material</a></li>
                         <li><a href="?command=CmdPageAllOrders">Admin</a></li>
                         <li><a href="?command=CmdPageLogin">Login</a></li>
-                        <li><a href="?TESTslider">Slider</a></li>
                     </ul>
                 </div>
             </div>

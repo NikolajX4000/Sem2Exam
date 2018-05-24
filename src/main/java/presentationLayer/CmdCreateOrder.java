@@ -10,10 +10,6 @@ import functionLayer.CustomException;
 import functionLayer.DanielsPostHus;
 import functionLayer.LogicFacade;
 import functionLayer.Order;
-import functionLayer.Roof;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 public class CmdCreateOrder extends Command{
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException
+    String execute(HttpServletRequest request, HttpServletResponse response)
     {
         
         
@@ -87,7 +83,7 @@ public class CmdCreateOrder extends Command{
         } catch (NumberFormatException e)
         {
             request.setAttribute("feedback", "<p>Der gik noget galt prøv igen senere!</p>");
-            request.setAttribute("test", e.getMessage());
+            
         } catch (CustomException e){
             request.setAttribute("feedback", e.getMessage());
         }
