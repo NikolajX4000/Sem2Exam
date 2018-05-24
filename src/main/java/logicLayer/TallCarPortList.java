@@ -36,9 +36,9 @@ public class TallCarPortList
         this.allTools = StorageFacade.getAllTools();
     }
 
-    public ArrayList<PartLine> getParts() throws CustomException
+    public List<PartLine> getParts() throws CustomException
     {
-        ArrayList<PartLine> parts = new ArrayList<>();
+        List<PartLine> parts = new ArrayList<>();
         parts.add(vindskede());
         parts.add(SternCarport());
         parts.add(spear());
@@ -123,11 +123,11 @@ public class TallCarPortList
         return new PartLine(material, (int) amount);
     }
 
-    ArrayList<PartLine> stolperOgBolt() throws CustomException
+    List<PartLine> stolperOgBolt() throws CustomException
     {
 //        List<Material> materials = StorageFacade.getMaterials("stolpe");
         Material material = findBestMat(300, findMaterials("stolpe"));
-        ArrayList<PartLine> parts = new ArrayList<>();
+        List<PartLine> parts = new ArrayList<>();
         int amount;
 
         int total = 0;
@@ -453,7 +453,7 @@ public class TallCarPortList
         return mat;
     }
 
-    private int findMaterialAmount(String name, ArrayList<PartLine> parts) throws CustomException
+    private int findMaterialAmount(String name, List<PartLine> parts) throws CustomException
     {
         int amount = 0;
         for (PartLine part : parts)
