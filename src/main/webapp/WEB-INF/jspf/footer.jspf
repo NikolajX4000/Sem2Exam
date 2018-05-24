@@ -92,8 +92,28 @@
 $(document).ready(function () {
     Materialize.toast('${feedback}', 4000);
 });
+
+
+//load stykliste fra knap med ajax
+$('.partlistloadbtn').click(function (e) {
+
+    var id = $(this).attr('id').substring(11);
+
+    $.ajax({
+        type: 'GET',
+        url: '${requestScope['javax.servlet.forward.request_uri']}/ServletGetPartlist',
+        data: {id: id},
+        success: function (data) {
+            //alert(data);
+            $("#partlistcontent" + id).html(data);
+        }
+    });
+
+    e.preventDefault();
+});
+
 </script>
-<script src="static/script.js"></script>
+<script src="${requestScope['javax.servlet.forward.request_uri']}/static/script.js"></script>
 
 </body>
 </html>

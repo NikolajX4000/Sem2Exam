@@ -41,38 +41,3 @@ $(document).ready(function () {
     $('.materialboxed').materialbox();
 });
 
-
-//togle display shedwith on create
-$(function () {
-    $('.shedbox').change(function () {
-        $('.shedinfo').toggle(this.checked);
-    }).change(); //ensure visible state matches initially
-});
-
-//togle display anngle, and swap the pickable roofs
-$(function () {
-    $('.anglebox').change(function () {
-        $('.angleinfo').toggle(this.checked);
-
-        $('.angeled').toggle(this.checked);
-        $('.flat').toggle(!this.checked);
-
-        if (this.checked) {
-            $("#flatroof").attr("disabled", true);
-
-
-            // toggle required to right select
-            $("#heighroof").attr("required", true);
-            $("#flatroof").removeAttr("required");
-
-        } else {
-            $("#flatroof").removeAttr("disabled");
-
-
-            // toggle required to right select
-            $("#flatroof").attr("required", true);
-            $("#heighroof").removeAttr("required");
-        }
-
-    }).change(); //ensure visible state matches initially
-});

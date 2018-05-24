@@ -15,11 +15,10 @@ public class CmdLogin extends Command{
         
         try
         {
-            
             Employee emp  = LogicFacade.login(request.getParameter("user"), request.getParameter("pw"));
             
             request.setAttribute("feedback", "Velkommen " + emp.getName());
-            request.setAttribute("test", emp);
+            request.getSession().setAttribute("user", emp);
             
             return "employeepage";
 

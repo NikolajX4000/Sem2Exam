@@ -1,7 +1,5 @@
 package functionLayer;
 
-import static java.util.Collections.list;
-
 /**
  *
  * @author super
@@ -19,7 +17,7 @@ public class PartLine {
      * @param material
      * @param amount
      */
-    public PartLine(Material material, int amount) {
+    public PartLine(Material material, int amount)  {
         this.material = material;
         this.unit = material.getUnitSize();
         this.amount = (int) Math.ceil((double) amount / unit);
@@ -70,7 +68,7 @@ public class PartLine {
      * @param size
      * @return
      */
-    public PartLine setSize(double size) {
+    public PartLine setSize(double size) throws CustomException {
         this.size = (int) size;
         material.setSize((int) size);
         return this;

@@ -1,0 +1,13 @@
+@startuml
+|Kunde|
+start
+:Bestil carport;
+|#AntiqueWhite|System|
+:Udregn stykliste;
+:Udregn pris;
+:Lav ordre;
+:Tegn carport;
+:Vis ordre;
+|Kunde|
+stop
+@enduml

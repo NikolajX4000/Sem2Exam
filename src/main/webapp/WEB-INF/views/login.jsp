@@ -6,7 +6,7 @@
 <form class="row" method="post" action="?" accept-charset="ISO-8859-1">
 
         <div class="input-field col m6 s12">
-            <input id="user" type="text" class="validate" name="user" minlength="3" required>
+            <input id="user" type="text" class="validate" name="user" minlength="3" required value="${param.user}">
             <label for="user">Bruger</label>
         </div>
     

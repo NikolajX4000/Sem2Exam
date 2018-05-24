@@ -10,7 +10,7 @@ public class DrawCarportFlatSide {
     String thin = "fill:none;stroke:black;stroke-width:0.5;";
     
     double xOffset = 30;
-    double difHeight = 30;
+    double difHeight = 10;
     double width, height, shedWidth, shedHeight;
     double remHeight = 20;
     double beam = 10;
@@ -39,13 +39,13 @@ public class DrawCarportFlatSide {
         svg = new SVG(width, height + beamOffset);
     }
 
-    @Override
-    public String toString() {
+    public String getDrawing() {
         
         drawBeams();
         if(hasShed)drawShedBeams();
         drawLines();
         if(hasShed)drawShed();
+        drawHeightWidthArrow();
         return svg.toString();
         //return tmp;
     }
@@ -135,6 +135,27 @@ public class DrawCarportFlatSide {
         x = width - xOffset - beam + beam/4;
         svg.rct(x, beamOffset + (x / width * difHeight) + 1, height - (x / width * difHeight) - 1, beam, "fill:white;stroke:black;");
         
+    }
+    
+    private void drawHeightWidthArrow() {
+        
+        //cp
+        svg.arrowX(0, -20, width, -20);
+        svg.text(width/2, -25, (int)(width) + " cm");
+        
+        //shed
+        if(hasShed){
+            svg.arrowX(width-shedWidth-xOffset, beamOffset + height + 25, width-xOffset, beamOffset + height + 25);
+            svg.text(width - xOffset - (shedWidth/2), beamOffset + height + 20, (int)(shedWidth) + " cm");
+        }
+        
+        //beam height
+        svg.arrowY(-10, beamOffset, -10, beamOffset + height);
+        svg.textRotated(-15, beamOffset + height/2, (int)(height) + " cm");
+        
+        //cp full height
+        svg.arrowY(-30, 0, -30, beamOffset + height);
+        svg.textRotated(-35, (beamOffset + height)/2, (int)(beamOffset + height) + " cm");
     }
     
 }

@@ -1,0 +1,59 @@
+
+<%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
+<%@page pageEncoding="UTF-8"%>
+
+
+<div class="col s12" id="roofs">
+    <table class='highlight'>
+        <thead>
+            <tr>
+                <th>Navn</th>
+                <th>Type</th>
+                <th>Knap</th>
+            </tr>
+        </thead>
+        <tbody>
+            <c:forEach items="${roofs}" var="r">
+                <tr>
+                    <td>${r.NAME}</td>
+                    <td>${r.TYPE eq 0 ? 'Fladt' : 'Rejsning'}</td>
+                    <td>
+                        <a href="#modalr${r.ID}" class="btn-floating btn-small waves-effect waves-light blue tooltipped modal-trigger" data-position="right" data-delay="20" data-tooltip="Rediger">
+                            <i class="material-icons">edit</i>
+                        </a>
+                    </td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
+</div>
+
+<c:forEach items="${roofs}" var="r">
+    <div id="modalr${r.ID}" class="modal">
+        <div class="modal-content">
+            <p>${r.NAME}</p>
+            <form class="row" method="post" action="?" accept-charset="ISO-8859-1">
+
+                <input type="hidden" name="id" value="${r.ID}">
+                <input type="hidden" name="oldname" value="${r.NAME}">
+
+                <div class="input-field col s12 m4">
+                    <input id='name' type='text' class='validate' name='name' value="${r.NAME}" required>
+                    <label for='name' data-error='Navn'>Navn</label>
+                </div>
+
+                <div class="input-field col s12">
+                    <button class='btn waves-effect waves-light blue' type='submit' name='command' value='CmdUpdateRoof'>
+                        Gem <i class='material-icons right'>send</i>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Luk</a>
+        </div>
+                    
+    </div>
+</c:forEach>

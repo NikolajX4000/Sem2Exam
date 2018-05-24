@@ -50,7 +50,7 @@ public class MaterialMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return materials;
     }
@@ -84,7 +84,7 @@ public class MaterialMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return meterial;
     }
@@ -120,7 +120,7 @@ public class MaterialMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return materials;
     }
@@ -142,22 +142,18 @@ public class MaterialMapper {
 
             ps = con.prepareStatement(SQL);
 
-            try {
-                ps.setString(1, material.getName());
-                ps.setInt(2, material.getPrice());
-                ps.setInt(3, material.getSize());
-                ps.setString(4, material.getDescription());
-                ps.setInt(5, material.getId());
+            ps.setString(1, material.getName());
+            ps.setInt(2, material.getPrice());
+            ps.setInt(3, material.getSize());
+            ps.setString(4, material.getDescription());
+            ps.setInt(5, material.getId());
 
-            } catch (SQLException ex) {
-                throw new CustomException("Formateringsfejl");
-            }
             ps.executeUpdate();
 
         } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return material;
     }
@@ -182,21 +178,41 @@ public class MaterialMapper {
 
             ps = con.prepareStatement(SQL);
 
-            try {
-                ps.setInt(1, price);
-                ps.setInt(2, size);
-                ps.setString(3, desc);
-                ps.setInt(4, id);
+            ps.setInt(1, price);
+            ps.setInt(2, size);
+            ps.setString(3, desc);
+            ps.setInt(4, id);
 
-            } catch (SQLException ex) {
-                throw new CustomException("Formateringsfejl");
-            }
             ps.executeUpdate();
 
         } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
+        }
+    }
+    
+    public static void updateMaterial(int id, int size, int price) throws CustomException {
+        PreparedStatement ps = null;
+
+        try {
+            Connection con = Connector.connection();
+            String SQL = "UPDATE materials SET "
+                    + "price = ?, size = ? "
+                    + "WHERE plank_id = ?";
+
+            ps = con.prepareStatement(SQL);
+
+            ps.setInt(1, price);
+            ps.setInt(2, size);
+            ps.setInt(3, id);
+
+            ps.executeUpdate();
+
+        } catch (SQLException | ClassNotFoundException ex) {
+            throw new CustomException(ex.getMessage());
+        } finally {
+            closeStatement(ps);
         }
     }
 
@@ -207,12 +223,12 @@ public class MaterialMapper {
      *
      * @param ps PreparedStatement object, the SQL controller.
      */
-    private static void closeConnection(PreparedStatement ps) {
+    private static void closeStatement(PreparedStatement ps) throws CustomException {
         if (ps != null) {
             try {
                 ps.close();
             } catch (SQLException ex) {
-                Logger.getLogger(OrderMapper.class.getName()).log(Level.SEVERE, null, ex);
+                throw new CustomException( "Kunne ikke få kontakt til databasen" );
             }
         }
     }

@@ -1,0 +1,84 @@
+<%@page import="java.util.Map"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="functionLayer.Material"%>
+<%@page import="presentationLayer.RenderOrder"%>
+<%@page import="functionLayer.LogicFacade"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="functionLayer.Order"%>
+
+<%@ page pageEncoding="UTF-8" %>
+<%
+    
+List<Material> tools = LogicFacade.getAllTool();
+
+
+
+    //generate dropdown links and pu
+    StringBuilder s = new StringBuilder();
+    StringBuilder pu = new StringBuilder();
+    
+    s.append("<table class='highlight'><thead><tr><th>Navn</th><th>Størrelse</th><th>Pris</th><th>Knap</th></tr></thead><tbody>");
+    
+    for (Material m : tools){
+        
+
+        s.append("<tr>");
+        s.append("<td>").append(m.getName()).append("</td>");
+        s.append("<td>").append(m.getUnitSize()).append("</td>");
+        s.append("<td>").append(m.getPrice()).append("</td>");
+        s.append("<td>").append("<a href=\"#modalt").append(m.getId()).append("\" class=\"btn-floating btn-small waves-effect waves-light blue tooltipped modal-trigger\" data-position=\"right\" data-delay=\"20\" data-tooltip=\"Rediger\"><i class=\"material-icons\">edit</i></a>").append("</td>");
+        s.append("</tr>");
+
+        //modals
+        pu.append("<div id=\"modalt").append(m.getId()).append("\" class=\"modal\"><div class=\"modal-content\">");
+
+            pu.append("<p>").append(m.getName()).append("</p>");
+            pu.append("<form class=\"row\" method=\"post\" action=\"?\" id=\"test1\" accept-charset=\"ISO-8859-1\">");
+
+                pu.append("<input type=\"hidden\" name=\"id\" value=\"").append(m.getId()).append("\">");
+                pu.append("<input type=\"hidden\" name=\"name\" value=\"").append(m.getName()).append("\">");
+
+                pu.append("<div class=\"input-field col s12  m4\">");
+                    pu.append("<input id='unitSize' type='number' class='validate' name='unitSize' required maxlength='40' min='1' pattern='' value='").append(m.getUnitSize()).append("'>");
+                    pu.append("<label for='unitSize' data-error='Skriv en størrelse'>Størrelse</label>");
+                pu.append("</div>");
+
+                pu.append("<div class=\"input-field col s12 m4\">");
+                    pu.append("<input id='price' type='number' class='validate' name='price' required maxlength='40' min='1' pattern='' value='").append(m.getPrice()).append("'>");
+                    pu.append("<label for='price' data-error='Skriv en pris'>Pris</label>");
+                pu.append("</div>");
+
+                pu.append("<div class=\"input-field col s12\"><button class='btn waves-effect waves-light blue ' type='submit' name='command' value='CmdUpdateTool'>");
+                    pu.append("Gem <i class='material-icons right'>send</i>");
+                pu.append("</button></div>");
+
+            pu.append("</form>");
+
+
+        pu.append("</div><div class=\"modal-footer\">");
+
+            pu.append("<a href=\"#!\" class=\"modal-action modal-close waves-effect waves-green btn-flat\">Close</a>");
+
+        pu.append("</div></div>");
+        
+        
+
+    }
+    s.append("</tbody></table>");
+    
+        
+    request.setAttribute("tools", s.toString());
+    request.setAttribute("pu", pu.toString());
+    
+
+%>
+
+    <div class="col s12" id="tools">
+    
+
+            ${tools}
+        
+    </div>
+        
+    ${pu}

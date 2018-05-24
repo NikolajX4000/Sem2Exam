@@ -25,9 +25,15 @@ public class CmdUpdateMaterial extends Command{
             int price = Integer.parseInt(request.getParameter("price"));
             String description = request.getParameter("description");
             
-            LogicFacade.updateMaterial(id, size, price, description);
+            if(description == null){
+                LogicFacade.updateMaterial(id, size, price);
+                request.setAttribute("feedback", "Opdateret!");
+            }else{
+                LogicFacade.updateMaterial(id, size, price, description);
+                request.setAttribute("feedback", description + " nu opdateret!");
+            }
             
-            request.setAttribute("feedback", description + " nu opdateret!");
+            
             
         } catch (Exception e) {
             

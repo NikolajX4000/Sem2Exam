@@ -7,7 +7,6 @@
 package presentationLayer;
 
 import functionLayer.Order;
-import java.util.Random;
 
 public class DrawCarportAngleSide {
 
@@ -23,7 +22,7 @@ public class DrawCarportAngleSide {
     double roofBottom = 10;
     double beam = 10;
     double newBeamAfter = 400;
-    double brickWidth = 10;
+    double brickWidth = 5;
     double topBrick = 7.5;
     double barge = 10;
     
@@ -69,17 +68,18 @@ public class DrawCarportAngleSide {
         
     }
 
-    @Override
-    public String toString()
+    public String getDrawing()
     {
         drawRem();
         drawStern();
-        drawRoofBottom();
         drawBricks();
+        drawRoofBottom();
         drawBeams();
         if(hasShed)drawShedBeams();
         if(hasShed)drawShed();
         drawBarge();
+        
+        drawHeightWidthArrow();
         
         return svg.toString();
     }
@@ -102,11 +102,16 @@ public class DrawCarportAngleSide {
     private void drawBricks()
     {
         for (double i = barge / 2; i < width - brickWidth; i += brickWidth) {
-            svg.rct(i, brickOffset, brickHeight, brickWidth, "fill:white;stroke:black;stroke-width:0.5");
+            svg.rct(i, brickOffset, brickHeight, brickWidth, "fill:white;stroke:grey;stroke-width:0.5");
         }
         
+        //test lines
+        for(double i = brickOffset; i < brickHeight+brickOffset; i+= brickWidth*1.5){
+            svg.line(0, i, width, i, "fill:white;stroke:grey;stroke-width:0.5", "stroke-dasharray='"+brickWidth+", "+brickWidth+"'");
+            svg.line(brickWidth, i+brickWidth, width-brickWidth, i+brickWidth, "fill:white;stroke:grey;stroke-width:0.5", "stroke-dasharray='"+brickWidth+", "+brickWidth+"'");
+        }
         //top brick
-        svg.rct(barge / 2, topBrickOffset, topBrick, width - barge, "fill:white;stroke:black;;stroke-width:0.5");
+        svg.rct(barge / 2, topBrickOffset, topBrick, width - barge, "fill:white;stroke:black;stroke-width:0.5");
     }
 
     private void drawShed()
@@ -180,6 +185,27 @@ public class DrawCarportAngleSide {
     {
         svg.rct(0, 0, brickHeight + brickOffset, barge, "fill:white;stroke:black;stroke-width:0.75");
         svg.rct(width - barge, 0, brickHeight + brickOffset, barge, "fill:white;stroke:black;stroke-width:0.75");
+    }
+    
+    private void drawHeightWidthArrow() {
+        
+        //cp
+        svg.arrowX(0, -20, width, -20);
+        svg.text(width/2, -25, (int)(width) + " cm");
+        
+        //shed
+        if(hasShed){
+            svg.arrowX(width-shedWidth-xOffset, beamOffset + height + 25, width-xOffset, beamOffset + height + 25);
+            svg.text(width - xOffset - (shedWidth/2), beamOffset + height + 20, (int)(shedWidth) + " cm");
+        }
+        
+        //beam height
+        svg.arrowY(5, beamOffset, 5, beamOffset + height);
+        svg.textRotated(0, beamOffset + height/2, (int)(height) + " cm");
+        
+        //cp full height
+        svg.arrowY(-20, 0, -20, beamOffset + height);
+        svg.textRotated(-25, (beamOffset + height)/2, (int)(beamOffset + height) + " cm");
     }
 
     

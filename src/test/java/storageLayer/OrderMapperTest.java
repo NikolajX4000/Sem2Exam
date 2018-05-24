@@ -6,6 +6,7 @@
 package storageLayer;
 
 import com.mysql.jdbc.Statement;
+import functionLayer.CustomException;
 import functionLayer.Order;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -60,20 +61,18 @@ public class OrderMapperTest {
      *
      * @throws java.lang.Exception
      */
-    /*@Test
+    @Test
     public void testAddOrder() throws Exception {
-        System.out.println("addOrder");
         String expResult = "OrderTest.addOrder";
-        OrderMapper.addOrder( OrderMapper.getOrder( 4 ).setName( "OrderTest.addOrder" ));
+        Order order = OrderMapper.getOrder( 1 );
+        order.setName( expResult );
+        order.setPrice( order.calculatePrice() );
+        OrderMapper.addOrder( order );
         List<Order> orders = OrderMapper.getAllOrders();
-        Boolean result = false;
-        
-        if (orders.get(0).getName().equals(expResult)) {
-            result = true;
-        }
+        String result = orders.get( 0 ).getName();
 
-        assertTrue(result);
-    }*/
+        assertEquals( expResult, result );
+    }
     /**
      * Test of getOrder method, of class OrderMapper.
      *
@@ -81,7 +80,6 @@ public class OrderMapperTest {
      */
     @Test
     public void testGetOrder() throws Exception {
-        System.out.println("getOrder");
         int id = 1;
         String expResult = "Dummy";
         String result = OrderMapper.getOrder(id).getName();
@@ -95,7 +93,6 @@ public class OrderMapperTest {
      */
     @Test
     public void testGetOrders() throws Exception {
-        System.out.println("getOrders");
         String email = "dummy@dummy.dummy";
         String expResult = "Dummy";
         List<Order> orders = OrderMapper.getOrders(email);
@@ -117,7 +114,6 @@ public class OrderMapperTest {
      */
     @Test
     public void testGetAllOrders() throws Exception {
-        System.out.println("getAllOrders");
         String expResult = "dummy@dummy.dummy";
         List<Order> orders = OrderMapper.getAllOrders();
         boolean result = false;
@@ -138,13 +134,13 @@ public class OrderMapperTest {
      */
     @Test
     public void testUpdateOrder() throws Exception {
-        System.out.println("updateOrder");
-        Order expResult = OrderMapper.getOrder(1);
-        expResult.setNote("Testing");
-        OrderMapper.updateOrder(expResult);
-        boolean result = OrderMapper.getOrder(1).getNote().equals("Testing");
+        Order order = OrderMapper.getOrder( 1 );
+        String expResult = "Testing";
+        order.setNote(expResult );
+        OrderMapper.updateOrder( order );
+        String result = OrderMapper.getOrder( 1 ).getNote();
 
-        assertTrue(result);
+        assertEquals( expResult, result );
     }
 
     /**
@@ -154,13 +150,87 @@ public class OrderMapperTest {
      */
     @Test
     public void testUpdateStatus() throws Exception {
-        System.out.println("updateStatus");
-        Order expResult = OrderMapper.getOrder(1);
-        expResult.setStatus("Annulleret");
-        OrderMapper.updateOrder(expResult);
-        boolean result = OrderMapper.getOrder(1).getStatus().equals("Annulleret");
+        Order order = OrderMapper.getOrder( 1 );
+        String expResult = "Annulleret";
+        order.setStatus( expResult );
+        OrderMapper.updateStatus( order );
+        String result = OrderMapper.getOrder( 1 ).getStatus();
 
-        assertTrue(result);
+        assertEquals( expResult, result );
+    }
+    
+    /**
+     * Test of updateStatus method, of class OrderMapper.
+     *
+     * @throws java.lang.Exception
+     */
+    
+    @Test
+    public void testUpdateStatus_wParameters_status() throws Exception {
+        int id = 1;
+        String expResult = "Annulleret";
+        
+        OrderMapper.updateStatus( id, expResult );
+        String result = OrderMapper.getOrder( 1 ).getStatus();
+
+        assertEquals( expResult, result );
+    }
+    
+    /**
+     * Test of updateStatus method, of class OrderMapper.
+     * In this case the overloaded method with 'id' and 'status' is
+     * used. Testing an update method on the 'orders' table. Calling
+     * updateStatus with predifined arguments, with the 'id' as
+     * 'Integer.MIN_VALUE'. This would create a new Order Object 
+     * with its predefined atributes.
+     * 
+     * @throws java.lang.Exception
+     */
+    
+    @Test(expected = CustomException.class)
+    public void testUpdateStatus_wParameters_negOutOfBounds() throws Exception {
+        int id = Integer.MIN_VALUE;
+        String status = "Anulleret";
+        
+        OrderMapper.updateStatus( id, status );
+        OrderMapper.getOrder( id ).getName();
+    }
+    
+    /**
+     * Test of updateStatus method, of class OrderMapper.
+     * In this case the overloaded method with 'id' and 'status' is
+     * used. Testing an update method on the 'orders' table. Calling
+     * updateStatus with predifined arguments, with the 'id' as
+     * 'Integer.MAX_VALUE'. This would create a new Order Object 
+     * with its predefined atributes.
+     * 
+     * @throws java.lang.Exception
+     */
+    
+    @Test(expected = CustomException.class)
+    public void testUpdateStatus_wParameters_posOutOfBounds() throws Exception {
+        int id = Integer.MAX_VALUE;
+        String status = "Anulleret";
+        
+        OrderMapper.updateStatus( id, status );
+        OrderMapper.getOrder( id ).getName();
+    }
+    
+    /**
+     * Test of updateStatus method, of class OrderMapper.
+     *
+     * @throws java.lang.Exception
+     */
+    
+    @Test
+    public void testUpdatePrice() throws Exception {
+        int id = 1;
+        int price = 9999;
+        String expResult = "9.999 kr.";
+        OrderMapper.updatePrice( id, price );
+        String result = OrderMapper.getOrder( 1 ).getPrice();
+
+        assertEquals( expResult, result );
     }
 
 }

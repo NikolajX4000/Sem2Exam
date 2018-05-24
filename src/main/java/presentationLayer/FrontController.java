@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author super
  */
-@WebServlet(name = "FrontController", urlPatterns = {"/"})
+@WebServlet(name = "FrontController", urlPatterns = {""})
 public class FrontController extends HttpServlet {
 
     /**
@@ -24,6 +24,17 @@ public class FrontController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        
+        response.setBufferSize(0);
+        
+        if(request.getParameter("dtest") != null){
+            request.getRequestDispatcher("/WEB-INF/views/danielstestside.jsp").forward(request, response);
+        }
+        if(request.getParameter("TESTslider") != null){
+            request.getRequestDispatcher("/WEB-INF/views/TESTslider.jsp").forward(request, response);
+        }
+        
         try {
             Command command = Command.from(request);
             String view = command.execute(request, response);

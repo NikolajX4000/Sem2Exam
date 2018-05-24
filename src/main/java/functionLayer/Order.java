@@ -10,6 +10,10 @@ import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
 import java.util.Random;
+import presentationLayer.DrawCarportAngleSide;
+import presentationLayer.DrawCarportAngleTop;
+import presentationLayer.DrawCarportFlatSide;
+import presentationLayer.DrawCarportFlatTop;
 
 /**
  *
@@ -21,7 +25,8 @@ public class Order {
     private int id;
     private String stringId;
     private List<PartLine> partsList;
-    private int price;
+    private int price = 0;
+    private int materialPrice = 0;
 
     /* customer */
     private String name;
@@ -51,49 +56,51 @@ public class Order {
     private String status = "Behandles";
 
     public int calculatePrice() throws CustomException {
-        if (isFlat()) {
-            partsList = new FlatCarPortList(this).getParts();
+        materialPrice = 0;
+        for (PartLine p : getPartlist()) {
+            materialPrice += p.calculatePrice();
         }
-        price = 0;
-        for (PartLine p : partsList) {
-            price += p.calculatePrice();
-        }
-        return price;
+        return materialPrice;
     }
 
     /**
      *
      * @return
      */
-    public String getPrice() {
+    public int getPriceInt() throws CustomException {
 
-        int p = 500;
-
-        if (hasShed()) {
-            p += shedWidth * shedLength * 400;
+        if (price == 0) {
+            price = calculatePrice();
         }
 
-        if (isFlat()) {
+        return price;
 
-            p += width * length * 300;
-        } else {
+    }
 
-            p += width * length * 666;
+    /**
+     *
+     * @return
+     */
+    public String getPrice() throws CustomException {
+
+        if (price == 0) {
+            calculatePrice();
         }
-
-        p /= 10000;
 
         NumberFormat nf = NumberFormat.getNumberInstance(Locale.GERMAN);
+        return nf.format(price) + " kr.";
 
-        return nf.format(p) + " kr.";
-//        return nf.format(price) + " kr.";
+    }
 
+    public Order setPrice(int price) {
+        this.price = price;
+        return this;
     }
 
     /**
      * Checks if carport has shed
      *
-     * @return true if it does and false if it doesnt
+     * @return true if it does and false if it doesn't
      */
     public boolean hasShed() {
         return (shedWidth > 0 && shedLength > 0);
@@ -102,7 +109,7 @@ public class Order {
     /**
      * Checks if roof is flat
      *
-     * @return returns true if it is and false if it isnt
+     * @return returns true if it is and false if it isn't
      */
     public boolean isFlat() {
         return (angle == 0);
@@ -342,8 +349,7 @@ public class Order {
 
     /**
      *
-     * @return
-     * @throws functionLayer.CustomException
+     * @return @throws functionLayer.CustomException
      */
     public Roof getRoof() throws CustomException {
         return StorageFacade.getRoofById(roof);
@@ -447,6 +453,43 @@ public class Order {
     public Order setStatus(String status) {
         this.status = status;
         return this;
+    }
+
+    public int getMaterialPrice() {
+        return materialPrice;
+    }
+
+    public Order setMaterialPrice(int materialPrice) throws CustomException {
+        calculatePrice();
+        return this;
+    }
+
+    public String getDrawingSide() {
+        if (isFlat()) {
+            return new DrawCarportFlatSide(this).getDrawing();
+        } else {
+            return new DrawCarportAngleSide(this).getDrawing();
+        }
+    }
+
+    public String getDrawingTop() {
+        if (isFlat()) {
+            return new DrawCarportFlatTop(this).getDrawing();
+        } else {
+            return new DrawCarportAngleTop(this).getDrawing();
+        }
+    }
+
+    public List<PartLine> getPartlist() throws CustomException {
+        if (partsList == null) {
+
+            if (isFlat()) {
+                partsList = new FlatCarPortList(this).getParts();
+            } else {
+                partsList = new TallCarPortList(this).getParts();
+            }
+        }
+        return partsList;
     }
 
     @Override

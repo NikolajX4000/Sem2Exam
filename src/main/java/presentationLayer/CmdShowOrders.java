@@ -23,6 +23,6 @@ public class CmdShowOrders extends Command {
             request.setAttribute("desiredOrdersFromEmail", LogicFacade.getOrders(email));
         }
         
-        return "vieworders";
+        return "viewordersTEST";
     }
 }

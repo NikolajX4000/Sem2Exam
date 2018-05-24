@@ -41,51 +41,47 @@ public class OrderMapper {
                     /* carport */ + "width, length, "
                     /* roof */ + "roof_id, angle, "
                     /* shed */ + "shed_width, shed_length, "
-                    /* price */ + "price) "
-                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    /* price */ + "material_price, price) "
+                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             ps = con.prepareStatement(SQL, Statement.RETURN_GENERATED_KEYS);
 
-            try {
-                /* customer */
-                ps.setString(1, order.getName());
-                ps.setString(2, order.getAddress());
-                ps.setInt(3, order.getZipCode());
-                ps.setString(4, order.getCity());
-                ps.setString(5, order.getPhone());
-                ps.setString(6, order.getEmail());
-                ps.setString(7, order.getNote());
+            /* customer */
+            ps.setString(1, order.getName());
+            ps.setString(2, order.getAddress());
+            ps.setInt(3, order.getZipCode());
+            ps.setString(4, order.getCity());
+            ps.setString(5, order.getPhone());
+            ps.setString(6, order.getEmail());
+            ps.setString(7, order.getNote());
 
-                /* carport */
-                ps.setInt(8, order.getWidth());
-                ps.setInt(9, order.getLength());
+            /* carport */
+            ps.setInt(8, order.getWidth());
+            ps.setInt(9, order.getLength());
 
-                /* roof */
-                ps.setInt(10, order.getRoof().getID());
-                ps.setInt(11, order.getAngle());
+            /* roof */
+            ps.setInt(10, order.getRoof().getID());
+            ps.setInt(11, order.getAngle());
 
-                /* shed */
-                ps.setInt(12, order.getShedWidth());
-                ps.setInt(13, order.getShedLength());
+            /* shed */
+            ps.setInt(12, order.getShedWidth());
+            ps.setInt(13, order.getShedLength());
 
-                /* price */
-                ps.setInt(14, order.calculatePrice());
-
-            } catch (SQLException ex) {
-                throw new CustomException("Formateringsfejl");
-            }
+            /* price */
+            ps.setInt(14, order.getMaterialPrice());
+            ps.setInt(15, order.getPriceInt());
 
             ps.executeUpdate();
             ResultSet rs = ps.getGeneratedKeys();
 
-            if (rs.first()) {
+            if(rs.first()) {
                 order.setId(rs.getInt(1));
             }
 
-        } catch (SQLException | ClassNotFoundException ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return order;
     }
@@ -111,7 +107,7 @@ public class OrderMapper {
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
 
-            if (rs.first()) {
+            if(rs.first()) {
                 order.
                         /* order id */
                         setId(id).
@@ -133,16 +129,24 @@ public class OrderMapper {
                         setShedWidth(rs.getInt("shed_width")).
                         setShedLength(rs.getInt("shed_length")).
                         /* dates */
-                        setPlaced(rs.getString("placed")).
+                        setPlaced(rs.getString("placed").substring(0, 10)).
                         /* status */
-                        setStatus(rs.getString("status"));
+                        setStatus(rs.getString("status")).
+                        /* price */
+                        setMaterialPrice(rs.getInt("material_price")).
+                        setPrice(rs.getInt("price"));
             }
 
-        } catch (SQLException | ClassNotFoundException ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
+        
+        if ( order.getId() == 0 ) {
+            throw new CustomException( "Dette ID er ikke tilgængeligt" );
+        }
+        
         return order;
     }
 
@@ -170,7 +174,7 @@ public class OrderMapper {
             ps.setString(1, email);
             ResultSet rs = ps.executeQuery();
 
-            while (rs.next()) {
+            while(rs.next()) {
                 order = new Order().
                         /* order id */
                         setId(rs.getInt("order_id")).
@@ -192,17 +196,20 @@ public class OrderMapper {
                         setShedWidth(rs.getInt("shed_width")).
                         setShedLength(rs.getInt("shed_length")).
                         /* dates */
-                        setPlaced(rs.getString("placed")).
+                        setPlaced(rs.getString("placed").substring(0, 10)).
                         /* status */
-                        setStatus(rs.getString("status"));
+                        setStatus(rs.getString("status")).
+                        /* price */
+                        setMaterialPrice(rs.getInt("material_price")).
+                        setPrice(rs.getInt("price"));
 
                 orders.add(order);
             }
 
-        } catch (SQLException | ClassNotFoundException ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return orders;
     }
@@ -225,7 +232,7 @@ public class OrderMapper {
             ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
 
-            while (rs.next()) {
+            while(rs.next()) {
                 order = new Order().
                         /* order id */
                         setId(rs.getInt("order_id")).
@@ -247,17 +254,20 @@ public class OrderMapper {
                         setShedWidth(rs.getInt("shed_width")).
                         setShedLength(rs.getInt("shed_length")).
                         /* dates */
-                        setPlaced(rs.getString("placed")).
+                        setPlaced(rs.getString("placed").substring(0, 10)).
                         /* status */
-                        setStatus(rs.getString("status"));
+                        setStatus(rs.getString("status")).
+                        /* price */
+                        setMaterialPrice(rs.getInt("material_price")).
+                        setPrice(rs.getInt("price"));
 
                 orders.add(order);
             }
 
-        } catch (SQLException | ClassNotFoundException ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return orders;
     }
@@ -283,35 +293,31 @@ public class OrderMapper {
 
             ps = con.prepareStatement(SQL);
 
-            try {
-                /* carport */
-                ps.setInt(1, order.getWidth());
-                ps.setInt(2, order.getLength());
-                ps.setString(3, order.getNote());
+            /* carport */
+            ps.setInt(1, order.getWidth());
+            ps.setInt(2, order.getLength());
+            ps.setString(3, order.getNote());
 
-                /* roof */
-                ps.setInt(4, order.getRoof().getID());
-                ps.setInt(5, order.getAngle());
+            /* roof */
+            ps.setInt(4, order.getRoof().getID());
+            ps.setInt(5, order.getAngle());
 
-                /* shed */
-                ps.setInt(6, order.getShedWidth());
-                ps.setInt(7, order.getShedLength());
+            /* shed */
+            ps.setInt(6, order.getShedWidth());
+            ps.setInt(7, order.getShedLength());
 
-                /* status */
-                ps.setString(8, order.getStatus());
+            /* status */
+            ps.setString(8, order.getStatus());
 
-                /* order id */
-                ps.setInt(9, order.getId());
+            /* order id */
+            ps.setInt(9, order.getId());
 
-            } catch (SQLException ex) {
-                throw new CustomException("Formateringsfejl");
-            }
             ps.executeUpdate();
 
-        } catch (SQLException | ClassNotFoundException ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return order;
     }
@@ -334,19 +340,15 @@ public class OrderMapper {
 
             ps = con.prepareStatement(SQL);
 
-            try {
-                ps.setString(1, order.getStatus());
-                ps.setInt(2, order.getId());
+            ps.setString(1, order.getStatus());
+            ps.setInt(2, order.getId());
 
-            } catch (SQLException ex) {
-                throw new CustomException("Formateringsfejl");
-            }
             ps.executeUpdate();
 
-        } catch (SQLException | ClassNotFoundException ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return order;
     }
@@ -369,19 +371,38 @@ public class OrderMapper {
 
             ps = con.prepareStatement(SQL);
 
-            try {
-                ps.setString(1, status);
-                ps.setInt(2, id);
+            ps.setString(1, status);
+            ps.setInt(2, id);
 
-            } catch (SQLException ex) {
-                throw new CustomException("Formateringsfejl");
-            }
             ps.executeUpdate();
 
-        } catch (SQLException | ClassNotFoundException ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
+        }
+    }
+
+    public static void updatePrice(int id, int price) throws CustomException {
+        PreparedStatement ps = null;
+
+        try {
+            Connection con = Connector.connection();
+            String SQL = "UPDATE orders "
+                    + "SET price = ? "
+                    + "WHERE order_id = ?";
+
+            ps = con.prepareStatement(SQL);
+
+            ps.setInt(1, price);
+            ps.setInt(2, id);
+
+            ps.executeUpdate();
+
+        } catch(SQLException | ClassNotFoundException ex) {
+            throw new CustomException(ex.getMessage());
+        } finally {
+            closeStatement(ps);
         }
     }
 
@@ -392,12 +413,12 @@ public class OrderMapper {
      *
      * @param ps PreparedStatement object, the SQL controller.
      */
-    private static void closeConnection(PreparedStatement ps) {
-        if (ps != null) {
+    private static void closeStatement(PreparedStatement ps) throws CustomException {
+        if(ps != null) {
             try {
                 ps.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(OrderMapper.class.getName()).log(Level.SEVERE, null, ex);
+            } catch(SQLException ex) {
+                throw new CustomException("Kunne ikke få kontakt til databasen");
             }
         }
     }

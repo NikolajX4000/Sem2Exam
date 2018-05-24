@@ -7,8 +7,14 @@
 package presentationLayer;
 
 import functionLayer.CustomException;
+import functionLayer.DanielsPostHus;
 import functionLayer.LogicFacade;
 import functionLayer.Order;
+import functionLayer.Roof;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -21,20 +27,34 @@ public class CmdCreateOrder extends Command{
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException
     {
-        Order o = new Order();
+        
+        
         try
         {
+            int width = Integer.parseInt(request.getParameter("width"));
+            int length = Integer.parseInt(request.getParameter("length"));
+            int shedwidth = Integer.parseInt(request.getParameter("shed_width"));
+            int shedlength = Integer.parseInt(request.getParameter("shed_length"));
             
+            boolean hasShed = (request.getParameter("hasShed") != null);
+            
+            if(width-30<shedwidth){
+                throw new CustomException("Caporten skal være bredere end skuret");
+            }
+            if(length-60<shedlength){
+                throw new CustomException("Caporten skal være længere end skuret");
+            }
         
-
-            o.setWidth(Integer.parseInt(request.getParameter("width")));
-            o.setLength(Integer.parseInt(request.getParameter("length")));
+            Order o = new Order();
+            
+            o.setWidth(width);
+            o.setLength(length);
 
             o.setRoof(Integer.parseInt(request.getParameter("roof")));
 
-            if(request.getParameter("hasShed") != null){
-               o.setShedLength(Integer.parseInt(request.getParameter("shedlength")));
-               o.setShedWidth(Integer.parseInt(request.getParameter("shedwidth")));
+            if(hasShed){
+               o.setShedLength(shedlength);
+               o.setShedWidth(shedwidth);
             }
 
             if(request.getParameter("hasAngle") != null){
@@ -52,20 +72,27 @@ public class CmdCreateOrder extends Command{
             
             LogicFacade.addOrder(o);
             
-            //request.setAttribute("test", o.toString());
+            try {
+                // send mail til fog omkring ny ordre
+                DanielsPostHus.newOrder(o);
+            } catch (MessagingException ex) {
+                //Logger.getLogger(CmdCreateOrder.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
             request.setAttribute("desiredOrdersFromEmail", LogicFacade.getOrders(o.getEmail()));
             
-            return "vieworders";
+            return "viewordersTEST";
             
             
-        } catch (Exception e)
+        } catch (NumberFormatException e)
         {
-            request.setAttribute("feedback", "<p class=\"red-text\">Der gik noget galt prøv igen senere!</p>");
+            request.setAttribute("feedback", "<p>Der gik noget galt prøv igen senere!</p>");
             request.setAttribute("test", e.getMessage());
-            return "order"; 
+        } catch (CustomException e){
+            request.setAttribute("feedback", e.getMessage());
         }
         
+        return "orderTEST";
 
     }
 

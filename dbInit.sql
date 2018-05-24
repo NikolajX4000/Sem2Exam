@@ -1,5 +1,5 @@
 -- MySQL Workbench Synchronization
--- Generated: 2018-05-08 10:00
+-- Generated: 2018-05-22 09:29
 -- Model: New Model
 -- Version: 1.0
 -- Project: Name of the project
@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS `sem2exam`.`orders` (
   `shed_length` INT(11) NULL DEFAULT NULL,
   `placed` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `status` VARCHAR(100) NOT NULL DEFAULT 'Behandles',
+  `material_price` INT(11) NOT NULL,
   `price` INT(11) NOT NULL,
   PRIMARY KEY (`order_id`, `roof_id`),
   UNIQUE INDEX `order_id_UNIQUE` (`order_id` ASC),
@@ -79,12 +80,6 @@ CREATE TABLE IF NOT EXISTS `sem2exam`.`tools` (
   UNIQUE INDEX `name_UNIQUE` (`name` ASC))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
-
-/*dummy orders*/
-/*
-INSERT INTO orders (name,address,zip_code,city,phone,email,note,width,length,roof_id,angle,shed_width,shed_length,placed,price) VALUES ('Dummy','Dummy 1',1234,'Dummy',12345678,'dummy@dummy.dummy','Dummy',240,240,2,0,0,0,CURRENT_TIME(),2.40*2.40*300);
-INSERT INTO orders (name,address,zip_code,city,phone,email,note,width,length,roof_id,angle,shed_width,shed_length,placed,price) VALUES ('Dummy','Dummy 1',1234,'Dummy',12345678,'dummy@dummy.dummy','Dummy',240,240,1,25,0,0,CURRENT_TIME(),2.40*2.40*666);
-*/
 
 /*materials*/
 /*
@@ -237,7 +232,7 @@ INSERT INTO roofs (name, type) VALUES ('Eternittag B7 - Rødflammet', 1);
 /*tools*/
 /*
 INSERT INTO tools (name,unit_size,price) VALUES ('Plastmo Bundskruer',200,220);
-INSERT INTO tools (name,unit_size,price) VALUES ('Hulbånd 1x20 mm.',10,209);
+INSERT INTO tools (name,unit_size,price) VALUES ('Hulbånd 1x20 mm.',1,209);
 INSERT INTO tools (name,unit_size,price) VALUES ('Universal 190mm højre',1,18);
 INSERT INTO tools (name,unit_size,price) VALUES ('Universal 190mm venstre',1,18);
 INSERT INTO tools (name,unit_size,price) VALUES ('4,5x60 mm. skruer',200,159);
@@ -251,11 +246,21 @@ INSERT INTO tools (name,unit_size,price) VALUES ('T hængsel 390 mm.',1,120);
 INSERT INTO tools (name,unit_size,price) VALUES ('Vinkelbeslag 35',1,6);
 INSERT INTO tools (name,unit_size,price) VALUES ('B & C Toplægteholder',1,50);
 INSERT INTO tools (name,unit_size,price) VALUES ('B & C rygstensbeslag',1,50);
-INSERT INTO tools (name,unit_size,price) VALUES ('B & C tagstens bindere og nakkekroge',5,50);
+INSERT INTO tools (name,unit_size,price) VALUES ('B & C tagstens bindere og nakkekroge',100,50);
 INSERT INTO tools (name,unit_size,price) VALUES ('5x40 mm. beslagskruer',250,269);
 INSERT INTO tools (name,unit_size,price) VALUES ('5x100 mm. skruer',100,100);
 */
 
+/*dummy orders*/
+/*
+INSERT INTO orders (name,address,zip_code,city,phone,email,note,width,length,roof_id,angle,shed_width,shed_length,placed,material_price,price) VALUES ('Dummy','Dummy 1',1234,'Dummy',12345678,'dummy@dummy.dummy','Dummy',240,240,1,0,0,0,CURRENT_TIME(),4500,4500);
+INSERT INTO orders (name,address,zip_code,city,phone,email,note,width,length,roof_id,angle,shed_width,shed_length,placed,material_price,price) VALUES ('Dummy','Dummy 1',1234,'Dummy',12345678,'dummy@dummy.dummy','Dummy',240,240,2,25,0,0,CURRENT_TIME(),6000,6000);
+*/
+
+/*employees*/
+/*
+INSERT INTO employees (name, password) VALUES ('Daniel', '$2a$14$AiniAWZaiBJG9XmOiEFJr.0Qa.Nvw4v.ffhNmhXRq1eZwY7kKSmC6');
+*/
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

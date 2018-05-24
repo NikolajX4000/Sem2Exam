@@ -15,6 +15,16 @@ public class StorageFacade {
 
     /**
      *
+     * @param id
+     * @param price
+     * @throws CustomException
+     */
+    public static void updatePrice(int id, int price) throws CustomException {
+        OrderMapper.updatePrice(id, price);
+    }
+
+    /**
+     *
      * @see storageLayer.OrderMapper#addOrder( Order )
      * @param order
      * @return
@@ -112,17 +122,21 @@ public class StorageFacade {
     public static Material updateMaterial(Material material) throws CustomException {
         return MaterialMapper.updateMaterial(material);
     }
-    
+
     public static void updateMaterial(int id, int size, int price, String description) throws CustomException {
         MaterialMapper.updateMaterial(id, size, price, description);
+    }
+    
+    public static void updateMaterial(int id, int size, int price) throws CustomException {
+        MaterialMapper.updateMaterial(id, size, price);
     }
 
     /**
      * @return @throws CustomException
      */
-    public static List<Material> getAllTool() throws CustomException {
+    public static List<Material> getAllTools() throws CustomException {
         return ToolMapper.getAllTool();
-        
+
     }
 
     /**
@@ -142,15 +156,22 @@ public class StorageFacade {
     public static Material updateTool(Material material) throws CustomException {
         return ToolMapper.updateTool(material);
     }
+    public static void updateTool(int id, int unitSize, int price) throws CustomException {
+        ToolMapper.updateTool(id, unitSize, price);
+    }
+    
+    public static void updateRoof(int id, String name, String oldname) throws CustomException {
+        RoofMapper.updateRoof(id, name, oldname);
+    }
 
     public static List<Roof> getAllRoofs() throws CustomException {
         return RoofMapper.getAllRoofs();
     }
-    
+
     public static Roof getRoofById(int id) throws CustomException {
         return RoofMapper.getRoofById(id);
     }
-    
+
     public static Employee login(String name, String password) throws CustomException {
         return EmployeeMapper.login(name, password);
     }

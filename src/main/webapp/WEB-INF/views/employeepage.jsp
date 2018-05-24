@@ -16,7 +16,7 @@
 
 
 <%
-
+    
     List<Order> os;
     try {
         os = LogicFacade.getAllOrders();
@@ -35,7 +35,7 @@
             s += "<td>" + os.get(i).getId() + "</td>";
             s += "<td>" + os.get(i).getName() + "</td>";
             s += "<td>" + os.get(i).getCity() + "</td>";
-            s += "<td>" + "26 April, 2018" + "</td>";
+            s += "<td>" + os.get(i).getPlaced() + "</td>";
             s += "<td><span class=\"dot " + os.get(i).getStatusColor() + "\"></span>" + os.get(i).getStatus() + "</td>";
             s += "<td>" + os.get(i).getPrice() + "</td>";
 

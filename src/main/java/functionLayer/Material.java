@@ -10,6 +10,7 @@ package functionLayer;
  * @author Stephan
  */
 public class Material {
+
     private int id;
     private String name;
     private int price;
@@ -66,8 +67,13 @@ public class Material {
      * @param price
      * @return
      */
-    public Material setPrice(int price) {
-        this.price = price;
+    public Material setPrice(int price) throws CustomException {
+        if(price >= 0) {
+            this.price = price;
+        } else {
+            throw new CustomException("Pris kan ikke være negativ");
+        }
+
         return this;
     }
 
@@ -84,8 +90,13 @@ public class Material {
      * @param size
      * @return
      */
-    public Material setSize(int size) {
-        this.size = size;
+    public Material setSize(int size) throws CustomException {
+        if(size >= 0) {
+            this.size = size;
+        } else {
+            throw new CustomException("Støresle kan ikke være negativ");
+        }
+
         return this;
     }
 
@@ -111,8 +122,7 @@ public class Material {
      *
      * @return
      */
-    public int getUnitSize()
-    {
+    public int getUnitSize() {
         return unitSize;
     }
 
@@ -121,9 +131,12 @@ public class Material {
      * @param unitSize
      * @return
      */
-    public Material setUnitSize(int unitSize)
-    {
-        this.unitSize = unitSize;
+    public Material setUnitSize(int unitSize) throws CustomException {
+        if(unitSize >= 0) {
+            this.unitSize = unitSize;
+        } else {
+            throw new CustomException("Enhedsstørelse kan ikke være negativ");
+        }
         return this;
     }
 }

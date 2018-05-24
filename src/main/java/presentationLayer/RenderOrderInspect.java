@@ -1,7 +1,12 @@
 package presentationLayer;
 
 import functionLayer.CustomException;
+import functionLayer.FlatCarPortList;
 import functionLayer.Order;
+import functionLayer.PartLine;
+import functionLayer.TallCarPortList;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -14,13 +19,14 @@ public class RenderOrderInspect {
     private RenderOrderInspect() {
     }
 
-    private static String tabStart(String icon, String text){
+    private static StringBuilder tabStart(String icon, String text){
         
         StringBuilder s = new StringBuilder();
         
         s.append("<li>");
 
-        s.append("<div class=\"collapsible-header\">");
+        //når der klikkes på en tab loader man styklisten
+        s.append("<div class=\"collapsible-header partlistloadbtn\" id='partlistbtn").append(o.getId()).append("'>");
         s.append("<i class=\"material-icons\">").append(icon).append("</i>").append(text);
         
         if(text.equals("Detaljer")){
@@ -31,14 +37,14 @@ public class RenderOrderInspect {
 
         s.append("<div class=\"collapsible-body\">");
         
-        return s.toString();
+        return s;
     }
     
     private static String tabEnd(){
         return "</div></li>";
     }
     
-    private static String shortDetail(Object value, String label){
+    private static StringBuilder shortDetail(Object value, String label){
         StringBuilder s = new StringBuilder();
         
         s.append("<div class=\"input-field col s6\">");
@@ -46,10 +52,10 @@ public class RenderOrderInspect {
             s.append("<label>").append(label).append("</label>");
         s.append("</div>");
         
-        return s.toString();
+        return s;
     }
     
-    private static String tabDetails() throws CustomException {
+    private static StringBuilder tabDetails() throws CustomException {
         StringBuilder s = new StringBuilder();
         s.append(tabStart("zoom_out_map", "Detaljer"));
 
@@ -82,44 +88,56 @@ public class RenderOrderInspect {
         s.append("</div>");
         
         s.append(tabEnd());
-        return s.toString();
+        return s;
     }
 
-    private static String tabDrawing() {
+    private static StringBuilder tabDrawing() {
         StringBuilder s = new StringBuilder();
         
         s.append(tabStart("photo", "Tegninger"));
         s.append("<div class='row'>");
             
-        if(o.isFlat()){
-            s.append("<div class=\"col m6\"><div class='materialboxed z-depth-1'>").append(DrawCarport.flatTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed())).append("</div></div>");
-            s.append("<div class=\"col m6\"><div class='materialboxed z-depth-1'>").append(DrawCarport.flatSide(o.getLength(), o.getWidth(), o.getShedLength(), o.hasShed())).append("</div></div>");
-        }else{
-            s.append("<div class=\"col m6\"><div class='materialboxed z-depth-1'>").append(DrawCarport.angledTop(o.getLength(), o.getWidth(), o.getShedLength(), o.getShedWidth(), o.hasShed())).append("</div></div>");
-            s.append("<div class=\"col m6\"><div class='materialboxed z-depth-1'>").append(DrawCarport.angledSide(o.getLength(), o.getWidth(), o.getShedLength(), o.getAngle(), o.hasShed())).append("</div></div>");
-        }
+        s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(o.getDrawingTop()).append("</div></div>");
+        s.append("<div class=\"col m6 s12\"><div class='materialboxed z-depth-1'>").append(o.getDrawingSide()).append("</div></div>");
         
         s.append("</div>");
         s.append(tabEnd());
         
-        return s.toString();
+        return s;
     }
 
-    private static String tabPartlist() {
+    private static StringBuilder tabPartlist() {
         
         StringBuilder s = new StringBuilder();
         s.append(tabStart("format_list_bulleted", "Stykliste"));
         
+        /////////////////////////////////////////////////////////////////////////////////////
+        //preloader til inden stykliste er laodet ind
+        s.append("<div id='partlistcontent").append(o.getId()).append("'>");
+            
+            s.append("<div class=\"preloader-wrapper big active\">\n" +
+                "        <div class=\"spinner-layer spinner-blue-only\">\n" +
+                "            <div class=\"circle-clipper left\">\n" +
+                "                <div class=\"circle\"></div>\n" +
+                "            </div><div class=\"gap-patch\">\n" +
+                "                <div class=\"circle\"></div>\n" +
+                "            </div><div class=\"circle-clipper right\">\n" +
+                "                <div class=\"circle\"></div>\n" +
+                "            </div>\n" +
+                "        </div>\n" +
+                "    </div>");
+            
+        s.append("</div>");
         
-        s.append("<p>Lorem ipsum dolor sit amet.</p>");
+        /////////////////////////////////////////////////////////////////////////////////////
         
         
         s.append(tabEnd());
         
-        return s.toString();
+        return s;
     }
 
-    private static String tabNote() {
+    private static StringBuilder tabNote() {
         StringBuilder s = new StringBuilder();
         s.append(tabStart("event_note", "Bemærkning"));
 
@@ -129,7 +147,7 @@ public class RenderOrderInspect {
         
 
         s.append(tabEnd());
-        return s.toString();
+        return s;
     }
     
     
@@ -137,14 +155,15 @@ public class RenderOrderInspect {
         return status.equals(o.getStatus())? "checked" : "";
     }
     
-    private static String updateStatus() {
+    private static StringBuilder updateStatus() {
         StringBuilder s = new StringBuilder();
         
-        s.append("<div class=\"row\"><div class=\"col s12\">");
+        s.append("<form action=\"?\"method=\"post\" accept-charset=\"ISO-8859-1\">");
+        
+        s.append("<div class=\"row\"><div class=\"col m6 s12\">");
         
         s.append("<p>Opdater ordestatus:</p>");
         
-        s.append("<form action=\"?\"method=\"post\" accept-charset=\"ISO-8859-1\">");
         
         s.append("<input type=\"hidden\" name=\"target\" value=\"").append(o.getId()).append("\">");
         
@@ -171,16 +190,52 @@ public class RenderOrderInspect {
             s.append("<label for=\"").append(o.getId()).append("label4\">Annulleret</label>");
         s.append("</p>");
         
-        
+                
         s.append("<button class=\"btn waves-effect waves-light blue btn-large\" type=\"submit\" name=\"command\" value=\"CmdUpdateOrder\">Opdater");
             s.append("<i class=\"material-icons right\">send</i>");
         s.append("</button>");
         
+        s.append("</div>");
+        
+            s.append("<div class=\"col m6 s12\">");
+            
+                if(o.getStatus().equals("Behandles")){
+                    s.append(updatePrice());
+                }
+            
+            s.append("</div>");
+        
+        s.append("</div>");
         s.append("</form>");
         
-        s.append("</div></div>");
+        return s;
+    }
+    
+    private static StringBuilder updatePrice(){
+        StringBuilder s = new StringBuilder();
         
-        return s.toString();
+        if(o.getStatus().equals("Behandles")){
+           try
+            {
+                s.append("<p>Opdater pris:</p><div class='row'><br>");
+
+
+                s.append("<div class=\"input-field col s12\">");
+                    s.append("<input disabled class=\"black-text\" type=\"text\" value=\"").append(o.getMaterialPrice()).append("\">");
+                    s.append("<label>").append("Vejledende pris:").append("</label>");
+                s.append("</div>");
+
+
+                s.append("<br><div class=\"input-field col s12\">");
+                    s.append("<input id=\"newPrice\" type=\"number\" class=\"validate\" name=\"newPrice\" required min=\"1\" max=\"999999\" value=\"").append(o.getPriceInt()).append("\">");
+                s.append("<label for=\"newPrice\">Personlig pris:</label></div></div>");
+
+            } catch (Exception e)
+            {
+                s.append("Der fik noget galt.");
+            }
+        }
+        return s;
     }
     
     /**

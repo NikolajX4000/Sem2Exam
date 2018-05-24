@@ -1,11 +1,15 @@
 
+<%@page import="functionLayer.LogicFacade"%>
 <%@page import="functionLayer.Roof"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file="/WEB-INF/jspf/header.jspf"%>
 <%
-    List<Roof> roofs = (List<Roof>) request.getAttribute("roofs");
+    
+    
+            
+    List<Roof> roofs = LogicFacade.getAllRoofs();
     StringBuilder flatRoofs = new StringBuilder();
     StringBuilder raisedRoofs = new StringBuilder();
     for (Roof r : roofs) {
@@ -177,9 +181,9 @@
 
             <div class="input-field col s12 angleinfo">
                 <select name="angle" required class="validate">
-                    <option value="15">15 grader</option>
+                    <option value="15" selected>15 grader</option>
                     <option value="20">20 grader</option>
-                    <option value="25" selected>25 grader</option>
+                    <option value="25">25 grader</option>
                     <option value="30">30 grader</option>
                     <option value="35">35 grader</option>
                     <option value="40">40 grader</option>
@@ -195,31 +199,31 @@
         <div class="row">
 
             <div class="input-field col s12">
-                <input id="name" type="text" class="validate" name="name" required maxlength="100" pattern="[a-zA-ZøæåØÆÅ]([- ]?[a-zA-ZøæåØÆÅ]){1,99}">
+                <input id="name" type="text" class="validate" name="name" required maxlength="100" pattern="[a-zA-ZøæåØÆÅ]([- ]?[a-zA-ZøæåØÆÅ]){1,99}" value="${param.name}">
                 <label for="name" data-error="Name must be less than 100 characters and not include any special characters">Navn</label>
             </div>
             <div class="input-field col s12">
-                <input id="address" type="text" class="validate" name="address" required maxlength="100" pattern="[\a-zA-ZøæåØÆÅ]([\wøæåØÆÅ.,][- ][\wøæåØÆÅ.,]|[\wøæåØÆÅ.,]){1,100}">
+                <input id="address" type="text" class="validate" name="address" required maxlength="100" pattern="[\a-zA-ZøæåØÆÅ]([\wøæåØÆÅ.,][- ][\wøæåØÆÅ.,]|[\wøæåØÆÅ.,]){1,100}" value="${param.address}">
                 <label for="address" data-error="Adressen skal være mindre end 100 karaktere og ikke indeholde nogle specialtegn">Adresse</label>
             </div>
             <div class="input-field col s3">
-                <input id="zipcode" type="text" class="validate" name="zipcode" required maxlength="4" pattern="\d{4}">
+                <input id="zipcode" type="text" class="validate" name="zipcode" required maxlength="4" pattern="\d{4}" value="${param.zipcode}">
                 <label for="zipcode" data-error="Skriv et gyldigt postnummer">Postnummer</label>
             </div>
             <div class="input-field col s9">
-                <input id="city" type="text" class="validate" name="city" required maxlength="100" pattern="[a-zA-ZøæåØÆÅ]+[a-zA-ZøæåØÆÅ -.]?[a-zA-ZøæåØÆÅ]+">
+                <input id="city" type="text" class="validate" name="city" required maxlength="100" pattern="[a-zA-ZøæåØÆÅ]+[a-zA-ZøæåØÆÅ -.]?[a-zA-ZøæåØÆÅ]+" value="${param.city}">
                 <label for="city" data-error="Skriv en rigtig by">By</label>
             </div>
             <div class="input-field col s12">
-                <input id="phone" type="text" class="validate" name="phone" required maxlength="20" pattern="[+]?([\d][ -]?){4,19}">
+                <input id="phone" type="text" class="validate" name="phone" required maxlength="20" pattern="[+]?([\d][ -]?){4,19}" value="${param.phone}">
                 <label for="phone" data-error="Skriv et rigtigt telefonnummer">Telefon</label>
             </div>
             <div class="input-field col s12">
-                <input id="email" type="email" class="validate" name="email" maxlength="100">
+                <input id="email" type="email" class="validate" name="email" maxlength="100" value="${param.email}">
                 <label for="email" data-error="Skriv en rigtig e-mail">E-mail adresse</label>
             </div>
             <div class="input-field col s12">
-                <textarea id="note" class="materialize-textarea" name="note"  data-length="500" maxlength="500"></textarea>
+                <textarea id="note" class="materialize-textarea" name="note"  data-length="500" maxlength="500" value="${param.note}"></textarea>
                 <label for="note">Evt. bemærkninger</label>
             </div>
         </div>

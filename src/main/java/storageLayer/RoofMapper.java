@@ -37,7 +37,7 @@ public class RoofMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
         return roofs;
     }
@@ -63,17 +63,70 @@ public class RoofMapper {
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
-            closeConnection(ps);
+            closeStatement(ps);
         }
+        
+        try {
+            roof.getNAME();
+        } catch ( NullPointerException e) {
+            throw new CustomException( "Dette ID er ikke tilgængeligt" );
+        }
+        
         return roof;
     }
 
-    private static void closeConnection(PreparedStatement ps) {
+    public static void updateRoof(int id, String name, String oldname) throws CustomException {
+        Connection con = null;
+        PreparedStatement updateRoof = null;
+        PreparedStatement updateTagsten = null;
+        
+        String updateRoofString = "UPDATE roofs SET name = ? WHERE roof_id = ?";
+        String updateTagstenString = "UPDATE materials SET description = ? WHERE description = ? AND (name = 'tagsten' OR name = 'rygsten')";
+        
+        try {
+            con = Connector.connection();
+            con.setAutoCommit(false);
+            
+            updateRoof = con.prepareStatement(updateRoofString);
+            updateRoof.setString(1, name);
+            updateRoof.setInt(2, id);
+            updateRoof.executeUpdate();
+            
+            
+            updateTagsten = con.prepareStatement(updateTagstenString);
+            updateTagsten.setString(1, name);
+            updateTagsten.setString(2, oldname);
+            updateTagsten.executeUpdate();
+            
+            con.commit();
+        } catch (ClassNotFoundException | SQLException e) {
+            if (con != null) {
+                try {
+                    con.rollback();
+                } catch (SQLException ex) {
+                    throw new CustomException(ex.getMessage());
+                }
+            }
+            throw new CustomException(e.getMessage());
+        } finally {
+            closeStatement(updateRoof);
+            closeStatement(updateTagsten);
+            
+            try {
+                con.setAutoCommit(true);
+            } catch (SQLException ex) {
+                throw new CustomException("Der gik noget galt ved opdateringen, prøv igen senere.");
+            }
+            
+        }
+    }
+
+    private static void closeStatement(PreparedStatement ps) throws CustomException {
         if (ps != null) {
             try {
                 ps.close();
             } catch (SQLException ex) {
-                Logger.getLogger(OrderMapper.class.getName()).log(Level.SEVERE, null, ex);
+                throw new CustomException( "Kunne ikke få kontakt til databasen" );
             }
         }
     }
