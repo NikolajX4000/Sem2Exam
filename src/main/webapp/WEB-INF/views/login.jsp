@@ -1,6 +1,5 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <%@include file="/WEB-INF/jspf/header.jspf"%>
 
 <form class="row" method="post" action="?" accept-charset="ISO-8859-1">

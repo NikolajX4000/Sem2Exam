@@ -1,25 +1,6 @@
-<%-- 
-    Document   : materialpage
-    Created on : 16-05-2018, 09:07:08
-    Author     : Hupra Laptop
---%>
 
-<%@page import="functionLayer.LogicFacade"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
-<%
-
-    request.setAttribute("tools", LogicFacade.getAllTool());
-    request.setAttribute("mats", LogicFacade.getAllMaterialsAsMap());
-    request.setAttribute("roofs", LogicFacade.getAllRoofs());
-
-%>
-
-
-
-<!DOCTYPE html>
 <%@include file="/WEB-INF/jspf/header.jspf"%>
-
 
 <div class="row">
     <div class="col s12">
@@ -33,7 +14,6 @@
     <%@include file="/WEB-INF/jspf/materialsEdit.jspf"%>  
     <%@include file="/WEB-INF/jspf/toolsEdit.jspf"%> 
     <%@include file="/WEB-INF/jspf/roofsEdit.jspf"%> 
-
 
 </div>
 
