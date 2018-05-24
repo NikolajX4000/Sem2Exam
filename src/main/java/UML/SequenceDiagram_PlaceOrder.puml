@@ -1,7 +1,7 @@
 @startuml
 
 actor Kunde
-boundary "Order.jsp" as Order
+boundary "makeCarport.jsp" as Order
 boundary "ViewOrders.jsp" as Orders
 participant "OrderMapper.java" as OM
 database "Database" as DB
