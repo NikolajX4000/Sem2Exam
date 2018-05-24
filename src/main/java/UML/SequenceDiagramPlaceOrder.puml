@@ -1,0 +1,17 @@
+@startuml
+skinparam shadowing false
+
+actor Kunde
+boundary "order.jsp" as Bestil
+boundary "viewOrders.jsp" as Bestillinger
+participant "OrderMapper.java" as OM
+database "Database" as DataBase
+
+Kunde -> Bestil : Bestil
+Bestil -> OM : DB Adgang
+OM -> DataBase : Tilføj Ordre
+DataBase -> OM : Hent Ordre
+OM -> Bestillinger : Alle Ordre
+Bestillinger -> Kunde : Orderhistorik
+
+@enduml
