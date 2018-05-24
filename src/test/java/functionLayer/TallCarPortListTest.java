@@ -382,7 +382,7 @@ public class TallCarPortListTest
     @Test
     public void testSkruerSternVindskedeVandbraet() throws CustomException
     {
-        PartLine part = carport.skruerSternVindskedeVandbraet(1800);
+        PartLine part = carport.skruerSternVindskedeVandbraet(7);
         int expAmount = 1;
         int amount = part.getAmount();
         assertEquals(expAmount, amount);
@@ -468,7 +468,7 @@ public class TallCarPortListTest
     {
         ArrayList<PartLine> parts = carport.stolperOgBolt();
         PartLine part = findPart("stolpe", parts);
-        int expAmount = 9;
+        int expAmount = 12;
         int expSize = 300;
         int amount = part.getAmount();
         int size = part.getSize();
