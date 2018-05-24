@@ -41,6 +41,6 @@ public class CmdUpdateOrder extends Command
             request.setAttribute("feedback", e);
         }
 
-        return "employeepage";
+        return "allOrders";
     }
 }

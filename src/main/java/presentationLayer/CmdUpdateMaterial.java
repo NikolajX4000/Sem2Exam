@@ -40,7 +40,7 @@ public class CmdUpdateMaterial extends Command
             request.setAttribute("feedback", e);
         }
 
-        return "materialpage";
+        return "editMaterials";
     }
 
 }

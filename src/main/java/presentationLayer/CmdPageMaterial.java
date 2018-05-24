@@ -9,7 +9,7 @@ public class CmdPageMaterial extends Command
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response)
     {
-        return "materialpage";
+        return "editMaterials";
     }
 
 }

@@ -20,12 +20,11 @@ public class CmdLogin extends Command{
             request.setAttribute("feedback", "Velkommen " + emp.getName());
             request.getSession().setAttribute("user", emp);
             
-            return "employeepage";
+            return "allOrders";
 
         } catch (CustomException e)
         {
             request.setAttribute("feedback", e.getMessage());
-            request.setAttribute("test", e.getMessage());
         }
         
         return "login";

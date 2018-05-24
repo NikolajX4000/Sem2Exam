@@ -33,6 +33,6 @@ public class CmdUpdateTool extends Command
             request.setAttribute("feedback", e);
         }
 
-        return "materialpage";
+        return "editMaterials";
     }
 }

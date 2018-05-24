@@ -29,6 +29,6 @@ public class CmdShowOrders extends Command
             }
         }
 
-        return "viewordersTEST";
+        return "specificUserOrders";
     }
 }

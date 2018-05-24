@@ -13,7 +13,7 @@ public class CmdPageAllOrders extends Command
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response)
     {
-        return "employeepage";
+        return "allOrders";
     }
 
 }
