@@ -170,7 +170,7 @@ public class FlatCarPortListTest
     {
         ArrayList<PartLine> parts = carportShed.stolperOgBolt();
         PartLine part = findPart("stolpe", parts);
-        int expAmount = 11;
+        int expAmount = 12;
         int expSize = 300;
         int amount = part.getAmount();
         int size = part.getSize();
@@ -187,9 +187,9 @@ public class FlatCarPortListTest
         ArrayList<PartLine> parts = carportShed.braeddeboltOgFirkantskive(8);
         PartLine braeddebolt = findPart("Bræddebolte 10x120 mm.", parts);
         PartLine firkantSkive = findPart("Firkantskiver 40x40x11 mm.", parts);
-        int expAmountB = 20;
+        int expAmountB = 16;
         int amountB = braeddebolt.getAmount();
-        int expAmountF = 20;
+        int expAmountF = 16;
         int amountF = firkantSkive.getAmount();
         assertEquals(expAmountB, amountB);
         assertEquals(expAmountF, amountF);
