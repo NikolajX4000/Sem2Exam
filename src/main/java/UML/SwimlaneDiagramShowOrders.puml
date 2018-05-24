@@ -2,16 +2,16 @@
 |Kunde|
 start
 :Indtast email;
-|#AntiqueWhite|System|
+|#F0F0F0|System|
 :Henter ordre for email;
 :Vis ordre;
 |Kunde|
 :Vælg tab for tegning;
-|#AntiqueWhite|System|
+|System|
 :Tegn carport;
 |Kunde|
 :Vælg tab for stykliste;
-|#AntiqueWhite|System|
+|System|
 :Beregn stykliste;
 |Kunde|
 stop

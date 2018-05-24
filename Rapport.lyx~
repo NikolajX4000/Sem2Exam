@@ -264,6 +264,26 @@ Overordnet beskrivelse af virksomheden
 Arbejdsgange der skal IT-støttes
 \end_layout
 
+\begin_layout Standard
+\noindent
+\begin_inset Graphics
+	filename SwimlaneDiagramCreateCarport.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Graphics
+	filename SwimlaneDiagramShowOrder.PNG
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Scrum userstories
 \end_layout
@@ -299,26 +319,6 @@ Navigationsdiagram
 
 \begin_layout Section
 Sekvensdiagrammer
-\end_layout
-
-\begin_layout Standard
-\noindent
-\begin_inset Graphics
-	filename SwimlaneDiagramCreateCarport.PNG
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\begin_inset Graphics
-	filename SwimlaneDiagramShowOrder.PNG
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section

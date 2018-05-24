@@ -2,10 +2,15 @@
 |Kunde|
 start
 :Bestil carport;
-|#AntiqueWhite|System|
+|#F0F0F0|System|
+:Lav ordre;
+:Send email til medarbejder;
 :Udregn stykliste;
 :Udregn pris;
-:Lav ordre;
+|Medarbejder|
+:Giv tilbud;
+:Ændre status;
+|System|
 :Tegn carport;
 :Vis ordre;
 |Kunde|
