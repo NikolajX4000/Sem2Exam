@@ -1,17 +1,16 @@
 @startuml
-skinparam shadowing false
 
 actor Kunde
-boundary "order.jsp" as Bestil
-boundary "viewOrders.jsp" as Bestillinger
+boundary "Order.jsp" as Order
+boundary "ViewOrders.jsp" as Orders
 participant "OrderMapper.java" as OM
-database "Database" as DataBase
+database "Database" as DB
 
-Kunde -> Bestil : Bestil
-Bestil -> OM : DB Adgang
-OM -> DataBase : Tilføj Ordre
-DataBase -> OM : Hent Ordre
-OM -> Bestillinger : Alle Ordre
-Bestillinger -> Kunde : Orderhistorik
+Kunde -> Order : Bestil
+Order -> OM : DB Adgang
+OM -> DB : Tilføj Ordre
+DB -> OM : Hent Ordre
+OM -> Orders : Alle Ordre
+Orders -> Kunde : Orderhistorik
 
 @enduml
