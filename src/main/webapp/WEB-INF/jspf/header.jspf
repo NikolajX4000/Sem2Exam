@@ -32,8 +32,9 @@
     <body>
 
 
-
-        <%@include file="debug.jspf"%>
+        <c:if test="${true}">
+            <%@include file="debug.jspf"%>
+        </c:if>
 
         <nav>
             <div class="nav-wrapper">
