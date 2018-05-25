@@ -74,24 +74,39 @@
 Johannes Fog - Carport Case - Rapport
 \end_layout
 
-\begin_layout Author
+\begin_layout Standard
 \noindent
-Jacob Borg
+\align center
+Jacob Borg - cph-jb308@cphbusiness.dk - Jack-Borg
 \begin_inset Newline newline
 \end_inset
 
-Daniel Lindholm
+Daniel Lindholm - cph-dl110@cphbusiness.dk - Hupra
 \begin_inset Newline newline
 \end_inset
 
-Nikolaj Thorsen Nielsen
+Nikolaj Thorsen Nielsen - cph-nn134@cphbusiness.dk - NikolajX4000
 \begin_inset Newline newline
 \end_inset
 
-Stephan Marcus Duelund Djurhuus
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+small{Stephan Marcus Duelund Djurhuus - cph-sd115@cphbusiness.dk - Stephan-MDD}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\noindent
 Link til 
 \begin_inset CommandInset href
 LatexCommand href
@@ -104,6 +119,7 @@ target "https://github.com/NikolajX4000/Sem2Exam"
 \end_layout
 
 \begin_layout Standard
+\noindent
 Link til 
 \begin_inset CommandInset href
 LatexCommand href
@@ -115,6 +131,7 @@ name "websitet"
 \end_layout
 
 \begin_layout Standard
+\noindent
 Link til 
 \begin_inset CommandInset href
 LatexCommand href
@@ -253,7 +270,8 @@ Som medarbejder skal man kunne se alle ordre.
 
 \begin_layout Standard
 \noindent
-Systemet skal kunne udregne en stykliste udfra en ordre.
+Systemet skal kunne udregne en stykliste udfra en ordre og en vejledende
+ pris udfra styklisten.
 \end_layout
 
 \begin_layout Subsection
@@ -266,6 +284,395 @@ Arbejdsgange der skal IT-støttes
 
 \begin_layout Subsection
 Scrum userstories
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Som kunde vil jeg kunne bestille en carport så jeg kan få en carport}
+\end_layout
+
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{how-to-demo}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+Bruger skal kunne vælge om carporten skal være med eller uden rejsning.
+ Bruger skal kunne vælge størrelse mm.
+ på en carport.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{tasks}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+Opret order tabel i databasen.
+\begin_inset Newline newline
+\end_inset
+
+Opret shoppage med form til at angive størrelse på carport.
+\begin_inset Newline newline
+\end_inset
+
+Opret ordermapper.
+\begin_inset Newline newline
+\end_inset
+
+Opret user til databasen.
+\begin_inset Newline newline
+\end_inset
+
+Giv useren til databasen insert privilegier.
+\begin_inset Newline newline
+\end_inset
+
+Opret create metode i ordermapper.
+\begin_inset Newline newline
+\end_inset
+
+Opret order klasse.
+\begin_inset Newline newline
+\end_inset
+
+Command til bestilling.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{estimat}
+\end_layout
+
+\end_inset
+
+: Estimeret til en uges arbejde.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{12pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Som medarbejder vil jeg kunne udregne en stykliste så jeg ved hvilke
+ materialer der skal bruges}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{how-to-demo}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+Brugeren skal kunne se en tegning af en carport med fladt tag fra oven.
+\begin_inset Newline newline
+\end_inset
+
+Brugeren skal kunne se en tegning af en carport med fladt tag fra siden.
+\begin_inset Newline newline
+\end_inset
+
+Brugeren skal kunne se en tegning af en carport med rejsning fra oven.
+\begin_inset Newline newline
+\end_inset
+
+Brugeren skal kunne se en tegning af en carport med rejsning fra siden
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{tasks}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+Lav stykliste for carport med fladt tag fra oven.
+\begin_inset Newline newline
+\end_inset
+
+Lav stykliste for carport med fladt tag fra siden.
+\begin_inset Newline newline
+\end_inset
+
+Lav stykliste for carport med rejsning fra oven.
+\begin_inset Newline newline
+\end_inset
+
+Lav stykliste for carport med rejsning fra siden.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{estimat}
+\end_layout
+
+\end_inset
+
+: Estimeret til en uges arbejde.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{12pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Som kunde vil jeg kunne se en tegning af min carport så jeg kan se
+ hvad det er jeg køber}
+\end_layout
+
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{how-to-demo}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+Styklisten stemmer overens med tegningerne.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{tasks}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+Lav stykliste for carport med fladt tag.
+\begin_inset Newline newline
+\end_inset
+
+Lav stykliste for carport med rejsning.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{estimat}
+\end_layout
+
+\end_inset
+
+: Estimeret til en uges arbejde.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{12pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Som medarbejder vil jeg kunne se en vejledende pris baseret på en
+ styklisten så jeg har et udgangspunkt for at kunne give kunden et tilbud}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{12pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Som bruger af systemet vil jeg have et brugervenligt design så jeg
+ kan finde rundt}
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section

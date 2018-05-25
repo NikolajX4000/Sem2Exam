@@ -14,7 +14,7 @@ public class DrawCarportAngleSide {
     double roofBottom = 10;
     double beam = 10;
     double newBeamAfter = 400;
-    double brickWidth = 5;
+    double brickWidth = 24;
     double topBrick = 7.5;
     double barge = 10;
     
@@ -62,9 +62,9 @@ public class DrawCarportAngleSide {
 
     public String getDrawing()
     {
+        drawBricks();
         drawRem();
         drawStern();
-        drawBricks();
         drawRoofBottom();
         drawBeams();
         if(hasShed)drawShedBeams();
@@ -93,14 +93,14 @@ public class DrawCarportAngleSide {
 
     private void drawBricks()
     {
-        for (double i = barge / 2; i < width - brickWidth; i += brickWidth) {
+        for (double i = barge/2; i < width - brickWidth; i += brickWidth) {
             svg.rct(i, brickOffset, brickHeight, brickWidth, "fill:white;stroke:grey;stroke-width:0.5");
         }
         
         //test lines
-        for(double i = brickOffset; i < brickHeight+brickOffset; i+= brickWidth*1.5){
-            svg.line(0, i, width, i, "fill:white;stroke:grey;stroke-width:0.5", "stroke-dasharray='"+brickWidth+", "+brickWidth+"'");
-            svg.line(brickWidth, i+brickWidth, width-brickWidth, i+brickWidth, "fill:white;stroke:grey;stroke-width:0.5", "stroke-dasharray='"+brickWidth+", "+brickWidth+"'");
+        for(double i = brickOffset; i < brickHeight+brickOffset; i+= brickWidth*1.25){
+            svg.line( barge/2, i, width, i, "fill:white;stroke:grey;stroke-width:0.5", "stroke-dasharray='"+brickWidth+", "+brickWidth+"'");
+            svg.line( barge/2 + brickWidth, i+brickWidth, width-(barge/2), i+brickWidth, "fill:white;stroke:grey;stroke-width:0.5", "stroke-dasharray='"+brickWidth+", "+brickWidth+"'");
         }
         //top brick
         svg.rct(barge / 2, topBrickOffset, topBrick, width - barge, "fill:white;stroke:black;stroke-width:0.5");
