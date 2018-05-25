@@ -2,7 +2,7 @@
 
 [*] --> index
 
-allOrders -> editMaterials
+allOrders -left-> editMaterials
 
 index --> login
 index --> makeCarport

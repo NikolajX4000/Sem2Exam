@@ -849,6 +849,18 @@ reference "fig:ER-diagram"
 
 \begin_layout Standard
 \noindent
+Domæne model kan ses i Appendix A: Diagrammer: Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Domæne-model"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
 Klassediagram kan ses i Appendix A: Diagrammer: Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -861,6 +873,17 @@ reference "fig:Klassediagram"
 
 \begin_layout Section
 Navigationsdiagram
+\end_layout
+
+\begin_layout Standard
+Navigationsdiagram kan ses i Appendix A: Diagrammer: Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Navigationsdiagram"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -971,6 +994,10 @@ Appendix
 Appendix A: Diagrammer
 \end_layout
 
+\begin_layout Subsubsection
+ER diagram
+\end_layout
+
 \begin_layout Standard
 \align center
 \begin_inset Float figure
@@ -1012,21 +1039,48 @@ name "fig:ER-diagram"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Domæne model
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align center
 \begin_inset Float figure
+placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Graphics
+	filename DomainModel.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+Domæne model
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Domæne-model"
+
+\end_inset
+
 
 \end_layout
 
@@ -1042,6 +1096,17 @@ status open
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Klassediagram
 \end_layout
 
 \begin_layout Standard
@@ -1086,6 +1151,17 @@ name "fig:Klassediagram"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Aktivitetsdiagrammer
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align center
 \begin_inset Float figure
@@ -1121,6 +1197,13 @@ name "fig:Aktivitetsdiagram:-Kunde-bestill"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -1168,6 +1251,13 @@ name "fig:Aktivitetsdiagram:-Kunde-ser"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align center
 \begin_inset Float figure
@@ -1200,6 +1290,76 @@ name "fig:Aktivitetsdiagram:-Medarbjeder-æ"
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Sekvensdiagrammer
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Navigationsdiagram
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename NavigationDiagram.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Navigationsdiagram
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Navigationsdiagram"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
