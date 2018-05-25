@@ -995,6 +995,206 @@ Appendix A: Diagrammer
 \end_layout
 
 \begin_layout Subsubsection
+Aktivitetsdiagrammer
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename SwimlaneDiagramCreateCarport.PNG
+	lyxscale 10
+	height 80theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aktivitetsdiagram: Kunde bestiller en carport
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Aktivitetsdiagram:-Kunde-bestill"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename SwimlaneDiagramShowOrder.PNG
+	lyxscale 10
+	height 80theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aktivitetsdiagram: Kunde ser sine ordre
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Aktivitetsdiagram:-Kunde-ser"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename SwimlaneDiagramUpdateMaterial.PNG
+	lyxscale 10
+	height 80theight%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aktivitetsdiagram: Medarbjeder ændre på tilgængeligt materiale
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Aktivitetsdiagram:-Medarbjeder-æ"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Domæne model
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename DomainModel.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Domæne model
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Domæne-model"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
 ER diagram
 \end_layout
 
@@ -1030,66 +1230,6 @@ name "fig:ER-diagram"
 
 \end_inset
 
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-Domæne model
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align center
-\begin_inset Float figure
-placement h
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename DomainModel.PNG
-	lyxscale 10
-	width 100text%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Domæne model
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Domæne-model"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1158,154 +1298,6 @@ name "fig:Klassediagram"
 \end_layout
 
 \begin_layout Subsubsection
-Aktivitetsdiagrammer
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align center
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename SwimlaneDiagramCreateCarport.PNG
-	lyxscale 10
-	height 90theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Aktivitetsdiagram: Kunde bestiller en carport
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Aktivitetsdiagram:-Kunde-bestill"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align center
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename SwimlaneDiagramShowOrder.PNG
-	lyxscale 10
-	height 90theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Aktivitetsdiagram: Kunde ser sine ordre
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Aktivitetsdiagram:-Kunde-ser"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align center
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename SwimlaneDiagramUpdateMaterial.PNG
-	lyxscale 10
-	height 90theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Aktivitetsdiagram: Medarbjeder ændre på tilgængeligt materiale
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Aktivitetsdiagram:-Medarbjeder-æ"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
 Sekvensdiagrammer
 \end_layout
 
@@ -1324,9 +1316,10 @@ Navigationsdiagram
 \noindent
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
