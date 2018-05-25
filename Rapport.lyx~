@@ -925,10 +925,10 @@ Appendix A: Diagrammer
 \begin_layout Standard
 \align center
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -949,23 +949,23 @@ status open
 
 \end_layout
 
+\begin_layout Plain Layout
+ER diagram
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-ER diagram
-\end_layout
-
-\begin_layout Standard
 \noindent
 \align center
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -986,20 +986,20 @@ status open
 
 \end_layout
 
+\begin_layout Plain Layout
+Klassediagram
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Klassediagram
-\end_layout
-
-\begin_layout Standard
 \noindent
 \align center
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status open
@@ -1011,7 +1011,7 @@ status open
 \begin_inset Graphics
 	filename SwimlaneDiagramCreateCarport.PNG
 	lyxscale 10
-	width 100text%
+	height 90theight%
 
 \end_inset
 
@@ -1023,20 +1023,20 @@ status open
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 Aktivitetsdiagram: Kunde bestiller en carport
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align center
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status open
@@ -1048,7 +1048,7 @@ status open
 \begin_inset Graphics
 	filename SwimlaneDiagramShowOrder.PNG
 	lyxscale 10
-	width 100text%
+	height 90theight%
 
 \end_inset
 
@@ -1060,20 +1060,20 @@ status open
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 Aktivitetsdiagram: Kunde ser sine ordre
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align center
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status open
@@ -1085,7 +1085,7 @@ status open
 \begin_inset Graphics
 	filename SwimlaneDiagramUpdateMaterial.PNG
 	lyxscale 10
-	width 100text%
+	height 90theight%
 
 \end_inset
 
@@ -1097,13 +1097,13 @@ status open
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 Aktivitetsdiagram: Medarbjeder ændre på tilgængeligt materiale
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1126,32 +1126,110 @@ newpage
 Appendix B: User Stories
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection
+Implementeret
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Som bruger af systemet vil jeg have et brugervenligt design så jeg kan finde
+ rundt
+\end_layout
+
+\begin_layout Itemize
 Som kunde vil jeg kunne bestille en carport så jeg kan få en carport
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 \noindent
 Som kunde vil jeg kunne se en tegning af min carport så jeg kan se hvad
  det er jeg køber
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
+Som kunde vil jeg have mulighed for at kontakte en medarbejder så jeg kan
+ få rådgivning
+\end_layout
+
+\begin_layout Itemize
+Som kunde vil jeg have mulighed for at kunne se mine ordre og deres status
+ så jeg kan holde mig opdateret
+\end_layout
+
+\begin_layout Itemize
+Som kunde vil jeg kunne se prisen på min carport så jeg ved om jeg har råd
+ til den
+\end_layout
+
+\begin_layout Itemize
+Som kunde vil jeg kunne se hvornår jeg har afgivet min ordre i et læseligt
+ format så jeg kan se hvornår jeg har bestilt min carport
+\end_layout
+
+\begin_layout Itemize
 \noindent
 Som medarbejder vil jeg kunne udregne en stykliste så jeg ved hvilke materialer
  der skal bruges
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 \noindent
 Som medarbejder vil jeg kunne se en vejledende pris baseret på en styklisten
  så jeg har et udgangspunkt for at kunne give kunden et tilbud
 \end_layout
 
-\begin_layout Standard
-\noindent
-Som bruger af systemet vil jeg have et brugervenligt design så jeg kan finde
- rundt
+\begin_layout Itemize
+Som medarbejder vil jeg være i stand til at ændre på tilgængelige materialer
+ så jeg ved hvilke materialer jeg har
+\end_layout
+
+\begin_layout Itemize
+Som medarbejder vil jeg være i stand til at annullere en ordre så det er
+ muligt at annullere sin ordre
+\end_layout
+
+\begin_layout Itemize
+Som medarbejder vil jeg have mulighed for at ændre status for en ordre så
+ kan holde kunden opdateret
+\end_layout
+
+\begin_layout Itemize
+Som medarbejder vil jeg have besked når en ny ordre er blevet placeret så
+ jeg hurtigt kan hjælpe kunde med at få sin carport
+\end_layout
+
+\begin_layout Itemize
+Som medarbejder vil jeg have medarbejderspecifikke operationer gemt væk
+ bag et login så kunder ikke har adgang
+\end_layout
+
+\begin_layout Subsubsection
+Ikke implementeret
+\end_layout
+
+\begin_layout Itemize
+Som kunde vil jeg kunne opdatere mine informationer så jeg kan få min carport
+ leveret til den rigtige adresse
+\end_layout
+
+\begin_layout Itemize
+Som kunde vil jeg kunne se et estimat for hvornår jeg kan få min carport
+ så jeg ved hvornår jeg får min carport
+\end_layout
+
+\begin_layout Itemize
+Som medarbejder vil jeg kunne lave et nyt kodeord hvis jeg glemmer mit kodeord
+ så jeg stadig kan arbejde hvis jeg glemmer mit kodeord
+\end_layout
+
+\begin_layout Itemize
+Som medarbejder vil jeg kunne slette og tilføje materialer så jeg kan tilpasse
+ mig ændringer i tilgængeligt materiale
+\end_layout
+
+\begin_layout Itemize
+Som medarbejder vil jeg kuune ændre en stykliste så jeg kan være sikker
+ på at den er rigtig
 \end_layout
 
 \end_body

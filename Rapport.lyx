@@ -278,6 +278,10 @@ Systemet skal kunne udregne en stykliste udfra en ordre og en vejledende
 Overordnet beskrivelse af virksomheden
 \end_layout
 
+\begin_layout Standard
+test
+\end_layout
+
 \begin_layout Subsection
 Arbejdsgange der skal IT-støttes
 \end_layout
@@ -1002,7 +1006,7 @@ Klassediagram
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1039,7 +1043,7 @@ Aktivitetsdiagram: Kunde bestiller en carport
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -1076,7 +1080,7 @@ Aktivitetsdiagram: Kunde ser sine ordre
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
