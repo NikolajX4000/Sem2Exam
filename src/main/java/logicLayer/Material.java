@@ -66,6 +66,7 @@ public class Material {
      *
      * @param price
      * @return
+     * @throws logicLayer.CustomException
      */
     public Material setPrice(int price) throws CustomException {
         if(price >= 0) {
@@ -89,6 +90,7 @@ public class Material {
      *
      * @param size
      * @return
+     * @throws logicLayer.CustomException
      */
     public Material setSize(int size) throws CustomException {
         if(size >= 0) {
@@ -130,6 +132,7 @@ public class Material {
      *
      * @param unitSize
      * @return
+     * @throws logicLayer.CustomException
      */
     public Material setUnitSize(int unitSize) throws CustomException {
         if(unitSize >= 0) {

@@ -62,6 +62,7 @@ public class Order {
     /**
      *
      * @return
+     * @throws logicLayer.CustomException
      */
     public int getPriceInt() throws CustomException {
 
@@ -76,6 +77,7 @@ public class Order {
     /**
      *
      * @return
+     * @throws logicLayer.CustomException
      */
     public String getPrice() throws CustomException {
 

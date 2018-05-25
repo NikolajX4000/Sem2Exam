@@ -185,6 +185,7 @@ public class RenderOrder {
      *
      * @param o
      * @return
+     * @throws logicLayer.CustomException
      */
     public static String print(Order o) throws CustomException
     {

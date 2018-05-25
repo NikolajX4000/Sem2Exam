@@ -242,6 +242,7 @@ public class RenderOrderInspect {
      *
      * @param o
      * @return
+     * @throws logicLayer.CustomException
      */
     public static String print(Order o) throws CustomException {
 

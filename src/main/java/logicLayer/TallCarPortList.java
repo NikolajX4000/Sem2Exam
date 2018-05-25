@@ -1,8 +1,14 @@
 package logicLayer;
 
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
 import storageLayer.StorageFacade;
 
+/**
+ * This class calculates the parts list for a carport with a raised roof.
+ *
+ * @author Jack-Borg
+ */
 public class TallCarPortList
 {
 
@@ -19,6 +25,13 @@ public class TallCarPortList
     boolean hasShed;
     String roof;
 
+    /**
+     * The constructor takes an Order. The order needs to hold at least a
+     * length, a width, a roof type and an angle.
+     *
+     * @param order
+     * @throws CustomException
+     */
     public TallCarPortList(Order order) throws CustomException
     {
         this.length = order.getLength();
@@ -36,6 +49,10 @@ public class TallCarPortList
         this.allTools = StorageFacade.getAllTools();
     }
 
+    /**
+     *
+     * @return @throws CustomException
+     */
     public List<PartLine> getParts() throws CustomException
     {
         List<PartLine> parts = new ArrayList<>();
@@ -130,7 +147,7 @@ public class TallCarPortList
         List<PartLine> parts = new ArrayList<>();
         int amount;
 
-        int total = 0;
+        int total;
 
         if (hasShed)
         {
