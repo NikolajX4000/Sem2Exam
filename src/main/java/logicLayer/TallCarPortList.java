@@ -516,40 +516,4 @@ public class TallCarPortList
         throw new CustomException("ingen matriel passer");
     }
 
-    double testAmountStolper()
-    {
-        double spacing = 400;
-        double beamAmount = 0;
-        double amountRem = 0;
-        double col;
-        double rows;
-        if (hasShed)
-        {
-            col = 2 + (int) (shedLength / spacing);
-            rows = 2 + (int) (shedWidth / spacing);
-            beamAmount += rows * col;
-            if (rows > 2 && col > 2)
-            {
-                beamAmount -= (rows - 2) * (col - 2);
-            }
-            amountRem += rows * 2 + 2;
-            if (shedWidth != width - 30)
-            {
-                beamAmount += col;
-                amountRem--;
-            }
-        }
-
-        double carportLength = length - shedLength - 60;
-
-        if (carportLength > 200)
-        {
-            double tmp = (1 + Math.ceil(carportLength / spacing)) * 2;
-            beamAmount += tmp;
-            amountRem += tmp;
-        }
-        System.out.println(amountRem);
-        return beamAmount;
-    }
-
 }

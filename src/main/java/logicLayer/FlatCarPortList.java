@@ -270,7 +270,7 @@ public class FlatCarPortList
         return new PartLine(material, amount);
     }
 
-    List<PartLine> loesholter() throws CustomException
+    private List<PartLine> loesholter() throws CustomException
     {
         List<PartLine> parts = new ArrayList<>();
         parts.add(loesholterGavl());

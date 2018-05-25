@@ -661,4 +661,49 @@ public class FlatCarPortListTest
         return null;
     }
 
+    /**
+     * Test of loesholterGavl method, of class FlatCarPortList.
+     */
+    @Test
+    public void testLoesholterGavl() throws Exception
+    {
+        PartLine part = carportShed.loesholterGavl();
+        int expAmount = 12;
+        int expSize = 270;
+        int amount = part.getAmount();
+        int size = part.getSize();
+        assertEquals(expAmount, amount);
+        assertEquals(expSize, size);
+    }
+
+    /**
+     * Test of loesholterSider method, of class FlatCarPortList.
+     */
+    @Test
+    public void testLoesholterSider() throws Exception
+    {
+        PartLine part = carportShed.loesholterSider();
+        int expAmount = 4;
+        int expSize = 240;
+        int amount = part.getAmount();
+        int size = part.getSize();
+        assertEquals(expAmount, amount);
+        assertEquals(expSize, size);
+    }
+
+    /**
+     * Test of remSkur method, of class FlatCarPortList.
+     */
+    @Test
+    public void testRemSkur() throws Exception
+    {
+        PartLine part = carportShed.remSkur();
+        int expAmount = 2;
+        int expSize = 300;
+        int amount = part.getAmount();
+        int size = part.getSize();
+        assertEquals(expAmount, amount);
+        assertEquals(expSize, size);
+    }
+
 }
