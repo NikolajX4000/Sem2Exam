@@ -29,6 +29,7 @@ public class DanielsPostHus {
         // lav content
         msg.addRecipient(Message.RecipientType.TO, new InternetAddress(receiver));
         msg.setSubject(subject);
+        msg.setFrom(new InternetAddress("foglyngby@gmail.com"));
         msg.setContent(content, "text/html");
 
         // send email
@@ -67,7 +68,7 @@ public class DanielsPostHus {
         
         s.append("</table>");
         
-        s.append("<h4>Bemærkning:</h4>");
+        s.append("<h4>Bemrkning:</h4>");
         s.append("<p>").append(o.getNote()).append("</p>");
         
         sendMail(subject, s.toString(), receiver);
