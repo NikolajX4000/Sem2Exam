@@ -106,6 +106,22 @@ small{Stephan Marcus Duelund Djurhuus - cph-sd115@cphbusiness.dk - Stephan-MDD}
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{10cm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 Link til 
 \begin_inset CommandInset href
@@ -837,10 +853,11 @@ Domæne model og ER diagram
 \end_layout
 
 \begin_layout Standard
-ER diagram kan ses i Appendix A: Diagrammer: Figure 
+\noindent
+Domæne model kan ses i Appendix A: Diagrammer: Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:ER-diagram"
+reference "fig:Domæne-model"
 
 \end_inset
 
@@ -849,10 +866,10 @@ reference "fig:ER-diagram"
 
 \begin_layout Standard
 \noindent
-Domæne model kan ses i Appendix A: Diagrammer: Figure 
+ER diagram kan ses i Appendix A: Diagrammer: Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Domæne-model"
+reference "fig:ER-diagram"
 
 \end_inset
 
@@ -888,6 +905,53 @@ reference "fig:Navigationsdiagram"
 
 \begin_layout Section
 Sekvensdiagrammer
+\end_layout
+
+\begin_layout Standard
+Sekvensdiagram: Placér ordre kan ses i Appendix A: Diagrammer: Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sekvensdiagram:-Placér-ordre"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Sekvensdiagram: Se ordre kan ses i Appendix A: Diagrammer: Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sekvensdiagram:-Se-ordre"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Sekvensdiagram: Opdatér ordre kan ses i Appendix A: Diagrammer: Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sekvensdiagram:-Opdatér-ordre"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Sekvensdiagram: Inspicér ordrekan ses i Appendix A: Diagrammer: Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sekvensdiagram:-Inspicér-ordre"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -995,154 +1059,6 @@ Appendix A: Diagrammer
 \end_layout
 
 \begin_layout Subsubsection
-Aktivitetsdiagrammer
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align center
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename SwimlaneDiagramCreateCarport.PNG
-	lyxscale 10
-	height 80theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Aktivitetsdiagram: Kunde bestiller en carport
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Aktivitetsdiagram:-Kunde-bestill"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align center
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename SwimlaneDiagramShowOrder.PNG
-	lyxscale 10
-	height 80theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Aktivitetsdiagram: Kunde ser sine ordre
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Aktivitetsdiagram:-Kunde-ser"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align center
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename SwimlaneDiagramUpdateMaterial.PNG
-	lyxscale 10
-	height 80theight%
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Aktivitetsdiagram: Medarbjeder ændre på tilgængeligt materiale
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Aktivitetsdiagram:-Medarbjeder-æ"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
 Domæne model
 \end_layout
 
@@ -1156,14 +1072,6 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-\begin_inset Graphics
-	filename DomainModel.PNG
-	lyxscale 10
-	width 100text%
-
-\end_inset
-
-
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1180,6 +1088,14 @@ name "fig:Domæne-model"
 \end_inset
 
 
+\begin_inset Graphics
+	filename DomainModel.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1207,14 +1123,6 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-\begin_inset Graphics
-	filename ERdiagram.PNG
-	lyxscale 10
-	width 100text%
-
-\end_inset
-
-
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1231,6 +1139,14 @@ name "fig:ER-diagram"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ERdiagram.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1259,14 +1175,6 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-\begin_inset Graphics
-	filename ClassDiagram.png
-	lyxscale 10
-	width 100text%
-
-\end_inset
-
-
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1283,6 +1191,14 @@ name "fig:Klassediagram"
 \end_inset
 
 
+\begin_inset Graphics
+	filename ClassDiagram.png
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1311,14 +1227,6 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-\begin_inset Graphics
-	filename NavigationDiagram.PNG
-	lyxscale 10
-	width 100text%
-
-\end_inset
-
-
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1331,6 +1239,162 @@ name "fig:Navigationsdiagram"
 
 
 \end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename NavigationDiagram.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Aktivitetsdiagrammer
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aktivitetsdiagram: Kunde bestiller en carport
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Aktivitetsdiagram:-Kunde-bestill"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename SwimlaneDiagramCreateCarport.PNG
+	lyxscale 10
+	height 80theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aktivitetsdiagram: Kunde ser sine ordre
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Aktivitetsdiagram:-Kunde-ser"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename SwimlaneDiagramShowOrder.PNG
+	lyxscale 10
+	height 80theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aktivitetsdiagram: Medarbjeder ændre på tilgængeligt materiale
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Aktivitetsdiagram:-Medarbjeder-æ"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename SwimlaneDiagramUpdateMaterial.PNG
+	lyxscale 10
+	height 80theight%
 
 \end_inset
 
@@ -1351,6 +1415,191 @@ name "fig:Navigationsdiagram"
 
 \begin_layout Subsubsection
 Sekvensdiagrammer
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sekvensdiagram: Placér ordre
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sekvensdiagram:-Placér-ordre"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename SequenceDiagramPlaceOrder.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sekvensdiagram: Se ordre
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sekvensdiagram:-Se-ordre"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename SequenceDiagramViewOrder.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sekvensdiagram: Opdatér ordre
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sekvensdiagram:-Opdatér-ordre"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename SequenceDiagramUpdateOrder.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sekvensdiagram: Inspicér ordre
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sekvensdiagram:-Inspicér-ordre"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename SequenceDiagramInspectOrder.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1488,17 +1737,9 @@ Appendix C: Code Coverage
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
-\begin_inset Graphics
-	filename CodeCoverage.PNG
-	lyxscale 10
-	width 100text%
-
-\end_inset
-
-
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1511,6 +1752,14 @@ name "fig:Code-Coverage"
 
 
 \end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename CodeCoverage.PNG
+	lyxscale 10
+	width 100text%
 
 \end_inset
 
