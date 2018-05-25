@@ -23,7 +23,7 @@
 \font_tt_scale 100 100
 \graphics default
 \default_output_format default
-\output_sync 0
+\output_sync 1
 \bibtex_command default
 \index_command default
 \paperfontsize default
@@ -417,8 +417,8 @@ status open
 
 
 \backslash
-textbf{Som medarbejder vil jeg kunne udregne en stykliste så jeg ved hvilke
- materialer der skal bruges}
+textbf{Som kunde vil jeg kunne se en tegning af min carport så jeg kan se
+ hvad det er jeg køber}
 \end_layout
 
 \end_inset
@@ -429,6 +429,127 @@ textbf{Som medarbejder vil jeg kunne udregne en stykliste så jeg ved hvilke
 \begin_layout Standard
 \paragraph_spacing onehalf
 \noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{how-to-demo}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+Brugeren skal kunne se en tegning af en carport med fladt tag fra oven.
+\begin_inset Newline newline
+\end_inset
+
+Brugeren skal kunne se en tegning af en carport med fladt tag fra siden.
+\begin_inset Newline newline
+\end_inset
+
+Brugeren skal kunne se en tegning af en carport med rejsning fra oven.
+\begin_inset Newline newline
+\end_inset
+
+Brugeren skal kunne se en tegning af en carport med rejsning fra siden
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{tasks}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+Lav stykliste for carport med fladt tag fra oven.
+\begin_inset Newline newline
+\end_inset
+
+Lav stykliste for carport med fladt tag fra siden.
+\begin_inset Newline newline
+\end_inset
+
+Lav stykliste for carport med rejsning fra oven.
+\begin_inset Newline newline
+\end_inset
+
+Lav stykliste for carport med rejsning fra siden.
+\begin_inset Newline newline
+\end_inset
+
+Lav tabel i database med tilgængeligt materiale
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{estimat}
+\end_layout
+
+\end_inset
+
+: Estimeret til en dags arbejde.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{12pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Som medarbejder vil jeg kunne udregne en stykliste så jeg ved hvilke
+ materialer der skal bruges}
+\end_layout
+
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset ERT
 status open
 
@@ -515,29 +636,13 @@ status open
 
 
 \backslash
-textbf{Som kunde vil jeg kunne se en tegning af min carport så jeg kan se
- hvad det er jeg køber}
+textbf{Som medarbejder vil jeg kunne se en vejledende pris baseret på en
+ styklisten så jeg har et udgangspunkt for at kunne give kunden et tilbud}
 \end_layout
 
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{12pt}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -549,13 +654,58 @@ status open
 
 
 \backslash
-textbf{Som medarbejder vil jeg kunne se en vejledende pris baseret på en
- styklisten så jeg har et udgangspunkt for at kunne give kunden et tilbud}
+textbf{how-to-demo}
 \end_layout
 
 \end_inset
 
-.
+:
+\begin_inset Newline newline
+\end_inset
+
+Medarbejderen kan se en pris der er beregnet ud fra styklisten.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{tasks}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+Udregning for carport med fladt tag.
+\begin_inset Newline newline
+\end_inset
+
+Udregning for carport med rejsning.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{estimat}
+\end_layout
+
+\end_inset
+
+: Estimeret til en times arbejde.
 \end_layout
 
 \begin_layout Standard
@@ -590,6 +740,73 @@ textbf{Som bruger af systemet vil jeg have et brugervenligt design så jeg
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{how-to-demo}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+Sitet ser godt ud og er nemt at finde rundt i.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{tasks}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+Formatér dato.
+\begin_inset Newline newline
+\end_inset
+
+Formatér pris.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{estimat}
+\end_layout
+
+\end_inset
+
+: Estimeret til et par timers arbejde.
 \end_layout
 
 \begin_layout Section
@@ -698,16 +915,20 @@ newpage
 \end_layout
 
 \begin_layout Section
-Bilag
+Appendix
+\end_layout
+
+\begin_layout Subsection
+Appendix A: Diagrammer
 \end_layout
 
 \begin_layout Standard
 \align center
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -741,10 +962,10 @@ ER diagram
 \noindent
 \align center
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -778,7 +999,7 @@ Klassediagram
 \noindent
 \align center
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status open
@@ -790,7 +1011,7 @@ status open
 \begin_inset Graphics
 	filename SwimlaneDiagramCreateCarport.PNG
 	lyxscale 10
-	width 100text%
+	height 90theight%
 
 \end_inset
 
@@ -815,7 +1036,7 @@ Aktivitetsdiagram: Kunde bestiller en carport
 \noindent
 \align center
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status open
@@ -827,7 +1048,7 @@ status open
 \begin_inset Graphics
 	filename SwimlaneDiagramShowOrder.PNG
 	lyxscale 10
-	width 100text%
+	height 90theight%
 
 \end_inset
 
@@ -852,7 +1073,7 @@ Aktivitetsdiagram: Kunde ser sine ordre
 \noindent
 \align center
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status open
@@ -864,7 +1085,7 @@ status open
 \begin_inset Graphics
 	filename SwimlaneDiagramUpdateMaterial.PNG
 	lyxscale 10
-	width 100text%
+	height 90theight%
 
 \end_inset
 
@@ -883,6 +1104,132 @@ Aktivitetsdiagram: Medarbjeder ændre på tilgængeligt materiale
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Appendix B: User Stories
+\end_layout
+
+\begin_layout Subsubsection
+Implementeret
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Som bruger af systemet vil jeg have et brugervenligt design så jeg kan finde
+ rundt
+\end_layout
+
+\begin_layout Itemize
+Som kunde vil jeg kunne bestille en carport så jeg kan få en carport
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Som kunde vil jeg kunne se en tegning af min carport så jeg kan se hvad
+ det er jeg køber
+\end_layout
+
+\begin_layout Itemize
+Som kunde vil jeg have mulighed for at kontakte en medarbejder så jeg kan
+ få rådgivning
+\end_layout
+
+\begin_layout Itemize
+Som kunde vil jeg have mulighed for at kunne se mine ordre og deres status
+ så jeg kan holde mig opdateret
+\end_layout
+
+\begin_layout Itemize
+Som kunde vil jeg kunne se prisen på min carport så jeg ved om jeg har råd
+ til den
+\end_layout
+
+\begin_layout Itemize
+Som kunde vil jeg kunne se hvornår jeg har afgivet min ordre i et læseligt
+ format så jeg kan se hvornår jeg har bestilt min carport
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Som medarbejder vil jeg kunne udregne en stykliste så jeg ved hvilke materialer
+ der skal bruges
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Som medarbejder vil jeg kunne se en vejledende pris baseret på en styklisten
+ så jeg har et udgangspunkt for at kunne give kunden et tilbud
+\end_layout
+
+\begin_layout Itemize
+Som medarbejder vil jeg være i stand til at ændre på tilgængelige materialer
+ så jeg ved hvilke materialer jeg har
+\end_layout
+
+\begin_layout Itemize
+Som medarbejder vil jeg være i stand til at annullere en ordre så det er
+ muligt at annullere sin ordre
+\end_layout
+
+\begin_layout Itemize
+Som medarbejder vil jeg have mulighed for at ændre status for en ordre så
+ kan holde kunden opdateret
+\end_layout
+
+\begin_layout Itemize
+Som medarbejder vil jeg have besked når en ny ordre er blevet placeret så
+ jeg hurtigt kan hjælpe kunde med at få sin carport
+\end_layout
+
+\begin_layout Itemize
+Som medarbejder vil jeg have medarbejderspecifikke operationer gemt væk
+ bag et login
+\end_layout
+
+\begin_layout Subsubsection
+Ikke implementeret
+\end_layout
+
+\begin_layout Itemize
+Som kunde vil jeg kunne opdatere mine informationer så jeg kan få min carport
+ leveret til den rigtige adresse
+\end_layout
+
+\begin_layout Itemize
+Som kunde vil jeg kunne se et estimat for hvornår jeg kan få min carport
+ så jeg ved hvornår jeg får min carport
+\end_layout
+
+\begin_layout Itemize
+Som medarbejder vil jeg kunne lave et nyt kodeord hvis jeg glemmer mit kodeord
+ så jeg stadig kan arbejde hvis jeg glemmer mit kodeord
+\end_layout
+
+\begin_layout Itemize
+Som medarbejder vil jeg kunne slette og tilføje materialer så jeg kan tilpasse
+ mig ændringer i tilgængeligt materiale
+\end_layout
+
+\begin_layout Itemize
+Som medarbejder vil jeg kuune ændre en stykliste så jeg kan være sikker
+ på at den er rigtig
 \end_layout
 
 \end_body

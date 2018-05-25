@@ -23,7 +23,7 @@
 \font_tt_scale 100 100
 \graphics default
 \default_output_format default
-\output_sync 0
+\output_sync 1
 \bibtex_command default
 \index_command default
 \paperfontsize default
@@ -494,6 +494,10 @@ Lav stykliste for carport med rejsning fra siden.
 \begin_inset Newline newline
 \end_inset
 
+Lav tabel i database med tilgængeligt materiale
+\begin_inset Newline newline
+\end_inset
+
 
 \begin_inset ERT
 status open
@@ -642,6 +646,69 @@ textbf{Som medarbejder vil jeg kunne se en vejledende pris baseret på en
 \end_layout
 
 \begin_layout Standard
+\noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{how-to-demo}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+Medarbejderen kan se en pris der er beregnet ud fra styklisten.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{tasks}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+Udregning for carport med fladt tag.
+\begin_inset Newline newline
+\end_inset
+
+Udregning for carport med rejsning.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{estimat}
+\end_layout
+
+\end_inset
+
+: Estimeret til en times arbejde.
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -673,6 +740,73 @@ textbf{Som bruger af systemet vil jeg have et brugervenligt design så jeg
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{how-to-demo}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+Sitet ser godt ud og er nemt at finde rundt i.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{tasks}
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+Formatér dato.
+\begin_inset Newline newline
+\end_inset
+
+Formatér pris.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{estimat}
+\end_layout
+
+\end_inset
+
+: Estimeret til et par timers arbejde.
 \end_layout
 
 \begin_layout Section
@@ -781,7 +915,11 @@ newpage
 \end_layout
 
 \begin_layout Section
-Bilag
+Appendix
+\end_layout
+
+\begin_layout Subsection
+Appendix A: Diagrammer
 \end_layout
 
 \begin_layout Standard
@@ -811,13 +949,13 @@ status open
 
 \end_layout
 
-\begin_layout Plain Layout
-ER diagram
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+ER diagram
 \end_layout
 
 \begin_layout Standard
@@ -848,13 +986,13 @@ status open
 
 \end_layout
 
-\begin_layout Plain Layout
-Klassediagram
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Klassediagram
 \end_layout
 
 \begin_layout Standard
@@ -885,13 +1023,13 @@ status open
 
 \end_layout
 
-\begin_layout Plain Layout
-Aktivitetsdiagram: Kunde bestiller en carport
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Aktivitetsdiagram: Kunde bestiller en carport
 \end_layout
 
 \begin_layout Standard
@@ -922,13 +1060,13 @@ status open
 
 \end_layout
 
-\begin_layout Plain Layout
-Aktivitetsdiagram: Kunde ser sine ordre
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Aktivitetsdiagram: Kunde ser sine ordre
 \end_layout
 
 \begin_layout Standard
@@ -959,13 +1097,61 @@ status open
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Aktivitetsdiagram: Medarbjeder ændre på tilgængeligt materiale
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+newpage
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Appendix B: User Stories
+\end_layout
+
+\begin_layout Standard
+Som kunde vil jeg kunne bestille en carport så jeg kan få en carport
+\end_layout
+
+\begin_layout Standard
+\noindent
+Som kunde vil jeg kunne se en tegning af min carport så jeg kan se hvad
+ det er jeg køber
+\end_layout
+
+\begin_layout Standard
+\noindent
+Som medarbejder vil jeg kunne udregne en stykliste så jeg ved hvilke materialer
+ der skal bruges
+\end_layout
+
+\begin_layout Standard
+\noindent
+Som medarbejder vil jeg kunne se en vejledende pris baseret på en styklisten
+ så jeg har et udgangspunkt for at kunne give kunden et tilbud
+\end_layout
+
+\begin_layout Standard
+\noindent
+Som bruger af systemet vil jeg have et brugervenligt design så jeg kan finde
+ rundt
 \end_layout
 
 \end_body
