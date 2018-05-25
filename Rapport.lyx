@@ -225,7 +225,7 @@ Johannes Fog er en koncern der både har design & bolighuse og trælast &
  med tilhørende hjemmeside, til at erstatte deres nuværende system, da de
  har erkendt at det er outdated.
  Med systemmet skal man kunne gå på hjemmesiden og bestille en carport,
- systemmet skal kunne udregne et stykliste af materialer, en medarbejder
+ systemmet skal kunne udregne en stykliste af materialer, en medarbejder
  skal kunne gå ind og give en kunde særlige tilbud, og en kunde skal kunne
  se sin ordre.
 \end_layout
@@ -271,7 +271,8 @@ Som medarbejder skal man kunne se alle ordre.
 \begin_layout Standard
 \noindent
 Systemet skal kunne udregne en stykliste udfra en ordre og en vejledende
- pris udfra styklisten.
+ pris udfra styklisten, som en medarbejder kan bruge til at lave et tilbud
+ til kunden.
 \end_layout
 
 \begin_layout Subsection
@@ -756,7 +757,7 @@ e.
 Process
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Arbejdsprocessen faktuelt
 \end_layout
 
