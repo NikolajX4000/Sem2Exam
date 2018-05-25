@@ -253,7 +253,7 @@ public class MaterialMapper {
      * musch in- and outgoing trafic from the server.
      *
      * @param ps PreparedStatement object, should not be null.
-     * @throws CustomException if itcan't close the connection.
+     * @throws CustomException if it can't close the connection.
      */
     private static void closeStatement(PreparedStatement ps) throws CustomException {
         if (ps != null) {
