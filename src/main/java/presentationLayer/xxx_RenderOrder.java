@@ -18,11 +18,11 @@ import java.util.List;
  *
  * @author super
  */
-public class RenderOrder {
+public class xxx_RenderOrder {
     
     private static Order o;
 
-    private RenderOrder() {
+    private xxx_RenderOrder() {
     }
     
     private static String shortDetail(Object value, String label){
@@ -190,7 +190,7 @@ public class RenderOrder {
     public static String print(Order o) throws CustomException
     {
         
-        RenderOrder.o = o;
+        xxx_RenderOrder.o = o;
         StringBuilder s = new StringBuilder();
         
         s.append( "<div class=\"col l6 m12\">");

@@ -72,7 +72,7 @@ public class CmdCreateOrder extends Command{
                 // send mail til fog omkring ny ordre
                 DanielsPostHus.newOrder(o);
             } catch (MessagingException ex) {
-                //Logger.getLogger(CmdCreateOrder.class.getName()).log(Level.SEVERE, null, ex);
+                request.setAttribute("test", ex.getMessage());
             }
             
             request.setAttribute("desiredOrdersFromEmail", LogicFacade.getOrders(o.getEmail()));

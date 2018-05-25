@@ -31,16 +31,16 @@ abstract class Command
         commands.put("CmdUpdateRoof", new CmdUpdateRoof());
 
         commands.put("CmdLogin", new CmdLogin());
+        commands.put("CmdLogout", new CmdLogout());
     }
 
     static Command from(HttpServletRequest request)
     {
-        String commandName = request.getParameter("command");
         if (commands == null)
         {
             initCommands();
         }
-        return commands.getOrDefault(commandName, new CmdUnknown());
+        return commands.getOrDefault(request.getParameter("command"), new CmdUnknown());
     }
 
     abstract String execute(HttpServletRequest request, HttpServletResponse response)throws NoAccessException;
