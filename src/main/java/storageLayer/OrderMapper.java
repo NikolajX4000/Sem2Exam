@@ -14,22 +14,18 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-/**
- *
- * @author Stephan
- */
 public class OrderMapper {
 
     /**
-     * This method adds a Order object to the database and returns the object
-     * with the auto-generated id key and status.
+     * Add order to database.
+     * This method calls the database with a prepared statement to 
+     * request an insert to ad an order into the orders table.
      *
-     * @param order
-     * @return the new order object with the generated id key and status
-     * @throws CustomException
+     * @param order The new order object, should not be null.
+     * @return the new order object with the generated id key and status.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or the closeStatement() method can't close the connection.
      */
     public static Order addOrder(Order order) throws CustomException {
         PreparedStatement ps = null;
@@ -87,12 +83,14 @@ public class OrderMapper {
     }
 
     /**
-     * This method fetch a Order object from the database with a specific
-     * order_id.
+     * Get Order by id.
+     * This method calls the database with a prepared statement to 
+     * request an element from the orders table by it's 'order_id'.
      *
-     * @param id
-     * @return order with specific order_id from the param 'id'
-     * @throws CustomException
+     * @param id The id of the order, should not be out of index bounds.
+     * @return An order object with requested id.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or the closeStatement() method can't close the connection.
      */
     public static Order getOrder(int id) throws CustomException {
         PreparedStatement ps = null;
@@ -151,13 +149,14 @@ public class OrderMapper {
     }
 
     /**
-     * This method fetch an ArrayList containing all the Orders a specific email
-     * has placed.
+     * Get orders by email.
+     * This method calls the database with a prepared statement to
+     * request an ArrayList of elements from the orders table by their email.
      *
-     * @param email
-     * @return list of orders from customer with specific email from the param
-     * 'email'
-     * @throws CustomException
+     * @param email The email attached to the orders. Should not be null.
+     * @return An arraylist of order objects with requested email.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or the closeStatement() method can't close the connection.
      */
     public static List<Order> getOrders(String email) throws CustomException {
         PreparedStatement ps = null;
@@ -215,10 +214,13 @@ public class OrderMapper {
     }
 
     /**
-     * This method fetch an ArrayList containing all placed Orders.
+     * Get all Orders.
+     * This method calls the database with a prepared statement to 
+     * request an arraylist of all elements from the orders table.
      *
-     * @return all orders as a ArrayList
-     * @throws CustomException
+     * @return An arraylist of all order objects.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or the closeStatement() method can't close the connection.
      */
     public static List<Order> getAllOrders() throws CustomException {
         PreparedStatement ps = null;
@@ -273,11 +275,15 @@ public class OrderMapper {
     }
 
     /**
-     * This Method updates one or more details for an Order object.
+     * Update Order by Order object.
+     * This method calls the database with a prepared statement to
+     * request an update on a specific order. By using an order object as 
+     * parameter, this method can update multiple attributes for the giving id.
      *
-     * @param order
-     * @return an order object where one or more variables has been updated
-     * @throws CustomException
+     * @param order The modified order object. Should not be null.
+     * @return An updated order object.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or the closeStatement() method can't close the connection.
      */
     public static Order updateOrder(Order order) throws CustomException {
         PreparedStatement ps = null;
@@ -323,11 +329,16 @@ public class OrderMapper {
     }
 
     /**
-     * This method updates an orders status.
+     * Update Order status by Order object.
+     * This method calls the database with a prepared statement to
+     * request an update on a specific order. By using an order object as 
+     * parameter, this method will use the objects getId() and getStatus() 
+     * to modify the attributes for the giving id.
      *
-     * @param order
-     * @return an order object where status has been updated
-     * @throws CustomException
+     * @param order The modified order object. Should not be null.
+     * @return An updated order object.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or the closeStatement() method can't close the connection.
      */
     public static Order updateStatus(Order order) throws CustomException {
         PreparedStatement ps = null;
@@ -354,11 +365,13 @@ public class OrderMapper {
     }
 
     /**
+     * Update Order status by Order object.
      * This method updates an orders status.
      *
      * @param id
      * @param status
-     * @throws CustomException
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or the closeStatement() method can't close the connection.
      */
     public static void updateStatus(int id, String status) throws CustomException {
         PreparedStatement ps = null;
@@ -412,6 +425,7 @@ public class OrderMapper {
      * the server.
      *
      * @param ps PreparedStatement object, the SQL controller.
+     * @throws CustomException if it can't close the connection.
      */
     private static void closeStatement(PreparedStatement ps) throws CustomException {
         if(ps != null) {

@@ -22,10 +22,10 @@ public class MaterialMapper {
 
     /**
      * Get All Materials.
-     * This method calls the database with a preparedStatement to 
-     * request all the elements from the materials table.
+     * This method calls the database with a prepared statement to 
+     * request an arraylist of all elements from the materials table.
      * 
-     * @return An ArrayList of Materials Objects.
+     * @return An arraylist of all materials Objects.
      * @throws CustomException if SQl syntax contains errors, can't connect to database, 
      * the connection class isn't found or the closeStatement() method can't close the connection.
      */
@@ -60,10 +60,10 @@ public class MaterialMapper {
 
     /**
      * Get Material by id.
-     * This method calls the database with a preparedStatement to
+     * This method calls the database with a prepared statement to
      * request an element from the materials table by it's 'plank_id'.
      * 
-     * @param id The id of the material, should not be out of index bounds.
+     * @param id The id attached to the material. Should not be out of index bounds.
      * @return A material object with requested id.
      * @throws CustomException if SQl syntax contains errors, can't connect to database, 
      * the connection class isn't found or the closeStatement() method can't close the connection.
@@ -97,11 +97,11 @@ public class MaterialMapper {
     
     /**
      * Get Material by material name.
-     * This method calls the database with a preparedStatement to
-     * request a ArrayList of elements from the materials table by they names.
+     * This method calls the database with a prepared statement to
+     * request an arraylist of elements from the materials table by their names.
      * 
-     * @param material The name of the material, should not be null.
-     * @return An ArrayList of material objects with requested name.
+     * @param material The name attached to the materials. Should not be null.
+     * @return An arraylist of material objects with requested name.
      * @throws CustomException if SQl syntax contains errors, can't connect to database, 
      * the connection class isn't found or the closeStatement() method can't close the connection.
      */
@@ -136,12 +136,12 @@ public class MaterialMapper {
     }
 
     /**
-     * Update Material by Material Object.
-     * This method calls the database with a preparedStatement to
-     * request an update on a specific material. By using an Material object as 
+     * Update Material by Material object.
+     * This method calls the database with a prepared statement to
+     * request an update on a specific material. By using an material object as 
      * parameter, this method can update multiple attributes for the giving id.
      * 
-     * @param material The modified material object, should not be null.
+     * @param material The modified material object. Should not be null.
      * @return An updated material object.
      * @throws CustomException 'Kunne ikke hente infomation'.
      */
@@ -174,14 +174,14 @@ public class MaterialMapper {
 
     /**
      * Update Material by id, size, price and desciption.
-     * This method calls the database with a preparedStatement to
+     * This method calls the database with a prepared statement to
      * request an update on a specific material. By using multiple parameters,
      * this method can update multiple attributes for the giving id.
      * 
-     * @param id The id of the material, should not be out of index bounds.
-     * @param size The modified material size, should not be negative.
-     * @param price The modified material price, should not be negative.
-     * @param desc The modified material description, should not be null.
+     * @param id The id of the material. Should not be out of index bounds.
+     * @param size The modified material size. Should not be negative.
+     * @param price The modified material price. Should not be negative.
+     * @param desc The modified material description. Should not be null.
      * @throws CustomException if SQl syntax contains errors, can't connect to database, 
      * the connection class isn't found or if the closeStatement() method can't close the connection.
      */
@@ -212,13 +212,13 @@ public class MaterialMapper {
     
     /**
      * Update Material by id, size, price and desciption.
-     * This method calls the database with a preparedStatement to
+     * This method calls the database with a prepared statement to
      * request an update on a specific material. By using multiple parameters,
      * this method can update multiple attributes for the giving id.
      * 
-     * @param id The id of the material, should not be out of index bounds.
-     * @param size The modified material size, should not be negative.
-     * @param price The modified material price, should not be negative.
+     * @param id The id of the material. Should not be out of index bounds.
+     * @param size The modified material size. Should not be negative.
+     * @param price The modified material price. Should not be negative.
      * @throws CustomException if SQl syntax contains errors, can't connect to database, 
      * the connection class isn't found or if the closeStatement() method can't close the connection.
      */
@@ -249,10 +249,10 @@ public class MaterialMapper {
     /**
      * Close Prepared Statement connection.
      * This method will close the prepared statement connection 
-     * if it's connected. The reason is to reduce as 
-     * musch in- and outgoing trafic from the server.
+     * if it's connected. The reason is to reduce
+     * in- and outgoing trafic from the server.
      *
-     * @param ps PreparedStatement object, should not be null.
+     * @param ps PreparedStatement object. Should not be null.
      * @throws CustomException if it can't close the connection.
      */
     private static void closeStatement(PreparedStatement ps) throws CustomException {
