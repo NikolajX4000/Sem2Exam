@@ -152,7 +152,13 @@ public class DrawCarportAngleSide {
         double x;
         //left
         x = width - xOffset - shedWidth - beam/4;
-        svg.rct(x, beamOffset + 1, height - 1, beam, "fill:white;stroke:black;");
+        // check if beam should be on or under rem
+        if(width-shedWidth>60){
+            svg.rct(x, beamOffset + 1, height - 1, beam, "fill:white;stroke:black;");
+        }else{
+            svg.rct(x, remOffset + 1, height + remHeight - 1, beam, "fill:white;stroke:black;");
+        }
+        
         
         //right
         x = width - xOffset - beam + beam/4;
@@ -161,15 +167,14 @@ public class DrawCarportAngleSide {
 
     private void drawBeams()
     {
-        if (width - shedWidth > 200){
-            double xWidth = (hasShed) ? width-2*xOffset-shedWidth : width-2*xOffset - beam*3;
         
-            double beamAmount = 2 + (int)(xWidth/newBeamAfter);
-            double beamGutter = (xWidth) / (beamAmount-1);
+        double xWidth = (hasShed) ? width-2*xOffset-shedWidth : width-2*xOffset - beam*3;
 
-            for (int i = 0; i < beamAmount; i++) {
-                svg.rct(xOffset + (i*beamGutter) + beam, beamOffset, height, beam, "fill:white;stroke:black;");
-            }
+        double beamAmount = 2 + (int)(xWidth/newBeamAfter);
+        double beamGutter = (xWidth) / (beamAmount-1);
+
+        for (int i = 0; i < beamAmount; i++) {
+            svg.rct(xOffset + (i*beamGutter) + beam, beamOffset, height, beam, "fill:white;stroke:black;");
         }
     }
 

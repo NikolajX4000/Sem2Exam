@@ -46,6 +46,18 @@ public class CmdUpdateOrder extends Command
             request.setAttribute("feedback", ex.getMessage());
         }
 
+        
+        
+        
+        //content
+        try
+        {
+            request.setAttribute("orders", LogicFacade.getAllOrders());
+            
+        } catch (CustomException ex)
+        {
+            request.setAttribute("feedback", ex.getMessage());
+        }
         return "allOrders";
     }
 }

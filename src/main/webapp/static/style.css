@@ -28,7 +28,7 @@ svg{
     position: absolute;
     font-size: 50px;
     left: 0;
-    top:-28px;
+    top:-20px;
 }
 .dot.green:after{
     color: #4caf50;
