@@ -67,6 +67,9 @@ public class DanielsPostHus {
         
         s.append("</table>");
         
+        s.append("<h4>Bemærkning:</h4>");
+        s.append("<p>").append(o.getNote()).append("</p>");
+        
         sendMail(subject, s.toString(), receiver);
 
     }
