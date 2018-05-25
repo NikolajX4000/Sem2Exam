@@ -1,3 +1,15 @@
 @startuml
 
+[*] --> index
+
+allOrders -> editMaterials
+
+index --> login
+index --> makeCarport
+index --> specificUserOrders
+
+login --> allOrders
+
+makeCarport -> specificUserOrders
+
 @enduml
