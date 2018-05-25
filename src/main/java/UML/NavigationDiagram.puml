@@ -2,14 +2,16 @@
 
 [*] --> index
 
-allOrders -left-> editMaterials
 
 index --> login
 index --> makeCarport
 index --> specificUserOrders
 
-login --> allOrders
-
 makeCarport -> specificUserOrders
+state Medarbejder{
+allOrders -left-> editMaterials
+
+login --> allOrders
+}
 
 @enduml

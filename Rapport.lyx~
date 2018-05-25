@@ -875,6 +875,17 @@ reference "fig:Klassediagram"
 Navigationsdiagram
 \end_layout
 
+\begin_layout Standard
+Navigationsdiagram kan ses i Appendix A: Diagrammer: Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Navigationsdiagram"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section
 Sekvensdiagrammer
 \end_layout
@@ -1307,6 +1318,54 @@ Sekvensdiagrammer
 
 \begin_layout Subsubsection
 Navigationsdiagram
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename NavigationDiagram.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Navigationsdiagram
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Navigationsdiagram"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
