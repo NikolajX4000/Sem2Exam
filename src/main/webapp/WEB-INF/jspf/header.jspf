@@ -46,8 +46,9 @@
                         <li><a href="?">Forside</a></li>
                         <li><a href="?command=CmdPageBuildCarport">Carport</a></li>
                         <c:if test="${sessionScope.user ne null}">
-                            <li><a href="?command=CmdPageMaterial">Materialer</a></li>
                             <li><a href="?command=CmdPageAllOrders">Ordrer</a></li>
+                            <li><a href="?command=CmdPageMaterial">Materialer</a></li>
+                            <li><a href="?command=CmdLogout">Log ud</a></li>
                         </c:if>
                     </ul>
 
@@ -55,8 +56,9 @@
                         <li><a href="?">Forside</a></li>
                         <li><a href="?command=CmdPageBuildCarport">Carport</a></li>
                         <c:if test="${sessionScope.user ne null}">
-                            <li><a href="?command=CmdPageMaterial">Materialer</a></li>
                             <li><a href="?command=CmdPageAllOrders">Ordrer</a></li>
+                            <li><a href="?command=CmdPageMaterial">Materialer</a></li>
+                            <li><a href="?command=CmdLogout">Log ud</a></li>
                         </c:if>
                     </ul>
                     
