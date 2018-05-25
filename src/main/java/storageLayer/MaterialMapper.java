@@ -13,8 +13,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -23,8 +21,13 @@ import java.util.logging.Logger;
 public class MaterialMapper {
 
     /**
-     *
-     * @return @throws CustomException
+     * Get All Materials.
+     * This method calls the database with a preparedStatement to 
+     * request all the elements from the materials table.
+     * 
+     * @return An ArrayList of Materials Objects.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or the closeStatement() method can't close the connection.
      */
     public static List<Material> getAllMaterials() throws CustomException {
         PreparedStatement ps = null;
@@ -48,7 +51,7 @@ public class MaterialMapper {
             }
 
         } catch (SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
@@ -56,14 +59,18 @@ public class MaterialMapper {
     }
 
     /**
-     *
-     * @param id
-     * @return
-     * @throws CustomException
+     * Get Material by id.
+     * This method calls the database with a preparedStatement to
+     * request an element from the materials table by it's 'plank_id'.
+     * 
+     * @param id The id of the material, should not be out of index bounds.
+     * @return A material object with requested id.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or the closeStatement() method can't close the connection.
      */
     public static Material getMaterial(int id) throws CustomException {
         PreparedStatement ps = null;
-        Material meterial = null;
+        Material material = null;
         try {
             Connection con = Connector.connection();
             String SQL = "SELECT * FROM materials WHERE plank_id=?";
@@ -71,9 +78,8 @@ public class MaterialMapper {
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
 
-            if (rs.first()) {
-
-                meterial = new Material().
+            if (rs.first()) {                
+                material = new Material().
                     setId(rs.getInt("plank_id")).
                     setName(rs.getString("name")).
                     setPrice(rs.getInt("price")).
@@ -82,18 +88,22 @@ public class MaterialMapper {
             }
 
         } catch (SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
-        return meterial;
+        return material;
     }
     
     /**
-     *
-     * @param material
-     * @return
-     * @throws CustomException
+     * Get Material by material name.
+     * This method calls the database with a preparedStatement to
+     * request a ArrayList of elements from the materials table by they names.
+     * 
+     * @param material The name of the material, should not be null.
+     * @return An ArrayList of material objects with requested name.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or the closeStatement() method can't close the connection.
      */
     public static List<Material> getMaterials(String material) throws CustomException {
         PreparedStatement ps = null;
@@ -118,7 +128,7 @@ public class MaterialMapper {
             }
 
         } catch (SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
@@ -126,10 +136,14 @@ public class MaterialMapper {
     }
 
     /**
-     *
-     * @param material
-     * @return
-     * @throws CustomException
+     * Update Material by Material Object.
+     * This method calls the database with a preparedStatement to
+     * request an update on a specific material. By using an Material object as 
+     * parameter, this method can update multiple attributes for the giving id.
+     * 
+     * @param material The modified material object, should not be null.
+     * @return An updated material object.
+     * @throws CustomException 'Kunne ikke hente infomation'.
      */
     public static Material updateMaterial(Material material) throws CustomException {
         PreparedStatement ps = null;
@@ -151,7 +165,7 @@ public class MaterialMapper {
             ps.executeUpdate();
 
         } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
-            throw new CustomException(ex.getMessage());
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
@@ -159,13 +173,17 @@ public class MaterialMapper {
     }
 
     /**
-     *
-     * @param id
-     * @param size
-     * @param price
-     * @param desc
-     * @return
-     * @throws CustomException
+     * Update Material by id, size, price and desciption.
+     * This method calls the database with a preparedStatement to
+     * request an update on a specific material. By using multiple parameters,
+     * this method can update multiple attributes for the giving id.
+     * 
+     * @param id The id of the material, should not be out of index bounds.
+     * @param size The modified material size, should not be negative.
+     * @param price The modified material price, should not be negative.
+     * @param desc The modified material description, should not be null.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or if the closeStatement() method can't close the connection.
      */
     public static void updateMaterial(int id, int size, int price, String desc) throws CustomException {
         PreparedStatement ps = null;
@@ -186,12 +204,24 @@ public class MaterialMapper {
             ps.executeUpdate();
 
         } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
-            throw new CustomException(ex.getMessage());
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
     }
     
+    /**
+     * Update Material by id, size, price and desciption.
+     * This method calls the database with a preparedStatement to
+     * request an update on a specific material. By using multiple parameters,
+     * this method can update multiple attributes for the giving id.
+     * 
+     * @param id The id of the material, should not be out of index bounds.
+     * @param size The modified material size, should not be negative.
+     * @param price The modified material price, should not be negative.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or if the closeStatement() method can't close the connection.
+     */
     public static void updateMaterial(int id, int size, int price) throws CustomException {
         PreparedStatement ps = null;
 
@@ -210,18 +240,20 @@ public class MaterialMapper {
             ps.executeUpdate();
 
         } catch (SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
     }
 
     /**
-     * This method will close the prepared statement connection if it's
-     * connection, the reason is to reduce as musch in- and outgoing trafic from
-     * the server.
+     * Close Prepared Statement connection.
+     * This method will close the prepared statement connection 
+     * if it's connected. The reason is to reduce as 
+     * musch in- and outgoing trafic from the server.
      *
-     * @param ps PreparedStatement object, the SQL controller.
+     * @param ps PreparedStatement object, should not be null.
+     * @throws CustomException if it can't close the connection.
      */
     private static void closeStatement(PreparedStatement ps) throws CustomException {
         if (ps != null) {

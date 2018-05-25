@@ -67,6 +67,7 @@ public class PartLine {
      *
      * @param size
      * @return
+     * @throws logicLayer.CustomException
      */
     public PartLine setSize(double size) throws CustomException {
         this.size = (int) size;

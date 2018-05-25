@@ -1,8 +1,14 @@
 package logicLayer;
 
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
 import storageLayer.StorageFacade;
 
+/**
+ * This class calculates the parts list for a carport with a raised roof.
+ *
+ * @author Jack-Borg
+ */
 public class TallCarPortList
 {
 
@@ -19,6 +25,13 @@ public class TallCarPortList
     boolean hasShed;
     String roof;
 
+    /**
+     * The constructor takes an Order. The order needs to hold at least a
+     * length, a width, a roof type and an angle.
+     *
+     * @param order
+     * @throws CustomException
+     */
     public TallCarPortList(Order order) throws CustomException
     {
         this.length = order.getLength();
@@ -36,6 +49,10 @@ public class TallCarPortList
         this.allTools = StorageFacade.getAllTools();
     }
 
+    /**
+     *
+     * @return @throws CustomException
+     */
     public List<PartLine> getParts() throws CustomException
     {
         List<PartLine> parts = new ArrayList<>();
@@ -130,7 +147,7 @@ public class TallCarPortList
         List<PartLine> parts = new ArrayList<>();
         int amount;
 
-        int total = 0;
+        int total;
 
         if (hasShed)
         {
@@ -497,42 +514,6 @@ public class TallCarPortList
             return materials;
         }
         throw new CustomException("ingen matriel passer");
-    }
-
-    double testAmountStolper()
-    {
-        double spacing = 400;
-        double beamAmount = 0;
-        double amountRem = 0;
-        double col;
-        double rows;
-        if (hasShed)
-        {
-            col = 2 + (int) (shedLength / spacing);
-            rows = 2 + (int) (shedWidth / spacing);
-            beamAmount += rows * col;
-            if (rows > 2 && col > 2)
-            {
-                beamAmount -= (rows - 2) * (col - 2);
-            }
-            amountRem += rows * 2 + 2;
-            if (shedWidth != width - 30)
-            {
-                beamAmount += col;
-                amountRem--;
-            }
-        }
-
-        double carportLength = length - shedLength - 60;
-
-        if (carportLength > 200)
-        {
-            double tmp = (1 + Math.ceil(carportLength / spacing)) * 2;
-            beamAmount += tmp;
-            amountRem += tmp;
-        }
-        System.out.println(amountRem);
-        return beamAmount;
     }
 
 }

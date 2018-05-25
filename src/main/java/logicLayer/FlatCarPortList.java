@@ -1,11 +1,13 @@
 package logicLayer;
 
+import java.util.List;
+import java.util.ArrayList;
 import storageLayer.StorageFacade;
-import java.util.*;
 
 /**
+ * This class calculates the parts list for a carport with a flat roof.
  *
- * @author super
+ * @author Jack-Borg
  */
 public class FlatCarPortList
 {
@@ -21,9 +23,11 @@ public class FlatCarPortList
     List<PartLine> list = new ArrayList<>();
 
     /**
+     * The constructor takes an Order. The order needs to hold at least a length
+     * and a width.
      *
      * @param order
-     * @throws functionLayer.CustomException
+     * @throws logicLayer.CustomException
      */
     public FlatCarPortList(Order order) throws CustomException
     {
@@ -132,48 +136,51 @@ public class FlatCarPortList
 //        Material material = findBestMat(300, StorageFacade.getMaterials("stolpe"));
         Material material = findBestMat(300, findMaterials("stolpe"));
         List<PartLine> parts = new ArrayList<>();
-        
+
         int total = 0;
         int bonus = 0;
- 
-        if (hasShed) {
- 
-            int distance = (int)(length - shedWidth) - 60;
- 
+
+        if (hasShed)
+        {
+
+            int distance = (int) (length - shedWidth) - 60;
+
             //shed x
             int shedX = 2 + (int) (shedWidth / 400);
             //shed y
             int shedY = 2 + (int) (shedWidth / 400);
- 
+
             // fjern stolper der er beregner som var de midt i skuret
             int removed = (shedX - 2) * (shedY - 2);
- 
+
             // kig om der skal bruges stolper under carport
-            if (width - 30 > shedWidth) {
+            if (width - 30 > shedWidth)
+            {
                 shedY++;
             }
-           
+
             int shedBeams = shedY * shedX;
-           
+
             // hvis distance er mere end 200 tilføj 2 stopler + 2*hvor mange gange distance går op i 400
-            if (distance > 200) {
-               
+            if (distance > 200)
+            {
+
                 bonus = 2 * (1 + (distance / 400));
             }
-           
+
             total = shedBeams + bonus - removed;
             //til døren
             total++;
             //BOLTE TIL STOLPER
-            parts.addAll(braeddeboltOgFirkantskive(shedX*2 + bonus + 2));
+            parts.addAll(braeddeboltOgFirkantskive(shedX * 2 + bonus + 2));
 //            System.out.println("total: " + total + " jacob: " + jacobStolper);
-        } else {
- 
+        } else
+        {
+
             total = 2 * (2 + (int) ((length - 60) / 400));
             parts.addAll(braeddeboltOgFirkantskive(total));
         }
         parts.add(new PartLine(material, total));
-
 
         return parts;
     }
@@ -263,7 +270,7 @@ public class FlatCarPortList
         return new PartLine(material, amount);
     }
 
-    List<PartLine> loesholter() throws CustomException
+    private List<PartLine> loesholter() throws CustomException
     {
         List<PartLine> parts = new ArrayList<>();
         parts.add(loesholterGavl());
@@ -276,7 +283,7 @@ public class FlatCarPortList
     PartLine loesholterGavl() throws CustomException
     {
 //        Material material = findBestMat(shedWidth/2, StorageFacade.getMaterials("løsholte"));
-        Material material = findBestMat(shedWidth/2, findMaterials("løsholte"));
+        Material material = findBestMat(shedWidth / 2, findMaterials("løsholte"));
         int amount = (int) Math.ceil(shedWidth / material.getSize()) * 6;//3 i højden i begge sider
         return new PartLine(material, amount);
     }
@@ -284,7 +291,7 @@ public class FlatCarPortList
     PartLine loesholterSider() throws CustomException
     {
 //        Material material = findBestMat(shedLength/2, StorageFacade.getMaterials("løsholte"));
-        Material material = findBestMat(shedLength/2, findMaterials("løsholte"));
+        Material material = findBestMat(shedLength / 2, findMaterials("løsholte"));
         int amount = (int) Math.ceil(shedLength / material.getSize()) * 4;//2 i højden i begge sider
         return new PartLine(material, amount);
     }
@@ -321,8 +328,8 @@ public class FlatCarPortList
         //yderst ender
         amount += Math.ceil((shedWidth - 8) / 16) * 2;
 
-        parts.add(new PartLine(material, (int)amount));
-        parts.addAll(beklaedningSkruer((int)amount));
+        parts.add(new PartLine(material, (int) amount));
+        parts.addAll(beklaedningSkruer((int) amount));
 
         return parts;
     }
@@ -405,15 +412,16 @@ public class FlatCarPortList
 
     /**
      *
-     * @return
+     * @return a List of PartLine of the complete list of parts.
+     * @throws logicLayer.CustomException
      */
     public List<PartLine> getParts() throws CustomException
     {
         addParts();
         return list;
     }
-    
-     private List<Material> findMaterials(String name) throws CustomException
+
+    private List<Material> findMaterials(String name) throws CustomException
     {
         List<Material> materials = new ArrayList<>();
         for (Material material : allMaterials)
@@ -423,7 +431,7 @@ public class FlatCarPortList
                 materials.add(material);
             }
         }
-        if(materials.size() > 0)
+        if (materials.size() > 0)
         {
             return materials;
         }
