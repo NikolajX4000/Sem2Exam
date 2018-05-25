@@ -12,11 +12,11 @@ import java.util.List;
  *
  * @author super
  */
-public class RenderOrderInspect {
+public class xxx_RenderOrderInspect {
 
     private static Order o;
 
-    private RenderOrderInspect() {
+    private xxx_RenderOrderInspect() {
     }
 
     private static StringBuilder tabStart(String icon, String text){
@@ -246,7 +246,7 @@ public class RenderOrderInspect {
      */
     public static String print(Order o) throws CustomException {
 
-        RenderOrderInspect.o = o;
+        xxx_RenderOrderInspect.o = o;
 
         StringBuilder s = new StringBuilder();
 
