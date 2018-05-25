@@ -176,22 +176,6 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-thispagestyle{empty}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
@@ -225,7 +209,7 @@ Johannes Fog er en koncern der både har design & bolighuse og trælast &
  med tilhørende hjemmeside, til at erstatte deres nuværende system, da de
  har erkendt at det er outdated.
  Med systemmet skal man kunne gå på hjemmesiden og bestille en carport,
- systemmet skal kunne udregne et stykliste af materialer, en medarbejder
+ systemmet skal kunne udregne en stykliste af materialer, en medarbejder
  skal kunne gå ind og give en kunde særlige tilbud, og en kunde skal kunne
  se sin ordre.
 \end_layout
@@ -271,7 +255,8 @@ Som medarbejder skal man kunne se alle ordre.
 \begin_layout Standard
 \noindent
 Systemet skal kunne udregne en stykliste udfra en ordre og en vejledende
- pris udfra styklisten.
+ pris udfra styklisten, som en medarbejder kan bruge til at lave et tilbud
+ til kunden.
 \end_layout
 
 \begin_layout Subsection
@@ -280,6 +265,44 @@ Overordnet beskrivelse af virksomheden
 
 \begin_layout Subsection
 Arbejdsgange der skal IT-støttes
+\end_layout
+
+\begin_layout Standard
+Aktivitetsdiagram: Kunde bestiller en carport kan ses i Appendix A: Diagrammer:
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Aktivitetsdiagram:-Kunde-bestill"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Aktivitetsdiagram: Kunde ser sine ordre kan ses i Appendix A: Diagrammer:
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Aktivitetsdiagram:-Kunde-ser"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Aktivitetsdiagram: Medarbjeder ændre på tilgængeligt materiale kan ses i
+ Appendix A: Diagrammer: Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Aktivitetsdiagram:-Medarbjeder-æ"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -813,6 +836,29 @@ textbf{estimat}
 Domæne model og ER diagram
 \end_layout
 
+\begin_layout Standard
+ER diagram kan ses i Appendix A: Diagrammer: Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ER-diagram"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Klassediagram kan ses i Appendix A: Diagrammer: Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Klassediagram"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Section
 Navigationsdiagram
 \end_layout
@@ -853,6 +899,18 @@ Test
 \end_layout
 
 \begin_layout Standard
+Code Coverage kan ses i Appendix C: Code Coverage: Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Code-Coverage"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
 Som udvikler er test af programmet en vigtig del af processen.
  Lever koden ikke op til de givne test må den revurderes og testes igen,
  indtil alle testene går igennem.
@@ -899,16 +957,7 @@ Arbejdsprocessen reflekteret
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-newpage
-\end_layout
-
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -931,9 +980,6 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
 \begin_inset Graphics
 	filename ERdiagram.PNG
 	lyxscale 10
@@ -942,6 +988,46 @@ status collapsed
 \end_inset
 
 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ER diagram
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ER-diagram"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -950,7 +1036,7 @@ status collapsed
 \end_layout
 
 \begin_layout Plain Layout
-ER diagram
+
 \end_layout
 
 \end_inset
@@ -968,26 +1054,30 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
 \begin_inset Graphics
-	filename DomainModel.png
+	filename ClassDiagram.png
 	lyxscale 10
 	width 100text%
 
 \end_inset
 
 
-\end_layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Klassediagram
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Klassediagram"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-Klassediagram
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1002,10 +1092,7 @@ Klassediagram
 placement H
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1016,15 +1103,22 @@ status open
 \end_inset
 
 
-\end_layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aktivitetsdiagram: Kunde bestiller en carport
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Aktivitetsdiagram:-Kunde-bestill"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-Aktivitetsdiagram: Kunde bestiller en carport
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1039,10 +1133,7 @@ Aktivitetsdiagram: Kunde bestiller en carport
 placement H
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1053,15 +1144,22 @@ status open
 \end_inset
 
 
-\end_layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aktivitetsdiagram: Kunde ser sine ordre
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Aktivitetsdiagram:-Kunde-ser"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-Aktivitetsdiagram: Kunde ser sine ordre
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1076,10 +1174,7 @@ Aktivitetsdiagram: Kunde ser sine ordre
 placement H
 wide false
 sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -1090,15 +1185,22 @@ status open
 \end_inset
 
 
-\end_layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aktivitetsdiagram: Medarbjeder ændre på tilgængeligt materiale
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Aktivitetsdiagram:-Medarbjeder-æ"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-Aktivitetsdiagram: Medarbjeder ændre på tilgængeligt materiale
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1107,16 +1209,7 @@ Aktivitetsdiagram: Medarbjeder ændre på tilgængeligt materiale
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-newpage
-\end_layout
-
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -1137,16 +1230,6 @@ Som bruger af systemet vil jeg have et brugervenligt design så jeg kan finde
 \end_layout
 
 \begin_layout Itemize
-Som kunde vil jeg kunne bestille en carport så jeg kan få en carport
-\end_layout
-
-\begin_layout Itemize
-\noindent
-Som kunde vil jeg kunne se en tegning af min carport så jeg kan se hvad
- det er jeg køber
-\end_layout
-
-\begin_layout Itemize
 Som kunde vil jeg have mulighed for at kontakte en medarbejder så jeg kan
  få rådgivning
 \end_layout
@@ -1157,8 +1240,13 @@ Som kunde vil jeg have mulighed for at kunne se mine ordre og deres status
 \end_layout
 
 \begin_layout Itemize
-Som kunde vil jeg kunne se prisen på min carport så jeg ved om jeg har råd
- til den
+Som kunde vil jeg kunne bestille en carport så jeg kan få en carport
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Som kunde vil jeg kunne se en tegning af min carport så jeg kan se hvad
+ det er jeg køber
 \end_layout
 
 \begin_layout Itemize
@@ -1167,30 +1255,8 @@ Som kunde vil jeg kunne se hvornår jeg har afgivet min ordre i et læseligt
 \end_layout
 
 \begin_layout Itemize
-\noindent
-Som medarbejder vil jeg kunne udregne en stykliste så jeg ved hvilke materialer
- der skal bruges
-\end_layout
-
-\begin_layout Itemize
-\noindent
-Som medarbejder vil jeg kunne se en vejledende pris baseret på en styklisten
- så jeg har et udgangspunkt for at kunne give kunden et tilbud
-\end_layout
-
-\begin_layout Itemize
-Som medarbejder vil jeg være i stand til at ændre på tilgængelige materialer
- så jeg ved hvilke materialer jeg har
-\end_layout
-
-\begin_layout Itemize
-Som medarbejder vil jeg være i stand til at annullere en ordre så det er
- muligt at annullere sin ordre
-\end_layout
-
-\begin_layout Itemize
-Som medarbejder vil jeg have mulighed for at ændre status for en ordre så
- kan holde kunden opdateret
+Som kunde vil jeg kunne se prisen på min carport så jeg ved om jeg har råd
+ til den
 \end_layout
 
 \begin_layout Itemize
@@ -1200,7 +1266,34 @@ Som medarbejder vil jeg have besked når en ny ordre er blevet placeret så
 
 \begin_layout Itemize
 Som medarbejder vil jeg have medarbejderspecifikke operationer gemt væk
- bag et login
+ bag et login så kunder ikke har adgang
+\end_layout
+
+\begin_layout Itemize
+Som medarbejder vil jeg have mulighed for at ændre status for en ordre så
+ kan holde kunden opdateret
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Som medarbejder vil jeg kunne se en vejledende pris baseret på en styklisten
+ så jeg har et udgangspunkt for at kunne give kunden et tilbud
+\end_layout
+
+\begin_layout Itemize
+\noindent
+Som medarbejder vil jeg kunne udregne en stykliste så jeg ved hvilke materialer
+ der skal bruges
+\end_layout
+
+\begin_layout Itemize
+Som medarbejder vil jeg være i stand til at annullere en ordre så det er
+ muligt at annullere sin ordre
+\end_layout
+
+\begin_layout Itemize
+Som medarbejder vil jeg være i stand til at ændre på tilgængelige materialer
+ så jeg ved hvilke materialer jeg har
 \end_layout
 
 \begin_layout Subsubsection
@@ -1230,6 +1323,58 @@ Som medarbejder vil jeg kunne slette og tilføje materialer så jeg kan tilpasse
 \begin_layout Itemize
 Som medarbejder vil jeg kuune ændre en stykliste så jeg kan være sikker
  på at den er rigtig
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Appendix C: Code Coverage
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename CodeCoverage.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Code Coverage
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Code-Coverage"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
