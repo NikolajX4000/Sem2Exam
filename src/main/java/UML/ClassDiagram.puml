@@ -1,0 +1,71 @@
+@startuml
+
+class Employee{
+    -int id
+    -String name
+    -String password
+}
+
+class Material{
+    -int id
+    -String name
+    -int price
+    -int size
+    -String description
+    -int unitSize
+}
+
+class Order{
+    -int id
+    -String stringId
+    -List<PartLine> partsList
+    -int price
+    -int materialPrice
+    -String name
+    -String address
+    -int zipCode
+    -String City
+    -String phone
+    -String email
+    -String note
+    -int width
+    -int length
+    -int roof
+    -int angle
+    -int shedWidth
+    -int shedLength
+    -String placed
+    -String status
+    
+    +int calculatePrice()
+    +boolean hasShed()
+    +boolean isFlat()
+    +String getStatusColor()
+    +String generateStringId(int amount)
+    +String getStringId()
+    +String getDrawingSide()
+    +String getDrawingTop()
+    +List<PartLine> getPartList()
+}
+
+class PartLine{
+    -Material material
+    -int size
+    -int amount
+    -int unit
+    -String description
+    
+    +calculatePrice()
+}
+
+class Roof{
+    -int ID
+    -String NAME
+    -int TYPE
+}
+
+Order "1" -left- "*" Roof
+Order "1" -right- "*" PartLine
+PartLine "*" -- "1" Material
+
+@enduml

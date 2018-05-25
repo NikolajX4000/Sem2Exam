@@ -1,16 +1,16 @@
 
 package presentationLayer;
 
-import functionLayer.CustomException;
-import functionLayer.Employee;
-import functionLayer.LogicFacade;
+import logicLayer.CustomException;
+import logicLayer.Employee;
+import logicLayer.LogicFacade;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class CmdLogin extends Command{
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException
+    String execute(HttpServletRequest request, HttpServletResponse response)
     {
         
         try
@@ -20,14 +20,12 @@ public class CmdLogin extends Command{
             request.setAttribute("feedback", "Velkommen " + emp.getName());
             request.getSession().setAttribute("user", emp);
             
-            return "employeepage";
+            return "allOrders";
 
         } catch (CustomException e)
         {
             request.setAttribute("feedback", e.getMessage());
-            request.setAttribute("test", e.getMessage());
         }
-        
         
         return "login";
     }

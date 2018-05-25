@@ -1,12 +1,14 @@
 package presentationLayer;
 
-import functionLayer.CustomException;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import logicLayer.NoAccessException;
 
 /**
  *
@@ -27,22 +29,18 @@ public class FrontController extends HttpServlet {
         
         
         response.setBufferSize(0);
-        
-        if(request.getParameter("dtest") != null){
-            request.getRequestDispatcher("/WEB-INF/views/danielstestside.jsp").forward(request, response);
-        }
-        if(request.getParameter("TESTslider") != null){
-            request.getRequestDispatcher("/WEB-INF/views/TESTslider.jsp").forward(request, response);
-        }
-        
-        try {
-            Command command = Command.from(request);
+        Command command = Command.from(request);
+        try
+        {
             String view = command.execute(request, response);
             request.getRequestDispatcher("/WEB-INF/views/" + view + ".jsp").forward(request, response);
-        } catch (CustomException ex) {
-            request.setAttribute("error", ex.getMessage());
-            request.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
+            
+        } catch (NoAccessException ex)
+        {   
+            request.setAttribute("feedback", ex.getMessage());
+            request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
         }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

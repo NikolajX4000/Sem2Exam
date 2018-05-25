@@ -1,0 +1,17 @@
+@startuml
+
+[*] --> index
+
+
+index --> login
+index --> makeCarport
+index --> specificUserOrders
+
+makeCarport -> specificUserOrders
+state Medarbejder{
+allOrders -left-> editMaterials
+
+login --> allOrders
+}
+
+@enduml

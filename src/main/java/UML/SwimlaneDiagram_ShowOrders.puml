@@ -1,0 +1,18 @@
+@startuml
+|Kunde|
+start
+:Indtast email;
+|#F0F0F0|System|
+:Henter ordre for email;
+:Vis ordre;
+|Kunde|
+:Vælg tab for tegning;
+|System|
+:Tegn carport;
+|Kunde|
+:Vælg tab for stykliste;
+|System|
+:Beregn stykliste;
+|Kunde|
+stop
+@enduml

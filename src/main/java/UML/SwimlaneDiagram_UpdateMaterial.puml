@@ -1,0 +1,23 @@
+@startuml
+|Medarbejder|
+start
+:Indtast login oplysning;
+|#F0F0F0|System|
+if(Valid login?) then (Ja)
+    :Logger ind;
+    :Vis tilgængelig materiale;
+    |Medarbejder|
+    :Vælg materiale kategori;
+    |System|
+    :Vis materialer i valgt kategori;
+    |Medarbejder|
+    :Vælg materiale;
+    |System|
+    :Vis specifikt materiale;
+    |Medarbejder|
+    :Ændre materiale;
+    stop
+else (Nej)
+    |System|
+    stop
+@enduml

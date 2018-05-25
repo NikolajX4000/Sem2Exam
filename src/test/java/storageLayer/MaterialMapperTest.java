@@ -2,11 +2,11 @@ package storageLayer;
 
 import java.sql.Connection;
 import java.sql.Statement;
-import functionLayer.Material;
 import java.sql.DriverManager;
-import functionLayer.CustomException;
 import java.sql.SQLException;
 import java.util.List;
+import logicLayer.CustomException;
+import logicLayer.Material;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;

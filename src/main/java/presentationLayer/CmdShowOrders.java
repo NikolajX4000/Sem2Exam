@@ -1,28 +1,39 @@
 package presentationLayer;
 
-import functionLayer.CustomException;
-import functionLayer.LogicFacade;
-import functionLayer.Order;
 import java.util.List;
+import logicLayer.CustomException;
+import logicLayer.LogicFacade;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import logicLayer.Order;
 
 /**
  *
  * @author super
  */
-public class CmdShowOrders extends Command {
+public class CmdShowOrders extends Command
+{
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException {
-        
-        String email = request.getParameter("email");
-        
-        if(email != null){
-            request.setAttribute("desiredOrdersFromEmail", LogicFacade.getOrders(email));
+    String execute(HttpServletRequest request, HttpServletResponse response)
+    {
+        try
+        {
+            List<Order> orders = LogicFacade.getOrders(request.getParameter("email"));
+
+            if (orders.isEmpty())
+            {
+                throw new CustomException("Denne email har ingen ordre.");
+            }
+
+            request.setAttribute("desiredOrdersFromEmail", orders);
+
+        } catch (CustomException e)
+        {
+            request.setAttribute("feedback", e.getMessage());
+            return "index";
         }
-        
-        return "viewordersTEST";
+
+        return "specificUserOrders";
     }
 }

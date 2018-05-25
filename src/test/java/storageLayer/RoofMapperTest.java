@@ -1,12 +1,12 @@
 package storageLayer;
 
 import com.mysql.jdbc.Statement;
-import functionLayer.CustomException;
-import functionLayer.Roof;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
+import logicLayer.CustomException;
+import logicLayer.Roof;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;

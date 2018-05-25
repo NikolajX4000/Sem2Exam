@@ -1,0 +1,18 @@
+@startuml
+|Kunde|
+start
+:Bestil carport;
+|#F0F0F0|System|
+:Lav ordre;
+:Send email til medarbejder;
+:Udregn stykliste;
+:Udregn pris;
+|Medarbejder|
+:Giv tilbud;
+:Ændre status;
+|System|
+:Tegn carport;
+:Vis ordre;
+|Kunde|
+stop
+@enduml

@@ -1,17 +1,24 @@
-
 package presentationLayer;
 
-import functionLayer.CustomException;
-import functionLayer.LogicFacade;
+import logicLayer.CustomException;
+import logicLayer.LogicFacade;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import logicLayer.NoAccessException;
 
-public class CmdUpdateRoof extends Command{
+public class CmdUpdateRoof extends Command
+{
 
     @Override
-    String execute(HttpServletRequest request, HttpServletResponse response) throws CustomException {
-        try {
-            
+    String execute(HttpServletRequest request, HttpServletResponse response) throws NoAccessException
+    {
+        
+        if(request.getSession().getAttribute("user") == null){
+            throw new NoAccessException();
+        }
+        
+        try
+        {
             int id = Integer.parseInt(request.getParameter("id"));
             String name = request.getParameter("name");
             String oldname = request.getParameter("oldname");
@@ -20,15 +27,32 @@ public class CmdUpdateRoof extends Command{
 
             request.setAttribute("feedback", name + " nu opdateret!");
 
-        } catch (Exception e)
+        } catch (NumberFormatException e)
         {
 
             request.setAttribute("feedback", "Der gik noget galt.");
-            request.setAttribute("test", e);
 
+        } catch (CustomException ex)
+        {
+
+            request.setAttribute("feedback", ex.getMessage());
         }
 
-        return "materialpage";
+        
+        
+        
+        //content to page
+        try
+        {
+            request.setAttribute("tools", LogicFacade.getAllTool());
+            request.setAttribute("mats", LogicFacade.getAllMaterialsAsMap());
+            request.setAttribute("roofs", LogicFacade.getAllRoofs());
+            
+        } catch (CustomException ex)
+        {
+            request.setAttribute("feedback", ex.getMessage());
+        }
+        return "editMaterials";
     }
 
 }
