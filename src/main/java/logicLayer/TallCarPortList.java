@@ -6,8 +6,6 @@ import storageLayer.StorageFacade;
 
 /**
  * This class calculates the parts list for a carport with a raised roof.
- *
- * @author Jack-Borg
  */
 public class TallCarPortList
 {
