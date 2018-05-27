@@ -76,6 +76,15 @@ public class TallCarPortList
         parts.add(universalH(amountSpear));
         parts.add(universalV(amountSpear));
         int amountBeslag = findMaterialAmount("Universal 190mm højre", parts) + findMaterialAmount("Universal 190mm venstre", parts);
+        int amountBeklaedning = findMaterialAmount("beklædning", parts);
+        int totalSternVindskedeVandbraet = findMaterialAmount("overstern", parts);
+        totalSternVindskedeVandbraet += findMaterialAmount("vindskede", parts);
+        totalSternVindskedeVandbraet += findMaterialAmount("vandbræt", parts);
+        parts.add(skruerSternVindskedeVandbraet(totalSternVindskedeVandbraet));
+        parts.add(skruerUniverslbeslagToplaegte(amountBeslag, amountToplaegteHoldere));
+        parts.add(skruertaglaegter(amountSpear));
+        parts.add(skruerInderstBeklaedning(amountBeklaedning));
+        parts.add(skruerYderstBeklaedning(amountBeklaedning));
         if (hasShed)
         {
             parts.add(remSkur());
@@ -89,15 +98,6 @@ public class TallCarPortList
             parts.add(tHaengsel());
             parts.add(vinkelbeslag(amountLoesholter));
         }
-        int amountBeklaedning = findMaterialAmount("beklædning", parts);
-        int totalSternVindskedeVandbraet = findMaterialAmount("overstern", parts);
-        totalSternVindskedeVandbraet += findMaterialAmount("vindskede", parts);
-        totalSternVindskedeVandbraet += findMaterialAmount("vandbræt", parts);
-        parts.add(skruerSternVindskedeVandbraet(totalSternVindskedeVandbraet));
-        parts.add(skruerUniverslbeslagToplaegte(amountBeslag, amountToplaegteHoldere));
-        parts.add(skruertaglaegter(amountSpear));
-        parts.add(skruerInderstBeklaedning(amountBeklaedning));
-        parts.add(skruerYderstBeklaedning(amountBeklaedning));
         return parts;
     }
 
@@ -128,7 +128,7 @@ public class TallCarPortList
 
     PartLine spear() throws CustomException
     {
-//        List<Material> materials = StorageFacade.getMaterials("spær")
+//        List<Material> materials = StorageFacade.getMaterials("spær");
         Material material = findBestMat(spaerLength, findMaterials("spær"));
         double amount = Math.ceil((length - shedLength) / 89);
         if (hasShed)
