@@ -123,20 +123,20 @@ vspace{10cm}
 
 \begin_layout Standard
 \noindent
-Link til 
+Link til GitHub repository: 
 \begin_inset CommandInset href
 LatexCommand href
-name "GitHub"
+name "https://github.com/NikolajX4000/Sem2Exam"
 target "https://github.com/NikolajX4000/Sem2Exam"
 
 \end_inset
 
- repository
+
 \end_layout
 
 \begin_layout Standard
 \noindent
-Link til 
+Link til deployet sitet: 
 \begin_inset CommandInset href
 LatexCommand href
 name "websitet"
@@ -148,10 +148,10 @@ name "websitet"
 
 \begin_layout Standard
 \noindent
-Link til 
+Link til javadoc: 
 \begin_inset CommandInset href
 LatexCommand href
-name "Javadoc"
+name "https://nikolajx4000.github.io/Sem2Exam/"
 target "https://nikolajx4000.github.io/Sem2Exam/"
 
 \end_inset
