@@ -115,6 +115,7 @@ public class ToolMapper {
     }
 
     static void updateTool(int id, int unitSize, int price) throws CustomException {
+        if ( unitSize < 0 || price < 0 ) throw new CustomException( "Kunne ikke hente information" );
         PreparedStatement ps = null;
 
         try {
