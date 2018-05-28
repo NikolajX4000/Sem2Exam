@@ -22,8 +22,8 @@ public class OrderMapper {
      * This method calls the database with a prepared statement to 
      * request an insert to ad an order into the orders table.
      *
-     * @param order The new order object, should not be null.
-     * @return the new order object with the generated id key and status.
+     * @param order The new order object. Should not be null.
+     * @return The new order object with the generated id key and status.
      * @throws CustomException if SQl syntax contains errors, can't connect to database, 
      * the connection class isn't found or the closeStatement() method can't close the connection.
      */
@@ -267,7 +267,7 @@ public class OrderMapper {
             }
 
         } catch(SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
@@ -331,7 +331,7 @@ public class OrderMapper {
     /**
      * Update Order status by Order object.
      * This method calls the database with a prepared statement to
-     * request an update on a specific order. By using an order object as 
+     * request an update on a specific order status. By using an order object as 
      * parameter, this method will use the objects getId() and getStatus() 
      * to modify the attributes for the giving id.
      *
@@ -365,11 +365,13 @@ public class OrderMapper {
     }
 
     /**
-     * Update Order status by Order object.
-     * This method updates an orders status.
+     * Update Order status by id.
+     * This method calls the database with a prepared statement to
+     * request an update on a specific order. By using id and status as parameters,
+     * this method can update the status attributes for the giving id.
      *
-     * @param id
-     * @param status
+     * @param id The id of the order. Should not be out of index bounds.
+     * @param status The modified status. Should not be null.
      * @throws CustomException if SQl syntax contains errors, can't connect to database, 
      * the connection class isn't found or the closeStatement() method can't close the connection.
      */
@@ -396,6 +398,17 @@ public class OrderMapper {
         }
     }
 
+    /**
+     * Update Order price by id.
+     * This method calls the database with a prepared statement to
+     * request an update on a specific order. By using id and price as parameters,
+     * this method can update the status attributes for the giving id.
+     *
+     * @param id The id of the order. Should not be out of index bounds.
+     * @param price The modified price. Should not be negative.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or the closeStatement() method can't close the connection.
+     */
     public static void updatePrice(int id, int price) throws CustomException {
         PreparedStatement ps = null;
 
@@ -413,18 +426,19 @@ public class OrderMapper {
             ps.executeUpdate();
 
         } catch(SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
     }
 
     /**
-     * This method will close the prepared statement connection if it's
-     * connection, the reason is to reduce as musch in- and outgoing trafic from
-     * the server.
+     * Close Prepared Statement connection.
+     * This method will close the prepared statement connection 
+     * if it's connected. The reason is to reduce
+     * in- and outgoing trafic from the server.
      *
-     * @param ps PreparedStatement object, the SQL controller.
+     * @param ps PreparedStatement object. Should not be null.
      * @throws CustomException if it can't close the connection.
      */
     private static void closeStatement(PreparedStatement ps) throws CustomException {

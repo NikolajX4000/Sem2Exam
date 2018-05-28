@@ -50,9 +50,9 @@ public class FlatCarPortList
         parts.add(understernSider());
         parts.add(vandbraetEnde());
         parts.add(vandbraetSide());
-        for (int i = 0; i < parts.size(); i++)
+        for (PartLine part : parts)
         {
-            amount += parts.get(i).getAmount();
+            amount += part.getAmount();
         }
         parts.add(skruerSternOgVandbreat(amount));
         return parts;
