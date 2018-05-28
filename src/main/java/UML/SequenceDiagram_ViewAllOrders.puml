@@ -1,0 +1,23 @@
+@startuml
+
+actor Ansat
+boundary "allOrders.jsp" as AO
+boundary "CmdPageAllOrders.java" as CAO
+participant "OrderMapper.java" as OM
+database "Database" as DB
+
+group Se alle ordre
+Ansat -> CAO : Hent ordre
+CAO -> OM : Hent ordre fra Mapper
+OM -> DB : Forespørg ordre
+DB -> OM : Hent ordre
+OM -> AO : Orderhistorik
+AO -> Ansat : Fremvis ordre
+end
+
+group Inspicer ordre
+Ansat -> AO : Inspicer ordre
+AO -> Ansat : Fremvis ordre
+end
+
+@enduml

@@ -1,16 +1,18 @@
 @startuml
 
 actor Kunde
-boundary "makeCarport.jsp" as Order
-boundary "ViewOrders.jsp" as Orders
+boundary "makeCarport.jsp" as MC
+boundary "CmdCreateOrder.java" as CCO
+boundary "specificUserOrders.jsp" as SO
 participant "OrderMapper.java" as OM
 database "Database" as DB
 
-Kunde -> Order : Bestil
-Order -> OM : DB Adgang
+Kunde -> MC : Bestil
+MC -> CCO : Opret order
+CCO -> OM : Forbered Order
 OM -> DB : Tilføj Ordre
 DB -> OM : Hent Ordre
-OM -> Orders : Alle Ordre
-Orders -> Kunde : Orderhistorik
+OM -> SO : Forbered ordre
+SO -> Kunde : Fremvis ordre
 
 @enduml

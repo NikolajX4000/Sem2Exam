@@ -1,17 +1,17 @@
 @startuml
 
 actor Ansat
-actor Ansat
-boundary "allOrders.jsp" as Orders
-entity "Order Element" as OE
+boundary "allOrders.jsp" as AO
+boundary "CmdPageUpdateOrder.java" as CUO
 participant "OrderMapper.java" as OM
 database "Database" as DB
 
-Ansat -> OE : Opdater Ordre
-OE -> OM : DB Adgang
-OM -> DB : Tilføj Opdatering
-DB -> OM : Forespørg Odateret Ordre
-OM -> Orders : Orderhistorik
-Orders -> Ansat : Fremvis Ordre
+Ansat -> CUO : Opdater ordre
+CUO -> OM : DB adgang
+OM -> DB : Tilføj opdatering
+DB -> OM : Hent ordre
+OM -> AO : Orderhistorik
+AO -> Ansat : Fremvis ordre
+
 
 @enduml

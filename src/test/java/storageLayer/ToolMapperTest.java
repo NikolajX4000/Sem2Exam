@@ -95,12 +95,10 @@ public class ToolMapperTest {
      *
      * @throws Exception
      */
-    @Test
+    @Test(expected = CustomException.class)
     public void testGetTool_negOutOfBoundsID() throws Exception {
         int tool_id = Integer.MIN_VALUE;
-        Material meterial = ToolMapper.getTool(tool_id);
-        String result = meterial.getName();
-        assertNull(result);
+        ToolMapper.getTool(tool_id);
     }
 
     /**
@@ -111,12 +109,10 @@ public class ToolMapperTest {
      *
      * @throws Exception
      */
-    @Test
+    @Test(expected = CustomException.class)
     public void testGetTool_posOutOfBoundsID() throws Exception {
         int tool_id = Integer.MAX_VALUE;
-        Material meterial = ToolMapper.getTool(tool_id);
-        String result = meterial.getName();
-        assertNull(result);
+        ToolMapper.getTool(tool_id);
     }
 
     /**

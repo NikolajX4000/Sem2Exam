@@ -13,8 +13,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -24,7 +22,7 @@ public class ToolMapper {
 
     public static List<Material> getAllTool() throws CustomException {
         PreparedStatement ps = null;
-        Material material = null;
+        Material material;
         List<Material> materials = new ArrayList<>();
         try {
             Connection con = Connector.connection();
@@ -58,8 +56,9 @@ public class ToolMapper {
      */
     public static Material getTool(int tool_id) throws CustomException {
         PreparedStatement ps = null;
-        Material material = new Material();
+        
         try {
+            Material material = new Material();
             Connection con = Connector.connection();
             String SQL = "SELECT * FROM tools WHERE tool_id = ?";
 
@@ -73,14 +72,16 @@ public class ToolMapper {
                         setName(rs.getString("name")).
                         setPrice(rs.getInt("price")).
                         setUnitSize(rs.getInt("unit_size"));
+                
+                return material;
             }
-
+            
         } catch(SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
-        return material;
+        throw new CustomException( "Kunne ikke hente infomation" );
     }
 
     /**
@@ -131,7 +132,7 @@ public class ToolMapper {
             ps.executeUpdate();
 
         } catch(ClassNotFoundException | SQLException ex) {
-            throw new CustomException(ex.getMessage());
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
@@ -149,7 +150,7 @@ public class ToolMapper {
             try {
                 ps.close();
             } catch(SQLException ex) {
-                throw new CustomException("Kunne ikke få kontakt til databasen");
+                throw new CustomException( "Kunne ikke hente infomation" );
             }
         }
     }

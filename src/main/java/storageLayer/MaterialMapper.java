@@ -85,14 +85,16 @@ public class MaterialMapper {
                     setPrice(rs.getInt("price")).
                     setDescription(rs.getString("description")).
                     setSize(rs.getInt("size"));
+                
+                return material;
             }
-
+            
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
-        return material;
+        throw new CustomException( "Kunne ikke hente infomation" );
     }
     
     /**
@@ -162,14 +164,16 @@ public class MaterialMapper {
             ps.setString(4, material.getDescription());
             ps.setInt(5, material.getId());
 
-            ps.executeUpdate();
+            int rs = ps.executeUpdate();
+            if ( rs != 0 ) return material;
 
         } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
             throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
-        return material;
+        throw new CustomException( "Kunne ikke hente infomation" );
+        //return material;
     }
 
     /**
@@ -187,7 +191,9 @@ public class MaterialMapper {
      */
     public static void updateMaterial(int id, int size, int price, String desc) throws CustomException {
         PreparedStatement ps = null;
-
+        
+        if ( size < 0 || price < 0 ) throw new CustomException( "Kunne ikke hente infomation" );
+        
         try {
             Connection con = Connector.connection();
             String SQL = "UPDATE materials SET "
@@ -201,8 +207,8 @@ public class MaterialMapper {
             ps.setString(3, desc);
             ps.setInt(4, id);
 
-            ps.executeUpdate();
-
+            int rs = ps.executeUpdate();
+            if ( rs == 0 ) throw new CustomException( "Kunne ikke hente infomation" );
         } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
             throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
@@ -223,8 +229,9 @@ public class MaterialMapper {
      * the connection class isn't found or if the closeStatement() method can't close the connection.
      */
     public static void updateMaterial(int id, int size, int price) throws CustomException {
+        if ( size < 0 || price < 0 ) throw new CustomException( "Kunne ikke hente infomation" );
         PreparedStatement ps = null;
-
+        
         try {
             Connection con = Connector.connection();
             String SQL = "UPDATE materials SET "
@@ -237,7 +244,9 @@ public class MaterialMapper {
             ps.setInt(2, size);
             ps.setInt(3, id);
 
-            ps.executeUpdate();
+            int rs = ps.executeUpdate();
+            
+            if ( rs == 0 ) throw new CustomException( "Kunne ikke hente infomation" );
 
         } catch (SQLException | ClassNotFoundException ex) {
             throw new CustomException( "Kunne ikke hente infomation" );
@@ -260,7 +269,7 @@ public class MaterialMapper {
             try {
                 ps.close();
             } catch (SQLException ex) {
-                throw new CustomException( "Kunne ikke få kontakt til databasen" );
+                throw new CustomException( "Kunne ikke hente infomation" );
             }
         }
     }
