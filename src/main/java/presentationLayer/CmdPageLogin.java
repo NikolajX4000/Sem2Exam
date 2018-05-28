@@ -6,8 +6,6 @@
 package presentationLayer;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import logicLayer.CustomException;
-import logicLayer.LogicFacade;
 
 public class CmdPageLogin extends Command
 {
@@ -16,15 +14,6 @@ public class CmdPageLogin extends Command
     String execute(HttpServletRequest request, HttpServletResponse response)
     {
         
-        //content
-        try
-        {
-            request.setAttribute("orders", LogicFacade.getAllOrders());
-            
-        } catch (CustomException ex)
-        {
-            request.setAttribute("feedback", ex.getMessage());
-        }
         return "login";
     }
 
