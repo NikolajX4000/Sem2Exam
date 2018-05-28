@@ -123,20 +123,20 @@ vspace{10cm}
 
 \begin_layout Standard
 \noindent
-Link til 
+Link til GitHub repository: 
 \begin_inset CommandInset href
 LatexCommand href
-name "GitHub"
+name "https://github.com/NikolajX4000/Sem2Exam"
 target "https://github.com/NikolajX4000/Sem2Exam"
 
 \end_inset
 
- repository
+
 \end_layout
 
 \begin_layout Standard
 \noindent
-Link til 
+Link til deployet sitet: 
 \begin_inset CommandInset href
 LatexCommand href
 name "websitet"
@@ -148,10 +148,10 @@ name "websitet"
 
 \begin_layout Standard
 \noindent
-Link til 
+Link til javadoc: 
 \begin_inset CommandInset href
 LatexCommand href
-name "Javadoc"
+name "https://nikolajx4000.github.io/Sem2Exam/"
 target "https://nikolajx4000.github.io/Sem2Exam/"
 
 \end_inset
@@ -279,6 +279,55 @@ Systemet skal kunne udregne en stykliste udfra en ordre og en vejledende
 Overordnet beskrivelse af virksomheden
 \end_layout
 
+\begin_layout Itemize
+Hvilken afdeling sælger carporte
+\end_layout
+
+\begin_layout Itemize
+Hvormange og hvilke afdelinger er der
+\end_layout
+
+\begin_layout Itemize
+Hvilke funktioner kunne Fog tænkes at have i sammenligning med den generelle
+ virksomheds model
+\end_layout
+
+\begin_layout Itemize
+Hvilke interessenter er der i det nye system I kommer til at lave?
+\end_layout
+
+\begin_layout Itemize
+Hvilke af disse kunne tænkes at være imod forandring
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hvad kan man gøre for at modvirke modviljen hos de forskellige
+\end_layout
+
+\begin_layout Itemize
+Er det de samme argumenter der gælder alle roller
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Hvilke sikkerheds overvejelser bør
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+I have med når i designer systemet
+\end_layout
+
+\begin_layout Itemize
+Fog være opmærksom på når systemet sættes i drift?
+\end_layout
+
+\begin_layout Itemize
+Fog være opmærksom på i forhold til personfølsomme oplysninger
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
 Arbejdsgange der skal IT-støttes
 \end_layout
@@ -828,7 +877,7 @@ Formatér pris.
 \begin_inset Newline newline
 \end_inset
 
-
+Styling
 \begin_inset Newline newline
 \end_inset
 
