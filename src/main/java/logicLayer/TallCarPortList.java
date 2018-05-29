@@ -445,7 +445,7 @@ public class TallCarPortList
 
     private Material findBestMat(double length, List<Material> list) throws CustomException
     {
-        double best = 0;
+        double best = Double.MAX_VALUE;
         double wasted;
         Material mat = null;
         if (length <= 0)
@@ -455,11 +455,11 @@ public class TallCarPortList
 
         for (int i = list.size() - 1; i >= 0; i--)
         {
-            wasted = (length / list.get(i).getSize()) % 1;
+            wasted = 1 - ((length / list.get(i).getSize()) % 1);
             if (wasted == 0)
             {
                 return list.get(i);
-            } else if (wasted > best)
+            } else if (wasted < best)
             {
                 mat = list.get(i);
                 best = wasted;
