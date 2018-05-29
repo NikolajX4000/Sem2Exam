@@ -532,7 +532,7 @@ public class FlatCarPortListTest
     public void testSpaer() throws Exception
     {
         PartLine part = carport.spaer();
-        int expAmount = 15;
+        int expAmount = 16;
         int expSize = 600;
         int amount = part.getAmount();
         int size = part.getSize();
