@@ -7,7 +7,7 @@ object PartLine
 object Roof
 object Drawing
 
-Order "1" -- "*" Roof
+Order "*" -- "1" Roof
 Order "1" -- "*" PartLine
 Order "1" -- "2" Drawing
 PartLine "*" -- "1" Material
