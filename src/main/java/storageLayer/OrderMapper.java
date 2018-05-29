@@ -133,18 +133,15 @@ public class OrderMapper {
                         /* price */
                         setMaterialPrice(rs.getInt("material_price")).
                         setPrice(rs.getInt("price"));
+            } else {
+                throw new CustomException( "Dette ID er ikke tilgængeligt" );
             }
 
         } catch(SQLException | ClassNotFoundException ex) {
             throw new CustomException(ex.getMessage());
         } finally {
             closeStatement(ps);
-        }
-        
-        if ( order.getId() == 0 ) {
-            throw new CustomException( "Dette ID er ikke tilgængeligt" );
-        }
-        
+        }        
         return order;
     }
 
@@ -392,7 +389,7 @@ public class OrderMapper {
             ps.executeUpdate();
 
         } catch(SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
+            throw new CustomException( "Kunne ikke hente information" );
         } finally {
             closeStatement(ps);
         }
@@ -410,6 +407,7 @@ public class OrderMapper {
      * the connection class isn't found or the closeStatement() method can't close the connection.
      */
     public static void updatePrice(int id, int price) throws CustomException {
+        if ( price < 0 ) throw new CustomException( "Kunne ikke hente information" );
         PreparedStatement ps = null;
 
         try {

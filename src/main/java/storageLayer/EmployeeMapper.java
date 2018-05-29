@@ -34,6 +34,7 @@ public class EmployeeMapper {
 
             if (rs.first()) {
                 e.setId(rs.getInt(1));
+                return e;
             }
 
         } catch (SQLException | ClassNotFoundException ex) {
@@ -41,7 +42,7 @@ public class EmployeeMapper {
         } finally {
             closeStatement(ps);
         }
-        return e;
+        throw new CustomException( "Kunne ikke hente information" );
     }
 
     public static Employee login(String name, String password) throws CustomException {

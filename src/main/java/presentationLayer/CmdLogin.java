@@ -20,6 +20,18 @@ public class CmdLogin extends Command{
             request.setAttribute("feedback", "Velkommen " + emp.getName());
             request.getSession().setAttribute("user", emp);
             
+            
+            //content
+            try
+            {
+                request.setAttribute("orders", LogicFacade.getAllOrders());
+
+            } catch (CustomException ex)
+            {
+                request.setAttribute("feedback", ex.getMessage());
+            }
+            
+            
             return "allOrders";
 
         } catch (CustomException e)
