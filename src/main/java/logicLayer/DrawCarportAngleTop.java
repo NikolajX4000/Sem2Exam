@@ -51,7 +51,7 @@ public class DrawCarportAngleTop {
             shedWidth = width - xOffset*2;
         }
         
-        spaerWidth = 4.5;
+        spaerWidth = 5;
         spaerHeight = height - 2;
         
         bargeWidth = 5;
@@ -105,9 +105,10 @@ public class DrawCarportAngleTop {
 
     private void drawSpaer() {
         
-        double spaerDistance = width - xOffset * 2 - spaerWidth;
-        double spaerAmount = 2 + (int) (spaerDistance / 89);
-        double spaerGutter = spaerDistance / (spaerAmount-1);
+        //double spaerDistance = width - xOffset * 2 - spaerWidth;
+        double spaerDistance = width - xOffset * 2;
+        double spaerAmount = 1 + Math.ceil(spaerDistance / (84 + spaerWidth));
+        double spaerGutter = (spaerDistance-spaerWidth) / (spaerAmount-1);
 
         for (int i = 0; i < spaerAmount; i++) {
             svg.rct(i*spaerGutter + xOffset, 1, spaerHeight, spaerWidth, "stroke:grey; stroke-width: 0.75; fill: white;");
