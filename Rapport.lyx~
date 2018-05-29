@@ -237,12 +237,49 @@ Johannes Fog er en koncern der både har design & bolighuse og trælast &
 Teknologivalg
 \end_layout
 
-\begin_layout Standard
-Projektet er et Maven 3.1 projekt skrevet i Netbeans IDE 8.2.
- Databasen, mysql 5.1.39, er lavet i MySQL Workbench 6.3ce, og ligger på en
- Ubuntu 16.04.3 x64 server, hvor websitet er deployet vha.
- apache-tomcat-8.0.32.
- Sprogene der er brugt i koden er java jdk 1.8.0_141, HTML5 og javax 7.0.
+\begin_layout Itemize
+Projektet er et Maven 3.1
+\end_layout
+
+\begin_layout Itemize
+Projekt skrevet i Netbeans IDE 8.2
+\end_layout
+
+\begin_layout Itemize
+mysql 5.1.39
+\end_layout
+
+\begin_layout Itemize
+MySQL Workbench 6.3ce
+\end_layout
+
+\begin_layout Itemize
+Ubuntu 16.04.3 x64 server
+\end_layout
+
+\begin_layout Itemize
+Websitet er deployet vha.
+ apache-tomcat-8.0.32
+\end_layout
+
+\begin_layout Itemize
+Sprogene der er brugt i koden er java jdk 1.8.0_141
+\end_layout
+
+\begin_layout Itemize
+JAVAX 7.0
+\end_layout
+
+\begin_layout Itemize
+HTML5
+\end_layout
+
+\begin_layout Itemize
+JSTL 1.2 til at opbygge JSP sider
+\end_layout
+
+\begin_layout Itemize
+JBCrypt 0.4 til salt og hashing af passwords
 \end_layout
 
 \begin_layout Section
@@ -282,11 +319,215 @@ Systemet skal kunne udregne en stykliste udfra en ordre og en vejledende
 Overordnet beskrivelse af virksomheden
 \end_layout
 
+\begin_layout Standard
+Fog er en koncern med afdelinger i det meste af nordsjælland og en enkelt
+ i Vordingborg.
+ Af deres 10 afdelinger har de 1 afdeling med design og bolighus placeret
+ i Lyngby, og 9 afdelinger med trælast og byggecenter placeret i Farum,
+ Fredensborg, Helsinge, Herlev, Hørsholm, Kvistgård, Lyngby, Værebro og
+ Vordingborg.
+ Udover at være trælast og byggecenter, har Fog i Værebro gjort det til
+ sit varemærke at være specialister i carporte.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Fogs arbejdsopgaver kan inddeles i følgende funktioner:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Salgsfunktion 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Indkøbs- og lagerfunktion 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Økonomifunktion 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kundebetjening
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valg af leverandør
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Opstille økonomiske mål
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Markedsføring
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Varebestilling
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Budget og regnskab
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vareopfyldning
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Varemodtagelse
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bogføring og løn
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sætte kunde i kontakt med tømrer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Modtagekontrol
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Budgetkontrol
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Arbejdsgange der skal IT-støttes
 \end_layout
 
+\begin_layout Subsubsection
+As-is
+\end_layout
+
 \begin_layout Standard
+Når en kunde laver en ordre bliver der genereret en email, som en medarbejder
+ manuelt skal indtaste i IT-systemet.
+ Fog vil gerne derefter kunne ringe og snakke med kunden da kunde service
+ er meget vigtigt for Fog.
+ Efter samtale med kunden har medarbejderen mulighed for at lave ændringer
+ til styklisten og lave et tilbud til kunden.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+To-be
+\end_layout
+
+\begin_layout Standard
+Når en kunde opretter en ordre vil IT-systemet udregne en stykliste og en
+ vejledende pris ud fra styklisten.
+ En e-mail bliver sendt til fog for at underrette om den nye ordre i systemet,
+ en medarbejder tjekker ordren og har mulighed for at lave rettelser i stykliste
+n og derefter kan medarbejderen sende et tilbud til kunden.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
 Aktivitetsdiagram: Kunde bestiller en carport kan ses i Appendix A: Diagrammer:
  Figure 
 \begin_inset CommandInset ref
@@ -360,16 +601,19 @@ textbf{how-to-demo}
 \end_inset
 
 :
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
 Bruger skal kunne vælge om carporten skal være med eller uden rejsning.
- Bruger skal kunne vælge størrelse mm.
+\end_layout
+
+\begin_layout Itemize
+Bruger skal kunne vælge størrelse mm.
  på en carport.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
+\noindent
 \begin_inset ERT
 status open
 
@@ -383,42 +627,42 @@ textbf{tasks}
 \end_inset
 
 :
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
 Opret order tabel i databasen.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
 Opret shoppage med form til at angive størrelse på carport.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
 Opret ordermapper.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
 Opret user til databasen.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
 Giv useren til databasen insert privilegier.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
 Opret create metode i ordermapper.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
 Opret order klasse.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
 Command til bestilling.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
+\noindent
 \begin_inset ERT
 status open
 
@@ -484,26 +728,30 @@ textbf{how-to-demo}
 \end_inset
 
 :
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
+\noindent
 Brugeren skal kunne se en tegning af en carport med fladt tag fra oven.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
+\noindent
 Brugeren skal kunne se en tegning af en carport med fladt tag fra siden.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
+\noindent
 Brugeren skal kunne se en tegning af en carport med rejsning fra oven.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-Brugeren skal kunne se en tegning af en carport med rejsning fra siden
-\begin_inset Newline newline
-\end_inset
+\begin_layout Itemize
+\noindent
+Brugeren skal kunne se en tegning af en carport med rejsning fra siden.
+\end_layout
 
-
+\begin_layout Standard
+\noindent
 \begin_inset ERT
 status open
 
@@ -517,30 +765,35 @@ textbf{tasks}
 \end_inset
 
 :
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
+\noindent
 Lav stykliste for carport med fladt tag fra oven.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
+\noindent
 Lav stykliste for carport med fladt tag fra siden.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
+\noindent
 Lav stykliste for carport med rejsning fra oven.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
+\noindent
 Lav stykliste for carport med rejsning fra siden.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-Lav tabel i database med tilgængeligt materiale
-\begin_inset Newline newline
-\end_inset
+\begin_layout Itemize
+\noindent
+Lav tabel i database med tilgængeligt materiale.
+\end_layout
 
-
+\begin_layout Standard
+\noindent
 \begin_inset ERT
 status open
 
@@ -588,10 +841,10 @@ textbf{Som medarbejder vil jeg kunne udregne en stykliste så jeg ved hvilke
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
+\noindent
 \begin_inset ERT
 status open
 
@@ -605,14 +858,15 @@ textbf{how-to-demo}
 \end_inset
 
 :
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
+\noindent
 Styklisten stemmer overens med tegningerne.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
+\noindent
 \begin_inset ERT
 status open
 
@@ -626,18 +880,20 @@ textbf{tasks}
 \end_inset
 
 :
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
+\noindent
 Lav stykliste for carport med fladt tag.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
+\noindent
 Lav stykliste for carport med rejsning.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
+\noindent
 \begin_inset ERT
 status open
 
@@ -702,14 +958,15 @@ textbf{how-to-demo}
 \end_inset
 
 :
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
+\noindent
 Medarbejderen kan se en pris der er beregnet ud fra styklisten.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
+\noindent
 \begin_inset ERT
 status open
 
@@ -723,18 +980,20 @@ textbf{tasks}
 \end_inset
 
 :
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
+\noindent
 Udregning for carport med fladt tag.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
+\noindent
 Udregning for carport med rejsning.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
+\noindent
 \begin_inset ERT
 status open
 
@@ -799,14 +1058,15 @@ textbf{how-to-demo}
 \end_inset
 
 :
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
+\noindent
 Sitet ser godt ud og er nemt at finde rundt i.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
+\noindent
 \begin_inset ERT
 status open
 
@@ -820,22 +1080,25 @@ textbf{tasks}
 \end_inset
 
 :
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
+\noindent
 Formatér dato.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Itemize
+\noindent
 Formatér pris.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-Styling
-\begin_inset Newline newline
-\end_inset
+\begin_layout Itemize
+\noindent
+Styling.
+\end_layout
 
-
+\begin_layout Standard
+\noindent
 \begin_inset ERT
 status open
 
@@ -998,27 +1261,214 @@ reference "fig:Sekvensdiagram:-Inspicér-ordre"
 Særlige forhold
 \end_layout
 
+\begin_layout Subsection
+Session
+\end_layout
+
+\begin_layout Standard
+Hvis man logger ind som en employee gemmer vi en reference til et employee
+ objekt med information om den bruger.
+ Denne information bruges til at se om man har adgang til forskellige sider.
+\end_layout
+
+\begin_layout Subsection
+Exceptions
+\end_layout
+
+\begin_layout Standard
+\noindent
+Vi arbejder primært med to forskellige exceptions “CustomException” og “NoAccesE
+xception”.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Hvis der opstår en anden slags exception f.eks..
+ en SQLException eller NumberFormatExeption vil den blive grebet, og der
+ vil blive kastet en ny “CustomException” som man så giver en brugervenlig
+ besked, som der vil kunne blive vist til brugeren på siden med hvad der
+ gik galt.
+\end_layout
+
+\begin_layout Standard
+\noindent
+CustomExceptions bliver grebet i vores forskellige Command klasser hvor
+ de bliver lagt ned i en attribut ved navn “feedback”, som så vil blive
+ skrevet ud på siden.
+\end_layout
+
+\begin_layout Standard
+\noindent
+NoAccesException kan opstå hvis man ikke har tilladelse til at tilgå den
+ command man prøver at lave.
+ Der vil så blive kastet en NoAccesException som bliver grebet på vores
+ FrontController, der så vil sende brugeren hen til en anden side.
+\end_layout
+
+\begin_layout Subsection
+Brugerinput validering
+\end_layout
+
+\begin_layout Standard
+\noindent
+Der bliver lavet brugervalidering både på front og backend.
+\end_layout
+
+\begin_layout Standard
+\noindent
+På frontend bruger vi lidt forskellige ting, men primært HTML ting som ‘required
+’ hvis et felt skal være udfyldt.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Hvis man f.eks.
+ skal indtaste et postnummer, er der blevet brugt regular expressions til
+ at sikre det man taster ind er et gyldigt dansk postnummer: “
+\backslash
+d{4}”
+\end_layout
+
+\begin_layout Standard
+\noindent
+det ovenstående statement altså “
+\backslash
+d{4}” siger at man kun vil modtage 4 digits, og ikke nogle bogstaver, tegn
+ eller mindre/flere end 4 digits.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Hvis man kigger på denne expression som validere telefonnumre og prøver
+ at bryde den ned så den er til at forstå: “[+]?([
+\backslash
+d][ -]?){4,19}"
+\end_layout
+
+\begin_layout Itemize
+\noindent
+[+]? siger at nummeret må starte med 0 eller 1 ‘+’ tegn.
+\end_layout
+
+\begin_layout Itemize
+\noindent
+([
+\backslash
+d][ -]?){4,19}
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\noindent
+[
+\backslash
+d] siger der må være et digit
+\end_layout
+
+\begin_layout Itemize
+\noindent
+[ -]? siger der må være enten et space eller en bindestreg 0 eller 1 gang.
+\end_layout
+
+\begin_layout Itemize
+\noindent
+{4,19} siger at den sekvens der står før må forekomme 4-19 gange
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\noindent
+Så den siger: Der må være 0 eller 1 ‘+’ tegn, efterfulgt af 4-19 ganges:
+ digit med mulighed for et space eller bindestreg efter.
+\end_layout
+
+\begin_layout Standard
+\noindent
+For at sikre os at man ikke kan lave en ordre på et skur der ikke giver
+ mening f.eks.
+\end_layout
+
+\begin_layout Standard
+\noindent
+3x3 meter carport med 4x4 meter skur er der lavet javascript(jQuery) der
+ hver gang man ændre størrelsen af skuret sørger for at man ikke kan lave
+ et skur der er for stort.
+ Hvis dette skulle gå galt bliver det også tjekket på backenden.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Fordi vi validere på frontenden antager vi at det data som bliver sendt
+ over til vores backend er acceptabel, derfor prøver vi bare at bruge den
+ data som er sendt med, hvis af en eller anden grund det data vi får med
+ ikke er ordentligt vil der blive kastet en ‘CustomException’ og aktionen
+ vil blive stoppet.
+\end_layout
+
+\begin_layout Subsection
+Login sikkerhed
+\end_layout
+
+\begin_layout Standard
+\noindent
+Sikkerhed i forbindelse med login er lavet med BCrypt, som både står for
+ salt og hashing af passwords.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Hvis man prøver at logge ind, vil vores program se om det indtastede brugernavn
+ findes i databasen, hvis det gør det sammenligner man så det indtastede
+ password med det hashed password fra databasen.
+\end_layout
+
+\begin_layout Subsection
+Brugertyper i databasen
+\end_layout
+
+\begin_layout Standard
+\noindent
+Vi har to forskellige brugertype i vores database.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Den første en den vi bruger på selve sitet ved navn: “Fog” denne bruger
+ har kun de rettigheder som den har brug for og ikke andet.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Vores anden bruger er kaldt: “fogTest” denne bruger kan gøre alt of har
+ ikke nogen restriktioner 
+\end_layout
+
 \begin_layout Section
 Udvalgte kodeeksempler
 \end_layout
 
-\begin_layout Standard
-\begin_inset listings
-lstparams "language=Java,basicstyle={\small},breaklines=true"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Status på implementation
+\end_layout
+
+\begin_layout Standard
+Som det kan ses i Appendix B: User Stories er der user stories vi ikke har
+ implementeret, dette er da PO har valgt at nedprioritere dem i forhold
+ til de andre user stories.
+ Vi har derfor ikke lave metoder til at kunne tilføje og fjerne materialer,
+ da det var en del af en af disse user stories.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Vi har lige nu kun sat op så der sendes en email til fog med at der er lavet
+ en ny ordre, vi kunne godt tænke os at der blev sendt flere emails med
+ opdatering så som, at når man lavede en ordre også modtog en bekræftelse
+ der sagde noget i stil med “Tak for din ordre du vil blive kontaktet snarest
+ af en medarbejder”.
+ Eller når status bliver opdateret af en medarbejder at man som kunde også
+ modtager en email der fortæller status af ens ordre er blevet opdateret.
+ 
 \end_layout
 
 \begin_layout Section
