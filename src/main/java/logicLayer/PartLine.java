@@ -22,6 +22,7 @@ public class PartLine {
         this.unit = material.getUnitSize();
         this.amount = (int) Math.ceil((double) amount / unit);
         this.size = material.getSize();
+        this.description = material.getDescription();
     }
 
     /**

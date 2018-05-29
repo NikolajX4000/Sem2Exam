@@ -64,7 +64,7 @@ class Roof{
     -int TYPE
 }
 
-Order "1" -left- "*" Roof
+Order "*" -left- "1" Roof
 Order "1" -right- "*" PartLine
 PartLine "*" -- "1" Material
 
