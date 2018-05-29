@@ -2,8 +2,17 @@
 
 actor Ansat
 boundary "allOrders.jsp" as AO
+boundary "ServletGetPartlist.java" as ajax
+boundary "partlist.jsp" as PL
 
-Ansat -> AO : Inspicer ordre
-AO -> Ansat : Fremvis ordre
+
+Ansat -> AO : Gå til alle ordrer
+AO -> Ansat : Vis alle ordrer
+Ansat -> AO : Vælg ordre
+AO -> ajax  : Ajax kald til servlet
+ajax -> ajax: udregn stykliste
+ajax -> PL  : forward stykliste
+PL -> AO    : Udskriv stykliste
+AO -> Ansat : Vis valgt ordre
 
 @enduml
