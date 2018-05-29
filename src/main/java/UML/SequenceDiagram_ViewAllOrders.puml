@@ -19,7 +19,8 @@ EM -> CLI : Logger in
 CLI -> OM : Forespørg Ordrer fra Mapper
 OM -> DB : Forespørg ordre fra database
 DB -> OM : Retuner ordrer
-OM -> AO : Orderhistorik
+OM -> CLI : Set orderhistorik
+CLI -> AO : Get orderhistorik
 AO -> Ansat : Fremvis ordrer
 end
 
