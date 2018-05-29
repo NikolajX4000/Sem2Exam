@@ -82,7 +82,7 @@ public class OrderMapperTest {
     public void testGetOrder() throws Exception {
         int id = 1;
         String expResult = "Dummy";
-        String result = OrderMapper.getOrder(id).getName();
+        String result = OrderMapper._getOrder(id).getName();
         assertEquals(expResult, result);
     }
 
