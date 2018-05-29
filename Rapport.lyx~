@@ -205,6 +205,9 @@ Indledning
 \begin_layout Standard
 Vi er blevet kontaktet af Johannes Fog Værebro, der har spurgt om vi kan
  lave et program og tilhørende hjemmeside til deres salg af carporte.
+ Deres nuværende system bygger på manuelt arbejde samt en ikke tilstrækkelig
+ adgang til ændringer i både system og database.
+ Dette er nogle af fokuspunkterne der er stillet i vores opgave.
 \end_layout
 
 \begin_layout Subsection
@@ -893,6 +896,7 @@ Navigationsdiagram
 \end_layout
 
 \begin_layout Standard
+\noindent
 Navigationsdiagram kan ses i Appendix A: Diagrammer: Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -901,6 +905,42 @@ reference "fig:Navigationsdiagram"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\noindent
+Når man kommer ind på websiden kommer man først til index siden.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Derfra har man mulighed for at komme til makeCarport siden, hvor man kan
+ bestille en carport, derfra kommer man over på specificUserOrders siden,
+ hvor man kan se alle sine ordre.
+ Man kan også komme til specificUserOrders siden fra index siden ved at
+ indtaste sin email.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Man har fra index siden også mulighed for at komme til login siden, hvor
+ en medarbejder kan logge ind.
+ Når man logger ind kommer man til allOrders siden, hvor man får en liste
+ med alle ordre.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Vi bruger en header med links, så man kan fra alle siderne komme til index
+ siden, makeCarport siden, og specificUserOrders siden, og hvis man er logget
+ ind kan man også komme til allOrders siden og editMaterials siden, hvor
+ man kan se tilgængeligt materiale, og ændre på priser og længder.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Vi har også en footer, hvor vi har et link til login siden, så man kan også
+ komme dertil fra alle siderne.
 \end_layout
 
 \begin_layout Section

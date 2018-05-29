@@ -237,14 +237,6 @@ Johannes Fog er en koncern der både har design & bolighuse og trælast &
 Teknologivalg
 \end_layout
 
-\begin_layout Standard
-Projektet er et Maven 3.1 projekt skrevet i Netbeans IDE 8.2.
- Databasen, mysql 5.1.39, er lavet i MySQL Workbench 6.3ce, og ligger på en
- Ubuntu 16.04.3 x64 server, hvor websitet er deployet vha.
- apache-tomcat-8.0.32.
- Sprogene der er brugt i koden er java jdk 1.8.0_141, HTML5 og javax 7.0.
-\end_layout
-
 \begin_layout Section
 Krav
 \end_layout
@@ -1000,21 +992,6 @@ Særlige forhold
 
 \begin_layout Section
 Udvalgte kodeeksempler
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-lstparams "language=Java,basicstyle={\small},breaklines=true"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
