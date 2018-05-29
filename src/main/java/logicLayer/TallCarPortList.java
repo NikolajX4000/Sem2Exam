@@ -130,7 +130,7 @@ public class TallCarPortList
     {
 //        List<Material> materials = StorageFacade.getMaterials("spær");
         Material material = findBestMat(spaerLength, findMaterials("spær"));
-        double amount = Math.ceil((length - shedLength) / 89);
+        double amount = Math.ceil((length - shedLength - 60) / 89);
         if (hasShed)
         {
             amount += Math.ceil(shedLength / 110) - 1;

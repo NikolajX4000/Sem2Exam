@@ -224,7 +224,7 @@ public class FlatCarPortList
 //        Material material = findBestMat(width, StorageFacade.getMaterials("spær"));
         Material material = findBestMat(width, findMaterials("spær"));
         int amount = 0;
-        amount = (int) length / 55 + 1;
+        amount = (int) length / 55 + 2;
         return new PartLine(material, amount);
     }
 
