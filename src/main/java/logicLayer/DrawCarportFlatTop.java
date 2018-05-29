@@ -32,9 +32,9 @@ public class DrawCarportFlatTop {
         shedWidth = o.getShedLength();
         shedHeight = o.getShedWidth();
         
-        spaerDistance = width - spaerWidth;
+        //spaerDistance = width - spaerWidth;
         spaerAmount = 1 + Math.ceil(width / (55+spaerWidth));
-        spaerGutter = spaerDistance / (spaerAmount-1);
+        spaerGutter = (width - spaerWidth) / (spaerAmount-1);
         
         svg = new SVG(width, height);
 
