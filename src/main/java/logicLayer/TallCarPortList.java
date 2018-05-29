@@ -455,7 +455,7 @@ public class TallCarPortList
 
         for (int i = list.size() - 1; i >= 0; i--)
         {
-            wasted = (length / (double) list.get(i).getSize()) % 1;
+            wasted = (length / list.get(i).getSize()) % 1;
             if (wasted == 0)
             {
                 return list.get(i);
