@@ -23,6 +23,19 @@ public class DanielTestClass {
      */
     public static void main(String[] args) throws CustomException {
         
+        
+        
+        for (double i = 0; i < 1000; i+=59.5)
+        {
+            System.out.println(i);
+        }
+        
+        
+        for (int i = 0; i < 1000; i+=30)
+        {
+            System.out.println(i-4.5);
+        }
+        
 //        try
 //        {
 //            //       foglyngby@gmail.com
