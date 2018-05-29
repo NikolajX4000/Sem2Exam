@@ -431,10 +431,10 @@ public class FlatCarPortList
                 materials.add(material);
             }
         }
-        if (materials.size() > 0)
+        if (materials.size() == 0)
         {
-            return materials;
+            throw new CustomException("ingen matriel passer");
         }
-        throw new CustomException("ingen matriel passer");
+        return materials;
     }
 }
