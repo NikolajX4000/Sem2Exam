@@ -1,19 +1,27 @@
 @startuml
 
 actor Kunde
-boundary "ViewOrders.jsp" as Orders
-entity "Order Element" as OE
-participant "RenderOrder.java" as RO
+
+boundary "index.jsp" as index
+
+boundary "specificUserOrders.jsp" as suo
+
+participant "CmdShowOrders.java" as cmd
+
 participant "OrderMapper.java" as OM
+
 database "Database" as DB
 
-Kunde -> Orders : Forespørg Orderhistorik
-Orders -> OM : DB Adgang
-OM -> DB : Forespørg Ordre
-DB -> OM : Hent Ordre
-OM -> RO : Alle Ordre
-RO -> Orders : Fremvis Ordre
-Orders -> OE : Orderhistorik
-OE -> Kunde : Order Detaljer
+
+Kunde -> index : start
+index -> cmd : Indtast email
+cmd -> OM : Find ordre
+OM -> DB : kig efter ordrer i databasen
+DB -> OM : Retunerer ordre
+OM -> cmd : Retunerer ordre
+cmd -> cmd : Gemmer ordredata i atribut
+cmd -> suo : Forward data og opbyg side
+suo -> Kunde : vis ordre
+
 
 @enduml
