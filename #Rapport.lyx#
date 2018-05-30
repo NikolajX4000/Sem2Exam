@@ -236,8 +236,8 @@ Baggrund
 \align block
 Johannes Fog er en koncern der både har design & bolighuse og trælast &
  byggecenter.
- Vi vil i dette project fokusere på Fog Værebro, der har bedt os om at opdatere
- deres system.
+ Vi vil i dette project fokusere på Fog Værebro, der har bedt os om at lavet
+ et nyt system til deres salg af carporte.
  Fog Værebro sælger som de andre trælast & byggecentre, træ, byggematerialer
  og alt det du behøver til hus og have inden for f.eks.
  maling, bad og VVS, beslag, elartikler og lamper samt haveredskaber, grill
@@ -351,7 +351,8 @@ På websitet skal man som kunde kunne bestille en carport.
 \align block
 Som medarbejder skal man kunne se alle ordre.
  Man skal kunne ændre status og pris på en ordre.
- Man skal kunne navne og priser på de forskellige typer træ, skruer og beslag.
+ Man skal kunne se navne og priser på de forskellige typer træ, skruer og
+ beslag.
 \end_layout
 
 \begin_layout Standard
@@ -518,7 +519,7 @@ Aktivitetsdiagram: Kunde bestiller en carport kan ses i Appendix A: Diagrammer:
  Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Aktivitetsdiagram:-Kunde-bestill"
+reference "fig:Aktivitetsdiagram:-to-be"
 
 \end_inset
 
@@ -864,7 +865,7 @@ textbf{estimat}
 
 \end_inset
 
-: Estimeret til en dags arbejde.
+: Estimeret til en uges arbejde.
 \end_layout
 
 \begin_layout Standard
@@ -1199,7 +1200,7 @@ textbf{estimat}
 
 \end_inset
 
-: Estimeret til en times arbejde.
+: Estimeret til et par timers arbejde.
 \end_layout
 
 \begin_layout Standard
@@ -1320,6 +1321,13 @@ Sitet ser godt ud og er nemt at finde rundt i.
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 \begin_inset ERT
@@ -1358,19 +1366,17 @@ Styling.
 \begin_layout Standard
 \noindent
 \align block
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{estimat}
-\end_layout
-
+\begin_inset Separator plain
 \end_inset
 
-: Estimeret til et par timers arbejde.
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1394,8 +1400,7 @@ textbf{INVEST}
 \begin_layout Itemize
 \noindent
 \align block
-Independent: Designet er ikke indflydelse på funktionaliteten af applikationen,
- derfor er design en så høj prioritet da dette altid kan blive rettet til.
+Independent: Designet er ikke indflydelse på funktionaliteten af applikationen.
  
 \end_layout
 
@@ -1472,25 +1477,16 @@ reference "fig:Domæne-model"
 \begin_layout Standard
 \noindent
 \align block
-En Ordre indeholder mange PartLine, et Roof.
+En ordre indeholder mange PartLines og et Roof.
  En PartLine indeholder et Material og høre til en specifik Ordre.
- Et Material, fra Databasen, kan høre til mange PartLine.
- Et Roof, fra Databasen, kan tilhøre mange Ordre.
- Ud fra en Ordre kan der genereres to Drawing, en fra siden og en fra toppen
- 
+ Et Material, kan hører til mange PartLine.
+ Et Roof, kan tilhøre mange ordre.
+ Ud fra en ordre kan der genereres to tegninger, en fra siden og en fra
+ toppen.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{12pt}
-\end_layout
-
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -1543,16 +1539,7 @@ Employees indeholder alle de logins der har adgang til admin delen af vores
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{12pt}
-\end_layout
-
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -1582,7 +1569,8 @@ calculatePrice()
 
 \begin_deeper
 \begin_layout Itemize
-bruger calculatePrice() for hver PartLine for at udregne den totale pris.
+bruger PartLine.calculatePrice() for hver PartLine for at udregne den totale
+ pris.
 \end_layout
 
 \end_deeper
@@ -1612,7 +1600,7 @@ getStatusColor()
 
 \begin_deeper
 \begin_layout Itemize
-har en switch på status er.
+kigger på status for at finde den rigtige farve.
 \end_layout
 
 \end_deeper
@@ -1642,7 +1630,7 @@ getDrawingSide()
 
 \begin_deeper
 \begin_layout Itemize
-bruger isFlat() og køre den korrekte af 
+bruger isFlat() og kører den korrekte af 
 \end_layout
 
 \begin_deeper
@@ -1662,7 +1650,7 @@ getDrawingTop()
 
 \begin_deeper
 \begin_layout Itemize
-bruger isFlat() og køre den korrekte af 
+bruger isFlat() og kører den korrekte af 
 \end_layout
 
 \begin_deeper
@@ -1716,11 +1704,11 @@ hvis Material har en størrelse forskelling fra 0
 udregn prisen ud fra Material.getPrice() * størrelsen * amount
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 udregn prisen ud fra Material.getPrice() * amount
 \end_layout
 
-\end_deeper
 \end_deeper
 \end_deeper
 \begin_layout Section
@@ -1752,7 +1740,7 @@ Når man kommer ind på websiden kommer man først til index siden.
 \align block
 Derfra har man mulighed for at komme til makeCarport siden, hvor man kan
  bestille en carport, derfra kommer man over på specificUserOrders siden,
- hvor man kan se alle sine ordre.
+ hvor man kan se alle sine ordrer.
  Man kan også komme til specificUserOrders siden fra index siden ved at
  indtaste sin email.
 \end_layout
@@ -1763,13 +1751,13 @@ Derfra har man mulighed for at komme til makeCarport siden, hvor man kan
 Man har fra index siden også mulighed for at komme til login siden, hvor
  en medarbejder kan logge ind.
  Når man logger ind kommer man til allOrders siden, hvor man får en liste
- med alle ordre.
+ med alle ordrer.
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align block
-Vi bruger en header med links, så man kan fra alle siderne komme til index
+Vi bruger en header med links, så man fra alle siderne kan komme til index
  siden, makeCarport siden, og specificUserOrders siden, og hvis man er logget
  ind kan man også komme til allOrders siden og editMaterials siden, hvor
  man kan se tilgængeligt materiale, og ændre på priser og længder.
@@ -1790,19 +1778,6 @@ Sekvensdiagrammer
 \begin_layout Standard
 \noindent
 \align block
-Sekvensdiagram: Placér ordre kan ses i Appendix A: Diagrammer: Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Sekvensdiagram:-Placér-ordre"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
 \begin_inset ERT
 status open
 
@@ -1816,6 +1791,19 @@ textbf{Placér ordre}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Sekvensdiagram: Placér ordre kan ses i Appendix A: Diagrammer: Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sekvensdiagram:-Placér-ordre"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1847,19 +1835,6 @@ a.
 \begin_layout Standard
 \noindent
 \align block
-Sekvensdiagram: Se ordre kan ses i Appendix A: Diagrammer: Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Sekvensdiagram:-Se-ordre"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
 \begin_inset ERT
 status open
 
@@ -1873,6 +1848,19 @@ textbf{Se ordre}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Sekvensdiagram: Se ordre kan ses i Appendix A: Diagrammer: Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sekvensdiagram:-Se-ordre"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1898,19 +1886,6 @@ Kunden starter med at indtaste en email som bruger commanden ‘CmdShowOrders.ja
 \begin_layout Standard
 \noindent
 \align block
-Sekvensdiagram: Opdatér ordre kan ses i Appendix A: Diagrammer: Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Sekvensdiagram:-Opdatér-ordre"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
 \begin_inset ERT
 status open
 
@@ -1924,6 +1899,19 @@ textbf{Opdatér ordre}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Sekvensdiagram: Opdatér ordre kan ses i Appendix A: Diagrammer: Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sekvensdiagram:-Opdatér-ordre"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1955,20 +1943,6 @@ eren kalder siden allOrders.jsp og fremviser alle ordrer.
 \begin_layout Standard
 \noindent
 \align block
-Sekvensdiagram: Inspicér ordre kan ses i Appendix A: Diagrammer: Figure
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Sekvensdiagram:-Inspicér-ordre"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
 \begin_inset ERT
 status open
 
@@ -1982,6 +1956,20 @@ textbf{Inspicér ordre}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Sekvensdiagram: Inspicér ordre kan ses i Appendix A: Diagrammer: Figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sekvensdiagram:-Inspicér-ordre"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2005,20 +1993,6 @@ På dette sekvensdiagram kan man se hvordan man inspicer en ordre.
 \begin_layout Standard
 \noindent
 \align block
-Sekvensdiagram: Se alle ordrer kan ses i Appendix A: Diagrammer: Figure
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Sekvensdiagram:-Vis-alle"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
 \begin_inset ERT
 status open
 
@@ -2032,6 +2006,20 @@ textbf{Se alle ordrer}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Sekvensdiagram: Se alle ordrer kan ses i Appendix A: Diagrammer: Figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sekvensdiagram:-Vis-alle"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2082,6 +2070,13 @@ Hvis man logger ind som en employee gemmer vi en reference til et employee
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \begin_inset ERT
 status open
@@ -2108,7 +2103,7 @@ xception”.
 \begin_layout Standard
 \noindent
 \align block
-Hvis der opstår en anden slags exception f.eks..
+Hvis der opstår en anden slags exception f.eks.
  en SQLException eller NumberFormatExeption vil den blive grebet, og der
  vil blive kastet en ny “CustomException” som man så giver en brugervenlig
  besked, som der vil kunne blive vist til brugeren på siden med hvad der
@@ -2130,6 +2125,13 @@ NoAccesException kan opstå hvis man ikke har tilladelse til at tilgå den
  command man prøver at lave.
  Der vil så blive kastet en NoAccesException som bliver grebet på vores
  FrontController, der så vil sende brugeren hen til en anden side.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2185,9 +2187,17 @@ d{4}” siger at man kun vil modtage 4 digits, og ikke nogle bogstaver, tegn
 \noindent
 \align block
 Hvis man kigger på denne expression som validere telefonnumre og prøver
- at bryde den ned så den er til at forstå: “[+]?([
+ at bryde den ned så den er til at forstå: 
+\begin_inset Quotes eld
+\end_inset
+
+[+]?([
 \backslash
-d][ -]?){4,19}"
+d][ -]?){4,19}
+\begin_inset Quotes erd
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -2237,15 +2247,10 @@ Så den siger: Der må være 0 eller 1 ‘+’ tegn, efterfulgt af 4-19 ganges:
 \noindent
 \align block
 For at sikre os at man ikke kan lave en ordre på et skur der ikke giver
- mening f.eks.
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-3x3 meter carport med 4x4 meter skur er der lavet javascript(jQuery) der
- hver gang man ændre størrelsen af skuret sørger for at man ikke kan lave
- et skur der er for stort.
+ mening, f.eks.
+ 3x3 meter carport med 4x4 meter skur, er der lavet javascript(jQuery),
+ der hver gang man ændre størrelsen af skuret, sørger for at man ikke kan
+ lave et skur der er for stort.
  Hvis dette skulle gå galt bliver det også tjekket på backenden.
 \end_layout
 
@@ -2257,6 +2262,13 @@ Fordi vi validere på frontenden antager vi at det data som bliver sendt
  data som er sendt med, hvis af en eller anden grund det data vi får med
  ikke er ordentligt vil der blive kastet en ‘CustomException’ og aktionen
  vil blive stoppet.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2292,6 +2304,13 @@ Hvis man prøver at logge ind, vil vores program se om det indtastede brugernavn
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \begin_inset ERT
 status open
@@ -2300,7 +2319,7 @@ status open
 
 
 \backslash
-textbf{Brugertyper i databasen}
+textbf{Brugertyper til databasen}
 \end_layout
 
 \end_inset
@@ -2311,13 +2330,13 @@ textbf{Brugertyper i databasen}
 \begin_layout Standard
 \noindent
 \align block
-Vi har to forskellige brugertype i vores database.
+Vi har to forskellige brugertype til vores database.
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align block
-Den første en den vi bruger på selve sitet ved navn: “Fog” denne bruger
+Den første er den vi bruger på selve sitet ved navn: “Fog” denne bruger
  har kun de rettigheder som den har brug for og ikke andet.
 \end_layout
 
@@ -2700,16 +2719,7 @@ ge’.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{12pt}
-\end_layout
-
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -2719,26 +2729,18 @@ vspace{12pt}
 \noindent
 \align block
 Testene er lavet så vi får det forventet output ud af vores input.
- Dette betyde at vi f.eks.
+ Dette betyder at vi f.eks.
  gerne vil have et element fra en tabel med et specielt id eller navn, men
- også at få en fejl hvis vi prøvet at hente eller indsætte værdier som ikke
+ også at få en fejl hvis vi prøver at hente eller indsætte værdier som ikke
  stemmer overens med databasen eller objektet.
  Hvis vi eksempelvis vil indsætte en negativ pris på et objekt, eller hente
- information fra ting som ikke eksisterer vil der blive kastet en exception.
+ information fra ting som ikke eksisterer vil der blive kastet en CustomExceptio
+n.
  
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{12pt}
-\end_layout
-
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -2747,7 +2749,7 @@ vspace{12pt}
 \begin_layout Standard
 \noindent
 \align block
-Vores testmiljø er en kombination af black box/ white box testing.
+Vores testmiljø er en kombination af black box og white box testing.
  Vores JUnit er black box testing da vi giver et input og ser om outputtet
  stemmer overens med med det forventet.
  På denne måde ser vi ikke ind i koden så det forventet resultat kan kun
@@ -2756,16 +2758,7 @@ Vores testmiljø er en kombination af black box/ white box testing.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{12pt}
-\end_layout
-
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -2787,23 +2780,14 @@ reference "fig:Code-Coverage"
 \begin_layout Standard
 \noindent
 \align block
-Vores white box testing er et code coverage plugin ved navn ‘TikiOne JaCoCoverag
-e’ som giver mulighed for at se hvor meget kode der er testet.
+Vores white box testing er et code coverage, som giver mulighed for at se
+ hvor meget kode der er testet.
  Dette plugin er specielt godt til at se om man har testet forskellige udfald
  i metoder som ‘ifs’, ’Exceptions’ mm.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{12pt}
-\end_layout
-
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -2824,16 +2808,7 @@ Vores plugin tester hvilke linjer der er blevet testet i koden, hvilket
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{12pt}
-\end_layout
-
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -2842,25 +2817,16 @@ vspace{12pt}
 \begin_layout Standard
 \noindent
 \align block
-Vi har haft primært fokus på at få testet vore Mapper klasser da alle metoder
+Vi har primært haft fokus på at få testet vores Mapper klasser da alle metoder
  i dem indeholder try-catch håndtering.
  Disse test er koblet til en database kaldet ‘sem2examTest’, da vi ikke
- skal ændre i den aktuelle database hvor a der kunne opstå konflikter, med
+ skal ændre i den aktuelle database hvor der kunne opstå konflikter, med
  resultat i at applikationen ikke ville kunne fungere.
  
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{12pt}
-\end_layout
-
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -2878,16 +2844,7 @@ Vores test database kalder den aktuelle for hver test i vores Mapperer.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{12pt}
-\end_layout
-
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -2904,16 +2861,7 @@ Databasen er automatisk koblet op og opdateret til den aktuelle database
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{12pt}
-\end_layout
-
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -2922,9 +2870,9 @@ vspace{12pt}
 \begin_layout Standard
 \noindent
 \align block
-For hver gang vi kalder ‘setup()’ metoden fjerne vi den givne test tabel
- hvis den eksistere for at skabe en ny og derefter indsætte den opdateret
- version.
+For hver gang vi kalder ‘setup()’ metoden fjerner vi den givne test tabel
+ hvis den eksistere for at skabe en ny og derefter indsætte værdierne fra
+ den statiske tabel.
  
 \end_layout
 
@@ -2996,11 +2944,23 @@ private static final String DBNAME = “sem2examTest";
 private static final String HOST = "159.89.9.144";
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
+\begin_inset ERT
+status open
 
-reference: Test Pakages/storageLayer/MaterialMapperTest.java ( 20 - 24 )
+\begin_layout Plain Layout
+
+
+\backslash
+textit{reference: Test Pakages/storageLayer/MaterialMapperTest.java ( 20
+ - 24 )}
 \end_layout
 
 \end_inset
@@ -3012,22 +2972,13 @@ reference: Test Pakages/storageLayer/MaterialMapperTest.java ( 20 - 24 )
 \noindent
 \align block
 I ovenstående reference kan man se at vi kalder ‘sem2examTest’ fra samme
- host-ip som i vores aktuelle connector.
+ host-ip som i vores connection til vores rigtige database.
  Dette gøres af brugeren ‘fogTest’.
  
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{12pt}
-\end_layout
-
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -3129,16 +3080,7 @@ reference: Test Pakages/storageLayer/ToolMapperTest.java ( 81 - 88 )
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{12pt}
-\end_layout
-
+\begin_inset VSpace defskip
 \end_inset
 
 
@@ -3453,6 +3395,13 @@ Ovenstående test reference kaster en exception, grundet at værdien på ‘tool
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 \begin_inset ERT
@@ -3531,6 +3480,13 @@ Nikolaj blev hurtigt tildelt titlen som SCRUM-Master da han altid er den
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 \begin_inset ERT
@@ -3560,6 +3516,13 @@ I et af møderne nåede vi ikke en userstory i vores sprint, hvilket resulterede
  Spiket blev revurderet og sat som høj prioritet til næste sprint af vores
  PO.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3605,7 +3568,7 @@ textbf{Første sprint 4-23 til 4-26}}
 \begin_layout Standard
 \noindent
 \align block
-I dette sprint arbejde med følgende sprint arbejde vi med disse sprints.
+I dette sprint arbejdede vi med følgende user stories.
 \end_layout
 
 \begin_layout Itemize
@@ -3636,6 +3599,13 @@ As an employee I want to be able to edit the status of an order so that
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 \begin_inset ERT
@@ -3656,7 +3626,7 @@ textbf{Andet sprint 4-26 til 5-3}
 \begin_layout Standard
 \noindent
 \align block
-Vi arbejde med de her user stories:
+Vi arbejdede med følgende user stories i dette sprint:
 \end_layout
 
 \begin_layout Itemize
@@ -3687,7 +3657,7 @@ Vi fik lavet så man kunne annullere en ordre, men vi nået ikke de to andre
 \begin_layout Standard
 \noindent
 \align block
-På dette tidspunkt havde fået lavet 2/4 tegninger.
+På dette tidspunkt havde vi fået lavet 2/4 tegninger.
  Der var lavet tegninger til carport med fladt tag set oppefra og fra siden,
  men ikke for carport med rejsning.
 \end_layout
@@ -3698,6 +3668,13 @@ På dette tidspunkt havde fået lavet 2/4 tegninger.
 Vi var godt klar over at styklisten ville tage ret lang tid og vi nok ikke
  ville være helt færdige med den efter dette sprint.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3750,6 +3727,13 @@ Vi fik lavet tegninger til både carporte med fladt tag og tag med rejsning,
 \align block
 Styklisten til carport med fladt tag var blevet færdig, men vi manglede
  stadig den til carport med rejsning.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3821,6 +3805,13 @@ Vi havde på nuværende tidspunkt fået lavet styklister til begge slags carport
  men der var et par småfejl som vi ikke var helt tilfredse med, som vi hurtigt
  ville kunne få lavet færdigt, og blev enige om at gøre det i vores sidste
  sprint.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3919,6 +3910,13 @@ Vi havde også som bonus mål at der skulle sendes en email til fog hver gang
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 \begin_inset ERT
@@ -3958,6 +3956,13 @@ Selve møderne blev afholdt på den måde at vi havde en tavle hvor vi kunne
  Det kunne f.eks.
  være da vi blev enige om hvordan der skulle tegnes/beregnes stolper, hvor
  det var meget smart at kunne se hvordan det hele hang sammen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4029,6 +4034,13 @@ Vi synes at SCRUM-master rollen fungere helt fint, der var ikke rigtigt
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 \begin_inset ERT
@@ -4054,6 +4066,13 @@ De væsentligste emner til vores retrospectives var lige at tale de ting
  sikker på alle havde forstået de ting som blev sagt på samme måde.
  Så talte vi også meget om der var noget der efter mødet var super vigtigt
  at komme i gang med.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4143,6 +4162,13 @@ osv.
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 \begin_inset ERT
@@ -4164,7 +4190,7 @@ textbf{Estimering}
 \noindent
 \align block
 Det var meget svært at estimere hvor lang tid det ville tage at få lavet
- styklisten of tegningerne.
+ styklisten og tegningerne.
  Vi havde sat begge to til vores højeste estimat hvilket var en uge, så
  det kunne godt være at de som også nævnt tidligere skulle have været delt
  op i flere forskellige user stories eller måske vi skulle have sat vores
@@ -4176,6 +4202,13 @@ Det var meget svært at estimere hvor lang tid det ville tage at få lavet
 \align block
 Ellers var vi var meget gode til at få lavet de forskellige user stories
  på den anslåede tid.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4200,10 +4233,10 @@ textbf{Vejledning og PO-møder}
 \noindent
 \align block
 Der har ikke været så mange problemer ved hverken vejledning eller PO-møder,
- vi har generelt været med glad for den feedback som vi har fået, der var
- dog til et af vores første tekniske reviews hvor vi fik at vide, at vi
- skulle lave det på en måde så kunder ikke havde en bruger, men blot lavede
- en bestilling.
+ vi har generelt været meget glade for den feedback som vi har fået, der
+ var dog til et af vores første tekniske reviews hvor vi fik at vide, at
+ vi skulle lave det på en måde så kunder ikke havde en bruger, men blot
+ lavede en bestilling.
  Dette er noget vi er blev spurgt meget ind til af andre vejleder senere
  hen til andre tekniske reviews.
  Hvor de spurgte hvorfor vi havde “valgt” at gøre det på den måde.
@@ -4211,6 +4244,13 @@ Der har ikke været så mange problemer ved hverken vejledning eller PO-møder,
  Det skal dog siges at hvis det havde været op til os havde vi nok også
  lavet det sådan at man ikke har en bruger, men ens ordre bare er tilknyttet
  en email.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4526,10 +4566,10 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Aktivitetsdiagram: Kunde bestiller en carport
+Aktivitetsdiagram: to-be
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Aktivitetsdiagram:-Kunde-bestill"
+name "fig:Aktivitetsdiagram:-to-be"
 
 \end_inset
 
