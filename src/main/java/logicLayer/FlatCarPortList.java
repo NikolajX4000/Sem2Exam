@@ -143,10 +143,10 @@ public class FlatCarPortList
         if (hasShed)
         {
 
-            int distance = (int) (length - shedWidth) - 60;
+            int distance = (int) (length - shedLength) - 60;
 
             //shed x
-            int shedX = 2 + (int) (shedWidth / 400);
+            int shedX = 2 + (int) (shedLength / 400);
             //shed y
             int shedY = 2 + (int) (shedWidth / 400);
 
@@ -162,7 +162,7 @@ public class FlatCarPortList
             int shedBeams = shedY * shedX;
 
             // hvis distance er mere end 200 tilføj 2 stopler + 2*hvor mange gange distance går op i 400
-            if (distance > 200)
+            if (distance > 50)
             {
 
                 bonus = 2 * (1 + (distance / 400));
