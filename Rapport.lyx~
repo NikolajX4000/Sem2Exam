@@ -11,12 +11,12 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman "default" "default"
-\font_sans "default" "default"
-\font_typewriter "default" "default"
+\font_roman "default" "Times New Roman"
+\font_sans "default" "Times New Roman"
+\font_typewriter "default" "Times New Roman"
 \font_math "auto" "auto"
 \font_default_family default
-\use_non_tex_fonts false
+\use_non_tex_fonts true
 \font_sc false
 \font_osf false
 \font_sf_scale 100 100
@@ -26,9 +26,10 @@
 \output_sync 1
 \bibtex_command default
 \index_command default
-\paperfontsize default
+\paperfontsize 12
+\spacing single
 \use_hyperref false
-\papersize default
+\papersize a4paper
 \use_geometry false
 \use_package amsmath 1
 \use_package amssymb 1
@@ -76,17 +77,53 @@ Johannes Fog - Carport Case - Rapport
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100text%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align center
-Jacob Borg - cph-jb308@cphbusiness.dk - Jack-Borg
+Jacob Borg - cph-jb308@
+\lang danish
+cphbusiness
+\lang english
+.
+\lang danish
+dk
+\lang english
+ - Jack-Borg
 \begin_inset Newline newline
 \end_inset
 
-Daniel Lindholm - cph-dl110@cphbusiness.dk - Hupra
+Daniel 
+\lang danish
+Lindholm
+\lang english
+ - cph-dl110@
+\lang danish
+cphbusiness
+\lang english
+.dk - Hupra
 \begin_inset Newline newline
 \end_inset
 
-Nikolaj Thorsen Nielsen - cph-nn134@cphbusiness.dk - NikolajX4000
+
+\lang danish
+Nikolaj
+\lang english
+ 
+\lang danish
+Thorsen
+\lang english
+ Nielsen - cph-nn134@cphbusiness.dk - NikolajX4000
 \begin_inset Newline newline
 \end_inset
 
@@ -100,6 +137,18 @@ status open
 \backslash
 small{Stephan Marcus Duelund Djurhuus - cph-sd115@cphbusiness.dk - Stephan-MDD}
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100text%"
+height "1pt"
 
 \end_inset
 
@@ -141,7 +190,15 @@ target "https://github.com/NikolajX4000/Sem2Exam"
 \begin_layout Standard
 \noindent
 \align block
-Link til deployet sitet: 
+Link til 
+\lang danish
+deployet
+\lang english
+ 
+\lang danish
+sitet
+\lang english
+: 
 \begin_inset CommandInset href
 LatexCommand href
 name "websitet"
@@ -214,6 +271,8 @@ LatexCommand tableofcontents
 
 \begin_layout Section
 \noindent
+
+\lang danish
 Indledning
 \end_layout
 
@@ -322,6 +381,13 @@ JSTL 1.2 til at opbygge JSP sider
 \noindent
 \align block
 JBCrypt 0.4 til salt og hashing af passwords
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -461,26 +527,52 @@ Budgetkontrol
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+Fog er en handelsvirksomhed, da de køber byggematerialler, værktøj, osv.
+ og sælger det videre.
+ Da de sælger deres varer til 
+\lang danish
+privatpersoner
+\lang english
+, er 
+\lang danish
+det
+\lang english
+ en 
+\lang danish
+detailvirksomhed
+\lang english
+.
+ Fog har ejerforholdet aktieselskab
+\end_layout
+
 \begin_layout Subsection
 \noindent
 Arbejdsgange der skal IT-støttes
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Standard
 \noindent
-As-is
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{As-is}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-\noindent
-\align block
-Når en kunde laver en ordre bliver der genereret en email, som en medarbejder
- manuelt skal indtaste i IT-systemet.
- Fog vil gerne derefter kunne ringe og snakke med kunden da kunde service
- er meget vigtigt for Fog.
- Efter samtale med kunden har medarbejderen mulighed for at lave ændringer
- til styklisten og lave et tilbud til kunden.
- 
+\begin_inset VSpace smallskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -496,20 +588,47 @@ reference "fig:Aktivitetsdiagram:-as-is"
 .
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Standard
 \noindent
-To-be
+\align block
+Når en kunde laver en ordre bliver der genereret en email, som en medarbejder
+ manuelt skal indtaste i IT-systemet.
+ Fog vil gerne derefter kunne ringe og snakke med kunden da kunde service
+ er meget vigtigt for Fog.
+ Efter samtale med kunden har medarbejderen mulighed for at lave ændringer
+ til styklisten og lave et tilbud til kunden.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \noindent
-\align block
-Når en kunde opretter en ordre vil IT-systemet udregne en stykliste og en
- vejledende pris ud fra styklisten.
- En e-mail bliver sendt til fog for at underrette om den nye ordre i systemet,
- en medarbejder tjekker ordren og har mulighed for at lave rettelser i stykliste
-n og derefter kan medarbejderen sende et tilbud til kunden.
- 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{To-be}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -529,7 +648,16 @@ reference "fig:Aktivitetsdiagram:-to-be"
 \begin_layout Standard
 \noindent
 \align block
-\begin_inset Newpage pagebreak
+Når en kunde opretter en ordre vil IT-systemet udregne en stykliste og en
+ vejledende pris ud fra styklisten.
+ En e-mail bliver sendt til fog for at underrette om den nye ordre i systemet,
+ en medarbejder tjekker ordren og har mulighed for at lave rettelser i stykliste
+n og derefter kan medarbejderen sende et tilbud til kunden.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -556,6 +684,13 @@ textbf{Som kunde vil jeg kunne bestille en carport så jeg kan få en carport}
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -762,21 +897,18 @@ Testable: Vi testede denne ved at se om vores database indeholder den rigtige
 \begin_layout Standard
 \noindent
 \align block
-\begin_inset Newpage pagebreak
+\begin_inset Newpage newpage
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
 
+\backslash
+noindent
 \backslash
 textbf{Som kunde vil jeg kunne se en tegning af min carport så jeg kan se
  hvad det er jeg køber}
@@ -785,6 +917,13 @@ textbf{Som kunde vil jeg kunne se en tegning af min carport så jeg kan se
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -977,21 +1116,18 @@ Testable: Når hele carporten er tegnet kan man manuelt tjekke om alle mål
 \begin_layout Standard
 \noindent
 \align block
-\begin_inset Newpage pagebreak
+\begin_inset Newpage newpage
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
 
+\backslash
+noindent
 \backslash
 textbf{Som medarbejder vil jeg kunne udregne en stykliste så jeg ved hvilke
  materialer der skal bruges}
@@ -1000,6 +1136,13 @@ textbf{Som medarbejder vil jeg kunne udregne en stykliste så jeg ved hvilke
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1169,21 +1312,18 @@ Testable: Alle metoder kan vi give et input hvor vi ved hvad output skal
 \begin_layout Standard
 \noindent
 \align block
-\begin_inset Newpage pagebreak
+\begin_inset Newpage newpage
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
 
+\backslash
+noindent
 \backslash
 textbf{Som medarbejder vil jeg kunne se en vejledende pris baseret på en
  styklisten så jeg har et udgangspunkt for at kunne give kunden et tilbud}
@@ -1192,6 +1332,13 @@ textbf{Som medarbejder vil jeg kunne se en vejledende pris baseret på en
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1355,21 +1502,18 @@ Testable: Man kan teste om prisen bliver det man forventer når man giver
 \begin_layout Standard
 \noindent
 \align block
-\begin_inset Newpage pagebreak
+\begin_inset Newpage newpage
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
 
+\backslash
+noindent
 \backslash
 textbf{Som bruger af systemet vil jeg have et brugervenligt design så jeg
  kan finde rundt}
@@ -1378,6 +1522,13 @@ textbf{Som bruger af systemet vil jeg have et brugervenligt design så jeg
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1544,13 +1695,7 @@ Testable: Design er subjektivt, men vi har prøvet at gøre det nemt og overskue
 gt at navigere rundt på siderne, bestille carport og håndtere rettelser.
  For at se om designet er tilstrækkeligt vil man til sidst gennemgå det
  med PO.
- 
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-\begin_inset Newpage pagebreak
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -1811,6 +1956,13 @@ udregn prisen ud fra Material.getPrice() * amount
 
 \end_deeper
 \end_deeper
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 \noindent
 Navigationsdiagram
@@ -1894,6 +2046,13 @@ textbf{Placér ordre}
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 Sekvensdiagram: Placér ordre kan ses i Appendix A: Diagrammer: Figure 
@@ -1951,6 +2110,13 @@ textbf{Se ordre}
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 Sekvensdiagram: Se ordre kan ses i Appendix A: Diagrammer: Figure 
@@ -1993,7 +2159,7 @@ status open
 
 
 \backslash
-textbf{Opdatér ordre}
+textbf{Opdater ordre}
 \end_layout
 
 \end_inset
@@ -2002,12 +2168,19 @@ textbf{Opdatér ordre}
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
-Sekvensdiagram: Opdatér ordre kan ses i Appendix A: Diagrammer: Figure 
+Sekvensdiagram: Opdater ordre kan ses i Appendix A: Diagrammer: Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Sekvensdiagram:-Opdatér-ordre"
+reference "fig:Sekvensdiagram:-Opdater-ordre"
 
 \end_inset
 
@@ -2053,6 +2226,13 @@ status open
 textbf{Inspicér ordre}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -2109,6 +2289,13 @@ textbf{Se alle ordrer}
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 Sekvensdiagram: Se alle ordrer kan ses i Appendix A: Diagrammer: Figure
@@ -2139,6 +2326,13 @@ Diagrammet ViewAllOrders viser hvordan man som ansat kan få en historik
  På siden allOrders.jsp eksekveres et JSTL for-loop som fremviser alle ordrer.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 \noindent
 Særlige forhold
@@ -2156,6 +2350,13 @@ status open
 textbf{Session}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -2188,6 +2389,13 @@ status open
 textbf{Exceptions}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -2246,6 +2454,13 @@ status open
 textbf{Brugerinput validering}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -2389,6 +2604,13 @@ textbf{Login sikkerhed}
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 Sikkerhed i forbindelse med login er lavet med BCrypt, som både står for
@@ -2428,6 +2650,13 @@ textbf{Brugertyper til databasen}
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 Vi har to forskellige brugertype til vores database.
@@ -2444,7 +2673,14 @@ Den første er den vi bruger på selve sitet ved navn: “Fog” denne bruger
 \noindent
 \align block
 Vores anden bruger er kaldt: “fogTest” denne bruger kan gøre alt of har
- ikke nogen restriktioner 
+ ikke nogen restriktioner.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -2460,12 +2696,7 @@ status open
 
 \begin_layout Plain Layout
 
-PartLine spear() throws CustomException
-\end_layout
-
-\begin_layout Plain Layout
-
-{
+PartLine spear() throws CustomException {
 \end_layout
 
 \begin_layout Plain Layout
@@ -2480,12 +2711,7 @@ PartLine spear() throws CustomException
 
 \begin_layout Plain Layout
 
-    if (hasShed)
-\end_layout
-
-\begin_layout Plain Layout
-
-    {
+    if (hasShed) {
 \end_layout
 
 \begin_layout Plain Layout
@@ -2506,6 +2732,25 @@ PartLine spear() throws CustomException
 \begin_layout Plain Layout
 
 }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{reference: Source Packages/logicLayer/TallCarPortList.java ( 129 -
+ 139 )}
 \end_layout
 
 \end_inset
@@ -2541,6 +2786,13 @@ der returneres en PartLine som indeholder det Material som har den rigtige
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset listings
 lstparams "language=Java,breaklines=true"
 inline false
@@ -2549,11 +2801,7 @@ status open
 \begin_layout Plain Layout
 
 private List<Material> findMaterials(String name) throws CustomException
-\end_layout
-
-\begin_layout Plain Layout
-
-{
+ {
 \end_layout
 
 \begin_layout Plain Layout
@@ -2563,22 +2811,12 @@ private List<Material> findMaterials(String name) throws CustomException
 
 \begin_layout Plain Layout
 
-    for (Material material : allMaterials)
+    for (Material material : allMaterials) {
 \end_layout
 
 \begin_layout Plain Layout
 
-    {
-\end_layout
-
-\begin_layout Plain Layout
-
-        if (material.getName().equals(name))
-\end_layout
-
-\begin_layout Plain Layout
-
-        {
+        if (material.getName().equals(name)) {
 \end_layout
 
 \begin_layout Plain Layout
@@ -2598,12 +2836,7 @@ private List<Material> findMaterials(String name) throws CustomException
 
 \begin_layout Plain Layout
 
-    if (materials.size() == 0)
-\end_layout
-
-\begin_layout Plain Layout
-
-    {
+    if (materials.size() == 0) {
 \end_layout
 
 \begin_layout Plain Layout
@@ -2634,12 +2867,38 @@ private List<Material> findMaterials(String name) throws CustomException
 \begin_layout Standard
 \noindent
 \align block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{reference: Source Packages/logicLayer/TallCarPortList.java ( 500 -
+ 515 )}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
 Der kigges på alle Material som ligger i allMaeterials som er en attribut
  der indeholder alle Material og for alle Material der har samme getName
  som name bliver de gemt i en List, hvis der ikke bliver fundet nogen Material
  med det rigtige name bliver der kastet en CustomExeption ellers bliver
  der returneres den List som indeholder alle de Material med det rigtige
  name.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2651,12 +2910,7 @@ status open
 \begin_layout Plain Layout
 
 private Material findBestMat(double length, List<Material> list) throws
- CustomException
-\end_layout
-
-\begin_layout Plain Layout
-
-{
+ CustomException {
 \end_layout
 
 \begin_layout Plain Layout
@@ -2676,12 +2930,7 @@ private Material findBestMat(double length, List<Material> list) throws
 
 \begin_layout Plain Layout
 
-    if (length <= 0)
-\end_layout
-
-\begin_layout Plain Layout
-
-    {
+    if (length <= 0) {
 \end_layout
 
 \begin_layout Plain Layout
@@ -2696,12 +2945,7 @@ private Material findBestMat(double length, List<Material> list) throws
 
 \begin_layout Plain Layout
 
-    for (int i = list.size() - 1; i >= 0; i--)
-\end_layout
-
-\begin_layout Plain Layout
-
-    {
+    for (int i = list.size() - 1; i >= 0; i--) {
 \end_layout
 
 \begin_layout Plain Layout
@@ -2711,12 +2955,7 @@ private Material findBestMat(double length, List<Material> list) throws
 
 \begin_layout Plain Layout
 
-        if (wasted == 0)
-\end_layout
-
-\begin_layout Plain Layout
-
-        {
+        if (wasted == 0) {
 \end_layout
 
 \begin_layout Plain Layout
@@ -2726,12 +2965,7 @@ private Material findBestMat(double length, List<Material> list) throws
 
 \begin_layout Plain Layout
 
-        } else if (wasted < best)
-\end_layout
-
-\begin_layout Plain Layout
-
-        {
+        } else if (wasted < best) {
 \end_layout
 
 \begin_layout Plain Layout
@@ -2772,10 +3006,36 @@ private Material findBestMat(double length, List<Material> list) throws
 \begin_layout Standard
 \noindent
 \align block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textit{reference: Source Packages/logicLayer/TallCarPortList.java ( 446 -
+ 469 )}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
 Her bliver der taget en længde og en List over Material, wasted er hvor
  meget Material går til spilde ved at lave den length ud af det Material,
  så hvis wasted er 0 så er Materialet perfect længe og der vil være ingen
  spil så det returneres, ellers bliver det Material med lavest wasted returneret.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -2794,6 +3054,13 @@ Som det kan ses i Appendix B: User Stories er der user stories vi ikke har
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 Vi har lige nu kun sat op så der sendes en email til fog med at der er lavet
@@ -2804,6 +3071,25 @@ Vi har lige nu kun sat op så der sendes en email til fog med at der er lavet
  Eller når status bliver opdateret af en medarbejder at man som kunde også
  modtager en email der fortæller status af ens ordre er blevet opdateret.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Sådan som vores system er bygget om, udregner vi en ny stykliste hver gang
+ den skal vises på siden.
+ Havde vi haft mere tid, havde vi lavet en tabel i databasen, hvor vi ville
+ kunne gemme styklisten for en given ordre med foreign key til ordrens id.
+ Med denne ændring vil vi kunne gøre det muligt for en medarbejder at kunne
+ ændre styklisten i tilfælde af at måden at udregne styklister på ændre
+ sig på, så udregningen ikke længere er rigtig.
 \end_layout
 
 \begin_layout Section
@@ -2977,15 +3263,12 @@ For hver gang vi kalder ‘setup()’ metoden fjerner vi den givne test tabel
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
+\noindent
+\align block
+\begin_inset Newpage newpage
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
 \begin_inset ERT
 status open
 
@@ -2993,9 +3276,18 @@ status open
 
 
 \backslash
+noindent
+\backslash
 textbf{CONNECTION ATTRIBUTES}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -3097,6 +3389,13 @@ status open
 textbf{TEST MED ASSERT}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -3217,6 +3516,13 @@ textbf{TEST MED EXCEPTION}
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 \begin_inset listings
@@ -3294,7 +3600,9 @@ Da vi har haft meget fokus på håndtering af exceptions er mange af vores
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
+\noindent
+\align block
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -3313,6 +3621,13 @@ status open
 textbf{TESTET GET METODE}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -3530,7 +3845,7 @@ Ovenstående test reference kaster en exception, grundet at værdien på ‘tool
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace defskip
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -3549,6 +3864,13 @@ status open
 textbf{Test Reflektering}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -3606,6 +3928,13 @@ textbf{SCRUM-master rollen}
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 Nikolaj blev hurtigt tildelt titlen som SCRUM-Master da han altid er den
@@ -3634,6 +3963,13 @@ status open
 textbf{Et eksempel på et PO-møderne}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -3681,6 +4017,13 @@ textbf{Sprints og hvilke user stories der blev arbejdet på}}
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 \begin_inset ERT
@@ -3695,6 +4038,13 @@ normalsize{
 textbf{Første sprint 4-23 til 4-26}}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -3753,6 +4103,13 @@ status open
 textbf{Andet sprint 4-26 til 5-3}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -3831,6 +4188,13 @@ textbf{Tredje sprint 5-3 til 5-14}
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 Dette sprint var beregnet til at få lavet de to user stories vi ikke nået
@@ -3884,6 +4248,13 @@ status open
 textbf{Fjerde sprint 5-14 til 5-18}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -3962,6 +4333,13 @@ status open
 textbf{Femte sprint 5-18 til 5-24}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -4070,6 +4448,13 @@ textbf{Standup møder}
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 Vi afholdte daglige standup møder hvor vi hurtigt gik igennem det som var
@@ -4119,6 +4504,13 @@ textbf{Retrospectives}
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 Efter hvert PO-møde brugte vi ca.
@@ -4162,6 +4554,13 @@ textbf{SCRUM-master rollen}
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 Vi synes at SCRUM-master rollen fungere helt fint, der var ikke rigtigt
@@ -4188,6 +4587,13 @@ status open
 textbf{Retrospectives}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -4223,6 +4629,13 @@ status open
 textbf{Nedbrydning af user stories i tasks}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -4322,6 +4735,13 @@ textbf{Estimering}
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 Det var meget svært at estimere hvor lang tid det ville tage at få lavet
@@ -4340,13 +4760,6 @@ Ellers var vi var meget gode til at få lavet de forskellige user stories
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \noindent
 \align block
 \begin_inset ERT
@@ -4359,6 +4772,13 @@ status open
 textbf{Vejledning og PO-møder}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -4407,6 +4827,13 @@ textbf{Arbejdsrytme}
 \end_layout
 
 \begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 Vi fandt super hurtigt en god rytme for hvordan vi arbejde.
@@ -4417,12 +4844,6 @@ Vi fandt super hurtigt en god rytme for hvordan vi arbejde.
  Vi mødte også op skolen hver dag da vi synes det var en god måde at arbejde
  på hvor vi kunne hjælpe hinanden eller spørge ind til noget hvis man var
  usikker eller ville diskutere forskellige løsningsforslag.
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-
 \end_layout
 
 \begin_layout Standard
@@ -4908,10 +5329,10 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Sekvensdiagram: Opdatér ordre
+Sekvensdiagram: Opdater ordre
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Sekvensdiagram:-Opdatér-ordre"
+name "fig:Sekvensdiagram:-Opdater-ordre"
 
 \end_inset
 
