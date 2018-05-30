@@ -49,7 +49,7 @@ public class DrawCarportFlatSide {
 
     private void drawBeams() {
         
-        if (width - shedWidth > 200){
+        if (width - shedWidth - xOffset*2 > 50){
             double xWidth = (hasShed) ? width-2*xOffset-shedWidth : width-2*xOffset - beam;
         
             double beamAmount = 2 + (int)(xWidth/newBeamAfter);
