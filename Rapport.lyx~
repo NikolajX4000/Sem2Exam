@@ -482,6 +482,19 @@ Når en kunde laver en ordre bliver der genereret en email, som en medarbejder
  
 \end_layout
 
+\begin_layout Standard
+\noindent
+\align block
+Aktivitetsdiagram: as-is kan ses i Appendix A: Diagrammer: Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Aktivitetsdiagram:-as-is"
+
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Subsubsection
 \noindent
 To-be
@@ -506,34 +519,6 @@ Aktivitetsdiagram: Kunde bestiller en carport kan ses i Appendix A: Diagrammer:
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Aktivitetsdiagram:-Kunde-bestill"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-Aktivitetsdiagram: Kunde ser sine ordre kan ses i Appendix A: Diagrammer:
- Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Aktivitetsdiagram:-Kunde-ser"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-Aktivitetsdiagram: Medarbjeder ændre på tilgængeligt materiale kan ses i
- Appendix A: Diagrammer: Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Aktivitetsdiagram:-Medarbjeder-æ"
 
 \end_inset
 
@@ -1818,6 +1803,38 @@ reference "fig:Sekvensdiagram:-Placér-ordre"
 \begin_layout Standard
 \noindent
 \align block
+Place order
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+I dette diagram kan man se hvordan sekvensen fra kundes input bliver bearbejdet
+ i de forskellige filer.
+ Først indsætter kunden de givne mål og informationer til den ønskede carport
+ i makeCarport.jsp.
+ Disse informationer bliver hentet af CmdCreateOrder.java hvor de bliver
+ lagt ind i et Order objekt.
+ Efter objektet er lavet, sendes det videre til addOrder() gennem OrderMapper.jav
+a.
+ OrderMapperen laver en forespørgsel til databasen på at tilføje ordren
+ til databasen, hvorefter alle ordre kunden har lavet bliver hentet og lagt
+ i requestet som desiredOrdersFromEmail.
+ Til sidst returnere CmdCreateOrder.java siden specificUserOrders, som gennem
+ vores FrontController kalder siden specificUserOrders.jsp, og fremviser
+ alle kundes ordrer.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
 Sekvensdiagram: Se ordre kan ses i Appendix A: Diagrammer: Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1826,6 +1843,32 @@ reference "fig:Sekvensdiagram:-Se-ordre"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+ViewOrder
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Kunden starter med at indtaste en email som bruger commanden ‘CmdShowOrders.java’
+ som så tager det parameter der er sendt med fra mailen og bruger metoden
+ getOrders() til at gå ned i mapperen som så leder efter alle ordrer i databasen
+ med den email.
+ De bliver så returneret til mapperen som så laver det til en liste af ordrer
+ den giver videre til ‘CmdShowOrders.java’.
+ Den ligger dataen ned i en attribut som så vil kunne blive vist frem på
+ ‘specificUserOrders.jsp’.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1844,6 +1887,38 @@ reference "fig:Sekvensdiagram:-Opdatér-ordre"
 \begin_layout Standard
 \noindent
 \align block
+Update order
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Dette diagram viser hvordan en ansat kan opdatere en ordre.
+ Ved at starte på allOrders.jsp, kan man for hver ordre inspicere og opdatere
+ pris og status.
+ Når ændringerne er færdige vil knappen opdater kalde kommandoen CmdUpdateOrder.j
+ava som henter de nye indsatte værdier.
+ Disse værdier bliver sendt videre til vores OrderMapper.java gennem metoderne
+ updatePrice() og updateOrder().
+ Metoden updatePrice() opdatere prisen på carporten, hvor updateOrder()
+ opdateret statusen på ordren.
+ Begge metoder kalder vores database og laver et UPDATE statement.
+ Derefter hentes alle ordrer også dem som nu er opdateret gennem metoden
+ getAllOrders() og gemmes i requestet som orders.
+ Til sidst returnere CmdUpdateOrder.java siden allOrders som gennem FrontControll
+eren kalder siden allOrders.jsp og fremviser alle ordrer.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
 Sekvensdiagram: Inspicér ordrekan ses i Appendix A: Diagrammer: Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1852,6 +1927,67 @@ reference "fig:Sekvensdiagram:-Inspicér-ordre"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+InspectOrder
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+På dette sekvensdiagram kan man se hvordan man inspicer en ordre.
+ Først går man ind på alle ordre siden hvorefter man vælger den ordre man
+ gerne vil se.
+ Meget af dataen om ordren vil allerede vil være loadet ind på siden, men
+ styklisten vil først blive lavet når man klikker ind på den.
+ Dette vil ske via et ajax kald, som så vil load den ind på siden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Sekvensdiagram: Se alle ordrer kan ses i Appendix A: Diagrammer: Figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sekvensdiagram:-Vis-alle"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+View all orders
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Diagrammet ViewAllOrders viser hvordan man som ansat kan få en historik
+ af alle ordrer.
+ Ved at logge ind som ansat vil hans informationer blive hentet i CmdLogin.java.
+ Disse værdier bliver sendt videre til EmployeeMapper.java som kalder databasen
+ for at retunere et resultset til EmployeeMapper.java som bliver valideret
+ og returneret til CmdLogin.java.
+ Efter dette vil OrderMapper.java blive kaldt som vil forespørge alle ordrer
+ fra databasen.
+ Disse vil blive hentet og sendt videre til CmdLogin.java og gemt i requestetet
+ som orders.
+ Derefter bliver vi sendt videre til allOrders.jsp gennem vores FrontController.
+ På siden allOrders.jsp eksekveres et JSTL for-loop som fremviser alle ordrer.
 \end_layout
 
 \begin_layout Section
@@ -4044,69 +4180,22 @@ name "fig:Aktivitetsdiagram:-Kunde-bestill"
 \noindent
 \align center
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status collapsed
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Aktivitetsdiagram: Kunde ser sine ordre
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Aktivitetsdiagram:-Kunde-ser"
-
-\end_inset
-
 
 \end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename SwimlaneDiagramShowOrder.PNG
-	lyxscale 10
-	height 80theight%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align center
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Aktivitetsdiagram: Medarbjeder ændre på tilgængeligt materiale
+Aktivitetsdiagram: as-is
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Aktivitetsdiagram:-Medarbjeder-æ"
+name "fig:Aktivitetsdiagram:-as-is"
 
 \end_inset
 
@@ -4116,10 +4205,13 @@ name "fig:Aktivitetsdiagram:-Medarbjeder-æ"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Graphics
-	filename SwimlaneDiagramUpdateMaterial.PNG
+	filename SwimlaneDiagram_As-Is.png
 	lyxscale 10
-	height 80theight%
+	width 100text%
 
 \end_inset
 
@@ -4323,6 +4415,58 @@ name "fig:Sekvensdiagram:-Inspicér-ordre"
 
 \begin_inset Graphics
 	filename SequenceDiagramInspectOrder.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sekvensdiagram: Vis alle ordrer
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sekvensdiagram:-Vis-alle"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename SequenceDiagramViewAllOrders.png
 	lyxscale 10
 	width 100text%
 
