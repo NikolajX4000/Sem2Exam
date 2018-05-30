@@ -105,10 +105,12 @@ public class DrawCarportAngleTop {
 
     private void drawSpaer() {
         
+        //spaer over carport
         //double spaerDistance = width - xOffset * 2 - spaerWidth;
-        double spaerDistance = width - xOffset * 2;
+        double spaerDistance = width - shedWidth - xOffset * 2;
         double spaerAmount = 1 + Math.ceil(spaerDistance / (84 + spaerWidth));
-        double spaerGutter = (spaerDistance-spaerWidth) / (spaerAmount-1);
+        double spaerGutter = (hasShed) ? (spaerDistance) / (spaerAmount-1) : (spaerDistance-spaerWidth) / (spaerAmount-1);
+ 
 
         for (int i = 0; i < spaerAmount; i++) {
             svg.rct(i*spaerGutter + xOffset, 1, spaerHeight, spaerWidth, "stroke:grey; stroke-width: 0.75; fill: white;");
@@ -119,6 +121,17 @@ public class DrawCarportAngleTop {
             }
         }
         
+        //spaer over carport
+        spaerAmount = 1 + Math.ceil(shedWidth / (105 + spaerWidth));
+        spaerGutter = (shedWidth-spaerWidth) / (spaerAmount-1);
+        for (int i = 0; i < spaerAmount; i++) {
+            svg.rct((width-shedWidth-xOffset) + i*spaerGutter, 1, spaerHeight, spaerWidth, "stroke:grey; stroke-width: 0.75; fill: white;");
+            
+            if(i+1<spaerAmount){
+                svg.arrowX((width-shedWidth-xOffset) + i*spaerGutter + spaerWidth, -20, (width-shedWidth-xOffset) + i*spaerGutter + spaerGutter, -20);
+                svg.text((width-shedWidth-xOffset) + i*spaerGutter + (spaerGutter/2) + spaerWidth, -25, (int)(spaerGutter-spaerWidth) + "cm");
+            }
+        }
     }
 
     private void drawBarge() {
