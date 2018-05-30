@@ -2930,22 +2930,6 @@ Ovenstående test reference kaster en exception, grundet at værdien på ‘tool
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{12pt}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \noindent
 \align block
 \begin_inset ERT
@@ -2973,22 +2957,6 @@ En måde at arbejde med test på er at at lave testen først hvorefter man
  I stedet for at skabe en metode der lever op til kriterierne, men også
  indeholder overfladiske elementer, kan man med TDD udarbejde en metode
  efter hvad testen skal kunne gennemføre.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-vspace{12pt}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -4029,7 +3997,7 @@ Aktivitetsdiagrammer
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -4066,50 +4034,6 @@ name "fig:Aktivitetsdiagram:-Kunde-bestill"
 \begin_layout Standard
 \noindent
 \align block
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align center
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Aktivitetsdiagram: Kunde ser sine ordre
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Aktivitetsdiagram:-Kunde-ser"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename SwimlaneDiagramShowOrder.PNG
-	lyxscale 10
-	height 80theight%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
@@ -4355,6 +4279,55 @@ name "fig:Sekvensdiagram:-Inspicér-ordre"
 
 \begin_inset Graphics
 	filename SequenceDiagramInspectOrder.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sekvensdiagram: Vis alle ordrer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename SequenceDiagramViewAllOrders.png
 	lyxscale 10
 	width 100text%
 
