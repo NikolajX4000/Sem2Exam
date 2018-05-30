@@ -15,13 +15,13 @@ database "Database" as DB
 
 Kunde -> index : start
 index -> cmd : Indtast email
-cmd -> OM : Find ordre
+cmd -> OM : Find ordrer
 OM -> DB : kig efter ordrer i databasen
-DB -> OM : Retunerer ordre
-OM -> cmd : Retunerer ordre
-cmd -> cmd : Gemmer ordredata i atribut
+DB -> OM : Retunerer ordrer
+OM -> cmd : Retunerer ordrer
+cmd -> cmd : Gemmer ordrerdata i atribut
 cmd -> suo : Forward data og opbyg side
-suo -> Kunde : vis ordre
+suo -> Kunde : vis ordrer
 
 
 @enduml

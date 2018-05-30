@@ -8,7 +8,6 @@ participant "OrderMapper.java" as OM
 participant "EmployeeMapper.java" as EM
 database "Database" as DB
 
-group Se alle ordre
 Ansat -> LI : Indtast oplysninger
 LI -> CLI : Login
 CLI -> EM : Forespørg bruger fra Mapper
@@ -22,12 +21,6 @@ DB -> OM : Retuner ordrer
 OM -> CLI : Set orderhistorik
 CLI -> AO : Get orderhistorik
 AO -> Ansat : Fremvis ordrer
-end
-
-group Inspicer ordre
-Ansat -> AO : Inspicer ordre
-AO -> Ansat : Fremvis ordre
-end
 
 @enduml
 ¢
