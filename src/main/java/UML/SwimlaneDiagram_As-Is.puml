@@ -1,0 +1,22 @@
+@startuml
+|Kunde|
+start
+:sender forespørgsel på Carport;
+|#F0F0F0|System|
+:Email bliver sendt til fog;
+|Medarbejder|
+:Fog medarbejder skriver manuelt ind i IT-System;
+|#F0F0F0|System|
+:IT-system udregner stykliste;
+|Medarbejder|
+:Lav tilbud;
+|Kunde|
+:Accepter og betal;
+|Medarbejder|
+:Ændre status;
+|System|
+:Tegn carport;
+:Vis ordre;
+|Kunde|
+stop
+@enduml

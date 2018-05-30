@@ -515,25 +515,10 @@ reference "fig:Aktivitetsdiagram:-Kunde-bestill"
 \begin_layout Standard
 \noindent
 \align block
-Aktivitetsdiagram: Kunde ser sine ordre kan ses i Appendix A: Diagrammer:
- Figure 
+Aktivitetsdiagram: as-is kan ses i Appendix A: Diagrammer: Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Aktivitetsdiagram:-Kunde-ser"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-Aktivitetsdiagram: Medarbjeder ændre på tilgængeligt materiale kan ses i
- Appendix A: Diagrammer: Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Aktivitetsdiagram:-Medarbjeder-æ"
+reference "fig:Aktivitetsdiagram:-as-is"
 
 \end_inset
 
@@ -4044,69 +4029,22 @@ name "fig:Aktivitetsdiagram:-Kunde-bestill"
 \noindent
 \align center
 \begin_inset Float figure
-placement H
 wide false
 sideways false
 status collapsed
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Aktivitetsdiagram: Kunde ser sine ordre
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Aktivitetsdiagram:-Kunde-ser"
-
-\end_inset
-
 
 \end_layout
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename SwimlaneDiagramShowOrder.PNG
-	lyxscale 10
-	height 80theight%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align center
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Aktivitetsdiagram: Medarbjeder ændre på tilgængeligt materiale
+Aktivitetsdiagram: as-is
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Aktivitetsdiagram:-Medarbjeder-æ"
+name "fig:Aktivitetsdiagram:-as-is"
 
 \end_inset
 
@@ -4116,10 +4054,13 @@ name "fig:Aktivitetsdiagram:-Medarbjeder-æ"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Graphics
-	filename SwimlaneDiagramUpdateMaterial.PNG
+	filename SwimlaneDiagram_As-Is.png
 	lyxscale 10
-	height 80theight%
+	width 100text%
 
 \end_inset
 
@@ -4323,6 +4264,55 @@ name "fig:Sekvensdiagram:-Inspicér-ordre"
 
 \begin_inset Graphics
 	filename SequenceDiagramInspectOrder.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sekvensdiagram: Vis alle ordrer
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename SequenceDiagramViewAllOrders.png
 	lyxscale 10
 	width 100text%
 
