@@ -8,11 +8,11 @@ participant "OrderMapper.java" as OM
 database "Database" as DB
 
 Kunde -> MC : Bestil
-MC -> CCO : Opret order
-CCO -> OM : Forbered Order
+MC -> CCO : Opret ordre
+CCO -> OM : Forbered Ordre
 OM -> DB : Tilføj Ordre
-DB -> OM : Hent Ordre
-OM -> SO : Forbered ordre
-SO -> Kunde : Fremvis ordre
+DB -> OM : Hent Ordrer
+OM -> SO : Forbered ordrer
+SO -> Kunde : Fremvis ordrer
 
 @enduml
