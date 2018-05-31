@@ -456,11 +456,13 @@ public class TallCarPortList
 
         for (int i = list.size() - 1; i >= 0; i--)
         {
-            wasted = 1 - ((length / list.get(i).getSize()) % 1);
+            wasted = (length / list.get(i).getSize())% 1;
             if (wasted == 0)
             {
                 return list.get(i);
-            } else if (wasted < best)
+            } 
+            wasted = 1 - wasted;
+            if (wasted < best)
             {
                 mat = list.get(i);
                 best = wasted;
