@@ -471,6 +471,10 @@ Ubuntu 16.04.3 x64 server
 \end_layout
 
 \begin_layout Itemize
+Linux 4.4.0-116-generic
+\end_layout
+
+\begin_layout Itemize
 \noindent
 \align block
 Websitet er deployet vha.
@@ -786,13 +790,146 @@ Nyt system betyder nye tilvænninger.
 \begin_layout Standard
 \noindent
 \align block
-Interessantanalyse
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Interessentanalyse}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align block
-Følgende 
+Denne analyse beskriver forholdet mellem interessenternes indflydelse og
+ interesse.
+ For hver interessent er der fordele, ulemper og position i forholdet til
+ produktet.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Product owners fordele er at få automatiseret en masse processer hver gang
+ der skal bestilles en carport.
+ Ved at automatisere disse reduceres arbejdskraften for opgaven.
+ Ulempen er dog at et nyt system vil koste penge at få lavet.
+ Product owner snakker sammen med udviklerne om hvad der skal lave i de
+ enkelte sprints, det er også product owner der vurderer hvorvidt en userstory
+ er færdig og igangsætte nye sprints.
+ Dette gør at product owner har høj interesse og stor indflydelse.
+ Dette gør product owneren til en ressourceperson.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Som udvikler er vores fordele at skabe et produkt godt nok til at blive
+ kontaktet igen.
+ Udviklernes håndtering af produktet er at udvikle det og følge de userstories
+ der er blevet planlagt i møderne med produkt ejeren.
+ Grundet dette har udviklerne stor indflydelse med en til dels høj interesse
+ og er derfor ressourcepersoner.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Vores eksterne interessenter har ikke nogen større indflydelse.
+ Dette er pga.
+ de ikke har indvirkning på produktets udvikling eller standard.
+ Interessen er også lav da systemet er lavet med fokus på den ansatte og
+ ikke kunden.
+ Lovgivningen skal vi håndtere ved at følge loven.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Investoren er en gidsler da de ikke har indflydelse på produktet, men har
+ et kapital de kan miste.
+ Derfor har investorerne en til dels høj interesse.
+ Fordele for dem er at de kan få et højt afkast af produktet.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Konkurrenter har til dels en indflydelse da det nye system skal kunne dominere
+ konkurrenternes nuværende system.
+ De har en interesse da de godt vil kunne konkurrere med fog.
+ Disse er grå eminencer da fordi de har indflydelse men næsten ingen interesse.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+IT-afdelingen har stor interesse da de kommer til at bruge dette system.
+ De skal kunne navigere rundt og kunne give support og vejledning til produktet.
+ De har ikke nogen større indflydelse da produktet ikke er rettet dem.
+ Dette gør at IT-afdelingen er grå eminencer.
 \end_layout
 
 \begin_layout Subsection

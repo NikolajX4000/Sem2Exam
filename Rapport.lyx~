@@ -471,6 +471,10 @@ Ubuntu 16.04.3 x64 server
 \end_layout
 
 \begin_layout Itemize
+Linux 4.4.0-116-generic
+\end_layout
+
+\begin_layout Itemize
 \noindent
 \align block
 Websitet er deployet vha.
@@ -787,12 +791,6 @@ Nyt system betyder nye tilvænninger.
 \noindent
 \align block
 Interessantanalyse
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-Følgende 
 \end_layout
 
 \begin_layout Subsection
@@ -5438,11 +5436,13 @@ Appendix D: Interessentanalyse
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
