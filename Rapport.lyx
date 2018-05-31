@@ -670,8 +670,11 @@ detailvirksomhed
  Fog har ejerforholdet aktieselskab.
 \end_layout
 
-\begin_layout Subsubsection
-SWOT
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -773,6 +776,13 @@ Nyt IT-system kan have bugs.
 Nyt system betyder nye tilvænninger.
 \end_layout
 
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 \noindent
 Arbejdsgange der skal IT-støttes
@@ -866,7 +876,7 @@ n og derefter kan medarbejderen sende et tilbud til kunden.
 
 \begin_layout Subsection
 \noindent
-Scrum userstories
+SCRUM userstories
 \end_layout
 
 \begin_layout Subsubsection
@@ -1497,9 +1507,8 @@ Negotiable: Storien definere ikke hvordan styklisten skal udregnes bare
 \begin_layout Itemize
 \noindent
 \align block
-Valuable: User storyen skaber værdi i form af der skal bruges en stykliste
- før man kan sælge nogle carporte.
- 
+Valuable: Styklisten er en del af det produkt som fog sælger, som derfor
+ har høj prioritet.
 \end_layout
 
 \begin_layout Itemize
@@ -3883,10 +3892,10 @@ SCRUM-master rollen
 \begin_layout Standard
 \noindent
 \align block
-Nikolaj blev hurtigt tildelt titlen som SCRUM-Master da han altid er den
- første der møder og altid har styr på datoer, tidsfrister osv.
- Hvis nogen havde idéer var det Nikolaj, som i sidste ende afgjorde om det
- blev det ene eller det andet.
+Nikolaj fik tildelt rollen som SCRUM master, som har til opgave at sørge
+ for at målene for et sprint bliver opfyldt.
+ SCRUM master har også til opgave at sørge for at fremskridt er synligt
+ for product owner.
 \end_layout
 
 \begin_layout Subsubsection

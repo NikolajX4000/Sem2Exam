@@ -73,7 +73,7 @@
 
 \begin_layout Title
 \noindent
-Johannes Fog - Carport Case - Rapport
+JOHANNES FOG - CARPORT CASE - RAPPORT
 \end_layout
 
 \begin_layout Standard
@@ -670,8 +670,11 @@ detailvirksomhed
  Fog har ejerforholdet aktieselskab.
 \end_layout
 
-\begin_layout Subsubsection
-SWOT
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -773,6 +776,13 @@ Nyt IT-system kan have bugs.
 Nyt system betyder nye tilvænninger.
 \end_layout
 
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 \noindent
 Arbejdsgange der skal IT-støttes
@@ -866,11 +876,36 @@ n og derefter kan medarbejderen sende et tilbud til kunden.
 
 \begin_layout Subsection
 \noindent
-Scrum userstories
+SCRUM userstories
 \end_layout
 
 \begin_layout Subsubsection
-Som kunde vil jeg kunne bestille en carport så jeg kan få en carport
+Userstory 1
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Som kunde vil jeg kunne bestille en carport så jeg kan få en carport}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1083,9 +1118,32 @@ Testable: Vi testede denne ved at se om vores database indeholder den rigtige
 \end_layout
 
 \begin_layout Subsubsection
+Userstory 2
+\end_layout
+
+\begin_layout Standard
 \noindent
-Som kunde vil jeg kunne se en tegning af min carport så jeg kan se hvad
- det er jeg køber
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Som kunde vil jeg kunne se en tegning af min carport så jeg kan se
+ hvad det er jeg køber}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1285,8 +1343,32 @@ Testable: Når hele carporten er tegnet kan man manuelt tjekke om alle mål
 
 \begin_layout Subsubsection
 \noindent
-Som medarbejder vil jeg kunne udregne en stykliste så jeg ved hvilke materialer
- der skal bruges
+Userstory 3
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Som medarbejder vil jeg kunne udregne en stykliste så jeg ved hvilke
+ materialer der skal bruges}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1425,9 +1507,8 @@ Negotiable: Storien definere ikke hvordan styklisten skal udregnes bare
 \begin_layout Itemize
 \noindent
 \align block
-Valuable: User storyen skaber værdi i form af der skal bruges en stykliste
- før man kan sælge nogle carporte.
- 
+Valuable: Styklisten er en del af det produkt som fog sælger, som derfor
+ har høj prioritet.
 \end_layout
 
 \begin_layout Itemize
@@ -1463,8 +1544,32 @@ Testable: Alle metoder kan vi give et input hvor vi ved hvad output skal
 
 \begin_layout Subsubsection
 \noindent
-Som medarbejder vil jeg kunne se en vejledende pris baseret på en styklisten
- så jeg har et udgangspunkt for at kunne give kunden et tilbud
+Userstory 4
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Som medarbejder vil jeg kunne se en vejledende pris baseret på en
+ styklisten så jeg har et udgangspunkt for at kunne give kunden et tilbud}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1635,8 +1740,32 @@ Testable: Man kan teste om prisen bliver det man forventer når man giver
 
 \begin_layout Subsubsection
 \noindent
-Som bruger af systemet vil jeg have et brugervenligt design så jeg kan finde
- rundt
+Userstory 5
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Som bruger af systemet vil jeg have et brugervenligt design så jeg
+ kan finde rundt}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2363,35 +2492,8 @@ NoAccesException kan opstå hvis man ikke har tilladelse til at tilgå den
  FrontController, der så vil sende brugeren hen til en anden side.
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace smallskip
-\end_inset
-
-
+\begin_layout Subsection
+Brugerinput validering
 \end_layout
 
 \begin_layout Standard
@@ -2507,35 +2609,8 @@ Fordi vi validere på frontenden antager vi at det data som bliver sendt
  vil blive stoppet.
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Login sikkerhed}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace smallskip
-\end_inset
-
-
+\begin_layout Subsection
+Login sikkerhed
 \end_layout
 
 \begin_layout Standard
@@ -2553,35 +2628,8 @@ Hvis man prøver at logge ind, vil vores program se om det indtastede brugernavn
  password med det hashed password fra databasen.
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Brugertyper til databasen}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace smallskip
-\end_inset
-
-
+\begin_layout Subsection
+Brugertyper til databasen
 \end_layout
 
 \begin_layout Standard
@@ -3837,70 +3885,21 @@ Process
 Arbejdsprocessen faktuelt
 \end_layout
 
-\begin_layout Standard
-\noindent
-\align block
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{SCRUM-master rollen}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace smallskip
-\end_inset
-
-
+\begin_layout Subsubsection
+SCRUM-master rollen
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align block
-Nikolaj blev hurtigt tildelt titlen som SCRUM-Master da han altid er den
- første der møder og altid har styr på datoer, tidsfrister osv.
- Hvis nogen havde idéer var det Nikolaj, som i sidste ende afgjorde om det
- blev det ene eller det andet.
+Nikolaj fik tildelt rollen som SCRUM master, som har til opgave at sørge
+ for at målene for et sprint bliver opfyldt.
+ SCRUM master har også til opgave at sørge for at fremskridt er synligt
+ for product owner.
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Et eksempel på et PO-møderne}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace smallskip
-\end_inset
-
-
+\begin_layout Subsubsection
+Et eksempel på et PO-møderne
 \end_layout
 
 \begin_layout Standard
@@ -3917,11 +3916,8 @@ I et af møderne nåede vi ikke en userstory i vores sprint, hvilket resulterede
  
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
+\begin_layout Subsubsection
+Sprints og hvilke user stories der blev arbejdet på
 \end_layout
 
 \begin_layout Standard
@@ -3934,36 +3930,7 @@ status open
 
 
 \backslash
-large{
-\backslash
-textbf{Sprints og hvilke user stories der blev arbejdet på}}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-normalsize{
-\backslash
-textbf{Første sprint 4-23 til 4-26}}
+textbf{Første sprint 4-23 til 4-26}
 \end_layout
 
 \end_inset
@@ -4350,36 +4317,8 @@ Vi havde også som bonus mål at der skulle sendes en email til fog hver gang
  der blev lavet en ordre forespørgsel, og det fik vi også nået.
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Standup møder}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace smallskip
-\end_inset
-
-
+\begin_layout Subsubsection
+Standup møder
 \end_layout
 
 \begin_layout Standard
@@ -4406,36 +4345,8 @@ Selve møderne blev afholdt på den måde at vi havde en tavle hvor vi kunne
  det var meget smart at kunne se hvordan det hele hang sammen.
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Retrospectives}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace smallskip
-\end_inset
-
-
+\begin_layout Subsubsection
+Retrospectives
 \end_layout
 
 \begin_layout Standard
@@ -4463,29 +4374,8 @@ Vi havde mange dage hvor vores møder lå meget tidligt på dagen, så vi mødte
 Arbejdsprocessen reflekteret
 \end_layout
 
-\begin_layout Standard
-\noindent
-\align block
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{SCRUM-master rollen}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace smallskip
-\end_inset
-
-
+\begin_layout Subsubsection
+SCRUM-master rollen
 \end_layout
 
 \begin_layout Standard
@@ -4495,36 +4385,8 @@ Vi synes at SCRUM-master rollen fungere helt fint, der var ikke rigtigt
  nogle problemer i den.
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Retrospectives}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace smallskip
-\end_inset
-
-
+\begin_layout Subsubsection
+Retrospectives
 \end_layout
 
 \begin_layout Standard
@@ -4537,36 +4399,8 @@ De væsentligste emner til vores retrospectives var lige at tale de ting
  at komme i gang med.
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Nedbrydning af user stories i tasks}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace smallskip
-\end_inset
-
-
+\begin_layout Subsubsection
+Nedbrydning af user stories i tasks
 \end_layout
 
 \begin_layout Standard
@@ -4637,36 +4471,8 @@ Udregning af skruer
 osv.
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Estimering}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace smallskip
-\end_inset
-
-
+\begin_layout Subsubsection
+Estimering
 \end_layout
 
 \begin_layout Standard
@@ -4687,36 +4493,8 @@ Ellers var vi var meget gode til at få lavet de forskellige user stories
  på den anslåede tid.
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Vejledning og PO-møder}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace smallskip
-\end_inset
-
-
+\begin_layout Subsubsection
+Vejledning og PO-møder
 \end_layout
 
 \begin_layout Standard
@@ -4736,36 +4514,8 @@ Der har ikke været så mange problemer ved hverken vejledning eller PO-møder,
  en email.
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-textbf{Arbejdsrytme}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace smallskip
-\end_inset
-
-
+\begin_layout Subsubsection
+Arbejdsrytme
 \end_layout
 
 \begin_layout Standard
