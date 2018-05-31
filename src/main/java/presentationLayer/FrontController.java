@@ -14,7 +14,7 @@ import logicLayer.NoAccessException;
  *
  * @author super
  */
-@WebServlet(name = "FrontController", urlPatterns = {""})
+@WebServlet(name = "FrontController", urlPatterns = {"/"})
 public class FrontController extends HttpServlet {
 
     /**
