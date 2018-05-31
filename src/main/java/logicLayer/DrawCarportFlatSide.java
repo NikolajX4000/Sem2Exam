@@ -29,6 +29,8 @@ public class DrawCarportFlatSide {
         width = o.getLength();
         shedWidth = o.getShedLength();
         
+        difHeight = width*0.01;
+        
         if (shedWidth > width - xOffset*2) {
             shedWidth = width - xOffset*2;
         }
