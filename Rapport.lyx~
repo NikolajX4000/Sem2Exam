@@ -4999,7 +4999,7 @@ name "fig:Sekvensdiagram:-Placér-ordre"
 
 
 \begin_inset Graphics
-	filename SequenceDiagramPlaceOrder.PNG
+	filename SequenceDiargramPlaceOrder.png
 	lyxscale 10
 	width 100text%
 
@@ -5413,6 +5413,63 @@ name "fig:Code-Coverage"
 
 \begin_inset Graphics
 	filename CodeCoverage.PNG
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Appendix D: Interessentanalyse
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Interessentanalyse
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Interessentanalyse"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Interessentanalyse.png
 	lyxscale 10
 	width 100text%
 

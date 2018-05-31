@@ -4999,7 +4999,7 @@ name "fig:Sekvensdiagram:-Placér-ordre"
 
 
 \begin_inset Graphics
-	filename SequenceDiagramPlaceOrder.PNG
+	filename SequenceDiargramPlaceOrder.png
 	lyxscale 10
 	width 100text%
 
@@ -5438,10 +5438,13 @@ Appendix D: Interessentanalyse
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -5470,6 +5473,7 @@ name "fig:Interessentanalyse"
 \begin_inset Graphics
 	filename Interessentanalyse.png
 	lyxscale 10
+	width 100text%
 
 \end_inset
 
