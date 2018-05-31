@@ -783,6 +783,18 @@ Nyt system betyder nye tilvænninger.
 
 \end_layout
 
+\begin_layout Standard
+\noindent
+\align block
+Interessantanalyse
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Følgende 
+\end_layout
+
 \begin_layout Subsection
 \noindent
 Arbejdsgange der skal IT-støttes
@@ -859,10 +871,11 @@ reference "fig:Aktivitetsdiagram:-to-be"
 \begin_layout Standard
 \noindent
 \align block
-Når en kunde opretter en ordre vil IT-systemet udregne en stykliste og en
- vejledende pris ud fra styklisten.
- En e-mail bliver sendt til fog for at underrette om den nye ordre i systemet,
- en medarbejder tjekker ordren og har mulighed for at lave rettelser i stykliste
+Når en kunde opretter en ordre vil en e-mail bliver sendt til fog for at
+ underrette om den nye ordre i systemet.
+ IT-systemet vil derefter udregne en stykliste og en vejledende pris ud
+ fra styklisten.
+ En medarbejder tjekker ordren og har mulighed for at lave rettelser i stykliste
 n og derefter kan medarbejderen sende et tilbud til kunden.
  
 \end_layout
@@ -1820,19 +1833,35 @@ textbf{tasks}
 \begin_layout Itemize
 \noindent
 \align block
-Formatér dato.
+Design af header
 \end_layout
 
 \begin_layout Itemize
-\noindent
-\align block
-Formatér pris.
+Design af footer
 \end_layout
 
 \begin_layout Itemize
-\noindent
-\align block
-Styling.
+Design feedback
+\end_layout
+
+\begin_layout Itemize
+Design forside
+\end_layout
+
+\begin_layout Itemize
+Design se ordre side
+\end_layout
+
+\begin_layout Itemize
+Design alle ordre side
+\end_layout
+
+\begin_layout Itemize
+Formatér dato
+\end_layout
+
+\begin_layout Itemize
+Formatér pris
 \end_layout
 
 \begin_layout Standard
@@ -1895,10 +1924,9 @@ Independent: Designet er ikke indflydelse på funktionaliteten af applikationen.
 \begin_layout Itemize
 \noindent
 \align block
-Negotiable: Designet var ikke en høj prioritet, da der ikke var noget konkret
- facit udover at vores PO skulle kunne finde rundt.
- PO kan altid komme med ideer til designet.
- 
+Negotiable: Der vil altid være forskellige tweaks som PO vil have og et
+ design er meget subjektivt, så man må prøve sit bedste til at finde noget
+ alle er tilfredse med, det gør det meget negotiable.
 \end_layout
 
 \begin_layout Itemize
@@ -1912,26 +1940,38 @@ Valuable: Et godt design skaber en brugervenlighed hvilket resultere i en
 \begin_layout Itemize
 \noindent
 \align block
-Estimable: Designet er på alle vores JSP sider, hvilket betyder at for hver
- gang vi tilføjer en ny JSP side, skal der laves et design.
- Derfor er det svært at estimere tiden da den er dynamisk.
+Estimable: Det er svært at lave et helt præcist estimat på hvor lang tid
+ det vil tage at lave et design, da man skal finde noget alle er tilfredse
+ med og der kan være mange forskellige udkast inden man overhoved begynder
+ at kode det.
+ Der vil også skulle laves flere designs hver gang man tilføjer en ny feature
+ eller side til ens website.
  
 \end_layout
 
 \begin_layout Itemize
 \noindent
 \align block
-Small: Dette punkt er ikke udfyldt da den ikke er ret stor.
+Small: Dette er umiddelbart en forholdsvis lille user story, men den kan
+ hurtigt blive stor hvis der skal laves mange ændringer fordi man f.eks.
+ ikke var tilfreds med første udkast.
  
 \end_layout
 
 \begin_layout Itemize
 \noindent
 \align block
-Testable: Design er subjektivt, men vi har prøvet at gøre det nemt og overskueli
-gt at navigere rundt på siderne, bestille carport og håndtere rettelser.
- For at se om designet er tilstrækkeligt vil man til sidst gennemgå det
- med PO.
+Testable: Da et design er meget subjektivt kan det være svært at teste det.
+ Det man kan gøre, er at prøve det af på forskellige mennesker, for at se
+ om de kan finde rundt på siden, og om de generelt kan lide det visuelt.
+ I vores tilfælde var PO vores testperson som skulle give os feedback på
+ om noget skulle laves om, og sige hvis der var ting han ikke kunne lide,
+ eller elementer der var forvirrende.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
 \begin_inset Newpage newpage
 \end_inset
 
@@ -3129,23 +3169,31 @@ Vores testmiljø er en kombination af black box og white box testing.
 \begin_layout Standard
 \noindent
 \align block
-Code Coverage kan ses i Appendix C: Code Coverage: Figure 
+Vores white box testing er et code coverage, som giver mulighed for at se
+ hvor meget kode der er testet.
+ Dette plugin er specielt godt til at se om man har testet forskellige udfald
+ i metoder som ‘ifs’, ’Exceptions’ mm.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+I Appendix C: Code Coverage: Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Code-Coverage"
 
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-Vores white box testing er et code coverage, som giver mulighed for at se
- hvor meget kode der er testet.
- Dette plugin er specielt godt til at se om man har testet forskellige udfald
- i metoder som ‘ifs’, ’Exceptions’ mm.
+kan man se et overblik over rapporten af hvor meget kode vi har testet.
+ Procenten er baseret på hvor mange linjer der er blevet testet i de forskellige
+ klasser.
+ Efter at have lavet rapporten på testen kan man se ,med farve indikation,
+ hvilke linjer der er blevet testet.
+ Dette gør at man kan se hvilke statements der bliver testet, og hvilke
+ der ikke er.
+ På denne måde kan man lave nye test med fokus på de statements man ikke
+ har testet.
 \end_layout
 
 \begin_layout Standard
@@ -3197,12 +3245,13 @@ Vi har primært haft fokus på at få testet vores Mapper klasser da alle metode
 \begin_layout Standard
 \noindent
 \align block
-Vores test database kalder den aktuelle for hver test i vores Mapperer.
+Vores test database bliver kaldt for hver gang vi tester vores Mapperer.
  Dette gøres i en @Before metode kaldet ‘setup()’.
- I metoden opretter vi en forbindelse til vores test database ved hjælp
- af en ‘setConnection()’ metode.
+ I metoden opretter vi en forbindelse til vores test database ved brug af
+ ‘setConnection()’ metoden.
  Metoden bruger samme attributter i alle test, da de er nøglerne til vores
- test database.
+ database.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3217,9 +3266,10 @@ Vores test database kalder den aktuelle for hver test i vores Mapperer.
 \align block
 Databasen er automatisk koblet op og opdateret til den aktuelle database
  ‘sem2exam’.
- Test databasen består af to varianter af alle tabeller, da vi skal bruge
- en der opdatere sig selv, og en der kan blive ændret i uden at have indflydelse
- på nogle andre tabeller.
+ Test databasen består af to varianter af alle tabeller, da vi bruger en
+ statisk version som indeholder et fast dataset, og en der kan blive ændret
+ i uden at have indflydelse på nogle andre tabeller.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3233,8 +3283,13 @@ Databasen er automatisk koblet op og opdateret til den aktuelle database
 \noindent
 \align block
 For hver gang vi kalder ‘setup()’ metoden fjerner vi den givne test tabel
- hvis den eksistere for at skabe en ny og derefter indsætte værdierne fra
- den statiske tabel.
+ hvis den eksistere, for at skabe en ny.
+ Derefter indsætter vi værdierne fra den statiske tabel til test tabellen,
+ så vi kan arbejde med indholdet.
+ Tabellernes navngivning er således at den statiske tabel ender med ordet
+ ‘Test’ og den vi tester på heder det samme som den vi bruger i vores system.
+ Dette er vi nødt til pga.
+ vores mappere er sat op til at kalde specifikke tabeller.
  
 \end_layout
 
@@ -3339,9 +3394,9 @@ textit{reference: Test Pakages/storageLayer/MaterialMapperTest.java ( 20
 \begin_layout Standard
 \noindent
 \align block
-I ovenstående reference kan man se at vi kalder ‘sem2examTest’ fra samme
- host-ip som i vores connection til vores rigtige database.
- Dette gøres af brugeren ‘fogTest’.
+I ovenstående reference kan man se de attributter vi bruger til at skabe
+ forbindelse til vores test database.
+ Alle vores databaser ligger på samme host-ip, men er uafhængige af hinanden.
  
 \end_layout
 
@@ -3464,6 +3519,20 @@ textit{reference: Test Pakages/storageLayer/ToolMapperTest.java ( 81 - 88
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+De fleste af vores tests er baseret på assertEquals.
+ Denne metode ser om der er en lighed mellem det forventet resultat og det
+ aktuelle.
+ Da vi har en statisk tool tabel ved vi hvor de forskellige værktøj ligger.
+ Derfor kan vi se om vores mapper henter de rigtige informationer ned.
+ I overstående eksempel ser vi om navnet på det material vi henter ned stemmer
+ overens med det forventet.
+ Selve testen giver succes da informationerne stemmer overens med hinanden.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3811,13 +3880,14 @@ textit{reference: storageLayer/ToolMapper.java ( 59 - 87 )}
 \begin_layout Standard
 \noindent
 \align block
-Ovenstående test reference kaster en exception, grundet at værdien på ‘tool_id’
- er højere end det forespurgte element i databasen.
- Exception bliver kastet hvis ResultSettet ikke giver nogle værdier tilbage,
- og da dette id ikke eksistere vil der ikke komme noget ResultSet.
- Havde id´et været i databasen ville der blive returneret et Material object.
- Hvis der var indhold i ResultSettet ville metoden returnere et Material
- object med de forspurgte værdier.
+Ovenstående test reference kaster en CustomException.
+ Dette er fordi det ‘tool_id’ der bliver forespurgt ikke eksistere på tabellen.
+ Dette vil resultere i et tom resultSet, hvilket betyder at vi ikke kommer
+ ind i vores if-statement.
+ Dette vil slutte vores try-catch og derefter kaste en CustomException.
+ Havde resultSettet indeholdt data ville vi kunne returnere det som et Material
+ object.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -5345,6 +5415,61 @@ name "fig:Code-Coverage"
 	filename CodeCoverage.PNG
 	lyxscale 10
 	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Appendix D: Interessentanalyse
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Interessentanalyse
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Interessentanalyse"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Interessentanalyse.png
+	lyxscale 10
 
 \end_inset
 
