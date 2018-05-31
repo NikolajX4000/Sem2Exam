@@ -32,7 +32,7 @@
     <body>
 
 
-        <c:if test="${true}">
+        <c:if test="${false}">
             <%@include file="debug.jspf"%>
         </c:if>
 

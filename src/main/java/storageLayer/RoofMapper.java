@@ -8,8 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import logicLayer.Log;
 
 /**
  *
@@ -35,6 +34,7 @@ public class RoofMapper {
                 roofs.add(new Roof(id, name, type));
             }
         } catch (SQLException | ClassNotFoundException ex) {
+            Log.severe(ex);
             throw new CustomException(ex.getMessage());
         } finally {
             closeStatement(ps);
@@ -61,6 +61,7 @@ public class RoofMapper {
                 roof = new Roof(id, name, type);
             }
         } catch (SQLException | ClassNotFoundException ex) {
+            Log.severe(ex);
             throw new CustomException(ex.getMessage());
         } finally {
             closeStatement(ps);
@@ -104,9 +105,11 @@ public class RoofMapper {
                 try {
                     con.rollback();
                 } catch (SQLException ex) {
+                    Log.severe(ex);
                     throw new CustomException(ex.getMessage());
                 }
             }
+            Log.severe(e);
             throw new CustomException(e.getMessage());
         } finally {
             closeStatement(updateRoof);
@@ -115,6 +118,7 @@ public class RoofMapper {
             try {
                 con.setAutoCommit(true);
             } catch (SQLException ex) {
+                Log.severe(ex);
                 throw new CustomException("Der gik noget galt ved opdateringen, prøv igen senere.");
             }
             
@@ -126,6 +130,7 @@ public class RoofMapper {
             try {
                 ps.close();
             } catch (SQLException ex) {
+                Log.severe(ex);
                 throw new CustomException( "Kunne ikke få kontakt til databasen" );
             }
         }

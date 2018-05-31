@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import logicLayer.Log;
 
 /**
  *
@@ -41,6 +42,7 @@ public class ToolMapper {
             }
 
         } catch(SQLException | ClassNotFoundException ex) {
+            Log.severe(ex);
             throw new CustomException(ex.getMessage());
         } finally {
             closeStatement(ps);
@@ -77,6 +79,7 @@ public class ToolMapper {
             }
             
         } catch(SQLException | ClassNotFoundException ex) {
+            Log.severe(ex);
             throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
@@ -107,6 +110,7 @@ public class ToolMapper {
             ps.executeUpdate();
 
         } catch(SQLException | ClassNotFoundException | NullPointerException ex) {
+            Log.severe(ex);
             throw new CustomException(ex.getMessage());
         } finally {
             closeStatement(ps);
@@ -133,6 +137,7 @@ public class ToolMapper {
             ps.executeUpdate();
 
         } catch(ClassNotFoundException | SQLException ex) {
+            Log.severe(ex);
             throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
@@ -151,6 +156,7 @@ public class ToolMapper {
             try {
                 ps.close();
             } catch(SQLException ex) {
+                Log.severe(ex);
                 throw new CustomException( "Kunne ikke hente infomation" );
             }
         }

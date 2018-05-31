@@ -1,18 +1,5 @@
 package logicLayer;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import javax.mail.MessagingException;
-import org.mindrot.jbcrypt.BCrypt;
-import org.pmw.tinylog.Configurator;
-import storageLayer.Connector;
-import org.pmw.tinylog.Logger;
-import org.pmw.tinylog.writers.FileWriter;
-
 /**
  *
  * @author super
@@ -25,8 +12,8 @@ public class DanielTestClass {
      */
     public static void main(String[] args) throws CustomException {
         
-       
-        Logger.warn("DER LOGGES");
+        System.out.println("123");
+        //Logger.warn("DER LOGGES");
         
         
 //        for (double i = 0; i < 1000; i+=59.5)
