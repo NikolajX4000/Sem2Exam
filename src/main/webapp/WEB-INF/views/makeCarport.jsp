@@ -168,6 +168,14 @@
 
     //$(document).ready(updateDrawing());
 
+
+    $(".range").on('input', function(){
+    
+        //update drawing on slide.
+        updateDrawing();
+    
+    });
+
     $(".range").change(function () {
 
         //changes span value to reflect what the bar is at
