@@ -161,7 +161,7 @@
                 <li>
                     <!-- når der klikkes på denne tab loader man styklisten -> .partlistloadbtn -->
                     <div class="collapsible-header partlistloadbtn" id="partlistbtn${o.id}">
-                        <i class="material-icons">format_list_bulleted</i>Detaljer
+                        <i class="material-icons">format_list_bulleted</i>Stykliste
                     </div>
 
                     <div class="collapsible-body">
