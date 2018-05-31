@@ -146,63 +146,7 @@ public class OrderMapper {
         return order;
     }
     
-    public static Order _getOrder(int id) throws CustomException {
-        PreparedStatement ps = null;
-        String SQL  = "SELECT * FROM orders "
-                    + "WHERE order_id = ?";
-        
-        try ( Connection con = Connector.connection(); ) {
-            ps = con.prepareStatement(SQL);
-            
-            ps.setInt(1, id);
-            final ResultSet rs = ps.executeQuery();
-            
-            if(rs.first()) {
-                return new Order() {{
-                /* order id */
-                    setId( rs.getInt( "id" ) );
-                    
-                /* customer */
-                    setName( rs.getString( "name" ));
-                    setAddress( rs.getString( "address" ));
-                    setZipCode( rs.getInt( "zip_code" ));
-                    setCity( rs.getString( "city" ));
-                    setPhone( rs.getString( "phone" ));
-                    setEmail( rs.getString( "email" ));
-                    setNote( rs.getString( "note" ));
-                    
-                /* carport */
-                    setWidth( rs.getInt( "width" ));
-                    setLength( rs.getInt( "length" ));
-                    
-                /* roof */
-                    setRoof( rs.getInt( "roof_id" ));
-                    setAngle( rs.getInt( "angle" ));
-                    
-                /* shed */
-                    setShedWidth( rs.getInt( "shed_width" ));
-                    setShedLength( rs.getInt( "shed_length" ));
-                    
-                /* dates */
-                    setPlaced( rs.getString( "placed" ).substring( 0, 10 ));
-                    
-                /* status */
-                    setStatus( rs.getString( "status" ));
-                    
-                /* price */
-                    setMaterialPrice( rs.getInt( "material_price" ));
-                    setPrice( rs.getInt( "price" ));
-                }};
-            } 
-
-        } catch(SQLException | ClassNotFoundException ex) {
-            throw new CustomException( "Kunne ikke hente information" );
-        } finally {
-            closeStatement(ps);
-        }        
-        throw new CustomException( "Kunne ikke hente information"  );
-    }
-
+    
     /**
      * Get orders by email.
      * This method calls the database with a prepared statement to
