@@ -6,10 +6,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.mail.MessagingException;
 import org.mindrot.jbcrypt.BCrypt;
+import org.pmw.tinylog.Configurator;
 import storageLayer.Connector;
+import org.pmw.tinylog.Logger;
+import org.pmw.tinylog.writers.FileWriter;
 
 /**
  *
@@ -23,18 +25,20 @@ public class DanielTestClass {
      */
     public static void main(String[] args) throws CustomException {
         
+       
+        Logger.warn("DER LOGGES");
         
         
-        for (double i = 0; i < 1000; i+=59.5)
-        {
-            System.out.println(i);
-        }
-        
-        
-        for (int i = 0; i < 1000; i+=30)
-        {
-            System.out.println(i-4.5);
-        }
+//        for (double i = 0; i < 1000; i+=59.5)
+//        {
+//            System.out.println(i);
+//        }
+//        
+//        
+//        for (int i = 0; i < 1000; i+=30)
+//        {
+//            System.out.println(i-4.5);
+//        }
         
 //        try
 //        {
