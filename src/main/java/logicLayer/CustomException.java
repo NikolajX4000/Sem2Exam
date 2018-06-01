@@ -1,7 +1,7 @@
 package logicLayer;
 
 /**
- *
+ * Thrown whenever we cath another exception. CustomException has the message we wan't to have displayed to the user
  * @author super
  */
 public class CustomException extends Exception {

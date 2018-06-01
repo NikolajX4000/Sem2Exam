@@ -1,7 +1,7 @@
 package logicLayer;
 
 /**
- *
+ * A roof has information about a specific roof. id, name, type.
  * @author super
  */
 public class Roof {

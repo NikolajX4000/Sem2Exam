@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 /**
- *
+ * Logs when and where an exception occurred and saves in "/home/daniel/carportlogs/sql.log"
  * @author Hupra Laptop
  */
 public class Log {

@@ -12,7 +12,8 @@ import java.util.Locale;
 import java.util.Random;
 
 /**
- *
+ * An order includes everything about a specific Order
+ * It has the partlist, contact information, the drawings, and the general order information like status, price, date of order etc.
  * @author Stephan
  */
 public class Order {

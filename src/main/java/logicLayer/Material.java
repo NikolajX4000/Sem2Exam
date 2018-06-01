@@ -6,7 +6,7 @@
 package logicLayer;
 
 /**
- *
+ * A material can be different things, such as a plank, a tool, a screw etc. it contains the needed information of that specific item.
  * @author Stephan
  */
 public class Material {

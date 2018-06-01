@@ -7,7 +7,7 @@
 package logicLayer;
 
 /**
- *
+ * Used when a user is trying to access something they are not allowed to. Extends exception and says "Access not allowed"
  * @author Hupra Laptop
  */
 public class NoAccessException extends Exception  {

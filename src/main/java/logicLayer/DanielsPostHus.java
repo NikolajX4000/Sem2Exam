@@ -5,7 +5,7 @@ import javax.mail.*;
 import javax.mail.internet.*;
 
 /**
- *
+ * Has different methods for sending emails
  * @author Hupra Laptop
  */
 public class DanielsPostHus {

@@ -6,7 +6,7 @@ import storageLayer.StorageFacade;
 import java.util.List;
 
 /**
- *
+ * A facade between the presentaition and logic layer
  * @author super
  */
 public class LogicFacade {
