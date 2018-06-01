@@ -12,7 +12,7 @@ import java.util.List;
 public class LogicFacade {
 
     /**
-     * @see storageLayer.OrderMapper#updatePrice(id, price)
+     * @see storageLayer.StorageFacade#updatePrice(int, int) 
      * @param id
      * @param price
      * @throws CustomException
@@ -23,7 +23,7 @@ public class LogicFacade {
 
     /**
      *
-     * @see storageLayer.OrderMapper#getOrders( String )
+     * @see storageLayer.StorageFacade#getOrders(java.lang.String) 
      * @param email
      * @return
      * @throws CustomException
@@ -33,7 +33,7 @@ public class LogicFacade {
     }
 
     /**
-     * @see storageLayer.OrderMapper#getOrder(id)
+     * @see storageLayer.StorageFacade#getOrder(int) 
      * @param id
      * @return
      * @throws CustomException
@@ -43,7 +43,7 @@ public class LogicFacade {
     }
 
     /**
-     * @see storageLayer.OrderMapper#addOrder(o)
+     * @see storageLayer.StorageFacade#addOrder(logicLayer.Order) 
      * @param o
      * @return
      * @throws CustomException
@@ -53,7 +53,7 @@ public class LogicFacade {
     }
 
     /**
-     * @see storageLayer.OrderMapper#getAllOrders()
+     * @see storageLayer.StorageFacade#getAllOrders() 
      * @return @throws CustomException
      */
     public static List<Order> getAllOrders() throws CustomException {
@@ -61,17 +61,17 @@ public class LogicFacade {
     }
 
     /**
-     * @see storageLayer.OrderMapper#updateStatus(id, status)
+     * @see storageLayer.StorageFacade#updateStatus(int, java.lang.String) 
      * @param id
      * @param status
      * @throws CustomException
      */
-    public static void updateOrder(int id, String status) throws CustomException {
+    public static void updateStatus(int id, String status) throws CustomException {
         StorageFacade.updateStatus(id, status);
     }
 
     /**
-     * @see storageLayer.MaterialMapper#getAllMaterials()
+     * @see storageLayer.StorageFacade#getAllMaterials() 
      * @return List of all material
      * @throws CustomException
      */
@@ -102,7 +102,7 @@ public class LogicFacade {
     }
 
     /**
-     * @see storageLayer.MaterialMapper#updateMaterial(id, size, price, description)
+     * @see storageLayer.StorageFacade#updateMaterial(int, int, int, java.lang.String) 
      * @param id
      * @param size
      * @param price
@@ -114,7 +114,7 @@ public class LogicFacade {
     }
 
     /**
-     * @see storageLayer.MaterialMapper#updateMaterial(id, size, price)
+     * @see storageLayer.StorageFacade#updateMaterial(int, int, int) 
      * @param id
      * @param size
      * @param price
@@ -125,7 +125,7 @@ public class LogicFacade {
     }
 
     /**
-     * @see storageLayer.ToolMapper#updateTool(id, unitSize, price)
+     * @see storageLayer.StorageFacade#updateTool(int, int, int) 
      * @param id
      * @param unitSize
      * @param price
@@ -136,7 +136,7 @@ public class LogicFacade {
     }
 
     /**
-     * @see storageLayer.RoofMapper#updateRoof(id, name, oldname)
+     * @see storageLayer.StorageFacade#updateRoof(int, java.lang.String, java.lang.String) 
      * @param id
      * @param name
      * @param oldname
@@ -147,7 +147,7 @@ public class LogicFacade {
     }
 
     /**
-     * @see storageLayer.RoofMapper#getAllRoofs()
+     * @see storageLayer.StorageFacade#getAllRoofs() 
      * @return
      * @throws CustomException
      */
@@ -156,16 +156,16 @@ public class LogicFacade {
     }
 
     /**
-     * @see storageLayer.ToolMapper#getAllTools()
+     * @see storageLayer.StorageFacade#getAllTools() 
      * @return
      * @throws CustomException
      */
-    public static List<Material> getAllTool() throws CustomException {
+    public static List<Material> getAllTools() throws CustomException {
         return StorageFacade.getAllTools();
     }
 
     /**
-     * @see storageLayer.EmployeeMapper#login(name, password)
+     * @see storageLayer.StorageFacade#login(java.lang.String, java.lang.String) 
      * @param name
      * @param password
      * @return

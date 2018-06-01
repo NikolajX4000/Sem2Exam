@@ -24,7 +24,7 @@ public class CmdPageMaterial extends Command
         //content to page
         try
         {
-            request.setAttribute("tools", LogicFacade.getAllTool());
+            request.setAttribute("tools", LogicFacade.getAllTools());
             request.setAttribute("mats", LogicFacade.getAllMaterialsAsMap());
             request.setAttribute("roofs", LogicFacade.getAllRoofs());
             
