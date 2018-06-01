@@ -8,14 +8,14 @@ import logicLayer.Roof;
 import java.util.List;
 
 /**
- *
+ * A facade between logicLayer and storageLayer.
  * @author super
  */
 public class StorageFacade {
 
     /**
      * Update price by id.
-     * @see storageLayer.OrderMapper#updatePrice( int id, int price )
+     * @see storageLayer.OrderMapper#updatePrice(int, int) 
      * 
      * @param id The id of the order. Should not be out of index bounds.
      * @param price The modified price. Should not be negative.
@@ -28,7 +28,7 @@ public class StorageFacade {
 
     /**
      * Add order.
-     * @see storageLayer.OrderMapper#addOrder( Order order )
+     * @see storageLayer.OrderMapper#addOrder(logicLayer.Order) 
      * 
      * @param order The new order object. Should not be null.
      * @return The new order object with the generated id key and status.
@@ -41,7 +41,7 @@ public class StorageFacade {
 
     /**
      * Get order by id.
-     * @see storageLayer.OrderMapper#getOrder( int id )
+     * @see storageLayer.OrderMapper#getOrder(int) 
      * 
      * @param id The id of the order, should not be out of index bounds.
      * @return An order object with requested id.
@@ -54,7 +54,7 @@ public class StorageFacade {
 
     /**
      * Get orders by email.
-     * @see storageLayer.OrderMapper#getOrders( String email )
+     * @see storageLayer.OrderMapper#getOrders(java.lang.String) 
      * @param email The email attached to the orders. Should not be null.
      * 
      * @return An arraylist of order objects with requested email.
@@ -67,7 +67,7 @@ public class StorageFacade {
 
     /**
      * Get all orders.
-     * @see storageLayer.OrderMapper#getAllOrders()
+     * @see storageLayer.OrderMapper#getAllOrders() 
      * 
      * @return An arraylist of all order objects.
      * @throws CustomException if SQl syntax contains errors, can't connect to database, 
@@ -79,7 +79,7 @@ public class StorageFacade {
 
     /**
      * Update order by order.
-     * @see storageLayer.OrderMapper#updateOrder( Order order )
+     * @see storageLayer.OrderMapper#updateOrder(logicLayer.Order) 
      * 
      * @param order The modified order object. Should not be null.
      * @return An updated order object.
@@ -92,7 +92,7 @@ public class StorageFacade {
 
     /**
      * Update status by order.
-     * @see storageLayer.OrderMapper#updateStatus( Order order )
+     * @see storageLayer.OrderMapper#updateStatus(logicLayer.Order) 
      * 
      * @param order The modified order object. Should not be null.
      * @return An updated order object.
@@ -105,7 +105,7 @@ public class StorageFacade {
 
     /**
      * Update status by id.
-     * @see storageLayer.OrderMapper#updateStatus( int id, String status )
+     * @see storageLayer.OrderMapper#updateStatus(int, java.lang.String) 
      * 
      * @param id The id of the order. Should not be out of index bounds.
      * @param status The modified status. Should not be null.
@@ -118,7 +118,7 @@ public class StorageFacade {
 
     /**
      * Get all materials.
-     * @see storageLayer.MaterialMapper#getAllMaterials( int id, String status )
+     * @see storageLayer.MaterialMapper#getAllMaterials() 
      * 
      * @return An arraylist of all materials objects.
      * @throws CustomException if SQl syntax contains errors, can't connect to database, 
@@ -130,7 +130,7 @@ public class StorageFacade {
 
     /**
      * Get materials by name.
-     * @see storageLayer.MaterialMapper#getMaterials( String material )
+     * @see storageLayer.MaterialMapper#getMaterials(java.lang.String) 
      * 
      * @param material The name attached to the materials. Should not be null.
      * @return An arraylist of material objects with requested name.
@@ -143,7 +143,7 @@ public class StorageFacade {
 
     /**
      * Update material with material object.
-     * @see storageLayer.MaterialMapper#updateMaterial( Material material )
+     * @see storageLayer.MaterialMapper#updateMaterial(logicLayer.Material) 
      * 
      * @param material The modified material object. Should not be null.
      * @return An updated material object.
@@ -155,7 +155,7 @@ public class StorageFacade {
 
     /**
      * Update material by id with describtion.
-     * @see storageLayer.MaterialMapper#updateMaterial( int id, int size, int price, String description )
+     * @see storageLayer.MaterialMapper#updateMaterial(int, int, int, java.lang.String) 
      * 
      * @param id The id of the material. Should not be out of index bounds.
      * @param size The modified material size. Should not be negative.
@@ -170,7 +170,7 @@ public class StorageFacade {
     
     /**
      * Update material by id.
-     * @see storageLayer.MaterialMapper#updateMaterial( int id, int size, int price )
+     * @see storageLayer.MaterialMapper#updateMaterial(int, int, int) 
      * 
      * @param id The id of the material. Should not be out of index bounds.
      * @param size The modified material size. Should not be negative.
@@ -184,7 +184,7 @@ public class StorageFacade {
 
     /**
      * Get all tools.
-     * @see storageLayer.ToolMapper#getAllTool()
+     * @see storageLayer.ToolMapper#getAllTool() 
      * 
      * @return An arraylist of all tools objects.
      * @throws CustomException if SQl syntax contains errors, can't connect to database, 
@@ -197,7 +197,7 @@ public class StorageFacade {
 
     /**
      * Get tool by id.
-     * @see storageLayer.ToolMapper#getTool( int tool_id )
+     * @see storageLayer.ToolMapper#getTool(int) 
      * 
      * @param tool_id The id attached to the tool. Should not be out of index bounds.
      * @return A Material object with requested id.
@@ -210,7 +210,7 @@ public class StorageFacade {
 
     /**
      * Update tool with material object.
-     * @see storageLayer.ToolMapper#updateTool( Material material )
+     * @see storageLayer.ToolMapper#updateTool(logicLayer.Material) 
      * 
      * @param material The modified material object. Should not be null.
      * @return  An updated material object.
@@ -223,7 +223,7 @@ public class StorageFacade {
     
     /**
      * Update tool by id.
-     * @see storageLayer.ToolMapper#updateTool( int id, int unitSize, int price )
+     * @see storageLayer.ToolMapper#updateTool(int, int, int) 
      * 
       * @param id The id attached to the tool. Should not be out of index bounds.
      * @param unitSize The modified unitsize. Should not be negative.
@@ -237,7 +237,7 @@ public class StorageFacade {
     
     /**
      * Update roof by id.
-     * @see storageLayer.RoofMapper#updateRoof( int id, String name, String oldname )
+     * @see storageLayer.RoofMapper#updateRoof(int, java.lang.String, java.lang.String) 
      * 
      * @param id The id og the roof. Should not be null.
      * @param name The modified name. Should not be null.
@@ -251,7 +251,7 @@ public class StorageFacade {
 
     /**
      * Get all roofs.
-     * @see storageLayer.RoofMapper#getAllRoofs()
+     * @see storageLayer.RoofMapper#getAllRoofs() 
      * 
      * @return An arraylist of all roofs objects.
      * @throws CustomException if SQl syntax contains errors, can't connect to database, 
@@ -263,7 +263,7 @@ public class StorageFacade {
 
     /**
      * Get roof by id.
-     * @see storageLayer.RoofMapper#getRoofById( int id )
+     * @see storageLayer.RoofMapper#getRoofById(int) 
      * 
      * @param id The id attached to the roof. Should not be out of index bounds.
      * @return A roof object with requested id.
@@ -276,7 +276,7 @@ public class StorageFacade {
 
     /**
      * Login as employee.
-     * @see storageLayer.EmployeeMapper#login( String name, String password ) 
+     * @see storageLayer.EmployeeMapper#login(java.lang.String, java.lang.String)  
      * 
      * @param name The username. Should not be null.
      * @param password The password. Should not be null.

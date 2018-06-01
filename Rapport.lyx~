@@ -265,7 +265,7 @@ status open
 
 
 \backslash
-vspace{5cm}
+vspace{3cm}
 \end_layout
 
 \end_inset
@@ -293,7 +293,8 @@ target "https://github.com/NikolajX4000/Sem2Exam"
 Link til deployet sitet: 
 \begin_inset CommandInset href
 LatexCommand href
-name "websitet"
+name "http://hupra.dk/fog/"
+target "http://hupra.dk/fog/"
 
 \end_inset
 
@@ -4674,7 +4675,7 @@ Der har ikke været så mange problemer ved hverken vejledning eller PO-møder,
  var dog til et af vores første tekniske reviews hvor vi fik at vide, at
  vi skulle lave det på en måde så kunder ikke havde en bruger, men blot
  lavede en bestilling.
- Dette er noget vi er blev spurgt meget ind til af andre vejledere senere
+ Dette er noget vi er blev spurgt meget ind til af andre vejledere, senere
  hen til andre tekniske reviews.
  Hvor de spurgte hvorfor vi havde “valgt” at gøre det på den måde.
  Selvom det ikke rigtigt var et valg, men noget vi havde fået at vide.
@@ -4695,9 +4696,9 @@ Vi fandt super hurtigt en god rytme for hvordan vi arbejdede bedst.
  fik man lov til at lave det.
  Ved at gøre det på den måde fik folk lov at lave de ting som kunne holde
  dem motiveret, men samtidig også noget de var gode til.
- Vi mødte også op skolen hver dag da vi synes det var en god måde at arbejde
- på hvor vi kunne hjælpe hinanden eller spørge ind til noget hvis man var
- usikker eller ville diskutere forskellige løsningsforslag.
+ Vi mødte også op på skolen hver dag, da vi synes det var en god måde at
+ arbejde på, hvor vi kunne hjælpe hinanden eller spørge ind til noget hvis
+ man var usikker, eller ville diskutere forskellige løsningsforslag.
 \end_layout
 
 \begin_layout Standard
