@@ -12,7 +12,7 @@ import java.util.List;
 public class LogicFacade {
 
     /**
-     *
+     * @see storageLayer.OrderMapper#updatePrice(id, price)
      * @param id
      * @param price
      * @throws CustomException
@@ -32,12 +32,18 @@ public class LogicFacade {
         return StorageFacade.getOrders(email);
     }
 
+    /**
+     * @see storageLayer.OrderMapper#getOrder(id)
+     * @param id
+     * @return
+     * @throws CustomException
+     */
     public static Order getOrder(int id) throws CustomException {
         return StorageFacade.getOrder(id);
     }
 
     /**
-     *
+     * @see storageLayer.OrderMapper#addOrder(o)
      * @param o
      * @return
      * @throws CustomException
@@ -47,7 +53,7 @@ public class LogicFacade {
     }
 
     /**
-     *
+     * @see storageLayer.OrderMapper#getAllOrders()
      * @return @throws CustomException
      */
     public static List<Order> getAllOrders() throws CustomException {
@@ -55,7 +61,7 @@ public class LogicFacade {
     }
 
     /**
-     *
+     * @see storageLayer.OrderMapper#updateStatus(id, status)
      * @param id
      * @param status
      * @throws CustomException
@@ -65,7 +71,7 @@ public class LogicFacade {
     }
 
     /**
-     *
+     * @see storageLayer.MaterialMapper#getAllMaterials()
      * @return List of all material
      * @throws CustomException
      */
@@ -73,6 +79,11 @@ public class LogicFacade {
         return StorageFacade.getAllMaterials();
     }
 
+    /**
+     * Take the returned List from getAllMaterials() and make a HashMap out of them
+     * @return
+     * @throws CustomException
+     */
     public static HashMap<String, ArrayList<Material>> getAllMaterialsAsMap() throws CustomException {
 
         HashMap<String, ArrayList<Material>> mats = new HashMap();
@@ -90,30 +101,76 @@ public class LogicFacade {
         return mats;
     }
 
+    /**
+     * @see storageLayer.MaterialMapper#updateMaterial(id, size, price, description)
+     * @param id
+     * @param size
+     * @param price
+     * @param description
+     * @throws CustomException
+     */
     public static void updateMaterial(int id, int size, int price, String description) throws CustomException {
         StorageFacade.updateMaterial(id, size, price, description);
     }
 
+    /**
+     * @see storageLayer.MaterialMapper#updateMaterial(id, size, price)
+     * @param id
+     * @param size
+     * @param price
+     * @throws CustomException
+     */
     public static void updateMaterial(int id, int size, int price) throws CustomException {
         StorageFacade.updateMaterial(id, size, price);
     }
 
+    /**
+     * @see storageLayer.ToolMapper#updateTool(id, unitSize, price)
+     * @param id
+     * @param unitSize
+     * @param price
+     * @throws CustomException
+     */
     public static void updateTool(int id, int unitSize, int price) throws CustomException {
         StorageFacade.updateTool(id, unitSize, price);
     }
 
+    /**
+     * @see storageLayer.RoofMapper#updateRoof(id, name, oldname)
+     * @param id
+     * @param name
+     * @param oldname
+     * @throws CustomException
+     */
     public static void updateRoof(int id, String name, String oldname) throws CustomException {
         StorageFacade.updateRoof(id, name, oldname);
     }
 
+    /**
+     * @see storageLayer.RoofMapper#getAllRoofs()
+     * @return
+     * @throws CustomException
+     */
     public static List<Roof> getAllRoofs() throws CustomException {
         return StorageFacade.getAllRoofs();
     }
 
+    /**
+     * @see storageLayer.ToolMapper#getAllTools()
+     * @return
+     * @throws CustomException
+     */
     public static List<Material> getAllTool() throws CustomException {
         return StorageFacade.getAllTools();
     }
 
+    /**
+     * @see storageLayer.EmployeeMapper#login(name, password)
+     * @param name
+     * @param password
+     * @return
+     * @throws CustomException
+     */
     public static Employee login(String name, String password) throws CustomException {
         return StorageFacade.login(name, password);
     }

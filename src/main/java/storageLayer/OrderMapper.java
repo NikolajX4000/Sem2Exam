@@ -16,6 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 import logicLayer.Log;
 
+/**
+ *
+ * @author super
+ */
 public class OrderMapper {
 
     /**

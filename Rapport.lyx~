@@ -7,7 +7,7 @@
 \textclass article
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language danish
 \language_package default
 \inputencoding auto
 \fontencoding global
@@ -27,7 +27,7 @@
 \bibtex_command default
 \index_command default
 \paperfontsize 12
-\spacing single
+\spacing onehalf
 \use_hyperref false
 \papersize a4paper
 \use_geometry false
@@ -58,7 +58,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\quotes_language swedish
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -137,9 +137,7 @@ GitHub
 \begin_inset Text
 
 \begin_layout Plain Layout
-Daniel 
-\lang danish
-Lindholm
+Daniel Lindholm
 \end_layout
 
 \end_inset
@@ -148,11 +146,7 @@ Lindholm
 \begin_inset Text
 
 \begin_layout Plain Layout
-cph-dl110@
-\lang danish
-cphbusiness
-\lang english
-.dk
+cph-dl110@cphbusiness.dk
 \end_layout
 
 \end_inset
@@ -181,13 +175,7 @@ Jacob Borg
 \begin_inset Text
 
 \begin_layout Plain Layout
-cph-jb308@
-\lang danish
-cphbusiness
-\lang english
-.
-\lang danish
-dk
+cph-jb308@cphbusiness.dk
 \end_layout
 
 \end_inset
@@ -207,15 +195,7 @@ Jack-Borg
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang danish
-Nikolaj
-\lang english
- 
-\lang danish
-Thorsen
-\lang english
- Nielsen
+Nikolaj Thorsen Nielsen
 \end_layout
 
 \end_inset
@@ -310,15 +290,7 @@ target "https://github.com/NikolajX4000/Sem2Exam"
 \begin_layout Standard
 \noindent
 \align block
-Link til 
-\lang danish
-deployet
-\lang english
- 
-\lang danish
-sitet
-\lang english
-: 
+Link til deployet sitet: 
 \begin_inset CommandInset href
 LatexCommand href
 name "websitet"
@@ -395,8 +367,6 @@ Rapport
 
 \begin_layout Section
 \noindent
-
-\lang danish
 Indledning
 \end_layout
 
@@ -417,9 +387,9 @@ Baggrund
 \begin_layout Standard
 \noindent
 \align block
-Johannes Fog er en koncern der både har design & bolighuse og trælast &
- byggecenter.
- Vi vil i dette project fokusere på Fog Værebro, der har bedt os om at lavet
+Johannes Fog er en koncern der både har en afdeling med design & bolighuse
+ og afdelinger med trælast & byggecenter.
+ Vi vil i dette projekt fokusere på Fog Værebro, der har bedt os om at lavet
  et nyt system til deres salg af carporte.
  Fog Værebro sælger som de andre trælast & byggecentre, træ, byggematerialer
  og alt det du behøver til hus og have inden for f.eks.
@@ -484,7 +454,7 @@ Websitet er deployet vha.
 \begin_layout Itemize
 \noindent
 \align block
-Sprogene der er brugt i koden er java jdk 1.8.0_141
+Sprogene der er brugt i koden er Java jdk 1.8.0_141
 \end_layout
 
 \begin_layout Itemize
@@ -521,32 +491,32 @@ Krav
 \align block
 På websitet skal man som kunde kunne bestille en carport.
  Man skal kunne vælge om taget skal være med eller uden rejsning, og hvis
- man har valgt med skal man kunne vælge hvor meget hældning man vil have
- på taget.
+ man har valgt at det skal være med rejsning, skal man kunne vælge hvor
+ meget hældning man vil have på taget.
  Man skal kunne vælge om man vil have et redskabskur, og hvor stort det
  skal være.
- Når man bestiller en carport skal man kunne indtaste sine oplysninger,
+ Når man bestiller en carport, skal man kunne indtaste sine oplysninger,
  navn, telefonnummer, email og adresse.
- Når man har bestilt en carport kan man se alle de ordre der er bestilt
- med den samme email.
- Man skal som bruger kunne se alle sine tidligere ordre ved at indtaste
+ Når man har bestilt en carport, skal man kunne se alle de ordre, der er
+ bestilt med den samme email.
+ Man skal som bruger kunne se alle sine tidligere ordre, ved at indtaste
  sin email.
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align block
-Som medarbejder skal man kunne se alle ordre.
- Man skal kunne ændre status og pris på en ordre.
- Man skal kunne se navne og priser på de forskellige typer træ, skruer og
- beslag.
+Som medarbejder skal man kunne se alle ordre, der er gemt i databasen.
+ Man skal kunne ændre status og tilbudspris på en ordre.
+ Man skal kunne se og ændre navne og priser på de forskellige typer træ,
+ skruer og beslag.
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align block
-Systemet skal kunne udregne en stykliste udfra en ordre og en vejledende
- pris udfra styklisten, som en medarbejder kan bruge til at lave et tilbud
+Systemet skal kunne udregne en stykliste ud fra en ordre, og en vejledende
+ pris ud fra styklisten, som en medarbejder kan bruge til at lave et tilbud
  til kunden.
 \end_layout
 
@@ -558,7 +528,7 @@ Overordnet beskrivelse af virksomheden
 \begin_layout Standard
 \noindent
 \align block
-Fog er en koncern med afdelinger i det meste af nordsjælland og en enkelt
+Fog er en koncern med afdelinger i det meste af Nordsjælland og en enkelt
  i Vordingborg.
  Af deres 10 afdelinger har de 1 afdeling med design og bolighus placeret
  i Lyngby, og 9 afdelinger med trælast og byggecenter placeret i Farum,
@@ -656,21 +626,9 @@ Budgetkontrol
 
 \end_deeper
 \begin_layout Standard
-Fog er en handelsvirksomhed, da de køber byggematerialler, værktøj, osv.
+Fog er en handelsvirksomhed, da de køber byggematerialer, værktøj, osv.
  og sælger det videre.
- Da de sælger deres varer til 
-\lang danish
-privatpersoner
-\lang english
-, er 
-\lang danish
-det
-\lang english
- en 
-\lang danish
-detailvirksomhed
-\lang english
-.
+ Da de sælger deres varer til privatpersoner, er det en detailvirksomhed.
  Fog har ejerforholdet aktieselskab.
 \end_layout
 
@@ -696,7 +654,7 @@ Kan tilbyde carporte i mange størrelser.
 \end_layout
 
 \begin_layout Itemize
-Laver tegninger og instruction manual til købt carport.
+Laver tegninger og instruktions manual til købt carport.
 \end_layout
 
 \begin_layout Itemize
@@ -716,7 +674,7 @@ Deres svagheder er:
 \end_layout
 
 \begin_layout Itemize
-Kan ikke tilføje nye produkter til db.
+Kan ikke tilføje nye produkter til databasen.
 \end_layout
 
 \begin_layout Itemize
@@ -724,7 +682,8 @@ Kan ikke skifte navn på ting i databasen.
 \end_layout
 
 \begin_layout Itemize
-Skal manuelt indtaste carport mål osv igen når ordrer er gået igennem.
+Skal manuelt indtaste carport mål osv.
+ igen når ordrer er gået igennem.
 \end_layout
 
 \begin_layout Itemize
@@ -748,7 +707,7 @@ At kunne etablere et større eller flere IT-systemer, bygget på samme kode.
 \end_layout
 
 \begin_layout Itemize
-Afskaffelse af overfladiske programmer.
+Afskaffelse af outdatede programmer.
  
 \end_layout
 
@@ -760,16 +719,8 @@ Automatiseret bruger bestilling, kan reducere led i bestillingen.
 Optimering af autogenereret tegninger for bedre bruger forståelse.
 \end_layout
 
-\begin_layout Itemize
-Bilpolitik der sikre mindre CO2-udledning.
-\end_layout
-
 \begin_layout Standard
 I forhold til det nye it-system er deres trusler:
-\end_layout
-
-\begin_layout Itemize
-Afskaffelse af håndværkerfradrag.
 \end_layout
 
 \begin_layout Itemize
@@ -780,6 +731,13 @@ Nyt IT-system kan have bugs.
 Nyt system betyder nye tilvænninger.
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Dette gælder både salgsafdelingen der skal bruge systemet og it-afdelingen
+ der skal vedligeholde systemmet.
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \begin_inset VSpace defskip
 \end_inset
@@ -790,7 +748,166 @@ Nyt system betyder nye tilvænninger.
 \begin_layout Standard
 \noindent
 \align block
-Interessantanalyse
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Interessentanalyse}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Denne analyse beskriver forholdet mellem interessenternes indflydelse og
+ interesse.
+ For hver interessent er der fordele, ulemper og position i forholdet til
+ produktet.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Product owners fordele er at få automatiseret en masse processer hver gang
+ der skal bestilles en carport.
+ Ved at automatisere disse reduceres arbejdskraften for opgaven.
+ Ulempen er dog at et nyt system vil koste penge at få lavet.
+ Product owner snakker sammen med udviklerne om hvad der skal lave i de
+ enkelte sprints, det er også product owner der vurderer hvorvidt en userstory
+ er færdig og igangsætter nye sprints.
+ Dette gør product owneren til en ressourceperson, da han har høj interesse
+ og stor indflydelse.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Som udvikler er vores fordele at skabe et produkt godt nok til at blive
+ kontaktet igen.
+ Udviklernes håndtering af produktet er at udvikle det og følge de userstories
+ der er blevet planlagt i møderne med product owner.
+ Grundet dette har udviklerne stor indflydelse med en til dels høj interesse
+ og er derfor ressourcepersoner.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Vores eksterne interessenter har ikke nogen større indflydelse.
+ Dette er pga.
+ de ikke har indvirkning på produktets udvikling eller standard.
+ Interessen er også lav da systemet er lavet med fokus på den ansatte og
+ ikke kunden.
+ Lovgivningen skal vi håndtere ved at følge loven.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Investoren er en gidsler da de ikke har indflydelse på produktet.
+ Investorerne har høj interesse, da de har skudt noget kapital de kan miste.
+ Fordele for dem er at de kan få et højt afkast af produktet.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Konkurrenter har til dels en indflydelse da det nye system vil gøre konkurrencen
+ hårde, og de vil være nødsaget til at opgradere deres it-system for at
+ kunne konkurrerer.
+ De har en interesse da de godt vil kunne konkurrere med Fog.
+ Disse er grå eminencer da de har indflydelse men næsten ingen interesse.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+IT-afdelingen har stor interesse da de kommer til at bruge dette system.
+ De skal kunne navigere rundt og kunne give support og vejledning til produktet.
+ De har ikke nogen større indflydelse da produktet ikke er rettet dem.
+ Dette gør at IT-afdelingen er gidsler.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Som medarbejder har man interesse i systemet, da det er dem der komme til
+ at sidde med det.
+ De har dog ikke nogen høj indflydelse, da de ikke har noget med selve udvikling
+en af produktet at gøre.
+ Medarbejdere er gidsler da de ikke har en større indflydelse men har en
+ høj interesse.
 \end_layout
 
 \begin_layout Subsection
@@ -800,13 +917,6 @@ Arbejdsgange der skal IT-støttes
 
 \begin_layout Subsubsection
 As-is
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace smallskip
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -827,29 +937,15 @@ reference "fig:Aktivitetsdiagram:-as-is"
 \align block
 Når en kunde laver en ordre bliver der genereret en email, som en medarbejder
  manuelt skal indtaste i IT-systemet.
- Fog vil gerne derefter kunne ringe og snakke med kunden da kunde service
+ Fog vil gerne derefter kunne ringe og snakke med kunden, da kunde service
  er meget vigtigt for Fog.
- Efter samtale med kunden har medarbejderen mulighed for at lave ændringer
- til styklisten og lave et tilbud til kunden.
+ Efter samtale med kunden, har medarbejderen mulighed for at lave ændringer
+ til styklisten, og lave et tilbud til kunden.
  
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace defskip
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection
 To-be
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace smallskip
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -874,7 +970,8 @@ Når en kunde opretter en ordre vil en e-mail bliver sendt til fog for at
  IT-systemet vil derefter udregne en stykliste og en vejledende pris ud
  fra styklisten.
  En medarbejder tjekker ordren og har mulighed for at lave rettelser i stykliste
-n og derefter kan medarbejderen sende et tilbud til kunden.
+n.
+ Derefter kan medarbejderen sende et tilbud til kunden.
  
 \end_layout
 
@@ -1309,7 +1406,8 @@ Independent: For at udregne en tegning kan der bruges placeholder mål så
 \noindent
 \align block
 Negotiable: Storien definere ikke hvordan carporten skal tegnes, men kun
- at man skal få en ide om hvordan den vil se ud når man har bygget sin carport.
+ at man skal få en idé, om hvordan den vil se ud når man har bygget sin
+ carport.
  
 \end_layout
 
@@ -1324,7 +1422,7 @@ Valuable: Det er af ret stor værdi for kunden at kunne se hvordan den carport
 \begin_layout Itemize
 \noindent
 \align block
-Estimable: Denne user story vurderede vi til at tage en uges arbejde siden
+Estimable: Denne user story vurderede vi til at tage en uges arbejde, siden
  er mange detaljer der skal regnes ud.
  
 \end_layout
@@ -1510,7 +1608,7 @@ Independent: For at udregne stylisten skal man kun bruge mål fra en ordre,
 \begin_layout Itemize
 \noindent
 \align block
-Negotiable: Storien definere ikke hvordan styklisten skal udregnes bare
+Negotiable: Storien definere ikke hvordan styklisten skal udregnes, bare
  hvad den skal ende ud med.
  
 \end_layout
@@ -1525,7 +1623,7 @@ Valuable: Styklisten er en del af det produkt som fog sælger, som derfor
 \begin_layout Itemize
 \noindent
 \align block
-Estimable: Denne User story vurderede vi til at tage en uges arbejde siden
+Estimable: Denne User story vurderede vi til at tage en uges arbejde, siden
  er mange detaljer der skal regnes ud.
  
 \end_layout
@@ -1704,7 +1802,7 @@ Independent: Der kan beregnes en pris ud fra en dummy stykliste.
 \begin_layout Itemize
 \noindent
 \align block
-Negotiable: User storyen siger at der skal beregnes ud fra en stykliste
+Negotiable: User storyen siger at der skal beregnes ud fra en stykliste,
  så det ligger ret fast.
  
 \end_layout
@@ -1712,15 +1810,15 @@ Negotiable: User storyen siger at der skal beregnes ud fra en stykliste
 \begin_layout Itemize
 \noindent
 \align block
-Valuable: For at kunne give et realistisk tilbud er det godt for sælgeren
- at have et overblik over hvor meget materiellet koster.
+Valuable: For at kunne give et realistisk tilbud, er det godt for sælgeren,
+ at have et overblik over, hvor meget materiellet koster.
  
 \end_layout
 
 \begin_layout Itemize
 \noindent
 \align block
-Estimable: Denne user story vurderede vi til at tage et par timer da den
+Estimable: Denne user story vurderede vi til at tage et par timer, da den
  ikke skal tage højde for ret mange forskellige ting.
  
 \end_layout
@@ -1728,7 +1826,7 @@ Estimable: Denne user story vurderede vi til at tage et par timer da den
 \begin_layout Itemize
 \noindent
 \align block
-Small: Denne user story skal kun lave en enkelt udregning så den er ikke
+Small: Denne user story skal kun lave en enkelt udregning, så den er ikke
  så stor.
  
 \end_layout
@@ -1736,7 +1834,7 @@ Small: Denne user story skal kun lave en enkelt udregning så den er ikke
 \begin_layout Itemize
 \noindent
 \align block
-Testable: Man kan teste om prisen bliver det man forventer når man giver
+Testable: Man kan teste om prisen bliver det man forventer, når man giver
  den en prædefineret dummy stykliste.
  
 \end_layout
@@ -1999,8 +2097,8 @@ reference "fig:Domæne-model"
 \align block
 En ordre indeholder mange PartLines og et Roof.
  En PartLine indeholder et Material og høre til en specifik Ordre.
- Et Material, kan hører til mange PartLine.
- Et Roof, kan tilhøre mange ordre.
+ Et Material kan hører til mange PartLine.
+ Et Roof kan tilhøre mange ordre.
  Ud fra en ordre kan der genereres to tegninger, en fra siden og en fra
  toppen.
 \end_layout
@@ -2028,16 +2126,16 @@ reference "fig:ER-diagram"
 \begin_layout Standard
 \noindent
 \align block
-Vi har valgt at i vores løsning holder vi i ordren alle relevante informationer
- om kunden, samt størrelsen på carporten, skur, hældning på taget, tagtype,
+Vi har valgt i vores løsning at vi holder alle relevante informationer om
+ kunden, samt størrelsen på carporten, skur, hældning på taget, tagtype,
  hvornår ordren blev oprettet, status, prisen af materiel og den endelige
- pris.
+ pris i ordren.
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align block
-Vores ordre indeholder en foreign key til roofs tabellen så vi sikre os
+Vores ordre indeholder en foreign key til roofs tabellen, så vi sikre os
  at det ikke kommer en ordre med et tag vi ikke har i databasen.
  
 \end_layout
@@ -2053,8 +2151,8 @@ Materials indeholder alle bjælker, stolper, tagsten, rygsten, osv.
 \begin_layout Standard
 \noindent
 \align block
-Employees indeholder alle de logins der har adgang til admin delen af vores
- IT-system, password ligger hashed i databasen.
+Employees tabellen indeholder alle de logins der har adgang til admin delen
+ af vores website, password ligger hashed i databasen.
  
 \end_layout
 
@@ -2130,7 +2228,7 @@ generateStringId()
 
 \begin_deeper
 \begin_layout Itemize
-generer en ramdom String til brug som ID i html.
+generer en random String til brug som ID i html.
 \end_layout
 
 \end_deeper
@@ -2216,7 +2314,7 @@ calculatePrice()
 
 \begin_deeper
 \begin_layout Itemize
-hvis Material har en størrelse forskelling fra 0
+hvis Material har en størrelse forskellig fra 0
 \end_layout
 
 \begin_deeper
@@ -2259,7 +2357,7 @@ reference "fig:Navigationsdiagram"
 \begin_layout Standard
 \noindent
 \align block
-Når man kommer ind på websiden kommer man først til index siden.
+Når man kommer ind på websitet kommer man først til index siden.
 \end_layout
 
 \begin_layout Standard
@@ -2358,10 +2456,10 @@ reference "fig:Sekvensdiagram:-Se-ordre"
 \begin_layout Standard
 \noindent
 \align block
-Kunden starter med at indtaste en email som bruger commanden ‘CmdShowOrders.java’
- som så tager det parameter der er sendt med fra mailen og bruger metoden
- getOrders() til at gå ned i mapperen som så leder efter alle ordrer i databasen
- med den email.
+Kunden starter med at indtaste en email, som bruger commanden ‘CmdShowOrders.java
+’, der så tager det parameter der er sendt med fra mailen og bruger metoden
+ getOrders() til at gå ned i mapperen.
+ Mapperen leder efter alle ordrer i databasen med den email.
  De bliver så returneret til mapperen som så laver det til en liste af ordrer
  den giver videre til ‘CmdShowOrders.java’.
  Den ligger dataen ned i en attribut som så vil kunne blive vist frem på
@@ -2392,16 +2490,16 @@ Dette diagram viser hvordan en ansat kan opdatere en ordre.
  Ved at starte på allOrders.jsp, kan man for hver ordre inspicere og opdatere
  pris og status.
  Når ændringerne er færdige vil knappen opdater kalde kommandoen CmdUpdateOrder.j
-ava som henter de nye indsatte værdier.
+ava, som henter de nye indsatte værdier.
  Disse værdier bliver sendt videre til vores OrderMapper.java gennem metoderne
  updatePrice() og updateOrder().
  Metoden updatePrice() opdatere prisen på carporten, hvor updateOrder()
- opdateret statusen på ordren.
+ opdateret statussen på ordren.
  Begge metoder kalder vores database og laver et UPDATE statement.
- Derefter hentes alle ordrer også dem som nu er opdateret gennem metoden
- getAllOrders() og gemmes i requestet som orders.
- Til sidst returnere CmdUpdateOrder.java siden allOrders som gennem FrontControll
-eren kalder siden allOrders.jsp og fremviser alle ordrer.
+ Derefter hentes alle ordrer, også dem som nu er opdateret gennem metoden
+ getAllOrders(), og gemmes i requestet som orders.
+ Til sidst returnere CmdUpdateOrder.java siden allOrders, som gennem FrontControl
+leren kalder siden allOrders.jsp, og fremviser alle ordrer.
 \end_layout
 
 \begin_layout Subsection
@@ -2426,11 +2524,11 @@ reference "fig:Sekvensdiagram:-Inspicér-ordre"
 \noindent
 \align block
 På dette sekvensdiagram kan man se hvordan man inspicer en ordre.
- Først går man ind på alle ordre siden hvorefter man vælger den ordre man
- gerne vil se.
- Meget af dataen om ordren vil allerede vil være loadet ind på siden, men
+ Først går man ind på allOrders.jsp siden, hvorefter man vælger den ordre
+ man gerne vil se.
+ Meget af dataet om ordren vil allerede vil være loadet ind på siden, men
  styklisten vil først blive lavet når man klikker ind på den.
- Dette vil ske via et ajax kald, som så vil load den ind på siden.
+ Dette vil ske via et ajax kald, som så vil indlæse den på siden.
 \end_layout
 
 \begin_layout Subsection
@@ -2454,15 +2552,15 @@ reference "fig:Sekvensdiagram:-Vis-alle"
 \begin_layout Standard
 \noindent
 \align block
-Diagrammet ViewAllOrders viser hvordan man som ansat kan få en historik
- af alle ordrer.
- Ved at logge ind som ansat vil hans informationer blive hentet i CmdLogin.java.
- Disse værdier bliver sendt videre til EmployeeMapper.java som kalder databasen
- for at retunere et resultset til EmployeeMapper.java som bliver valideret
- og returneret til CmdLogin.java.
+Diagrammet viser hvordan man som ansat kan få en historik af alle ordrer.
+ Ved at logge ind som ansat vil den ansattes informationer blive hentet
+ i CmdLogin.java.
+ Disse værdier bliver sendt videre til EmployeeMapper.java, som kalder databasen
+ for at returnere et resultset til EmployeeMapper.java, som bliver valideret
+ og returneret til CmdLogin.java, hvor det bliver gemt i sessionen.
  Efter dette vil OrderMapper.java blive kaldt som vil forespørge alle ordrer
  fra databasen.
- Disse vil blive hentet og sendt videre til CmdLogin.java og gemt i requestetet
+ Disse vil blive hentet og sendt videre til CmdLogin.java og gemt i requestet
  som orders.
  Derefter bliver vi sendt videre til allOrders.jsp gennem vores FrontController.
  På siden allOrders.jsp eksekveres et JSTL for-loop som fremviser alle ordrer.
@@ -2487,7 +2585,7 @@ Session
 \begin_layout Standard
 \noindent
 \align block
-Hvis man logger ind som en employee gemmer vi en reference til et employee
+Hvis man logger ind som en employee, gemmer vi en reference til et employee
  objekt med information om den bruger.
  Denne information bruges til at se om man har adgang til forskellige sider.
 \end_layout
@@ -2499,18 +2597,18 @@ Exceptions
 \begin_layout Standard
 \noindent
 \align block
-Vi arbejder primært med to forskellige exceptions “CustomException” og “NoAccesE
-xception”.
+Vi arbejder primært med to forskellige exceptions “CustomException” og “NoAccess
+Exception”.
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align block
 Hvis der opstår en anden slags exception f.eks.
- en SQLException eller NumberFormatExeption vil den blive grebet, og der
- vil blive kastet en ny “CustomException” som man så giver en brugervenlig
- besked, som der vil kunne blive vist til brugeren på siden med hvad der
- gik galt.
+ en SQLException eller NumberFormatExeption vil den blive grebet.
+ Den vil derefter blive logget, og der vil blive kastet en ny “CustomException”
+ som man så giver en brugervenlig besked, som der vil kunne blive vist til
+ brugeren på siden med hvad der gik galt.
 \end_layout
 
 \begin_layout Standard
@@ -2524,9 +2622,9 @@ CustomExceptions bliver grebet i vores forskellige Command klasser hvor
 \begin_layout Standard
 \noindent
 \align block
-NoAccesException kan opstå hvis man ikke har tilladelse til at tilgå den
+NoAccessException kan opstå hvis man ikke har tilladelse til at tilgå den
  command man prøver at lave.
- Der vil så blive kastet en NoAccesException som bliver grebet på vores
+ Der vil så blive kastet en NoAccessException som bliver grebet på vores
  FrontController, der så vil sende brugeren hen til en anden side.
 \end_layout
 
@@ -2552,15 +2650,15 @@ På frontend bruger vi lidt forskellige ting, men primært HTML ting som ‘requ
 \align block
 Hvis man f.eks.
  skal indtaste et postnummer, er der blevet brugt regular expressions til
- at sikre det man taster ind er et gyldigt dansk postnummer: “
+ at sikre det man taster ind, er et gyldigt dansk postnummer: “
 \backslash
-d{4}”
+d{4}”.
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align block
-det ovenstående statement altså “
+Det ovenstående statement altså “
 \backslash
 d{4}” siger at man kun vil modtage 4 digits, og ikke nogle bogstaver, tegn
  eller mindre/flere end 4 digits.
@@ -2569,7 +2667,7 @@ d{4}” siger at man kun vil modtage 4 digits, og ikke nogle bogstaver, tegn
 \begin_layout Standard
 \noindent
 \align block
-Hvis man kigger på denne expression som validere telefonnumre og prøver
+Hvis man kigger på denne expression som validere telefonnumre, og prøver
  at bryde den ned så den er til at forstå: 
 \begin_inset Quotes eld
 \end_inset
@@ -2622,7 +2720,7 @@ d] siger der må være et digit
 \begin_layout Standard
 \noindent
 \align block
-Så den siger: Der må være 0 eller 1 ‘+’ tegn, efterfulgt af 4-19 ganges:
+Så den siger: Der må være 0 eller 1 ‘+’ tegn, efterfulgt af 4-19 gange:
  digit med mulighed for et space eller bindestreg efter.
 \end_layout
 
@@ -2686,8 +2784,8 @@ Den første er den vi bruger på selve sitet ved navn: “Fog” denne bruger
 \begin_layout Standard
 \noindent
 \align block
-Vores anden bruger er kaldt: “fogTest” denne bruger kan gøre alt of har
- ikke nogen restriktioner.
+Vores anden bruger er kaldt: “fogTest”, denne bruger kan gøre alt og har
+ ikke nogen restriktioner, i test databasen.
 \end_layout
 
 \begin_layout Standard
@@ -2782,20 +2880,20 @@ Først findes det Material som har mindst spild længde i forhold til længden.
 \noindent
 \align block
 Antallet findes derefter ved at tage længden af carporten minus det udhæng
- der skal være og dividere med den afstand der skal være mellem spærene.
+ der skal være, og dividere med den afstand der skal være mellem spærene.
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align block
-hvis der er et skur bliver samme beregning kørt igen men denne gang med
+Hvis der er et skur bliver samme beregning kørt igen, men denne gang med
  110 som mellemrum.
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align block
-der returneres en PartLine som indeholder det Material som har den rigtige
+Der returneres en PartLine som indeholder det Material, som har den rigtige
  længde og et antal.
 \end_layout
 
@@ -3040,9 +3138,10 @@ textit{reference: Source Packages/logicLayer/TallCarPortList.java ( 446 -
 \noindent
 \align block
 Her bliver der taget en længde og en List over Material, wasted er hvor
- meget Material går til spilde ved at lave den length ud af det Material,
- så hvis wasted er 0 så er Materialet perfect længe og der vil være ingen
- spil så det returneres, ellers bliver det Material med lavest wasted returneret.
+ meget Material går til spilde, ved at lave den length ud af det Material.
+ Så hvis wasted er 0 så har Materialet perfekt længe, og der vil være ingen
+ spild så det Material returneres, ellers bliver det Material med lavest
+ wasted returneret.
 \end_layout
 
 \begin_layout Standard
@@ -3060,10 +3159,17 @@ Status på implementation
 \begin_layout Standard
 \noindent
 \align block
-Som det kan ses i Appendix B: User Stories er der user stories vi ikke har
- implementeret, dette er da PO har valgt at nedprioritere dem i forhold
- til de andre user stories.
- Vi har derfor ikke lave metoder til at kunne tilføje og fjerne materialer,
+Som det kan ses i Afsnit 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Appendix-B:-User"
+
+\end_inset
+
+ Appendix B: User Stories, er der user stories vi ikke har implementeret.
+ Dette er da PO har valgt at nedprioritere dem, i forhold til de andre user
+ stories.
+ Vi har derfor ikke lavet metoder til at kunne tilføje og fjerne materialer,
  da det var en del af en af disse user stories.
 \end_layout
 
@@ -3077,13 +3183,13 @@ Som det kan ses i Appendix B: User Stories er der user stories vi ikke har
 \begin_layout Standard
 \noindent
 \align block
-Vi har lige nu kun sat op så der sendes en email til fog med at der er lavet
- en ny ordre, vi kunne godt tænke os at der blev sendt flere emails med
- opdatering så som, at når man lavede en ordre også modtog en bekræftelse
- der sagde noget i stil med “Tak for din ordre du vil blive kontaktet snarest
+Vi har lige nu kun sat op så der sendes en email til Fog, med at der er
+ lavet en ny ordre, vi kunne godt tænke os at der blev sendt flere emails
+ med opdatering så som, at når man lavede en ordre også modtog en bekræftelse
+ der sagde noget i stil med: “Tak for din ordre du vil blive kontaktet snarest
  af en medarbejder”.
- Eller når status bliver opdateret af en medarbejder at man som kunde også
- modtager en email der fortæller status af ens ordre er blevet opdateret.
+ Eller når status bliver opdateret af en medarbejder, at man som kunde også
+ modtager en email, der fortæller status af ens ordre er blevet opdateret.
  
 \end_layout
 
@@ -3097,13 +3203,14 @@ Vi har lige nu kun sat op så der sendes en email til fog med at der er lavet
 \begin_layout Standard
 \noindent
 \align block
-Sådan som vores system er bygget om, udregner vi en ny stykliste hver gang
+Sådan som vores system er bygget op, udregner vi en ny stykliste hver gang
  den skal vises på siden.
  Havde vi haft mere tid, havde vi lavet en tabel i databasen, hvor vi ville
- kunne gemme styklisten for en given ordre med foreign key til ordrens id.
- Med denne ændring vil vi kunne gøre det muligt for en medarbejder at kunne
- ændre styklisten i tilfælde af at måden at udregne styklister på ændre
- sig på, så udregningen ikke længere er rigtig.
+ kunne gemme styklisten, for en given ordre med foreign key til ordrens
+ id.
+ Med denne ændring vil vi kunne gøre det muligt for en medarbejder, at kunne
+ ændre styklisten, i tilfælde af at måden at udregne styklister på ændre
+ sig, så udregningen ikke længere er rigtig.
 \end_layout
 
 \begin_layout Section
@@ -3131,8 +3238,8 @@ ge’.
 Testene er lavet så vi får det forventet output ud af vores input.
  Dette betyder at vi f.eks.
  gerne vil have et element fra en tabel med et specielt id eller navn, men
- også at få en fejl hvis vi prøver at hente eller indsætte værdier som ikke
- stemmer overens med databasen eller objektet.
+ også at få en fejl hvis vi prøver at hente eller indsætte værdier, som
+ ikke stemmer overens med databasen eller objektet.
  Hvis vi eksempelvis vil indsætte en negativ pris på et objekt, eller hente
  information fra ting som ikke eksisterer vil der blive kastet en CustomExceptio
 n.
@@ -3150,9 +3257,9 @@ n.
 \noindent
 \align block
 Vores testmiljø er en kombination af black box og white box testing.
- Vores JUnit er black box testing da vi giver et input og ser om outputtet
- stemmer overens med med det forventet.
- På denne måde ser vi ikke ind i koden så det forventet resultat kan kun
+ Vores JUnit er black box testing, da vi giver et input og ser om outputtet
+ stemmer overens med med det forventede.
+ På denne måde ser vi ikke ind i koden, så det forventet resultat kan kun
  blive baseret på hvad programmet skulle kunne og ikke hvad det kan.
  
 \end_layout
@@ -3167,8 +3274,8 @@ Vores testmiljø er en kombination af black box og white box testing.
 \begin_layout Standard
 \noindent
 \align block
-Vores white box testing er et code coverage, som giver mulighed for at se
- hvor meget kode der er testet.
+Vores white box testing er et code coverage plugin, som giver mulighed for
+ at se hvor meget kode der er testet.
  Dette plugin er specielt godt til at se om man har testet forskellige udfald
  i metoder som ‘ifs’, ’Exceptions’ mm.
 \end_layout
@@ -3186,10 +3293,10 @@ reference "fig:Code-Coverage"
 kan man se et overblik over rapporten af hvor meget kode vi har testet.
  Procenten er baseret på hvor mange linjer der er blevet testet i de forskellige
  klasser.
- Efter at have lavet rapporten på testen kan man se ,med farve indikation,
+ Efter at have lavet rapporten på testen kan man se, med farve indikation,
  hvilke linjer der er blevet testet.
  Dette gør at man kan se hvilke statements der bliver testet, og hvilke
- der ikke er.
+ der ikke gør.
  På denne måde kan man lave nye test med fokus på de statements man ikke
  har testet.
 \end_layout
@@ -3204,13 +3311,9 @@ kan man se et overblik over rapporten af hvor meget kode vi har testet.
 \begin_layout Standard
 \noindent
 \align block
-Vores plugin tester hvilke linjer der er blevet testet i koden, hvilket
- betyder at dele i metoden ikke kan blive testet, da det f.eks.
- kræver en SQL syntaksfejl eller en Connection der er lig null eller forkert
- sat op.
- If-statementet i vores try-catch ser om der er indhold i resultsettet,
- og hvis dette ikke er sandt vil vores preparedstatement ikke kunne kaste
- en exception da vi ikke kommer ind til vores ‘ps.get...()’.
+If-statementet i vores try-catch ser om der er indhold i resultsettet, dette
+ gør at de SQLExceptions der ville blive kastet pga.
+ resultsettet, ikke bliver kastet.
  Derfor er vores ‘catch(SQLException | ClassNotFoundException ex)’ ikke
  testet i vores Mapper klasser, ifølge vores code coverage plugin.
 \end_layout
@@ -3262,9 +3365,7 @@ Vores test database bliver kaldt for hver gang vi tester vores Mapperer.
 \begin_layout Standard
 \noindent
 \align block
-Databasen er automatisk koblet op og opdateret til den aktuelle database
- ‘sem2exam’.
- Test databasen består af to varianter af alle tabeller, da vi bruger en
+Test databasen består af to varianter af alle tabeller, da vi bruger en
  statisk version som indeholder et fast dataset, og en der kan blive ændret
  i uden at have indflydelse på nogle andre tabeller.
  
@@ -3880,11 +3981,11 @@ textit{reference: storageLayer/ToolMapper.java ( 59 - 87 )}
 \align block
 Ovenstående test reference kaster en CustomException.
  Dette er fordi det ‘tool_id’ der bliver forespurgt ikke eksistere på tabellen.
- Dette vil resultere i et tom resultSet, hvilket betyder at vi ikke kommer
+ Dette vil resultere i et tom ResultSet, hvilket betyder at vi ikke kommer
  ind i vores if-statement.
  Dette vil slutte vores try-catch og derefter kaste en CustomException.
- Havde resultSettet indeholdt data ville vi kunne returnere det som et Material
- object.
+ Havde ResultSettet indeholdt data ville vi kunne returnere det som et Material
+ objekt.
  
 \end_layout
 
@@ -3923,8 +4024,8 @@ textbf{Test Reflektering}
 \begin_layout Standard
 \noindent
 \align block
-En måde at arbejde med test på er at at lave testen først hvorefter man
- laver koden til at håndtere den.
+En måde at arbejde med test på er at lave testen først hvorefter man laver
+ koden til at håndtere den.
  Dette kaldes Test Driven Development (TDD), hvilket hjælper med at opretholde
  metoders egentlige formål.
  I stedet for at skabe en metode der lever op til kriterierne, men også
@@ -3938,7 +4039,7 @@ En måde at arbejde med test på er at at lave testen først hvorefter man
 Vi har testet mange parameter, en ting vi kunne have testet var at indsætte
  en for lang String i databasen.
  Eksempelvis ville man kunne indsætte en String på 20 karakterers længde
- i en kolonne i databasen hvor der er blevet sat en begrænsning til 12.
+ i en kolonne i databasen, hvor der er blevet sat en begrænsning til 12.
  Dette ville udlede i en SQLException som derefter ville kaste en CustomExceptio
 n.
 \end_layout
@@ -3973,13 +4074,13 @@ Et eksempel på et PO-møderne
 \begin_layout Standard
 \noindent
 \align block
-I et af møderne nåede vi ikke en userstory i vores sprint, hvilket resulterede
+I et af møderne nåede vi ikke en user story i vores sprint, hvilket resulterede
  i at vi skulle lave et spike.
  Dette havde vi forberedt inden mødet, da vi vidste at det ville blive taget
  op.
- Vores userstory handlede om at lave tegninger af carporten hvilket vi kun
- havde nået at gøre for en type.
- Spiket blev revurderet og sat som høj prioritet til næste sprint af vores
+ Vores user story handlede om at lave tegninger af carporten hvilket vi
+ kun havde nået at gøre for en type.
+ Spiket blev estimeret og sat som høj prioritet til næste sprint af vores
  PO.
  
 \end_layout
@@ -4120,8 +4221,8 @@ På dette tidspunkt havde vi fået lavet 2/4 tegninger.
 \begin_layout Standard
 \noindent
 \align block
-Vi var godt klar over at styklisten ville tage ret lang tid og vi nok ikke
- ville være helt færdige med den efter dette sprint.
+Vi var godt klar over at styklisten ville tage ret lang tid, og at vi nok
+ ikke ville være helt færdige med den efter dette sprint.
  
 \end_layout
 
@@ -4181,7 +4282,7 @@ As an employee I want to be able to create a part list for a carport
 \align block
 Vi fik lavet tegninger til både carporte med fladt tag og tag med rejsning,
  men var ikke helt tilfredse med dem, og blev enige om at give dem et sidste
- sprint så de kunne blive helt som vi gerne ville have dem.
+ sprint, så de kunne blive helt som vi gerne ville have dem.
 \end_layout
 
 \begin_layout Standard
@@ -4366,23 +4467,23 @@ Da styklisten blev helt færdig var det super nemt at få lavet så prisen
 \begin_layout Standard
 \noindent
 \align block
-På dette tidspunkt havde vi også fået lavet alle de .jsp sider som skulle
- laves helt færdige så vores færdige design kunne blive godkendt.
+På dette tidspunkt havde vi også fået lavet alle de .jsp sider, som skulle
+ laves helt færdige, så vores færdige design kunne blive godkendt.
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align block
 Vi havde allerede lavet login til employee i et tidligere sprint, så det
- var hurtigt at få lavet et system som krævede man var logget ind for at
+ var hurtigt at få lavet et system, som krævede man var logget ind for at
  tilgå bestemte sider.
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align block
-Vi havde også som bonus mål at der skulle sendes en email til fog hver gang
- der blev lavet en ordre forespørgsel, og det fik vi også nået.
+Vi havde også som bonus mål at der skulle sendes en email til Fog, hver
+ gang der blev lavet en ordre forespørgsel, og det fik vi også nået.
 \end_layout
 
 \begin_layout Subsubsection
@@ -4406,8 +4507,8 @@ Vi afholdte daglige standup møder hvor vi hurtigt gik igennem det som var
 \align block
 Selve møderne blev afholdt på den måde at vi havde en tavle hvor vi kunne
  skrive ned hvad der skulle laves og skrive navne på de forskellige ting.
- Vi kunne også tegne de forskellige problemstilling der kunne opstå og blive
- enige om ting mens vi tegnede dem.
+ Vi kunne også tegne de forskellige problemstillinger der kunne opstå og
+ blive enige om ting mens vi tegnede dem.
  Det kunne f.eks.
  være da vi blev enige om hvordan der skulle tegnes/beregnes stolper, hvor
  det var meget smart at kunne se hvordan det hele hang sammen.
@@ -4421,7 +4522,7 @@ Retrospectives
 \noindent
 \align block
 Efter hvert PO-møde brugte vi ca.
- 10 minutter på lige at tale om hvad der blev nævnt til møderne og om der
+ 10 minutter på lige at tale om hvad der blev nævnt til møderne, og om der
  var noget som var ekstra vigtigt at tage med fra dem.
  
 \end_layout
@@ -4432,8 +4533,8 @@ Efter hvert PO-møde brugte vi ca.
 Vi havde mange dage hvor vores møder lå meget tidligt på dagen, så vi mødte
  direkte til dem.
  De dage blandede vi vores retrospectives sammen med vores standup møder,
- da vi synes dette gav god mening da de efter et sprint meget handlede om
- det samme, altså hvad vi ikke havde nået eller hvad der lige pludselig
+ eftersom vi synes dette gav god mening, da de efter et sprint meget handlede
+ om det samme, altså hvad vi ikke havde nået eller hvad der lige pludselig
  var meget vigtigt at få lavet færdigt først.
 \end_layout
 
@@ -4461,8 +4562,8 @@ Retrospectives
 \noindent
 \align block
 De væsentligste emner til vores retrospectives var lige at tale de ting
- igennem vi fik at vide til det PO-møde vi lige havde været til, og være
- sikker på alle havde forstået de ting som blev sagt på samme måde.
+ igennem, som vi fik at vide til det PO-møde vi lige havde været til, og
+ være sikker på alle havde forstået de ting som blev sagt på samme måde.
  Så talte vi også meget om der var noget der efter mødet var super vigtigt
  at komme i gang med.
 \end_layout
@@ -4549,8 +4650,8 @@ Estimering
 Det var meget svært at estimere hvor lang tid det ville tage at få lavet
  styklisten og tegningerne.
  Vi havde sat begge to til vores højeste estimat hvilket var en uge, så
- det kunne godt være at de som også nævnt tidligere skulle have været delt
- op i flere forskellige user stories eller måske vi skulle have sat vores
+ det kunne godt være at de som også nævnt tidligere, skulle have været delt
+ op i flere forskellige user stories, eller måske skulle vi have sat vores
  øvre grænse på et estimat op.
 \end_layout
 
@@ -4573,7 +4674,7 @@ Der har ikke været så mange problemer ved hverken vejledning eller PO-møder,
  var dog til et af vores første tekniske reviews hvor vi fik at vide, at
  vi skulle lave det på en måde så kunder ikke havde en bruger, men blot
  lavede en bestilling.
- Dette er noget vi er blev spurgt meget ind til af andre vejleder senere
+ Dette er noget vi er blev spurgt meget ind til af andre vejledere senere
  hen til andre tekniske reviews.
  Hvor de spurgte hvorfor vi havde “valgt” at gøre det på den måde.
  Selvom det ikke rigtigt var et valg, men noget vi havde fået at vide.
@@ -4589,7 +4690,7 @@ Arbejdsrytme
 \begin_layout Standard
 \noindent
 \align block
-Vi fandt super hurtigt en god rytme for hvordan vi arbejde.
+Vi fandt super hurtigt en god rytme for hvordan vi arbejdede bedst.
  Vi gjorde det meget på den måde at hvis der var noget man gerne ville lave,
  fik man lov til at lave det.
  Ved at gøre det på den måde fik folk lov at lave de ting som kunne holde
@@ -4942,7 +5043,7 @@ name "fig:Aktivitetsdiagram:-to-be"
 
 
 \begin_inset Graphics
-	filename SwimlaneDiagramCreateCarport.PNG
+	filename SwimlaneDiagramTo-be.PNG
 	lyxscale 10
 	height 80theight%
 
@@ -5225,6 +5326,13 @@ name "fig:Sekvensdiagram:-Vis-alle"
 \begin_layout Section
 \noindent
 Appendix B: User Stories
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Appendix-B:-User"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -5365,7 +5473,7 @@ Som medarbejder vil jeg kunne slette og tilføje materialer så jeg kan tilpasse
 \begin_layout Itemize
 \noindent
 \align block
-Som medarbejder vil jeg kuune ændre en stykliste så jeg kan være sikker
+Som medarbejder vil jeg kunne ændre en stykliste så jeg kan være sikker
  på at den er rigtig
 \end_layout
 
