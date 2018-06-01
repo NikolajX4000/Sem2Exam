@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import logicLayer.NoAccessException;
 
 /**
- *
+ * This controller handles what content to display on the website with the help of different Commands
  * @author super
  */
 @WebServlet(name = "FrontController", urlPatterns = {"/"})
@@ -17,10 +17,10 @@ public class FrontController extends HttpServlet {
 
     /**
      * The FrontController finds the desired command from the HttpServletRequest and loads the correct .jsp file.
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
+     * @param request HttpServletRequest
+     * @param response HttpServletResponse
+     * @throws ServletException if a file (404) or a forbidden location is tried to be accessed (403) a SevletException is thrown
+     * @throws IOException is thrown whenever an input or outpur operation fails // trying to read/wrtie you don't have acces to // trying to read a file that is no longer available
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
