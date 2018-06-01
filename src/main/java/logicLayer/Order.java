@@ -12,6 +12,9 @@ import java.util.Locale;
 import java.util.Random;
 
 /**
+ * An order includes everything about a specific Order It has the partlist,
+ * contact information, the drawings, and the general order information like
+ * status, price, date of order etc.
  *
  * @author Stephan
  */
@@ -51,6 +54,12 @@ public class Order {
     /* status */
     private String status = "Behandles";
 
+    /**
+     *
+     * @return calculated price from partlist
+     * @throws CustomException may throw CustomException thrown from
+     * MaterialMapper.java
+     */
     public int calculatePrice() throws CustomException {
         materialPrice = 0;
         for (PartLine p : getPartlist()) {
@@ -61,8 +70,9 @@ public class Order {
 
     /**
      *
-     * @return
-     * @throws logicLayer.CustomException
+     * @return the price unformatted
+     * @throws logicLayer.CustomException may throw CustomException thrown from
+     * MaterialMapper.java
      */
     public int getPriceInt() throws CustomException {
 
@@ -76,8 +86,9 @@ public class Order {
 
     /**
      *
-     * @return
-     * @throws logicLayer.CustomException
+     * @return the price formatted
+     * @throws logicLayer.CustomException may throw CustomException thrown from
+     * MaterialMapper.java
      */
     public String getPrice() throws CustomException {
 
@@ -90,6 +101,11 @@ public class Order {
 
     }
 
+    /**
+     *
+     * @param price sets the price
+     * @return this
+     */
     public Order setPrice(int price) {
         this.price = price;
         return this;
@@ -156,7 +172,7 @@ public class Order {
 
     /**
      *
-     * @return
+     * @return randomly generalted unique string for this Order
      */
     public String getStringId() {
         if (stringId == null) {
@@ -167,7 +183,7 @@ public class Order {
 
     /**
      *
-     * @return
+     * @return this Orders id
      */
     public int getId() {
         return id;
@@ -175,8 +191,8 @@ public class Order {
 
     /**
      *
-     * @param id
-     * @return
+     * @param id sets this Orders id
+     * @return this
      */
     public Order setId(int id) {
         this.id = id;
@@ -185,7 +201,7 @@ public class Order {
 
     /**
      *
-     * @return
+     * @return this Orders name
      */
     public String getName() {
         return name;
@@ -193,8 +209,8 @@ public class Order {
 
     /**
      *
-     * @param name
-     * @return
+     * @param name set this Orders name
+     * @return this
      */
     public Order setName(String name) {
         this.name = name;
@@ -203,7 +219,7 @@ public class Order {
 
     /**
      *
-     * @return
+     * @return this Orders address
      */
     public String getAddress() {
         return address;
@@ -211,8 +227,8 @@ public class Order {
 
     /**
      *
-     * @param address
-     * @return
+     * @param address sets this Orders address
+     * @return this
      */
     public Order setAddress(String address) {
         this.address = address;
@@ -221,7 +237,7 @@ public class Order {
 
     /**
      *
-     * @return
+     * @return this Orders zipCode
      */
     public int getZipCode() {
         return zipCode;
@@ -229,8 +245,8 @@ public class Order {
 
     /**
      *
-     * @param zipCode
-     * @return
+     * @param zipCode sets this Orders zipCode
+     * @return this
      */
     public Order setZipCode(int zipCode) {
         this.zipCode = zipCode;
@@ -239,7 +255,7 @@ public class Order {
 
     /**
      *
-     * @return
+     * @return this Orders city
      */
     public String getCity() {
         return city;
@@ -247,8 +263,8 @@ public class Order {
 
     /**
      *
-     * @param city
-     * @return
+     * @param city sets this Orders city
+     * @return this
      */
     public Order setCity(String city) {
         this.city = city;
@@ -257,7 +273,7 @@ public class Order {
 
     /**
      *
-     * @return
+     * @return this Orders phonenumber
      */
     public String getPhone() {
         return phone;
@@ -265,8 +281,8 @@ public class Order {
 
     /**
      *
-     * @param phone
-     * @return
+     * @param phone sets this Orders phonenumber
+     * @return this
      */
     public Order setPhone(String phone) {
         this.phone = phone;
@@ -275,7 +291,7 @@ public class Order {
 
     /**
      *
-     * @return
+     * @return this Orders email
      */
     public String getEmail() {
         return email;
@@ -283,8 +299,8 @@ public class Order {
 
     /**
      *
-     * @param email
-     * @return
+     * @param email sets this Orders email
+     * @return this
      */
     public Order setEmail(String email) {
         this.email = email;
@@ -293,7 +309,7 @@ public class Order {
 
     /**
      *
-     * @return
+     * @return this Orders note
      */
     public String getNote() {
         return note;
@@ -301,8 +317,8 @@ public class Order {
 
     /**
      *
-     * @param note
-     * @return
+     * @param note sets this Orders note
+     * @return this
      */
     public Order setNote(String note) {
         this.note = note;
@@ -311,7 +327,7 @@ public class Order {
 
     /**
      *
-     * @return
+     * @return the carports width
      */
     public int getWidth() {
         return width;
@@ -319,8 +335,8 @@ public class Order {
 
     /**
      *
-     * @param width
-     * @return
+     * @param width sets the carports width
+     * @return this
      */
     public Order setWidth(int width) {
         this.width = width;
@@ -329,7 +345,7 @@ public class Order {
 
     /**
      *
-     * @return
+     * @return the carports length
      */
     public int getLength() {
         return length;
@@ -337,8 +353,8 @@ public class Order {
 
     /**
      *
-     * @param length
-     * @return
+     * @param length sets the carports length
+     * @return this
      */
     public Order setLength(int length) {
         this.length = length;
@@ -347,7 +363,9 @@ public class Order {
 
     /**
      *
-     * @return @throws logicLayer.CustomException
+     * @return the roof corosponding to this
+     * @throws logicLayer.CustomException may throw CustomException thrown from
+     * RoofMapper.java
      */
     public Roof getRoof() throws CustomException {
         return StorageFacade.getRoofById(roof);
@@ -355,8 +373,8 @@ public class Order {
 
     /**
      *
-     * @param roof
-     * @return
+     * @param roof sets the carports roof to its ID
+     * @return this
      */
     public Order setRoof(int roof) {
         this.roof = roof;
@@ -365,7 +383,7 @@ public class Order {
 
     /**
      *
-     * @return
+     * @return the carportts roof angle
      */
     public int getAngle() {
         return angle;
@@ -373,8 +391,8 @@ public class Order {
 
     /**
      *
-     * @param angle
-     * @return
+     * @param angle sets the carports roof angle
+     * @return this
      */
     public Order setAngle(int angle) {
         this.angle = angle;
@@ -383,7 +401,7 @@ public class Order {
 
     /**
      *
-     * @return
+     * @return the shed width
      */
     public int getShedWidth() {
         return shedWidth;
@@ -391,8 +409,8 @@ public class Order {
 
     /**
      *
-     * @param shedWidth
-     * @return
+     * @param shedWidth sets the shed width
+     * @return this
      */
     public Order setShedWidth(int shedWidth) {
         this.shedWidth = shedWidth;
@@ -401,7 +419,7 @@ public class Order {
 
     /**
      *
-     * @return
+     * @return the shed length
      */
     public int getShedLength() {
         return shedLength;
@@ -409,8 +427,8 @@ public class Order {
 
     /**
      *
-     * @param shedLength
-     * @return
+     * @param shedLength sets the shed length
+     * @return this
      */
     public Order setShedLength(int shedLength) {
         this.shedLength = shedLength;
@@ -419,7 +437,7 @@ public class Order {
 
     /**
      *
-     * @return
+     * @return the date order was placed
      */
     public String getPlaced() {
         return placed;
@@ -427,8 +445,8 @@ public class Order {
 
     /**
      *
-     * @param placed
-     * @return
+     * @param placed sets the date Order was placed
+     * @return this
      */
     public Order setPlaced(String placed) {
         this.placed = placed;
@@ -437,7 +455,7 @@ public class Order {
 
     /**
      *
-     * @return
+     * @return status of the Order
      */
     public String getStatus() {
         return status;
@@ -445,23 +463,38 @@ public class Order {
 
     /**
      *
-     * @param status
-     * @return
+     * @param status sets Orders status
+     * @return this
      */
     public Order setStatus(String status) {
         this.status = status;
         return this;
     }
 
+    /**
+     *
+     * @return gets the material price
+     */
     public int getMaterialPrice() {
         return materialPrice;
     }
 
+    /**
+     *
+     * @param materialPrice sets material price
+     * @return this
+     * @throws CustomException may throw CustomException thrown from
+     * MaterialMapper.java
+     */
     public Order setMaterialPrice(int materialPrice) throws CustomException {
         calculatePrice();
         return this;
     }
 
+    /**
+     *
+     * @return svg drawing of carport from the side
+     */
     public String getDrawingSide() {
         if (isFlat()) {
             return new DrawCarportFlatSide(this).getDrawing();
@@ -470,6 +503,10 @@ public class Order {
         }
     }
 
+    /**
+     *
+     * @return svg drawing of carport seem from the top
+     */
     public String getDrawingTop() {
         if (isFlat()) {
             return new DrawCarportFlatTop(this).getDrawing();
@@ -478,6 +515,12 @@ public class Order {
         }
     }
 
+    /**
+     *
+     * @return the partlist
+     * @throws CustomException may throw CustomException thrown from
+     * MaterialMapper.java
+     */
     public List<PartLine> getPartlist() throws CustomException {
         if (partsList == null) {
 
@@ -490,6 +533,10 @@ public class Order {
         return partsList;
     }
 
+    /**
+     *
+     * @return Order as concatenated string
+     */
     @Override
     public String toString() {
         return "Order{" + "id=" + id + ", name=" + name + ", address=" + address + ", zipCode=" + zipCode + ", city=" + city + ", phone=" + phone + ", email=" + email + ", note=" + note + ", width=" + width + ", length=" + length + ", roof=" + roof + ", angle=" + angle + ", shedWidth=" + shedWidth + ", shedLength=" + shedLength + ", placed=" + placed + ", status=" + status + '}';

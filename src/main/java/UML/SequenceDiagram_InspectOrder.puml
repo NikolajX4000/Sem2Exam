@@ -1,25 +1,30 @@
 @startuml
 
 actor Ansat
-boundary "allOrders.jsp" as Orders
-entity "Order Element" as OE
-participant "RenderOrderInspect.java" as RO
-participant "OrderMapper.java" as OM
-database "Database" as DB
+boundary "allOrders.jsp" as AO
+boundary "ServletGetPartlist.java" as ajax
+boundary "partlist.jsp" as PL
 
-group Inspicer
-Ansat -> OE : Inspicer Ordre 
-OE -> RO : Render Ordre
-RO -> Ansat : Fremvis Ordre
-end
 
-group Opdater
-Ansat -> OE : Opdater Ordre
-OE -> OM : DB Adgang
-OM -> DB : Tilføj Opdatering
-DB -> OM : Forespørg Odateret Ordre
-OM -> Orders : Orderhistorik
-Orders -> Ansat : Fremvis Ordre
-end
+skinparam sequence {
+
+    BoxBorderColor none
+    BoxBackgroundColor whitesmoke
+
+}
+
+box "AJAX kald" 
+participant ajax
+participant PL
+end box
+
+Ansat -> AO : Gå til alle ordrer
+AO -> Ansat : Vis alle ordrer
+Ansat -> AO : Vælg ordre
+AO -> ajax  : Ajax kald til servlet
+ajax -> ajax: udregn stykliste
+ajax -> PL  : forward stykliste
+PL -> AO    : Udskriv stykliste
+AO -> Ansat : Vis valgte ordre
 
 @enduml

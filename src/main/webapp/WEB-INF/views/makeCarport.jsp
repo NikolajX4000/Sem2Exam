@@ -166,22 +166,21 @@
         });
     }
 
-    //$(document).ready(updateDrawing());
+
+    $(".range").on('input', function(){
+        
+        var spanToChange = "#" + $(this).attr("id") + "_span";
+        $(spanToChange).html($(this).val());
+    
+        //update drawing on slide.
+        updateDrawing();
+    
+    });
 
     $(".range").change(function () {
 
-        //changes span value to reflect what the bar is at
-        //var spanToChange = "#" + $(this).attr("id") + "_span";
-        //$(spanToChange).html($(this).val());
-
         updateDrawing();
 
-    });
-
-    $(".range").on("change mousemove", function () {
-        var spanToChange = "#" + $(this).attr("id") + "_span";
-        $(spanToChange).html($(this).val());
-        //updateDrawing();
     });
 
 

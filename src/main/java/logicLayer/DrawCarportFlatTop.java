@@ -1,6 +1,10 @@
 
 package logicLayer;
 
+/**
+ * Draws a carport with flat roof seen from above in SVG
+ * @author Hupra Laptop
+ */
 public class DrawCarportFlatTop {
     
     String std = "fill:none;stroke:black;stroke-width:1;";
@@ -9,7 +13,7 @@ public class DrawCarportFlatTop {
     double xOffset = 30, yOffset = 15;
     
     double width, height, shedWidth, shedHeight;
-    double spaerWidth = 4.5;
+    double spaerWidth = 5;
     double spaerDistance, spaerAmount, spaerGutter;
     double remHeight = 8;
     double beam = 10;
@@ -21,6 +25,10 @@ public class DrawCarportFlatTop {
     
     String tmp = "";
 
+    /**
+     *
+     * @param o constructor requires an Order, the Order should not be null
+     */
     public DrawCarportFlatTop(Order o)
     {
         isFlat = o.isFlat();
@@ -32,9 +40,9 @@ public class DrawCarportFlatTop {
         shedWidth = o.getShedLength();
         shedHeight = o.getShedWidth();
         
-        spaerDistance = width - spaerWidth;
-        spaerAmount = 2 + (int) (spaerDistance / 89);
-        spaerGutter = spaerDistance / (spaerAmount-1);
+        //spaerDistance = width - spaerWidth;
+        spaerAmount = 1 + Math.ceil(width / (55+spaerWidth));
+        spaerGutter = (width - spaerWidth) / (spaerAmount-1);
         
         svg = new SVG(width, height);
 
@@ -48,7 +56,10 @@ public class DrawCarportFlatTop {
         
     }
     
-    
+    /**
+     *
+     * @return svg drawing in a String
+     */
     public String getDrawing() {
         
         
@@ -62,7 +73,6 @@ public class DrawCarportFlatTop {
         drawHeightWidthArrow();
         
         return svg.getSvg();
-        //return tmp;
     }
 
     private void drawCarport()
@@ -151,13 +161,13 @@ public class DrawCarportFlatTop {
         for (int i = 0; i < beamAmount; i++) {
             svg.rct(shedXStartAt        , shedYStartAt  + (i*beamGutter), beam, beam, "fill:none;stroke:black;stroke-width:2.5;"); // Left shed
             svg.rct(shedXEndAt - beam   , shedYStartAt  + (i*beamGutter), beam, beam, "fill:none;stroke:black;stroke-width:2.5;"); // Right shed
-            //svg.rct(xOffset             , shedYStartAt  + (i*beamGutter), beam, beam, "fill:none;stroke:red;stroke-width:2.5;"); // LEFT CP IDK IF USEFUL
+            //svg.rct(xOffset             , shedYStartAt  + (i*beamGutter), beam, beam, "fill:none;stroke:red;stroke-width:2.5;"); // NOT USED
         }
     }
     
     private void drawXBeams() {
         
-        if (width - shedWidth > 200){
+        if (width - shedWidth - xOffset*2 > 50){
             double xWidth = (hasShed) ? width-2*xOffset-shedWidth : width-2*xOffset - beam;
         
             double beamAmount = 2 + (int)(xWidth/newBeamAfter);

@@ -1,0 +1,2 @@
+2018-05-31 11:28:04 [main] logicLayer.DanielTestClass.main()
+WARNING: DER LOGGES

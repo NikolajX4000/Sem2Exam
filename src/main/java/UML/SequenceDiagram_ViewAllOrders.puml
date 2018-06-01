@@ -1,0 +1,26 @@
+@startuml
+
+actor Ansat
+boundary "login.jsp" as LI
+boundary "CmdLogin.java" as CLI
+boundary "allOrders.jsp" as AO
+participant "OrderMapper.java" as OM
+participant "EmployeeMapper.java" as EM
+database "Database" as DB
+
+Ansat -> LI : Indtast oplysninger
+LI -> CLI : Login
+CLI -> EM : Forespørg bruger fra Mapper
+EM -> DB : Forespørg bruger fra Database
+DB -> EM : Retunere bruger
+EM -> EM : Valider login
+EM -> CLI : Logger in
+CLI -> OM : Forespørg Ordrer fra Mapper
+OM -> DB : Forespørg ordre fra database
+DB -> OM : Retuner ordrer
+OM -> CLI : Set orderhistorik
+CLI -> AO : Get orderhistorik
+AO -> Ansat : Fremvis ordrer
+
+@enduml
+¢

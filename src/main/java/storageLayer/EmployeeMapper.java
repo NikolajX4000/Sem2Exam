@@ -7,8 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import logicLayer.Log;
 import org.mindrot.jbcrypt.BCrypt;
 
 /**
@@ -17,6 +16,17 @@ import org.mindrot.jbcrypt.BCrypt;
  */
 public class EmployeeMapper {
 
+    /**
+     * Add employee.
+     * This method calls the database with a prepared statement to 
+     * request an insert to ad an employee into the employees table.
+     * 
+     * @param name The username. Should not be null.
+     * @param password The password. Should not be null.
+     * @return A employee object with the name and password.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or the closeStatement() method can't close the connection.
+     */
     public static Employee addEmployee(String name, String password) throws CustomException {
         PreparedStatement ps = null;
         Employee e = new Employee(name, password);
@@ -34,16 +44,29 @@ public class EmployeeMapper {
 
             if (rs.first()) {
                 e.setId(rs.getInt(1));
+                return e;
             }
 
         } catch (SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
+            Log.severe(ex);
+            throw new CustomException( "Kunne ikke hente information" );
         } finally {
             closeStatement(ps);
         }
-        return e;
+        throw new CustomException( "Kunne ikke hente information" );
     }
 
+    /**
+     * Login.
+     * This method calls the database with a prepared statement to 
+     * request an employee from the employees table, with the name and password.
+     * 
+     * @param name The username. Should not be null.
+     * @param password The password. Should not be null.
+     * @return A employee object with the name and password.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or the closeStatement() method can't close the connection.
+     */
     public static Employee login(String name, String password) throws CustomException {
 
         try {
@@ -71,7 +94,8 @@ public class EmployeeMapper {
 
             closeStatement(ps);
 
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (ClassNotFoundException | SQLException ex) {
+            Log.severe(ex);
             throw new CustomException("Formateringsfejl");
         }
 
@@ -90,7 +114,8 @@ public class EmployeeMapper {
             try {
                 ps.close();
             } catch (SQLException ex) {
-                throw new CustomException("Kunne ikke få kontakt til databasen");
+                Log.severe(ex);
+                throw new CustomException( "Kunne ikke få kontakt til databasen" );
             }
         }
     }

@@ -6,6 +6,8 @@
 package logicLayer;
 
 /**
+ * A material can be different things, such as a plank, a tool, a screw etc. it
+ * contains the needed information of that specific item.
  *
  * @author Stephan
  */
@@ -20,7 +22,7 @@ public class Material {
 
     /**
      *
-     * @return
+     * @return name of the material
      */
     public String getName() {
         return name;
@@ -28,8 +30,8 @@ public class Material {
 
     /**
      *
-     * @param name
-     * @return
+     * @param name materials new name
+     * @return set the name of material
      */
     public Material setName(String name) {
         this.name = name;
@@ -38,7 +40,7 @@ public class Material {
 
     /**
      *
-     * @return
+     * @return id of the material
      */
     public int getId() {
         return id;
@@ -46,8 +48,8 @@ public class Material {
 
     /**
      *
-     * @param id
-     * @return
+     * @param id materials new id
+     * @return this
      */
     public Material setId(int id) {
         this.id = id;
@@ -56,7 +58,7 @@ public class Material {
 
     /**
      *
-     * @return
+     * @return the price as an integer
      */
     public int getPrice() {
         return price;
@@ -64,12 +66,12 @@ public class Material {
 
     /**
      *
-     * @param price
-     * @return
-     * @throws logicLayer.CustomException
+     * @param price set price of material
+     * @return this
+     * @throws logicLayer.CustomException if price is negative
      */
     public Material setPrice(int price) throws CustomException {
-        if(price >= 0) {
+        if (price >= 0) {
             this.price = price;
         } else {
             throw new CustomException("Pris kan ikke være negativ");
@@ -80,7 +82,7 @@ public class Material {
 
     /**
      *
-     * @return
+     * @return the price
      */
     public int getSize() {
         return size;
@@ -88,12 +90,12 @@ public class Material {
 
     /**
      *
-     * @param size
-     * @return
-     * @throws logicLayer.CustomException
+     * @param size set a new size
+     * @return this
+     * @throws logicLayer.CustomException if size is negative
      */
     public Material setSize(int size) throws CustomException {
-        if(size >= 0) {
+        if (size >= 0) {
             this.size = size;
         } else {
             throw new CustomException("Støresle kan ikke være negativ");
@@ -104,7 +106,7 @@ public class Material {
 
     /**
      *
-     * @return
+     * @return material description
      */
     public String getDescription() {
         return description;
@@ -112,8 +114,8 @@ public class Material {
 
     /**
      *
-     * @param description
-     * @return
+     * @param description set new mateiral description
+     * @return this
      */
     public Material setDescription(String description) {
         this.description = description;
@@ -122,7 +124,7 @@ public class Material {
 
     /**
      *
-     * @return
+     * @return the unitSize
      */
     public int getUnitSize() {
         return unitSize;
@@ -130,12 +132,12 @@ public class Material {
 
     /**
      *
-     * @param unitSize
-     * @return
-     * @throws logicLayer.CustomException
+     * @param unitSize sets new unitSize
+     * @return this
+     * @throws logicLayer.CustomException if unitSize is negative
      */
     public Material setUnitSize(int unitSize) throws CustomException {
-        if(unitSize >= 0) {
+        if (unitSize >= 0) {
             this.unitSize = unitSize;
         } else {
             throw new CustomException("Enhedsstørelse kan ikke være negativ");

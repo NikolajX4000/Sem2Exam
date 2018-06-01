@@ -13,8 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import logicLayer.Log;
 
 /**
  *
@@ -22,9 +21,18 @@ import java.util.logging.Logger;
  */
 public class ToolMapper {
 
+    /**
+     * Get all tools.
+     * This method calls the database with a prepared statement to 
+     * request an arraylist of all elements from the tools table.
+     * 
+     * @return An arraylist of all tools objects.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or the closeStatement() method can't close the connection.
+     */
     public static List<Material> getAllTool() throws CustomException {
         PreparedStatement ps = null;
-        Material material = null;
+        Material material;
         List<Material> materials = new ArrayList<>();
         try {
             Connection con = Connector.connection();
@@ -43,7 +51,8 @@ public class ToolMapper {
             }
 
         } catch(SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
+            Log.severe(ex);
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
@@ -51,15 +60,20 @@ public class ToolMapper {
     }
 
     /**
-     *
-     * @param tool_id
-     * @return
-     * @throws CustomException
+     * Get tool by id.
+     * This method calls the database with a prepared statement to
+     * request an element from the tools table by it's 'tool_id'.
+     * 
+     * @param tool_id The id attached to the tool. Should not be out of index bounds.
+     * @return A Material object with requested id.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or the closeStatement() method can't close the connection.
      */
     public static Material getTool(int tool_id) throws CustomException {
         PreparedStatement ps = null;
-        Material material = new Material();
+        
         try {
+            Material material = new Material();
             Connection con = Connector.connection();
             String SQL = "SELECT * FROM tools WHERE tool_id = ?";
 
@@ -73,21 +87,30 @@ public class ToolMapper {
                         setName(rs.getString("name")).
                         setPrice(rs.getInt("price")).
                         setUnitSize(rs.getInt("unit_size"));
+                
+                return material;
             }
-
+            
         } catch(SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
+            Log.severe(ex);
+            throw new CustomException( "Kunne ikke hente information" );
         } finally {
             closeStatement(ps);
         }
-        return material;
+        throw new CustomException( "Kunne ikke hente information" );
     }
 
     /**
-     *
-     * @param material
-     * @return
-     * @throws CustomException
+     * Update tool with Material object.
+     * This method calls the database with a prepared statement to
+     * request an update on a specific tool. By using an material object as 
+     * parameter, this method will use multiple get methods to modify the 
+     * attributes for the giving id.
+     * 
+     * @param material The modified material object. Should not be null.
+     * @return  An updated material object.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or the closeStatement() method can't close the connection.
      */
     public static Material updateTool(Material material) throws CustomException {
         PreparedStatement ps = null;
@@ -106,14 +129,28 @@ public class ToolMapper {
             ps.executeUpdate();
 
         } catch(SQLException | ClassNotFoundException | NullPointerException ex) {
-            throw new CustomException(ex.getMessage());
+            Log.severe(ex);
+            throw new CustomException( "Kunne ikke hente information" );
         } finally {
             closeStatement(ps);
         }
         return material;
     }
 
+    /**
+     * Update tool by id.
+     * This method calls the database with a prepared statement to
+     * request an update on a specific tool. This method will use the unitsize and price parameters to modify the 
+     * attributes for the giving id.
+     * 
+     * @param id The id attached to the tool. Should not be out of index bounds.
+     * @param unitSize The modified unitsize. Should not be negative.
+     * @param price The modified price. Should not be negative.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or the closeStatement() method can't close the connection.
+     */
     static void updateTool(int id, int unitSize, int price) throws CustomException {
+        if ( unitSize < 0 || price < 0 ) throw new CustomException( "Kunne ikke hente information" );
         PreparedStatement ps = null;
 
         try {
@@ -131,7 +168,8 @@ public class ToolMapper {
             ps.executeUpdate();
 
         } catch(ClassNotFoundException | SQLException ex) {
-            throw new CustomException(ex.getMessage());
+            Log.severe(ex);
+            throw new CustomException( "Kunne ikke hente information" );
         } finally {
             closeStatement(ps);
         }
@@ -143,13 +181,16 @@ public class ToolMapper {
      * the server.
      *
      * @param ps PreparedStatement object, the SQL controller.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or the closeStatement() method can't close the connection.
      */
     private static void closeStatement(PreparedStatement ps) throws CustomException {
         if(ps != null) {
             try {
                 ps.close();
             } catch(SQLException ex) {
-                throw new CustomException("Kunne ikke få kontakt til databasen");
+                Log.severe(ex);
+                throw new CustomException( "Kunne ikke hente information" );
             }
         }
     }

@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import logicLayer.NoAccessException;
 
 /**
- *
+ * Command has a list of different subclasses and given a HttpServletRequest can find the right command that needs to be executed.
  * @author super
  */
 abstract class Command

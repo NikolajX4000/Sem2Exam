@@ -4,6 +4,10 @@ import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
 
+/**
+ * Has different methods for sending emails
+ * @author Hupra Laptop
+ */
 public class DanielsPostHus {
 
 
@@ -13,6 +17,15 @@ public class DanielsPostHus {
 //    public static void main(String[] args) throws MessagingException {
 //        sendMail("Ny ordre klar til behandling", "<div>Jeg er en div hihi</div>", "foglyngby@gmail.com");
 //    }
+
+    /**
+     *
+     * @param subject the subject line in the email
+     * @param content the content for the email (HTML)
+     * @param receiver the email adresse of the receiver
+     * @throws AddressException is thrown if InternetAddress is given an invalid address
+     * @throws MessagingException is thrown if something goes wrong with the message you're trying to send
+     */
     
     public static void sendMail(String subject, String content, String receiver) throws AddressException, MessagingException {
         
@@ -39,6 +52,12 @@ public class DanielsPostHus {
         transport.close();
     }
     
+    /**
+     *
+     * @param o Order, takes details from Order and sends an email to fodlyngby@gmail.com
+     * @throws MessagingException is thrown if the message isn't sent 
+     * @throws CustomException is thrown if there is something wrong with the Order it has recieved
+     */
     public static void newOrder(Order o) throws MessagingException, CustomException {
         
         String subject = "Ny ordre af carport på " + o.getWidth() + "x" + o.getLength();
@@ -68,8 +87,14 @@ public class DanielsPostHus {
         
         s.append("</table>");
         
-        s.append("<h4>Bemrkning:</h4>");
-        s.append("<p>").append(o.getNote()).append("</p>");
+        
+        if(!o.getNote().equals("")){
+            
+            s.append("<h4>Bemærkning:</h4>");
+            s.append("<p>").append(o.getNote()).append("</p>");
+        }
+        
+        s.append("<br><a href='hupra.dk/fog/?command=CmdShowOrders&email=").append(o.getEmail()).append("'>Gå til ordre siden</a>");
         
         sendMail(subject, s.toString(), receiver);
 

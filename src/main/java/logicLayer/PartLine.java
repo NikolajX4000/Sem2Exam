@@ -14,28 +14,20 @@ public class PartLine {
 
     /**
      *
-     * @param material
-     * @param amount
+     * @param material the material of the partline
+     * @param amount the amount of the given material
      */
-    public PartLine(Material material, int amount)  {
+    public PartLine(Material material, int amount) {
         this.material = material;
         this.unit = material.getUnitSize();
         this.amount = (int) Math.ceil((double) amount / unit);
         this.size = material.getSize();
+        this.description = material.getDescription();
     }
 
     /**
      *
-     * @param name
-     * @param amount
-     * @param unit
-     */
-//    public PartLine(String name, int amount, int unit) {
-//        // Comming soon
-//    }
-    /**
-     *
-     * @return
+     * @return the price per unit times the amount
      */
     public int calculatePrice() {
         int price = 0;
@@ -49,7 +41,7 @@ public class PartLine {
 
     /**
      *
-     * @return
+     * @return the material of the partline
      */
     public Material getMaterial() {
         return material;
@@ -57,7 +49,7 @@ public class PartLine {
 
     /**
      *
-     * @param material
+     * @param material the material of the partline
      */
     public void setMaterial(Material material) {
         this.material = material;
@@ -65,9 +57,9 @@ public class PartLine {
 
     /**
      *
-     * @param size
-     * @return
-     * @throws logicLayer.CustomException
+     * @param size the length of the planks
+     * @return this
+     * @throws logicLayer.CustomException if size is negative
      */
     public PartLine setSize(double size) throws CustomException {
         this.size = (int) size;
@@ -77,8 +69,8 @@ public class PartLine {
 
     /**
      *
-     * @param description
-     * @return
+     * @param description the description of the material
+     * @return this
      */
     public PartLine setDescription(String description) {
         this.description = description;
@@ -87,7 +79,7 @@ public class PartLine {
 
     /**
      *
-     * @return
+     * @return the length of the planks
      */
     public int getSize() {
         return material.getSize();
@@ -95,7 +87,7 @@ public class PartLine {
 
     /**
      *
-     * @return
+     * @return the amount of planks
      */
     public int getAmount() {
         return amount;
@@ -103,7 +95,7 @@ public class PartLine {
 
     /**
      *
-     * @return
+     * @return the unit of the material
      */
     public int getUnit() {
         return unit;
@@ -111,7 +103,7 @@ public class PartLine {
 
     /**
      *
-     * @return
+     * @return the description of the material
      */
     public String getDescription() {
         return description;

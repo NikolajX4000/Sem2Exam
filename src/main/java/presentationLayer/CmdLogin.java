@@ -7,6 +7,10 @@ import logicLayer.LogicFacade;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * This command attempts to log the employee into the website, and puts a refference to their employee reference in the session
+ * @author Hupra Laptop
+ */
 public class CmdLogin extends Command{
 
     @Override
@@ -19,6 +23,18 @@ public class CmdLogin extends Command{
             
             request.setAttribute("feedback", "Velkommen " + emp.getName());
             request.getSession().setAttribute("user", emp);
+            
+            
+            //content
+            try
+            {
+                request.setAttribute("orders", LogicFacade.getAllOrders());
+
+            } catch (CustomException ex)
+            {
+                request.setAttribute("feedback", ex.getMessage());
+            }
+            
             
             return "allOrders";
 

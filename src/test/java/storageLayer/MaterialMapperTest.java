@@ -84,6 +84,19 @@ public class MaterialMapperTest {
         String result = materials.get(1).getDescription();
         assertEquals(expResult, result);
     }
+    
+    /**
+     * Test of getMaterial method, of class MaterialMapper. Testing for table
+     * 'materials' cotains item named 'overstern' with descibtion of '25x125mm.
+     * trykimp. Bræt'
+     *
+     * @throws Exception
+     */
+    @Test(expected = CustomException.class)
+    public void testGetMaterial_posOutOfBounds() throws Exception {
+        int id = Integer.MAX_VALUE;
+        MaterialMapper.getMaterial( id );
+    }
 
     /**
      * Test of getMaterial method, of class MaterialMapper - with invalid name.
@@ -198,15 +211,13 @@ public class MaterialMapperTest {
      *
      * @throws java.lang.Exception
      */
-    @Test
+    @Test(expected = CustomException.class)
     public void testUpdateMaterial_wParameters_negOutOfBoundsID() throws Exception {
         int id = Integer.MIN_VALUE;
         int size = 5;
         int price = 7;
 
         MaterialMapper.updateMaterial(id, size, price);
-        Material result = MaterialMapper.getMaterial(id);
-        assertNull(result);
     }
 
     /**
@@ -218,7 +229,7 @@ public class MaterialMapperTest {
      *
      * @throws java.lang.Exception
      */
-    @Test
+    @Test(expected = CustomException.class)
     public void testUpdateMaterial_wParameters_negOutOfBoundsID_overloaded_wDesc() throws Exception {
         int id = Integer.MIN_VALUE;
         int size = 5;
@@ -226,8 +237,6 @@ public class MaterialMapperTest {
         String describtion = "eleven";
 
         MaterialMapper.updateMaterial(id, size, price, describtion);
-        Material result = MaterialMapper.getMaterial(id);
-        assertNull(result);
     }
 
     /**
@@ -238,15 +247,13 @@ public class MaterialMapperTest {
      *
      * @throws java.lang.Exception
      */
-    @Test
+    @Test(expected = CustomException.class)
     public void testUpdateMaterial_wParameters_posOutOfBoundsID() throws Exception {
         int id = Integer.MAX_VALUE;
         int size = 5;
         int price = 7;
 
         MaterialMapper.updateMaterial(id, size, price);
-        Material result = MaterialMapper.getMaterial(id);
-        assertNull(result);
     }
 
     /**
@@ -258,7 +265,7 @@ public class MaterialMapperTest {
      *
      * @throws java.lang.Exception
      */
-    @Test
+    @Test(expected = CustomException.class)
     public void testUpdateMaterial_wParameters_posOutOfBoundsID_overloaded_wDesc() throws Exception {
         int id = Integer.MAX_VALUE;
         int size = 5;
@@ -266,8 +273,6 @@ public class MaterialMapperTest {
         String describtion = "eleven";
 
         MaterialMapper.updateMaterial(id, size, price, describtion);
-        Material result = MaterialMapper.getMaterial(id);
-        assertNull(result);
     }
 
     /**
@@ -286,8 +291,6 @@ public class MaterialMapperTest {
         int price = -1;
 
         MaterialMapper.updateMaterial(id, size, price);
-        Material result = MaterialMapper.getMaterial(id);
-        assertNull(result);
     }
 
     /**
@@ -308,8 +311,6 @@ public class MaterialMapperTest {
         String describtion = "eleven";
 
         MaterialMapper.updateMaterial(id, size, price, describtion);
-        Material result = MaterialMapper.getMaterial(id);
-        assertNull(result);
     }
 
     /**
@@ -328,8 +329,6 @@ public class MaterialMapperTest {
         int price = 7;
 
         MaterialMapper.updateMaterial(id, size, price);
-        Material result = MaterialMapper.getMaterial(id);
-        assertNull(result);
     }
 
     /**
@@ -350,8 +349,6 @@ public class MaterialMapperTest {
         String describtion = "eleven";
 
         MaterialMapper.updateMaterial(id, size, price, describtion);
-        Material result = MaterialMapper.getMaterial(id);
-        assertNull(result);
     }
 
     /**

@@ -1,0 +1,30 @@
+@startuml
+
+start
+    
+    :Kunde sender forespørgsel på Carport;
+    
+    :IT-system udregner stykliste og vejledende pris;
+    
+    :Email bliver sendt til fog;
+    
+    :Fog medarbejder tjekker order i IT-System;
+    
+    :Fog medarbejder ringer til kunde for god kundeservice;
+    
+    if (rettelser) then (ja)
+        :Fog medarbejder indtaster rettelser;
+        else (nej)
+    endif
+    
+    :IT-system udregner ny vejledende pris;
+    
+    repeat
+    :Fog medarbejder laver et tilbud;
+    :Tilbud sendes til kunden;
+    repeat while (Tilbud acecepteres)
+    
+    
+stop
+
+@enduml

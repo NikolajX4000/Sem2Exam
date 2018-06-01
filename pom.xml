@@ -4,7 +4,7 @@
 
     <groupId>com.mycompany</groupId>
     <artifactId>Sem2Exam</artifactId>
-    <version>5.0</version>
+    <version>6.0</version>
     <packaging>war</packaging>
 
     <name>Sem2Exam</name>
@@ -73,7 +73,7 @@
             <artifactId>mail</artifactId>
             <version>1.4</version>
         </dependency>
-
+        
     </dependencies>
 
     <build>
@@ -155,6 +155,13 @@
                     <reportOutputDirectory>${basedir}</reportOutputDirectory>
                 </configuration>
             </plugin>            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 </project>

@@ -83,7 +83,7 @@ public class TallCarPortListTest
     public void testSpear() throws CustomException
     {
         PartLine part = carport.spear();
-        int expAmount = 8;
+        int expAmount = 18;
         int expSize = 420;
         int amount = part.getAmount();
         int size = part.getSize();

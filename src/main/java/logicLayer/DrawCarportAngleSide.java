@@ -1,6 +1,10 @@
 
 package logicLayer;
 
+/**
+ * Draws a carport with raised roof seen from the side in SVG
+ * @author Hupra Laptop
+ */
 public class DrawCarportAngleSide {
 
     String std = "fill:none;stroke:black;stroke-width:1;";
@@ -28,6 +32,10 @@ public class DrawCarportAngleSide {
     
     String tmp = "";
 
+    /**
+     *
+     * @param o constructor requires an Order, the Order should not be null
+     */
     public DrawCarportAngleSide(Order o)
     {
         isFlat = o.isFlat();
@@ -60,6 +68,10 @@ public class DrawCarportAngleSide {
         
     }
 
+    /**
+     *
+     * @return a svg drawing in a String
+     */
     public String getDrawing()
     {
         drawBricks();
@@ -128,8 +140,6 @@ public class DrawCarportAngleSide {
         
         plankAmount--;
         
-        // to give some texture to the planks :p
-        //Random rand = new Random();
         
         //top Layer
         for (int i = 0; i < plankAmount; i++) {
@@ -141,9 +151,6 @@ public class DrawCarportAngleSide {
             
             svg.rct(x, y, h, plankWidth, "fill:white;stroke:black;stroke-width:0.5;"); // first layer
             
-//            svg.rct(x, y, h, plankWidth, "fill:white;stroke:black;stroke-width:0.25;", "stroke-dasharray='3%, 0."+ rand.nextInt(9) +"%'"); // first layer
-//            svg.rct(x+0.25, y, h, plankWidth-0.5, "fill:white;stroke:black;stroke-width:0.25;", "stroke-dasharray='4%, 0."+ rand.nextInt(9) +"%'"); // first layer
-//            svg.rct(x+0.5, y, h, plankWidth-1, "fill:white;stroke:black;stroke-width:0.25;", "stroke-dasharray='5%, 0."+ rand.nextInt(9) +"%'"); // first layer
         }
     }
 

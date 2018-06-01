@@ -7,7 +7,7 @@
 <div class="row">
 
     <c:forEach items="${desiredOrdersFromEmail}" var="o">
-        <div class="col l6 m12">
+        <div class="col l12 m12">
             <div class="card">
 
 
@@ -54,12 +54,14 @@
                                 <i class="material-icons">photo</i>
                             </a>
                         </li>
-                        <li class="tab">
-                            <!-- når der klikkes på denne knap/tab loaded styklisten med ajax -->
-                            <a href="#${o.stringId}c" id="partlistbtn${o.id}" class="tooltipped partlistloadbtn" data-position="top" data-delay="50" data-tooltip="Stykliste">
-                                <i class="material-icons">format_list_bulleted</i>
-                            </a>
-                        </li>
+                        <c:if test="${(o.status ne 'Behandles') and (o.status ne 'Annulleret')}">
+                            <li class="tab">
+                                <!-- når der klikkes på denne knap/tab loaded styklisten med ajax -->
+                                <a href="#${o.stringId}c" id="partlistbtn${o.id}" class="tooltipped partlistloadbtn" data-position="top" data-delay="50" data-tooltip="Stykliste">
+                                    <i class="material-icons">format_list_bulleted</i>
+                                </a>
+                            </li>
+                        </c:if>
                         <li class="tab">
                             <a href="#${o.stringId}d" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Bemærkning">
                                 <i class="material-icons">event_note</i>
@@ -131,29 +133,31 @@
                     <!-- /////// -->
 
                     <!-- partlist -->
-                    <div id="${o.stringId}c">
-                        <span class="card-title">Stykliste</span>
-                        <!-- denne div med id "partlistcontentID" vil indeholde styklisten loaded via ajax -->
-                        <div id="partlistcontent${o.id}">
-                            <!-- loader -->
-                            <div class="preloader-wrapper big active">
-                                <div class="spinner-layer spinner-blue-only">
+                    <c:if test="${(o.status ne 'Behandles') and (o.status ne 'Annulleret')}">
+                        <div id="${o.stringId}c">
+                            <span class="card-title">Stykliste</span>
+                            <!-- denne div med id "partlistcontentID" vil indeholde styklisten loaded via ajax -->
+                            <div id="partlistcontent${o.id}">
+                                <!-- loader -->
+                                <div class="preloader-wrapper big active">
+                                    <div class="spinner-layer spinner-blue-only">
 
-                                    <div class="circle-clipper left">
-                                        <div class="circle"></div>
-                                    </div>
-                                    <div class="gap-patch">
-                                        <div class="circle"></div>
-                                    </div>
-                                    <div class="circle-clipper right">
-                                        <div class="circle"></div>
-                                    </div>
+                                        <div class="circle-clipper left">
+                                            <div class="circle"></div>
+                                        </div>
+                                        <div class="gap-patch">
+                                            <div class="circle"></div>
+                                        </div>
+                                        <div class="circle-clipper right">
+                                            <div class="circle"></div>
+                                        </div>
 
+                                    </div>
                                 </div>
+                                <!-- ////// -->
                             </div>
-                            <!-- ////// -->
                         </div>
-                    </div>
+                    </c:if>
                     <!-- //////// -->
 
 

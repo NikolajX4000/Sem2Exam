@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import logicLayer.NoAccessException;
 
 /**
- *
+ * This command update the statsu and/or price of a given order and returns to the allOrders.jsp page.
  * @author super
  */
 public class CmdUpdateOrder extends Command
@@ -25,7 +25,7 @@ public class CmdUpdateOrder extends Command
         try
         {
             //update status
-            LogicFacade.updateOrder(Integer.parseInt(request.getParameter("target")), request.getParameter("newStatus"));
+            LogicFacade.updateStatus(Integer.parseInt(request.getParameter("target")), request.getParameter("newStatus"));
 
             //update pris
             if (request.getParameter("newPrice") != null)

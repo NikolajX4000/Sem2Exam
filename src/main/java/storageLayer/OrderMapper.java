@@ -14,7 +14,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import logicLayer.Log;
 
+/**
+ *
+ * @author super
+ */
 public class OrderMapper {
 
     /**
@@ -22,8 +27,8 @@ public class OrderMapper {
      * This method calls the database with a prepared statement to 
      * request an insert to ad an order into the orders table.
      *
-     * @param order The new order object, should not be null.
-     * @return the new order object with the generated id key and status.
+     * @param order The new order object. Should not be null.
+     * @return The new order object with the generated id key and status.
      * @throws CustomException if SQl syntax contains errors, can't connect to database, 
      * the connection class isn't found or the closeStatement() method can't close the connection.
      */
@@ -75,7 +80,8 @@ public class OrderMapper {
             }
 
         } catch(SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
+            Log.severe(ex);
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
@@ -103,51 +109,51 @@ public class OrderMapper {
 
             ps = con.prepareStatement(SQL);
             ps.setInt(1, id);
+            
             ResultSet rs = ps.executeQuery();
-
+            
             if(rs.first()) {
                 order.
-                        /* order id */
-                        setId(id).
-                        /* customer */
-                        setName(rs.getString("name")).
-                        setAddress(rs.getString("address")).
-                        setZipCode(rs.getInt("zip_code")).
-                        setCity(rs.getString("city")).
-                        setPhone(rs.getString("phone")).
-                        setEmail(rs.getString("email")).
-                        setNote(rs.getString("note")).
-                        /* carport */
-                        setWidth(rs.getInt("width")).
-                        setLength(rs.getInt("length")).
-                        /* roof */
-                        setRoof(rs.getInt("roof_id")).
-                        setAngle(rs.getInt("angle")).
-                        /* shed */
-                        setShedWidth(rs.getInt("shed_width")).
-                        setShedLength(rs.getInt("shed_length")).
-                        /* dates */
-                        setPlaced(rs.getString("placed").substring(0, 10)).
-                        /* status */
-                        setStatus(rs.getString("status")).
-                        /* price */
-                        setMaterialPrice(rs.getInt("material_price")).
-                        setPrice(rs.getInt("price"));
+                    /* order id */
+                    setId(id).
+                    /* customer */
+                    setName(rs.getString("name")).
+                    setAddress(rs.getString("address")).
+                    setZipCode(rs.getInt("zip_code")).
+                    setCity(rs.getString("city")).
+                    setPhone(rs.getString("phone")).
+                    setEmail(rs.getString("email")).
+                    setNote(rs.getString("note")).
+                    /* carport */
+                    setWidth(rs.getInt("width")).
+                    setLength(rs.getInt("length")).
+                    /* roof */
+                    setRoof(rs.getInt("roof_id")).
+                    setAngle(rs.getInt("angle")).
+                    /* shed */
+                    setShedWidth(rs.getInt("shed_width")).
+                    setShedLength(rs.getInt("shed_length")).
+                    /* dates */
+                    setPlaced(rs.getString("placed").substring(0, 10)).
+                    /* status */
+                    setStatus(rs.getString("status")).
+                    /* price */
+                    setMaterialPrice(rs.getInt("material_price")).
+                    setPrice(rs.getInt("price"));
+            } else {
+                throw new CustomException( "Dette ID er ikke tilgængeligt" );
             }
 
         } catch(SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
+            Log.severe(ex);
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
-        }
-        
-        if ( order.getId() == 0 ) {
-            throw new CustomException( "Dette ID er ikke tilgængeligt" );
-        }
-        
+        }        
         return order;
     }
-
+    
+    
     /**
      * Get orders by email.
      * This method calls the database with a prepared statement to
@@ -206,7 +212,8 @@ public class OrderMapper {
             }
 
         } catch(SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
+            Log.severe(ex);
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
@@ -214,7 +221,7 @@ public class OrderMapper {
     }
 
     /**
-     * Get all Orders.
+     * Get all orders.
      * This method calls the database with a prepared statement to 
      * request an arraylist of all elements from the orders table.
      *
@@ -267,7 +274,8 @@ public class OrderMapper {
             }
 
         } catch(SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
+            Log.severe(ex);
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
@@ -321,7 +329,8 @@ public class OrderMapper {
             ps.executeUpdate();
 
         } catch(SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
+            Log.severe(ex);
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
@@ -329,9 +338,9 @@ public class OrderMapper {
     }
 
     /**
-     * Update Order status by Order object.
+     * Update Order status with Order object.
      * This method calls the database with a prepared statement to
-     * request an update on a specific order. By using an order object as 
+     * request an update on a specific order status. By using an order object as 
      * parameter, this method will use the objects getId() and getStatus() 
      * to modify the attributes for the giving id.
      *
@@ -357,7 +366,8 @@ public class OrderMapper {
             ps.executeUpdate();
 
         } catch(SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
+            Log.severe(ex);
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
@@ -365,11 +375,13 @@ public class OrderMapper {
     }
 
     /**
-     * Update Order status by Order object.
-     * This method updates an orders status.
+     * Update Order status by id.
+     * This method calls the database with a prepared statement to
+     * request an update on a specific order. By using id and status as parameters,
+     * this method can update the status attributes for the giving id.
      *
-     * @param id
-     * @param status
+     * @param id The id of the order. Should not be out of index bounds.
+     * @param status The modified status. Should not be null.
      * @throws CustomException if SQl syntax contains errors, can't connect to database, 
      * the connection class isn't found or the closeStatement() method can't close the connection.
      */
@@ -390,13 +402,26 @@ public class OrderMapper {
             ps.executeUpdate();
 
         } catch(SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
+            Log.severe(ex);
+            throw new CustomException( "Kunne ikke hente information" );
         } finally {
             closeStatement(ps);
         }
     }
-
+    
+    /**
+     * Update Order price by id.
+     * This method calls the database with a prepared statement to
+     * request an update on a specific order. By using id and price as parameters,
+     * this method can update the status attributes for the giving id.
+     *
+     * @param id The id of the order. Should not be out of index bounds.
+     * @param price The modified price. Should not be negative.
+     * @throws CustomException if SQl syntax contains errors, can't connect to database, 
+     * the connection class isn't found or the closeStatement() method can't close the connection.
+     */
     public static void updatePrice(int id, int price) throws CustomException {
+        if ( price < 0 ) throw new CustomException( "Kunne ikke hente information" );
         PreparedStatement ps = null;
 
         try {
@@ -413,18 +438,20 @@ public class OrderMapper {
             ps.executeUpdate();
 
         } catch(SQLException | ClassNotFoundException ex) {
-            throw new CustomException(ex.getMessage());
+            Log.severe(ex);
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
     }
 
     /**
-     * This method will close the prepared statement connection if it's
-     * connection, the reason is to reduce as musch in- and outgoing trafic from
-     * the server.
+     * Close Prepared Statement connection.
+     * This method will close the prepared statement connection 
+     * if it's connected. The reason is to reduce
+     * in- and outgoing trafic from the server.
      *
-     * @param ps PreparedStatement object, the SQL controller.
+     * @param ps PreparedStatement object. Should not be null.
      * @throws CustomException if it can't close the connection.
      */
     private static void closeStatement(PreparedStatement ps) throws CustomException {
@@ -432,6 +459,7 @@ public class OrderMapper {
             try {
                 ps.close();
             } catch(SQLException ex) {
+                Log.severe(ex);
                 throw new CustomException("Kunne ikke få kontakt til databasen");
             }
         }
