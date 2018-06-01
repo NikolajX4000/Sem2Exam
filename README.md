@@ -2,9 +2,9 @@
 
 Link to javadoc: https://nikolajx4000.github.io/Sem2Exam/
 
-Link to site: hupra.dk/fog
+Link to site: http://hupra.dk/fog/
 
-Admin Login:
+# Admin Login:
 
 username: Daniel
 
