@@ -1,22 +1,22 @@
-25x200 mm. trykimp. Br�t	        	300,    360,    420,    480,    540,    600				55
-25x125 mm. trykimp. Br�t	        	300,    360,    420,    480,    540,    600				32
-38x73 mm. L�gte ubh.		        	        360,    420,    480,    540					23
+﻿25x200 mm. trykimp. Bræt	        	300,    360,    420,    480,    540,    600				55
+25x125 mm. trykimp. Bræt	        	300,    360,    420,    480,    540,    600				32
+38x73 mm. Lægte ubh.		        	        360,    420,    480,    540					23
 45x95 mm. Reglar ub.			240,270,300,330,360,390,420,450,480,510,540					16
-45x195 mm sp�rtr� ubh				300,    360,    420,    480,    540,    600,    660,    720		39
+45x195 mm spærtræ ubh				300,    360,    420,    480,    540,    600,    660,    720		39
 97x97 mm. trykimp. Stolpe	180,210,240,270,300,    360,    420,    480						35
-19x100 mm. trykimp. Br�t			300,    360,    420,    480						21
-Plastmo Ecolite bl�tonet		240,    300,    360,    420,    480,            600				40
+19x100 mm. trykimp. Bræt			300,    360,    420,    480						21
+Plastmo Ecolite blåtonet		240,    300,    360,    420,    480,            600				40
 
 Plastmo	Bundskruer 200 stk.							200				       220
-hulb�nd 1x20 mm. 10 mtr.							 10				       209
-universal 190mm h�jre								  1					18
+hulbånd 1x20 mm. 10 mtr.							 10				       209
+universal 190mm højre								  1					18
 universal 190mm venstre								  1					18
 4,5x60 mm. skruer 200 stk.							200				       159
 4,0x50 mm. beslagskruer 250 stk.						250				       269
-br�ddebolt 10x120 mm.								  1					19
+bræddebolt 10x120 mm.								  1					19
 firkantskiver 40x40x11 mm.							  1					10
 4,5x70 mm. Skruer 400 stk.							400				       199
 4,5x50 mm. Skruer 300 stk.							300					96
-staldd�rsgreb 50x75								  1				       189
-t h�ngsel 390 mm.								  1				       120
+stalddørsgreb 50x75								  1				       189
+t hængsel 390 mm.								  1				       120
 vinkelbeslag 35									  1					 6
