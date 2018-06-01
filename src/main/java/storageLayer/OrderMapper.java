@@ -217,7 +217,7 @@ public class OrderMapper {
     }
 
     /**
-     * Get all Orders.
+     * Get all orders.
      * This method calls the database with a prepared statement to 
      * request an arraylist of all elements from the orders table.
      *
