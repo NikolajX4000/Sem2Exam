@@ -7,7 +7,7 @@
 <div class="row">
 
     <c:forEach items="${desiredOrdersFromEmail}" var="o">
-        <div class="col l6 m12">
+        <div class="col l12 m12">
             <div class="card">
 
 
