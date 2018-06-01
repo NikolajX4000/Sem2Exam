@@ -2,6 +2,7 @@ package logicLayer;
 
 /**
  * A roof has information about a specific roof. id, name, type.
+ *
  * @author super
  */
 public class Roof {
@@ -12,9 +13,10 @@ public class Roof {
 
     /**
      *
-     * @param id
-     * @param name
-     * @param type
+     * @param id the id from the database
+     * @param name the name of the roof
+     * @param type 0 if for carport with flat roof and 1 if for carport with
+     * raised roof
      */
     public Roof(int id, String name, int type) {
         this.ID = id;
