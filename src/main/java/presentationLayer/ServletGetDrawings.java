@@ -33,7 +33,6 @@ public class ServletGetDrawings extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        //request.setAttribute("test", request.getParameter("id"));
         try {
 
             int width = Integer.parseInt(request.getParameter("width"));
@@ -54,7 +53,6 @@ public class ServletGetDrawings extends HttpServlet {
             try (PrintWriter out = response.getWriter()) {
                 out.println(o.getDrawingTop());
                 out.println(o.getDrawingSide());
-                //out.println("ANGLE: " + request.getParameter("has_angle") + " | SHED: " + request.getParameter("has_shed"));
             }
 
         } catch (Exception e) {

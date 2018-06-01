@@ -35,7 +35,6 @@ public class ServletGetPartlist extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        //request.setAttribute("test", request.getParameter("id"));
         try {
 
             int id = Integer.parseInt(request.getParameter("id"));
@@ -46,14 +45,12 @@ public class ServletGetPartlist extends HttpServlet {
             request.getRequestDispatcher("/WEB-INF/parts/partlist.jsp").forward(request, response);
 
         } catch (IOException | NumberFormatException | ServletException ex) {
-            Logger.getLogger(ServletGetPartlist.class.getName()).log(Level.SEVERE, null, ex);
 
             try (PrintWriter out = response.getWriter()) {
                 out.println("<p>Der gik noget galt, prøv igen senere.</p>");
         }
 
         } catch (CustomException ex) {
-            Logger.getLogger(ServletGetPartlist.class.getName()).log(Level.SEVERE, null, ex);
 
             try (PrintWriter out = response.getWriter()) {
                 out.println("<p>" + ex.getMessage() + "</p>");
