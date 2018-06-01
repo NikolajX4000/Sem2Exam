@@ -23,8 +23,8 @@ public class DanielsPostHus {
      * @param subject the subject line in the email
      * @param content the content for the email (HTML)
      * @param receiver the email adresse of the receiver
-     * @throws AddressException
-     * @throws MessagingException
+     * @throws AddressException is thrown if InternetAddress is given an invalid address
+     * @throws MessagingException is thrown if something goes wrong with the message you're trying to send
      */
     
     public static void sendMail(String subject, String content, String receiver) throws AddressException, MessagingException {
@@ -55,8 +55,8 @@ public class DanielsPostHus {
     /**
      *
      * @param o Order, takes details from Order and sends an email to fodlyngby@gmail.com
-     * @throws MessagingException
-     * @throws CustomException
+     * @throws MessagingException is thrown if the message isn't sent 
+     * @throws CustomException is thrown if there is something wrong with the Order it has recieved
      */
     public static void newOrder(Order o) throws MessagingException, CustomException {
         
