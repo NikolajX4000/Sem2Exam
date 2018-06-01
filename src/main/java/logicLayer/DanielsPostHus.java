@@ -4,6 +4,10 @@ import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
 
+/**
+ *
+ * @author Hupra Laptop
+ */
 public class DanielsPostHus {
 
 
@@ -13,6 +17,15 @@ public class DanielsPostHus {
 //    public static void main(String[] args) throws MessagingException {
 //        sendMail("Ny ordre klar til behandling", "<div>Jeg er en div hihi</div>", "foglyngby@gmail.com");
 //    }
+
+    /**
+     *
+     * @param subject the subject line in the email
+     * @param content the content for the email (HTML)
+     * @param receiver the email adresse of the receiver
+     * @throws AddressException
+     * @throws MessagingException
+     */
     
     public static void sendMail(String subject, String content, String receiver) throws AddressException, MessagingException {
         
@@ -39,6 +52,12 @@ public class DanielsPostHus {
         transport.close();
     }
     
+    /**
+     *
+     * @param o Order, takes details from Order and sends an email to fodlyngby@gmail.com
+     * @throws MessagingException
+     * @throws CustomException
+     */
     public static void newOrder(Order o) throws MessagingException, CustomException {
         
         String subject = "Ny ordre af carport på " + o.getWidth() + "x" + o.getLength();

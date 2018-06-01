@@ -1,6 +1,10 @@
 
 package logicLayer;
 
+/**
+ *
+ * @author Hupra Laptop
+ */
 public class DrawCarportFlatTop {
     
     String std = "fill:none;stroke:black;stroke-width:1;";
@@ -21,6 +25,10 @@ public class DrawCarportFlatTop {
     
     String tmp = "";
 
+    /**
+     *
+     * @param o constructor requires an Order, the Order should not be null
+     */
     public DrawCarportFlatTop(Order o)
     {
         isFlat = o.isFlat();
@@ -48,7 +56,10 @@ public class DrawCarportFlatTop {
         
     }
     
-    
+    /**
+     *
+     * @return svg drawing in a String
+     */
     public String getDrawing() {
         
         

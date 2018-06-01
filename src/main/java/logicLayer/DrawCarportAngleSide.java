@@ -1,6 +1,10 @@
 
 package logicLayer;
 
+/**
+ *
+ * @author Hupra Laptop
+ */
 public class DrawCarportAngleSide {
 
     String std = "fill:none;stroke:black;stroke-width:1;";
@@ -28,6 +32,10 @@ public class DrawCarportAngleSide {
     
     String tmp = "";
 
+    /**
+     *
+     * @param o constructor requires an Order, the Order should not be null
+     */
     public DrawCarportAngleSide(Order o)
     {
         isFlat = o.isFlat();
@@ -60,6 +68,10 @@ public class DrawCarportAngleSide {
         
     }
 
+    /**
+     *
+     * @return a svg drawing in a String
+     */
     public String getDrawing()
     {
         drawBricks();
