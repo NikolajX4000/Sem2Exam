@@ -4,7 +4,7 @@
 
     <groupId>com.mycompany</groupId>
     <artifactId>Sem2Exam</artifactId>
-    <version>5.0</version>
+    <version>6.0</version>
     <packaging>war</packaging>
 
     <name>Sem2Exam</name>
