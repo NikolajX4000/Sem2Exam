@@ -77,7 +77,7 @@ public class OrderMapper {
 
         } catch(SQLException | ClassNotFoundException ex) {
             Log.severe(ex);
-            throw new CustomException(ex.getMessage());
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
@@ -142,7 +142,7 @@ public class OrderMapper {
 
         } catch(SQLException | ClassNotFoundException ex) {
             Log.severe(ex);
-            throw new CustomException(ex.getMessage());
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }        
@@ -209,7 +209,7 @@ public class OrderMapper {
 
         } catch(SQLException | ClassNotFoundException ex) {
             Log.severe(ex);
-            throw new CustomException(ex.getMessage());
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
@@ -326,7 +326,7 @@ public class OrderMapper {
 
         } catch(SQLException | ClassNotFoundException ex) {
             Log.severe(ex);
-            throw new CustomException(ex.getMessage());
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
@@ -363,7 +363,7 @@ public class OrderMapper {
 
         } catch(SQLException | ClassNotFoundException ex) {
             Log.severe(ex);
-            throw new CustomException(ex.getMessage());
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }

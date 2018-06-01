@@ -52,7 +52,7 @@ public class ToolMapper {
 
         } catch(SQLException | ClassNotFoundException ex) {
             Log.severe(ex);
-            throw new CustomException(ex.getMessage());
+            throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
         }
