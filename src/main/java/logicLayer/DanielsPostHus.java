@@ -87,8 +87,14 @@ public class DanielsPostHus {
         
         s.append("</table>");
         
-        s.append("<h4>Bemrkning:</h4>");
-        s.append("<p>").append(o.getNote()).append("</p>");
+        
+        if(!o.getNote().equals("")){
+            
+            s.append("<h4>Bemærkning:</h4>");
+            s.append("<p>").append(o.getNote()).append("</p>");
+        }
+        
+        s.append("<br><a href='hupra.dk/fog/?command=CmdShowOrders&email=").append(o.getEmail()).append("'>Gå til ordre siden</a>");
         
         sendMail(subject, s.toString(), receiver);
 
