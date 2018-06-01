@@ -6,7 +6,9 @@
 package logicLayer;
 
 /**
- * A material can be different things, such as a plank, a tool, a screw etc. it contains the needed information of that specific item.
+ * A material can be different things, such as a plank, a tool, a screw etc. it
+ * contains the needed information of that specific item.
+ *
  * @author Stephan
  */
 public class Material {
@@ -66,10 +68,10 @@ public class Material {
      *
      * @param price set price of material
      * @return this
-     * @throws logicLayer.CustomException
+     * @throws logicLayer.CustomException if price is negative
      */
     public Material setPrice(int price) throws CustomException {
-        if(price >= 0) {
+        if (price >= 0) {
             this.price = price;
         } else {
             throw new CustomException("Pris kan ikke være negativ");
@@ -90,10 +92,10 @@ public class Material {
      *
      * @param size set a new size
      * @return this
-     * @throws logicLayer.CustomException
+     * @throws logicLayer.CustomException if size is negative
      */
     public Material setSize(int size) throws CustomException {
-        if(size >= 0) {
+        if (size >= 0) {
             this.size = size;
         } else {
             throw new CustomException("Støresle kan ikke være negativ");
@@ -132,10 +134,10 @@ public class Material {
      *
      * @param unitSize sets new unitSize
      * @return this
-     * @throws logicLayer.CustomException
+     * @throws logicLayer.CustomException if unitSize is negative
      */
     public Material setUnitSize(int unitSize) throws CustomException {
-        if(unitSize >= 0) {
+        if (unitSize >= 0) {
             this.unitSize = unitSize;
         } else {
             throw new CustomException("Enhedsstørelse kan ikke være negativ");
