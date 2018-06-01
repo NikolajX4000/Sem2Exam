@@ -5,6 +5,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+/**
+ *
+ * @author Hupra Laptop
+ */
 public class Log {
 
     private static final String FILENAME = "sql.log";
@@ -35,6 +39,10 @@ public class Log {
 
     }
 
+    /**
+     *
+     * @param t takes exception and saves the message to file 
+     */
     public static void severe(Throwable t) {
 
         try {

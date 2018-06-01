@@ -8,7 +8,7 @@ public class CustomException extends Exception {
 
     /**
      *
-     * @param msg
+     * @param msg you want displayed to the user
      */
     public CustomException(String msg) {
         super(msg);

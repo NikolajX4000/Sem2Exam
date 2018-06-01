@@ -6,8 +6,15 @@
 
 package logicLayer;
 
+/**
+ *
+ * @author Hupra Laptop
+ */
 public class NoAccessException extends Exception  {
 
+    /**
+     * Sets super to friendly msg, saying access not allowed
+     */
     public NoAccessException()
     {
         super("Adgang ikke tilladt, venligst log ind");

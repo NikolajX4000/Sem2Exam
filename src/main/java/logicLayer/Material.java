@@ -20,7 +20,7 @@ public class Material {
 
     /**
      *
-     * @return
+     * @return name of the material
      */
     public String getName() {
         return name;
@@ -28,8 +28,8 @@ public class Material {
 
     /**
      *
-     * @param name
-     * @return
+     * @param name materials new name
+     * @return set the name of material
      */
     public Material setName(String name) {
         this.name = name;
@@ -38,7 +38,7 @@ public class Material {
 
     /**
      *
-     * @return
+     * @return id of the material
      */
     public int getId() {
         return id;
@@ -46,8 +46,8 @@ public class Material {
 
     /**
      *
-     * @param id
-     * @return
+     * @param id materials new id
+     * @return this
      */
     public Material setId(int id) {
         this.id = id;
@@ -56,7 +56,7 @@ public class Material {
 
     /**
      *
-     * @return
+     * @return the price as an integer
      */
     public int getPrice() {
         return price;
@@ -64,8 +64,8 @@ public class Material {
 
     /**
      *
-     * @param price
-     * @return
+     * @param price set price of material
+     * @return this
      * @throws logicLayer.CustomException
      */
     public Material setPrice(int price) throws CustomException {
@@ -80,7 +80,7 @@ public class Material {
 
     /**
      *
-     * @return
+     * @return the price
      */
     public int getSize() {
         return size;
@@ -88,8 +88,8 @@ public class Material {
 
     /**
      *
-     * @param size
-     * @return
+     * @param size set a new size
+     * @return this
      * @throws logicLayer.CustomException
      */
     public Material setSize(int size) throws CustomException {
@@ -104,7 +104,7 @@ public class Material {
 
     /**
      *
-     * @return
+     * @return material description
      */
     public String getDescription() {
         return description;
@@ -112,8 +112,8 @@ public class Material {
 
     /**
      *
-     * @param description
-     * @return
+     * @param description set new mateiral description
+     * @return this
      */
     public Material setDescription(String description) {
         this.description = description;
@@ -122,7 +122,7 @@ public class Material {
 
     /**
      *
-     * @return
+     * @return the unitSize
      */
     public int getUnitSize() {
         return unitSize;
@@ -130,8 +130,8 @@ public class Material {
 
     /**
      *
-     * @param unitSize
-     * @return
+     * @param unitSize sets new unitSize
+     * @return this
      * @throws logicLayer.CustomException
      */
     public Material setUnitSize(int unitSize) throws CustomException {
