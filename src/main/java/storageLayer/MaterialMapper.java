@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import logicLayer.Log;
 
 /**
  *
@@ -51,6 +52,7 @@ public class MaterialMapper {
             }
 
         } catch (SQLException | ClassNotFoundException ex) {
+            Log.severe(ex);
             throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
@@ -90,6 +92,7 @@ public class MaterialMapper {
             }
             
         } catch (SQLException | ClassNotFoundException ex) {
+            Log.severe(ex);
             throw new CustomException( "Kunne ikke hente infomation" );
         } finally {
             closeStatement(ps);
@@ -130,6 +133,7 @@ public class MaterialMapper {
             }
 
         } catch (SQLException | ClassNotFoundException ex) {
+            Log.severe(ex);
             throw new CustomException( "Kunne ikke hente information" );
         } finally {
             closeStatement(ps);
@@ -168,6 +172,7 @@ public class MaterialMapper {
             if ( rs != 0 ) return material;
 
         } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
+            Log.severe(ex);
             throw new CustomException( "Kunne ikke hente information" );
         } finally {
             closeStatement(ps);
@@ -208,6 +213,7 @@ public class MaterialMapper {
             int rs = ps.executeUpdate();
             if ( rs == 0 ) throw new CustomException( "Kunne ikke hente information" );
         } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
+            Log.severe(ex);
             throw new CustomException( "Kunne ikke hente information" );
         } finally {
             closeStatement(ps);
@@ -247,6 +253,7 @@ public class MaterialMapper {
             if ( rs == 0 ) throw new CustomException( "Kunne ikke hente information" );
 
         } catch (SQLException | ClassNotFoundException ex) {
+            Log.severe(ex);
             throw new CustomException( "Kunne ikke hente information" );
         } finally {
             closeStatement(ps);
@@ -267,6 +274,7 @@ public class MaterialMapper {
             try {
                 ps.close();
             } catch (SQLException ex) {
+                Log.severe(ex);
                 throw new CustomException( "Kunne ikke hente information" );
             }
         }

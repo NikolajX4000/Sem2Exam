@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import logicLayer.Log;
 import org.mindrot.jbcrypt.BCrypt;
 
 /**
@@ -38,6 +39,7 @@ public class EmployeeMapper {
             }
 
         } catch (SQLException | ClassNotFoundException ex) {
+            Log.severe(ex);
             throw new CustomException(ex.getMessage());
         } finally {
             closeStatement(ps);
@@ -72,7 +74,8 @@ public class EmployeeMapper {
 
             closeStatement(ps);
 
-        } catch (ClassNotFoundException | SQLException e) {
+        } catch (ClassNotFoundException | SQLException ex) {
+            Log.severe(ex);
             throw new CustomException("Formateringsfejl");
         }
 
@@ -91,6 +94,7 @@ public class EmployeeMapper {
             try {
                 ps.close();
             } catch (SQLException ex) {
+                Log.severe(ex);
                 throw new CustomException("Kunne ikke få kontakt til databasen");
             }
         }
