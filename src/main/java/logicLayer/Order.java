@@ -12,8 +12,10 @@ import java.util.Locale;
 import java.util.Random;
 
 /**
- * An order includes everything about a specific Order
- * It has the partlist, contact information, the drawings, and the general order information like status, price, date of order etc.
+ * An order includes everything about a specific Order It has the partlist,
+ * contact information, the drawings, and the general order information like
+ * status, price, date of order etc.
+ *
  * @author Stephan
  */
 public class Order {
@@ -55,7 +57,8 @@ public class Order {
     /**
      *
      * @return calculated price from partlist
-     * @throws CustomException
+     * @throws CustomException may throw CustomException thrown from
+     * MaterialMapper.java
      */
     public int calculatePrice() throws CustomException {
         materialPrice = 0;
@@ -68,7 +71,8 @@ public class Order {
     /**
      *
      * @return the price unformatted
-     * @throws logicLayer.CustomException
+     * @throws logicLayer.CustomException may throw CustomException thrown from
+     * MaterialMapper.java
      */
     public int getPriceInt() throws CustomException {
 
@@ -83,7 +87,8 @@ public class Order {
     /**
      *
      * @return the price formatted
-     * @throws logicLayer.CustomException
+     * @throws logicLayer.CustomException may throw CustomException thrown from
+     * MaterialMapper.java
      */
     public String getPrice() throws CustomException {
 
@@ -167,7 +172,7 @@ public class Order {
 
     /**
      *
-     * @return randomly generalted unique string for this Order 
+     * @return randomly generalted unique string for this Order
      */
     public String getStringId() {
         if (stringId == null) {
@@ -358,7 +363,9 @@ public class Order {
 
     /**
      *
-     * @return @throws logicLayer.CustomException
+     * @return the roof corosponding to this
+     * @throws logicLayer.CustomException may throw CustomException thrown from
+     * RoofMapper.java
      */
     public Roof getRoof() throws CustomException {
         return StorageFacade.getRoofById(roof);
@@ -367,7 +374,7 @@ public class Order {
     /**
      *
      * @param roof sets the carports roof to its ID
-     * @return
+     * @return this
      */
     public Order setRoof(int roof) {
         this.roof = roof;
@@ -420,7 +427,7 @@ public class Order {
 
     /**
      *
-     * @param shedLength sets the shed length 
+     * @param shedLength sets the shed length
      * @return this
      */
     public Order setShedLength(int shedLength) {
@@ -438,7 +445,7 @@ public class Order {
 
     /**
      *
-     * @param placed sets the date Order was placed 
+     * @param placed sets the date Order was placed
      * @return this
      */
     public Order setPlaced(String placed) {
@@ -476,7 +483,8 @@ public class Order {
      *
      * @param materialPrice sets material price
      * @return this
-     * @throws CustomException
+     * @throws CustomException may throw CustomException thrown from
+     * MaterialMapper.java
      */
     public Order setMaterialPrice(int materialPrice) throws CustomException {
         calculatePrice();
@@ -510,7 +518,8 @@ public class Order {
     /**
      *
      * @return the partlist
-     * @throws CustomException
+     * @throws CustomException may throw CustomException thrown from
+     * MaterialMapper.java
      */
     public List<PartLine> getPartlist() throws CustomException {
         if (partsList == null) {
