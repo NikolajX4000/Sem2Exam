@@ -377,8 +377,7 @@ Vi er blevet kontaktet af Johannes Fog Værebro, der har spurgt om vi kan
  lave et program og tilhørende hjemmeside til deres salg af carporte.
  Deres nuværende system bygger på manuelt arbejde samt en ikke tilstrækkelig
  adgang til ændringer i både system og database.
- Dette er nogle af de problemstillinger der er ved Fogs nuværende system,
- som skal være forbedret med vores website.
+ Dette er nogle af fokuspunkterne der er stillet i vores opgave.
 \end_layout
 
 \begin_layout Subsection
@@ -1175,7 +1174,8 @@ Independent: For at give kunden mulighed for at bestille en carport.
 \begin_layout Itemize
 \noindent
 \align block
-Negotiable: Den afhænger ikke af andre user stories.
+Negotiable: Userstoryen beskriver ikke om det skal være en pre-designet
+ eller selv-designet carport.
  
 \end_layout
 
@@ -1400,8 +1400,8 @@ Negotiable: Storien definere ikke hvordan carporten skal tegnes, men kun
 \begin_layout Itemize
 \noindent
 \align block
-Valuable: Skaber værdi for Fog da deres konkurrenter har det, så de ville
- miste kunder hvis de ikke havde det.
+Valuable: Det er af ret stor værdi for kunden at kunne se hvordan den carport
+ man bestiller kommer til at se ud.
  
 \end_layout
 
@@ -1416,8 +1416,8 @@ Estimable: Denne user story vurderede vi til at tage en uges arbejde, siden
 \begin_layout Itemize
 \noindent
 \align block
-Small: Denne userstory var Episk eftersom den krævede en del mere arbejde
- end de fleste andre.
+Small: Dette punkt er ikke opfyldt da det er en ret stor story.
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -1609,8 +1609,7 @@ Estimable: Denne User story vurderede vi til at tage en uges arbejde, siden
 \begin_layout Itemize
 \noindent
 \align block
-Small: Denne userstory var Episk eftersom den krævede en del mere arbejde
- end de fleste andre .
+Small: Dette punkt er ikke opfyldt da det er en ret stor story.
  
 \end_layout
 
@@ -2794,8 +2793,8 @@ status open
 
 
 \backslash
-textit{reference: Source Packages/logicLayer/TallCarPortList.java ( 129 -
- 139 )}
+textit{reference: Source Packages/logicLayer/TallCarPortList.java ( 125 -
+ 134 )}
 \end_layout
 
 \end_inset
@@ -2919,8 +2918,8 @@ status open
 
 
 \backslash
-textit{reference: Source Packages/logicLayer/TallCarPortList.java ( 500 -
- 515 )}
+textit{reference: Source Packages/logicLayer/TallCarPortList.java ( 450 -
+ 461 )}
 \end_layout
 
 \end_inset
@@ -2931,13 +2930,12 @@ textit{reference: Source Packages/logicLayer/TallCarPortList.java ( 500 -
 \begin_layout Standard
 \noindent
 \align block
-Der kigges på alle Material, som ligger i allMaterials som er en attribut
- der indeholder alle Material.
- For alle Material der har samme .getName() som 'name', bliver de gemt i
- en List.
- Hvis der ikke bliver fundet nogle Material med det rigtige 'name' bliver
- der kastet en CustomExeption, ellers bliver der returneret den List som
- indeholder alle de Material med det rigtige 'name'.
+Der kigges på alle Material som ligger i allMaeterials som er en attribut
+ der indeholder alle Material og for alle Material der har samme getName
+ som name bliver de gemt i en List, hvis der ikke bliver fundet nogen Material
+ med det rigtige name bliver der kastet en CustomExeption ellers bliver
+ der returneres den List som indeholder alle de Material med det rigtige
+ name.
 \end_layout
 
 \begin_layout Standard
@@ -2966,62 +2964,22 @@ private Material findBestMat(double length, List<Material> list) throws
 
 \begin_layout Plain Layout
 
-    double wasted;
+        double wasted;
 \end_layout
 
 \begin_layout Plain Layout
 
-    Material mat = null;
+        Material mat = null;
 \end_layout
 
 \begin_layout Plain Layout
 
-    if (length <= 0) {
+        if (length <= 0) {
 \end_layout
 
 \begin_layout Plain Layout
 
-        throw new CustomException("mærklige mål");
-\end_layout
-
-\begin_layout Plain Layout
-
-    }
-\end_layout
-
-\begin_layout Plain Layout
-
-    for (int i = list.size() - 1; i >= 0; i--) {
-\end_layout
-
-\begin_layout Plain Layout
-
-        wasted = 1 - (length / list.get(i).getSize()) % 1;
-\end_layout
-
-\begin_layout Plain Layout
-
-        if (wasted == 0) {
-\end_layout
-
-\begin_layout Plain Layout
-
-            return list.get(i);
-\end_layout
-
-\begin_layout Plain Layout
-
-        } else if (wasted < best) {
-\end_layout
-
-\begin_layout Plain Layout
-
-            mat = list.get(i);
-\end_layout
-
-\begin_layout Plain Layout
-
-            best = wasted;
+            throw new CustomException("mærklige mål");
 \end_layout
 
 \begin_layout Plain Layout
@@ -3031,12 +2989,62 @@ private Material findBestMat(double length, List<Material> list) throws
 
 \begin_layout Plain Layout
 
-    }
+        for (int i = list.size() - 1; i >= 0; i--) {
 \end_layout
 
 \begin_layout Plain Layout
 
-    return mat;
+            wasted = (length / list.get(i).getSize()) % 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+            if (wasted == 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                return list.get(i);
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+            wasted = 1 - wasted;
+\end_layout
+
+\begin_layout Plain Layout
+
+            if (wasted < best) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                mat = list.get(i);
+\end_layout
+
+\begin_layout Plain Layout
+
+                best = wasted;
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+        return mat;
 \end_layout
 
 \begin_layout Plain Layout
@@ -3059,8 +3067,8 @@ status open
 
 
 \backslash
-textit{reference: Source Packages/logicLayer/TallCarPortList.java ( 446 -
- 469 )}
+textit{reference: Source Packages/logicLayer/TallCarPortList.java ( 406 -
+ 426 )}
 \end_layout
 
 \end_inset
@@ -3882,7 +3890,7 @@ status open
 
 
 \backslash
-textit{reference: storageLayer/ToolMapper.java ( 59 - 87 )}
+textit{reference: storageLayer/ToolMapper.java ( 72 - 101 )}
 \end_layout
 
 \end_inset
