@@ -2793,8 +2793,8 @@ status open
 
 
 \backslash
-textit{reference: Source Packages/logicLayer/TallCarPortList.java ( 129 -
- 139 )}
+textit{reference: Source Packages/logicLayer/TallCarPortList.java ( 125 -
+ 134 )}
 \end_layout
 
 \end_inset
@@ -2918,8 +2918,8 @@ status open
 
 
 \backslash
-textit{reference: Source Packages/logicLayer/TallCarPortList.java ( 500 -
- 515 )}
+textit{reference: Source Packages/logicLayer/TallCarPortList.java ( 450 -
+ 461 )}
 \end_layout
 
 \end_inset
@@ -2964,62 +2964,22 @@ private Material findBestMat(double length, List<Material> list) throws
 
 \begin_layout Plain Layout
 
-    double wasted;
+        double wasted;
 \end_layout
 
 \begin_layout Plain Layout
 
-    Material mat = null;
+        Material mat = null;
 \end_layout
 
 \begin_layout Plain Layout
 
-    if (length <= 0) {
+        if (length <= 0) {
 \end_layout
 
 \begin_layout Plain Layout
 
-        throw new CustomException("mærklige mål");
-\end_layout
-
-\begin_layout Plain Layout
-
-    }
-\end_layout
-
-\begin_layout Plain Layout
-
-    for (int i = list.size() - 1; i >= 0; i--) {
-\end_layout
-
-\begin_layout Plain Layout
-
-        wasted = 1 - (length / list.get(i).getSize()) % 1;
-\end_layout
-
-\begin_layout Plain Layout
-
-        if (wasted == 0) {
-\end_layout
-
-\begin_layout Plain Layout
-
-            return list.get(i);
-\end_layout
-
-\begin_layout Plain Layout
-
-        } else if (wasted < best) {
-\end_layout
-
-\begin_layout Plain Layout
-
-            mat = list.get(i);
-\end_layout
-
-\begin_layout Plain Layout
-
-            best = wasted;
+            throw new CustomException("mærklige mål");
 \end_layout
 
 \begin_layout Plain Layout
@@ -3029,12 +2989,62 @@ private Material findBestMat(double length, List<Material> list) throws
 
 \begin_layout Plain Layout
 
-    }
+        for (int i = list.size() - 1; i >= 0; i--) {
 \end_layout
 
 \begin_layout Plain Layout
 
-    return mat;
+            wasted = (length / list.get(i).getSize()) % 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+            if (wasted == 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                return list.get(i);
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+            wasted = 1 - wasted;
+\end_layout
+
+\begin_layout Plain Layout
+
+            if (wasted < best) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                mat = list.get(i);
+\end_layout
+
+\begin_layout Plain Layout
+
+                best = wasted;
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+        return mat;
 \end_layout
 
 \begin_layout Plain Layout
@@ -3057,8 +3067,8 @@ status open
 
 
 \backslash
-textit{reference: Source Packages/logicLayer/TallCarPortList.java ( 446 -
- 469 )}
+textit{reference: Source Packages/logicLayer/TallCarPortList.java ( 406 -
+ 426 )}
 \end_layout
 
 \end_inset
@@ -3880,7 +3890,7 @@ status open
 
 
 \backslash
-textit{reference: storageLayer/ToolMapper.java ( 59 - 87 )}
+textit{reference: storageLayer/ToolMapper.java ( 72 - 101 )}
 \end_layout
 
 \end_inset
