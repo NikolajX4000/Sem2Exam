@@ -166,7 +166,7 @@ public class FlatCarPortListTest
     {
         List<PartLine> parts = carportShed.stolperOgBolt();
         PartLine part = findPart("stolpe", parts);
-        int expAmount = 12;
+        int expAmount = 13;
         int expSize = 300;
         int amount = part.getAmount();
         int size = part.getSize();
@@ -210,7 +210,7 @@ public class FlatCarPortListTest
     public void testSpaerShed() throws Exception
     {
         PartLine part = carportShed.spaer();
-        int expAmount = 16;
+        int expAmount = 14;
         int expSize = 600;
         int amount = part.getAmount();
         int size = part.getSize();
@@ -532,7 +532,7 @@ public class FlatCarPortListTest
     public void testSpaer() throws Exception
     {
         PartLine part = carport.spaer();
-        int expAmount = 16;
+        int expAmount = 14;
         int expSize = 600;
         int amount = part.getAmount();
         int size = part.getSize();
