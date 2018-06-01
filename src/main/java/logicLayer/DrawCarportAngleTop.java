@@ -2,7 +2,7 @@
 package logicLayer;
 
 /**
- *
+ * Draws a carport with raised roof seen from above in SVG
  * @author Hupra Laptop
  */
 public class DrawCarportAngleTop {
@@ -132,7 +132,7 @@ public class DrawCarportAngleTop {
             }
         }
         
-        //spaer over carport
+        //spaer over skur
         spaerAmount = 1 + Math.ceil(shedWidth / (105 + spaerWidth));
         spaerGutter = (shedWidth-spaerWidth) / (spaerAmount-1);
         for (int i = 0; i < spaerAmount; i++) {

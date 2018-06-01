@@ -2,7 +2,7 @@
 package logicLayer;
 
 /**
- *
+ * Draws a carport with raised roof seen from the side in SVG
  * @author Hupra Laptop
  */
 public class DrawCarportAngleSide {
@@ -140,8 +140,6 @@ public class DrawCarportAngleSide {
         
         plankAmount--;
         
-        // to give some texture to the planks :p
-        //Random rand = new Random();
         
         //top Layer
         for (int i = 0; i < plankAmount; i++) {
@@ -153,9 +151,6 @@ public class DrawCarportAngleSide {
             
             svg.rct(x, y, h, plankWidth, "fill:white;stroke:black;stroke-width:0.5;"); // first layer
             
-//            svg.rct(x, y, h, plankWidth, "fill:white;stroke:black;stroke-width:0.25;", "stroke-dasharray='3%, 0."+ rand.nextInt(9) +"%'"); // first layer
-//            svg.rct(x+0.25, y, h, plankWidth-0.5, "fill:white;stroke:black;stroke-width:0.25;", "stroke-dasharray='4%, 0."+ rand.nextInt(9) +"%'"); // first layer
-//            svg.rct(x+0.5, y, h, plankWidth-1, "fill:white;stroke:black;stroke-width:0.25;", "stroke-dasharray='5%, 0."+ rand.nextInt(9) +"%'"); // first layer
         }
     }
 

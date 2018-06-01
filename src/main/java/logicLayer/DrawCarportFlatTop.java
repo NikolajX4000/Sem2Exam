@@ -2,7 +2,7 @@
 package logicLayer;
 
 /**
- *
+ * Draws a carport with flat roof seen from above in SVG
  * @author Hupra Laptop
  */
 public class DrawCarportFlatTop {
@@ -73,7 +73,6 @@ public class DrawCarportFlatTop {
         drawHeightWidthArrow();
         
         return svg.getSvg();
-        //return tmp;
     }
 
     private void drawCarport()
@@ -162,7 +161,7 @@ public class DrawCarportFlatTop {
         for (int i = 0; i < beamAmount; i++) {
             svg.rct(shedXStartAt        , shedYStartAt  + (i*beamGutter), beam, beam, "fill:none;stroke:black;stroke-width:2.5;"); // Left shed
             svg.rct(shedXEndAt - beam   , shedYStartAt  + (i*beamGutter), beam, beam, "fill:none;stroke:black;stroke-width:2.5;"); // Right shed
-            //svg.rct(xOffset             , shedYStartAt  + (i*beamGutter), beam, beam, "fill:none;stroke:red;stroke-width:2.5;"); // LEFT CP IDK IF USEFUL
+            //svg.rct(xOffset             , shedYStartAt  + (i*beamGutter), beam, beam, "fill:none;stroke:red;stroke-width:2.5;"); // NOT USED
         }
     }
     
