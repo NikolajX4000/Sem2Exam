@@ -334,7 +334,7 @@ public class OrderMapper {
     }
 
     /**
-     * Update Order status by Order object.
+     * Update Order status with Order object.
      * This method calls the database with a prepared statement to
      * request an update on a specific order status. By using an order object as 
      * parameter, this method will use the objects getId() and getStatus() 
@@ -405,26 +405,6 @@ public class OrderMapper {
         }
     }
     
-    public static void _updateStatus( int id, String status ) throws CustomException {
-        PreparedStatement ps = null;
-        String SQL  = "UPDATE orders "
-                    + "SET status = ? "
-                    + "WHERE order_id = ?";
-        
-        try ( Connection con = Connector.connection(); ){
-            ps = con.prepareStatement( SQL );
-            ps.setString( 1, status );
-            ps.setInt( 2, id );
-            ps.executeUpdate();
-
-        } catch( SQLException | ClassNotFoundException ex ) {
-            Log.severe(ex);
-            throw new CustomException( "Kunne ikke hente information" );
-        } finally {
-            closeStatement( ps );
-        }
-    }
-
     /**
      * Update Order price by id.
      * This method calls the database with a prepared statement to
