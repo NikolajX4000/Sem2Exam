@@ -22,17 +22,18 @@ public class Connector {
     }
 
     /**
-     *
-     * @param con
+     * This method sets the connection to the connection from parameter.
+     * @param con The connetion. Should not be null.
      */
     public static void setConnection(Connection con) {
         connection = con;
     }
 
     /**
-     *
-     * @return @throws ClassNotFoundException
-     * @throws SQLException
+     * This method return a Connection object. 
+     * It is made with a singleton that only initialze the connection if the connection are null.
+     * @return Connection. This objects connetion.
+     * @throws ClassNotFoundException, SQLException
      */
     public static Connection connection() throws ClassNotFoundException, SQLException {
         if (connection == null) {

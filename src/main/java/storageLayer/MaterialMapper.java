@@ -26,7 +26,7 @@ public class MaterialMapper {
      * This method calls the database with a prepared statement to 
      * request an arraylist of all elements from the materials table.
      * 
-     * @return An arraylist of all materials Objects.
+     * @return An arraylist of all materials objects.
      * @throws CustomException if SQl syntax contains errors, can't connect to database, 
      * the connection class isn't found or the closeStatement() method can't close the connection.
      */
