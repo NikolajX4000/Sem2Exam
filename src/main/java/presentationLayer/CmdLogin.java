@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * This command attempts to log the employee into the website, and puts a refference to their employee reference in the session
  * @author Hupra Laptop
  */
 public class CmdLogin extends Command{

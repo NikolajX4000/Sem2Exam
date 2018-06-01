@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import logicLayer.NoAccessException;
 
 /**
- *
+ * This command updates a given tool and returns the user to the editMaterials.jsp page.
  * @author Hupra Laptop
  */
 public class CmdUpdateTool extends Command

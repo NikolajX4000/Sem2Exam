@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * This command creates an order in the database and sends the information about the order to fog in an email. It then returns the user to specificUserOrders.jsp to display the order.
  * @author super
  */
 public class CmdCreateOrder extends Command{

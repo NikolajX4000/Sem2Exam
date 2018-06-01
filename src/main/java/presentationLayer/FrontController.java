@@ -16,7 +16,7 @@ import logicLayer.NoAccessException;
 public class FrontController extends HttpServlet {
 
     /**
-     *
+     * The FrontController finds the desired command from the HttpServletRequest and loads the correct .jsp file.
      * @param request
      * @param response
      * @throws ServletException

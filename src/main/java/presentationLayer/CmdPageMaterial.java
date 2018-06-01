@@ -7,7 +7,7 @@ import logicLayer.LogicFacade;
 import logicLayer.NoAccessException;
 
 /**
- *
+ * This command gets alle the different kinds of materials and returns the user to the editMaterials.jsp page
  * @author Hupra Laptop
  */
 public class CmdPageMaterial extends Command

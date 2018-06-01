@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * This command returns the user to the login page - login.jsp
  * @author Hupra Laptop
  */
 public class CmdPageLogin extends Command

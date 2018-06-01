@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * Prints a partlist from a given Order ID
  * @author Hupra
  */
 @WebServlet(name = "ServletGetPartlist", urlPatterns = {"/ServletGetPartlist"})

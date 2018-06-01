@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import logicLayer.NoAccessException;
 
 /**
- *
+ * This command update the statsu and/or price of a given order and returns to the allOrders.jsp page.
  * @author super
  */
 public class CmdUpdateOrder extends Command

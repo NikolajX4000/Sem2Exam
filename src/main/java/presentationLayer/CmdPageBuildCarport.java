@@ -6,7 +6,7 @@ import logicLayer.CustomException;
 import logicLayer.LogicFacade;
 
 /**
- *
+ * This command gets the different roof types and returns the user to makeCarport.jsp
  * @author super
  */
 public class CmdPageBuildCarport extends Command

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import logicLayer.Order;
 
 /**
- *
+ * This command finds all the orders from a given email and returns the user to the specificUserOrders.jsp page
  * @author super
  */
 public class CmdShowOrders extends Command

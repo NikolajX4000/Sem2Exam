@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import logicLayer.NoAccessException;
 
 /**
- *
+ * This command updates a given material and returns the user to the editMaterials.jsp page.
  * @author Hupra Laptop
  */
 public class CmdUpdateMaterial extends Command

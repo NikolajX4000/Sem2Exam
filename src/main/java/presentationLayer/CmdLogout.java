@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import logicLayer.NoAccessException;
 
 /**
- *
+ * This command logs the employee out of the website
  * @author Hupra Laptop
  */
 public class CmdLogout extends Command{

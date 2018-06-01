@@ -7,7 +7,7 @@ import logicLayer.LogicFacade;
 import logicLayer.NoAccessException;
 
 /**
- *
+ * This command gets all orders from the database and returns the user to allorders.jsp
  * @author super
  */
 public class CmdPageAllOrders extends Command

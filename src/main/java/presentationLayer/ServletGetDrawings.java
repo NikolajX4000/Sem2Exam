@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
+ * ServletGetDrawings creates two different SVG drawings given the correct paramters: width, shed_width, length, shed_length, has_shed, has_angle.
  * @author Hupra
  */
 @WebServlet(name = "ServletGetDrawings", urlPatterns = {"/ServletGetDrawings"})
