@@ -976,13 +976,6 @@ n.
  
 \end_layout
 
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 \noindent
 SCRUM userstories
@@ -1218,14 +1211,6 @@ Testable: Vi testede denne ved at se om vores database indeholder den rigtige
  
 \end_layout
 
-\begin_layout Standard
-\noindent
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection
 Userstory 2
 \end_layout
@@ -1443,14 +1428,6 @@ Testable: Når hele carporten er tegnet kan man manuelt tjekke om alle mål
  
 \end_layout
 
-\begin_layout Standard
-\noindent
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection
 \noindent
 Userstory 3
@@ -1644,14 +1621,6 @@ Testable: Alle metoder kan vi give et input hvor vi ved hvad output skal
 
 \end_layout
 
-\begin_layout Standard
-\noindent
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection
 \noindent
 Userstory 4
@@ -1838,14 +1807,6 @@ Small: Denne user story skal kun lave en enkelt udregning, så den er ikke
 Testable: Man kan teste om prisen bliver det man forventer, når man giver
  den en prædefineret dummy stykliste.
  
-\end_layout
-
-\begin_layout Standard
-\noindent
-\begin_inset Newpage newpage
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection
@@ -2064,15 +2025,6 @@ Testable: Da et design er meget subjektivt kan det være svært at teste det.
  I vores tilfælde var PO vores testperson som skulle give os feedback på
  om noget skulle laves om, og sige hvis der var ting han ikke kunne lide,
  eller elementer der var forvirrende.
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
-\begin_inset Newpage newpage
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -2330,13 +2282,6 @@ udregn prisen ud fra Material.getPrice() * amount
 
 \end_deeper
 \end_deeper
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 \noindent
 Navigationsdiagram
@@ -2567,13 +2512,6 @@ Diagrammet viser hvordan man som ansat kan få en historik af alle ordrer.
  På siden allOrders.jsp eksekveres et JSTL for-loop som fremviser alle ordrer.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 \noindent
 Særlige forhold
@@ -2787,13 +2725,6 @@ Den første er den vi bruger på selve sitet ved navn: “Fog” denne bruger
 \align block
 Vores anden bruger er kaldt: “fogTest”, denne bruger kan gøre alt og har
  ikke nogen restriktioner, i test databasen.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -3145,13 +3076,6 @@ Her bliver der taget en længde og en List over Material, wasted er hvor
  wasted returneret.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 \noindent
 Status på implementation
@@ -3396,10 +3320,6 @@ For hver gang vi kalder ‘setup()’ metoden fjerner vi den givne test tabel
 \begin_layout Standard
 \noindent
 \align block
-\begin_inset Newpage newpage
-\end_inset
-
-
 \begin_inset ERT
 status open
 
@@ -3747,15 +3667,6 @@ Da vi har haft meget fokus på håndtering af exceptions er mange af vores
 \begin_layout Standard
 \noindent
 \align block
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
 \begin_inset ERT
 status open
 
@@ -3988,13 +3899,6 @@ Ovenstående test reference kaster en CustomException.
  Havde ResultSettet indeholdt data ville vi kunne returnere det som et Material
  objekt.
  
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -5441,6 +5345,10 @@ Som medarbejder vil jeg være i stand til at ændre på tilgængelige materialer
 \begin_layout Subsection
 \noindent
 Ikke implementeret
+\end_layout
+
+\begin_layout Itemize
+Som admin vil jeg have mulighed for at kunne tilføje nye medarbejdere
 \end_layout
 
 \begin_layout Itemize
