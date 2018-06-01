@@ -6,6 +6,10 @@ import logicLayer.CustomException;
 import logicLayer.LogicFacade;
 import logicLayer.NoAccessException;
 
+/**
+ *
+ * @author Hupra Laptop
+ */
 public class CmdPageMaterial extends Command
 {
 

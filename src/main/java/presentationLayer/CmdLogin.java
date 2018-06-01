@@ -7,6 +7,10 @@ import logicLayer.LogicFacade;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ *
+ * @author Hupra Laptop
+ */
 public class CmdLogin extends Command{
 
     @Override

@@ -7,6 +7,10 @@ package presentationLayer;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ *
+ * @author Hupra Laptop
+ */
 public class CmdPageLogin extends Command
 {
 

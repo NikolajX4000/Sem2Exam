@@ -6,6 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import logicLayer.NoAccessException;
 
+/**
+ *
+ * @author Hupra Laptop
+ */
 public class CmdUpdateRoof extends Command
 {
 
