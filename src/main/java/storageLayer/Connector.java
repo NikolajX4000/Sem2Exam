@@ -33,7 +33,8 @@ public class Connector {
      * This method return a Connection object. 
      * It is made with a singleton that only initialze the connection if the connection are null.
      * @return Connection. This objects connetion.
-     * @throws ClassNotFoundException, SQLException
+     * @throws ClassNotFoundException
+     * @throws java.sql.SQLException
      */
     public static Connection connection() throws ClassNotFoundException, SQLException {
         if (connection == null) {
