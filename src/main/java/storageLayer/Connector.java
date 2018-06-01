@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- *
+ * This connector class generates or returns our current connection.
  * @author super
  */
 public class Connector {
@@ -33,8 +33,8 @@ public class Connector {
      * This method return a Connection object. 
      * It is made with a singleton that only initialze the connection if the connection are null.
      * @return Connection. This objects connetion.
-     * @throws ClassNotFoundException
-     * @throws java.sql.SQLException
+     * @throws ClassNotFoundException if class isnt found throw ClassNotFoundException
+     * @throws java.sql.SQLException if something goes wrong when trying yo make a new connection.
      */
     public static Connection connection() throws ClassNotFoundException, SQLException {
         if (connection == null) {
