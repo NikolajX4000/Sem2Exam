@@ -132,11 +132,11 @@ public class RoofMapper {
                     con.rollback();
                 } catch (SQLException ex) {
                     Log.severe(ex);
-                    throw new CustomException( "Kunne ikke hente information" );
+                    throw new CustomException( "Dette navn eksistere allerede" );
                 }
             }
             Log.severe(e);
-            throw new CustomException( "Kunne ikke hente information" );
+            throw new CustomException( "Dette navn eksistere allerede" );
         } finally {
             closeStatement(updateRoof);
             closeStatement(updateTagsten);
