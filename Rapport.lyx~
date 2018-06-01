@@ -377,7 +377,8 @@ Vi er blevet kontaktet af Johannes Fog Værebro, der har spurgt om vi kan
  lave et program og tilhørende hjemmeside til deres salg af carporte.
  Deres nuværende system bygger på manuelt arbejde samt en ikke tilstrækkelig
  adgang til ændringer i både system og database.
- Dette er nogle af fokuspunkterne der er stillet i vores opgave.
+ Dette er nogle af de problemstillinger der er ved Fogs nuværende system,
+ som skal være forbedret med vores website.
 \end_layout
 
 \begin_layout Subsection
@@ -1174,8 +1175,7 @@ Independent: For at give kunden mulighed for at bestille en carport.
 \begin_layout Itemize
 \noindent
 \align block
-Negotiable: Userstoryen beskriver ikke om det skal være en pre-designet
- eller selv-designet carport.
+Negotiable: Den afhænger ikke af andre user stories.
  
 \end_layout
 
@@ -1400,8 +1400,8 @@ Negotiable: Storien definere ikke hvordan carporten skal tegnes, men kun
 \begin_layout Itemize
 \noindent
 \align block
-Valuable: Det er af ret stor værdi for kunden at kunne se hvordan den carport
- man bestiller kommer til at se ud.
+Valuable: Skaber værdi for Fog da deres konkurrenter har det, så de ville
+ miste kunder hvis de ikke havde det.
  
 \end_layout
 
@@ -1416,8 +1416,8 @@ Estimable: Denne user story vurderede vi til at tage en uges arbejde, siden
 \begin_layout Itemize
 \noindent
 \align block
-Small: Dette punkt er ikke opfyldt da det er en ret stor story.
- 
+Small: Denne userstory var Episk eftersom den krævede en del mere arbejde
+ end de fleste andre.
 \end_layout
 
 \begin_layout Itemize
@@ -1609,7 +1609,8 @@ Estimable: Denne User story vurderede vi til at tage en uges arbejde, siden
 \begin_layout Itemize
 \noindent
 \align block
-Small: Dette punkt er ikke opfyldt da det er en ret stor story.
+Small: Denne userstory var Episk eftersom den krævede en del mere arbejde
+ end de fleste andre .
  
 \end_layout
 
@@ -2930,12 +2931,13 @@ textit{reference: Source Packages/logicLayer/TallCarPortList.java ( 500 -
 \begin_layout Standard
 \noindent
 \align block
-Der kigges på alle Material som ligger i allMaeterials som er en attribut
- der indeholder alle Material og for alle Material der har samme getName
- som name bliver de gemt i en List, hvis der ikke bliver fundet nogen Material
- med det rigtige name bliver der kastet en CustomExeption ellers bliver
- der returneres den List som indeholder alle de Material med det rigtige
- name.
+Der kigges på alle Material, som ligger i allMaterials som er en attribut
+ der indeholder alle Material.
+ For alle Material der har samme .getName() som 'name', bliver de gemt i
+ en List.
+ Hvis der ikke bliver fundet nogle Material med det rigtige name bliver
+ der kastet en CustomExeption, ellers bliver der returnret den List som
+ indeholder alle de Material med det rigtige name.
 \end_layout
 
 \begin_layout Standard
@@ -5345,10 +5347,6 @@ Som medarbejder vil jeg være i stand til at ændre på tilgængelige materialer
 \begin_layout Subsection
 \noindent
 Ikke implementeret
-\end_layout
-
-\begin_layout Itemize
-Som admin vil jeg have mulighed for at kunne tilføje nye medarbejdere
 \end_layout
 
 \begin_layout Itemize
