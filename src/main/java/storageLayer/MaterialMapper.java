@@ -168,16 +168,15 @@ public class MaterialMapper {
             ps.setString(4, material.getDescription());
             ps.setInt(5, material.getId());
 
-            int rs = ps.executeUpdate();
-            if ( rs != 0 ) return material;
-
+            ps.executeUpdate();
+            
         } catch (SQLException | ClassNotFoundException | NullPointerException ex) {
             Log.severe(ex);
             throw new CustomException( "Kunne ikke hente information" );
         } finally {
             closeStatement(ps);
         }
-        throw new CustomException( "Kunne ikke hente information" );
+        return material;
     }
 
     /**
